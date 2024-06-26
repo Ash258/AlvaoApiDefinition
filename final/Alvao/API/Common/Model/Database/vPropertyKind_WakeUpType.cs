@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.vPropertyKind_WakeUpType")]
+public class vPropertyKind_WakeUpType {
+}

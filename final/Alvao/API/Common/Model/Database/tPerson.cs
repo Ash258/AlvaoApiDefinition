@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.tPerson")]
+public class tPerson {
+}

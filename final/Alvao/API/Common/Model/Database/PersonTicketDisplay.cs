@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.PersonTicketDisplay")]
+public class PersonTicketDisplay {
+}

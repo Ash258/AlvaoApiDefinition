@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.vWbemObject_BIOS")]
+public class vWbemObject_BIOS {
+}

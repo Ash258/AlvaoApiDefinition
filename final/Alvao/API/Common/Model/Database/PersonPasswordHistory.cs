@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.PersonPasswordHistory")]
+public class PersonPasswordHistory {
+}

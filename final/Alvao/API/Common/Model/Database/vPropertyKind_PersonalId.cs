@@ -1,0 +1,6 @@
+
+namespace Alvao.API.Common.Model.Database;
+
+[TableAttribute("dbo.vPropertyKind_PersonalId")]
+public class vPropertyKind_PersonalId {
+}

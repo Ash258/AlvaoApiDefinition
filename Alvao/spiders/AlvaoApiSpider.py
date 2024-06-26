@@ -64,46 +64,74 @@ class AlvaoapispiderSpider(scrapy.Spider):
             print(f"   Processing class {name}")
             yield response.follow(f"{self.base_url}/{href}", self.parse_class)
 
+    def parse_ctor(self, response):
+        Helpers.dump_html(response)
+        return "cosi"
+
     def parse_class(self, response):
         Helpers.dump_html(response)
 
         namespace: str = response.css(
             'div#TopicContent > a::text').extract_first()
+        className: str = response.css(
+            'html > head > title *::text').extract_first()
+        className = className.replace('Class', '')
+        className = className.strip()
+        clazzDefinition: str = Helpers.inner_text(
+            response, 'div#IDAB_code_Div1')
 
-        clazz: str = Helpers.inner_text(response, 'div#IDAB_code_Div1')
+        trs = response.xpath(
+            "//table[@id='ConstructorList']/tr[position() >= 2]")
+        for tr in trs:
+            href = tr.css('tr > td > a::attr(href)').extract_first()
+            _url = f"{self.base_url}/{href}"
 
-        clazzBody: str = f"""
-namespace {namespace};
+            rsp = response.follow(_url, self.parse_ctor)
+            print(rsp)
+            # Helpers.dump_html(rsp)
 
-{clazz} {{"""
+        pass
+
+        clazzBody: str = f"namespace {namespace};"
+
+        # TODO: Usings from static file
+        clazzBody = f"""{clazzBody}
+
+{clazzDefinition} {{"""
 
         clazzBody = f"""
 {clazzBody}
 }}
 """
-        print(clazzBody)
-        # TODO: Implement
-        # Process properties
-        # Process fields
-        # Process methods
-        pass
+        Helpers.dump_file_in_ns(namespace, f"{className}.cs", clazzBody)
 
 
 class Helpers():
-    @ staticmethod
+    @staticmethod
+    def dump_file_in_ns(namespace: str, fileName: str, fileBody: str):
+        nsPath = namespace.replace('.', '/')
+        nsPath = os.path.join("final", nsPath)
+        Helpers.assert_folder(nsPath)
+
+        nsPath = os.path.join(nsPath, fileName)
+        Helpers.write_file(nsPath, fileBody)
+
+        pass
+
+    @staticmethod
     def inner_text(response, selector, delimiter="") -> str:
         all = response.css(f"{selector} *::text").getall()
         filtered_list = [string for string in all if string]
 
         return delimiter.join(filtered_list)
 
-    @ staticmethod
+    @staticmethod
     def write_file(path, body):
         with open(path, 'w') as file:
             # Write some lines of text
             file.write(body)
 
-    @ staticmethod
+    @staticmethod
     def dump_html(response):
         path: str = response.url.split("/")[-1]
         path = os.path.join("html", path)
@@ -112,13 +140,13 @@ class Helpers():
 
         Helpers.write_file(path, response.text)
 
-    @ staticmethod
+    @staticmethod
     def assert_folder(path):
         if os.path.exists(path):
             return
 
         os.makedirs(path)
 
-    @ staticmethod
+    @staticmethod
     def htmlEncodeNamespace(ns: str) -> str:
         return (ns.replace('.', '_'))
