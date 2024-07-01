@@ -1,6 +1,0 @@
-
-namespace Alvao.API.Common.Model.Database;
-
-[TableAttribute("dbo.vHdSectionLoc")]
-public class vHdSectionLoc {
-}

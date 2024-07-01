@@ -8,6 +8,8 @@ tasks:
     cmd: scrapy crawl AlvaoApiSpider
 
   tidy:
+    aliases:
+      - format
     sources:
       - html/*.htm
     ignore_error: true

@@ -1,6 +1,0 @@
-
-namespace Alvao.API.Common.Model.Database;
-
-[TableAttribute("dbo.tblFileStringInfo")]
-public class tblFileStringInfo {
-}

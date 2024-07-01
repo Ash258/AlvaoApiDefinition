@@ -1,6 +1,0 @@
-
-namespace Alvao.API.Common.Model.Database;
-
-[TableAttribute("dbo.tOpeningHoursException")]
-public class tOpeningHoursException {
-}
