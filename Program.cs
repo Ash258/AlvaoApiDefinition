@@ -29,6 +29,8 @@ string[] alvaoNamespace = {
 };
 
 
+// TODO: Implement all
+// foreach (var ns in alvaoNamespace.TakeLast(1))
 foreach (var ns in alvaoNamespace.TakeLast(1))
 {
     var namespaceUrl = $"{baseHtmlUrl}/N_{ns.Replace(".", "_")}.htm";
@@ -52,9 +54,13 @@ foreach (var ns in alvaoNamespace.TakeLast(1))
         // TODO: Support more types
         if (!className.EndsWith("Class")) continue;
 
-        HtmlDocument classDocument = Helpers.LoadDocument(classLink, $"{localHtmlFolder}/{classHtmlBaseFileName}");
-
-        Console.WriteLine(classDocument.Text);
+        var clazz = new AlvaoClass(
+            classLink,
+            $"{localHtmlFolder}/{classHtmlBaseFileName}",
+            ns,
+            className.Replace("Class", "").Trim()
+        );
+        clazz.Process();
     }
 }
 
