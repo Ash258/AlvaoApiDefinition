@@ -1,7 +1,4 @@
+namespace Alvao.Context.DB;
 
-        namespace Alvao.Context.DB;
-
-        public class TransactionEventArgs : EventArgs {
-        
-        }
-        
+public class TransactionEventArgs : EventArgs {
+}
