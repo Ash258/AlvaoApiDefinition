@@ -1,7 +1,5 @@
 using System.Text;
-using Alvao.API.Common.Model.Database;
 using HtmlAgilityPack;
-using Microsoft.Extensions.Primitives;
 
 namespace AlvaoScapper;
 
@@ -11,9 +9,10 @@ public class AlvaoClass
     public string Name { get; set; }
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
+    public string FinalCsFile { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
     public string Definition { get; set; } = "";
-    public bool TableAttributeUsing { get; set; } = false;
+    public List<string> Usings { get; set; }
 
     public Dictionary<string, string>? Constructors { get; set; }
     public Dictionary<string, string>? Properties { get; set; }
@@ -22,16 +21,25 @@ public class AlvaoClass
 
     public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name)
     {
+        Usings = [];
         FullUrl = fullUrl;
         LocalHtmlFile = localHtmlFile;
         NamespaceName = namespaceName;
         Name = name;
         HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
+        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{name}.cs";
     }
 
     public void Process()
     {
         Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
+        Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
+
+        if (Definition.Contains("TableAttribute(")) Usings.Add("using System.ComponentModel.DataAnnotations.Schema;");
+        if (Definition.Contains(": Profile")) Usings.Add("using AutoMapper;");
+        if (Definition.Contains(": tbl")) Usings.Add("using Alvao.API.Common.Model.Database;");
+        if (Definition.Contains(": vColumnLoc")) Usings.Add("using Alvao.API.Common.Model.Database;");
+
         // TODO: Process constructors
         // TODO: Process properties
         // TODO: Process methods
@@ -44,19 +52,20 @@ public class AlvaoClass
     {
         var sb = new StringBuilder();
 
-        // TODO: Handle usings
-        if (TableAttributeUsing)
+        if (Usings.Count != 0)
         {
-            sb.AppendLine("");
-            sb.AppendLine("using TableAttribute = System.ComponentModel.DataAnnotations.Schema.TableAttribute;");
+            Usings.ForEach((element) =>
+            {
+                sb.AppendLine(element);
+            });
             sb.AppendLine("");
         }
-
         sb.AppendLine($"namespace {NamespaceName};");
         sb.AppendLine("");
         sb.AppendLine($"{Definition} {{");
         sb.AppendLine("}");
 
         Console.WriteLine(sb.ToString());
+        File.WriteAllText(FinalCsFile, sb.ToString());
     }
 }

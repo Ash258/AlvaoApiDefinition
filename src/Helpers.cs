@@ -4,10 +4,12 @@ namespace AlvaoScapper;
 
 public static class Helpers
 {
+    public static bool IGNORE_CACHE = false;
+
     public static HtmlDocument LoadDocument(string url, string localPath)
     {
         HtmlDocument doc = new();
-        if (File.Exists(localPath))
+        if (!IGNORE_CACHE && File.Exists(localPath))
         {
             doc.Load(localPath);
         }
