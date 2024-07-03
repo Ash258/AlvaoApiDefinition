@@ -5,6 +5,7 @@ namespace AlvaoScapper;
 
 public class AlvaoClass
 {
+    public AlvaoNamespace Namespace { get; set; }
     public string NamespaceName { get; set; }
     public string Name { get; set; }
     public string FullUrl { get; set; }
@@ -136,5 +137,24 @@ public class AlvaoClass
         sb.AppendLine("}");
 
         File.WriteAllText(FinalCsFile, sb.ToString());
+    }
+
+    internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
+    {
+        var classANode = cl.SelectNodes(".//a").Last();
+        var classHtmlBaseFileName = classANode.GetAttributeValue("href", "").Split("/").Last();
+        var classLink = $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}";
+        var className = classANode.GetAttributeValue("title", "");
+
+        // TODO: Support more types
+        if (!className.EndsWith("Class")) return;
+
+        var clazz = new AlvaoClass(
+            classLink,
+            $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
+            an.Name,
+            className.Replace("Class", "").Trim()
+        );
+        clazz.Process();
     }
 }
