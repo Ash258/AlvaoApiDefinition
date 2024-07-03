@@ -62,7 +62,8 @@ public class AlvaoClass
         }
         sb.AppendLine($"namespace {NamespaceName};");
         sb.AppendLine("");
-        sb.AppendLine($"{Definition} {{");
+        sb.AppendLine(Definition);
+        sb.AppendLine("{");
         sb.AppendLine("}");
 
         Console.WriteLine(sb.ToString());

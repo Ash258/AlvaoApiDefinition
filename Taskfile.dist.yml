@@ -1,12 +1,6 @@
-version: "3.0"
+version: '3.0'
 
 tasks:
-  run:
-    cmd: scrapy crawl AlvaoApiSpider --nolog
-
-  run:verbose:
-    cmd: scrapy crawl AlvaoApiSpider
-
   tidy:
     aliases:
       - format
@@ -16,3 +10,12 @@ tasks:
     cmds:
       - for: sources
         cmd: tidy -config .tidyrc -f errors.txt -m {{ .ITEM }}
+  dotnet:run:
+    cmd: dotnet run {{ .CLI_ARGS }}
+  format:
+    cmd: dotnet format
+  run:
+    cmds:
+      - task: dotnet:run
+      - task: tidy
+      - task: format

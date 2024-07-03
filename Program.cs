@@ -1,4 +1,4 @@
-﻿using AlvaoScapper;
+using AlvaoScapper;
 using Microsoft.Identity.Client;
 
 string alvaoVersion = "11_2";
