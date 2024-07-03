@@ -117,7 +117,11 @@ public class AlvaoClass
     {
         var sb = new StringBuilder();
 
-        if (Usings.Count != 0) Usings.ForEach(el => sb.AppendLine($"using {el};"));
+        if (Usings.Count != 0)
+        {
+            Usings.Distinct().ToList().ForEach(el => sb.AppendLine($"using {el};"));
+            sb.AppendLine("");
+        }
 
         sb.AppendLine($"namespace {NamespaceName};");
         sb.AppendLine("");
