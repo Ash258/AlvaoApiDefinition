@@ -1,5 +1,5 @@
-
 namespace Alvao.API.SD.Model;
 
-public class ResolvedTicketRelationsModel {
+public class ResolvedTicketRelationsModel
+{
 }

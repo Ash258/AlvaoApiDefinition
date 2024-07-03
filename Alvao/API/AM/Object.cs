@@ -1,4 +1,5 @@
 namespace Alvao.API.AM;
 
-public static class Object {
+public static class Object
+{
 }

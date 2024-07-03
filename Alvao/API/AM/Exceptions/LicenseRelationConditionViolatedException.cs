@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class LicenseRelationConditionViolatedException : Exception {
+public class LicenseRelationConditionViolatedException : Exception
+{
 }

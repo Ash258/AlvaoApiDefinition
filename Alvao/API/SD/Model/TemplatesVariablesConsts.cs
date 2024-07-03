@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public sealed class TemplatesVariablesConsts {
+public sealed class TemplatesVariablesConsts
+{
 }

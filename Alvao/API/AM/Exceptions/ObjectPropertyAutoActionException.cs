@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Exceptions;
 
 [SerializableAttribute]
-public class ObjectPropertyAutoActionException : Exception {
+public class ObjectPropertyAutoActionException : Exception
+{
 }

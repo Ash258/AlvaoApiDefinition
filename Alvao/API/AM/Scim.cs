@@ -1,4 +1,5 @@
 namespace Alvao.API.AM;
 
-public static class Scim {
+public static class Scim
+{
 }

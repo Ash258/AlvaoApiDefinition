@@ -1,5 +1,5 @@
-
 namespace Alvao.API.SD.Model;
 
-public class RelatedTicketRuleModel {
+public class RelatedTicketRuleModel
+{
 }

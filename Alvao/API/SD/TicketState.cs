@@ -1,4 +1,5 @@
 namespace Alvao.API.SD;
 
-public static class TicketState {
+public static class TicketState
+{
 }

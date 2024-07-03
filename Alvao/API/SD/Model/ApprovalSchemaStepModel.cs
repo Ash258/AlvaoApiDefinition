@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class ApprovalSchemaStepModel {
+public class ApprovalSchemaStepModel
+{
 }

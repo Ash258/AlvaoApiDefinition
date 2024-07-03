@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class SlaAccessException : Exception {
+public class SlaAccessException : Exception
+{
 }

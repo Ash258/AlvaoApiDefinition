@@ -1,4 +1,5 @@
 namespace Alvao.API.SD;
 
-public static class TeamsNotification {
+public static class TeamsNotification
+{
 }

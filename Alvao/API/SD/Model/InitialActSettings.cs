@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class InitialActSettings : ActCreateSettings {
+public class InitialActSettings : ActCreateSettings
+{
 }

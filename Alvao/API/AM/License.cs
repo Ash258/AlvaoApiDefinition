@@ -1,4 +1,5 @@
 namespace Alvao.API.AM;
 
-public static class License {
+public static class License
+{
 }

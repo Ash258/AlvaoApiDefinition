@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class ObjectNotFoundException : Exception {
+public class ObjectNotFoundException : Exception
+{
 }

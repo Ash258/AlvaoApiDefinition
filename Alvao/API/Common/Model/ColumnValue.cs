@@ -1,5 +1,5 @@
-
 namespace Alvao.API.Common.Model;
 
-public class ColumnValue {
+public class ColumnValue
+{
 }

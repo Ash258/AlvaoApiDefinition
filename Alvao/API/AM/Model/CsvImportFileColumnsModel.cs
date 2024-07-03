@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Model;
 
-public class CsvImportFileColumnsModel {
+public class CsvImportFileColumnsModel
+{
 }

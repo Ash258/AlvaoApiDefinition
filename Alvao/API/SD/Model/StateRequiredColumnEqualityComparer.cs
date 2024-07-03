@@ -1,4 +1,3 @@
-
 using System.Diagnostics.CodeAnalysis;
 
 namespace Alvao.API.SD.Model;

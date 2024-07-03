@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class ApprovalException : Exception {
+public class ApprovalException : Exception
+{
 }

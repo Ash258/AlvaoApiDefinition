@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class BasicTicketInfo {
+public class BasicTicketInfo
+{
 }

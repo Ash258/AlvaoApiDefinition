@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class RequiredFieldsException : ValidationException {
+public class RequiredFieldsException : ValidationException
+{
 }

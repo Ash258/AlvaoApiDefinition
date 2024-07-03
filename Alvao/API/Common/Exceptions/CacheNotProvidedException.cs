@@ -1,4 +1,5 @@
 namespace Alvao.API.Common.Exceptions;
 
-public class CacheNotProvidedException : Exception {
+public class CacheNotProvidedException : Exception
+{
 }

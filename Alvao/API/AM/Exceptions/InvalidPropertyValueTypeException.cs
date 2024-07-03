@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class InvalidPropertyValueTypeException : InvalidPropertyException {
+public class InvalidPropertyValueTypeException : InvalidPropertyException
+{
 }

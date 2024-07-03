@@ -1,4 +1,5 @@
 namespace Alvao.API.SD;
 
-public static class WorkLoad {
+public static class WorkLoad
+{
 }

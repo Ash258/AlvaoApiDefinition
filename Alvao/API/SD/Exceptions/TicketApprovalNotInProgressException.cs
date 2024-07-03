@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class TicketApprovalNotInProgressException : Exception {
+public class TicketApprovalNotInProgressException : Exception
+{
 }

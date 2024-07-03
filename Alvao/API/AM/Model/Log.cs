@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Model;
 
-public class Log {
+public class Log
+{
 }

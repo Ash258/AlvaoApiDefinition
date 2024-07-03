@@ -1,4 +1,5 @@
 namespace Alvao.API.AI.Model;
 
-public class SimilarEntity {
+public class SimilarEntity
+{
 }

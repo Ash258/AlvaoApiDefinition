@@ -1,4 +1,5 @@
 namespace Alvao.API.AI;
 
-public class EmbeddingResponse {
+public class EmbeddingResponse
+{
 }

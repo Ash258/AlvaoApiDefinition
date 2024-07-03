@@ -1,5 +1,5 @@
-
 namespace Alvao.API.Common.Model;
 
-public static class CustomTables {
+public static class CustomTables
+{
 }

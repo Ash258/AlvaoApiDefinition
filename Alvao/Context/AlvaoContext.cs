@@ -1,4 +1,5 @@
 namespace Alvao.Context;
 
-public static class AlvaoContext {
+public static class AlvaoContext
+{
 }

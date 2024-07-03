@@ -1,4 +1,5 @@
 namespace Alvao.API.Common.Exceptions;
 
-public class UserTokenServiceError : Exception {
+public class UserTokenServiceError : Exception
+{
 }

@@ -1,5 +1,5 @@
-
 namespace Alvao.API.Common;
 
-public static class Activation {
+public static class Activation
+{
 }

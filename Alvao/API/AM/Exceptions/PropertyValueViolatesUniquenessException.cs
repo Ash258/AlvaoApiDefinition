@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class PropertyValueViolatesUniquenessException : InvalidPropertyException {
+public class PropertyValueViolatesUniquenessException : InvalidPropertyException
+{
 }

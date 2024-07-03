@@ -1,4 +1,5 @@
 namespace Alvao.API.Common.Exceptions;
 
-public class MissingSenderException : Exception {
+public class MissingSenderException : Exception
+{
 }

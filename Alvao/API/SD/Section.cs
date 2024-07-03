@@ -1,4 +1,5 @@
 namespace Alvao.API.SD;
 
-public static class Section {
+public static class Section
+{
 }

@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class MessageForRequesterDataModel : MessageDataBaseModel {
+public class MessageForRequesterDataModel : MessageDataBaseModel
+{
 }

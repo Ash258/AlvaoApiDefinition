@@ -1,5 +1,5 @@
-
 namespace Alvao.API.Common.Model;
 
-public class HtmlTextModel {
+public class HtmlTextModel
+{
 }

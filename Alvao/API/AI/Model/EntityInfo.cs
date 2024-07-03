@@ -1,4 +1,5 @@
 namespace Alvao.API.AI.Model;
 
-public class EntityInfo {
+public class EntityInfo
+{
 }

@@ -1,4 +1,5 @@
 namespace Alvao.API.AI;
 
-public class ChatChoiceResponse {
+public class ChatChoiceResponse
+{
 }

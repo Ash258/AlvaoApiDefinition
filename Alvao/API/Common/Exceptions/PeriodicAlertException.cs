@@ -1,4 +1,5 @@
 namespace Alvao.API.Common.Exceptions;
 
-public class PeriodicAlertException : Exception {
+public class PeriodicAlertException : Exception
+{
 }

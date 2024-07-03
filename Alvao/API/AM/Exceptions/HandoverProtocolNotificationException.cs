@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class HandoverProtocolNotificationException : Exception {
+public class HandoverProtocolNotificationException : Exception
+{
 }

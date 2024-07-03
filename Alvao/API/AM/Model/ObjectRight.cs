@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Model;
 
-public static class ObjectRight {
+public static class ObjectRight
+{
 }

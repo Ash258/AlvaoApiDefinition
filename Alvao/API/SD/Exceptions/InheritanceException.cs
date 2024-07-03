@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class InheritanceException : Exception {
+public class InheritanceException : Exception
+{
 }

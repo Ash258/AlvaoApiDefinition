@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class BackResolveException : Exception {
+public class BackResolveException : Exception
+{
 }

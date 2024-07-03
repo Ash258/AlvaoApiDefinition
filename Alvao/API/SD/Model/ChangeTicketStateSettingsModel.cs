@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class ChangeTicketStateSettingsModel {
+public class ChangeTicketStateSettingsModel
+{
 }

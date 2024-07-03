@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Exceptions;
 
-public class CantResolveTicketInsufficientRightsException : Exception {
+public class CantResolveTicketInsufficientRightsException : Exception
+{
 }

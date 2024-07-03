@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class LicenseAlreadyAssignedException : LicenseException {
+public class LicenseAlreadyAssignedException : LicenseException
+{
 }

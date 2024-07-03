@@ -1,4 +1,5 @@
 namespace Alvao.API.SD.Model;
 
-public class TicketInfoTableRowModel {
+public class TicketInfoTableRowModel
+{
 }

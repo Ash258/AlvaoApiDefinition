@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Exceptions;
 
 [SerializableAttribute]
-public class UnauthorizedObjectOperationEception : Exception {
+public class UnauthorizedObjectOperationEception : Exception
+{
 }

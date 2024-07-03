@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Exceptions;
 
-public class LicenseInvalidPropertyValueException : LicenseException {
+public class LicenseInvalidPropertyValueException : LicenseException
+{
 }

@@ -1,4 +1,5 @@
 namespace Alvao.API.AM.Model;
 
-public class ObjectRelationModel {
+public class ObjectRelationModel
+{
 }
