@@ -68,7 +68,7 @@ public class AlvaoClass
 
         foreach (var f in fields)
         {
-            var fieldName = f.InnerText;
+            var fieldName = Helpers.ExtractObjectName(f);
             Console.WriteLine($"    Processing {fieldName} Field");
 
             var fieldHtmlBaseFileName = f.GetAttributeValue("href", "").Split("/").Last();
@@ -109,9 +109,7 @@ public class AlvaoClass
         ProcessProperties();
         ProcessFields();
         // TODO: Process constructors
-        // TODO: Process properties
         // TODO: Process methods
-        // TODO: Process fields
 
         ProduceFinalCsFile();
     }

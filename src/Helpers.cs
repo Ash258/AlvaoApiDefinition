@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
 namespace AlvaoScapper;
@@ -24,5 +25,29 @@ public static class Helpers
         }
 
         return doc;
+    }
+
+    internal static object ExtractObjectName(HtmlNode node)
+    {
+        var name = "";
+        if (node.HasChildNodes)
+        {
+            var span = node.SelectSingleNode(".//span").GetAttributeValue("data-languagespecifictext", ".");
+            if (span != null)
+            {
+                var dot = span.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
+                name = Regex.Replace(node.InnerHtml, "<span.*</span>", dot);
+            }
+            else
+            {
+                name = node.InnerText;
+            }
+        }
+        else
+        {
+            name = node.InnerText;
+        }
+
+        return name;
     }
 }

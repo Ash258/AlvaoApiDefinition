@@ -13,6 +13,14 @@ tasks:
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
+    sources:
+      - Program.cs
+      - src/**
+      - Alvao/**
+    generates:
+      - Program.cs
+      - src/**
+      - Alvao/**
     cmd: dotnet format
   clean:
     cmd: git checkout -- Alvao
