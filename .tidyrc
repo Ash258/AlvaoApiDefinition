@@ -68,7 +68,7 @@ output-xml: no
 preserve-entities: no
 priority-attributes:
 punctuation-wrap: no
-quiet: no
+quiet: yes
 quote-ampersand: yes
 quote-marks: no
 quote-nbsp: yes
@@ -79,7 +79,7 @@ show-errors: 6
 show-filename: no
 show-info: yes
 show-meta-change: no
-show-warnings: yes
+show-warnings: no
 skip-nested: yes
 sort-attributes: none
 strict-tags-attributes: no
