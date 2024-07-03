@@ -53,6 +53,7 @@ public class AlvaoClass
             propDef = propDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
             if (propDef.Contains("JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
+            if (propDef.Contains("JsonIgnoreAttribute")) Usings.Add("Newtonsoft.Json");
             if (propDef.Contains("KeyAttribute")) Usings.Add("Dapper.Contrib.Extensions");
             if (propDef.Contains("ComputedAttribute")) Usings.Add("Dapper.Contrib.Extensions");
 
