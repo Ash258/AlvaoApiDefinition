@@ -1,11 +1,6 @@
 using AlvaoScapper;
 using Microsoft.Identity.Client;
 
-string alvaoVersion = "11_2";
-string baseUrl = $"https://doc.alvao.com/en/alvao_{alvaoVersion}/alvao_api";
-string baseHtmlUrl = $"{baseUrl}/html";
-string localHtmlFolder = "html";
-
 string[] alvaoNamespace = {
         "Alvao.API.AI",
         "Alvao.API.AI.Model",
@@ -34,12 +29,13 @@ if (args.Length > 0)
 
 foreach (var ns in alvaoNamespace.TakeLast(toTake))
 {
-    var namespaceUrl = $"{baseHtmlUrl}/N_{ns.Replace(".", "_")}.htm";
+    Console.WriteLine($"Processing {ns} Namespace");
+    var namespaceUrl = $"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm";
     var baseNamespaceFileName = namespaceUrl.Split("/").Last();
 
     AlvaoNamespace alvaoNs = new AlvaoNamespace(
         namespaceUrl,
-        $"{localHtmlFolder}/{baseNamespaceFileName}",
+        $"{Helpers.LOCAL_HTML_FOLDER}/{baseNamespaceFileName}",
         ns
     );
 
@@ -49,7 +45,7 @@ foreach (var ns in alvaoNamespace.TakeLast(toTake))
     {
         var classANode = cl.SelectNodes(".//a").Last();
         var classHtmlBaseFileName = classANode.GetAttributeValue("href", "").Split("/").Last();
-        var classLink = $"{baseHtmlUrl}/{classHtmlBaseFileName}";
+        var classLink = $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}";
         var className = classANode.GetAttributeValue("title", "");
 
         // TODO: Support more types
@@ -57,7 +53,7 @@ foreach (var ns in alvaoNamespace.TakeLast(toTake))
 
         var clazz = new AlvaoClass(
             classLink,
-            $"{localHtmlFolder}/{classHtmlBaseFileName}",
+            $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
             ns,
             className.Replace("Class", "").Trim()
         );
