@@ -49,6 +49,15 @@ public class AlvaoClass
             var fieldDef = fieldDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
             fieldDef = fieldDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
+            if (fieldName.Equals("EmailFormat"))
+            {
+                fieldDef = fieldDef.Replace("\"]", "\"\"]");
+            }
+            if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName))
+            {
+                fieldDef = fieldDef.Replace("= \"", "= @\"");
+            }
+
             Fields.Add($"{fieldDef};");
         }
     }
