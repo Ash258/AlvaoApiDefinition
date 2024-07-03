@@ -39,5 +39,9 @@ foreach (var ns in alvaoNamespace.TakeLast(toTake))
         ns
     );
 
+    State.Namespaces.Add(ns, alvaoNs);
+
     alvaoNs.Process();
 }
+
+Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");

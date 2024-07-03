@@ -112,6 +112,9 @@ public class AlvaoClass
         // TODO: Process constructors
         // TODO: Process methods
 
+
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
+
         ProduceFinalCsFile();
     }
 
