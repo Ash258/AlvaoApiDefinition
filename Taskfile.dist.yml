@@ -14,10 +14,13 @@ tasks:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
     cmd: dotnet format
+  clean:
+    cmd: git checkout -- Alvao
   run:
     aliases:
       - default
     cmds:
+      - task: clean
       - task: dotnet:run
       - task: tidy
       - task: format
