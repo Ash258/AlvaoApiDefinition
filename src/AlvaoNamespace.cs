@@ -57,7 +57,7 @@ public class AlvaoNamespace
             {
                 var name = m.SelectSingleNode(".//td[1]").InnerText.Trim();
                 var value = m.SelectSingleNode(".//td[2]").InnerText.Trim();
-                sb.AppendLine($"{name} = {value},");
+                sb.AppendLine($"    {name} = {value},");
             }
             sb.AppendLine("}");
 

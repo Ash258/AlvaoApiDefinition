@@ -43,6 +43,13 @@ public class AlvaoClass
             var propName = p.InnerText;
             Console.WriteLine($"    Processing {propName} Property");
 
+            // TODO: Implement
+            if (Name.Equals("LicenseInvalidPropertyValueException") && propName.Equals("Property"))
+            {
+                Console.WriteLine($"Skipping {propName} on {Name}");
+                continue;
+            }
+
             var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
             var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
             var propLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{propHtmlBaseFileName}";
