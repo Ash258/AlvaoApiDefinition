@@ -18,6 +18,7 @@ public class AlvaoClass
     public Dictionary<string, string>? Constructors { get; set; }
     public List<string> Properties { get; set; }
     public List<string> Fields { get; set; }
+    public List<string> Enums { get; set; }
     public Dictionary<string, string>? Methods { get; set; }
 
     public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name)
@@ -25,6 +26,7 @@ public class AlvaoClass
         Usings = [];
         Fields = [];
         Properties = [];
+        Enums = [];
         FullUrl = fullUrl;
         LocalHtmlFile = localHtmlFile;
         NamespaceName = namespaceName;

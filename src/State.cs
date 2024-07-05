@@ -1,4 +1,4 @@
-using AlvaoScapper;
+namespace AlvaoScapper;
 
 public static class State
 {

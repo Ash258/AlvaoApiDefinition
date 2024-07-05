@@ -35,6 +35,7 @@ public class AlvaoNamespace
             var enumName = Helpers.ExtractObjectName(e);
             Console.WriteLine($"  Processing {enumName} Enum");
 
+            continue;
             var enumHtmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var enumLink = $"{Helpers.BASE_HTML_URL}/{enumHtmlBaseFileName}";
             var enumLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{enumHtmlBaseFileName}";

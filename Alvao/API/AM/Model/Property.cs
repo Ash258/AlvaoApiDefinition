@@ -19,9 +19,9 @@ public class Property
     [JsonIgnoreAttribute]
     public bool IsUnique { get; set; }
     [JsonIgnoreAttribute]
-    public KindKindCode KindCode { get; set; }
+    public Kind.KindCode KindCode { get; set; }
     [JsonIgnoreAttribute]
-    public KindDataType KindDataType { get; set; }
+    public Kind.DataType KindDataType { get; set; }
     [JsonIgnoreAttribute]
     public int KindId { get; set; }
     [JsonIgnoreAttribute]
