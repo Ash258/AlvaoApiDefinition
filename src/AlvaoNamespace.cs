@@ -43,6 +43,7 @@ public class AlvaoNamespace
             var enumLink = $"{Helpers.BASE_HTML_URL}/{enumHtmlBaseFileName}";
             var enumLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{enumHtmlBaseFileName}";
             if (!enumLink.StartsWith("https://doc.alvao")) continue;
+            if (!enumLink.EndsWith(".htm")) continue;
 
             var enumDocument = Helpers.LoadDocument(enumLink, enumLocalHtml);
 

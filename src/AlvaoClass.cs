@@ -5,9 +5,15 @@ namespace AlvaoScapper;
 
 public class AlvaoClass
 {
+    public enum ClassType
+    {
+        CLASS,
+        INTERFACE,
+    }
     public AlvaoNamespace Namespace { get; set; }
     public string NamespaceName { get; set; }
     public string Name { get; set; }
+    public ClassType Type { get; set; }
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string FinalCsFile { get; set; }
@@ -21,8 +27,9 @@ public class AlvaoClass
     public List<string> Enums { get; set; }
     public List<string> Methods { get; set; }
 
-    public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name)
+    public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name, ClassType type = ClassType.CLASS)
     {
+        Type = type;
         Usings = [];
         Fields = [];
         Properties = [];
@@ -58,6 +65,7 @@ public class AlvaoClass
             var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
             var propLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{propHtmlBaseFileName}";
             if (!propLink.StartsWith("https://doc.alvao")) continue;
+            if (!propLink.EndsWith(".htm")) continue;
 
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
             var propDef = propDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
@@ -65,12 +73,14 @@ public class AlvaoClass
             propDef = propDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
             // if (Definition.Contains("IDbContextProvider")) Usings.Add();
-            if (propDef.Contains("HttpStatusCode")) Usings.Add("System.Net");
-            if (propDef.Contains("CultureInfo")) Usings.Add("System.Globalization");
-            if (propDef.Contains("JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
-            if (propDef.Contains("JsonIgnoreAttribute")) Usings.Add("Newtonsoft.Json");
-            if (propDef.Contains("KeyAttribute")) Usings.Add("Dapper.Contrib.Extensions");
-            if (propDef.Contains("ComputedAttribute")) Usings.Add("Dapper.Contrib.Extensions");
+            if (propDef.Contains("IDbConnection ")) Usings.Add("System.Data");
+            if (propDef.Contains("SqlConnection ")) Usings.Add("Microsoft.Data.SqlClient");
+            if (propDef.Contains("HttpStatusCode ")) Usings.Add("System.Net");
+            if (propDef.Contains("CultureInfo ")) Usings.Add("System.Globalization");
+            if (propDef.Contains("[JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
+            if (propDef.Contains("[JsonIgnoreAttribute]")) Usings.Add("Newtonsoft.Json");
+            if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
+            if (propDef.Contains("[ComputedAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
 
             Properties.Add($"{propDef}");
         }
@@ -90,6 +100,7 @@ public class AlvaoClass
             var fieldLink = $"{Helpers.BASE_HTML_URL}/{fieldHtmlBaseFileName}";
             var fieldLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{fieldHtmlBaseFileName}";
             if (!fieldLink.StartsWith("https://doc.alvao")) continue;
+            if (!fieldLink.EndsWith(".htm")) continue;
 
             var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
 
@@ -123,18 +134,64 @@ public class AlvaoClass
 
         ProcessProperties();
         ProcessFields();
-        // TODO: Process constructors
-        // TODO: Process methods
+        ProcessConstructors();
         ProcessMethods();
-
 
         State.Classes.Add($"{NamespaceName}.{Name}", this);
 
         ProduceFinalCsFile();
     }
 
+    private void ProcessConstructors()
+    {
+
+        var constructors = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"ConstructorList\"]/tr/td[2]/a");
+        if (constructors == null) return;
+
+        foreach (var c in constructors)
+        {
+            var constrName = Helpers.ExtractObjectName(c);
+            Console.WriteLine($"    Processing {constrName} Constructor");
+
+            var constrHtmlBaseFileName = c.GetAttributeValue("href", "").Split("/").Last();
+            var constrLink = $"{Helpers.BASE_HTML_URL}/{constrHtmlBaseFileName}";
+            var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
+
+            var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
+
+            var constrDef = constrDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            if (constrDef == null) continue;
+            constrDef = constrDef.Replace("&lt;", "<").Replace("&gt;", ">");
+
+            Constructors.Add($"{constrDef}");
+        }
+    }
+
     private void ProcessMethods()
     {
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"MethodList\"]/tr/td[2]/a");
+        if (elements == null) return;
+
+        foreach (var e in elements)
+        {
+            var _name = Helpers.ExtractObjectName(e);
+            Console.WriteLine($"    Processing {_name} Method");
+
+            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
+            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
+            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
+            if (!_link.StartsWith("https://doc.alvao")) continue;
+            if (!_link.EndsWith(".htm")) continue;
+
+            var _document = Helpers.LoadDocument(_link, _localHtml);
+
+            var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            if (_definition == null) continue;
+            _definition = _definition.Replace("&lt;", "<").Replace("&gt;", ">");
+
+            Methods.Add($"{_definition}");
+        }
+
         if (Definition.Contains("IEquatable<EmailModel>"))
         {
             Methods.Add(@"
@@ -164,9 +221,14 @@ public class AlvaoClass
         Enums.ForEach(el => sb.AppendLine($"    {el}"));
         Properties.ForEach(el => sb.AppendLine($"    {el}"));
         Fields.ForEach(el => sb.AppendLine($"    {el};"));
-        // TODO: Constructors
-        // TODO: Methods
-        Methods.ForEach(el => sb.AppendLine($"    {el}"));
+        Constructors.ForEach(el => sb.AppendLine($"    {el} {{}}"));
+        Methods.ForEach((el) =>
+        {
+            var del = Type == ClassType.CLASS
+                ? " { throw new System.NotImplementedException(); }"
+                : ";";
+            sb.AppendLine($"    {el}{del}");
+        });
         sb.AppendLine("}");
 
         File.WriteAllText(FinalCsFile, sb.ToString());
@@ -180,13 +242,15 @@ public class AlvaoClass
         var className = classANode.GetAttributeValue("title", "");
 
         // TODO: Support more types
-        if (!className.EndsWith("Class")) return;
+        if (!className.EndsWith("Class") && !className.EndsWith("Interface")) return;
 
         var clazz = new AlvaoClass(
             classLink,
             $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
             an.Name,
-            className.Replace("Class", "").Trim()
+            className.Replace("Class", "")
+                .Replace("Interface", "").Trim(),
+            className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
         );
         clazz.Process();
     }
