@@ -21,10 +21,11 @@ public class AlvaoClass
     public string Definition { get; set; } = "";
     public List<string> Usings { get; set; }
 
-    public List<string> Constructors { get; set; }
+    public List<string> Enums { get; set; }
     public List<string> Properties { get; set; }
     public List<string> Fields { get; set; }
-    public List<string> Enums { get; set; }
+    public List<string> Events { get; set; }
+    public List<string> Constructors { get; set; }
     public List<string> Methods { get; set; }
 
     public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name, ClassType type = ClassType.CLASS)
@@ -35,6 +36,7 @@ public class AlvaoClass
         Properties = [];
         Enums = [];
         Methods = [];
+        Events = [];
         Constructors = [];
         FullUrl = fullUrl;
         LocalHtmlFile = localHtmlFile;
@@ -136,6 +138,7 @@ public class AlvaoClass
         ProcessFields();
         ProcessConstructors();
         ProcessMethods();
+        ProcessEvents();
 
         State.Classes.Add($"{NamespaceName}.{Name}", this);
 
@@ -203,6 +206,33 @@ public class AlvaoClass
         }
     }
 
+    private void ProcessEvents()
+    {
+
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
+        if (elements == null) return;
+
+        foreach (var e in elements)
+        {
+            var _name = Helpers.ExtractObjectName(e);
+            Console.WriteLine($"    Processing {_name} Method");
+
+            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
+            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
+            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
+            if (!_link.StartsWith("https://doc.alvao")) continue;
+            if (!_link.EndsWith(".htm")) continue;
+
+            var _document = Helpers.LoadDocument(_link, _localHtml);
+
+            var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            if (_definition == null) continue;
+            _definition = _definition.Replace("&lt;", "<").Replace("&gt;", ">");
+
+            Events.Add($"{_definition}");
+        }
+    }
+
     public void ProduceFinalCsFile()
     {
         var sb = new StringBuilder();
@@ -221,6 +251,7 @@ public class AlvaoClass
         Enums.ForEach(el => sb.AppendLine($"    {el}"));
         Properties.ForEach(el => sb.AppendLine($"    {el}"));
         Fields.ForEach(el => sb.AppendLine($"    {el};"));
+        Events.ForEach(el => sb.AppendLine($"    {el};"));
         Constructors.ForEach(el => sb.AppendLine($"    {el} {{}}"));
         Methods.ForEach((el) =>
         {
