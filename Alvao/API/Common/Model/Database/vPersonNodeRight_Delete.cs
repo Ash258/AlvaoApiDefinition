@@ -1,8 +1,0 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace Alvao.API.Common.Model.Database;
-
-[TableAttribute("dbo.vPersonNodeRight_Delete")]
-public class vPersonNodeRight_Delete
-{
-}
