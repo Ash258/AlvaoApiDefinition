@@ -21,6 +21,11 @@ public class AlvaoNamespace
         FQDN = fQDN;
         Folder = $"{Name.Replace(".", "/")}";
         HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
+
+        if (!Directory.Exists(Folder))
+        {
+            Directory.CreateDirectory(Folder);
+        }
     }
 
     internal void Process()
