@@ -15,11 +15,11 @@ public class AlvaoClass
     public string Definition { get; set; } = "";
     public List<string> Usings { get; set; }
 
-    public Dictionary<string, string>? Constructors { get; set; }
+    public List<string> Constructors { get; set; }
     public List<string> Properties { get; set; }
     public List<string> Fields { get; set; }
     public List<string> Enums { get; set; }
-    public Dictionary<string, string>? Methods { get; set; }
+    public List<string> Methods { get; set; }
 
     public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name)
     {
@@ -27,6 +27,8 @@ public class AlvaoClass
         Fields = [];
         Properties = [];
         Enums = [];
+        Methods = [];
+        Constructors = [];
         FullUrl = fullUrl;
         LocalHtmlFile = localHtmlFile;
         NamespaceName = namespaceName;
@@ -62,6 +64,9 @@ public class AlvaoClass
             if (propDef == null) continue;
             propDef = propDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
+            // if (Definition.Contains("IDbContextProvider")) Usings.Add();
+            if (propDef.Contains("HttpStatusCode")) Usings.Add("System.Net");
+            if (propDef.Contains("CultureInfo")) Usings.Add("System.Globalization");
             if (propDef.Contains("JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
             if (propDef.Contains("JsonIgnoreAttribute")) Usings.Add("Newtonsoft.Json");
             if (propDef.Contains("KeyAttribute")) Usings.Add("Dapper.Contrib.Extensions");
@@ -111,7 +116,7 @@ public class AlvaoClass
         Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
         Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
 
-        if (Definition.Contains("TableAttribute(")) Usings.Add("System.ComponentModel.DataAnnotations.Schema");
+        if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
         if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
         if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
         if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
@@ -120,11 +125,25 @@ public class AlvaoClass
         ProcessFields();
         // TODO: Process constructors
         // TODO: Process methods
+        ProcessMethods();
 
 
         State.Classes.Add($"{NamespaceName}.{Name}", this);
 
         ProduceFinalCsFile();
+    }
+
+    private void ProcessMethods()
+    {
+        if (Definition.Contains("IEquatable<EmailModel>"))
+        {
+            Methods.Add(@"
+                public bool Equals(EmailModel? other)
+                {
+                    throw new NotImplementedException();
+                }
+            ");
+        }
     }
 
     public void ProduceFinalCsFile()
@@ -142,10 +161,12 @@ public class AlvaoClass
 
         sb.AppendLine(Definition);
         sb.AppendLine("{");
+        Enums.ForEach(el => sb.AppendLine($"    {el}"));
         Properties.ForEach(el => sb.AppendLine($"    {el}"));
         Fields.ForEach(el => sb.AppendLine($"    {el};"));
         // TODO: Constructors
         // TODO: Methods
+        Methods.ForEach(el => sb.AppendLine($"    {el}"));
         sb.AppendLine("}");
 
         File.WriteAllText(FinalCsFile, sb.ToString());

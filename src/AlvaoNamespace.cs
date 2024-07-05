@@ -26,7 +26,11 @@ public class AlvaoNamespace
     internal void Process()
     {
         ProcessClases();
+        ProcessEnums();
+    }
 
+    private void ProcessEnums()
+    {
         var enums = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"enumerationList\"]/tr/td[2]/a");
         if (enums == null) return;
 
@@ -35,7 +39,6 @@ public class AlvaoNamespace
             var enumName = Helpers.ExtractObjectName(e);
             Console.WriteLine($"  Processing {enumName} Enum");
 
-            continue;
             var enumHtmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var enumLink = $"{Helpers.BASE_HTML_URL}/{enumHtmlBaseFileName}";
             var enumLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{enumHtmlBaseFileName}";
@@ -48,21 +51,39 @@ public class AlvaoNamespace
             enumDef = enumDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
             var members = enumDocument.DocumentNode.SelectNodes("//table[@id='enumMemberList']/tr");
-
             var sb = new StringBuilder();
-            sb.AppendLine($"namespace {Name};");
-            sb.AppendLine("");
+
             sb.AppendLine(enumDef);
             sb.AppendLine("{");
             foreach (var m in members.TakeLast(members.Count - 1))
             {
                 var name = m.SelectSingleNode(".//td[1]").InnerText.Trim();
                 var value = m.SelectSingleNode(".//td[2]").InnerText.Trim();
+                if (value.Contains(",")) value = value.Replace(",", "_");
                 sb.AppendLine($"    {name} = {value},");
             }
             sb.AppendLine("}");
+            // It is class level enum
+            if (enumName.Contains('.'))
+            {
+                var key = $"{Name}.{enumName.Split(".").First()}";
+                var clazzToUpdate = State.Classes.FirstOrDefault(el => el.Key.Equals(key)).Value;
+                if (clazzToUpdate == null)
+                {
+                    continue;
+                }
 
-            File.WriteAllText($"{Folder}/{enumName}.cs", sb.ToString());
+                clazzToUpdate.Enums.Add(sb.ToString());
+                clazzToUpdate.ProduceFinalCsFile();
+            }
+            else
+            {
+                sb.Insert(0, Environment.NewLine);
+                sb.Insert(0, Environment.NewLine);
+                sb.Insert(0, $"namespace {Name};");
+
+                File.WriteAllText($"{Folder}/{enumName}.cs", sb.ToString());
+            }
         }
     }
 

@@ -27,12 +27,12 @@ public static class Helpers
         return doc;
     }
 
-    internal static object ExtractObjectName(HtmlNode node)
+    internal static string ExtractObjectName(HtmlNode node)
     {
         var name = "";
         if (node.HasChildNodes)
         {
-            var span = node.SelectSingleNode(".//span").GetAttributeValue("data-languagespecifictext", ".");
+            var span = node.SelectSingleNode(".//span")?.GetAttributeValue("data-languagespecifictext", ".");
             if (span != null)
             {
                 var dot = span.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
