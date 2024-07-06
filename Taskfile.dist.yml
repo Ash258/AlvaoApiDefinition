@@ -1,6 +1,8 @@
 version: '3.0'
 
 tasks:
+  test:
+    cmd: dotnet run -- test
   tidy:
     ignore_error: true
     aliases:
