@@ -1,11 +1,11 @@
 using AlvaoScapper;
 
 string[] alvaoNamespace = {
-    "Alvao.API.AI",
     "Alvao.API.AI.Model",
     "Alvao.API.AI.Utils",
-    "Alvao.API.AM",
+    "Alvao.API.AI",
     "Alvao.API.AM.Exceptions",
+    "Alvao.API.AM",
     "Alvao.API.AM.Model",
     "Alvao.API.Common",
     "Alvao.API.Common.Exceptions",
