@@ -79,11 +79,11 @@ public class AlvaoClass
             if (propDef == null) continue;
             propDef = propDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
-            // if (Definition.Contains("IDbContextProvider")) Usings.Add();
-            if (propDef.Contains("IDbConnection ")) Usings.Add("System.Data");
-            if (propDef.Contains("SqlConnection ")) Usings.Add("Microsoft.Data.SqlClient");
-            if (propDef.Contains("HttpStatusCode ")) Usings.Add("System.Net");
-            if (propDef.Contains("CultureInfo ")) Usings.Add("System.Globalization");
+            if (propDef.Contains(" IDbContextProvider ")) Usings.Add("Volo.Abp.EntityFrameworkCore");
+            if (propDef.Contains(" IDbConnection ")) Usings.Add("System.Data");
+            if (propDef.Contains(" SqlConnection ")) Usings.Add("Microsoft.Data.SqlClient");
+            if (propDef.Contains(" HttpStatusCode ")) Usings.Add("System.Net");
+            if (propDef.Contains(" CultureInfo ")) Usings.Add("System.Globalization");
             if (propDef.Contains("[JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
             if (propDef.Contains("[JsonIgnoreAttribute]")) Usings.Add("Newtonsoft.Json");
             if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
@@ -347,12 +347,12 @@ public class AlvaoClass
 
         Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
 
-        if (Fields.Count > 0 || Events.Count > 0 || Properties.Count > 0 || Constructors.Count > 0) sb.AppendLine("");
         Methods.ForEach((el) =>
         {
             var del = Type == ClassType.CLASS
                 ? " { throw new System.NotImplementedException(); }"
                 : ";";
+            sb.AppendLine("");
             sb.AppendLine($"    {Helpers.PrefixEachLineSpaces(el)}{del}");
         });
         sb.AppendLine("}");
@@ -367,15 +367,13 @@ public class AlvaoClass
         var classLink = $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}";
         var className = classANode.GetAttributeValue("title", "");
 
-        // TODO: Support more types
         if (!className.EndsWith("Class") && !className.EndsWith("Interface")) return;
 
         var clazz = new AlvaoClass(
             classLink,
             $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
             an.Name,
-            className.Replace("Class", "")
-                .Replace("Interface", "").Trim(),
+            className.Replace("Class", "").Replace("Interface", "").Trim(),
             className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
         );
         clazz.Process();

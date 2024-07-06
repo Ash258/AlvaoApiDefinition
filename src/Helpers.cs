@@ -48,7 +48,7 @@ public static class Helpers
             name = node.InnerText;
         }
 
-        return name.Replace("&lt;", "<").Replace("&gt;", ">");
+        return SanitizeXmlToString(name);
     }
 
     internal static string PrefixEachLineSpaces(string el)
