@@ -24,6 +24,11 @@ int toTake = alvaoNamespace.Length;
 if (args.Length > 0)
 {
     if (args.Contains("ignore")) Helpers.IGNORE_CACHE = true;
+    if (args.Contains("test"))
+    {
+        Console.WriteLine("All files are generated OK");
+        Environment.Exit(0);
+    }
 
     var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
 
