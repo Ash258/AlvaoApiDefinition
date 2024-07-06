@@ -19,14 +19,19 @@ string[] alvaoNamespace = {
 };
 
 
+string[] filter = [];
 int toTake = alvaoNamespace.Length;
 if (args.Length > 0)
 {
     if (args.Contains("ignore")) Helpers.IGNORE_CACHE = true;
-    if (args.Contains("single")) toTake = 1;
+
+    var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
+
+    filter = args.TakeLast(_l).ToArray();
+    alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
 }
 
-foreach (var ns in alvaoNamespace.TakeLast(toTake))
+foreach (var ns in alvaoNamespace)
 {
     Console.WriteLine($"Processing {ns} Namespace");
     var namespaceUrl = $"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm";

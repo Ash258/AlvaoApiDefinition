@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
 namespace AlvaoScapper;
@@ -86,7 +87,15 @@ public class AlvaoClass
             if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
             if (propDef.Contains("[ComputedAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
 
-            Properties.Add($"{propDef}");
+            var _s = propDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+            if (_s != null)
+            {
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                propDef = @$"/// <summary>{_s}</summary>
+                {propDef}";
+            }
+
+            Properties.Add(propDef);
         }
     }
 
@@ -121,6 +130,15 @@ public class AlvaoClass
                 fieldDef = fieldDef.Replace("= \"", "= @\"");
             }
 
+            var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
+            if (_s != null)
+            {
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                fieldDef = @$"/// <summary>{_s}</summary>
+                /// <see href=""{fieldLink}""/>
+                {fieldDef}";
+            }
+
             Fields.Add($"{fieldDef}");
         }
     }
@@ -150,7 +168,7 @@ public class AlvaoClass
 
     private void ProcessSummary()
     {
-        var _s = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
+        var _s = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
         if (_s == null) return;
 
         Summary = _s;
@@ -177,7 +195,16 @@ public class AlvaoClass
             if (constrDef == null) continue;
             constrDef = constrDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
-            Constructors.Add($"{constrDef}");
+            var _s = constrDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+            if (_s != null)
+            {
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                constrDef = @$"/// <summary>{_s}</summary>
+                /// <see href=""{constrLink}""/>
+                {constrDef}";
+            }
+
+            Constructors.Add(constrDef);
         }
     }
 
@@ -201,9 +228,35 @@ public class AlvaoClass
 
             var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (_definition == null) continue;
-            _definition = _definition.Replace("&lt;", "<").Replace("&gt;", ">");
+            var _sb = new StringBuilder(_definition.Replace("&lt;", "<").Replace("&gt;", ">"));
 
-            Methods.Add($"{_definition}");
+            var _params = _document.DocumentNode.SelectSingleNode("//*[@id=\"IDBSection\"]/dl");
+            if (_params != null)
+            {
+                var _dts = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dt");
+                var _dds = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dd");
+
+                for (int i = _dts.Count - 1; i >= 0; i--)
+                {
+                    var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " "); ;
+                    var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
+                    if (_description == null) continue;
+
+                    _description = Regex.Replace(_description, @"\r?\n\s+", " ");
+
+                    _sb.Insert(0, $"/// <param name=\"{_var}\">{_description}</param>{Environment.NewLine}");
+                }
+            }
+
+            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+            if (_s != null)
+            {
+                _sb.Insert(0, $"/// <see href=\"{_link}\"/>{Environment.NewLine}");
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                _sb.Insert(0, $"/// <summary>{_s}</summary>{Environment.NewLine}");
+            }
+
+            Methods.Add(_sb.ToString());
         }
 
         if (Definition.Contains("IEquatable<EmailModel>"))
@@ -240,7 +293,16 @@ public class AlvaoClass
             if (_definition == null) continue;
             _definition = _definition.Replace("&lt;", "<").Replace("&gt;", ">");
 
-            Events.Add($"{_definition}");
+            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
+            if (_s != null)
+            {
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                _definition = @$"/// <summary>{_s}</summary>
+                /// <see href=""{_link}""/>
+                {_definition}";
+            }
+
+            Events.Add(_definition);
         }
     }
 
@@ -262,6 +324,7 @@ public class AlvaoClass
             sb.AppendLine("/// <summary>");
             sb.AppendLine($"/// {Summary}");
             sb.AppendLine("/// </summary>");
+            sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
         }
         sb.AppendLine(Definition);
         sb.AppendLine("{");
