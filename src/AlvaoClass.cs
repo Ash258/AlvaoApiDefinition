@@ -132,7 +132,7 @@ public class AlvaoClass
                 fieldDef = fieldDef.Replace("= \"", "= @\"");
             }
 
-            var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
+            var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
                 _s = Regex.Replace(_s, @"\r?\n\s+", " ");
@@ -159,7 +159,9 @@ public class AlvaoClass
         var _ver = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
         if (_ver != null)
         {
-            State.Versions.Add(Regex.Replace(_ver.GetDirectInnerText(), @"^.*Version:\s+", ""));
+            var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
+            _v = _v.Replace("&nbsp;", "").Trim();
+            State.Versions.Add(_v);
         }
 
         ProcessSummary();
@@ -179,7 +181,7 @@ public class AlvaoClass
         var _s = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
         if (_s == null) return;
 
-        Summary = _s;
+        Summary = Regex.Replace(_s, @"\r?\n", "/// ");
     }
 
     private void ProcessConstructors()
@@ -269,12 +271,7 @@ public class AlvaoClass
 
         if (Definition.Contains("IEquatable<EmailModel>"))
         {
-            Methods.Add(@"
-                public bool Equals(EmailModel? other)
-                {
-                    throw new NotImplementedException();
-                }
-            ");
+            Methods.Add("public bool Equals(EmailModel? other)");
         }
     }
 
