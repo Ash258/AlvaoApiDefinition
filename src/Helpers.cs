@@ -53,16 +53,9 @@ public static class Helpers
 
     internal static string PrefixEachLineSpaces(string el)
     {
-        string _e = "";
-        if (el.Contains('\n'))
-        {
-            _e = string.Join("\n", el.Split('\n').Select(x => $"    {x}").ToArray());
-        }
-        else
-        {
-            _e = $"    {_e}";
-        }
+        return (el.Contains('\n')
+            ? string.Join("\n", el.Split('\n').Select(x => $"    {x}").ToArray())
+            : $"    {el}").TrimEnd('\n');
 
-        return _e.TrimEnd('\n');
     }
 }
