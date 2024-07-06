@@ -48,6 +48,21 @@ public static class Helpers
             name = node.InnerText;
         }
 
-        return name;
+        return name.Replace("&lt;", "<").Replace("&gt;", ">");
+    }
+
+    internal static string PrefixEachLineSpaces(string el)
+    {
+        string _e = "";
+        if (el.Contains('\n'))
+        {
+            _e = string.Join("\n", el.Split('\n').Select(x => $"    {x}").ToArray());
+        }
+        else
+        {
+            _e = $"    {_e}";
+        }
+
+        return _e.TrimEnd('\n');
     }
 }

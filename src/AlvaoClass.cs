@@ -333,17 +333,27 @@ public class AlvaoClass
         }
         sb.AppendLine(Definition);
         sb.AppendLine("{");
+
         Enums.ForEach(el => sb.AppendLine($"    {el}"));
+
+        if (Enums.Count > 0) sb.AppendLine("");
         Properties.ForEach(el => sb.AppendLine($"    {el}"));
+
+        if (Properties.Count > 0) sb.AppendLine("");
         Fields.ForEach(el => sb.AppendLine($"    {el};"));
+
+        if (Fields.Count > 0) sb.AppendLine("");
         Events.ForEach(el => sb.AppendLine($"    {el};"));
-        Constructors.ForEach(el => sb.AppendLine($"    {el} {{}}"));
+
+        Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
+
+        if (Fields.Count > 0 || Events.Count > 0 || Properties.Count > 0 || Constructors.Count > 0) sb.AppendLine("");
         Methods.ForEach((el) =>
         {
             var del = Type == ClassType.CLASS
                 ? " { throw new System.NotImplementedException(); }"
                 : ";";
-            sb.AppendLine($"    {el}{del}");
+            sb.AppendLine($"    {Helpers.PrefixEachLineSpaces(el)}{del}");
         });
         sb.AppendLine("}");
 
