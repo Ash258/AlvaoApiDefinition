@@ -13,6 +13,7 @@ public class AlvaoClass
     }
     public AlvaoNamespace Namespace { get; set; }
     public string NamespaceName { get; set; }
+    public string Version { get; set; }
     public string Name { get; set; }
     public string Summary { get; set; }
     public ClassType Type { get; set; }
@@ -35,6 +36,7 @@ public class AlvaoClass
         Type = type;
         Usings = [];
         Fields = [];
+        Version = "";
         Properties = [];
         Enums = [];
         Methods = [];
@@ -153,6 +155,12 @@ public class AlvaoClass
         if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
         if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
         if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
+
+        var _ver = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
+        if (_ver != null)
+        {
+            State.Versions.Add(Regex.Replace(_ver.GetDirectInnerText(), @"^.*Version:\s+", ""));
+        }
 
         ProcessSummary();
         ProcessProperties();

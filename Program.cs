@@ -49,4 +49,9 @@ foreach (var ns in alvaoNamespace)
     alvaoNs.Process();
 }
 
+var latest = State.Versions.Distinct().OrderDescending().ToArray();
+Console.WriteLine($"Unique versions: {latest.Length} ({string.Join(", ", latest)})");
+File.WriteAllText(".version", latest.First());
+
+Console.WriteLine("");
 Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");
