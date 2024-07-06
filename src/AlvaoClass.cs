@@ -13,6 +13,7 @@ public class AlvaoClass
     public AlvaoNamespace Namespace { get; set; }
     public string NamespaceName { get; set; }
     public string Name { get; set; }
+    public string Summary { get; set; }
     public ClassType Type { get; set; }
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
@@ -42,6 +43,7 @@ public class AlvaoClass
         LocalHtmlFile = localHtmlFile;
         NamespaceName = namespaceName;
         Name = name;
+        Summary = "";
         HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
         FinalCsFile = $"{namespaceName.Replace(".", "/")}/{name}.cs";
     }
@@ -134,6 +136,7 @@ public class AlvaoClass
         if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
         if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
 
+        ProcessSummary();
         ProcessProperties();
         ProcessFields();
         ProcessConstructors();
@@ -143,6 +146,14 @@ public class AlvaoClass
         State.Classes.Add($"{NamespaceName}.{Name}", this);
 
         ProduceFinalCsFile();
+    }
+
+    private void ProcessSummary()
+    {
+        var _s = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
+        if (_s == null) return;
+
+        Summary = _s;
     }
 
     private void ProcessConstructors()
@@ -246,6 +257,12 @@ public class AlvaoClass
         sb.AppendLine($"namespace {NamespaceName};");
         sb.AppendLine("");
 
+        if (!Summary.Equals(""))
+        {
+            sb.AppendLine("/// <summary>");
+            sb.AppendLine($"/// {Summary}");
+            sb.AppendLine("/// </summary>");
+        }
         sb.AppendLine(Definition);
         sb.AppendLine("{");
         Enums.ForEach(el => sb.AppendLine($"    {el}"));
