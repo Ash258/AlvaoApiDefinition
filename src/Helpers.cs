@@ -167,4 +167,9 @@ public static class Helpers
 
         return SanitizeXmlToString(definition);
     }
+
+    internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
+    {
+        return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
+    }
 }
