@@ -13,7 +13,6 @@ public static class Database
     }
 
 
-
     /// <summary>Returns database hash string</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Database_GetHash.htm"/>
     public static string GetHash() { throw new System.NotImplementedException(); }

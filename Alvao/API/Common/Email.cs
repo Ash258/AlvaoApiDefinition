@@ -16,7 +16,6 @@ public static class Email
     }
 
 
-
     /// <summary>Queues mail message by inserting it into database.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Email_Queue.htm"/>
     /// <param name="message">Message to queue</param>

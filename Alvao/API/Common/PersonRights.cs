@@ -70,7 +70,6 @@ public static class PersonRights
     }
 
 
-
     /// <summary>Returns whether user can read particular user.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_CanReadPerson.htm"/>
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>

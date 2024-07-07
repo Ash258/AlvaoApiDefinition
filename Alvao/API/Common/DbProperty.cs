@@ -59,5 +59,4 @@ public static class DbProperty
     public static bool WebApp_Settings_InstallApplications_ShowAmAgentLink { get; set; }
     public static bool WebApp_ShowWarningForAdmins { get; set; }
     public static string WebAppUrl { get; set; }
-
 }

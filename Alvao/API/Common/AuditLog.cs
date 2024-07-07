@@ -48,7 +48,6 @@ public static class AuditLog
     }
 
 
-
     /// <summary>Creates system block.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_AuditLog_CreateSystemBlockModel.htm"/>
     public static AuditSystemBlockModel CreateSystemBlockModel() { throw new System.NotImplementedException(); }
