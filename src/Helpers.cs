@@ -88,21 +88,6 @@ public static class Helpers
         return val;
     }
 
-    public static string? ExtractMethodDef(HtmlDocument document)
-    {
-        var node = document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']");
-        if (node == null) return null;
-
-        if (!node.HasChildNodes) return SanitizeXmlToString(node.InnerText);
-
-        foreach (var ch in node.ChildNodes.Where(el => el.OriginalName.Equals("pre")))
-        {
-            Console.WriteLine($"A: {ch.ChildNodes}");
-        }
-
-        return SanitizeXmlToString(node.InnerText);
-    }
-
     public static string ExtractObjectName(HtmlNode node)
     {
         string name;
