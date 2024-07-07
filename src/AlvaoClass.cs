@@ -116,6 +116,12 @@ public class AlvaoClass
             if (!propLink.EndsWith(".htm")) continue;
 
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
+            var _summary = Helpers.GetSummary(propDocument);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
+            var _sb = new StringBuilder();
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(propLink));
+
             var propDef = Helpers.ExtractObjectDefinition(propDocument);
             if (propDef == null) continue;
 
@@ -136,17 +142,7 @@ public class AlvaoClass
             if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
             if (propDef.Contains("[ComputedAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
 
-            var _sb = new StringBuilder();
-            var _s = propDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                _s = Helpers.ReplaceEndLinesWithSpace(_s);
-                _sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
-
-            _sb.AppendLine($"/// <see href=\"{propLink}\"/>");
             _sb.AppendLine(propDef);
-
             Properties.Add(_sb.ToString());
         }
     }
@@ -168,24 +164,21 @@ public class AlvaoClass
             if (!fieldLink.EndsWith(".htm")) continue;
 
             var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
+            var _summary = Helpers.GetSummary(fieldDocument);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
+            var _sb = new StringBuilder();
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(fieldLink));
 
             var fieldDef = Helpers.ExtractObjectDefinition(fieldDocument);
             if (fieldDef == null) continue;
             fieldDef = Helpers.SanitizeXmlToString(fieldDef);
 
+            // TODO: Drop
             if (fieldName.Equals("EmailFormat")) fieldDef = fieldDef.Replace("\"]", "\"\"]");
             if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName)) fieldDef = fieldDef.Replace("= \"", "= @\"");
 
-            var _sb = new StringBuilder();
-            var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                _s = Helpers.ReplaceEndLinesWithSpace(_s);
-                _sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
-            _sb.AppendLine($"/// <see href=\"{fieldLink}\"/>");
             _sb.AppendLine(fieldDef);
-
             Fields.Add(_sb.ToString());
         }
     }
