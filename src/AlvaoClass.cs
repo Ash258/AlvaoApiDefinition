@@ -71,8 +71,6 @@ public class AlvaoClass
     public void Process()
     {
         Console.WriteLine($"  Processing {Name} Class");
-        Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
-        Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
 
         // TODO: Drop
         if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("Activation")) return;
@@ -80,6 +78,11 @@ public class AlvaoClass
         if (NamespaceName.Equals("Alvao.API.SD") && Name.Equals("CustomApps")) return;
         if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
         if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
+
+        var _def = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+        if (_def == null) return;
+
+        Definition = Helpers.SanitizeXmlToString(_def);
 
         Helpers.ProcessVersion(HtmlDocument);
         ProcessProperties();
@@ -90,8 +93,6 @@ public class AlvaoClass
 
         // TODO: Drop
         MonkeyPatching();
-
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
 
         ProduceFinalCsFile();
     }
@@ -511,6 +512,8 @@ public class AlvaoClass
 
     public void ProduceFinalCsFile()
     {
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
+
         var sb = new StringBuilder();
 
         if (Usings.Count != 0)
