@@ -69,6 +69,13 @@ public static class Helpers
             : TrimEndNewLine($"    {el}");
     }
 
+    public static string GenerateMethodBody(AlvaoClass.ClassType type)
+    {
+        return type == AlvaoClass.ClassType.CLASS
+            ? " { throw new System.NotImplementedException(); }"
+            : ";";
+    }
+
     internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
     {
         return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);

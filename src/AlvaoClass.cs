@@ -285,7 +285,7 @@ public class AlvaoClass
             // TODO: Drop
             _definition = MonkeyPatch.Methods(this, _name, _definition);
 
-            _sb.AppendLine(_definition);
+            _sb.AppendLine($"{_definition}{Helpers.GenerateMethodBody(Type)}");
             Methods.Add(_sb.ToString());
         }
     }
@@ -318,11 +318,8 @@ public class AlvaoClass
 
         Methods.ForEach((el) =>
         {
-            var del = Type == ClassType.CLASS
-                ? " { throw new System.NotImplementedException(); }"
-                : ";";
             sb.AppendLine("");
-            sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}{del}");
+            sb.AppendLine(Helpers.PrefixEachLineSpaces(el));
         });
         sb.AppendLine("}");
 
