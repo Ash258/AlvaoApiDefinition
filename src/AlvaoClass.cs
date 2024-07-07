@@ -94,6 +94,8 @@ public class AlvaoClass
         // TODO: Drop
         MonkeyPatching();
 
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
+
         ProduceFinalCsFile();
     }
 
@@ -270,7 +272,6 @@ public class AlvaoClass
         foreach (var e in elements)
         {
             var _name = Helpers.ExtractObjectName(e);
-            Console.WriteLine($"    Processing {_name} Method");
 
             // TODO: Drop
             if (emailQueueProcessed) continue;
@@ -279,6 +280,8 @@ public class AlvaoClass
             if (Helpers.IsClass(this, "Alvao.API.Common", "Email") && _name.Contains("Queue")) emailQueueProcessed = true;
             if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("Import")) continue;
             if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("ValidateBeforeImport")) continue;
+
+            Console.WriteLine($"    Processing {_name} Method");
 
             var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
@@ -317,51 +320,8 @@ public class AlvaoClass
             }
 
             _definition = Helpers.SanitizeXmlToString(_definition);
-
             // TODO: Drop
-            if (Helpers.IsClass(this, "Alvao.API.AM", "ObjectRight") && _name.Equals("CheckForUser"))
-                _definition = _definition.Replace(" ObjectRight.Right ", " Alvao.API.AM.Model.ObjectRight.Right ");
-            if (Helpers.IsClass(this, "Alvao.API.Common", "ProfileValue"))
-            {
-                switch (_name)
-                {
-                    case "Get":
-                    case "Delete":
-                    case "GetById":
-                        _definition = _definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
-                        break;
-                }
-            }
-            if (Helpers.IsClass(this, "Alvao.API.Common", "Webhook"))
-            {
-                switch (_name)
-                {
-                    case "Create":
-                    case "Delete":
-                    case "GetById":
-                        _definition = _definition.Replace(" Webhook ", " Alvao.API.Common.Model.Database.Webhook ");
-                        break;
-                    case "GetTopicById":
-                        _definition = _definition.Replace(" WebhookTopic ", " Alvao.API.Common.Model.Database.WebhookTopic ");
-                        break;
-                }
-            }
-            if (Helpers.IsClass(this, "Alvao.API.SD", "TicketState"))
-            {
-                switch (_name)
-                {
-                    case "GetFromProcess":
-                        _definition = _definition.Replace("<TicketState>", "<Alvao.API.Common.Model.Database.TicketState>");
-                        break;
-                    case "GetByBehaviorId":
-                    case "GetById":
-                    case "GetByName":
-                    case "GetCurrentStateByTicketId":
-                        _definition = _definition.Replace(" TicketState ", " Alvao.API.Common.Model.Database.TicketState ");
-                        break;
-                }
-            }
-
+            _definition = MonkeyPatch.Methods(this, _name, _definition);
             _sb.AppendLine(_definition);
 
             Methods.Add(_sb.ToString());
@@ -370,8 +330,6 @@ public class AlvaoClass
 
     public void ProduceFinalCsFile()
     {
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
-
         var sb = new StringBuilder();
 
         if (Usings.Count != 0)
