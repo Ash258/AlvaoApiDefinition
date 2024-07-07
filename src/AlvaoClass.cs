@@ -368,6 +368,47 @@ public class AlvaoClass
         }
     }
 
+    public void ProduceFinalCsFile()
+    {
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
+
+        var sb = new StringBuilder();
+
+        if (Usings.Count != 0)
+        {
+            Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
+            sb.AppendLine("");
+        }
+
+        sb.AppendLine($"namespace {NamespaceName};");
+        sb.AppendLine("");
+
+        if (!Summary.Equals("")) sb.AppendLine(Summary);
+        sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
+        sb.AppendLine(Definition);
+        sb.AppendLine("{");
+
+        Enums.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
+        Properties.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
+        Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+        Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+
+        if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
+        Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
+
+        Methods.ForEach((el) =>
+        {
+            var del = Type == ClassType.CLASS
+                ? " { throw new System.NotImplementedException(); }"
+                : ";";
+            sb.AppendLine("");
+            sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}{del}");
+        });
+        sb.AppendLine("}");
+
+        File.WriteAllText(FinalCsFile, sb.ToString());
+    }
+
     private void MonkeyPatching()
     {
         if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
@@ -508,46 +549,5 @@ public class AlvaoClass
                 }
                 break;
         }
-    }
-
-    public void ProduceFinalCsFile()
-    {
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
-
-        var sb = new StringBuilder();
-
-        if (Usings.Count != 0)
-        {
-            Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
-            sb.AppendLine("");
-        }
-
-        sb.AppendLine($"namespace {NamespaceName};");
-        sb.AppendLine("");
-
-        if (!Summary.Equals("")) sb.AppendLine(Summary);
-        sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
-        sb.AppendLine(Definition);
-        sb.AppendLine("{");
-
-        Enums.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
-        Properties.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
-        Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-        Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-
-        if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
-        Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
-
-        Methods.ForEach((el) =>
-        {
-            var del = Type == ClassType.CLASS
-                ? " { throw new System.NotImplementedException(); }"
-                : ";";
-            sb.AppendLine("");
-            sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}{del}");
-        });
-        sb.AppendLine("}");
-
-        File.WriteAllText(FinalCsFile, sb.ToString());
     }
 }
