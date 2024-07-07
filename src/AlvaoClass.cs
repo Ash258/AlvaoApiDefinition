@@ -200,6 +200,15 @@ public class AlvaoClass
                         break;
                 }
                 break;
+            case "Alvao.API.AM.Exceptions":
+                switch (Name)
+                {
+                    case "InvalidMoveException":
+                    case "InvalidBulkMoveException":
+                        Usings.Add("System.Runtime.Serialization");
+                        break;
+                }
+                break;
             case "Alvao.API.AM":
                 switch (Name)
                 {
