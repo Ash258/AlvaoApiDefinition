@@ -12,7 +12,6 @@ public static class Helpers
     public static string LOCAL_HTML_FOLDER = "html";
     public static bool IGNORE_CACHE = false;
 
-
     public static string GenerateSeeDoc(string link)
     {
         return $"/// <see href=\"{link}\"/>";
@@ -76,8 +75,7 @@ public static class Helpers
         if (_ver == null) return;
 
         var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
-        _v = _v.Replace("&nbsp;", "").Trim();
-        State.Versions.Add(_v);
+        State.Versions.Add(SanitizeXmlToString(_v));
     }
 
     // Extract value of languagespecifictext data attribute or inner text
