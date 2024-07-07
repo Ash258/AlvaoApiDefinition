@@ -206,12 +206,20 @@ public static class MonkeyPatch
 
     public static bool IsInvalidProperty(string namespaceName, string className, string property)
     {
-
-        return namespaceName switch
+        switch (namespaceName)
         {
-            "Alvao.API.AM.Model" => className.Equals("ImportCsvSettings") && property.Equals("TextOutput"),
-            "Alvao.Context" => new string[] { "AlvaoContext", "CustomApps" }.Contains(className) && property.Equals("DbContextProvider"),
-            _ => false,
-        };
+            case "Alvao.API.AM.Model":
+                if (className.Equals("ImportCsvSettings") && property.Equals("TextOutput"))
+                    return true;
+                break;
+            case "Alvao.Context":
+                if (new string[] { "AlvaoContext", "CustomApps" }.Contains(className) && property.Equals("DbContextProvider"))
+                    return true;
+                break;
+            default:
+                return false;
+        }
+
+        return false;
     }
 }
