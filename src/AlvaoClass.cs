@@ -190,6 +190,41 @@ public class AlvaoClass
                         break;
                 }
                 break;
+            case "Alvao.API.AM":
+                switch (Name)
+                {
+                    case "Installation":
+                    case "Product":
+                    case "ObjectRight":
+                    case "License":
+                    case "Object":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+
+                    case "ObjectProperty":
+                        Usings.AddRange(["Alvao.API.AM.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                }
+                break;
+            case "Alvao.API.SD.Model":
+                switch (Name)
+                {
+                    case "TicketProcessColumnModel":
+                    case "TicketTemplateColumnModel":
+                    case "InitialActSettings":
+                    case "RelatedTicketRuleModel":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+
+                    case "NewTicketModel":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+
+                    case "ChangeTicketStateSettingsModel":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                }
+                break;
             case "Alvao.API.Common":
                 switch (Name)
                 {
@@ -308,11 +343,6 @@ public class AlvaoClass
             }
 
             Methods.Add(_sb.ToString());
-        }
-
-        if (Definition.Contains("IEquatable<EmailModel>"))
-        {
-            Methods.Add("public bool Equals(EmailModel? other)");
         }
     }
 
