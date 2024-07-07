@@ -58,7 +58,7 @@ public class AlvaoClass
 
         foreach (var p in properties)
         {
-            var propName = p.InnerText;
+            var propName = Helpers.ExtractObjectName(p);
             Console.WriteLine($"    Processing {propName} Property");
 
             // TODO: Implement
@@ -75,8 +75,15 @@ public class AlvaoClass
             if (!propLink.EndsWith(".htm")) continue;
 
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
-            var propDef = propDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var propDef = Helpers.ExtractObjectDefinition(propDocument);
             if (propDef == null) continue;
+
+            // TODO: Drop
+            if (NamespaceName.Equals("Alvao.API.Common.Model") && Name.Equals("ColumnValue") && propName.Equals("DataType"))
+            {
+                propDef = propDef.Replace(" Database.ValueDataType ", " Alvao.API.Common.Database.ValueDataType ");
+            }
+
             propDef = Helpers.SanitizeXmlToString(propDef);
 
             // TODO: Drop
@@ -123,7 +130,7 @@ public class AlvaoClass
 
             var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
 
-            var fieldDef = fieldDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var fieldDef = Helpers.ExtractObjectDefinition(fieldDocument);
             if (fieldDef == null) continue;
             fieldDef = Helpers.SanitizeXmlToString(fieldDef);
 
@@ -174,9 +181,9 @@ public class AlvaoClass
         ProcessSummary();
         ProcessProperties();
         ProcessFields();
+        ProcessEvents();
         ProcessConstructors();
         ProcessMethods();
-        ProcessEvents();
 
         // TODO: Drop
         MonkeyPatching();
@@ -337,7 +344,7 @@ public class AlvaoClass
             var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
 
             var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
-            var constrDef = constrDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
             if (constrDef == null) continue;
 
             var _sb = new StringBuilder();
@@ -389,7 +396,7 @@ public class AlvaoClass
             }
             _sb.AppendLine($"/// <see href=\"{_link}\"/>");
 
-            var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
             if (_definition.Contains("ObsoleteAttribute")) continue;
 
@@ -436,7 +443,7 @@ public class AlvaoClass
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
 
-            var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
             var _sb = new StringBuilder();
 

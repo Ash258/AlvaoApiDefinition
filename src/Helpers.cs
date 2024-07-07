@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
@@ -27,46 +28,143 @@ public static class Helpers
         return doc;
     }
 
-
     public static string SanitizeXmlToString(string el)
     {
         return el.Replace("&lt;", "<").Replace("&gt;", ">").Trim();
     }
 
-    // TODO: Rework
-    internal static string ExtractObjectName(HtmlNode node)
+    public static string TrimEndNewLine(string el)
     {
-        var name = "";
-        if (node.HasChildNodes)
+        return el.TrimEnd().TrimEnd('\n').TrimEnd('\r').TrimEnd('\n').TrimEnd('\r');
+    }
+
+    public static string PrefixEachLineSpaces(string el)
+    {
+        return el.Contains('\n')
+            ? TrimEndNewLine(el.Split('\n').Select(x => $"    {TrimEndNewLine(x)}").ToArray().JoinAsString("\n"))
+            : TrimEndNewLine($"    {el}");
+    }
+
+    private static string ExtractLanguageSpecificValue(HtmlAttribute attr)
+    {
+        return attr.Value.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
+    }
+
+    // Extract value of languagespecifictext data attribute or inner text
+    private static string ExtractLanguageSpecificValue(HtmlNode node)
+    {
+        var attr = node.GetDataAttribute("languagespecifictext");
+        if (attr != null)
         {
-            var span = node.SelectSingleNode(".//span")?.GetAttributeValue("data-languagespecifictext", ".");
-            if (span != null)
+            var val = ExtractLanguageSpecificValue(attr);
+            return val;
+        }
+        else
+        {
+            return node.InnerText;
+        }
+    }
+
+    public static string? ExtractMethodDef(HtmlDocument document)
+    {
+        var node = document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']");
+        if (node == null) return null;
+
+        if (!node.HasChildNodes) return SanitizeXmlToString(node.InnerText);
+
+        foreach (var ch in node.ChildNodes.Where(el => el.OriginalName.Equals("pre")))
+        {
+            Console.WriteLine($"A: {ch.ChildNodes}");
+        }
+
+        return SanitizeXmlToString(node.InnerText);
+    }
+
+    public static string ExtractObjectName(HtmlNode node)
+    {
+        string name;
+
+        if (node.InnerHtml.Contains("data-languagespecifictext="))
+        {
+            var sb = new StringBuilder();
+            foreach (var ch in node.ChildNodes)
             {
-                var dot = span.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
-                name = Regex.Replace(node.InnerHtml, "<span.*</span>", dot);
+                switch (ch.Name)
+                {
+                    case "#text":
+                        sb.Append(ch.InnerText);
+                        break;
+                    case "span":
+                        sb.Append(ExtractLanguageSpecificValue(ch));
+                        break;
+                }
             }
-            else
-            {
-                name = node.InnerText;
-            }
+
+            name = sb.ToString();
         }
         else
         {
             name = node.InnerText;
         }
 
-        return SanitizeXmlToString(name);
+        return Regex.Replace(name, @"\r?\n\s+", " ");
     }
 
-    internal static string TrimEndNewLine(string el)
+    public static string? ExtractObjectDefinition(HtmlDocument node)
     {
-        return el.TrimEnd().TrimEnd('\n').TrimEnd('\r').TrimEnd('\n').TrimEnd('\r');
-    }
+        var nodeDef = node.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']/pre");
+        if (nodeDef == null)
+        {
+            nodeDef = node.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']");
+            if (nodeDef == null) return null;
+        }
 
-    internal static string PrefixEachLineSpaces(string el)
-    {
-        return el.Contains('\n')
-            ? TrimEndNewLine(el.Split('\n').Select(x => $"    {TrimEndNewLine(x)}").ToArray().JoinAsString("\n"))
-            : TrimEndNewLine($"    {el}");
+        string definition;
+
+        if (nodeDef.InnerHtml.Contains("data-languagespecifictext="))
+        {
+            var sb = new StringBuilder();
+            foreach (var ch in nodeDef.ChildNodes)
+            {
+                switch (ch.Name)
+                {
+                    case "#text":
+                        sb.Append(ch.InnerText);
+                        break;
+                    case "span":
+                        if (ch.ChildNodes.Count > 1)
+                        {
+
+                            foreach (var nestedChild in ch.ChildNodes)
+                            {
+                                string _val = "";
+                                switch (nestedChild.Name)
+                                {
+                                    case "#text":
+                                        _val = nestedChild.InnerText;
+                                        break;
+                                    case "span":
+                                        _val = ExtractLanguageSpecificValue(nestedChild);
+                                        break;
+                                }
+                                sb.Append(_val);
+                            }
+                        }
+                        else
+                        {
+                            sb.Append(ch.InnerText);
+                        }
+                        break;
+                }
+            }
+
+            definition = sb.ToString();
+        }
+        else
+        {
+            definition = nodeDef.InnerText;
+        }
+
+        return SanitizeXmlToString(definition);
     }
 }
