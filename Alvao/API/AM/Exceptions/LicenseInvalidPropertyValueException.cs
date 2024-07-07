@@ -16,6 +16,8 @@ public class LicenseInvalidPropertyValueException : LicenseException
         QuantityUnitAndObjectTypeCombination = 7,
         AvailableLicensesExceeded = 8,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Exceptions_LicenseInvalidPropertyValueException_Property.htm"/>
+    public LicenseInvalidPropertyValueException.LicenseProperty Property { get; set; }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_LicenseInvalidPropertyValueException__ctor.htm"/>
     public LicenseInvalidPropertyValueException() { }

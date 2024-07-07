@@ -1,3 +1,5 @@
+using Alvao.API.Common.Model.Database;
+
 namespace Alvao.API.Common;
 
 /// <summary>
@@ -6,6 +8,25 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Webhook.htm"/>
 public static class Webhook
 {
+
+    /// <summary>Creates new webhook and returns it's ID (Webhook.id).</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_Create.htm"/>
+    ///
+    /// <param name="webhook">Organization</param>
+    public static int Create(
+        Alvao.API.Common.Model.Database.Webhook webhook
+    )
+    { throw new System.NotImplementedException(); }
+
+    /// <summary>Deletes webhook from database.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_Delete.htm"/>
+    ///
+    /// <param name="webhook">Webhook database model to delete.</param>
+    public static bool Delete(
+        Alvao.API.Common.Model.Database.Webhook webhook
+    )
+    { throw new System.NotImplementedException(); }
+
     /// <summary>Disables webhook.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_Disable.htm"/>
     ///
@@ -21,6 +42,24 @@ public static class Webhook
     /// <param name="webhookId">Webhook ID (Webhook.id)</param>
     public static bool Enable(
         int webhookId
+    )
+    { throw new System.NotImplementedException(); }
+
+    /// <summary>Returns webhook database model by its ID.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_GetById.htm"/>
+    ///
+    /// <param name="webhookId">Webhook ID (Webhook.id)</param>
+    public static Alvao.API.Common.Model.Database.Webhook GetById(
+        int webhookId
+    )
+    { throw new System.NotImplementedException(); }
+
+    /// <summary>Returns webhook topic database model by its ID.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_GetTopicById.htm"/>
+    ///
+    /// <param name="topicId">Webhook topic ID (WebhookTopic.id)</param>
+    public static WebhookTopic GetTopicById(
+        int topicId
     )
     { throw new System.NotImplementedException(); }
 
