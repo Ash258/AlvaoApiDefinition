@@ -367,14 +367,18 @@ public class AlvaoClass
         var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"MethodList\"]/tr/td[2]/a");
         if (elements == null) return;
 
+        bool emailQueueProcessed = false;
+
         foreach (var e in elements)
         {
             var _name = Helpers.ExtractObjectName(e);
             Console.WriteLine($"    Processing {_name} Method");
 
             // TODO: Drop
+            if (emailQueueProcessed) continue;
             if (Helpers.IsClass(this, "Alvao.API.Common.Model", "AttachmentModel") && _name.Equals("SaveToDB")) continue;
             if (Helpers.IsClass(this, "Alvao.API.Common.Model", "HtmlTextModel") && _name.Equals("AddAttachmentsBasedOnTemplate")) continue;
+            if (Helpers.IsClass(this, "Alvao.API.Common", "Email") && _name.Contains("Queue")) emailQueueProcessed = true;
             if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("Import")) continue;
             if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("ValidateBeforeImport")) continue;
 
@@ -425,6 +429,31 @@ public class AlvaoClass
             // TODO: Drop
             if (Helpers.IsClass(this, "Alvao.API.AM", "ObjectRight") && _name.Equals("CheckForUser"))
                 _definition = _definition.Replace(" ObjectRight.Right ", " Alvao.API.AM.Model.ObjectRight.Right ");
+            if (Helpers.IsClass(this, "Alvao.API.Common", "ProfileValue"))
+            {
+                switch (_name)
+                {
+                    case "Get":
+                    case "Delete":
+                    case "GetById":
+                        _definition = _definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
+                        break;
+                }
+            }
+            if (Helpers.IsClass(this, "Alvao.API.Common", "Webhook"))
+            {
+                switch (_name)
+                {
+                    case "Create":
+                    case "Delete":
+                    case "GetById":
+                        _definition = _definition.Replace(" Webhook ", " Alvao.API.Common.Model.Database.Webhook ");
+                        break;
+                    case "GetTopicById":
+                        _definition = _definition.Replace(" WebhookTopic ", " Alvao.API.Common.Model.Database.WebhookTopic ");
+                        break;
+                }
+            }
             if (Helpers.IsClass(this, "Alvao.API.SD", "TicketState"))
             {
                 switch (_name)
