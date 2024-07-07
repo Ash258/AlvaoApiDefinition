@@ -192,4 +192,26 @@ public static class MonkeyPatch
                 break;
         }
     }
+
+    public static bool IsInvalidClass(string namespaceName, string className)
+    {
+        return namespaceName switch
+        {
+            "Alvao.API.Common" => new string[] { "Activation", "CustomApps" }.Contains(className),
+            "Alvao.API.SD" => new string[] { "CustomApps" }.Contains(className),
+            "Alvao.API.AM" => new string[] { "CustomApps", "ImportCsv" }.Contains(className),
+            _ => false,
+        };
+    }
+
+    public static bool IsInvalidProperty(string namespaceName, string className, string property)
+    {
+
+        return namespaceName switch
+        {
+            "Alvao.API.AM.Model" => className.Equals("ImportCsvSettings") && property.Equals("TextOutput"),
+            "Alvao.Context" => new string[] { "AlvaoContext", "CustomApps" }.Contains(className) && property.Equals("DbContextProvider"),
+            _ => false,
+        };
+    }
 }

@@ -67,7 +67,7 @@ public class AlvaoClass
         Console.WriteLine($"  Processing {Name} Class");
 
         // TODO: Drop
-        if (Helpers.IsInvalidClass(NamespaceName, Name)) return;
+        if (MonkeyPatch.IsInvalidClass(NamespaceName, Name)) return;
 
         var _def = Helpers.ExtractObjectDefinition(HtmlDocument);
         if (_def == null) return;
@@ -98,8 +98,7 @@ public class AlvaoClass
             Console.WriteLine($"    Processing {propName} Property");
 
             // TODO: Drop
-            if (Helpers.IsClass(this, "Alvao.Context", "AlvaoContext") && propName.Equals("DbContextProvider")) continue;
-            if (Helpers.IsClass(this, "Alvao.API.AM.Model", "ImportCsvSettings") && propName.Equals("TextOutput")) continue;
+            if (MonkeyPatch.IsInvalidProperty(NamespaceName, Name, propName)) return;
 
             var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
             var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
