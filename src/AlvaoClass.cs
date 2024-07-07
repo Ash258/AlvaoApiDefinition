@@ -73,11 +73,7 @@ public class AlvaoClass
         Console.WriteLine($"  Processing {Name} Class");
 
         // TODO: Drop
-        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("Activation")) return;
-        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.SD") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
+        if (Helpers.IsInvalidClass(NamespaceName, Name)) return;
 
         var _def = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
         if (_def == null) return;

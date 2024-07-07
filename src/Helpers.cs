@@ -200,4 +200,15 @@ public static class Helpers
 
         return SanitizeXmlToString(definition);
     }
+
+    public static bool IsInvalidClass(string namespaceName, string className)
+    {
+        return namespaceName switch
+        {
+            "Alvao.API.Common" => new string[] { "Activation", "CustomApps" }.Contains(className),
+            "Alvao.API.SD" => new string[] { "CustomApps" }.Contains(className),
+            "Alvao.API.AM" => new string[] { "CustomApps", "ImportCsv" }.Contains(className),
+            _ => false,
+        };
+    }
 }
