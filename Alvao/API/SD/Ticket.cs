@@ -200,46 +200,6 @@ public static class Ticket
     )
     { throw new System.NotImplementedException(); }
 
-    /// <summary>Changes ticket solver or returns it to main solver.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolver.htm"/>
-    ///
-    /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
-    /// <param name="newSolverId">Person ID of new solver. Null means that ticket is returned to main solver.</param>
-    /// <param name="message">Message for solver</param>
-    /// <param name="cost">Costs</param>
-    /// <param name="authorPersonId">Person ID of change author. In case of null, current user will be used.</param>
-    /// <param name="flags">Flags for special cases.</param>
-    [ObsoleteAttribute("Use ChangeSolverOrGroup instead.")]
-    public static int ChangeSolver(
-        int ticketId,
-        int? newSolverId,
-        HtmlTextModel message,
-        CostModel cost = null,
-        int? authorPersonId = null,
-        Ticket.ChangeSolverFlags flags = Ticket.ChangeSolverFlags.None
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Changes ticket solver group or returns it to main solver.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolverGroup.htm"/>
-    ///
-    /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
-    /// <param name="newSolverGroupId">Role ID of new solver group. Null means that ticket is returned to main solver.</param>
-    /// <param name="message">Message for solver group</param>
-    /// <param name="cost">Costs</param>
-    /// <param name="authorPersonId">Person ID of change author. In case of null, current user will be used.</param>
-    /// <param name="flags">Flags for special cases.</param>
-    [ObsoleteAttribute("Use ChangeSolverOrGroup instead.")]
-    public static int ChangeSolverGroup(
-        int ticketId,
-        int? newSolverGroupId,
-        HtmlTextModel message,
-        CostModel cost = null,
-        int? authorPersonId = null,
-        Ticket.ChangeSolverFlags flags = Ticket.ChangeSolverFlags.None
-    )
-    { throw new System.NotImplementedException(); }
-
     /// <summary>Changes ticket solver, solver group or returns it to main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolverOrGroup.htm"/>
     ///
