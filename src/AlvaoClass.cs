@@ -79,6 +79,7 @@ public class AlvaoClass
             if (propDef == null) continue;
             propDef = Helpers.SanitizeXmlToString(propDef);
 
+            // TODO: Drop
             if (propDef.Contains(" IDbContextProvider ")) Usings.Add("Volo.Abp.EntityFrameworkCore");
             if (propDef.Contains(" IDbConnection ")) Usings.Add("System.Data");
             if (propDef.Contains(" SqlConnection ")) Usings.Add("Microsoft.Data.SqlClient");
@@ -149,6 +150,14 @@ public class AlvaoClass
         Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
         Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
 
+        // TODO: Drop
+        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("Activation")) return;
+        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.SD") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
+
+        // TODO: Drop
         if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
         if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
         if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
@@ -169,6 +178,7 @@ public class AlvaoClass
         ProcessMethods();
         ProcessEvents();
 
+        // TODO: Drop
         MonkeyPatching();
 
         State.Classes.Add($"{NamespaceName}.{Name}", this);
@@ -339,6 +349,7 @@ public class AlvaoClass
             }
 
             constrDef = Helpers.SanitizeXmlToString(constrDef);
+            // TODO: Drop
             if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
             if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
 
