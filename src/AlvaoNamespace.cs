@@ -53,7 +53,7 @@ public class AlvaoNamespace
 
             var enumDocument = Helpers.LoadDocument(enumLink, enumLocalHtml);
 
-            var enumDef = enumDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+            var enumDef = Helpers.ExtractObjectDefinition(enumDocument);
             if (enumDef == null) continue;
             enumDef = Helpers.SanitizeXmlToString(enumDef);
 
@@ -74,7 +74,7 @@ public class AlvaoNamespace
             {
                 var name = m.SelectSingleNode(".//td[1]").InnerText.Trim();
                 var value = m.SelectSingleNode(".//td[2]").InnerText.Trim();
-                if (value.Contains(",")) value = value.Replace(",", "_");
+                if (value.Contains(',')) value = value.Replace(",", "_");
                 sb.AppendLine($"    {name} = {value},");
             }
             sb.AppendLine("}");
@@ -84,10 +84,7 @@ public class AlvaoNamespace
             {
                 var key = $"{Name}.{enumName.Split(".").First()}";
                 var clazzToUpdate = State.Classes.FirstOrDefault(el => el.Key.Equals(key)).Value;
-                if (clazzToUpdate == null)
-                {
-                    continue;
-                }
+                if (clazzToUpdate == null) continue;
 
                 clazzToUpdate.Enums.Add(sb.ToString());
                 clazzToUpdate.ProduceFinalCsFile();

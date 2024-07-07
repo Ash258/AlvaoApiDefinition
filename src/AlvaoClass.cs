@@ -371,6 +371,7 @@ public class AlvaoClass
         {
             var _name = Helpers.ExtractObjectName(e);
             Console.WriteLine($"    Processing {_name} Method");
+
             // TODO: Drop
             if (Helpers.IsClass(this, "Alvao.API.Common.Model", "AttachmentModel") && _name.Equals("SaveToDB")) continue;
             if (Helpers.IsClass(this, "Alvao.API.Common.Model", "HtmlTextModel") && _name.Equals("AddAttachmentsBasedOnTemplate")) continue;
