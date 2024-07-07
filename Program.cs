@@ -40,15 +40,9 @@ if (args.Length > 0)
 foreach (var ns in alvaoNamespace)
 {
     Console.WriteLine($"Processing {ns} Namespace");
-    var namespaceUrl = $"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm";
 
-    AlvaoNamespace alvaoNs = new AlvaoNamespace(
-        namespaceUrl,
-        ns
-    );
-
+    AlvaoNamespace alvaoNs = new AlvaoNamespace($"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm", ns);
     State.Namespaces.Add(ns, alvaoNs);
-
     alvaoNs.Process();
 }
 
