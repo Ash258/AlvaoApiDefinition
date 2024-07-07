@@ -471,8 +471,8 @@ public class AlvaoClass
             sb.AppendLine("/// <summary>");
             sb.AppendLine($"/// {Summary}");
             sb.AppendLine("/// </summary>");
-            sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
         }
+        sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
         sb.AppendLine(Definition);
         sb.AppendLine("{");
 
