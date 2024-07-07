@@ -24,6 +24,19 @@ public static class ProfileValue
     )
     { throw new System.NotImplementedException(); }
 
+    /// <summary>Returns ProfileValue row.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_Get.htm"/>
+    ///
+    /// <param name="personId">Person ID (tPerson.iPersonId)</param>
+    /// <param name="valueName">Value name of ProfileValue</param>
+    /// <param name="backup">Sets Backup value of ProfileValue, default is false</param>
+    public static Alvao.API.Common.Model.Database.ProfileValue Get(
+        int personId,
+        string valueName,
+        bool backup = false
+    )
+    { throw new System.NotImplementedException(); }
+
     /// <summary>Returns table display mode.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_GetTableDisplayMode.htm"/>
     ///

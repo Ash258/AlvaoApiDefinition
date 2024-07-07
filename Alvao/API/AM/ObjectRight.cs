@@ -35,6 +35,19 @@ public static class ObjectRight
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Enabled.htm"/>
     public static bool Enabled() { throw new System.NotImplementedException(); }
 
+    /// <summary>Check if person has exact right for object.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_CheckForUser.htm"/>
+    ///
+    /// <param name="personId">Person ID (tPerson.iPersonId)</param>
+    /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
+    /// <param name="right">Right for object.</param>
+    public static bool CheckForUser(
+        int personId,
+        int objectId,
+        Alvao.API.AM.Model.ObjectRight.Right right
+    )
+    { throw new System.NotImplementedException(); }
+
     /// <summary>Updates object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Update.htm"/>
     ///

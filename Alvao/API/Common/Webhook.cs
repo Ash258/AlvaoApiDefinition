@@ -1,5 +1,3 @@
-using Alvao.API.Common.Model.Database;
-
 namespace Alvao.API.Common;
 
 /// <summary>
@@ -58,7 +56,7 @@ public static class Webhook
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Webhook_GetTopicById.htm"/>
     ///
     /// <param name="topicId">Webhook topic ID (WebhookTopic.id)</param>
-    public static WebhookTopic GetTopicById(
+    public static Alvao.API.Common.Model.Database.WebhookTopic GetTopicById(
         int topicId
     )
     { throw new System.NotImplementedException(); }
