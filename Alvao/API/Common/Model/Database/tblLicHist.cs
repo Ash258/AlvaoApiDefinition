@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tblLicHist")]
 public class tblLicHist
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseKind.htm"/>
     public enum LicenseKind
     {
         perDevice = 1,
@@ -17,6 +18,7 @@ public class tblLicHist
         perProcessor = 4,
         perCore = 5,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseType.htm"/>
     public enum LicenseType
     {
         Normal = 1,

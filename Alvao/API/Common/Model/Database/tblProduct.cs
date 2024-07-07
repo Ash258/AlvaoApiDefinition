@@ -9,10 +9,12 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tblProduct")]
 public class tblProduct
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductCategory.htm"/>
     public enum ProductCategory
     {
         OS = 1,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductState.htm"/>
     public enum ProductState
     {
         Unclassified = 1,
@@ -22,6 +24,7 @@ public class tblProduct
         Excluded = 5,
         Rejected = 6,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductType.htm"/>
     public enum ProductType
     {
         Commercial = 1,
@@ -29,6 +32,7 @@ public class tblProduct
         Shareware = 3,
         Unspecified = 4,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_SamType.htm"/>
     public enum SamType
     {
         Yes = 1,

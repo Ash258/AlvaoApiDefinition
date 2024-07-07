@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tLocalization")]
 public class tLocalization
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization_Column.htm"/>
     public enum Column
     {
         ColumnValueShort = 0,
@@ -28,6 +29,7 @@ public class tLocalization
         Name = 14,
         TextHtml = 15,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization_Table.htm"/>
     public enum Table
     {
         tColumn = 0,

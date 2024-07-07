@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tHdTicketApprovalItem")]
 public class tHdTicketApprovalItem
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdTicketApprovalItem_ApprovalResult.htm"/>
     public enum ApprovalResult
     {
         NA = 1,

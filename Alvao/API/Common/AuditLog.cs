@@ -8,6 +8,8 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_AuditLog.htm"/>
 public static class AuditLog
 {
+    /// <summary>Message type. Values description can be found in the documentation.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_AuditLog_MessageType.htm"/>
     public enum MessageType
     {
         PersonCreate = 1,

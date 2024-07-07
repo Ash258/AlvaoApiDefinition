@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tString")]
 public class tString
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tString_Id.htm"/>
     public enum Id
     {
         DetectWaitingForEval = 106,

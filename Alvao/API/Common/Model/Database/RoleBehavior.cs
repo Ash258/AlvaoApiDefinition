@@ -9,6 +9,8 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.RoleBehavior")]
 public class RoleBehavior
 {
+    /// <summary>Enumeration representing system groups.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleBehavior_BehaviorId.htm"/>
     public enum BehaviorId
     {
         Custom = 1,

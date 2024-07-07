@@ -3,6 +3,7 @@ namespace Alvao.API.AM.Exceptions;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Exceptions_LicenseInvalidPropertyValueException.htm"/>
 public class LicenseInvalidPropertyValueException : LicenseException
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Exceptions_LicenseInvalidPropertyValueException_LicenseProperty.htm"/>
     public enum LicenseProperty
     {
         LicenseCount = 0,

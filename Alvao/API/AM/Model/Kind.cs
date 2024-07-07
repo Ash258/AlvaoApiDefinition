@@ -3,6 +3,7 @@ namespace Alvao.API.AM.Model;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Kind.htm"/>
 public static class Kind
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Kind_DataType.htm"/>
     public enum DataType
     {
         KindNone = 0,
@@ -11,6 +12,7 @@ public static class Kind
         KindFloat = 3,
         KindUser = 4,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Kind_KindCode.htm"/>
     public enum KindCode
     {
         Name = 0,

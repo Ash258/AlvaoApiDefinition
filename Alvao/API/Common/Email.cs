@@ -8,6 +8,8 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Email.htm"/>
 public static class Email
 {
+    /// <summary>Priority for mail messages in queue.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Email_MailQueuePriority.htm"/>
     public enum MailQueuePriority
     {
         Low = 5_000,

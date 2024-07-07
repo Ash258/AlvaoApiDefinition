@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tblKind")]
 public class tblKind
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblKind_KindCode.htm"/>
     public enum KindCode
     {
         Name = 0,
@@ -85,6 +86,7 @@ public class tblKind
         GraphicCard = 155,
         NumberOfCores = 156,
     }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblKind_KindFlags.htm"/>
     [FlagsAttribute]
     public enum KindFlags
     {

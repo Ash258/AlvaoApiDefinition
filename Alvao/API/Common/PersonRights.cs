@@ -8,6 +8,8 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_PersonRights.htm"/>
 public static class PersonRights
 {
+    /// <summary>Flags representing global (system) roles</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_PersonRights_GlobalRoles.htm"/>
     [FlagsAttribute]
     public enum GlobalRoles
     {
@@ -32,6 +34,8 @@ public static class PersonRights
         TicketRequesterAuthority = 33_554_432,
         ContactReader = 67_108_864,
     }
+    /// <summary>Flags representing service roles.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_PersonRights_SectionRoles.htm"/>
     [FlagsAttribute]
     public enum SectionRoles
     {
@@ -46,6 +50,8 @@ public static class PersonRights
         IrregularOperator = 64,
         RequestsReporter = 64,
     }
+    /// <summary>Flags representing request and service roles</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_PersonRights_TicketRoles.htm"/>
     [FlagsAttribute]
     public enum TicketRoles
     {

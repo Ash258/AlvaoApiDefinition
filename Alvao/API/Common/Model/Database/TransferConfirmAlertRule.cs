@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.TransferConfirmAlertRule")]
 public class TransferConfirmAlertRule
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TransferConfirmAlertRule_RuleType.htm"/>
     public enum RuleType
     {
         InitialMessage = 1,

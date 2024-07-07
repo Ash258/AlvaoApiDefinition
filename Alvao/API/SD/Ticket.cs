@@ -10,6 +10,8 @@ namespace Alvao.API.SD;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket.htm"/>
 public static class Ticket
 {
+    /// <summary>Special flags for close ticket.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_CloseFlags.htm"/>
     [FlagsAttribute]
     public enum CloseFlags
     {
@@ -17,6 +19,8 @@ public static class Ticket
         IgnoreRights = 1,
         DontCallChangeState = 2,
     }
+    /// <summary>Special flags for deadline change.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeDeadlineFlags.htm"/>
     [FlagsAttribute]
     public enum ChangeDeadlineFlags
     {
@@ -24,11 +28,15 @@ public static class Ticket
         DontNotifyUser = 1,
         DontUpdateTicket = 2,
     }
+    /// <summary>SLA change reason.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeSlaReason.htm"/>
     public enum ChangeSlaReason
     {
         TicketEdit = 0,
         MoveToService = 1,
     }
+    /// <summary>Special flags for solver change.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeSolverFlags.htm"/>
     [FlagsAttribute]
     public enum ChangeSolverFlags
     {
@@ -41,6 +49,8 @@ public static class Ticket
         LogAssignToSolverGroup = 16,
         LogAsSystemPerson = 32,
     }
+    /// <summary>Special flags for remove ticket.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_RemoveFlags.htm"/>
     [FlagsAttribute]
     public enum RemoveFlags
     {
@@ -48,6 +58,8 @@ public static class Ticket
         IgnoreRights = 1,
         DontCallChangeState = 2,
     }
+    /// <summary>Special flags for resolve ticket.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ResolveFlags.htm"/>
     [FlagsAttribute]
     public enum ResolveFlags
     {

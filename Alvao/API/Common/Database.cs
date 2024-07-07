@@ -6,6 +6,8 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Database.htm"/>
 public static class Database
 {
+    /// <summary>Data type of the value provided as string</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Database_ValueDataType.htm"/>
     public enum ValueDataType
     {
         Default = 0,

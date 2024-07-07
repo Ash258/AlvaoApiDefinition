@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.ActMark")]
 public class ActMark
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ActMark_ActMarkId.htm"/>
     public enum ActMarkId
     {
         RequestSpecification = 1,

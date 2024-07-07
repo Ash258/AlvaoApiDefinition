@@ -9,6 +9,7 @@ namespace Alvao.API.SD;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TicketProcess.htm"/>
 public static class TicketProcess
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TicketProcess_RelatedTicketRuleRequesterMode.htm"/>
     public enum RelatedTicketRuleRequesterMode
     {
         Requester = 1,

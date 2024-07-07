@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.KindDataType")]
 public class KindDataType
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum.htm"/>
     public enum KindDataTypeIdEnum
     {
         Text = 1,

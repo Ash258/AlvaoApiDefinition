@@ -9,6 +9,7 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.TicketRelationType")]
 public class TicketRelationType
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketRelationType_RelationId.htm"/>
     public enum RelationId
     {
         RelatesTo = 1,
