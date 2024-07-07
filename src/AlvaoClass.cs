@@ -504,7 +504,7 @@ public class AlvaoClass
         var classLink = $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}";
         var className = classANode.GetAttributeValue("title", "");
 
-        if (!className.EndsWith("Class") && !className.EndsWith("Interface")) return;
+        if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
 
         var clazz = new AlvaoClass(
             classLink,
