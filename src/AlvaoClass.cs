@@ -61,12 +61,9 @@ public class AlvaoClass
             var propName = Helpers.ExtractObjectName(p);
             Console.WriteLine($"    Processing {propName} Property");
 
-            // TODO: Implement
-            if (Name.Equals("LicenseInvalidPropertyValueException") && propName.Equals("Property"))
-            {
-                Console.WriteLine($"Skipping {propName} on {Name}");
-                continue;
-            }
+            // TODO: Drop
+            if (Helpers.IsClass(this, "Alvao.Context", "AlvaoContext") && propName.Equals("DbContextProvider")) continue;
+            if (Helpers.IsClass(this, "Alvao.API.AM.Model", "ImportCsvSettings") && propName.Equals("TextOutput")) continue;
 
             var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
             var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
@@ -79,10 +76,8 @@ public class AlvaoClass
             if (propDef == null) continue;
 
             // TODO: Drop
-            if (NamespaceName.Equals("Alvao.API.Common.Model") && Name.Equals("ColumnValue") && propName.Equals("DataType"))
-            {
+            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "ColumnValue") && propName.Equals("DataType"))
                 propDef = propDef.Replace(" Database.ValueDataType ", " Alvao.API.Common.Database.ValueDataType ");
-            }
 
             propDef = Helpers.SanitizeXmlToString(propDef);
 
@@ -376,6 +371,11 @@ public class AlvaoClass
         {
             var _name = Helpers.ExtractObjectName(e);
             Console.WriteLine($"    Processing {_name} Method");
+            // TODO: Drop
+            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "AttachmentModel") && _name.Equals("SaveToDB")) continue;
+            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "HtmlTextModel") && _name.Equals("AddAttachmentsBasedOnTemplate")) continue;
+            if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("Import")) continue;
+            if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("ValidateBeforeImport")) continue;
 
             var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
@@ -419,7 +419,28 @@ public class AlvaoClass
                 }
             }
 
-            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
+            _definition = Helpers.SanitizeXmlToString(_definition);
+
+            // TODO: Drop
+            if (Helpers.IsClass(this, "Alvao.API.AM", "ObjectRight") && _name.Equals("CheckForUser"))
+                _definition = _definition.Replace(" ObjectRight.Right ", " Alvao.API.AM.Model.ObjectRight.Right ");
+            if (Helpers.IsClass(this, "Alvao.API.SD", "TicketState"))
+            {
+                switch (_name)
+                {
+                    case "GetFromProcess":
+                        _definition = _definition.Replace("<TicketState>", "<Alvao.API.Common.Model.Database.TicketState>");
+                        break;
+                    case "GetByBehaviorId":
+                    case "GetById":
+                    case "GetByName":
+                    case "GetCurrentStateByTicketId":
+                        _definition = _definition.Replace(" TicketState ", " Alvao.API.Common.Model.Database.TicketState ");
+                        break;
+                }
+            }
+
+            _sb.AppendLine(_definition);
 
             Methods.Add(_sb.ToString());
         }
