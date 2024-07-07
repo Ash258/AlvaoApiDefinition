@@ -16,7 +16,6 @@ public class tSmtp
         Integrated = 2,
     }
 
-
     /// <summary>Authentication type: 0 = OAuth, 1 = Basic, 2 = Integrated</summary>
     public virtual int AuthType { get; set; }
     /// <summary>1, should SSL be used for connecting to the SMTP server.</summary>

@@ -17,7 +17,6 @@ public class KindDataType
         User = 4,
     }
 
-
     /// <summary>Property data type name.</summary>
     public virtual string DataTypeName { get; set; }
     /// <summary>Property data type ID.</summary>

@@ -18,7 +18,6 @@ public class TicketRelationType
         IsDuplicateBy_Duplicated = 5,
     }
 
-
     /// <summary>The name of the link from the ticket view at the beginning of the link</summary>
     public virtual string BeginName { get; set; }
     /// <summary>Custom field</summary>

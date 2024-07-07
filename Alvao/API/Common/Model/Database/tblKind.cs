@@ -105,7 +105,6 @@ public class tblKind
         SelectOnly = 8_192,
     }
 
-
     /// <summary>1 = global property for a class of objects. "0" indicates the property is considered local for each class of objects (printers, computers etc.). An automatic list of values is then put together from the values of this property for the given object class,</summary>
     public virtual bool bolGlobalScope { get; set; }
     /// <summary>1 = property value must be unique</summary>

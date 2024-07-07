@@ -15,7 +15,6 @@ public class ActMark
         RequestSolution = 2,
     }
 
-
     /// <summary>Record ID</summary>
     [KeyAttribute]
     public virtual byte id { get; set; }

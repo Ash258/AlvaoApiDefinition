@@ -39,7 +39,6 @@ public class RoleBehavior
         ContactsReader = 27,
     }
 
-
     public virtual string _RoleBehavior { get; set; }
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }

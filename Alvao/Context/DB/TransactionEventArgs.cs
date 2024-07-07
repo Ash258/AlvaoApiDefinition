@@ -6,5 +6,6 @@ public class TransactionEventArgs : EventArgs
     public static readonly TransactionEventArgs Empty;
     public TransactionEventArgs(
     string savePointName = null
-) {}
+)
+    { }
 }

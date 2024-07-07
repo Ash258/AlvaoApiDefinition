@@ -39,7 +39,6 @@ public class tblProduct
         Notify = 3,
     }
 
-
     public bool AddToSoftwareLibrary { get; }
     public virtual string AlternateApprovedProduct { get; set; }
     public virtual bool bolValid { get; set; }

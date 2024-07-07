@@ -19,7 +19,6 @@ public class TransferConfirmAlertRule
         Unknown = 6,
     }
 
-
     /// <summary>A flag indicating whether or not the alert is active.</summary>
     public virtual bool Active { get; set; }
     /// <summary>Send an alert after a specified number of days.</summary>

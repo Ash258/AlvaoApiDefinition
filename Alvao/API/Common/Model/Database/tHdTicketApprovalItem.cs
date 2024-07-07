@@ -18,7 +18,6 @@ public class tHdTicketApprovalItem
         Canceled = 5,
     }
 
-
     /// <summary>Approver’s comment in HTML</summary>
     public virtual string ApprovalItemNotesHtml { get; set; }
     /// <summary>Identifier of the substitute who actually made the approval in the approver’s absence (see tPerson.iPersonId)</summary>

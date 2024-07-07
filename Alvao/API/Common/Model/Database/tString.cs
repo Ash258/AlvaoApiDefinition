@@ -38,7 +38,6 @@ public class tString
         DetectEvaluationError = 130,
     }
 
-
     [ExplicitKeyAttribute]
     public virtual int iStringId { get; set; }
     public virtual string mString { get; set; }

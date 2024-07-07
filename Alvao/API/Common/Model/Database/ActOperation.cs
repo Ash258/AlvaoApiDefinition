@@ -27,7 +27,6 @@ public class ActOperation
         ApprovalEnter = 14,
     }
 
-
     /// <summary>Record ID</summary>
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }

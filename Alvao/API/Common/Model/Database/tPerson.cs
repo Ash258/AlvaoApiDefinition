@@ -27,7 +27,6 @@ public class tPerson
         TicketRequestParticipant = 2_048,
     }
 
-
     /// <summary>Application (client) ID in AAD</summary>
     public virtual string AadAppClientId { get; set; }
     /// <summary>Directory (tenant) ID in AAD</summary>

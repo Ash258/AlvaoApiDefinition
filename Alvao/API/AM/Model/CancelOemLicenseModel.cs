@@ -1,32 +1,10 @@
+using Alvao.API.Common.Model.Database;
 using Dapper.Contrib.Extensions;
 
-namespace Alvao.API.Common.Model.Database;
+namespace Alvao.API.AM.Model;
 
-/// <summary>
-/// License - list of purchased software licenses.
-/// </summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist.htm"/>
-[TableAttribute("dbo.tblLicHist")]
-public class tblLicHist
+public class CancelOemLicenseModel : tblLicHist
 {
-    public enum LicenseKind
-    {
-        perDevice = 1,
-        perUser = 2,
-        perConnection = 3,
-        perProcessor = 4,
-        perCore = 5,
-    }
-
-    public enum LicenseType
-    {
-        Normal = 1,
-        UnlimitedVolumeLicense = 2,
-        Floating = 3,
-        OEM = 4,
-        CAL = 5,
-    }
-
     /// <summary>Assign automatically</summary>
     public virtual bool AutoAssign { get; set; }
     /// <summary>Filter for automatic assignment of licenses.</summary>
@@ -48,6 +26,7 @@ public class tblLicHist
     /// <summary>Record ID</summary>
     [KeyAttribute]
     public virtual int intLicHistId { get; set; }
+    public int IntLicHistItemId { get; set; }
     /// <summary>The person who has invalidated the license.</summary>
     public virtual int? InvalidatedByPersonId { get; set; }
     /// <summary>The date on which the license was invalidated.</summary>
@@ -85,5 +64,5 @@ public class tblLicHist
     /// <summary>Unique license identifier in the external system.</summary>
     public virtual string UId { get; set; }
 
-    public tblLicHist() { }
+    public CancelOemLicenseModel() { }
 }

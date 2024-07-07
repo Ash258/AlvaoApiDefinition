@@ -22,7 +22,6 @@ public class TicketStateBehavior
         Close = 11,
     }
 
-
     public virtual string _TicketStateBehavior { get; set; }
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }

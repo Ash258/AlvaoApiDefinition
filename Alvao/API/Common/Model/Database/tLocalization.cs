@@ -41,7 +41,6 @@ public class tLocalization
         NewTicketFormTextBlock = 7,
     }
 
-
     /// <summary>LCID of the language for which the localization is being executed.</summary>
     public virtual int iLocaleId { get; set; }
     /// <summary>Record ID.</summary>

@@ -15,7 +15,6 @@ public class tblIcon
         Subnet = 134,
     }
 
-
     /// <summary>icon Id</summary>
     [KeyAttribute]
     public virtual int intIconId { get; set; }

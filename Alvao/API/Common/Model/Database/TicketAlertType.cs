@@ -17,7 +17,6 @@ public class TicketAlertType
         InternalTarget = 3,
     }
 
-
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }
     /// <summary>Alert text without parameter</summary>

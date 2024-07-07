@@ -25,7 +25,6 @@ public class tActKind
         Notification = 11,
     }
 
-
     /// <summary>Record ID: 1 = e-mail, 2 = phone, 3 = personal meeting, 4 = letter, 5 = voice message, 6 = written message, 7 = form, 8 = note, 9 = process, 10 = other, 11 = alert.</summary>
     [ExplicitKeyAttribute]
     public virtual int iActKindId { get; set; }
