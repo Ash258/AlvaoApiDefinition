@@ -31,24 +31,25 @@ public class AlvaoClass
     public List<string> Constructors { get; set; }
     public List<string> Methods { get; set; }
 
-    public AlvaoClass(string fullUrl, string localHtmlFile, string namespaceName, string name, ClassType type = ClassType.CLASS)
+    public AlvaoClass(string href, string namespaceName, string name)
     {
-        Type = type;
+        Name = name.Replace(" Class", "").Replace(" Interface", "").Trim();
+        Type = name.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS;
+        FullUrl = $"{Helpers.BASE_HTML_URL}/{href.Split("/").Last()}";
+        NamespaceName = namespaceName;
+        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
+        HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
+        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{Name}.cs";
+
+        Summary = Helpers.GetSummary(HtmlDocument);
+        Version = "";
         Usings = [];
         Fields = [];
-        Version = "";
         Properties = [];
         Enums = [];
         Methods = [];
         Events = [];
         Constructors = [];
-        FullUrl = fullUrl;
-        LocalHtmlFile = localHtmlFile;
-        NamespaceName = namespaceName;
-        Name = name;
-        HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
-        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{name}.cs";
-        Summary = Helpers.GetSummary(HtmlDocument);
     }
 
     internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
@@ -57,14 +58,7 @@ public class AlvaoClass
         var className = aNode.GetAttributeValue("title", "");
         if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
 
-        var classHtmlBaseFileName = aNode.GetAttributeValue("href", "").Split("/").Last();
-        var clazz = new AlvaoClass(
-            $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}",
-            $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
-            an.Name,
-            className.Replace(" Class", "").Replace(" Interface", "").Trim(),
-            className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
-        );
+        var clazz = new AlvaoClass(aNode.GetAttributeValue("href", ""), an.Name, className);
         clazz.Process();
     }
 
@@ -79,7 +73,6 @@ public class AlvaoClass
         if (_def == null) return;
 
         Definition = Helpers.SanitizeXmlToString(_def);
-
         Helpers.ProcessVersion(HtmlDocument);
         ProcessProperties();
         ProcessFields();
@@ -91,7 +84,6 @@ public class AlvaoClass
         MonkeyPatch.Using(this);
 
         State.Classes.Add($"{NamespaceName}.{Name}", this);
-
         ProduceFinalCsFile();
     }
 
