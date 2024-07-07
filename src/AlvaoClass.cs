@@ -255,7 +255,7 @@ public class AlvaoClass
             case "Alvao.Context.DB":
                 switch (Name)
                 {
-                    case "IConnectionScop":
+                    case "IConnectionScope":
                         Usings.AddRange(["System.Data", "Microsoft.Data.SqlClient"]);
                         break;
                 }

@@ -51,11 +51,15 @@ public static class Helpers
         return SanitizeXmlToString(name);
     }
 
+    internal static string TrimEndNewLine(string el)
+    {
+        return el.TrimEnd().TrimEnd('\n').TrimEnd('\r').TrimEnd('\n').TrimEnd('\r');
+    }
+
     internal static string PrefixEachLineSpaces(string el)
     {
-        return (el.Contains('\n')
-            ? string.Join("\n", el.Split('\n').Select(x => $"    {x}").ToArray())
-            : $"    {el}").TrimEnd('\n');
-
+        return el.Contains('\n')
+            ? TrimEndNewLine(el.Split('\n').Select(x => $"    {TrimEndNewLine(x)}").ToArray().JoinAsString("\n"))
+            : TrimEndNewLine($"    {el}");
     }
 }
