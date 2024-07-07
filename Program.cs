@@ -23,17 +23,18 @@ string[] filter = [];
 int toTake = alvaoNamespace.Length;
 if (args.Length > 0)
 {
-    if (args.Contains("ignore")) Helpers.IGNORE_CACHE = true;
     if (args.Contains("test"))
     {
         Console.WriteLine("All files are generated OK");
         Environment.Exit(0);
     }
 
+    if (args.Contains("ignore")) Helpers.IGNORE_CACHE = true;
+
     var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
 
     filter = args.TakeLast(_l).ToArray();
-    alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
+    if (filter.Length > 0) alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
 }
 
 foreach (var ns in alvaoNamespace)
@@ -55,6 +56,7 @@ foreach (var ns in alvaoNamespace)
 }
 
 var latest = State.Versions.Distinct().OrderDescending().ToArray();
+Console.WriteLine("");
 Console.WriteLine($"Unique versions: {latest.Length} ({string.Join(", ", latest)})");
 File.WriteAllText(".version", latest.First());
 
