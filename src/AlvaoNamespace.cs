@@ -13,18 +13,15 @@ public class AlvaoNamespace
     public HtmlDocument HtmlDocument { get; set; }
     public AlvaoClass[]? Classes { get; set; }
 
-    public AlvaoNamespace(string fullUrl, string localHtmlFile, string name)
+    public AlvaoNamespace(string fullUrl, string name)
     {
         Name = name;
         FullUrl = fullUrl;
-        LocalHtmlFile = localHtmlFile;
+        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{fullUrl.Split("/").Last()}";
         Folder = $"{Name.Replace(".", "/")}";
-        HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
+        HtmlDocument = Helpers.LoadDocument(fullUrl, LocalHtmlFile);
 
-        if (!Directory.Exists(Folder))
-        {
-            Directory.CreateDirectory(Folder);
-        }
+        if (!Directory.Exists(Folder)) Directory.CreateDirectory(Folder);
     }
 
     internal void Process()

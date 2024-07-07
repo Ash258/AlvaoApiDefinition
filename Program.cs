@@ -41,11 +41,9 @@ foreach (var ns in alvaoNamespace)
 {
     Console.WriteLine($"Processing {ns} Namespace");
     var namespaceUrl = $"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm";
-    var baseNamespaceFileName = namespaceUrl.Split("/").Last();
 
     AlvaoNamespace alvaoNs = new AlvaoNamespace(
         namespaceUrl,
-        $"{Helpers.LOCAL_HTML_FOLDER}/{baseNamespaceFileName}",
         ns
     );
 
