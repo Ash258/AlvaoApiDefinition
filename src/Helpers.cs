@@ -27,6 +27,13 @@ public static class Helpers
         return doc;
     }
 
+
+    public static string SanitizeXmlToString(string el)
+    {
+        return el.Replace("&lt;", "<").Replace("&gt;", ">").Trim();
+    }
+
+    // TODO: Rework
     internal static string ExtractObjectName(HtmlNode node)
     {
         var name = "";
