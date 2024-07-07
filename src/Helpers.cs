@@ -22,7 +22,7 @@ public static class Helpers
         var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
         if (_s == null) return "";
 
-        _s = Regex.Replace(_s, @"\r?\n\s*", " ");
+        _s = ReplaceEndLinesWithSpace(_s);
         return $"/// <summary>{_s}</summary>";
     }
 
@@ -50,6 +50,11 @@ public static class Helpers
     public static string TrimEndNewLine(string el)
     {
         return el.TrimEnd().TrimEnd('\n').TrimEnd('\r').TrimEnd('\n').TrimEnd('\r');
+    }
+
+    public static string ReplaceEndLinesWithSpace(string el)
+    {
+        return Regex.Replace(el, @"\r?\n\s*", " ");
     }
 
     public static string PrefixEachLineSpaces(string el)
@@ -115,7 +120,7 @@ public static class Helpers
             name = node.InnerText;
         }
 
-        return Regex.Replace(name, @"\r?\n\s+", " ");
+        return ReplaceEndLinesWithSpace(name);
     }
 
     public static string? ExtractObjectDefinition(HtmlDocument node)

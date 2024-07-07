@@ -140,7 +140,7 @@ public class AlvaoClass
             var _s = propDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                _s = Helpers.ReplaceEndLinesWithSpace(_s);
                 _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
 
@@ -180,7 +180,7 @@ public class AlvaoClass
             var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                _s = Helpers.ReplaceEndLinesWithSpace(_s);
                 _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
             _sb.AppendLine($"/// <see href=\"{fieldLink}\"/>");
@@ -309,8 +309,7 @@ public class AlvaoClass
                     var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
                     if (_description == null) continue;
 
-                    _description = Regex.Replace(_description, @"\r?\n\s+", " ");
-
+                    _description = Helpers.ReplaceEndLinesWithSpace(_description);
                     _sb.AppendLine($"/// <param name=\"{_var}\">{_description}</param>");
                 }
             }
