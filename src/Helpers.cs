@@ -12,6 +12,24 @@ public static class Helpers
     public static string LOCAL_HTML_FOLDER = "html";
     public static bool IGNORE_CACHE = false;
 
+
+    public static string GenerateSeeDoc(string link)
+    {
+        return $"/// <see href=\"{link}\"/>";
+    }
+
+    public static string GetSummary(HtmlDocument _document)
+    {
+        var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+        if (_s != null)
+        {
+            _s = Regex.Replace(_s, @"\r?\n\s*", " ");
+            return $"/// <summary>{_s}</summary>";
+        }
+
+        return "";
+    }
+
     public static HtmlDocument LoadDocument(string url, string localPath)
     {
         HtmlDocument doc = new();
@@ -30,7 +48,7 @@ public static class Helpers
 
     public static string SanitizeXmlToString(string el)
     {
-        return el.Replace("&lt;", "<").Replace("&gt;", ">").Trim();
+        return el.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ").Trim();
     }
 
     public static string TrimEndNewLine(string el)

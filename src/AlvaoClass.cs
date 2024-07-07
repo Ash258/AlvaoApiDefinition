@@ -46,9 +46,9 @@ public class AlvaoClass
         LocalHtmlFile = localHtmlFile;
         NamespaceName = namespaceName;
         Name = name;
-        Summary = "";
         HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
         FinalCsFile = $"{namespaceName.Replace(".", "/")}/{name}.cs";
+        Summary = Helpers.GetSummary(HtmlDocument);
     }
 
     public void ProcessProperties()
@@ -173,7 +173,6 @@ public class AlvaoClass
             State.Versions.Add(_v);
         }
 
-        ProcessSummary();
         ProcessProperties();
         ProcessFields();
         ProcessEvents();
@@ -325,14 +324,6 @@ public class AlvaoClass
         }
     }
 
-    private void ProcessSummary()
-    {
-        var _s = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-        if (_s == null) return;
-
-        Summary = Regex.Replace(_s, @"\r?\n", "/// ");
-    }
-
     private void ProcessConstructors()
     {
         var constructors = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"ConstructorList\"]/tr/td[2]/a");
@@ -351,20 +342,18 @@ public class AlvaoClass
             var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
             if (constrDef == null) continue;
 
+            var _summary = Helpers.GetSummary(constrDocument);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
             var _sb = new StringBuilder();
-            var _s = constrDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                _sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(constrLink));
 
             constrDef = Helpers.SanitizeXmlToString(constrDef);
+
             // TODO: Drop
             if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
             if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
 
-            _sb.AppendLine($"/// <see href=\"{constrLink}\"/>");
             _sb.AppendLine(constrDef);
 
             Constructors.Add(_sb.ToString());
@@ -398,17 +387,11 @@ public class AlvaoClass
             if (!_link.EndsWith(".htm")) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
+            var _summary = Helpers.GetSummary(_document);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
             var _sb = new StringBuilder();
-
-            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                if (_s.Contains("Obsolete") || _s.Contains("obsolete")) continue;
-
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                _sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
-            _sb.AppendLine($"/// <see href=\"{_link}\"/>");
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
 
             var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
@@ -502,18 +485,15 @@ public class AlvaoClass
             if (!_link.EndsWith(".htm")) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
+            var _summary = Helpers.GetSummary(_document);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
+            var _sb = new StringBuilder();
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
 
             var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
-            var _sb = new StringBuilder();
 
-            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
-            if (_s != null)
-            {
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                _sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
-            _sb.AppendLine($"/// <see href=\"{_link}\"/>");
             _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
 
             Events.Add(_sb.ToString());
@@ -533,12 +513,7 @@ public class AlvaoClass
         sb.AppendLine($"namespace {NamespaceName};");
         sb.AppendLine("");
 
-        if (!Summary.Equals(""))
-        {
-            sb.AppendLine("/// <summary>");
-            sb.AppendLine($"/// {Summary}");
-            sb.AppendLine("/// </summary>");
-        }
+        if (!Summary.Equals("")) sb.AppendLine(Summary);
         sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
         sb.AppendLine(Definition);
         sb.AppendLine("{");

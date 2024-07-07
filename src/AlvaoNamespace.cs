@@ -52,22 +52,18 @@ public class AlvaoNamespace
             if (!enumLink.EndsWith(".htm")) continue;
 
             var enumDocument = Helpers.LoadDocument(enumLink, enumLocalHtml);
+            var _summary = Helpers.GetSummary(enumDocument);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
+            var sb = new StringBuilder();
+            if (!_summary.Equals("")) sb.AppendLine(_summary);
+            sb.AppendLine(Helpers.GenerateSeeDoc(enumLink));
 
             var enumDef = Helpers.ExtractObjectDefinition(enumDocument);
             if (enumDef == null) continue;
             enumDef = Helpers.SanitizeXmlToString(enumDef);
 
             var members = enumDocument.DocumentNode.SelectNodes("//table[@id='enumMemberList']/tr");
-            var sb = new StringBuilder();
 
-            var _s = enumDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                sb.AppendLine($"/// <summary>{_s}</summary>");
-            }
-
-            sb.AppendLine($"/// <see href=\"{enumLink}\"/>");
             sb.AppendLine(enumDef);
             sb.AppendLine("{");
             foreach (var m in members.TakeLast(members.Count - 1))
