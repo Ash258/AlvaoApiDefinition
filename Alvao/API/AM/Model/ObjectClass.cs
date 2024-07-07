@@ -3,6 +3,7 @@ namespace Alvao.API.AM.Model;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass.htm"/>
 public static class ObjectClass
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass_Code.htm"/>
     public enum Code
     {
         GeneralObject = 1,
@@ -57,7 +58,14 @@ public static class ObjectClass
         Computer_Server = 50,
         Organization = 51,
         ImportedEntraIdObjects = 61,
-        FirstUserClass = 5_000
+        FirstUserClass = 5_000,
+    }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass_ImportedObjectsFolderType.htm"/>
+    public enum ImportedObjectsFolderType
+    {
+        ImportedObjects = 33,
+        ImportedAdObjects = 34,
+        ImportedEntraIdObjects = 61,
     }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_ObjectClass_IsSpecial.htm"/>

@@ -9,6 +9,8 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tblClass")]
 public class tblClass
 {
+    /// <summary>Enumeration representing node class codes.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblClass_ClassCode.htm"/>
     public enum ClassCode
     {
         GeneralObject = 1,
@@ -63,7 +65,6 @@ public class tblClass
         MobilePhone = 58,
         FirstUserClass = 5_000,
     }
-
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblClass_bComputer.htm"/>
     public virtual bool bComputer { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId.htm"/>
