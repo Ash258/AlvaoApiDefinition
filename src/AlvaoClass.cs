@@ -391,6 +391,7 @@ public class AlvaoClass
 
             var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (_definition == null) continue;
+            if (_definition.Contains("ObsoleteAttribute")) continue;
 
             var _params = _document.DocumentNode.SelectSingleNode("//*[@id=\"IDBSection\"]/dl");
             if (_params != null)
