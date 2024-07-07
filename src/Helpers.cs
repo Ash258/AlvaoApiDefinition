@@ -68,6 +68,21 @@ public static class Helpers
         return attr.Value.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
     }
 
+    internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
+    {
+        return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
+    }
+
+    public static void ProcessVersion(HtmlDocument doc)
+    {
+        var _ver = doc.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
+        if (_ver == null) return;
+
+        var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
+        _v = _v.Replace("&nbsp;", "").Trim();
+        State.Versions.Add(_v);
+    }
+
     // Extract value of languagespecifictext data attribute or inner text
     private static string ExtractLanguageSpecificValue(HtmlNode node)
     {
@@ -184,10 +199,5 @@ public static class Helpers
         }
 
         return SanitizeXmlToString(definition);
-    }
-
-    internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
-    {
-        return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
     }
 }

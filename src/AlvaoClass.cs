@@ -64,20 +64,7 @@ public class AlvaoClass
         if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
         if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
 
-        // TODO: Drop
-        if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
-        if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
-        if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
-        if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
-
-        var _ver = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
-        if (_ver != null)
-        {
-            var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
-            _v = _v.Replace("&nbsp;", "").Trim();
-            State.Versions.Add(_v);
-        }
-
+        Helpers.ProcessVersion(HtmlDocument);
         ProcessProperties();
         ProcessFields();
         ProcessEvents();
@@ -365,6 +352,11 @@ public class AlvaoClass
 
     private void MonkeyPatching()
     {
+        if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
+        if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
+        if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
+        if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
+
         switch (NamespaceName)
         {
             case "Alvao.API.AI":
