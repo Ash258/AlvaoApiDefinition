@@ -205,11 +205,11 @@ public class AlvaoClass
                     case "Product":
                     case "ObjectRight":
                     case "License":
-                    case "Object":
                     case "Scim":
                         Usings.Add("Alvao.API.Common.Model.Database");
                         break;
 
+                    case "Object":
                     case "ObjectProperty":
                         Usings.AddRange(["Alvao.API.AM.Model", "Alvao.API.Common.Model.Database"]);
                         break;
@@ -218,7 +218,7 @@ public class AlvaoClass
             case "Alvao.API.SD.Exceptions":
                 switch (Name)
                 {
-                    case "Alvao.API.SD.Model":
+                    case "RequiredFieldsException":
                         Usings.Add("Alvao.API.SD.Model");
                         break;
                 }
@@ -237,10 +237,10 @@ public class AlvaoClass
                         Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
                         break;
                     case "MessageTemplate":
-                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model"]);
+                        Usings.AddRange(["Alvao.API.Common.Model", "System.Globalization"]);
                         break;
                     case "TicketProcess":
-                        Usings.AddRange(["System.Globalization", "Alvao.API.SD.Model"]);
+                        Usings.AddRange(["Alvao.API.SD.Model", "System.Globalization"]);
                         break;
                     case "TicketState":
                         Usings.AddRange(["Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
