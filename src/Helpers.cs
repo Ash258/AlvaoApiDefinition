@@ -59,11 +59,6 @@ public static class Helpers
             : TrimEndNewLine($"    {el}");
     }
 
-    private static string ExtractLanguageSpecificValue(HtmlAttribute attr)
-    {
-        return attr.Value.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
-    }
-
     internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
     {
         return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
@@ -78,19 +73,19 @@ public static class Helpers
         State.Versions.Add(SanitizeXmlToString(_v));
     }
 
+    private static string ExtractLanguageSpecificValue(HtmlAttribute attr)
+    {
+        return attr.Value.Split("|").FirstOrDefault(pair => pair.StartsWith("cs="), "").Split("=").Last();
+    }
+
     // Extract value of languagespecifictext data attribute or inner text
     private static string ExtractLanguageSpecificValue(HtmlNode node)
     {
         var attr = node.GetDataAttribute("languagespecifictext");
-        if (attr != null)
-        {
-            var val = ExtractLanguageSpecificValue(attr);
-            return val;
-        }
-        else
-        {
-            return node.InnerText;
-        }
+        if (attr == null) return node.InnerText;
+
+        var val = ExtractLanguageSpecificValue(attr);
+        return val;
     }
 
     public static string? ExtractMethodDef(HtmlDocument document)
