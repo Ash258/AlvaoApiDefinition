@@ -243,6 +243,22 @@ public class AlvaoClass
                         break;
                 }
                 break;
+            case "Alvao.Context.DB":
+                switch (Name)
+                {
+                    case "IConnectionScop":
+                        Usings.AddRange(["System.Data", "Microsoft.Data.SqlClient"]);
+                        break;
+                }
+                break;
+            case "Alvao.Context":
+                switch (Name)
+                {
+                    case "AlvaoContext":
+                        Usings.AddRange(["Alvao.Context.DB", "Volo.Abp.EntityFrameworkCore"]);
+                        break;
+                }
+                break;
             case "Alvao.API.SD.Model":
                 switch (Name)
                 {
