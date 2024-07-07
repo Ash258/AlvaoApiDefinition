@@ -103,8 +103,7 @@ public class AlvaoClass
             var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
             var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
             var propLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{propHtmlBaseFileName}";
-            if (!propLink.StartsWith("https://doc.alvao")) continue;
-            if (!propLink.EndsWith(".htm")) continue;
+            if (Helpers.IsInvalidAlvaoUrl(propLink)) continue;
 
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
             var _summary = Helpers.GetSummary(propDocument);
@@ -151,8 +150,7 @@ public class AlvaoClass
             var fieldHtmlBaseFileName = f.GetAttributeValue("href", "").Split("/").Last();
             var fieldLink = $"{Helpers.BASE_HTML_URL}/{fieldHtmlBaseFileName}";
             var fieldLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{fieldHtmlBaseFileName}";
-            if (!fieldLink.StartsWith("https://doc.alvao")) continue;
-            if (!fieldLink.EndsWith(".htm")) continue;
+            if (Helpers.IsInvalidAlvaoUrl(fieldLink)) continue;
 
             var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
             var _summary = Helpers.GetSummary(fieldDocument);
@@ -187,8 +185,7 @@ public class AlvaoClass
             var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
             var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-            if (!_link.StartsWith("https://doc.alvao")) continue;
-            if (!_link.EndsWith(".htm")) continue;
+            if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
             var _summary = Helpers.GetSummary(_document);
@@ -201,7 +198,6 @@ public class AlvaoClass
             if (_definition == null) continue;
 
             _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
-
             Events.Add(_sb.ToString());
         }
     }
@@ -219,6 +215,7 @@ public class AlvaoClass
             var constrHtmlBaseFileName = c.GetAttributeValue("href", "").Split("/").Last();
             var constrLink = $"{Helpers.BASE_HTML_URL}/{constrHtmlBaseFileName}";
             var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
+            if (Helpers.IsInvalidAlvaoUrl(constrLink)) continue;
 
             var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
             var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
@@ -266,8 +263,7 @@ public class AlvaoClass
             var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
             var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
             var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-            if (!_link.StartsWith("https://doc.alvao")) continue;
-            if (!_link.EndsWith(".htm")) continue;
+            if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
             var _summary = Helpers.GetSummary(_document);
@@ -289,7 +285,7 @@ public class AlvaoClass
 
                 for (int i = 0; i < _dts.Count; i++)
                 {
-                    var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " "); ;
+                    var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
                     var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
                     if (_description == null) continue;
 
