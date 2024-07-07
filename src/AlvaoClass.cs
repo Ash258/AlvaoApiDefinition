@@ -87,6 +87,18 @@ public class AlvaoClass
         ProduceFinalCsFile();
     }
 
+    private static StringBuilder ProcessDocumentationComments(string link, HtmlDocument document, out bool skip)
+    {
+        skip = false;
+        var _summary = Helpers.GetSummary(document);
+        if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) skip = true;
+        var _sb = new StringBuilder();
+        if (!_summary.Equals("")) _sb.AppendLine(_summary);
+        _sb.AppendLine(Helpers.GenerateSeeDoc(link));
+
+        return _sb;
+    }
+
     public void ProcessProperties()
     {
         var properties = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"PropertyList\"]/tr/td[2]/a");
@@ -106,11 +118,8 @@ public class AlvaoClass
             if (Helpers.IsInvalidAlvaoUrl(propLink)) continue;
 
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
-            var _summary = Helpers.GetSummary(propDocument);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(propLink));
+            var _sb = ProcessDocumentationComments(propLink, propDocument, out bool obsolete);
+            if (obsolete) continue;
 
             var propDef = Helpers.ExtractObjectDefinition(propDocument);
             if (propDef == null) continue;
@@ -145,11 +154,8 @@ public class AlvaoClass
             if (Helpers.IsInvalidAlvaoUrl(fieldLink)) continue;
 
             var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
-            var _summary = Helpers.GetSummary(fieldDocument);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(fieldLink));
+            var _sb = ProcessDocumentationComments(fieldLink, fieldDocument, out bool obsolete);
+            if (obsolete) continue;
 
             var fieldDef = Helpers.ExtractObjectDefinition(fieldDocument);
             if (fieldDef == null) continue;
@@ -180,11 +186,8 @@ public class AlvaoClass
             if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
-            var _summary = Helpers.GetSummary(_document);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
+            var _sb = ProcessDocumentationComments(_link, _document, out bool obsolete);
+            if (obsolete) continue;
 
             var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
@@ -210,14 +213,11 @@ public class AlvaoClass
             if (Helpers.IsInvalidAlvaoUrl(constrLink)) continue;
 
             var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
+            var _sb = ProcessDocumentationComments(constrLink, constrDocument, out bool obsolete);
+            if (obsolete) continue;
+
             var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
             if (constrDef == null) continue;
-
-            var _summary = Helpers.GetSummary(constrDocument);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(constrLink));
 
             constrDef = Helpers.SanitizeXmlToString(constrDef);
 
@@ -255,11 +255,8 @@ public class AlvaoClass
             if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
-            var _summary = Helpers.GetSummary(_document);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
+            var _sb = ProcessDocumentationComments(_link, _document, out bool obsolete);
+            if (obsolete) continue;
 
             var _definition = Helpers.ExtractObjectDefinition(_document);
             if (_definition == null) continue;
