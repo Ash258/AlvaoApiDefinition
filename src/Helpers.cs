@@ -21,13 +21,10 @@ public static class Helpers
     public static string GetSummary(HtmlDocument _document)
     {
         var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-        if (_s != null)
-        {
-            _s = Regex.Replace(_s, @"\r?\n\s*", " ");
-            return $"/// <summary>{_s}</summary>";
-        }
+        if (_s == null) return "";
 
-        return "";
+        _s = Regex.Replace(_s, @"\r?\n\s*", " ");
+        return $"/// <summary>{_s}</summary>";
     }
 
     public static HtmlDocument LoadDocument(string url, string localPath)
