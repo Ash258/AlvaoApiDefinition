@@ -50,6 +50,18 @@ public static class MonkeyPatch
         return _definition;
     }
 
+    public static void UsingProperties(AlvaoClass clazz, string propDef)
+    {
+        if (propDef.Contains(" IDbContextProvider ")) clazz.Usings.Add("Volo.Abp.EntityFrameworkCore");
+        if (propDef.Contains(" IDbConnection ")) clazz.Usings.Add("System.Data");
+        if (propDef.Contains(" SqlConnection ")) clazz.Usings.Add("Microsoft.Data.SqlClient");
+        if (propDef.Contains(" HttpStatusCode ")) clazz.Usings.Add("System.Net");
+        if (propDef.Contains(" CultureInfo ")) clazz.Usings.Add("System.Globalization");
+        if (propDef.Contains("[JsonPropertyAttribute(")) clazz.Usings.Add("Newtonsoft.Json");
+        if (propDef.Contains("[JsonIgnoreAttribute]")) clazz.Usings.Add("Newtonsoft.Json");
+        if (propDef.Contains("[KeyAttribute]")) clazz.Usings.Add("Dapper.Contrib.Extensions");
+        if (propDef.Contains("[ComputedAttribute]")) clazz.Usings.Add("Dapper.Contrib.Extensions");
+    }
 
     public static void Using(AlvaoClass clazz)
     {

@@ -122,15 +122,7 @@ public class AlvaoClass
             propDef = Helpers.SanitizeXmlToString(propDef);
 
             // TODO: Drop
-            if (propDef.Contains(" IDbContextProvider ")) Usings.Add("Volo.Abp.EntityFrameworkCore");
-            if (propDef.Contains(" IDbConnection ")) Usings.Add("System.Data");
-            if (propDef.Contains(" SqlConnection ")) Usings.Add("Microsoft.Data.SqlClient");
-            if (propDef.Contains(" HttpStatusCode ")) Usings.Add("System.Net");
-            if (propDef.Contains(" CultureInfo ")) Usings.Add("System.Globalization");
-            if (propDef.Contains("[JsonPropertyAttribute(")) Usings.Add("Newtonsoft.Json");
-            if (propDef.Contains("[JsonIgnoreAttribute]")) Usings.Add("Newtonsoft.Json");
-            if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
-            if (propDef.Contains("[ComputedAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
+            MonkeyPatch.UsingProperties(this, propDef);
 
             _sb.AppendLine(propDef);
             Properties.Add(_sb.ToString());
