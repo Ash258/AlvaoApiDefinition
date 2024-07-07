@@ -4,18 +4,18 @@ string[] alvaoNamespace = {
     "Alvao.API.AI.Model",
     "Alvao.API.AI.Utils",
     "Alvao.API.AI",
-    "Alvao.API.AM.Exceptions",
-    "Alvao.API.AM",
-    "Alvao.API.AM.Model",
-    "Alvao.API.Common",
     "Alvao.API.Common.Exceptions",
-    "Alvao.API.Common.Model",
     "Alvao.API.Common.Model.Database",
-    "Alvao.API.SD",
-    "Alvao.API.SD.Exceptions",
+    "Alvao.API.Common.Model",
+    "Alvao.API.Common",
+    "Alvao.API.AM.Exceptions",
+    "Alvao.API.AM.Model",
+    "Alvao.API.AM",
     "Alvao.API.SD.Model",
+    "Alvao.API.SD.Exceptions",
+    "Alvao.API.SD",
+    "Alvao.Context.DB",
     "Alvao.Context",
-    "Alvao.Context.DB"
 };
 
 

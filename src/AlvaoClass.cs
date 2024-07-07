@@ -77,7 +77,7 @@ public class AlvaoClass
             var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
             var propDef = propDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (propDef == null) continue;
-            propDef = propDef.Replace("&lt;", "<").Replace("&gt;", ">");
+            propDef = Helpers.SanitizeXmlToString(propDef);
 
             if (propDef.Contains(" IDbContextProvider ")) Usings.Add("Volo.Abp.EntityFrameworkCore");
             if (propDef.Contains(" IDbConnection ")) Usings.Add("System.Data");
@@ -89,15 +89,18 @@ public class AlvaoClass
             if (propDef.Contains("[KeyAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
             if (propDef.Contains("[ComputedAttribute]")) Usings.Add("Dapper.Contrib.Extensions");
 
+            var _sb = new StringBuilder();
             var _s = propDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
                 _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                propDef = @$"/// <summary>{_s}</summary>
-                {propDef}";
+                _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
 
-            Properties.Add(propDef);
+            _sb.AppendLine($"/// <see href=\"{propLink}\"/>");
+            _sb.AppendLine(propDef);
+
+            Properties.Add(_sb.ToString());
         }
     }
 
@@ -121,27 +124,22 @@ public class AlvaoClass
 
             var fieldDef = fieldDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (fieldDef == null) continue;
-            fieldDef = fieldDef.Replace("&lt;", "<").Replace("&gt;", ">");
+            fieldDef = Helpers.SanitizeXmlToString(fieldDef);
 
-            if (fieldName.Equals("EmailFormat"))
-            {
-                fieldDef = fieldDef.Replace("\"]", "\"\"]");
-            }
-            if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName))
-            {
-                fieldDef = fieldDef.Replace("= \"", "= @\"");
-            }
+            if (fieldName.Equals("EmailFormat")) fieldDef = fieldDef.Replace("\"]", "\"\"]");
+            if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName)) fieldDef = fieldDef.Replace("= \"", "= @\"");
 
+            var _sb = new StringBuilder();
             var _s = fieldDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
                 _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                fieldDef = @$"/// <summary>{_s}</summary>
-                /// <see href=""{fieldLink}""/>
-                {fieldDef}";
+                _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
+            _sb.AppendLine($"/// <see href=\"{fieldLink}\"/>");
+            _sb.AppendLine(fieldDef);
 
-            Fields.Add($"{fieldDef}");
+            Fields.Add(_sb.ToString());
         }
     }
 
@@ -198,6 +196,7 @@ public class AlvaoClass
                     case "ObjectRight":
                     case "License":
                     case "Object":
+                    case "Scim":
                         Usings.Add("Alvao.API.Common.Model.Database");
                         break;
 
@@ -328,24 +327,25 @@ public class AlvaoClass
             var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
 
             var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
-
             var constrDef = constrDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (constrDef == null) continue;
-            constrDef = constrDef.Replace("&lt;", "<").Replace("&gt;", ">");
 
+            var _sb = new StringBuilder();
             var _s = constrDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
             if (_s != null)
             {
                 _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                constrDef = @$"/// <summary>{_s}</summary>
-                /// <see href=""{constrLink}""/>
-                {constrDef}";
+                _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
 
+            constrDef = Helpers.SanitizeXmlToString(constrDef);
             if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
             if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
 
-            Constructors.Add(constrDef);
+            _sb.AppendLine($"/// <see href=\"{constrLink}\"/>");
+            _sb.AppendLine(constrDef);
+
+            Constructors.Add(_sb.ToString());
         }
     }
 
@@ -366,18 +366,29 @@ public class AlvaoClass
             if (!_link.EndsWith(".htm")) continue;
 
             var _document = Helpers.LoadDocument(_link, _localHtml);
+            var _sb = new StringBuilder();
+
+            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+            if (_s != null)
+            {
+                if (_s.Contains("Obsolete") || _s.Contains("obsolete")) continue;
+
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                _sb.AppendLine($"/// <summary>{_s}</summary>");
+            }
+            _sb.AppendLine($"/// <see href=\"{_link}\"/>");
 
             var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (_definition == null) continue;
-            var _sb = new StringBuilder(_definition.Replace("&lt;", "<").Replace("&gt;", ">"));
 
             var _params = _document.DocumentNode.SelectSingleNode("//*[@id=\"IDBSection\"]/dl");
             if (_params != null)
             {
+                _sb.AppendLine($"///");
                 var _dts = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dt");
                 var _dds = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dd");
 
-                for (int i = _dts.Count - 1; i >= 0; i--)
+                for (int i = 0; i < _dts.Count; i++)
                 {
                     var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " "); ;
                     var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
@@ -385,17 +396,11 @@ public class AlvaoClass
 
                     _description = Regex.Replace(_description, @"\r?\n\s+", " ");
 
-                    _sb.Insert(0, $"/// <param name=\"{_var}\">{_description}</param>{Environment.NewLine}");
+                    _sb.AppendLine($"/// <param name=\"{_var}\">{_description}</param>");
                 }
             }
 
-            var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-            if (_s != null)
-            {
-                _sb.Insert(0, $"/// <see href=\"{_link}\"/>{Environment.NewLine}");
-                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                _sb.Insert(0, $"/// <summary>{_s}</summary>{Environment.NewLine}");
-            }
+            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
 
             Methods.Add(_sb.ToString());
         }
@@ -421,18 +426,18 @@ public class AlvaoClass
 
             var _definition = _document.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (_definition == null) continue;
-            _definition = _definition.Replace("&lt;", "<").Replace("&gt;", ">");
+            var _sb = new StringBuilder();
 
             var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]").InnerText.Trim();
             if (_s != null)
             {
                 _s = Regex.Replace(_s, @"\r?\n\s+", " ");
-                _definition = @$"/// <summary>{_s}</summary>
-                /// <see href=""{_link}""/>
-                {_definition}";
+                _sb.AppendLine($"/// <summary>{_s}</summary>");
             }
+            _sb.AppendLine($"/// <see href=\"{_link}\"/>");
+            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
 
-            Events.Add(_definition);
+            Events.Add(_sb.ToString());
         }
     }
 
@@ -442,7 +447,7 @@ public class AlvaoClass
 
         if (Usings.Count != 0)
         {
-            Usings.Distinct().ToList().ForEach(el => sb.AppendLine($"using {el};"));
+            Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
             sb.AppendLine("");
         }
 
