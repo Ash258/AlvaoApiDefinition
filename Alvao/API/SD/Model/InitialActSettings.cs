@@ -16,9 +16,9 @@ public class InitialActSettings : ActCreateSettings
     public string ActCreatedByMachine { get; set; }
     public int? ActCreatedByProcessId { get; set; }
     /// <summary>Act kind,tActKind.ActKind.Form is default.</summary>
-    public tActKindActKind ActKind { get; set; }
-    public ActMarkActMarkId? ActMark { get; set; }
-    public ActOperationActOperationId? ActOperation { get; set; }
+    public tActKind.ActKind ActKind { get; set; }
+    public ActMark.ActMarkId? ActMark { get; set; }
+    public ActOperation.ActOperationId? ActOperation { get; set; }
     public string ActSpamLevel { get; set; }
     public string ActSpamStatus { get; set; }
     public string ActTo { get; set; }
