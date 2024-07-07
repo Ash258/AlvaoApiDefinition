@@ -10,16 +10,14 @@ public class AlvaoNamespace
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string Folder { get; set; }
-    public string FQDN { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
     public AlvaoClass[]? Classes { get; set; }
 
-    public AlvaoNamespace(string fullUrl, string localHtmlFile, string fQDN, string name)
+    public AlvaoNamespace(string fullUrl, string localHtmlFile, string name)
     {
         Name = name;
         FullUrl = fullUrl;
         LocalHtmlFile = localHtmlFile;
-        FQDN = fQDN;
         Folder = $"{Name.Replace(".", "/")}";
         HtmlDocument = Helpers.LoadDocument(fullUrl, localHtmlFile);
 

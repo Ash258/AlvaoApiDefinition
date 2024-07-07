@@ -46,7 +46,6 @@ foreach (var ns in alvaoNamespace)
     AlvaoNamespace alvaoNs = new AlvaoNamespace(
         namespaceUrl,
         $"{Helpers.LOCAL_HTML_FOLDER}/{baseNamespaceFileName}",
-        ns,
         ns
     );
 
