@@ -214,6 +214,9 @@ public class AlvaoClass
                 {constrDef}";
             }
 
+            if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
+            if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
+
             Constructors.Add(constrDef);
         }
     }
@@ -334,17 +337,12 @@ public class AlvaoClass
         sb.AppendLine(Definition);
         sb.AppendLine("{");
 
-        Enums.ForEach(el => sb.AppendLine($"    {el}"));
+        Enums.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
+        Properties.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
+        Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+        Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
 
-        if (Enums.Count > 0) sb.AppendLine("");
-        Properties.ForEach(el => sb.AppendLine($"    {el}"));
-
-        if (Properties.Count > 0) sb.AppendLine("");
-        Fields.ForEach(el => sb.AppendLine($"    {el};"));
-
-        if (Fields.Count > 0) sb.AppendLine("");
-        Events.ForEach(el => sb.AppendLine($"    {el};"));
-
+        if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
         Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
 
         Methods.ForEach((el) =>
@@ -353,7 +351,7 @@ public class AlvaoClass
                 ? " { throw new System.NotImplementedException(); }"
                 : ";";
             sb.AppendLine("");
-            sb.AppendLine($"    {Helpers.PrefixEachLineSpaces(el)}{del}");
+            sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}{del}");
         });
         sb.AppendLine("}");
 
