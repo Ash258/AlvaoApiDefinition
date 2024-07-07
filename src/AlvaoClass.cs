@@ -171,9 +171,48 @@ public class AlvaoClass
         ProcessMethods();
         ProcessEvents();
 
+        MonkeyPatching();
+
         State.Classes.Add($"{NamespaceName}.{Name}", this);
 
         ProduceFinalCsFile();
+    }
+
+    private void MonkeyPatching()
+    {
+        switch (NamespaceName)
+        {
+            case "Alvao.API.AI":
+                switch (Name)
+                {
+                    case "Assistant":
+                        Usings.Add("Alvao.API.AI.Model");
+                        break;
+                }
+                break;
+            case "Alvao.API.Common":
+                switch (Name)
+                {
+                    case "CustomColumn":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                    case "AuditLog":
+                        Usings.Add("Alvao.API.Common.Model");
+                        break;
+                    case "Email":
+                        Usings.Add("System.Net.Mail");
+                        break;
+                    case "Person":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model.Database"]);
+                        break;
+
+                    case "Role":
+                    case "PersonRights":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+                }
+                break;
+        }
     }
 
     private void ProcessSummary()
@@ -186,7 +225,6 @@ public class AlvaoClass
 
     private void ProcessConstructors()
     {
-
         var constructors = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"ConstructorList\"]/tr/td[2]/a");
         if (constructors == null) return;
 
@@ -280,7 +318,6 @@ public class AlvaoClass
 
     private void ProcessEvents()
     {
-
         var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
         if (elements == null) return;
 

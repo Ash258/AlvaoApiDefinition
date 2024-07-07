@@ -69,6 +69,7 @@ public class AlvaoNamespace
                 sb.AppendLine($"    {name} = {value},");
             }
             sb.AppendLine("}");
+
             // It is class level enum
             if (enumName.Contains('.'))
             {
