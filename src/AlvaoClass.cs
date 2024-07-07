@@ -51,6 +51,47 @@ public class AlvaoClass
         Summary = Helpers.GetSummary(HtmlDocument);
     }
 
+    public void Process()
+    {
+        Console.WriteLine($"  Processing {Name} Class");
+        Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
+        Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
+
+        // TODO: Drop
+        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("Activation")) return;
+        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.SD") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
+        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
+
+        // TODO: Drop
+        if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
+        if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
+        if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
+        if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
+
+        var _ver = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
+        if (_ver != null)
+        {
+            var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
+            _v = _v.Replace("&nbsp;", "").Trim();
+            State.Versions.Add(_v);
+        }
+
+        ProcessProperties();
+        ProcessFields();
+        ProcessEvents();
+        ProcessConstructors();
+        ProcessMethods();
+
+        // TODO: Drop
+        MonkeyPatching();
+
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
+
+        ProduceFinalCsFile();
+    }
+
     public void ProcessProperties()
     {
         var properties = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"PropertyList\"]/tr/td[2]/a");
@@ -146,181 +187,35 @@ public class AlvaoClass
         }
     }
 
-    public void Process()
+    private void ProcessEvents()
     {
-        Console.WriteLine($"  Processing {Name} Class");
-        Definition = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']").InnerText.Trim();
-        Definition = Definition.Replace("&lt;", "<").Replace("&gt;", ">");
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
+        if (elements == null) return;
 
-        // TODO: Drop
-        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("Activation")) return;
-        if (NamespaceName.Equals("Alvao.API.Common") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.SD") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("CustomApps")) return;
-        if (NamespaceName.Equals("Alvao.API.AM") && Name.Equals("ImportCsv")) return;
-
-        // TODO: Drop
-        if (Definition.Contains("TableAttribute(")) Usings.Add("Dapper.Contrib.Extensions");
-        if (Definition.Contains(": Profile")) Usings.Add("AutoMapper");
-        if (Definition.Contains(": tbl")) Usings.Add("Alvao.API.Common.Model.Database");
-        if (Definition.Contains(": vColumnLoc")) Usings.Add("Alvao.API.Common.Model.Database");
-
-        var _ver = HtmlDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
-        if (_ver != null)
+        foreach (var e in elements)
         {
-            var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
-            _v = _v.Replace("&nbsp;", "").Trim();
-            State.Versions.Add(_v);
-        }
+            var _name = Helpers.ExtractObjectName(e);
+            Console.WriteLine($"    Processing {_name} Method");
 
-        ProcessProperties();
-        ProcessFields();
-        ProcessEvents();
-        ProcessConstructors();
-        ProcessMethods();
+            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
+            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
+            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
+            if (!_link.StartsWith("https://doc.alvao")) continue;
+            if (!_link.EndsWith(".htm")) continue;
 
-        // TODO: Drop
-        MonkeyPatching();
+            var _document = Helpers.LoadDocument(_link, _localHtml);
+            var _summary = Helpers.GetSummary(_document);
+            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
+            var _sb = new StringBuilder();
+            if (!_summary.Equals("")) _sb.AppendLine(_summary);
+            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
 
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
+            var _definition = Helpers.ExtractObjectDefinition(_document);
+            if (_definition == null) continue;
 
-        ProduceFinalCsFile();
-    }
+            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
 
-    private void MonkeyPatching()
-    {
-        switch (NamespaceName)
-        {
-            case "Alvao.API.AI":
-                switch (Name)
-                {
-                    case "Assistant":
-                        Usings.Add("Alvao.API.AI.Model");
-                        break;
-                }
-                break;
-            case "Alvao.API.AM.Exceptions":
-                switch (Name)
-                {
-                    case "InvalidMoveException":
-                    case "InvalidBulkMoveException":
-                        Usings.Add("System.Runtime.Serialization");
-                        break;
-                }
-                break;
-            case "Alvao.API.AM":
-                switch (Name)
-                {
-                    case "Installation":
-                    case "Product":
-                    case "ObjectRight":
-                    case "License":
-                    case "Scim":
-                        Usings.Add("Alvao.API.Common.Model.Database");
-                        break;
-
-                    case "Object":
-                    case "ObjectProperty":
-                        Usings.AddRange(["Alvao.API.AM.Model", "Alvao.API.Common.Model.Database"]);
-                        break;
-                }
-                break;
-            case "Alvao.API.SD.Exceptions":
-                switch (Name)
-                {
-                    case "RequiredFieldsException":
-                        Usings.Add("Alvao.API.SD.Model");
-                        break;
-                }
-                break;
-            case "Alvao.API.SD":
-                switch (Name)
-                {
-                    case "WorkLoad":
-                    case "Section":
-                    case "TicketParticipant":
-                    case "TeamsNotification":
-                    case "Organization":
-                        Usings.Add("Alvao.API.Common.Model.Database");
-                        break;
-                    case "Approval":
-                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
-                        break;
-                    case "MessageTemplate":
-                        Usings.AddRange(["Alvao.API.Common.Model", "System.Globalization"]);
-                        break;
-                    case "TicketProcess":
-                        Usings.AddRange(["Alvao.API.SD.Model", "System.Globalization"]);
-                        break;
-                    case "TicketState":
-                        Usings.AddRange(["Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
-                        break;
-                    case "Message":
-                    case "Ticket":
-                    case "Act":
-                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
-                        break;
-                }
-                break;
-            case "Alvao.Context.DB":
-                switch (Name)
-                {
-                    case "IConnectionScope":
-                        Usings.AddRange(["System.Data", "Microsoft.Data.SqlClient"]);
-                        break;
-                }
-                break;
-            case "Alvao.Context":
-                switch (Name)
-                {
-                    case "AlvaoContext":
-                        Usings.AddRange(["Alvao.Context.DB", "Volo.Abp.EntityFrameworkCore"]);
-                        break;
-                }
-                break;
-            case "Alvao.API.SD.Model":
-                switch (Name)
-                {
-                    case "TicketProcessColumnModel":
-                    case "TicketTemplateColumnModel":
-                    case "InitialActSettings":
-                    case "RelatedTicketRuleModel":
-                    case "SendMessageSettingsModel":
-                    case "ActCreateSettings":
-                        Usings.Add("Alvao.API.Common.Model.Database");
-                        break;
-
-                    case "NewTicketModel":
-                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
-                        break;
-
-                    case "ChangeTicketStateSettingsModel":
-                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
-                        break;
-                }
-                break;
-            case "Alvao.API.Common":
-                switch (Name)
-                {
-                    case "CustomColumn":
-                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
-                        break;
-                    case "AuditLog":
-                        Usings.Add("Alvao.API.Common.Model");
-                        break;
-                    case "Email":
-                        Usings.Add("System.Net.Mail");
-                        break;
-                    case "Person":
-                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model.Database"]);
-                        break;
-
-                    case "Role":
-                    case "PersonRights":
-                        Usings.Add("Alvao.API.Common.Model.Database");
-                        break;
-                }
-                break;
+            Events.Add(_sb.ToString());
         }
     }
 
@@ -468,35 +363,140 @@ public class AlvaoClass
         }
     }
 
-    private void ProcessEvents()
+    private void MonkeyPatching()
     {
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
-        if (elements == null) return;
-
-        foreach (var e in elements)
+        switch (NamespaceName)
         {
-            var _name = Helpers.ExtractObjectName(e);
-            Console.WriteLine($"    Processing {_name} Method");
+            case "Alvao.API.AI":
+                switch (Name)
+                {
+                    case "Assistant":
+                        Usings.Add("Alvao.API.AI.Model");
+                        break;
+                }
+                break;
+            case "Alvao.API.AM.Exceptions":
+                switch (Name)
+                {
+                    case "InvalidMoveException":
+                    case "InvalidBulkMoveException":
+                        Usings.Add("System.Runtime.Serialization");
+                        break;
+                }
+                break;
+            case "Alvao.API.AM":
+                switch (Name)
+                {
+                    case "Installation":
+                    case "Product":
+                    case "ObjectRight":
+                    case "License":
+                    case "Scim":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
 
-            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
-            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
-            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-            if (!_link.StartsWith("https://doc.alvao")) continue;
-            if (!_link.EndsWith(".htm")) continue;
+                    case "Object":
+                    case "ObjectProperty":
+                        Usings.AddRange(["Alvao.API.AM.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                }
+                break;
+            case "Alvao.API.SD.Exceptions":
+                switch (Name)
+                {
+                    case "RequiredFieldsException":
+                        Usings.Add("Alvao.API.SD.Model");
+                        break;
+                }
+                break;
+            case "Alvao.API.SD":
+                switch (Name)
+                {
+                    case "WorkLoad":
+                    case "Section":
+                    case "TicketParticipant":
+                    case "TeamsNotification":
+                    case "Organization":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+                    case "Approval":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                    case "MessageTemplate":
+                        Usings.AddRange(["Alvao.API.Common.Model", "System.Globalization"]);
+                        break;
+                    case "TicketProcess":
+                        Usings.AddRange(["Alvao.API.SD.Model", "System.Globalization"]);
+                        break;
+                    case "TicketState":
+                        Usings.AddRange(["Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
+                        break;
+                    case "Message":
+                    case "Ticket":
+                    case "Act":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
+                        break;
+                }
+                break;
+            case "Alvao.Context.DB":
+                switch (Name)
+                {
+                    case "IConnectionScope":
+                        Usings.AddRange(["System.Data", "Microsoft.Data.SqlClient"]);
+                        break;
+                }
+                break;
+            case "Alvao.Context":
+                switch (Name)
+                {
+                    case "AlvaoContext":
+                        Usings.AddRange(["Alvao.Context.DB", "Volo.Abp.EntityFrameworkCore"]);
+                        break;
+                }
+                break;
+            case "Alvao.API.SD.Model":
+                switch (Name)
+                {
+                    case "TicketProcessColumnModel":
+                    case "TicketTemplateColumnModel":
+                    case "InitialActSettings":
+                    case "RelatedTicketRuleModel":
+                    case "SendMessageSettingsModel":
+                    case "ActCreateSettings":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
 
-            var _document = Helpers.LoadDocument(_link, _localHtml);
-            var _summary = Helpers.GetSummary(_document);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var _sb = new StringBuilder();
-            if (!_summary.Equals("")) _sb.AppendLine(_summary);
-            _sb.AppendLine(Helpers.GenerateSeeDoc(_link));
+                    case "NewTicketModel":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
 
-            var _definition = Helpers.ExtractObjectDefinition(_document);
-            if (_definition == null) continue;
+                    case "ChangeTicketStateSettingsModel":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                }
+                break;
+            case "Alvao.API.Common":
+                switch (Name)
+                {
+                    case "CustomColumn":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                    case "AuditLog":
+                        Usings.Add("Alvao.API.Common.Model");
+                        break;
+                    case "Email":
+                        Usings.Add("System.Net.Mail");
+                        break;
+                    case "Person":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model.Database"]);
+                        break;
 
-            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
-
-            Events.Add(_sb.ToString());
+                    case "Role":
+                    case "PersonRights":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+                }
+                break;
         }
     }
 
