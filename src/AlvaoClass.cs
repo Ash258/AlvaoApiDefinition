@@ -206,6 +206,14 @@ public class AlvaoClass
                         break;
                 }
                 break;
+            case "Alvao.API.SD.Exceptions":
+                switch (Name)
+                {
+                    case "Alvao.API.SD.Model":
+                        Usings.Add("Alvao.API.SD.Model");
+                        break;
+                }
+                break;
             case "Alvao.API.SD.Model":
                 switch (Name)
                 {
