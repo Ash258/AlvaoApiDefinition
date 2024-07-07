@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Properties of objects - Model.
-/// </summary>
+/// <summary>Properties of objects - Model.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_Model.htm"/>
 [TableAttribute("dbo.vPropertyKind_Model")]
 public class vPropertyKind_Model

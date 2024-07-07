@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Property entrusted to me - services which should be displayed in the service offer on the pages of objects of///           a certain type.
-/// </summary>
+/// <summary>Property entrusted to me - services which should be displayed in the service offer on the pages of objects of a certain type.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionNodeClassMyAssets.htm"/>
 [TableAttribute("dbo.HdSectionNodeClassMyAssets")]
 public class HdSectionNodeClassMyAssets

@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Objects and properties - Type Designation, Serial Number, Manufacturer, Registration Number, Name.
-/// </summary>
+/// <summary>Objects and properties - Type Designation, Serial Number, Manufacturer, Registration Number, Name.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vNodePropertyMix_Public.htm"/>
 [TableAttribute("dbo.vNodePropertyMix_Public")]
 public class vNodePropertyMix_Public

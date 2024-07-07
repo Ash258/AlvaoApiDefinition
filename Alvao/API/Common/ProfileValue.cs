@@ -1,8 +1,6 @@
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping profile value methods.
-/// </summary>
+/// <summary>Facade class grouping profile value methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_ProfileValue.htm"/>
 public static class ProfileValue
 {

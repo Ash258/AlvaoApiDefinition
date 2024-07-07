@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Logging users in/out to/from Asset Management Console.
-/// </summary>
+/// <summary>Logging users in/out to/from Asset Management Console.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_UserLogonLog.htm"/>
 [TableAttribute("dbo.UserLogonLog")]
 public class UserLogonLog

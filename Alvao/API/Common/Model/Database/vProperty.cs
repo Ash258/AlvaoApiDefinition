@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// View of the properties of objects, including calculated value ​​for the "User" type property.
-/// </summary>
+/// <summary>View of the properties of objects, including calculated value ​​for the "User" type property.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vProperty.htm"/>
 [TableAttribute("dbo.vProperty")]
 public class vProperty

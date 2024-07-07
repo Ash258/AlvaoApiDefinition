@@ -3,9 +3,7 @@ using System.Globalization;
 
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping person methods.
-/// </summary>
+/// <summary>Facade class grouping person methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Person.htm"/>
 public static class Person
 {

@@ -4,9 +4,7 @@ using Alvao.API.SD.Model;
 
 namespace Alvao.API.SD;
 
-/// <summary>
-/// Facade class grouping email methods.
-/// </summary>
+/// <summary>Facade class grouping email methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Message.htm"/>
 public static class Message
 {

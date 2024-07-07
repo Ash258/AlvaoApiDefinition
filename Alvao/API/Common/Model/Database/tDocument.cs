@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Attachments (to documents, notes, events, e-mails, ...) concerning the entire ALVAO system.
-/// </summary>
+/// <summary>Attachments (to documents, notes, events, e-mails, ...) concerning the entire ALVAO system.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tDocument.htm"/>
 [TableAttribute("dbo.tDocument")]
 public class tDocument

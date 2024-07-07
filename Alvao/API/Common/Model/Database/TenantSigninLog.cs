@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// User sign in log records
-/// </summary>
+/// <summary>User sign in log records</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TenantSigninLog.htm"/>
 [TableAttribute("dbo.TenantSigninLog")]
 public class TenantSigninLog

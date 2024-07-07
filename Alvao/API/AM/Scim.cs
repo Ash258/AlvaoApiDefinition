@@ -2,9 +2,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.AM;
 
-/// <summary>
-/// Facade class grouping AM SCIM methods.
-/// </summary>
+/// <summary>Facade class grouping AM SCIM methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Scim.htm"/>
 public static class Scim
 {

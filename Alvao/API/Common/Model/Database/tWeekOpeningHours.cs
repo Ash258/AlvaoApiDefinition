@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Item in the definition of service operating hours.
-/// </summary>
+/// <summary>Item in the definition of service operating hours.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tWeekOpeningHours.htm"/>
 [TableAttribute("dbo.tWeekOpeningHours")]
 public class tWeekOpeningHours

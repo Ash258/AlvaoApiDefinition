@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Services to which the given solver created tickets last using the New Ticket Form.
-/// </summary>
+/// <summary>Services to which the given solver created tickets last using the New Ticket Form.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_OperatorServiceUsage.htm"/>
 [TableAttribute("dbo.OperatorServiceUsage")]
 public class OperatorServiceUsage

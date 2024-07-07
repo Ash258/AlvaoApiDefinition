@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Detail of the HW detection - all.
-/// </summary>
+/// <summary>Detail of the HW detection - all.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vWbemObject.htm"/>
 [TableAttribute("dbo.vWbemObject")]
 public class vWbemObject

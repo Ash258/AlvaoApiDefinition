@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Properties of objects - Packing slip number.
-/// </summary>
+/// <summary>Properties of objects - Packing slip number.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_InvoiceNumber.htm"/>
 [TableAttribute("dbo.vPropertyKind_InvoiceNumber")]
 public class vPropertyKind_InvoiceNumber

@@ -1,8 +1,6 @@
 namespace Alvao.API.SD.Model;
 
-/// <summary>
-/// Model representing act costs.
-/// </summary>
+/// <summary>Model representing act costs.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_CostModel.htm"/>
 public class CostModel
 {

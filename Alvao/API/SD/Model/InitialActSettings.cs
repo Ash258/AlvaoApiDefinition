@@ -2,9 +2,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD.Model;
 
-/// <summary>
-/// Ticket initial act settings
-/// </summary>
+/// <summary>Ticket initial act settings</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_InitialActSettings.htm"/>
 public class InitialActSettings : ActCreateSettings
 {

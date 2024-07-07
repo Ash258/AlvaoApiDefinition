@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Detected registry entries. The table contains records which may repeat in various computers.
-/// </summary>
+/// <summary>Detected registry entries. The table contains records which may repeat in various computers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblRegUninstall.htm"/>
 [TableAttribute("dbo.tblRegUninstall")]
 public class tblRegUninstall

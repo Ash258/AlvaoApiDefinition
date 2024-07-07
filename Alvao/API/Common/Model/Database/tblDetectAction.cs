@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Scheduled evaluation of HW and SW by detection.
-/// </summary>
+/// <summary>Scheduled evaluation of HW and SW by detection.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDetectAction.htm"/>
 [TableAttribute("dbo.tblDetectAction")]
 public class tblDetectAction

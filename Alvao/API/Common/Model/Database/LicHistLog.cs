@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Change record for a license or a license item.
-/// </summary>
+/// <summary>Change record for a license or a license item.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicHistLog.htm"/>
 [TableAttribute("dbo.LicHistLog")]
 public class LicHistLog

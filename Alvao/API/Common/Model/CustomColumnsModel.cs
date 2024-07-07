@@ -1,8 +1,6 @@
 namespace Alvao.API.Common.Model;
 
-/// <summary>
-/// Custom columns model
-/// </summary>
+/// <summary>Custom columns model</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_CustomColumnsModel.htm"/>
 public class CustomColumnsModel
 {

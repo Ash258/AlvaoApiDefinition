@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Recognition rules for files (software products library).
-/// </summary>
+/// <summary>Recognition rules for files (software products library).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblFileImage.htm"/>
 [TableAttribute("dbo.tblFileImage")]
 public class tblFileImage

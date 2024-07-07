@@ -1,8 +1,6 @@
 namespace Alvao.API.AM;
 
-/// <summary>
-/// Facade class grouping object relation methods
-/// </summary>
+/// <summary>Facade class grouping object relation methods</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_ObjectRelation.htm"/>
 public static class ObjectRelation
 {

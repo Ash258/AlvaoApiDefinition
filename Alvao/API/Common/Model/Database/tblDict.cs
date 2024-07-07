@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Common table for the text code lists of the system tables values.
-/// </summary>
+/// <summary>Common table for the text code lists of the system tables values.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDict.htm"/>
 [TableAttribute("dbo.tblDict")]
 public class tblDict

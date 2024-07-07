@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Detected files on the computers (SW detection).
-/// </summary>
+/// <summary>Detected files on the computers (SW detection).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDetFile.htm"/>
 [TableAttribute("dbo.tblDetFile")]
 public class tblDetFile

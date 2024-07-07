@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Kind of membership in the group.
-/// </summary>
+/// <summary>Kind of membership in the group.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleMembershipLogMemberType.htm"/>
 [TableAttribute("dbo.RoleMembershipLogMemberType")]
 public class RoleMembershipLogMemberType

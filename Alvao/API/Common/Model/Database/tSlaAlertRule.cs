@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Rule for sending notifications for unresolved issues or an upcoming deadline.
-/// </summary>
+/// <summary>Rule for sending notifications for unresolved issues or an upcoming deadline.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSlaAlertRule.htm"/>
 [TableAttribute("dbo.tSlaAlertRule")]
 public class tSlaAlertRule

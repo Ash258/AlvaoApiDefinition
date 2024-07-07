@@ -3,9 +3,7 @@ using System.Data;
 
 namespace Alvao.Context.DB;
 
-/// <summary>
-/// Provides access to database connection and transaction operations.
-/// </summary>
+/// <summary>Provides access to database connection and transaction operations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_Context_DB_IConnectionScope.htm"/>
 public interface IConnectionScope : IDisposable
 {

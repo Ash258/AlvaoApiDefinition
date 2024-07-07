@@ -2,9 +2,7 @@ using Alvao.API.AI.Model;
 
 namespace Alvao.API.AI;
 
-/// <summary>
-/// Facade for Service Desk AI Assistant methods.
-/// </summary>
+/// <summary>Facade for Service Desk AI Assistant methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Assistant.htm"/>
 public static class Assistant
 {

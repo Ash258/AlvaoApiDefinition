@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Table with list of paid overtime hours
-/// </summary>
+/// <summary>Table with list of paid overtime hours</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_WorkOvertimeDisposal.htm"/>
 [TableAttribute("dbo.WorkOvertimeDisposal")]
 public class WorkOvertimeDisposal

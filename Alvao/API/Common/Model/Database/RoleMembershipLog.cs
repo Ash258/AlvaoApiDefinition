@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Logging of changes in membership in groups.
-/// </summary>
+/// <summary>Logging of changes in membership in groups.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleMembershipLog.htm"/>
 [TableAttribute("dbo.RoleMembershipLog")]
 public class RoleMembershipLog

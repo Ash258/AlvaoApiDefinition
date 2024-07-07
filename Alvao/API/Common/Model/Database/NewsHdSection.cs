@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Services for which the individual news are intended.
-/// </summary>
+/// <summary>Services for which the individual news are intended.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NewsHdSection.htm"/>
 [TableAttribute("dbo.NewsHdSection")]
 public class NewsHdSection

@@ -1,8 +1,6 @@
 namespace Alvao.Context.DB;
 
-/// <summary>
-/// Represents arguments for events triggered over transaction state changes.
-/// </summary>
+/// <summary>Represents arguments for events triggered over transaction state changes.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_Context_DB_TransactionEventArgs.htm"/>
 public class TransactionEventArgs : EventArgs
 {

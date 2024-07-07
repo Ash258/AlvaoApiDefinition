@@ -1,8 +1,6 @@
 namespace Alvao.Context.DB;
 
-/// <summary>
-/// Database context interface that provides connection scope and transaction events.
-/// </summary>
+/// <summary>Database context interface that provides connection scope and transaction events.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_Context_DB_IDbContext.htm"/>
 public interface IDbContext
 {

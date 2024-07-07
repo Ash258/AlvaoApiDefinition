@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Settings of rules for sending alerts of not yet signed handover protocols.
-/// </summary>
+/// <summary>Settings of rules for sending alerts of not yet signed handover protocols.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TransferConfirmAlertRule.htm"/>
 [TableAttribute("dbo.TransferConfirmAlertRule")]
 public class TransferConfirmAlertRule

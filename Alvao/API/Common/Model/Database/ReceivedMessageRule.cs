@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Rules for incoming messages to service mailboxes.
-/// </summary>
+/// <summary>Rules for incoming messages to service mailboxes.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ReceivedMessageRule.htm"/>
 [TableAttribute("dbo.ReceivedMessageRule")]
 public class ReceivedMessageRule

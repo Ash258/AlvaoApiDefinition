@@ -2,9 +2,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD;
 
-/// <summary>
-/// Facade class grouping labor contracts methods.
-/// </summary>
+/// <summary>Facade class grouping labor contracts methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_WorkLoad.htm"/>
 public static class WorkLoad
 {

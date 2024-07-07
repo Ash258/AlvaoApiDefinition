@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Permissions individuals and groups have in services (Main solver, Solver, ...).
-/// </summary>
+/// <summary>Permissions individuals and groups have in services (Main solver, Solver, ...).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdSectionRights.htm"/>
 [TableAttribute("dbo.tHdSectionRights")]
 public class tHdSectionRights

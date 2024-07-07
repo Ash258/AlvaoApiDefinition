@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// SW detected in the computers.
-/// </summary>
+/// <summary>SW detected in the computers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSwInst_ProductComputerDetect.htm"/>
 [TableAttribute("dbo.vSwInst_ProductComputerDetect")]
 public class vSwInst_ProductComputerDetect

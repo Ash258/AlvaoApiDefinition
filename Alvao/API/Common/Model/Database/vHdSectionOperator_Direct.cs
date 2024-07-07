@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Effective main solvers without absentee stand-ins.
-/// </summary>
+/// <summary>Effective main solvers without absentee stand-ins.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdSectionOperator_Direct.htm"/>
 [TableAttribute("dbo.vHdSectionOperator_Direct")]
 public class vHdSectionOperator_Direct

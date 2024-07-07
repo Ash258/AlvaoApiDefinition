@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Article in Knowledge Base.
-/// </summary>
+/// <summary>Article in Knowledge Base.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tArticle.htm"/>
 [TableAttribute("dbo.tArticle")]
 public class tArticle

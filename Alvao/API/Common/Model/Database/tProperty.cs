@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// ALVAO system settings.
-/// </summary>
+/// <summary>ALVAO system settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tProperty.htm"/>
 [TableAttribute("dbo.tProperty")]
 public class tProperty

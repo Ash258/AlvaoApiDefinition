@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Summary SLA notifications for solver group inactivity.
-/// </summary>
+/// <summary>Summary SLA notifications for solver group inactivity.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaAlertInactiveSolverGroupsSummary.htm"/>
 [TableAttribute("dbo.vSlaAlertInactiveSolverGroupsSummary")]
 public class vSlaAlertInactiveSolverGroupsSummary

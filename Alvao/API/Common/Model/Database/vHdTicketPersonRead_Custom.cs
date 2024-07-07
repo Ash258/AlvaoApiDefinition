@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Custom extension of user permissions to see tickets. You can customize this view to include users and///           requests that those users should see in the application.
-/// </summary>
+/// <summary>Custom extension of user permissions to see tickets. You can customize this view to include users and requests that those users should see in the application.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdTicketPersonRead_Custom.htm"/>
 [TableAttribute("dbo.vHdTicketPersonRead_Custom")]
 public class vHdTicketPersonRead_Custom

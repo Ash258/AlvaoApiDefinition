@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Users that only have the right of reader in the services.
-/// </summary>
+/// <summary>Users that only have the right of reader in the services.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vOnlyReader.htm"/>
 [TableAttribute("dbo.vOnlyReader")]
 public class vOnlyReader

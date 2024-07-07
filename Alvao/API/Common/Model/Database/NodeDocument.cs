@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Objects in the tree - links to documents.
-/// </summary>
+/// <summary>Objects in the tree - links to documents.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NodeDocument.htm"/>
 [TableAttribute("dbo.NodeDocument")]
 public class NodeDocument

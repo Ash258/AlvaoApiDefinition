@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Installed software - valid products and outside system objects.
-/// </summary>
+/// <summary>Installed software - valid products and outside system objects.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSwInst.htm"/>
 [TableAttribute("dbo.vSwInst")]
 public class vSwInst

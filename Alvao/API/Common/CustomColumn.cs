@@ -4,9 +4,7 @@ using System.Globalization;
 
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping custom column methods.
-/// </summary>
+/// <summary>Facade class grouping custom column methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_CustomColumn.htm"/>
 public static class CustomColumn
 {

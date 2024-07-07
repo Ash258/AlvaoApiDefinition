@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Language localization for selected database values. The following items are supported:///           tHdSection.sHdSectionShort, tHdSection.mHdSectionDesc.
-/// </summary>
+/// <summary>Language localization for selected database values. The following items are supported: tHdSection.sHdSectionShort, tHdSection.mHdSectionDesc.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization.htm"/>
 [TableAttribute("dbo.tLocalization")]
 public class tLocalization

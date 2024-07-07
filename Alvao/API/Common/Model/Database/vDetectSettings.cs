@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Computer detection settings.
-/// </summary>
+/// <summary>Computer detection settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vDetectSettings.htm"/>
 [TableAttribute("dbo.vDetectSettings")]
 public class vDetectSettings

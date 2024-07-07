@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Information on detected files - versions.
-/// </summary>
+/// <summary>Information on detected files - versions.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblFileVerInfo.htm"/>
 [TableAttribute("dbo.tblFileVerInfo")]
 public class tblFileVerInfo

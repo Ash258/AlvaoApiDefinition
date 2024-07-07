@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Rights in the object tree - users (including the rights allowed / prohibited by membership in roles).
-/// </summary>
+/// <summary>Rights in the object tree - users (including the rights allowed / prohibited by membership in roles).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vUserNodeRight.htm"/>
 [TableAttribute("dbo.vUserNodeRight")]
 public class vUserNodeRight

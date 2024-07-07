@@ -2,9 +2,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping person rights methods. Person rights are usually cached.
-/// </summary>
+/// <summary>Facade class grouping person rights methods. Person rights are usually cached.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_PersonRights.htm"/>
 public static class PersonRights
 {

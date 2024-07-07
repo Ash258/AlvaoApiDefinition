@@ -2,9 +2,7 @@ using System.Net.Mail;
 
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping mail methods.
-/// </summary>
+/// <summary>Facade class grouping mail methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Email.htm"/>
 public static class Email
 {

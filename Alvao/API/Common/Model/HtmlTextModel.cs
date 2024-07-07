@@ -1,8 +1,6 @@
 namespace Alvao.API.Common.Model;
 
-/// <summary>
-/// Model representing HTML text.
-/// </summary>
+/// <summary>Model representing HTML text.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_HtmlTextModel.htm"/>
 public class HtmlTextModel
 {

@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Log - history of objects in the tree - move, deletion, insertion, etc.
-/// </summary>
+/// <summary>Log - history of objects in the tree - move, deletion, insertion, etc.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblHistory.htm"/>
 [TableAttribute("dbo.tblHistory")]
 public class tblHistory

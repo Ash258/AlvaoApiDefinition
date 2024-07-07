@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Permission to run a Data query.
-/// </summary>
+/// <summary>Permission to run a Data query.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DataQueryPermission.htm"/>
 [TableAttribute("dbo.DataQueryPermission")]
 public class DataQueryPermission

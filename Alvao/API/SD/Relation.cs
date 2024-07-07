@@ -1,8 +1,6 @@
 namespace Alvao.API.SD;
 
-/// <summary>
-/// Facade class grouping request relations methods.
-/// </summary>
+/// <summary>Facade class grouping request relations methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Relation.htm"/>
 public static class Relation
 {

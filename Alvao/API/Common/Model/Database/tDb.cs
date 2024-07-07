@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Database version, database language ID, activation keys for the entire ALVAO.
-/// </summary>
+/// <summary>Database version, database language ID, activation keys for the entire ALVAO.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tDb.htm"/>
 [TableAttribute("dbo.tDb")]
 public class tDb

@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Records of reading the news. In multi-tenant operation, records of reading news displayed to other tenants///           are saved in the provider's database.
-/// </summary>
+/// <summary>Records of reading the news. In multi-tenant operation, records of reading news displayed to other tenants are saved in the provider's database.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NewsRead.htm"/>
 [TableAttribute("dbo.NewsRead")]
 public class NewsRead

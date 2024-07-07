@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Tenant security-change log records
-/// </summary>
+/// <summary>Tenant security-change log records</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TenantSecurityChangeLog.htm"/>
 [TableAttribute("dbo.TenantSecurityChangeLog")]
 public class TenantSecurityChangeLog

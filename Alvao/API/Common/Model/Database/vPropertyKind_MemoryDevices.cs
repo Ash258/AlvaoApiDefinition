@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Properties of objects - Sockets.
-/// </summary>
+/// <summary>Properties of objects - Sockets.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_MemoryDevices.htm"/>
 [TableAttribute("dbo.vPropertyKind_MemoryDevices")]
 public class vPropertyKind_MemoryDevices

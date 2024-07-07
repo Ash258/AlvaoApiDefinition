@@ -2,9 +2,7 @@ using Alvao.API.Common.Model;
 
 namespace Alvao.API.Common;
 
-/// <summary>
-/// Facade class grouping logging methods.
-/// </summary>
+/// <summary>Facade class grouping logging methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_AuditLog.htm"/>
 public static class AuditLog
 {

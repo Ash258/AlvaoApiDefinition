@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Periodic alerts not defined by an SQL query. Sent by e-mail, periodically with the selected regularity.
-/// </summary>
+/// <summary>Periodic alerts not defined by an SQL query. Sent by e-mail, periodically with the selected regularity.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PeriodicAlert.htm"/>
 [TableAttribute("dbo.PeriodicAlert")]
 public class PeriodicAlert

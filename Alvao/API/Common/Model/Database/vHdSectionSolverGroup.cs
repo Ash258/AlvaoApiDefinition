@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Effective solvers from solver groups of services.
-/// </summary>
+/// <summary>Effective solvers from solver groups of services.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdSectionSolverGroup.htm"/>
 [TableAttribute("dbo.vHdSectionSolverGroup")]
 public class vHdSectionSolverGroup

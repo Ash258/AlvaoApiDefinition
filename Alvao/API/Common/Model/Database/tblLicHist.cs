@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// License - list of purchased software licenses.
-/// </summary>
+/// <summary>License - list of purchased software licenses.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist.htm"/>
 [TableAttribute("dbo.tblLicHist")]
 public class tblLicHist

@@ -1,8 +1,6 @@
 namespace Alvao.API.Common.Model;
 
-/// <summary>
-/// Audit system block model
-/// </summary>
+/// <summary>Audit system block model</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_AuditSystemBlockModel.htm"/>
 public class AuditSystemBlockModel
 {

@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Information on HW and SW detections in the computers.
-/// </summary>
+/// <summary>Information on HW and SW detections in the computers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDetect.htm"/>
 [TableAttribute("dbo.tblDetect")]
 public class tblDetect

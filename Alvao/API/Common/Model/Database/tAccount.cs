@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Organization (in accordance with CRM, i.e. the company).
-/// </summary>
+/// <summary>Organization (in accordance with CRM, i.e. the company).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tAccount.htm"/>
 [TableAttribute("dbo.tAccount")]
 public class tAccount

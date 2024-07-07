@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Cache for the number of unread tickets from the viewpoint of a specific user.
-/// </summary>
+/// <summary>Cache for the number of unread tickets from the viewpoint of a specific user.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PersonGridView.htm"/>
 [TableAttribute("dbo.PersonGridView")]
 public class PersonGridView

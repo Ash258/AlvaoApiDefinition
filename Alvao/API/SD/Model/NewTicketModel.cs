@@ -3,9 +3,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD.Model;
 
-/// <summary>
-/// New request model.
-/// </summary>
+/// <summary>New request model.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_NewTicketModel.htm"/>
 public class NewTicketModel
 {

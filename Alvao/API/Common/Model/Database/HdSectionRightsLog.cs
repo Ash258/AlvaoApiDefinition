@@ -2,9 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>
-/// Logging of changes in user permissions to services. The meaning of values in permission columns: 1=enable///           0=refuse NULL=not set
-/// </summary>
+/// <summary>Logging of changes in user permissions to services. The meaning of values in permission columns: 1=enable 0=refuse NULL=not set</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionRightsLog.htm"/>
 [TableAttribute("dbo.HdSectionRightsLog")]
 public class HdSectionRightsLog
