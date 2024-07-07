@@ -15,5 +15,4 @@ public static class DetectionMethod
         MSSccm = 8,
     }
 
-
 }

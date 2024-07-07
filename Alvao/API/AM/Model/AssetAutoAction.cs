@@ -12,5 +12,4 @@ public static class AssetAutoAction
         ObjectMoved = 16,
     }
 
-
 }

@@ -76,5 +76,4 @@ public static class Kind
         IntuneLastCheckIn = 168,
     }
 
-
 }

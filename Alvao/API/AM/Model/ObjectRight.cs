@@ -12,5 +12,4 @@ public static class ObjectRight
         CanObjectCreate = 5,
     }
 
-
 }

@@ -8,5 +8,4 @@ public static class PropertyRight
         ReadProperty = 1,
     }
 
-
 }
