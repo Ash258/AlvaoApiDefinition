@@ -214,6 +214,35 @@ public class AlvaoClass
                         break;
                 }
                 break;
+            case "Alvao.API.SD":
+                switch (Name)
+                {
+                    case "WorkLoad":
+                    case "Section":
+                    case "TicketParticipant":
+                    case "TeamsNotification":
+                    case "Organization":
+                        Usings.Add("Alvao.API.Common.Model.Database");
+                        break;
+                    case "Approval":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database"]);
+                        break;
+                    case "MessageTemplate":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model"]);
+                        break;
+                    case "TicketProcess":
+                        Usings.AddRange(["System.Globalization", "Alvao.API.SD.Model"]);
+                        break;
+                    case "TicketState":
+                        Usings.AddRange(["Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
+                        break;
+                    case "Message":
+                    case "Ticket":
+                    case "Act":
+                        Usings.AddRange(["Alvao.API.Common.Model", "Alvao.API.Common.Model.Database", "Alvao.API.SD.Model"]);
+                        break;
+                }
+                break;
             case "Alvao.API.SD.Model":
                 switch (Name)
                 {
@@ -221,6 +250,8 @@ public class AlvaoClass
                     case "TicketTemplateColumnModel":
                     case "InitialActSettings":
                     case "RelatedTicketRuleModel":
+                    case "SendMessageSettingsModel":
+                    case "ActCreateSettings":
                         Usings.Add("Alvao.API.Common.Model.Database");
                         break;
 
