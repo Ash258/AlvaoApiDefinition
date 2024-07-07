@@ -9,5 +9,4 @@ public static class LogOperation
         Remove = 3,
     }
 
-
 }

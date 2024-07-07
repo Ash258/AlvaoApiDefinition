@@ -11,5 +11,4 @@ public static class CustomTables
     public const string TicketState = "TicketStateCust";
     public const string tPerson = "tPersonCust";
     public const string tSla = "tSlaCust";
-
 }

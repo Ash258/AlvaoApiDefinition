@@ -14,6 +14,5 @@ public interface IAttachment
     Guid UniqueName { get; }
     string Url { get; }
 
-
     Stream GetStream();
 }
