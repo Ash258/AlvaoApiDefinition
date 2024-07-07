@@ -75,7 +75,7 @@ public class AlvaoClass
         // TODO: Drop
         if (Helpers.IsInvalidClass(NamespaceName, Name)) return;
 
-        var _def = HtmlDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
+        var _def = Helpers.ExtractObjectDefinition(HtmlDocument);
         if (_def == null) return;
 
         Definition = Helpers.SanitizeXmlToString(_def);
