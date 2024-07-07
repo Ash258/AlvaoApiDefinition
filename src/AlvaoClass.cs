@@ -510,7 +510,7 @@ public class AlvaoClass
             classLink,
             $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
             an.Name,
-            className.Replace("Class", "").Replace("Interface", "").Trim(),
+            className.Replace(" Class", "").Replace(" Interface", "").Trim(),
             className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
         );
         clazz.Process();
