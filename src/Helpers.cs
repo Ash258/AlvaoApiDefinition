@@ -28,7 +28,7 @@ public static class Helpers
 
     public static bool IsInvalidAlvaoUrl(string link)
     {
-        return !link.StartsWith("https://doc.alvao") || !link.EndsWith(".htm")
+        return !link.StartsWith("https://doc.alvao") || !link.EndsWith(".htm");
     }
 
     public static HtmlDocument LoadDocument(string url, string localPath)

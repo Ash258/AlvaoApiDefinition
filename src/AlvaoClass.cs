@@ -252,11 +252,8 @@ public class AlvaoClass
 
             // TODO: Drop
             if (emailQueueProcessed) continue;
-            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "AttachmentModel") && _name.Equals("SaveToDB")) continue;
-            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "HtmlTextModel") && _name.Equals("AddAttachmentsBasedOnTemplate")) continue;
             if (Helpers.IsClass(this, "Alvao.API.Common", "Email") && _name.Contains("Queue")) emailQueueProcessed = true;
-            if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("Import")) continue;
-            if (Helpers.IsClass(this, "Alvao.API.SD", "Sections") && _name.Equals("ValidateBeforeImport")) continue;
+            if (MonkeyPatch.IsInvalidMethod(NamespaceName, Name, _name)) continue;
 
             Console.WriteLine($"    Processing {_name} Method");
 
@@ -295,10 +292,11 @@ public class AlvaoClass
             }
 
             _definition = Helpers.SanitizeXmlToString(_definition);
+
             // TODO: Drop
             _definition = MonkeyPatch.Methods(this, _name, _definition);
-            _sb.AppendLine(_definition);
 
+            _sb.AppendLine(_definition);
             Methods.Add(_sb.ToString());
         }
     }

@@ -211,15 +211,32 @@ public static class MonkeyPatch
             case "Alvao.API.AM.Model":
                 if (className.Equals("ImportCsvSettings") && property.Equals("TextOutput"))
                     return true;
-                break;
+                return false;
             case "Alvao.Context":
                 if (new string[] { "AlvaoContext", "CustomApps" }.Contains(className) && property.Equals("DbContextProvider"))
                     return true;
-                break;
+                return false;
             default:
                 return false;
         }
+    }
 
-        return false;
+    public static bool IsInvalidMethod(string namespaceName, string className, string methodName)
+    {
+        switch (namespaceName)
+        {
+            case "Alvao.API.Common.Model":
+                if (className.Equals("AttachmentModel") && methodName.Equals("SaveToDB"))
+                    return true;
+                if (className.Equals("HtmlTextModel") && methodName.Equals("AddAttachmentsBasedOnTemplate"))
+                    return true;
+                return false;
+            case "Alvao.API.SD":
+                if (className.Equals("Sections") && new string[] { "Import", "ValidateBeforeImport" }.Contains(methodName))
+                    return true;
+                return false;
+            default:
+                return false;
+        }
     }
 }
