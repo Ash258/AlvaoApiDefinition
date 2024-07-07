@@ -51,6 +51,23 @@ public class AlvaoClass
         Summary = Helpers.GetSummary(HtmlDocument);
     }
 
+    internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
+    {
+        var aNode = cl.SelectNodes(".//a").Last();
+        var className = aNode.GetAttributeValue("title", "");
+        if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
+
+        var classHtmlBaseFileName = aNode.GetAttributeValue("href", "").Split("/").Last();
+        var clazz = new AlvaoClass(
+            $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}",
+            $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
+            an.Name,
+            className.Replace(" Class", "").Replace(" Interface", "").Trim(),
+            className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
+        );
+        clazz.Process();
+    }
+
     public void Process()
     {
         Console.WriteLine($"  Processing {Name} Class");
@@ -529,24 +546,5 @@ public class AlvaoClass
         sb.AppendLine("}");
 
         File.WriteAllText(FinalCsFile, sb.ToString());
-    }
-
-    internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
-    {
-        var classANode = cl.SelectNodes(".//a").Last();
-        var classHtmlBaseFileName = classANode.GetAttributeValue("href", "").Split("/").Last();
-        var classLink = $"{Helpers.BASE_HTML_URL}/{classHtmlBaseFileName}";
-        var className = classANode.GetAttributeValue("title", "");
-
-        if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
-
-        var clazz = new AlvaoClass(
-            classLink,
-            $"{Helpers.LOCAL_HTML_FOLDER}/{classHtmlBaseFileName}",
-            an.Name,
-            className.Replace(" Class", "").Replace(" Interface", "").Trim(),
-            className.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS
-        );
-        clazz.Process();
     }
 }
