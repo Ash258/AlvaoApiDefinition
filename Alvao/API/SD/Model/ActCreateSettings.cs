@@ -7,6 +7,8 @@ public class ActCreateSettings
     public DateTime? ActCreated { get; set; }
     public string ActCreatedByMachine { get; set; }
     public int? ActCreatedByProcessId { get; set; }
+    public ActMarkActMarkId? ActMark { get; set; }
+    public ActOperationActOperationId? ActOperation { get; set; }
     public string ActSpamLevel { get; set; }
     public string ActSpamStatus { get; set; }
     public string ActTo { get; set; }
