@@ -32,7 +32,6 @@ public static class PersonRights
         TicketRequesterAuthority = 33_554_432,
         ContactReader = 67_108_864,
     }
-
     [FlagsAttribute]
     public enum SectionRoles
     {
@@ -47,7 +46,6 @@ public static class PersonRights
         IrregularOperator = 64,
         RequestsReporter = 64,
     }
-
     [FlagsAttribute]
     public enum TicketRoles
     {
@@ -69,9 +67,9 @@ public static class PersonRights
         TicketRequestParticipantManager = 8_192,
     }
 
-
     /// <summary>Returns whether user can read particular user.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_CanReadPerson.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="personToReadId">Person to read ID (tPerson.iPersonId)</param>
     public static bool CanReadPerson(
@@ -82,6 +80,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user can read particular request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_CanReadTicket.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static bool CanReadTicket(
@@ -92,6 +91,7 @@ public static class PersonRights
 
     /// <summary>Resets user's rights cache. Useful after user rights changes.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_ClearUserRightsCache.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     public static void ClearUserRightsCache(
         int personId
@@ -100,6 +100,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user has any role in Asset Management.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_HaveAnyAssetManagementRole.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="includeRemovedHidden">Include removed and hidden users</param>
     public static bool HaveAnyAssetManagementRole(
@@ -110,6 +111,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is member of system group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_HaveGlobalRole.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="behavior">System group</param>
     /// <param name="includeRemovedHidden">Include removed and hidden users</param>
@@ -122,6 +124,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user has role in system.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_HaveGlobalRole_1.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="roles">Roles flags (it is possible to combine them with |)</param>
     /// <param name="includeRemovedHidden">Include removed and hidden users</param>
@@ -134,6 +137,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user has roles for particular request or service (or both).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_HaveTicketRole.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="sectionId">Service ID (tHdSection.iHdSectionId)</param>
@@ -150,23 +154,16 @@ public static class PersonRights
 
     /// <summary>Returns whether user is administrator.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsAdmin.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     public static bool IsAdmin(
         int personId
     )
     { throw new System.NotImplementedException(); }
 
-    /// <summary>Returns whether user is administrator. Revoked: If no administrator is set, returns true (everybody is administrator).</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsAdminOrAdministratorsRoleIsEmpty.htm"/>
-    /// <param name="personId">Person ID (tPerson.iPersonId)</param>
-    [ObsoleteAttribute("IsAdminOrAdministratorsRoleIsEmpty is deprecated, please use IsAdmin instead.")]
-    public static bool IsAdminOrAdministratorsRoleIsEmpty(
-        int personId
-    )
-    { throw new System.NotImplementedException(); }
-
     /// <summary>Returns whether user has some role in any service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsAnySectionRoleMember.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="role">Service role</param>
     public static bool IsAnySectionRoleMember(
@@ -177,6 +174,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is member of any service solver team (solver, manager)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsAnySectionSolverTeamMember.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     public static bool IsAnySectionSolverTeamMember(
         int personId
@@ -185,6 +183,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is requester or requester's manager.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsRequesterOrRequesterManager.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static bool IsRequesterOrRequesterManager(
@@ -195,6 +194,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user has role in service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsSectionRoleMember.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="sectionId">Service ID (tHdSection.iHdSectionId)</param>
     /// <param name="role">Service role</param>
@@ -207,6 +207,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user has service role for particular request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsSectionRoleMemberForTicket.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="role">Service role</param>
@@ -219,6 +220,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is request approval authority (approves request).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketApprovalAuthority.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static bool IsTicketApprovalAuthority(
@@ -229,6 +231,7 @@ public static class PersonRights
 
     /// <summary>Returns whether requester is not in requested for on the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketRequestedForDifferent.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdSection.iHdSectionId)</param>
     public static bool IsTicketRequestedForDifferent(
         int ticketId
@@ -237,6 +240,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is ticket participant on the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketRequestParticipant.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdSection.iHdSectionId)</param>
     public static bool IsTicketRequestParticipant(
@@ -247,6 +251,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is only reader for particular service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketSectionOnlyReader.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="sectionId">Service ID (tHdSection.iHdSectionId)</param>
     public static bool IsTicketSectionOnlyReader(
@@ -257,6 +262,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is request solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketSolver.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static bool IsTicketSolver(
@@ -267,6 +273,7 @@ public static class PersonRights
 
     /// <summary>Returns whether user is member of service solver team (solver, manager) for particular request</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_IsTicketSolverTeamMember.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static bool IsTicketSolverTeamMember(
@@ -275,5 +282,6 @@ public static class PersonRights
     )
     { throw new System.NotImplementedException(); }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_PersonRights_SectionSolverTeamRoles.htm"/>
     public static PersonRights.TicketRoles SectionSolverTeamRoles() { throw new System.NotImplementedException(); }
 }

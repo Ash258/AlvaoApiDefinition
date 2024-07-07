@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass.htm"/>
 public static class ObjectClass
 {
     public enum Code
@@ -59,6 +60,8 @@ public static class ObjectClass
         FirstUserClass = 5_000
     }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_ObjectClass_IsSpecial.htm"/>
+    ///
     /// <param name="classCode"> </param>
     public static bool IsSpecial(
         int? classCode

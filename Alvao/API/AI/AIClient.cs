@@ -3,6 +3,7 @@ using System.Net;
 
 namespace Alvao.API.AI;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_AIClient.htm"/>
 public class AIClient
 {
     /// <summary>Get or set the culture used for the AI responses.</summary>

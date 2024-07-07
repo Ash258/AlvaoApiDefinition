@@ -6,6 +6,7 @@ namespace Alvao.API.Common;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_CheckSettings.htm"/>
 public class CheckSettings
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CheckSettings__ctor.htm"/>
     public CheckSettings() { }
 
     /// <summary>Sends an e-mail alert which contains a list of detected deficiencies in the Alvao settings.</summary>

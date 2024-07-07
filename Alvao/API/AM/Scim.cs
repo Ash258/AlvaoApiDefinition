@@ -8,8 +8,10 @@ namespace Alvao.API.AM;
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Scim.htm"/>
 public static class Scim
 {
+
     /// <summary>Create new user if none exists with given UserName or AdGuid. Method can only be called within SCIM user import only.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Scim_CreateUser.htm"/>
+    ///
     /// <param name="userName">User Name (Login)</param>
     /// <param name="adGuid">Object AD Guid (tblNode.txtLDAPGUID)</param>
     /// <param name="properties">Object properties</param>
@@ -24,6 +26,7 @@ public static class Scim
 
     /// <summary>Get string value for property 'Account is disabled' Method can only be called within SCIM user import.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Scim_GetAccountDisabledStringValue.htm"/>
+    ///
     /// <param name="disabled">Boolean value of property</param>
     public static string GetAccountDisabledStringValue(
         bool disabled
@@ -32,6 +35,7 @@ public static class Scim
 
     /// <summary>Get user properties Method can only be called within SCIM user import only.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Scim_GetUserProperties.htm"/>
+    ///
     /// <param name="personId">Service Desk Person Id (tPerson.iPersonId). Asset user is found via database view vAssetUserPerson</param>
     /// <param name="properties">List of KindIds (tblKind.intKindId) of properties to get</param>
     public static IEnumerable<tblProperty> GetUserProperties(
@@ -46,6 +50,7 @@ public static class Scim
 
     /// <summary>Update existing user properties Method can only be called within SCIM user import only.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Scim_UpdateUser.htm"/>
+    ///
     /// <param name="personId">Service Desk Person Id (tPerson.iPersonId). Asset user is found via database view vAssetUserPerson</param>
     /// <param name="properties">User properties to update</param>
     /// <param name="extensionProperties">User extension properties to update. Key is property KindId (tblKind.intKindId)</param>

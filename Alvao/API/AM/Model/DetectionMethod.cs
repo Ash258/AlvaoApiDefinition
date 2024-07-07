@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_DetectionMethod.htm"/>
 public static class DetectionMethod
 {
     public enum Type
@@ -14,5 +15,4 @@ public static class DetectionMethod
         Autonomous = 7,
         MSSccm = 8,
     }
-
 }

@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectRight.htm"/>
 public static class ObjectRight
 {
     public enum Right
@@ -11,5 +12,4 @@ public static class ObjectRight
         CanObjectMove = 4,
         CanObjectCreate = 5,
     }
-
 }

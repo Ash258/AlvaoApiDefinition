@@ -1,5 +1,6 @@
 namespace Alvao.API.AI.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_TicketRelatedObject.htm"/>
 public class TicketRelatedObject
 {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_TicketRelatedObject_BeginNodeName.htm"/>

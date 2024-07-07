@@ -20,7 +20,8 @@ public static class Act
         Requester = 5,
     }
 
-
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_CanRead.htm"/>
+    ///
     /// <param name="actId"> </param>
     /// <param name="personId"> </param>
     public static bool CanRead(
@@ -31,6 +32,7 @@ public static class Act
 
     /// <summary>Creates new act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_Create.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Subject</param>
     /// <param name="message">Text</param>
@@ -51,6 +53,7 @@ public static class Act
 
     /// <summary>Creates new act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_Create_1.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Subject</param>
     /// <param name="message">Text</param>
@@ -71,6 +74,7 @@ public static class Act
 
     /// <summary>Creates new act, which informs users that a bound request was created</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_CreateAboutNewBoundTicket.htm"/>
+    ///
     /// <param name="ticketId">Request ID, where this act is created (tHdTicket.iHdTicketId)</param>
     /// <param name="ticketMark">New bound request mark (tHdTicket.sHdTicketMessageTag)</param>
     public static void CreateAboutNewBoundTicket(

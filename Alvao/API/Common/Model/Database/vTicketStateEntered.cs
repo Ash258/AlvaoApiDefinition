@@ -10,13 +10,18 @@ namespace Alvao.API.Common.Model.Database;
 public class vTicketStateEntered
 {
     /// <summary>Time of transition to status</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateEntered_StateEntered.htm"/>
     public virtual DateTime? StateEntered { get; set; }
     /// <summary>The ticket identification number.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateEntered_TicketId.htm"/>
     public virtual int TicketId { get; set; }
     /// <summary>Status name.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateEntered_TicketState.htm"/>
     public virtual string TicketState { get; set; }
     /// <summary>Identification number of the ticket status.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateEntered_TicketStateId.htm"/>
     public virtual int TicketStateId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vTicketStateEntered__ctor.htm"/>
     public vTicketStateEntered() { }
 }

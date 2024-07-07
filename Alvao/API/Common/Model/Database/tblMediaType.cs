@@ -9,8 +9,10 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tblMediaType")]
 public class tblMediaType
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblMediaType_intMediaTypeId.htm"/>
     [ExplicitKeyAttribute]
     public virtual int intMediaTypeId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblMediaType__ctor.htm"/>
     public tblMediaType() { }
 }

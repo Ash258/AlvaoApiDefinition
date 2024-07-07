@@ -9,6 +9,7 @@ public static class ProfileValue
 
     /// <summary>Delete ProfileValue rows.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_Delete.htm"/>
+    ///
     /// <param name="valueName">Value name of ProfileValue</param>
     /// <param name="stringValue">String value of ProfileValue</param>
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
@@ -25,6 +26,7 @@ public static class ProfileValue
 
     /// <summary>Returns table display mode.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_GetTableDisplayMode.htm"/>
+    ///
     /// <param name="personId">Person ID((tPerson.iPersonId)</param>
     /// <param name="valueName">Name of table and device identificator</param>
     public static bool? GetTableDisplayMode(
@@ -35,6 +37,7 @@ public static class ProfileValue
 
     /// <summary>Insert or upgrade of ProfileValue row.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_InsertOrUpdate.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="valueName">Value name of ProfileValue</param>
     /// <param name="stringValue">String value of ProfileValue</param>
@@ -51,6 +54,7 @@ public static class ProfileValue
 
     /// <summary>Sets table display mode.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_SetTableDisplayMode.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="valueName">Name of table and device identificator</param>
     /// <param name="value">True for compact mode, false for table mode</param>

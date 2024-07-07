@@ -9,8 +9,11 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.vPersonNodeRight_Create")]
 public class vPersonNodeRight_Create
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPersonNodeRight_Create_liNodeId.htm"/>
     public virtual int? liNodeId { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPersonNodeRight_Create_liPersonId.htm"/>
     public virtual int? liPersonId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vPersonNodeRight_Create__ctor.htm"/>
     public vPersonNodeRight_Create() { }
 }

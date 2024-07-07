@@ -11,6 +11,7 @@ public static class WorkLoad
 
     /// <summary>Creates new labor contract to person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_WorkLoad_Add.htm"/>
+    ///
     /// <param name="model">Labor contract model.</param>
     public static void Add(
         tWorkLoad model
@@ -19,6 +20,7 @@ public static class WorkLoad
 
     /// <summary>Removes user's labor contract.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_WorkLoad_Delete.htm"/>
+    ///
     /// <param name="id">Labor contract ID (tWorkLoad.iWorkLoadId)</param>
     public static void Delete(
         int id
@@ -27,6 +29,7 @@ public static class WorkLoad
 
     /// <summary>Updates user's labor contract.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_WorkLoad_Update.htm"/>
+    ///
     /// <param name="model">Labor contract model.</param>
     public static void Update(
         tWorkLoad model

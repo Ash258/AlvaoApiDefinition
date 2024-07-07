@@ -16,12 +16,14 @@ public class KindDataType
         Float = 3,
         User = 4,
     }
-
     /// <summary>Property data type name.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindDataType_DataTypeName.htm"/>
     public virtual string DataTypeName { get; set; }
     /// <summary>Property data type ID.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeId.htm"/>
     [KeyAttribute]
     public virtual int KindDataTypeId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_KindDataType__ctor.htm"/>
     public KindDataType() { }
 }

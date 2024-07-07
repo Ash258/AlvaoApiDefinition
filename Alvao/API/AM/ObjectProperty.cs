@@ -12,6 +12,7 @@ public static class ObjectProperty
 
     /// <summary>Adds property to object template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Add.htm"/>
+    ///
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="kindId">Property kind id (tblKind.intKindId)</param>
     /// <param name="value">New property value</param>
@@ -28,6 +29,7 @@ public static class ObjectProperty
 
     /// <summary>Return possible values for property</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_GetPosibleValues.htm"/>
+    ///
     /// <param name="property">Groups properties connected to property.</param>
     public static IEnumerable<tblKindValue> GetPosibleValues(
         Property property
@@ -36,6 +38,7 @@ public static class ObjectProperty
 
     /// <summary>Return template properties for specific object kind.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_GetTemplateProperties.htm"/>
+    ///
     /// <param name="classCode">Object (template) class (tblClass.intClassId)</param>
     public static IEnumerable<tblKind> GetTemplateProperties(
         tblClass.ClassCode classCode
@@ -44,6 +47,7 @@ public static class ObjectProperty
 
     /// <summary>Checks whether object template contains specific property</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_TemplateContains.htm"/>
+    ///
     /// <param name="classId">Object (template) class (tblClass.intClassId)</param>
     /// <param name="kindCode">Property kind code (tblKind.intKindCode)</param>
     public static bool TemplateContains(
@@ -54,6 +58,7 @@ public static class ObjectProperty
 
     /// <summary>Updates value of one property on specific object</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Update.htm"/>
+    ///
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="kindCode">Property kind code (tblKind.intKindCode)</param>
     /// <param name="value">New property value</param>
@@ -68,26 +73,12 @@ public static class ObjectProperty
 
     /// <summary>Updates object properties.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Update_1.htm"/>
+    ///
     /// <param name="personId">Person ID (who updates properties) (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="properties">Object properties to update</param>
     /// <param name="callCustomAction">If true, object property auto actions are triggered. Default value is true.</param>
     public static void Update(
-        int personId,
-        int objectId,
-        IDictionary<string, string> properties,
-        bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Updates object properties. UpdateProperties is deprecated, please use Update instead.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_UpdateProperties.htm"/>
-    /// <param name="personId">Person ID (who updates properties) (tPerson.iPersonId)</param>
-    /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
-    /// <param name="properties">Object properties to update</param>
-    /// <param name="callCustomAction">If true, object property auto actions are triggered. Default value is true.</param>
-    [ObsoleteAttribute("UpdateProperties is deprecated, please use Update instead.")]
-    public static void UpdateProperties(
         int personId,
         int objectId,
         IDictionary<string, string> properties,

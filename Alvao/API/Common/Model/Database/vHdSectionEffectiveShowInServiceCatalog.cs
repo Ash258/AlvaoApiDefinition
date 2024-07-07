@@ -9,8 +9,11 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.vHdSectionEffectiveShowInServiceCatalog")]
 public class vHdSectionEffectiveShowInServiceCatalog
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionEffectiveShowInServiceCatalog_EffectiveShowInServiceCatalog.htm"/>
     public virtual bool? EffectiveShowInServiceCatalog { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionEffectiveShowInServiceCatalog_iHdSectionId.htm"/>
     public virtual int? iHdSectionId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vHdSectionEffectiveShowInServiceCatalog__ctor.htm"/>
     public vHdSectionEffectiveShowInServiceCatalog() { }
 }

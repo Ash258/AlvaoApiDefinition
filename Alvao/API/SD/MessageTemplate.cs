@@ -1,5 +1,5 @@
-using System.Globalization;
 using Alvao.API.Common.Model;
+using System.Globalization;
 
 namespace Alvao.API.SD;
 
@@ -12,6 +12,7 @@ public static class MessageTemplate
 
     /// <summary>Evaluates template of message for approver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_EvaluateMessageForApprover.htm"/>
+    ///
     /// <param name="template">Message for approver template</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="actId">Message for approver ID tAct.iActId</param>
@@ -28,6 +29,7 @@ public static class MessageTemplate
 
     /// <summary>Evaluates template of message for requester.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_EvaluateMessageForRequester.htm"/>
+    ///
     /// <param name="template">Message for requester template</param>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="language">Template language</param>
@@ -46,6 +48,7 @@ public static class MessageTemplate
 
     /// <summary>Get last approval result with comment</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_GetLastApprovalResultWithComment.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static string GetLastApprovalResultWithComment(
         int ticketId
@@ -54,6 +57,7 @@ public static class MessageTemplate
 
     /// <summary>Get latest important message</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_GetLatestImportantMessage.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static string GetLatestImportantMessage(
         int ticketId

@@ -9,6 +9,7 @@ public static class Tickets
 
     /// <summary>Returns custom list of tickets.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_GetCustomTicketList.htm"/>
+    ///
     /// <param name="columns">Database columns from tHdTicket and tHdTicketCust. These columns will be included in the result</param>
     /// <param name="filterCondition">SQL filter condition (without WHERE keyword)</param>
     /// <param name="sorting">SQL sorting condition (without ORDER BY keyword)</param>
@@ -27,6 +28,7 @@ public static class Tickets
 
     /// <summary>Checks whether exists a cyclic relation between requests.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_CheckCyclicRelationsBeforeMergingTicket.htm"/>
+    ///
     /// <param name="ticketsIds">List of request IDs ((tHdTicket.iHdTicketId))</param>
     /// <param name="destinationTicketId">Destination request ID ((tHdTicket.iHdTicketId))</param>
     public static bool CheckCyclicRelationsBeforeMergingTicket(
@@ -37,6 +39,7 @@ public static class Tickets
 
     /// <summary>Merges requests to another request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_Merge.htm"/>
+    ///
     /// <param name="sourceTicketsId">List of request IDs ((tHdTicket.iHdTicketId)) to merge</param>
     /// <param name="destinationTicketId">Destination request ID ((tHdTicket.iHdTicketId))</param>
     /// <param name="removeRelations">If should remove relations from sourceTicketsId before merging requests.</param>

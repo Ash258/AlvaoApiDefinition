@@ -9,6 +9,7 @@ public static class ObjectRelation
 
     /// <summary>Create object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Create.htm"/>
+    ///
     /// <param name="beginObjectId">Begin relation object ID (NodeRelation.BeginNodeId)</param>
     /// <param name="endObjectId">End relation object ID (NodeRelation.EndNodeId)</param>
     /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
@@ -25,6 +26,7 @@ public static class ObjectRelation
 
     /// <summary>Edit object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Edit.htm"/>
+    ///
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
     /// <param name="personId">Person ID (who removed relation) (tPerson.iPersonId)</param>
@@ -37,6 +39,7 @@ public static class ObjectRelation
 
     /// <summary>Remove object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Remove.htm"/>
+    ///
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     /// <param name="personId">Person ID (who removed relation) (tPerson.iPersonId)</param>
     public static void Remove(

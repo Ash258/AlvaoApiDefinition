@@ -37,10 +37,12 @@ public class tString
         DetectDuplicitComputer = 129,
         DetectEvaluationError = 130,
     }
-
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tString_iStringId.htm"/>
     [ExplicitKeyAttribute]
     public virtual int iStringId { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tString_mString.htm"/>
     public virtual string mString { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tString__ctor.htm"/>
     public tString() { }
 }

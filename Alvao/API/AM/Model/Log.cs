@@ -1,5 +1,6 @@
 namespace Alvao.API.AM.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Log.htm"/>
 public class Log
 {
     public enum Kind
@@ -19,6 +20,6 @@ public class Log
         DuplicitComputer = 12,
     }
 
-
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_Log__ctor.htm"/>
     public Log() { }
 }

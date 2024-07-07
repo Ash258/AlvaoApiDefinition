@@ -21,10 +21,12 @@ public class TicketStateBehavior
         ManualChange = 10,
         Close = 11,
     }
-
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketStateBehavior__TicketStateBehavior.htm"/>
     public virtual string _TicketStateBehavior { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketStateBehavior_id.htm"/>
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_TicketStateBehavior__ctor.htm"/>
     public TicketStateBehavior() { }
 }

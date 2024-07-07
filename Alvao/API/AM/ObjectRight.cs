@@ -11,6 +11,7 @@ public static class ObjectRight
 
     /// <summary>Sets object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Add.htm"/>
+    ///
     /// <param name="model">Permission model</param>
     /// <param name="authorId">Person ID (who set permission) (tPerson.iPersonId)</param>
     public static void Add(
@@ -21,6 +22,7 @@ public static class ObjectRight
 
     /// <summary>Removes object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Delete.htm"/>
+    ///
     /// <param name="id">Permission ID (tblUserNodeRight.intUserNodeRightId)</param>
     /// <param name="authorId">Person ID (who deleted permission) (tPerson.iPersonId)</param>
     public static void Delete(
@@ -35,6 +37,7 @@ public static class ObjectRight
 
     /// <summary>Updates object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Update.htm"/>
+    ///
     /// <param name="model">Permission model</param>
     /// <param name="authorId">Person ID (who updated permission) (tPerson.iPersonId)</param>
     public static void Update(

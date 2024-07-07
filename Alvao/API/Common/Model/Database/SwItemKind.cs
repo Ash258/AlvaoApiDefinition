@@ -10,10 +10,13 @@ namespace Alvao.API.Common.Model.Database;
 public class SwItemKind
 {
     /// <summary>Record ID.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SwItemKind_id.htm"/>
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }
     /// <summary>Kind of record.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SwItemKind_Kind.htm"/>
     public virtual string Kind { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_SwItemKind__ctor.htm"/>
     public SwItemKind() { }
 }

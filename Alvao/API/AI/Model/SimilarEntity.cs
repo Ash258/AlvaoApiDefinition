@@ -1,5 +1,6 @@
 namespace Alvao.API.AI.Model;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_SimilarEntity.htm"/>
 public class SimilarEntity
 {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_SimilarEntity_Id.htm"/>

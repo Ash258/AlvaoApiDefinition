@@ -64,11 +64,15 @@ public class tblClass
         FirstUserClass = 5_000,
     }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblClass_bComputer.htm"/>
     public virtual bool bComputer { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId.htm"/>
     public virtual int? DefaultObjectTemplateNodeId { get; set; }
     /// <summary>Class Id</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblClass_intClassId.htm"/>
     [ExplicitKeyAttribute]
     public virtual int intClassId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblClass__ctor.htm"/>
     public tblClass() { }
 }

@@ -1,5 +1,6 @@
 namespace Alvao.API.AI.Utils;
 
+/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Utils_Similarity.htm"/>
 public static class Similarity
 {
 

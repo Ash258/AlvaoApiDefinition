@@ -11,6 +11,7 @@ public static class TicketParticipant
 
     /// <summary>Add ticket participants to the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TicketParticipant_Add.htm"/>
+    ///
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId).</param>
     /// <param name="idsToAdd">Collection of person IDs (tPerson.iPersonId).</param>
     public static void Add(
@@ -21,6 +22,7 @@ public static class TicketParticipant
 
     /// <summary>Get collection of ticket participants on the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TicketParticipant_Get.htm"/>
+    ///
     /// <param name="ticketId">Ticket ID (tHdTicket.iHdTicketId).</param>
     /// <param name="ignoreRequester">Ignore ticket participant that is also requester.</param>
     public static IEnumerable<tPerson> Get(
@@ -31,6 +33,7 @@ public static class TicketParticipant
 
     /// <summary>Remove ticket participants from the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TicketParticipant_Remove.htm"/>
+    ///
     /// <param name="ticketId">Ticket ID(tHdTicket.iHdTicketId).</param>
     /// <param name="idsToRemove">Collection of person IDs (tPerson.iPersonId).</param>
     public static void Remove(

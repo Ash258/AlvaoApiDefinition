@@ -12,7 +12,6 @@ public static class Database
         Text = 1,
     }
 
-
     /// <summary>Returns database hash string</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Database_GetHash.htm"/>
     public static string GetHash() { throw new System.NotImplementedException(); }
@@ -23,6 +22,7 @@ public static class Database
 
     /// <summary>Read a value from the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, TicketForeignKeyInfo, tHdSection, tPerson, tPersonCust, PersonForeignKeyInfo, tRole, TicketState. For ForeignKeyInfo table info, see: Ticket.ForeignKeyInfo. Allowed columns for PersonForeignKeyInfo table: AccountName, ManagerName, DelegateName.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Database_ReadColumn.htm"/>
+    ///
     /// <param name="recordId">Record ID.</param>
     /// <param name="tableName">Table name, case sensitive.</param>
     /// <param name="columnName">Column name, case sensitive.</param>
@@ -35,6 +35,7 @@ public static class Database
 
     /// <summary>Write a new value to the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, tPerson, tPersonCust, tRole, TicketState. For tHdTicket table info, see: Ticket.UpdateColumnValue.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Database_WriteColumn.htm"/>
+    ///
     /// <param name="recordId">Record ID.</param>
     /// <param name="tableName">Table name, case sensitive.</param>
     /// <param name="columnName">Column name, case sensitive.</param>

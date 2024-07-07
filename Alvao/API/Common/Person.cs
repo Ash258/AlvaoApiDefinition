@@ -1,5 +1,5 @@
-using System.Globalization;
 using Alvao.API.Common.Model.Database;
+using System.Globalization;
 
 namespace Alvao.API.Common;
 
@@ -12,6 +12,7 @@ public static class Person
 
     /// <summary>Adds person to group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_AddToGroup.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="roleIds">Group IDs (tRole.iRoleId)</param>
     public static void AddToGroup(
@@ -20,6 +21,8 @@ public static class Person
     )
     { throw new System.NotImplementedException(); }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_ConvertUtcToPersonLocal.htm"/>
+    ///
     /// <param name="person"> </param>
     /// <param name="utcDate"> </param>
     public static DateTime ConvertUtcToPersonLocal(
@@ -30,6 +33,7 @@ public static class Person
 
     /// <summary>Creates person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_Create.htm"/>
+    ///
     /// <param name="fullName">Name and surname</param>
     /// <param name="login">User name</param>
     /// <param name="email">E-mail</param>
@@ -50,6 +54,7 @@ public static class Person
 
     /// <summary>Returns all persons</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetAll.htm"/>
+    ///
     /// <param name="includeRemoved">Include removed persons in result</param>
     public static IEnumerable<tPerson> GetAll(
         bool includeRemoved = false
@@ -58,6 +63,7 @@ public static class Person
 
     /// <summary>Search for person by AzureObjectId. If not found, tries to find by person SID and then by email.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByAzureIdSidOrEmail.htm"/>
+    ///
     /// <param name="azureAdObjectId">Azure Active Directory object ID. Cannot be null.</param>
     /// <param name="userSid">User SID from on-premise AD or null</param>
     /// <param name="email">User email or null</param>
@@ -70,6 +76,7 @@ public static class Person
 
     /// <summary>Return all persons which are synchronized from Azure Active Directory tenant.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByAzureTenant.htm"/>
+    ///
     /// <param name="azureAdTenantId">Azure Tenant ID</param>
     public static IEnumerable<tPerson> GetByAzureTenant(
         int azureAdTenantId
@@ -78,6 +85,7 @@ public static class Person
 
     /// <summary>Returns person by email</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByEmail.htm"/>
+    ///
     /// <param name="email">Person email</param>
     public static tPerson GetByEmail(
         string email
@@ -86,6 +94,7 @@ public static class Person
 
     /// <summary>Returns person</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetById.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     public static tPerson GetById(
         int personId
@@ -94,6 +103,7 @@ public static class Person
 
     /// <summary>Search for person by persons login</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByLogin.htm"/>
+    ///
     /// <param name="login">Person login</param>
     public static tPerson GetByLogin(
         string login
@@ -102,6 +112,7 @@ public static class Person
 
     /// <summary>Returns CultureInfo for given person. If person does not have set preffered language , CultureInfo of system language is returned.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetCultureInfoOrDefault.htm"/>
+    ///
     /// <param name="person">Person to get CultureInfo for</param>
     public static CultureInfo GetCultureInfoOrDefault(
         tPerson person
@@ -110,6 +121,7 @@ public static class Person
 
     /// <summary>Returns custom list of persons.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetCustomList.htm"/>
+    ///
     /// <param name="columns">Database columns from tPerson and tPersonCust. These columns will be included in the result</param>
     /// <param name="filterCondition">SQL filter condition (without WHERE keyword)</param>
     /// <param name="sorting">SQL sorting condition (without ORDER BY keyword)</param>
@@ -122,6 +134,7 @@ public static class Person
 
     /// <summary>Returns group ID (tRole.iRoleId) of all groups that the person is member of.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetGroupMembership.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="onlyDirectMembership">Get only direct membership</param>
     public static IEnumerable<int> GetGroupMembership(
@@ -136,38 +149,12 @@ public static class Person
 
     /// <summary>Finds person name by email or name and surname</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetNameFromMail.htm"/>
+    ///
     /// <param name="email">Person email</param>
     /// <param name="displayName">Person email display name</param>
     public static string GetNameFromMail(
         string email,
         string displayName
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Returns person by email GetPersonByEmail is deprecated, please use GetByEmail instead.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetPersonByEmail.htm"/>
-    /// <param name="email">Person email</param>
-    [ObsoleteAttribute("GetPersonByEmail is deprecated, please use GetByEmail instead.")]
-    public static tPerson GetPersonByEmail(
-        string email
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Returns person GetPersonById is deprecated, please use GetById instead.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetPersonById.htm"/>
-    /// <param name="personId">Person ID (tPerson.iPersonId)</param>
-    [ObsoleteAttribute("GetPersonById is deprecated, please use GetById instead.")]
-    public static tPerson GetPersonById(
-        int personId
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Returns CultureInfo for given person. If person does not have set preffered language , CultureInfo of system language is returned. GetPersonCultureInfoOrDefault is deprecated, please use GetCultureInfoOrDefault instead.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetPersonCultureInfoOrDefault.htm"/>
-    /// <param name="person">Person to get CultureInfo for</param>
-    [ObsoleteAttribute("GetPersonCultureInfoOrDefault is deprecated, please use GetCultureInfoOrDefault instead.")]
-    public static CultureInfo GetPersonCultureInfoOrDefault(
-        tPerson person
     )
     { throw new System.NotImplementedException(); }
 
@@ -177,6 +164,7 @@ public static class Person
 
     /// <summary>Returns user's timezone. If person does not have timezone specified, system timezone is returned.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetTimezone.htm"/>
+    ///
     /// <param name="person">Person to get timezone for</param>
     public static string GetTimezone(
         tPerson person
@@ -185,6 +173,7 @@ public static class Person
 
     /// <summary>Gets Azure Active Directory Bearer token from the on-behalf-of flow. The token can be used for communication with other Azure services on behalf of the user.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetToken.htm"/>
+    ///
     /// <param name="personId">The ID of the person (tPerson.iPersonId) who is the subject of the token.</param>
     /// <param name="scope">Scope (target application) the token is intended for.</param>
     public static string GetToken(
@@ -195,6 +184,7 @@ public static class Person
 
     /// <summary>Inserts an email address to persons email usage</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_InsertToEmailUsage.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="email">Email address</param>
     public static void InsertToEmailUsage(
@@ -205,6 +195,7 @@ public static class Person
 
     /// <summary>Checks whether person is member of group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_IsMemberOfGroup.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="roleId">Group ID (tRole.iRoleId)</param>
     public static bool IsMemberOfGroup(
@@ -219,6 +210,7 @@ public static class Person
 
     /// <summary>Removes person from group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_RemoveFromGroup.htm"/>
+    ///
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="roleId">Group ID (tRole.iRoleId)</param>
     public static void RemoveFromGroup(
@@ -229,6 +221,7 @@ public static class Person
 
     /// <summary>Updates person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_Update.htm"/>
+    ///
     /// <param name="person">Person to update</param>
     public static void Update(
         tPerson person

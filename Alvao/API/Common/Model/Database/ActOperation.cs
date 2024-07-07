@@ -26,12 +26,14 @@ public class ActOperation
         ApprovalResult = 13,
         ApprovalEnter = 14,
     }
-
     /// <summary>Record ID</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ActOperation_id.htm"/>
     [ExplicitKeyAttribute]
     public virtual int id { get; set; }
     /// <summary>Process kind name</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ActOperation_Name.htm"/>
     public virtual string Name { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_ActOperation__ctor.htm"/>
     public ActOperation() { }
 }

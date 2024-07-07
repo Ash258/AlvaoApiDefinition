@@ -9,8 +9,11 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.vApprovalAuthority_Custom")]
 public class vApprovalAuthority_Custom
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vApprovalAuthority_Custom_liHdTicketId.htm"/>
     public virtual int? liHdTicketId { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vApprovalAuthority_Custom_liPersonId.htm"/>
     public virtual int? liPersonId { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vApprovalAuthority_Custom__ctor.htm"/>
     public vApprovalAuthority_Custom() { }
 }

@@ -47,13 +47,13 @@ public static class AuditLog
         ServiceInheritanceDisabled = 35,
     }
 
-
     /// <summary>Creates system block.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_AuditLog_CreateSystemBlockModel.htm"/>
     public static AuditSystemBlockModel CreateSystemBlockModel() { throw new System.NotImplementedException(); }
 
     /// <summary>Creates audit record.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_AuditLog_LogAuditRecord.htm"/>
+    ///
     /// <param name="messageType">Message type.</param>
     /// <param name="properties">List of properties to append to log message.</param>
     /// <param name="systemBlock">Properties to append after delimiter and properties (system block)</param>
@@ -66,6 +66,7 @@ public static class AuditLog
 
     /// <summary>Creates audit record.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_AuditLog_LogAuditRecord_1.htm"/>
+    ///
     /// <param name="messageType">Message type.</param>
     /// <param name="properties">List of properties to append to log message.</param>
     /// <param name="appendSystemBlock">Automatically create and append system block.</param>

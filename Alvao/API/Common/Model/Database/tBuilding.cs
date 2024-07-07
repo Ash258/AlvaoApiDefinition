@@ -9,9 +9,12 @@ namespace Alvao.API.Common.Model.Database;
 [TableAttribute("dbo.tBuilding")]
 public class tBuilding
 {
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tBuilding_iBuildingId.htm"/>
     [KeyAttribute]
     public virtual int iBuildingId { get; set; }
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tBuilding_sBuilding.htm"/>
     public virtual string sBuilding { get; set; }
 
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tBuilding__ctor.htm"/>
     public tBuilding() { }
 }

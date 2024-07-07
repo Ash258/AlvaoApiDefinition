@@ -17,7 +17,6 @@ public static class Ticket
         IgnoreRights = 1,
         DontCallChangeState = 2,
     }
-
     [FlagsAttribute]
     public enum ChangeDeadlineFlags
     {
@@ -25,13 +24,11 @@ public static class Ticket
         DontNotifyUser = 1,
         DontUpdateTicket = 2,
     }
-
     public enum ChangeSlaReason
     {
         TicketEdit = 0,
         MoveToService = 1,
     }
-
     [FlagsAttribute]
     public enum ChangeSolverFlags
     {
@@ -44,7 +41,6 @@ public static class Ticket
         LogAssignToSolverGroup = 16,
         LogAsSystemPerson = 32,
     }
-
     [FlagsAttribute]
     public enum RemoveFlags
     {
@@ -52,7 +48,6 @@ public static class Ticket
         IgnoreRights = 1,
         DontCallChangeState = 2,
     }
-
     [FlagsAttribute]
     public enum ResolveFlags
     {
@@ -62,9 +57,9 @@ public static class Ticket
         DontCallChangeState = 4,
     }
 
-
     /// <summary>Changes request state to closed and cancels internal due date.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Close.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="authorPersonId">Person ID (who closes ticket)(tPerson.iPersonId)</param>
     /// <param name="flags">Flags for special behavior.</param>
@@ -77,6 +72,7 @@ public static class Ticket
 
     /// <summary>Creates new request from model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Create.htm"/>
+    ///
     /// <param name="newTicketModel">New ticket model</param>
     public static tHdTicket Create(
         NewTicketModel newTicketModel
@@ -85,6 +81,7 @@ public static class Ticket
 
     /// <summary>Returns information about ticket by specified column. Allowed columns: SolverName, SolverEmail, TicketPriority, SectionName, RoomName, SLAname, FirstActText, StateName.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ForeignKeyInfo.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <param name="columnName">Specified column name.</param>
     public static string ForeignKeyInfo(
@@ -95,6 +92,7 @@ public static class Ticket
 
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetById.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static tHdTicket GetById(
         int ticketId
@@ -103,6 +101,7 @@ public static class Ticket
 
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetByMessageTagInText.htm"/>
+    ///
     /// <param name="messageTag">Request messageTag (tHdTicket.sHdTicketMessageTag)</param>
     public static tHdTicket GetByMessageTagInText(
         string messageTag
@@ -111,6 +110,7 @@ public static class Ticket
 
     /// <summary>Returns feedback URL for request</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetFeedbackUrl.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     public static string GetFeedbackUrl(
         int ticketId
@@ -119,6 +119,7 @@ public static class Ticket
 
     /// <summary>Returns state change notification template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetChangeStateTemplate.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="stateId">State ID (tHdTicket.TicketStateId)</param>
     /// <param name="localeId">Locale ID of notication receiver</param>
@@ -139,6 +140,7 @@ public static class Ticket
 
     /// <summary>Returns request name template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetTicketNameTemplate.htm"/>
+    ///
     /// <param name="sectionId">Section ID (tHdTicket.liHdTicketHdSectionId)</param>
     public static string GetTicketNameTemplate(
         int sectionId
@@ -147,6 +149,7 @@ public static class Ticket
 
     /// <summary>Returns whether the request does have all child requests closed.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_HasClosedAllChildTickets.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     public static bool HasClosedAllChildTickets(
         int ticketId
@@ -155,6 +158,7 @@ public static class Ticket
 
     /// <summary>Changes request deadline, sends notification and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeDeadline.htm"/>
+    ///
     /// <param name="ticketId">Request id (tHdTicket.iHdTicketId)</param>
     /// <param name="newDeadline">New deadline (UTC)</param>
     /// <param name="message">Message for requester</param>
@@ -171,6 +175,7 @@ public static class Ticket
 
     /// <summary>Changes request SLA, deadline (according to SLA) and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSla.htm"/>
+    ///
     /// <param name="ticketId">Request id (tHdTicket.iHdTicketId)</param>
     /// <param name="newSlaId">New SLA id (tSla.iSlaId)</param>
     /// <param name="cost">Change SLA costs</param>
@@ -185,6 +190,7 @@ public static class Ticket
 
     /// <summary>Changes ticket solver or returns it to main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolver.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="newSolverId">Person ID of new solver. Null means that ticket is returned to main solver.</param>
     /// <param name="message">Message for solver</param>
@@ -204,6 +210,7 @@ public static class Ticket
 
     /// <summary>Changes ticket solver group or returns it to main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolverGroup.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="newSolverGroupId">Role ID of new solver group. Null means that ticket is returned to main solver.</param>
     /// <param name="message">Message for solver group</param>
@@ -223,6 +230,7 @@ public static class Ticket
 
     /// <summary>Changes ticket solver, solver group or returns it to main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolverOrGroup.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="solverId">Person ID of new solver. Null means that ticket is returned to main solver. If set to -1 then solver stays unchanged.</param>
     /// <param name="solverGroupId">Role ID of new solver group. Null means that ticket is returned to main solver. If set to -1 then solver group stays unchanged.</param>
@@ -243,6 +251,7 @@ public static class Ticket
 
     /// <summary>Changes request state.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeState.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="newStateId">State ID of new state (TicketState.id).</param>
     /// <param name="authorId">Person ID of change author.</param>
@@ -257,6 +266,7 @@ public static class Ticket
 
     /// <summary>Moves request to another service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_MoveToSection.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="newSectionId">New service ID (tHdSection.iHdSectionId)</param>
     /// <param name="message">Message for solver</param>
@@ -277,6 +287,7 @@ public static class Ticket
 
     /// <summary>Insert new row into TicketChange table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_NewTicketChange.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="personId">Person ID (tPerson.iPersonId).</param>
     /// <param name="tableName">Table name.</param>
@@ -297,6 +308,7 @@ public static class Ticket
 
     /// <summary>Remove request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Remove.htm"/>
+    ///
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId).</param>
     /// <param name="personId">Person ID (who removes request)(tPerson.iPersonId).</param>
     /// <param name="flags">Flags for special behavior.</param>
@@ -309,6 +321,7 @@ public static class Ticket
 
     /// <summary>Changes request state to resolved.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Resolve.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="authorPersonId">Person ID (who resolves ticket)(tPerson.iPersonId)</param>
     /// <param name="message">Message for requester</param>
@@ -327,6 +340,7 @@ public static class Ticket
 
     /// <summary>Restore removed request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_RestoreRemoved.htm"/>
+    ///
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId).</param>
     /// <param name="personId">Person ID (who restores removed request)(tPerson.iPersonId).</param>
     /// <param name="flags">Flags for special behavior.</param>
@@ -339,6 +353,7 @@ public static class Ticket
 
     /// <summary>Allowed columns: mHdTicketNotice, sHdTicketGroup, sHdTicketDeviceCode, sHdTicketUserPhone, mHdTicketUserContact, sHdTicketUserMobile, sHdTicketUserOffice, sHdTicketUserDepartment, sHdTicketUserWorkPosition, sHdTicketUserCompany.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_UpdateColumnValue.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <param name="columnName">Specified column name.</param>
     /// <param name="newValue">New column value.</param>
@@ -351,6 +366,7 @@ public static class Ticket
 
     /// <summary>Updates full text search data.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_UpdateFts.htm"/>
+    ///
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId). If 0, updates all requests.</param>
     public static void UpdateFts(
         int ticketId

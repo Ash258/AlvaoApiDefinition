@@ -12,6 +12,7 @@ public static class Approval
 
     /// <summary>Adds approvers to current approval. Allowed only for states with "ad-hoc" approval enabled (see method TicketState.IsAdHocApproval).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_AddApprovers.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="approverIds">List of approver IDs (tPerson.iPersonId)</param>
     /// <param name="personId">ID of person who added approvers (tPerson.iPersonId)</param>
@@ -28,6 +29,7 @@ public static class Approval
 
     /// <summary>Approves request and changes state according to state settings.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Approve.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="comment">Approval comment</param>
     /// <param name="personId">Person ID (who approved request). If null, current person is set (tPerson.iPersonId)</param>
@@ -46,6 +48,7 @@ public static class Approval
 
     /// <summary>Cancel of active approval on ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Cancel.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static void Cancel(
         int ticketId
@@ -54,6 +57,7 @@ public static class Approval
 
     /// <summary>Cancels selected approvals. Allowed only for states with "ad-hoc" approval enabled (see method TicketState.IsAdHocApproval).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_CancelItems.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="approvalItemIds">List of approval items IDs to cancel(tHdTicketApprovalItem.iHdTicketApprovalItemId)</param>
     public static void CancelItems(
@@ -64,6 +68,7 @@ public static class Approval
 
     /// <summary>Starts request approval by person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_EnterByPerson.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="approverPersonId">Approver person ID (tPerson.iPersonId)</param>
     /// <param name="expirationHours">Approval expiration hours</param>
@@ -82,6 +87,7 @@ public static class Approval
 
     /// <summary>Starts request approval with scheme.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_EnterBySchema.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="schemaId">Approval scheme ID (tApprovalSchema.iApprovalSchemaId)</param>
     /// <param name="personId">Person ID (who started approval)(tPerson.iPersonId)</param>
@@ -100,6 +106,7 @@ public static class Approval
 
     /// <summary>Expires currently active approval step on ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Expire.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="ignoreRequiredColumns">If true, state changes after cancelation without checking required columns.</param>
     public static void Expire(
@@ -110,6 +117,7 @@ public static class Approval
 
     /// <summary>Returns approval item with provided ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_GetApprovalItemById.htm"/>
+    ///
     /// <param name="approvalItemId">Approval item ID (tHdTicketApprovalItem.iHdTicketApprovalItemId)</param>
     public static tHdTicketApprovalItem GetApprovalItemById(
         int approvalItemId
@@ -118,6 +126,7 @@ public static class Approval
 
     /// <summary>Returns approval items for current approval (shown on "Current approval" tab in ticket detail).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_GetCurrentApprovalItems.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static IEnumerable<tHdTicketApprovalItem> GetCurrentApprovalItems(
         int ticketId
@@ -130,6 +139,7 @@ public static class Approval
 
     /// <summary>Rejects request and changes state according to state settings.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Reject.htm"/>
+    ///
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="comment">Approval comment</param>
     /// <param name="personId">Person ID (who rejected request). If null, current person is set (tPerson.iPersonId)</param>

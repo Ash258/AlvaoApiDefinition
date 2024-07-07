@@ -9,20 +9,10 @@ public static class Sections
 
     /// <summary>Export sections into xml file.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Sections_Export.htm"/>
+    ///
     /// <param name="sectionId">Root section id ((tHdSection.iHdSectionId)) to export. Null for all sections.</param>
     /// <param name="includeSubtree">True if whole tree should be exported</param>
     public static MemoryStream Export(
-        int? sectionId,
-        bool includeSubtree
-    )
-    { throw new System.NotImplementedException(); }
-
-    /// <summary>Export sections into xml file. ExportSections is deprecated, please use Export instead.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Sections_ExportSections.htm"/>
-    /// <param name="sectionId">Root section id ((tHdSection.iHdSectionId)) to export. Null for all sections.</param>
-    /// <param name="includeSubtree">True if whole tree should be exported</param>
-    [ObsoleteAttribute("ExportSections is deprecated, please use Export instead.")]
-    public static MemoryStream ExportSections(
         int? sectionId,
         bool includeSubtree
     )
