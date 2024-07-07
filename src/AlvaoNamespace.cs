@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
 namespace AlvaoScapper;
@@ -54,11 +55,19 @@ public class AlvaoNamespace
 
             var enumDef = enumDocument.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']")?.InnerText.Trim();
             if (enumDef == null) continue;
-            enumDef = enumDef.Replace("&lt;", "<").Replace("&gt;", ">");
+            enumDef = Helpers.SanitizeXmlToString(enumDef);
 
             var members = enumDocument.DocumentNode.SelectNodes("//table[@id='enumMemberList']/tr");
             var sb = new StringBuilder();
 
+            var _s = enumDocument.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
+            if (_s != null)
+            {
+                _s = Regex.Replace(_s, @"\r?\n\s+", " ");
+                sb.AppendLine($"/// <summary>{_s}</summary>");
+            }
+
+            sb.AppendLine($"/// <see href=\"{enumLink}\"/>");
             sb.AppendLine(enumDef);
             sb.AppendLine("{");
             foreach (var m in members.TakeLast(members.Count - 1))
