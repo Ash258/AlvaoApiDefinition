@@ -34,6 +34,14 @@ public static class ObjectProperty
     )
     { throw new System.NotImplementedException(); }
 
+    /// <summary>Return template properties for specific object kind.</summary>
+    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_GetTemplateProperties.htm"/>
+    /// <param name="classCode">Object (template) class (tblClass.intClassId)</param>
+    public static IEnumerable<tblKind> GetTemplateProperties(
+        tblClass.ClassCode classCode
+    )
+    { throw new System.NotImplementedException(); }
+
     /// <summary>Checks whether object template contains specific property</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_TemplateContains.htm"/>
     /// <param name="classId">Object (template) class (tblClass.intClassId)</param>
