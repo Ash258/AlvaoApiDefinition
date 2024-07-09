@@ -20,7 +20,7 @@ public class AlvaoNamespace
         Folder = $"{Name.Replace(".", "/")}";
         HtmlDocument = Helpers.LoadDocument(fullUrl, LocalHtmlFile);
 
-        if (!Directory.Exists(Folder)) Directory.CreateDirectory(Folder);
+        Helpers.AssertDirectory(Folder);
     }
 
     internal void Process()

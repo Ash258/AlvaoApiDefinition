@@ -256,7 +256,7 @@ public static class MonkeyPatch
     {
         var ns = "Alvao.Apps.API";
 
-        if (!Directory.Exists(ns.Replace(".", "/"))) Directory.CreateDirectory(ns.Replace(".", "/"));
+        Helpers.AssertDirectory(ns.Replace(".", "/"));
 
         MonkeyPatchITicketAutoAction(ns);
         MonkeyPatchIActAutoAction(ns);

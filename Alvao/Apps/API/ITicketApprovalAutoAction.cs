@@ -42,5 +42,5 @@ public interface ITicketApprovalAutoAction
     /// <param name="approvalItemIds">List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId).</param>
     ///
     /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions#OnApproverCanceled"/>
-     void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);
+    void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);
 }

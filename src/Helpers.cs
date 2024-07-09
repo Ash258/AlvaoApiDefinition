@@ -48,6 +48,13 @@ public static class Helpers
         return doc;
     }
 
+    public static void AssertDirectory(string folder)
+    {
+        if (Directory.Exists(folder)) return;
+
+        Directory.CreateDirectory(folder);
+    }
+
     public static string SanitizeXmlToString(string el)
     {
         return el.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ").Trim();

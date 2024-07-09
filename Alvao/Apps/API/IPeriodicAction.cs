@@ -23,5 +23,5 @@ public interface IPeriodicAction
     /// <param name="con">SqlConnection to the database.</param>
     ///
     /// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/periodic-custom-actions#OnPeriod"/>
-     void OnPeriod(SqlConnection con);
+    void OnPeriod(SqlConnection con);
 }
