@@ -269,6 +269,7 @@ public static class MonkeyPatch
         MonkeyPatchIEntityTab(ns);
         MonkeyPatchIGeneralCommand(ns);
         MonkeyPatchIObjectMoveAutoAction(ns);
+        MonkeyPatchIObjectPropertyAutoAction(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns)
@@ -676,6 +677,53 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnObjectMoved\"/>",
             "void OnObjectMoved(SqlConnection con, int objectId, int oldParentObjectId, int personId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIObjectPropertyAutoAction(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IObjectPropertyAutoAction", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing the IObjectPropertyAutoAction interface in a application script, you can define custom actions that are automatically performed when the user manually modifies the value of an object property.",
+            "/// ",
+            "/// Note: Interface methods are also called in both variants of the Alvao.API.AM.ObjectProperty.Update method. The AM Console command - Properties tab - Generate Value does not call the OnObjectPropertyModifying method. It only calls the OnObjectPropertyModified method.",
+            "///",
+            "/// Caution: If you want to use only some of the methods of the implemented interface in the automatic action, leave an exception in the body of the other methods from the interface: throw new NotImplementedException();.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-am-custom-apps/applications/object-custom-actions-by-property-change",
+            Usings = ["Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method checks the defined conditions for displaying the command.",
+            "///",
+            "/// Tip: By calling this method in the Run method, you can check before running the command that the conditions for displaying it have not changed between the time the command was displayed and the time it was run.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"propertyId\">ID of the property (tblProperty.intPropertyId) that is being modified.</param>",
+            "/// <param name=\"personId\">the ID of the user (tPerson.iPersonId) who invoked the action.\">SqlConnection to the database.</param>",
+            "/// <param name=\"newValue\">new value of the property.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnObjectPropertyModifying\"/>",
+            "Tuple<bool, string> OnObjectPropertyModifying(SqlConnection con, int propertyId, int personId, string newValue);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method is called after writing a new property value to the database, e.g. by the Modify (property) statement.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"propertyId\"> ID of the property (tblProperty.intPropertyId) that has been changed.</param>",
+            "/// <param name=\"personId\">the user ID (tPerson.iPersonId) that triggered the action.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnPropertyModified\"/>",
+            "void OnPropertyModified(SqlConnection con, int propertyId, int personId);"
         ]));
         clazz.ProduceFinalCsFile();
     }
