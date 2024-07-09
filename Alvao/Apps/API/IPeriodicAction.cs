@@ -13,7 +13,7 @@ namespace Alvao.Apps.API;
 /// Caution: Poor definition of a custom action can irreversibly damage the Alvao database, so always create and test actions in a test environment, e.g. on a copy of the production database.
 /// Tip: A prerequisite for creating a working automated action is a good knowledge of Alvao database and Alvao.API.
 /// </summary>
-/// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/periodic-custom-actions"/>
+/// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/periodic-custom-actions"/>
 public interface IPeriodicAction
 {
     public string Name { get; set; }
@@ -22,6 +22,6 @@ public interface IPeriodicAction
     ///
     /// <param name="con">SqlConnection to the database.</param>
     ///
-    /// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/periodic-custom-actions#OnPeriod"/>
+    /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/periodic-custom-actions#OnPeriod"/>
     void OnPeriod(SqlConnection con);
 }

@@ -11,4 +11,7 @@ public class Settings
     public const string CommandIcon = "Calculator";
     public const int StateId = 94; // The ID of the status in which the request is to be displayed.
     public const int ServiceId = 37; // The ID of the service in which the request should be displayed.
+
+    // TicketShowRequesterAddress.cs
+    public const string TabName = "Show requester's address";
 }

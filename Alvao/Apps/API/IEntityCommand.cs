@@ -9,7 +9,7 @@ namespace Alvao.Apps.API;
 ///    Id - a unique command identifier (string)
 ///    Entity - the type of entity for which the command will be displayed(Entity.Ticket or Entity.Object).
 /// </summary>
-/// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/i-entity-command"/>
+/// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/i-entity-command"/>
 public interface IEntityCommand
 {
     public string Id { get; set; }
@@ -24,7 +24,7 @@ public interface IEntityCommand
     /// <param name="entityId">the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command should be displayed.</param>
     /// <param name="personId">the ID of the user (tPerson.iPersonId) to whom the command should be displayed.">SqlConnection to the database.</param>
     ///
-    /// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/i-entity-command#Show"/>
+    /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/i-entity-command#Show"/>
     EntityCommandShowResult Show(int entityId, int personId);
 
     /// <summary>
@@ -36,6 +36,6 @@ public interface IEntityCommand
     /// <param name="entityId">the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command should be displayed.</param>
     /// <param name="personId">the ID of the user (tPerson.iPersonId) to whom the command should be displayed.">SqlConnection to the database.</param>
     ///
-    /// <see href="https://doc.alvao.com/en/11.2modules/alvao-am-custom-apps/applications/i-entity-command#Run"/>
+    /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/i-entity-command#Run"/>
     CommandResult Run(int entityId, int personId);
 }
