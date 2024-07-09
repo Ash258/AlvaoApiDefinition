@@ -260,6 +260,7 @@ public static class MonkeyPatch
 
         MonkeyPatchITicketAutoAction(ns);
         MonkeyPatchIActAutoAction(ns);
+        MonkeyPatchITicketApprovalAutoAction(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns = "Alvao.Apps.API")
@@ -355,6 +356,60 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnActRemoved\"/>",
             "void OnActRemoved(SqlConnection con, SqlTransaction trans, int actId, int personId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchITicketApprovalAutoAction(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "ITicketApprovalAutoAction", string.Join("\n", [
+            "/// <summary>",
+            "/// You can define custom actions by implementing the ITicketApprovalAutoAction interface in application scripts.",
+            "/// Automatic actions are only called for manually triggered approvals with automatic status transition disabled.",
+            "/// In the newly created script, set the value of the Name property (the name of the automatic action) in the action class constructor.",
+            "/// Tip: To store properties and action settings, we recommend defining the Settings class in a separate script that you create from the Class Library template.",
+            "/// Caution: If you want to use only some of the methods of the implemented interface in the automatic action, leave an exception in the body of the other methods from the interface: throw new NotImplementedException();.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions",
+            Usings = ["Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Properties.Add("public string Name { get; set; }");
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on ticket approval. In the implemented method, define both the conditions for executing the operations and the operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the ongoing database transaction.</param>",
+            "/// <param name=\"ticketId\">Ticket ID (tHdTicket.iHdTicketId)..</param>",
+            "/// <param name=\"approvalItemIds\">List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId).</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnApproved\"/>",
+            "void OnApproved(SqlConnection con, SqlTransaction trans, int ticketId, int approvalItemId);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on the approval of the ticket rejection. In the implemented method, define both the conditions for executing the operations and the operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the ongoing database transaction.</param>",
+            "/// <param name=\"ticketId\">Ticket ID (tHdTicket.iHdTicketId)..</param>",
+            "/// <param name=\"approvalItemIds\">List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId).</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnApproverAdded\"/>",
+            "void OnApproverAdded(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on the removal of the ticket approver. In the implemented method, define both the conditions for executing the operations and the operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the ongoing database transaction.</param>",
+            "/// <param name=\"ticketId\">Ticket ID (tHdTicket.iHdTicketId)..</param>",
+            "/// <param name=\"approvalItemIds\">List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId).</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnApproverCanceled\"/>",
+            " void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);"
         ]));
         clazz.ProduceFinalCsFile();
     }
