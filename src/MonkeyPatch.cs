@@ -267,6 +267,7 @@ public static class MonkeyPatch
         MonkeyPatchIPeriodicActions(ns);
         MonkeyPatchIEntityCommand(ns);
         MonkeyPatchIEntityTab(ns);
+        MonkeyPatchIGeneralCommand(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns)
@@ -568,6 +569,64 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#Show\"/>",
             "EntityTabShowResult Show(int entityId, int personId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIGeneralCommand(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IGeneralCommand", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing the IGeneralCommand interface in a application script, you can define custom main menu commands.",
+            "///",
+            "/// By placing a command in the main menu, you can give users access to frequently used pages and operations that are not tied to a specific ticket in ALVAO Service Desk or Asset Management function.",
+            "/// Commands are displayed in the main menu of the Alvao WebApp application.",
+            "/// In the Service Desk or Asset Management application, create a new script using the IGeneralCommand template and name it appropriately according to the functionality of the custom command.",
+            "/// In the newly created script, set the id, name, position, and icon property values in the constructor of the command class:",
+            "///    id - command number (unique)",
+            "///    name - the name of the command that will be displayed in applications",
+            "///    position - the position at which the command will be displayed in applications",
+            "///        1 = in main menu under system commands",
+            "///        2 = in the main menu above the More menu",
+            "///        3 = in the main menu in the More menu above the Administration system command",
+            "///        4 = in the user menu above the Settings system command",
+            "///    icon - the name of the command icon",
+            "///        Use the icon name from the Microsoft Fabric library as the command icon name (the icon name will appear on the page when you hover over the selected icon). If you do not specify an icon, the LightningBolt icon is used.",
+            "///",
+            "/// Tip: To store the properties and settings of the command, we recommend defining the Settings class in a separate script that you create from the Class Library template.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-am-custom-apps/applications/general-custom-commands",
+            Usings = ["Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method checks the defined conditions for displaying the command.",
+            "///",
+            "/// Tip: By calling this method in the Run method, you can check before running the command that the conditions for displaying it have not changed between the time the command was displayed and the time it was run.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"personId\">User ID (tPerson.iPersonId) to which the command should be displayed.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#Show\"/>",
+            "bool Show(SqlConnection con, int personId);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method runs the command itself.",
+            "///",
+            "/// Tip: If the custom command is to open a different page from the Alvao WebApp, use the Alvao.API.Common.DbProperty.WebAppUrl property from the Alvao.API interface to get the root URL.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"personId\">The user ID (tPerson.iPersonId) that runs the command.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#Show\"/>",
+            "Tuple<bool, string, string> Run(SqlConnection con, int personId);"
         ]));
         clazz.ProduceFinalCsFile();
     }

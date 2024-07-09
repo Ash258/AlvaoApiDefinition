@@ -14,4 +14,8 @@ public class Settings
 
     // TicketShowRequesterAddress.cs
     public const string TabName = "Show requester's address";
+
+    // ReportProblem.cs
+    public const int CommandId = 2;
+    public const string ProblemServiceCatalogUrl = "/NewTicket/SectionCatalog/1";
 }

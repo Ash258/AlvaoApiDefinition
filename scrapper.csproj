@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,IDE0130,CS8767,CS8765</NoWarn>
+    <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,IDE0130,CS8767,CS8765,SYSLIB0014,CS0162,CS8602</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
