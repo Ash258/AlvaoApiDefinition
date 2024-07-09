@@ -259,7 +259,9 @@ public static class MonkeyPatch
         if (!Directory.Exists(ns.Replace(".", "/"))) Directory.CreateDirectory(ns.Replace(".", "/"));
 
         MonkeyPatchITicketAutoAction(ns);
+        MonkeyPatchIActAutoAction(ns);
     }
+
     public static void MonkeyPatchITicketAutoAction(string ns = "Alvao.Apps.API")
     {
         var clazz = new AlvaoClass(true, ns, "ITicketAutoAction", string.Join("\n", [
@@ -299,6 +301,60 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnTicketCreated\"/>",
             "void OnTicketCreated(SqlConnection con, SqlTransaction trans, int ticketId, int personId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIActAutoAction(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IActAutoAction", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing the IActAutoAction interface in a application script, you can define custom actions when creating an event on a ticket.",
+            "/// In the newly created script, set the value of the Name property (the name of the automatic action) in the constructor of the action class.",
+            "/// Tip: To store properties and action settings, we recommend defining the Settings class in a separate script that you create from the Class Library template.",
+            "/// Caution: If you want to use only some of the methods of the implemented interface in the automatic action, leave an exception in the body of the other methods from the interface: throw new NotImplementedException();.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions",
+            Usings = ["Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Properties.Add("public string Name { get; set; }");
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on event modification. In the implemented method, define both the conditions for executing the operations and the event operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the database transaction in progress.</param>",
+            "/// <param name=\"actId\">The ID of the event (tAct.iActId) that was changed.</param>",
+            "/// <param name=\"personId\">The ID of the user (tPerson.iPersonId) who executed the event on the ticket. In some cases it could be the system, then the value is NULL.</param>",
+            "/// <param name=\"properties\">The changed ticket items separated by a comma (table.column).</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnActChanged\"/>",
+            "void OnActChanged(SqlConnection con, SqlTransaction trans, int actId, int personId, string properties);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on the creation of a ticket. In the implemented method, define both the conditions for executing the operations and the operations with the ticket itself.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the database transaction in progress.</param>",
+            "/// <param name=\"actId\">ID of the newly created event (tAct.iActId).</param>",
+            "/// <param name=\"personId\">The ID of the user (tPerson.iPersonId) who executed the event on the ticket. In some cases it could be the system, then the value is NULL.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnActCreated\"/>",
+            "void OnActCreated(SqlConnection con, SqlTransaction trans, int actId, int personId);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>Custom action based on event removal. In the implemented method, define both the conditions for executing the operations and the operations with the ticket itself.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the database transaction in progress.</param>",
+            "/// <param name=\"actId\">ID of the newly created event (tAct.iActId).</param>",
+            "/// <param name=\"personId\">The ID of the user (tPerson.iPersonId) who executed the event on the ticket. In some cases it could be the system, then the value is NULL.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnActRemoved\"/>",
+            "void OnActRemoved(SqlConnection con, SqlTransaction trans, int actId, int personId);"
         ]));
         clazz.ProduceFinalCsFile();
     }
