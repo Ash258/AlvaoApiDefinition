@@ -261,6 +261,7 @@ public static class MonkeyPatch
         MonkeyPatchITicketAutoAction(ns);
         MonkeyPatchIActAutoAction(ns);
         MonkeyPatchITicketApprovalAutoAction(ns);
+        MonkeyPatchIMailMessageAutoAction(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns = "Alvao.Apps.API")
@@ -317,7 +318,7 @@ public static class MonkeyPatch
             "/// </summary>",
         ]))
         {
-            FullUrl = $"https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions",
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions",
             Usings = ["Microsoft.Data.SqlClient"],
         };
 
@@ -372,7 +373,7 @@ public static class MonkeyPatch
             "/// </summary>",
         ]))
         {
-            FullUrl = $"https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions",
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions",
             Usings = ["Microsoft.Data.SqlClient"],
         };
 
@@ -410,6 +411,37 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnApproverCanceled\"/>",
             " void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIMailMessageAutoAction(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IMailMessageAutoAction", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing the IMailMessageAutoAction interface in the application script you can define custom actions when loading a message from the service mailbox before saving the message to the log of an existing ticket or before creating a new ticket. In the newly created script, set the value of the Name property (the name of the automatic action) in the action class constructor.",
+            "/// Tip: To store properties and action settings, we recommend defining the Settings class in a separate script that you create from the Class Library template.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/mail-message-custom-actions",
+            Usings = ["Alvao.API.Common.Model.Database", "Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Properties.Add("public string Name { get; set; }");
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>The actual action can be performed when loading a message from the service mailbox before saving the message to the log of an existing ticket or before creating a new ticket. In the implemented method, define both the conditions for executing the operations and the operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "/// <param name=\"trans\">SqlTransaction of the ongoing database transaction.</param>",
+            "/// <param name=\"message\">message object.</param>",
+            "/// <param name=\"sectionId\">the service ID (tHdSection.iSectionId) which the message was loaded to.</param>",
+            "/// <param name=\"ticketId\">ID of the ticket (tHdTicket.iHdTicketId) to which the message belongs according to the subject, or zero if it is a new ticket creation.</param>",
+            "/// <param name=\"fromPersonId\">message sender ID (tPerson.iPersonId), or Host account, if the message sender is not found among the users.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnMessageReceived\"/>",
+            "bool OnMessageReceived(SqlConnection con, SqlTransaction trans, MailMessage message, int sectionId, int ticketId, int fromPersonId);"
         ]));
         clazz.ProduceFinalCsFile();
     }
