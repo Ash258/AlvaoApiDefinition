@@ -1,24 +1,15 @@
 using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
-using Alvao.Global;
-using Alvao.API.Common;
 using Alvao.Apps.API;
 using Alvao.API.Common.Model.Database;
 using Alvao.API.SD;
 
-public class Settings
-{
-    public const int SD_SECTION_NAME = 123;
-    public const string SD_BASE_URL = "https://tenant.onalvao.com/Alvao/Ticket/";
-    public const string AM_RECIPIENTS_TO = "example@example.com";
-}
-
-public class ExampleEmailSendingOnTicketCreation : ITicketAutoAction
+public class EmailSendingOnTicketCreation : ITicketAutoAction
 {
     public string Name
     {
-        get => "ExampleEmailSendingOnTicketCreation";
+        get => "EmailSendingOnTicketCreation";
         set { }
     }
 
