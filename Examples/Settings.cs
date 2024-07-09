@@ -18,4 +18,13 @@ public class Settings
     // ReportProblem.cs
     public const int CommandId = 2;
     public const string ProblemServiceCatalogUrl = "/NewTicket/SectionCatalog/1";
+
+    // CheckObjectMandatoryProperties.cs
+    public static readonly int ObjectClassToCheckId = (int)Alvao.API.AM.Model.ObjectClass.Code.Warehouse; // Object class ID.
+    public static readonly string ErrorMessage = "Fill in all mandatory properties of the object before moving from the warehouse."; // Error message.
+
+    // SetComputerDetectionProfile.cs
+    public static readonly int movedObjectClassIdToCheck = (int)Alvao.API.AM.Model.ObjectClass.Code.Computer; // Object class ID of the moved object.
+    public static readonly int oldParentobjectClassId = (int)Alvao.API.AM.Model.ObjectClass.Code.Warehouse; // Was moved object somewhere under the object of this Object class ID?
+    public static readonly string detectionProfileName = "Standard"; // Name of the detection profile in database.
 }
