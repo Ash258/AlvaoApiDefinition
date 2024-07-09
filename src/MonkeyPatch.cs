@@ -262,9 +262,10 @@ public static class MonkeyPatch
         MonkeyPatchIActAutoAction(ns);
         MonkeyPatchITicketApprovalAutoAction(ns);
         MonkeyPatchIMailMessageAutoAction(ns);
+        MonkeyPatchIPeriodicActions(ns);
     }
 
-    public static void MonkeyPatchITicketAutoAction(string ns = "Alvao.Apps.API")
+    public static void MonkeyPatchITicketAutoAction(string ns)
     {
         var clazz = new AlvaoClass(true, ns, "ITicketAutoAction", string.Join("\n", [
             "/// <summary>",
@@ -442,6 +443,39 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnMessageReceived\"/>",
             "bool OnMessageReceived(SqlConnection con, SqlTransaction trans, MailMessage message, int sectionId, int ticketId, int fromPersonId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIPeriodicActions(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IPeriodicAction", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing the IPeriodicAction interface in a application script, you can define custom periodic actions.",
+            "/// Custom actions can be run at a regular time interval.",
+            "/// The system runs periodic custom actions every hour.",
+            "///",
+            "/// In the application, create a new script using the IPeriodicAction template and name it appropriately according to the functionality that the action performs.",
+            "/// In the newly created script, set the value of the Name property (the name of the action itself) in the class constructor.",
+            "///",
+            "/// Caution: Poor definition of a custom action can irreversibly damage the Alvao database, so always create and test actions in a test environment, e.g. on a copy of the production database.",
+            "/// Tip: A prerequisite for creating a working automated action is a good knowledge of Alvao database and Alvao.API.",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}modules/alvao-am-custom-apps/applications/periodic-custom-actions",
+            Usings = ["Microsoft.Data.SqlClient"],
+        };
+
+        clazz.Properties.Add("public string Name { get; set; }");
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>In the method, define both the conditions for performing the operations and the operations themselves.</summary>",
+            "///",
+            "/// <param name=\"con\">SqlConnection to the database.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnPeriod\"/>",
+            " void OnPeriod(SqlConnection con);"
         ]));
         clazz.ProduceFinalCsFile();
     }
