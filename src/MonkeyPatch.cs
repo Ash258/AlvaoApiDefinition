@@ -255,6 +255,7 @@ public static class MonkeyPatch
     public static void MonkeyPatchNotAvailableNamespaces()
     {
         var ns = "Alvao.Apps.API";
+        Helpers.AssertDirectory(ns.Replace(".", "/"));
 
         Helpers.AssertDirectory(ns.Replace(".", "/"));
 
@@ -263,6 +264,7 @@ public static class MonkeyPatch
         MonkeyPatchITicketApprovalAutoAction(ns);
         MonkeyPatchIMailMessageAutoAction(ns);
         MonkeyPatchIPeriodicActions(ns);
+        MonkeyPatchIEntityCommand(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns)
@@ -411,7 +413,7 @@ public static class MonkeyPatch
             "/// <param name=\"approvalItemIds\">List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId).</param>",
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnApproverCanceled\"/>",
-            " void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);"
+            "void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);"
         ]));
         clazz.ProduceFinalCsFile();
     }
@@ -475,7 +477,55 @@ public static class MonkeyPatch
             "/// <param name=\"con\">SqlConnection to the database.</param>",
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnPeriod\"/>",
-            " void OnPeriod(SqlConnection con);"
+            "void OnPeriod(SqlConnection con);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    public static void MonkeyPatchIEntityCommand(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "IEntityCommand", string.Join("\n", [
+            "/// <summary>",
+            "/// By implementing this interface, you can define custom commands for an object or a ticket. For an example, see the CostsCalculation application template.",
+            "/// In the application, create a new script using the IEntityCommand template and name it appropriately according to the functionality of the custom command.",
+            "/// In the newly created script, set the following properties in the constructor of the class:",
+            "///    Id - a unique command identifier (string)",
+            "///    Entity - the type of entity for which the command will be displayed(Entity.Ticket or Entity.Object).",
+            "/// </summary>",
+        ]))
+        {
+            FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}modules/alvao-am-custom-apps/applications/i-entity-command",
+            Usings = ["Alvao.API.Common.Model.CustomApps"],
+        };
+
+        clazz.Definition = $"public interface {clazz.Name}";
+        clazz.Properties.Add("public string Id { get; set; }");
+        clazz.Properties.Add("public Entity Entity { get; set; }");
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method controls display of the command in command menus",
+            "///",
+            "/// Tip: By calling this method in the Run method, you can check if the conditions for displaying the command haven't changed between the time of displaying the command and running it.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"entityId\">the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command should be displayed.</param>",
+            "/// <param name=\"personId\">the ID of the user (tPerson.iPersonId) to whom the command should be displayed.\">SqlConnection to the database.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#Show\"/>",
+            "EntityCommandShowResult Show(int entityId, int personId);"
+        ]));
+        clazz.Methods.Add(string.Join("\n", [
+            "/// <summary>",
+            "/// This method implements the command itself.",
+            "///",
+            "/// Tip: If the custom command is to open another Alvao WebApp page, use the Alvao.API.Common.DbProperty.WebAppUrl property from the Alvao.API to get the root URL of the WebApp.",
+            "/// </summary>",
+            "///",
+            "/// <param name=\"entityId\">the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command should be displayed.</param>",
+            "/// <param name=\"personId\">the ID of the user (tPerson.iPersonId) to whom the command should be displayed.\">SqlConnection to the database.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#Run\"/>",
+            "CommandResult Run(int entityId, int personId);"
         ]));
         clazz.ProduceFinalCsFile();
     }
