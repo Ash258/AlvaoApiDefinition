@@ -52,6 +52,27 @@ public class AlvaoClass
         Constructors = [];
     }
 
+    public AlvaoClass(bool manual, string namespaceName, string name, string summary)
+    {
+        Name = name.Replace(" Class", "").Replace(" Interface", "").Trim();
+        Type = name.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS;
+        NamespaceName = namespaceName;
+        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{Name}.cs";
+
+        Summary = summary;
+        Version = "";
+        Usings = [];
+        Fields = [];
+        Properties = [];
+        Enums = [];
+        Methods = [];
+        Events = [];
+
+        Constructors = [];
+        LocalHtmlFile = "";
+        HtmlDocument = null;
+    }
+
     internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
     {
         var aNode = cl.SelectNodes(".//a").Last();

@@ -7,6 +7,7 @@ namespace AlvaoScapper;
 public static class Helpers
 {
     public static string ALVAO_VERSION = "11_2";
+    public static string ALVAO_VERSION_DOT = ALVAO_VERSION.Replace("_", ".");
     public static string BASE_URL = $"https://doc.alvao.com/en/alvao_{ALVAO_VERSION}/alvao_api";
     public static string BASE_HTML_URL = $"{BASE_URL}/html";
     public static string LOCAL_HTML_FOLDER = "html";
