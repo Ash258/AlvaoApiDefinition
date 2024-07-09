@@ -37,6 +37,8 @@ if (args.Length > 0)
     if (filter.Length > 0) alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
 }
 
+MonkeyPatch.MonkeyPatchNotAvailableNamespaces();
+
 foreach (var ns in alvaoNamespace)
 {
     Console.WriteLine($"Processing {ns} Namespace");
