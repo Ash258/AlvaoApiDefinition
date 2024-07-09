@@ -279,19 +279,25 @@ public static class MonkeyPatch
         clazz.Definition = $"public interface {clazz.Name}";
         clazz.Methods.Add(string.Join("\n", [
             "/// <summary>Custom action based on a change in the value of a ticket item (custom/system). In the implemented method, define both the conditions for performing the operations and the operations themselves.</summary>",
+            "///",
             "/// <param name=\"con\">SqlConnection to the database.</param>",
             "/// <param name=\"trans\">SqlTransaction of the database transaction in progress.</param>",
             "/// <param name=\"ticketId\">The ID of the ticket (tHdTicket.iHdTicketId) to which the custom action applies.</param>",
             "/// <param name=\"personId\">The ID of the user (tPerson.iPersonId) who executed the event on the ticket. In some cases it could be the system, then the value is NULL.</param>",
             "/// <param name=\"properties\">The changed ticket items separated by a comma (table.column).</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnTicketChanged\"/>",
             "void OnTicketChanged(SqlConnection con, SqlTransaction trans, int ticketId, int personId, string properties);"
         ]));
         clazz.Methods.Add(string.Join("\n", [
             "/// <summary>Custom action based on the creation of a ticket. In the implemented method, define both the conditions for executing the operations and the operations with the ticket itself.</summary>",
+            "///",
             "/// <param name=\"con\">SqlConnection to the database.</param>",
             "/// <param name=\"trans\">SqlTransaction of the database transaction in progress.</param>",
             "/// <param name=\"ticketId\">The ID of the ticket (tHdTicket.iHdTicketId) to which the custom action applies.</param>",
             "/// <param name=\"personId\">The ID of the user (tPerson.iPersonId) who executed the event on the ticket. In some cases it could be the system, then the value is NULL.</param>",
+            "///",
+            $"/// <see href=\"{clazz.FullUrl}#OnTicketCreated\"/>",
             "void OnTicketCreated(SqlConnection con, SqlTransaction trans, int ticketId, int personId);"
         ]));
         clazz.ProduceFinalCsFile();
