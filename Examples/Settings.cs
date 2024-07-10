@@ -121,4 +121,9 @@ public class Settings
         "In case you need to contact the department in charge of this area, please use the contacts available on the intranet.\r\n\r\n" +
         "Thank you for your understanding,\r\n" +
         "ALVAO SD team \r\n\r\n\r\n";
+
+    // CreateAnalysis.cs
+    public const string CA_ActionName = "Create project request";
+    public const string CA_ServiceName = "Program modifications"; // The name of the service in which the new request is being created.
+    public const string CA_AnalysisServiceName = "Program modifications/Designs and analyses"; // The name of the service to which the request for the created request is to be created.
 }
