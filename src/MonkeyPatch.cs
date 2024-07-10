@@ -438,7 +438,7 @@ public static class MonkeyPatch
         ]))
         {
             FullUrl = $"https://doc.alvao.com/en/{Helpers.ALVAO_VERSION_DOT}/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/mail-message-custom-actions",
-            Usings = ["Alvao.API.Common.Model.Database", "Microsoft.Data.SqlClient"],
+            Usings = ["Microsoft.Data.SqlClient", "Rebex.Mail"],
         };
 
         clazz.Properties.Add("public string Name { get; set; }");

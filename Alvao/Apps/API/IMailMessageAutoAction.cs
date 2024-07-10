@@ -1,5 +1,5 @@
-using Alvao.API.Common.Model.Database;
 using Microsoft.Data.SqlClient;
+using Rebex.Mail;
 
 namespace Alvao.Apps.API;
 
