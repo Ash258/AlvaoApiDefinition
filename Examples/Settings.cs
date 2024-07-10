@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class Settings
 {
     // EmailSendingOnTicketCreation.cs
@@ -76,4 +78,7 @@ public class Settings
     public const string ATT_ServiceName = "Program modifications"; // Name of the service in which the request should be passed to Testers.
     public const int ATT_ControlStateId = 1; // Status ID in which the request should be passed to the Testers.
     public const string ATT_SolverGroupName = "Testers";
+
+    // TicketAutoClose.cs
+    public static readonly List<int> TAC_Hours = new List<int>() { 0, 12 };
 }

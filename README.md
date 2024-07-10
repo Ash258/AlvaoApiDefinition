@@ -4,7 +4,7 @@ _This project is not anyhow affiliated or maintened by Alvao corporation._
 
 Purpose of this repository is to scrape **publicly available** documentation of Alvao Custom Apps to make local development of Custom Apps easier with help of IDE suggestions of all possible methods/properties/...
 
-It is not ideal as Alvao is being compiled with Dotnet Framework and
+It is not ideal as Alvao is being compiled with Dotnet Framework and not Dotnet core, so you can face with false positive error about missing functions. But everything can be fixed locally (Using extension methods and so on...) in files that will not be copied to Alvao script file.
 
 ## How to use
 
