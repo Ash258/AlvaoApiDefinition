@@ -270,6 +270,11 @@ public static class MonkeyPatch
         MonkeyPatchIGeneralCommand(ns);
         MonkeyPatchIObjectMoveAutoAction(ns);
         MonkeyPatchIObjectPropertyAutoAction(ns);
+
+        ns = "Alvao.API.Internal";
+        Helpers.AssertDirectory(ns.Replace(".", "/"));
+
+        MonkeyPatchInternalUserToken(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns)
@@ -724,6 +729,19 @@ public static class MonkeyPatch
             "///",
             $"/// <see href=\"{clazz.FullUrl}#OnPropertyModified\"/>",
             "void OnPropertyModified(SqlConnection con, int propertyId, int personId);"
+        ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    private static void MonkeyPatchInternalUserToken(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "UserToken", string.Join("\n", [
+            "/// CAUTION: This class was heavily guessed based on the usage seen on some custom apps.",
+        ]));
+
+        clazz.Definition = $"public class {clazz.Name}";
+        clazz.Methods.Add(string.Join("\n", [
+            "public static string GetToken(int personId, string scope) { throw new System.NotImplementedException(); }"
         ]));
         clazz.ProduceFinalCsFile();
     }

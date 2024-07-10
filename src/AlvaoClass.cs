@@ -17,7 +17,7 @@ public class AlvaoClass
     public string Name { get; set; }
     public string Summary { get; set; }
     public ClassType Type { get; set; }
-    public string FullUrl { get; set; }
+    public string? FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string FinalCsFile { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
@@ -325,7 +325,7 @@ public class AlvaoClass
         sb.AppendLine("");
 
         if (!Summary.Equals("")) sb.AppendLine(Summary);
-        sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
+        if (FullUrl != null && !FullUrl.Equals("")) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
         sb.AppendLine(Definition);
         sb.AppendLine("{");
 

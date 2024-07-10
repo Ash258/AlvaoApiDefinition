@@ -22,6 +22,7 @@ It is not ideal as Alvao is being compiled with Dotnet Framework and
     dotnet add package Newtonsoft.Json
     dotnet add package Volo.Abp.EntityFrameworkCore
     dotnet add package Smatlactvo.Mock.AlvaoAP
+    dotnet add package Microsoft.Graph
     ```
 
 1. Create new application class and implement it.
