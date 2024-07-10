@@ -100,4 +100,7 @@ public class Settings
 
     // Do not change this value.
     public static bool CPNF_isPhoneNumber = false;
+
+    // TeamsWithUserCommand.cs
+    public const bool TWUC_TargetState = false;
 }
