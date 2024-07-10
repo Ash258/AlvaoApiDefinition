@@ -85,4 +85,10 @@ public class Settings
     // SendMailsAboutNewEvent.cs
     public static string SMANE_ActionName = "New note – send e-mails";
     public static string SMANE_ServiceName = "Program modifications"; // The name of the service on which request the event will be created.
+
+    // OrderAfterApproval.cs
+    public static string OAA_ActionName = "OrderAfterApproval";
+    public static string OAA_ServiceName = "Purchase"; // The name of the service where the approval is taking place
+    public static string OAA_State = "Purchase approval"; // The name of the status where the approval is taking place.
+    public static string OAA_TargetState = "Order"; // The name of the status to enter after approval.
 }
