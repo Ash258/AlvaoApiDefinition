@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class Settings
 {
@@ -91,4 +92,12 @@ public class Settings
     public static string OAA_ServiceName = "Purchase"; // The name of the service where the approval is taking place
     public static string OAA_State = "Purchase approval"; // The name of the status where the approval is taking place.
     public static string OAA_TargetState = "Order"; // The name of the status to enter after approval.
+
+    // CheckPhoneNumberFormat.cs
+    public static readonly string CPNF_propName = "Phone Number"; // Specify the property name you want to check.
+    public static readonly Regex CPNF_rx = new Regex(@"^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$", RegexOptions.Compiled | RegexOptions.IgnoreCase); // Phone number format in regex.
+    public static readonly string CPNF_errorMessage = "The value you entered is not a phone number. Enter the phone number in the correct format, etc. +(039) 123 456 789."; // Error message if the new value is not in correct format.
+
+    // Do not change this value.
+    public static bool CPNF_isPhoneNumber = false;
 }
