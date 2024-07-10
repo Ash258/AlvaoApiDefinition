@@ -67,4 +67,7 @@ public class Settings
 
         return ticketFullName;
     }
+
+    // AssignToSolverByEmail.cs
+    public const string ATSBE_ActionName = "Assign to the solver via e-mail";
 }
