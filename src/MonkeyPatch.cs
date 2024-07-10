@@ -275,6 +275,11 @@ public static class MonkeyPatch
         Helpers.AssertDirectory(ns.Replace(".", "/"));
 
         MonkeyPatchInternalUserToken(ns);
+
+        ns = "Alvao.Global";
+        Helpers.AssertDirectory(ns.Replace(".", "/"));
+
+        MonkeyPatchGlobalModuleInfo(ns);
     }
 
     public static void MonkeyPatchITicketAutoAction(string ns)
@@ -743,6 +748,17 @@ public static class MonkeyPatch
         clazz.Methods.Add(string.Join("\n", [
             "public static string GetToken(int personId, string scope) { throw new System.NotImplementedException(); }"
         ]));
+        clazz.ProduceFinalCsFile();
+    }
+
+    private static void MonkeyPatchGlobalModuleInfo(string ns)
+    {
+        var clazz = new AlvaoClass(true, ns, "ModuleInfo", string.Join("\n", [
+            "/// CAUTION: This class was heavily guessed based on the usage seen on some custom apps.",
+        ]));
+
+        clazz.Definition = $"public class {clazz.Name}";
+        clazz.Enums.Add("public enum ModuleId { IntuneConnector }");
         clazz.ProduceFinalCsFile();
     }
 }
