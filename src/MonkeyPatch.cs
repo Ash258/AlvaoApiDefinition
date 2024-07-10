@@ -195,7 +195,9 @@ public static class MonkeyPatch
                     case "Person":
                         clazz.Usings.AddRange(["System.Globalization", "Alvao.API.Common.Model.Database"]);
                         break;
-
+                    case "Activation":
+                        clazz.Usings.AddRange(["Alvao.Global", "static Alvao.Global.ModuleInfo"]);
+                        break;
                     case "Role":
                     case "PersonRights":
                         clazz.Usings.Add("Alvao.API.Common.Model.Database");
@@ -209,7 +211,7 @@ public static class MonkeyPatch
     {
         return namespaceName switch
         {
-            "Alvao.API.Common" => new string[] { "Activation", "CustomApps" }.Contains(className),
+            "Alvao.API.Common" => new string[] { "CustomApps" }.Contains(className),
             "Alvao.API.SD" => new string[] { "CustomApps" }.Contains(className),
             "Alvao.API.AM" => new string[] { "CustomApps", "ImportCsv" }.Contains(className),
             _ => false,
@@ -759,6 +761,14 @@ public static class MonkeyPatch
 
         clazz.Definition = $"public class {clazz.Name}";
         clazz.Enums.Add("public enum ModuleId { IntuneConnector }");
+        clazz.ProduceFinalCsFile();
+
+        // No idea if this module is from Global
+        clazz = new AlvaoClass(true, ns, "LicenseModule", string.Join("\n", [
+            "/// CAUTION: This class was heavily guessed based on the usage seen on some custom apps.",
+        ]));
+
+        clazz.Definition = $"public class {clazz.Name}";
         clazz.ProduceFinalCsFile();
     }
 }

@@ -48,9 +48,7 @@ public class IntuneCommand : IEntityCommand
         return new CommandResult(messageType, messageText, navigateToUrl);
     }
 
-    private bool LicenceCheck() => false;
-    // TODO: Fix with actual implementation of Alvao.Global and activation module, that is now skipped
-    // private bool LicenceCheck() => Alvao.API.Common.Activation.IsModuleActivated(Alvao.Global.ModuleInfo.ModuleId.IntuneConnector);
+    private bool LicenceCheck() => Alvao.API.Common.Activation.IsModuleActivated(Alvao.Global.ModuleInfo.ModuleId.IntuneConnector);
 
     private string GetObjectIntuneId(int objectId)
     {
