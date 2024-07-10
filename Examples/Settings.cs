@@ -126,4 +126,8 @@ public class Settings
     public const string CA_ActionName = "Create project request";
     public const string CA_ServiceName = "Program modifications"; // The name of the service in which the new request is being created.
     public const string CA_AnalysisServiceName = "Program modifications/Designs and analyses"; // The name of the service to which the request for the created request is to be created.
+
+    // CopyNewPropertyValueToAnotherProperty.cs
+    public static readonly string CNPVTAP_UpdatedPropertyName = "Phone number"; // Which property value was updated.
+    public static readonly string CNPVTAP_ServiceName = "Phone"; // Which property kind will be updated.
 }
