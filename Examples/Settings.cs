@@ -70,4 +70,10 @@ public class Settings
 
     // AssignToSolverByEmail.cs
     public const string ATSBE_ActionName = "Assign to the solver via e-mail";
+
+    // AssignToTester.cs
+    public const string ATT_ActionName = "Resolved in the version - pass to the test";
+    public const string ATT_ServiceName = "Program modifications"; // Name of the service in which the request should be passed to Testers.
+    public const int ATT_ControlStateId = 1; // Status ID in which the request should be passed to the Testers.
+    public const string ATT_SolverGroupName = "Testers";
 }
