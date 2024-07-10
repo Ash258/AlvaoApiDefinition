@@ -48,13 +48,14 @@ public class Settings
     public const string SK_TabName = "Knowledge Base";
 
     // TicketCreateTaskInToDoCommand.cs
+    // TicketCreateOutlookMeetingCommand.cs
     private static int subjectMaxLength = 150;
     private static string dots = "...";
 
     public static string GetSubject(string name, string tag)
     {
         string ticketFullName;
-        if (name.Length > 150)
+        if (name.Length > subjectMaxLength)
         {
             name = $"{name.Trim().Substring(0, subjectMaxLength - 1)}";
             ticketFullName = $"{name}{dots} ({tag})";
