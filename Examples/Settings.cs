@@ -81,4 +81,8 @@ public class Settings
 
     // TicketAutoClose.cs
     public static readonly List<int> TAC_Hours = new List<int>() { 0, 12 };
+
+    // SendMailsAboutNewEvent.cs
+    public static string SMANE_ActionName = "New note – send e-mails";
+    public static string SMANE_ServiceName = "Program modifications"; // The name of the service on which request the event will be created.
 }
