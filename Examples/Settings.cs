@@ -46,4 +46,24 @@ public class Settings
     // SectionKnowledges.cs
     // public static readonly int[] SupportedServices = null;
     public const string SK_TabName = "Knowledge Base";
+
+    // TicketCreateTaskInToDoCommand.cs
+    private static int subjectMaxLength = 150;
+    private static string dots = "...";
+
+    public static string GetSubject(string name, string tag)
+    {
+        string ticketFullName;
+        if (name.Length > 150)
+        {
+            name = $"{name.Trim().Substring(0, subjectMaxLength - 1)}";
+            ticketFullName = $"{name}{dots} ({tag})";
+        }
+        else
+        {
+            ticketFullName = $"{name} ({tag})";
+        }
+
+        return ticketFullName;
+    }
 }
