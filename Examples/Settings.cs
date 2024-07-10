@@ -27,4 +27,23 @@ public class Settings
     public static readonly int movedObjectClassIdToCheck = (int)Alvao.API.AM.Model.ObjectClass.Code.Computer; // Object class ID of the moved object.
     public static readonly int oldParentobjectClassId = (int)Alvao.API.AM.Model.ObjectClass.Code.Warehouse; // Was moved object somewhere under the object of this Object class ID?
     public static readonly string detectionProfileName = "Standard"; // Name of the detection profile in database.
+
+    // UpdateSuperiorGroupPeriodic.cs
+    public const int UPDATE_HOUR = 2;
+    public const string ORGANIZATION_NAME = "";
+    public const string SUPERIOR_GROUP_NAME = "";
+
+    // EntityTab.cs
+    public const string CMD_TabName = "CMDB diagram";
+    public static int[] SupportedServices = { }; // List of supported services separated by a comma. Example: { 1, 2 }
+
+    // OpenAttachments.cs
+    public const string OA_CommandName = "Open Attachments";
+    public const int OA_CommandPosition = 1;
+    public const string OA_CommandIcon = "OpenFile";
+    public const string AttachmentsCustomColumnName = "Attachments";
+
+    // SectionKnowledges.cs
+    // public static readonly int[] SupportedServices = null;
+    public const string SK_TabName = "Knowledge Base";
 }
