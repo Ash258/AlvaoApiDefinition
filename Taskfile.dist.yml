@@ -6,33 +6,35 @@ tasks:
   tidy:
     ignore_error: true
     aliases:
-      - format
+    - format
     generates:
-      - html/*.htm
+    - html/*.htm
     sources:
-      - html/*.htm
+    - html/*.htm
     cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
     sources:
-      - Program.cs
-      - src/**
-      - Alvao/**
+    - Program.cs
+    - src/**
+    - Alvao/**
     cmd: dotnet format
   clean:
-    cmd: git checkout -- Alvao
-  delete:
-    cmd: rm -rf Alvao/
+    cmd: rm -rf Alvao/ Examples/
+  restore:
+    cmd: git checkout -- Examples/
   run:
     aliases:
-      - default
+    - default
     cmds:
-      - task: clean
-      - task: dotnet:run
-      - task: tidy
-      - task: format
-  run:reset:
+    - task: clean
+    - task: dotnet:run
+    - task: tidy
+    - task: format
+    - task: restore
+    - git add Alvao/
+    - git add html/
     cmds:
       - task: delete
       - task: run

@@ -1,4 +1,4 @@
-using AlvaoScapper;
+namespace AlvaoScapper;
 
 public static class MonkeyPatch
 {
@@ -256,8 +256,7 @@ public static class MonkeyPatch
 
     public static void MonkeyPatchNotAvailableNamespaces()
     {
-        var ns = "Alvao.API.Common.Model.CustomApps";
-        Helpers.AssertDirectory(ns.Replace(".", "/"));
+        var ns = string.Empty;
 
         ns = "Alvao.Apps.API";
         Helpers.AssertDirectory(ns.Replace(".", "/"));

@@ -1,23 +1,28 @@
 using AlvaoScapper;
 
 string[] alvaoNamespace = {
+    "Alvao.API.AI",
     "Alvao.API.AI.Model",
     "Alvao.API.AI.Utils",
-    "Alvao.API.AI",
-    "Alvao.API.Common.Exceptions",
-    "Alvao.API.Common.Model.Database",
-    "Alvao.API.Common.Model",
-    "Alvao.API.Common",
+    "Alvao.API.AM",
     "Alvao.API.AM.Exceptions",
     "Alvao.API.AM.Model",
-    "Alvao.API.AM",
-    "Alvao.API.SD.Model",
-    "Alvao.API.SD.Exceptions",
+    "Alvao.API.AM.Model.Detection",
+    "Alvao.API.AM.Model.Detection.Software",
+    "Alvao.API.AM.Model.SwLibrary",
+    "Alvao.API.Common",
+    "Alvao.API.Common.Exceptions",
+    "Alvao.API.Common.Model",
+    "Alvao.API.Common.Model.CustomApps",
+    "Alvao.API.Common.Model.CustomApps.Requests",
+    "Alvao.API.Common.Model.Database",
+    "Alvao.API.Common.Model.Translations",
     "Alvao.API.SD",
-    "Alvao.Context.DB",
+    "Alvao.API.SD.Exceptions",
+    "Alvao.API.SD.Model",
     "Alvao.Context",
+    "Alvao.Context.DB",
 };
-
 
 string[] filter = [];
 int toTake = alvaoNamespace.Length;
@@ -33,7 +38,7 @@ if (args.Length > 0)
 
     var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
 
-    filter = args.TakeLast(_l).ToArray();
+    filter = [.. args.TakeLast(_l)];
     if (filter.Length > 0) alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
 }
 
