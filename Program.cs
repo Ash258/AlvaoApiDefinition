@@ -1,4 +1,5 @@
-using AlvaoScapper;
+using AlvaoScrapper;
+using Microsoft.Extensions.Logging;
 
 string[] alvaoNamespace = {
     "Alvao.API.AI",
@@ -24,6 +25,16 @@ string[] alvaoNamespace = {
     "Alvao.Context.DB",
 };
 
+using var loggerFactory = LoggerFactory.Create(builder =>
+{
+    builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "2"));
+    builder.AddSimpleConsole(options =>
+    {
+        options.SingleLine = true;
+    });
+});
+var logger = loggerFactory.CreateLogger<Program>();
+
 string[] filter = [];
 int toTake = alvaoNamespace.Length;
 if (args.Length > 0)
@@ -39,24 +50,20 @@ if (args.Length > 0)
     var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
 
     filter = [.. args.TakeLast(_l)];
-    if (filter.Length > 0) alvaoNamespace = alvaoNamespace.Where(ns => filter.Contains(ns)).ToArray();
+    if (filter.Length > 0) alvaoNamespace = [.. alvaoNamespace.Where(ns => filter.Contains(ns))];
 }
 
-MonkeyPatch.MonkeyPatchNotAvailableNamespaces();
+// MonkeyPatch.MonkeyPatchNotAvailableNAlvao.API.Common.Modelamespaces();
 
 foreach (var ns in alvaoNamespace)
 {
-    Console.WriteLine($"Processing {ns} Namespace");
+    logger.LogInformation("Processing {ns} Namespace", ns);
+    logger.LogDebug("Processing {ns} Namespace", ns);
 
-    AlvaoNamespace alvaoNs = new AlvaoNamespace($"{Helpers.BASE_HTML_URL}/N_{ns.Replace(".", "_")}.htm", ns);
+    var alvaoNs = new AlvaoNamespace2($"{ns}.html", ns);
     State.Namespaces.Add(ns, alvaoNs);
     alvaoNs.Process();
 }
-
-var latest = State.Versions.Distinct().OrderDescending().ToArray();
-Console.WriteLine("");
-Console.WriteLine($"Unique versions: {latest.Length} ({string.Join(", ", latest)})");
-File.WriteAllText(".version", latest.First());
 
 Console.WriteLine("");
 Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");

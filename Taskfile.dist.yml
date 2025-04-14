@@ -11,7 +11,7 @@ tasks:
     - html/*.htm
     sources:
     - html/*.htm
-    cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm
+    cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm*
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
