@@ -24,7 +24,7 @@ public class AlvaoClass2
     public List<DotnetProperty> Properties { get; set; }
     public List<string> Fields { get; set; }
     public List<string> Events { get; set; }
-    public List<string> Constructors { get; set; }
+    public List<DotnetConstructor> Constructors { get; set; }
     public List<string> Methods { get; set; }
 
     public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns)
@@ -66,6 +66,7 @@ public class AlvaoClass2
 
         ProcessDefinition();
         ProcessProperties();
+        ProcessConstructors();
 
         ProduceFinalCsFile();
     }
@@ -104,7 +105,11 @@ public class AlvaoClass2
     {
         Logger.LogInformation("Processing properties of class {name} {{{ns}}}", Name, NamespaceName);
         var properties = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='properties' and @class='section']/following-sibling::*");
-        if (properties == null) return;
+        if (properties == null)
+        {
+            Logger.LogInformation("Class does not define properties {} {{{}}}", Name, NamespaceName);
+            return;
+        }
 
         var breakLoop = false;
         var property = new DotnetProperty
@@ -126,7 +131,7 @@ public class AlvaoClass2
                     property.Name = element.InnerText.Trim();
                     break;
                 case "div":
-                    // Actual code definition
+                    // Actual property summary / definition
                     var divClass = element.GetAttributeValue("class", "none");
                     // Summary handling
                     if (divClass.Equals("markdown level1 summary"))
@@ -148,7 +153,6 @@ public class AlvaoClass2
                     property.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
                     if (property.Name.IsNullOrEmpty()) break;
 
-                    Logger.LogInformation("saving {}: {}", property.Name, property.Definition);
                     // ??? TODO: Why Properties.Add(property) does not work?
                     Properties.Add(new DotnetProperty()
                     {
@@ -170,13 +174,119 @@ public class AlvaoClass2
         }
     }
 
+    private void ProcessConstructors()
+    {
+        Logger.LogInformation("Processing constructors of class {name} {{{ns}}}", Name, NamespaceName);
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='constructors' and @class='section']/following-sibling::*");
+        if (elements == null)
+        {
+            Logger.LogInformation("Class does not define constructors {} {{{}}}", Name, NamespaceName);
+            return;
+        }
+
+        /*
+        <h3> - Constructor name
+        <div> - Summary
+        <div> - Definition
+        <h4> - Parameters
+        <dl> - Parameter X
+        <dl> - Parameter X
+        */
+        var breakLoop = false;
+        var constructor = new DotnetConstructor()
+        {
+            Name = string.Empty,
+        };
+
+        // ! TODOOO: Rework to something more contextual
+        foreach (var element in elements)
+        {
+            switch (element.Name)
+            {
+                case "h3":
+                    // Actual Constructor name
+                    Logger.LogInformation("Changing current constructor from '{}' to '{}' {{{}}}", constructor.Name, element.InnerText.Trim(), NamespaceName);
+
+                    constructor.Reset();
+                    constructor.Name = element.InnerText.Trim();
+                    break;
+                case "div":
+                    // Actual constructor summary / definition
+                    var divClass = element.GetAttributeValue("class", "none");
+                    // // Summary handling
+                    if (divClass.Equals("markdown level1 summary"))
+                    {
+                        Logger.LogInformation("Processing constructor summary {{{}}}", NamespaceName);
+                        try
+                        {
+                            constructor.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
+                        }
+                        catch
+                        {
+                            // There is no paragraph under div
+                        }
+                        break;
+                    }
+
+                    // Definition handling
+                    if (!divClass.Equals("codewrapper")) break;
+                    Logger.LogInformation("Processing constructor definition {{{}}}", NamespaceName);
+
+                    constructor.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
+                    if (constructor.Name.IsNullOrEmpty()) break;
+                    break;
+                case "dl":
+                    // Actual constructor parameter
+                    Logger.LogInformation("Processing constructor parameter {{{}}}", NamespaceName);
+                    var name = element.SelectSingleNode(".//dt/code").InnerText.Trim();
+                    var sum = element.SelectSingleNode(".//dd/p").InnerText.Trim();
+                    constructor.Parameters.Add(
+                        (name, sum)
+                    );
+
+                    // There is no other parameter defined, saved the constructor
+                    if (!element.NextSibling.Name.Equals("dl"))
+                    {
+
+                        // ? TODO: Investigate better approach to elimate hardcoding of such types
+                        if (constructor.Definition.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
+                        if (constructor.Definition.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
+
+                        Constructors.Add(new DotnetConstructor()
+                        {
+                            Name = constructor.Name,
+                            Summary = constructor.Summary,
+                            Definition = Helpers2.SanitizeXmlToString(constructor.Definition),
+                            Parameters = constructor.Parameters,
+                        });
+                        constructor.Reset();
+                    }
+                    break;
+                case "h4":
+                    // Skip header with parameters
+                    break;
+                case "h2":
+                    // Skip other group of members
+                    breakLoop = true;
+                    break;
+                case "a":
+                    break;
+            }
+
+            if (breakLoop) break;
+        }
+
+    }
+
     public void ProduceFinalCsFile()
     {
+        Logger.LogInformation("Producting final dotnet cl file for class {} {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
         // First process usings
         if (Usings.Count != 0)
         {
+            Logger.LogInformation("Adding usings for class {} {{{}}}", Name, NamespaceName);
             Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
             sb.AppendLine("");
         }
@@ -191,23 +301,25 @@ public class AlvaoClass2
         sb.AppendLine(Definition);
         sb.AppendLine("{");
         {
+            Logger.LogInformation("Adding properties for class {} {{{}}}", Name, NamespaceName);
             Properties.ForEach(el => sb.AppendLine(el.Produce()));
             // Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+            // Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+
+            if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
+            Logger.LogInformation("Adding constructors for class {} {{{}}}", Name, NamespaceName);
+            Constructors.ForEach(el => sb.AppendLine(el.Produce()));
+
+            // Methods.ForEach((el) =>
+            // {
+            //     sb.AppendLine("");
+            //     sb.AppendLine(Helpers.PrefixEachLineSpaces(el));
+            // });
         }
 
-        //     Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-        //     Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-
-        //     if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
-        //     Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
-
-        //     Methods.ForEach((el) =>
-        //     {
-        //         sb.AppendLine("");
-        //         sb.AppendLine(Helpers.PrefixEachLineSpaces(el));
-        //     });
         sb.AppendLine("}"); // End class
 
+        Logger.LogInformation("Writing cs file for class {} {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
     }
 
@@ -237,16 +349,6 @@ public class AlvaoClass2
     //     Constructors = [];
     //     LocalHtmlFile = "";
     //     HtmlDocument = null;
-    // }
-
-    // internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
-    // {
-    //     var aNode = cl.SelectNodes(".//a").Last();
-    //     var className = aNode.GetAttributeValue("title", "");
-    //     if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
-
-    //     var clazz = new AlvaoClass(aNode.GetAttributeValue("href", ""), an.Name, className);
-    //     clazz.Process();
     // }
 
     // public void Process()
@@ -285,76 +387,6 @@ public class AlvaoClass2
     //     _sb.AppendLine(Helpers.GenerateSeeDoc(link));
 
     //     return _sb;
-    // }
-
-    // public void ProcessProperties()
-    // {
-    //     var properties = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='properties' and @class='section']/following-sibling::*");
-    //     if (properties == null) return;
-
-    //     var currentProperty = string.Empty;
-    //     foreach (var element in properties)
-    //     {
-    //         switch (element.Name)
-    //         {
-    //             case "h2":
-    //                 break;
-    //             case "a":
-    //                 break;
-    //             case "div":
-    //                 var divClass = element.GetAttributeValue("class", "none");
-    //                 if (divClass.Equals("codewrapper"))
-    //                 {
-    //                     Properties.Add(element.SelectSingleNode(".//pre/code").InnerText.Trim());
-    //                 }
-    //                 break;
-    //             case "h3":
-    //                 if (!currentProperty.Equals(element.InnerText.Trim()))
-    //                 {
-    //                     Logger.LogInformation("Changing current property to '{}'", element.InnerText.Trim());
-    //                     currentProperty = element.InnerText.Trim();
-    //                 }
-    //                 break;
-    //         }
-    //     }
-    //     // ! TODO: Drop 11 version
-    //     return;
-    //     // var currentProperty = properties
-
-    //     foreach (var p in properties)
-    //     {
-    //         Console.WriteLine(properties);
-    //         continue;
-    //         var propName = Helpers.ExtractObjectName(p);
-    //         Console.WriteLine($"    Processing {propName} Property");
-
-    //         // TODO: Drop
-    //         if (MonkeyPatch.IsInvalidProperty(NamespaceName, Name, propName)) return;
-
-    //         var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
-    //         var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
-    //         var propLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{propHtmlBaseFileName}";
-    //         if (Helpers.IsInvalidAlvaoUrl(propLink)) continue;
-
-    //         var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
-    //         var _sb = ProcessDocumentationComments(propLink, propDocument, out bool obsolete);
-    //         if (obsolete) continue;
-
-    //         var propDef = Helpers.ExtractObjectDefinition(propDocument);
-    //         if (propDef == null) continue;
-
-    //         // TODO: Drop
-    //         if (Helpers.IsClass(this, "Alvao.API.Common.Model", "ColumnValue") && propName.Equals("DataType"))
-    //             propDef = propDef.Replace(" Database.ValueDataType ", " Alvao.API.Common.Database.ValueDataType ");
-
-    //         propDef = Helpers.SanitizeXmlToString(propDef);
-
-    //         // TODO: Drop
-    //         MonkeyPatch.UsingProperties(this, propDef);
-
-    //         _sb.AppendLine(propDef);
-    //         Properties.Add(_sb.ToString());
-    //     }
     // }
 
     // public void ProcessFields()
@@ -415,61 +447,6 @@ public class AlvaoClass2
     //         _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
     //         Events.Add(_sb.ToString());
     //     }
-    // }
-
-    // private void ProcessConstructors()
-    // {
-    //     var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='constructors' and @class='section']/following-sibling::*");
-    //     if (elements == null) return;
-
-    //     var currentConstructorName = string.Empty;
-    //     foreach (var el in elements)
-    //     {
-    //         switch (el.Name)
-    //         {
-    //             case "h2":
-    //                 // Skip other group of members
-    //                 break;
-    //             case "a":
-    //                 break;
-    //             case "h3":
-    //                 break;
-    //             default:
-    //                 Console.WriteLine(el.Name);
-    //                 break;
-    //         }
-    //     }
-
-    //     return;
-
-
-    //     // foreach (var c in constructors)
-    //     // {
-    //     //     var constrName = Helpers.ExtractObjectName(c);
-    //     //     Console.WriteLine($"    Processing {constrName} Constructor");
-
-    //     //     var constrHtmlBaseFileName = c.GetAttributeValue("href", "").Split("/").Last();
-    //     //     var constrLink = $"{Helpers.BASE_HTML_URL}/{constrHtmlBaseFileName}";
-    //     //     var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
-    //     //     if (Helpers.IsInvalidAlvaoUrl(constrLink)) continue;
-
-    //     //     var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
-    //     //     var _sb = ProcessDocumentationComments(constrLink, constrDocument, out bool obsolete);
-    //     //     if (obsolete) continue;
-
-    //     //     var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
-    //     //     if (constrDef == null) continue;
-
-    //     //     constrDef = Helpers.SanitizeXmlToString(constrDef);
-
-    //     //     // TODO: Drop
-    //     //     if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
-    //     //     if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
-
-    //     //     _sb.AppendLine(constrDef);
-
-    //     //     Constructors.Add(_sb.ToString());
-    //     // }
     // }
 
     // private void ProcessMethods()
