@@ -131,7 +131,14 @@ public class AlvaoClass2
                     // Summary handling
                     if (divClass.Equals("markdown level1 summary"))
                     {
-                        property.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
+                        try
+                        {
+                            property.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
+                        }
+                        catch
+                        {
+                            // There is no paragraph under div
+                        }
                         break;
                     }
 
