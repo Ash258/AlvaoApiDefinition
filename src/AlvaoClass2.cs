@@ -8,17 +8,11 @@ public class AlvaoClass2
 {
     public ILogger Logger;
 
-    public enum ClassType
-    {
-        CLASS,
-        INTERFACE,
-        ENUM,
-    }
     public AlvaoNamespace2 Namespace { get; set; }
     public string NamespaceName { get; set; }
     public string Name { get; set; }
     public string Summary { get; set; }
-    public ClassType Type { get; set; }
+    public string Type { get; set; }
     public string? FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string FinalCsFile { get; set; }
@@ -33,7 +27,7 @@ public class AlvaoClass2
     public List<string> Constructors { get; set; }
     public List<string> Methods { get; set; }
 
-    public AlvaoClass2(string name, string href, AlvaoNamespace2 ns)
+    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns)
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
         {
@@ -46,9 +40,8 @@ public class AlvaoClass2
         });
         Logger = loggerFactory.CreateLogger<AlvaoClass2>();
 
-        // ! TODO: Enums handling
-        Name = name.Replace(" Classes", "").Replace(" Interfaces", "").Trim();
-        Type = name.EndsWith("Interfaces") ? ClassType.INTERFACE : ClassType.CLASS;
+        Name = name;
+        Type = memberType;
         FullUrl = $"{Helpers.BASE_HTML_URL}/{href.Split("/").Last()}";
         Namespace = ns;
         NamespaceName = ns.Name;
@@ -89,10 +82,12 @@ public class AlvaoClass2
 
         var fqdnId = NamespaceName.Replace(".", "_");
         fqdnId = fqdnId + "_" + Name.Replace(".", "_");
-        if (!h1.GetAttributeValue("id", "none").Equals(fqdnId) || !h1.InnerText.Trim().Equals($"Class {Name}"))
+        var actual = h1.InnerText.Trim();
+        var expected = $"{Type} {Name}";
+        if (!h1.GetAttributeValue("id", "none").Equals(fqdnId) || !actual.Equals(expected))
         {
-            Logger.LogError("Page contains different class");
-            throw new Exception("Page contains different class");
+            Logger.LogError("Page contains different class: Expected {}, Actual: {}", expected, actual);
+            throw new Exception($"Page contains different class: Expected {expected}, Actual: {actual}");
         }
     }
 
@@ -132,7 +127,16 @@ public class AlvaoClass2
                     break;
                 case "div":
                     // Actual code definition
-                    if (!element.GetAttributeValue("class", "none").Equals("codewrapper")) break;
+                    var divClass = element.GetAttributeValue("class", "none");
+                    // Summary handling
+                    if (divClass.Equals("markdown level1 summary"))
+                    {
+                        property.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
+                        break;
+                    }
+
+                    // Definition handling
+                    if (!divClass.Equals("codewrapper")) break;
 
                     property.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
                     if (property.Name.IsNullOrEmpty()) break;
@@ -142,7 +146,8 @@ public class AlvaoClass2
                     Properties.Add(new DotnetProperty()
                     {
                         Name = property.Name,
-                        Definition = property.Definition,
+                        Summary = property.Summary,
+                        Definition = Helpers2.SanitizeXmlToString(property.Definition),
                     });
                     property.Reset();
                     break;

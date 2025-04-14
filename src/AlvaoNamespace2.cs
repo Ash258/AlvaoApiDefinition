@@ -39,21 +39,9 @@ public class AlvaoNamespace2
 
     internal void Process()
     {
-        Logger.LogDebug("Verifying HTML document is namespace");
-        var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
-        if (h1 == null)
-        {
-            Logger.LogError("Page does not have h1");
-            return;
-        }
-
-        if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}"))
-        {
-            Logger.LogError("Page contains different namespace");
-            return;
-        }
-
         Logger.LogInformation("Processing {} namespace", Name);
+
+        AssertDocumentIsNamespace();
 
         // h3 contains the main groups (classes, interfaces, ...)
         Logger.LogDebug("Searching for h3 element");
@@ -106,7 +94,7 @@ public class AlvaoNamespace2
 
         foreach (var member in membersToProcess)
         {
-            AlvaoClass2 clazz = new(member.Name, member.Url, this);
+            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this);
             try
             {
                 clazz.Process();
@@ -116,7 +104,24 @@ public class AlvaoNamespace2
                 Logger.LogError("Cannot process class: {} {{{}}}", e.Message, this.Name);
                 continue;
             }
-            break;
+        }
+    }
+
+    private void AssertDocumentIsNamespace()
+    {
+
+        Logger.LogDebug("Verifying HTML document is namespace");
+        var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
+        if (h1 == null)
+        {
+            Logger.LogError("Page does not have h1");
+            throw new Exception("Page does not have h1");
+        }
+
+        if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}"))
+        {
+            Logger.LogError("Page contains different namespace");
+            throw new Exception("Page contains different namespace");
         }
     }
 
@@ -131,10 +136,12 @@ public class AlvaoNamespace2
         };
     }
 
+    #region DTOs
     internal record MemberProperties()
     {
         public string Type { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
     }
+    #endregion DTOs
 }

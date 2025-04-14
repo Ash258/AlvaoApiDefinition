@@ -28,7 +28,17 @@ public static class Helpers2
             if (nodeDef == null) return null;
         }
 
-        return nodeDef.InnerText.Trim();
+        var def = SanitizeXmlToString(nodeDef.InnerText.Trim());
+        return def;
+    }
+
+    public static string SanitizeXmlToString(string el)
+    {
+        return el
+            .Replace("&lt;", "<")
+            .Replace("&gt;", ">")
+            .Replace("&nbsp;", " ")
+            .Trim();
     }
 
     internal static object PrefixEachLineSpaces(string el, int indent = 4)

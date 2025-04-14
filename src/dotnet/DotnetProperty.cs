@@ -15,6 +15,7 @@ public record DotnetProperty()
         if (!Summary.IsNullOrEmpty())
         {
             sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.AppendLine("");
         }
         sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
 
