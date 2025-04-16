@@ -106,9 +106,11 @@ public class AlvaoClass2
 
         Logger.LogDebug("There are {} h2 elements {} {{{}}}", h2Indexes.Count, Name, NamespaceName);
 
+        // Workaround to force processing of last member
+        h2Indexes.Add(elements.Count);
         foreach (var groupIndex in h2Indexes)
         {
-            Logger.LogDebug("Group '{}' '{}' => '{}'", groupName, startIndex, groupIndex);
+            Logger.LogDebug("Group '{}' '{}' => '{}' ({})", groupName, startIndex, groupIndex, elements.Count);
             if (groupName.Equals("Class"))
             {
                 classRelatedElements = [.. elements.Skip(startIndex).Take(groupIndex - startIndex)];
@@ -125,6 +127,10 @@ public class AlvaoClass2
             {
                 groups.Add(groupName, [.. elements.Skip(startIndex).Take(groupIndex - startIndex)]);
             }
+            if (elements.Count == groupIndex)
+            {
+                break;
+            }
             groupName = elements[groupIndex].InnerText.Trim();
             startIndex = groupIndex;
         }
@@ -138,7 +144,7 @@ public class AlvaoClass2
 
         foreach (var gr in groups)
         {
-            Logger.LogInformation("Processing class members: {} {{{}}}", gr.Key, NamespaceName);
+            Logger.LogInformation("Processing class member: {} {{{}}}", gr.Key, NamespaceName);
             switch (gr.Key)
             {
                 case "Properties":
@@ -175,14 +181,14 @@ public class AlvaoClass2
             Console.WriteLine(el);
         }
 
-        // ! TODO: Make it better
+        // ! TODO: Do not rely on hardcoded indexes
         Summary = classRelatedElements[2].InnerText.Trim();
         Definition = classRelatedElements[4].InnerText.Trim();
-        Console.WriteLine(Definition);
 
         Properties = properties;
         Fields = fields;
         Constructors = constructors;
+        Methods = methods;
 
         ProduceFinalCsFile();
 
@@ -352,7 +358,8 @@ public class AlvaoClass2
                 .Select((f, i) => new { f, i })
                 .Where(x => x.f.Name == "h3")
                 .Select(x => x.i).ToList();
-        var lastIndex = elements.Count - 1;
+        var lastIndex = elements.Count;
+        // var lastIndex = elements.Count - 1;
 
         Logger.LogDebug("Found {} constructors {} {{{}}}", h3Indexes.Count, Name, NamespaceName);
 
@@ -395,6 +402,7 @@ public class AlvaoClass2
             {
                 var h4end = j == h4Indexes.Count - 1
                     ? lastIndex
+                    // ? lastIndex + 1
                     : h4Indexes[j + 1];
                 var h4CurrentElements = elements[h4Indexes[j]..h4end];
 
