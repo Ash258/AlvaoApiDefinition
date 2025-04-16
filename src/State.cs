@@ -1,10 +1,8 @@
-namespace AlvaoScapper;
+namespace AlvaoScrapper;
 
 public static class State
 {
-    public static Dictionary<string, AlvaoNamespace> Namespaces = [];
+    public static Dictionary<string, AlvaoNamespace2> Namespaces = [];
 
-    public static Dictionary<string, AlvaoClass> Classes = [];
-
-    public static List<string> Versions = [];
+    public static Dictionary<string, AlvaoClass2> Classes = [];
 }

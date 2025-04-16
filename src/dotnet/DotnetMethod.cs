@@ -2,13 +2,13 @@ using System.Text;
 
 namespace AlvaoScrapper;
 
-public record DotnetConstructor()
+public record DotnetMethod()
 {
     public string Name { get; set; }
     public string Summary { get; set; }
     public string Definition { get; set; }
     public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
-    // public List<string> Examples { get; set; }
+    public string Returns { get; set; }
 
     public string Produce(int indent = 4)
     {
@@ -17,6 +17,14 @@ public record DotnetConstructor()
         {
             sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
+        }
+
+        if (!Returns.IsNullOrEmpty())
+        {
+            sb.Append(Helpers2.PrefixEachLineSpaces($"///<returns>"));
+            sb.Append(Helpers2.PrefixEachLineSpaces(Returns));
+            sb.Append(Helpers2.PrefixEachLineSpaces($"///</returns>"));
+            sb.AppendLine();
         }
 
         if (Parameters.Count > 0)
@@ -39,5 +47,6 @@ public record DotnetConstructor()
         Summary = string.Empty;
         Definition = string.Empty;
         Parameters = [];
+        Returns = string.Empty;
     }
 }

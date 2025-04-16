@@ -38,6 +38,7 @@ public static class Helpers2
             .Replace("&lt;", "<")
             .Replace("&gt;", ">")
             .Replace("&nbsp;", " ")
+            .Replace("&quot;", "\"")
             .Trim();
     }
 

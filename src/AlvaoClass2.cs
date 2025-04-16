@@ -22,16 +22,16 @@ public class AlvaoClass2
 
     public List<string> Enums { get; set; }
     public List<DotnetProperty> Properties { get; set; }
-    public List<string> Fields { get; set; }
+    public List<DotnetField> Fields { get; set; }
     public List<string> Events { get; set; }
     public List<DotnetConstructor> Constructors { get; set; }
-    public List<string> Methods { get; set; }
+    public List<DotnetMethod> Methods { get; set; }
 
     public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns)
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
         {
-            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "2"));
+            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrapper") ?? "2"));
             builder.AddSimpleConsole(options =>
             {
                 options.IncludeScopes = true;
@@ -59,8 +59,374 @@ public class AlvaoClass2
         Constructors = [];
     }
 
+    internal void RestructuralizeClassDocument()
+    {
+        Logger.LogInformation("Processing the class document {} {{{}}}", Name, NamespaceName);
+        // Get all elements in main container
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
+
+        // First element should be h1
+        var h1Index = elements.FindIndex(e => e.Name.Equals("h1"));
+        if (h1Index == -1)
+        {
+            Logger.LogError("Page does not specify h1 element {} {{{}}}", Name, NamespaceName);
+            throw new Exception($"Page does not specify h1 element {Name} {NamespaceName}");
+        }
+
+        var _Name = elements[h1Index].InnerText.Trim()
+            .Replace("Class ", "")
+            .Replace("Interface ", "")
+            .Replace("Enum ", "")
+            .Trim();
+
+        if (!_Name.Equals(Name))
+        {
+            Logger.LogError("Page specify different class: {} {} {{{}}}", _Name, Name, NamespaceName);
+            throw new Exception($"Page specify different class: {_Name} {Name} {NamespaceName}");
+        }
+
+        // Constructors, Properties, Fields, Events, Methods
+        Logger.LogInformation("Finding class member groups {} {{{}}}", Name, NamespaceName);
+        var h2Indexes = elements
+                .Select((f, i) => new { f, i })
+                .Where(x => x.f.Name == "h2")
+                .Select(x => x.i).ToList();
+
+        if (h2Indexes.Count == 0)
+        {
+            Logger.LogError("Class does not expose any members {} {{{}}}", Name, NamespaceName);
+            throw new Exception($"Class does not expose any members {Name} {NamespaceName}");
+        }
+
+        // First pass is h1 (class specific items), until first h2
+        var groupName = "Class";
+        int startIndex = h1Index;
+        List<HtmlNode> classRelatedElements = [];
+        Dictionary<string, List<HtmlNode>> groups = [];
+
+        Logger.LogDebug("There are {} h2 elements {} {{{}}}", h2Indexes.Count, Name, NamespaceName);
+
+        foreach (var groupIndex in h2Indexes)
+        {
+            Logger.LogDebug("Group '{}' '{}' => '{}'", groupName, startIndex, groupIndex);
+            if (groupName.Equals("Class"))
+            {
+                classRelatedElements = [.. elements.Skip(startIndex).Take(groupIndex - startIndex)];
+                // If there is only 1 group, the class and group needs to be process in 1 take
+                // That means that grou span from h2index to all other elements
+                if (h2Indexes.Count == 1)
+                {
+                    groupName = elements[groupIndex].InnerText.Trim();
+                    Logger.LogDebug("Class has only one group {} {} {{{}}}", groupName, Name, NamespaceName);
+                    groups.Add(groupName, [.. elements.Skip(groupIndex).Take(elements.Count - groupIndex)]);
+                }
+            }
+            else
+            {
+                groups.Add(groupName, [.. elements.Skip(startIndex).Take(groupIndex - startIndex)]);
+            }
+            groupName = elements[groupIndex].InnerText.Trim();
+            startIndex = groupIndex;
+        }
+
+        Logger.LogInformation("Found {} class members {} {{{}}}", groups.Count, Name, NamespaceName);
+
+        List<DotnetProperty> properties = [];
+        List<DotnetField> fields = [];
+        List<DotnetConstructor> constructors = [];
+        List<DotnetMethod> methods = [];
+
+        foreach (var gr in groups)
+        {
+            Logger.LogInformation("Processing class members: {} {{{}}}", gr.Key, NamespaceName);
+            switch (gr.Key)
+            {
+                case "Properties":
+                    properties = _ProcessProperties(gr.Value);
+                    break;
+                case "Fields":
+                    fields = _ProcessFields(gr.Value);
+                    break;
+                case "Constructors":
+                    constructors = _ProcessConstructors(gr.Value);
+                    break;
+                case "Methods":
+                    methods = _ProcessMethods(gr.Value);
+                    break;
+                default:
+                    Logger.LogWarning("Skipping {}", gr.Key);
+                    break;
+            }
+        }
+        foreach (var el in properties)
+        {
+            Console.WriteLine(el);
+        }
+        foreach (var el in constructors)
+        {
+            Console.WriteLine(el);
+        }
+        foreach (var el in fields)
+        {
+            Console.WriteLine(el);
+        }
+        foreach (var el in methods)
+        {
+            Console.WriteLine(el);
+        }
+
+        // ! TODO: Make it better
+        Summary = classRelatedElements[2].InnerText.Trim();
+        Definition = classRelatedElements[4].InnerText.Trim();
+        Console.WriteLine(Definition);
+
+        Properties = properties;
+        Fields = fields;
+        Constructors = constructors;
+
+        ProduceFinalCsFile();
+
+        return;
+
+
+
+
+        // // var memberGroupIndex = elements.FindIndex(e => e.Name.Equals("h2"));
+        // if (memberGroupIndex == -1)
+        // {
+        //     Logger.LogWarning("Class {} does not have any members {{{}}}", Name, NamespaceName);
+        //     return;
+        // }
+
+        // var classRelatedElements = elements.Take(memberGroupIndex);
+        // var previousGroupEndIndex = memberGroupIndex;
+        // var groups = new Dictionary<string, List<HtmlNode>>();
+        // var groupName = elements[memberGroupIndex].InnerText.Trim();
+        // var groupElements = elements.Skip(classRelatedElements.Count()).ToList();
+        // groups.Add(groupName, groupElements);
+        // // Logger.LogWarning("{}", groupName);
+        // // foreach (var e in groupElements)
+        // // {
+        // // }
+        // // Break rest of the elements into groups by h2 elements (Constructors, Properties, Fields, Events, Methods)
+        // while (memberGroupIndex != -1)
+        // {
+        //     // First is always the group itself
+        //     previousGroupEndIndex = memberGroupIndex;
+        //     memberGroupIndex = elements.Skip(1).ToList().FindIndex(e => e.Name.Equals("h2"));
+        //     Console.WriteLine(memberGroupIndex);
+        //     continue;
+        //     if (memberGroupIndex == -1)
+        //     {
+        //         // There are no other groups
+        //         Logger.LogError("No other groups. -1 index");
+        //     }
+
+        //     groups.Add(elements[memberGroupIndex].InnerText.Trim(), elements.Skip(previousGroupEndIndex).Take(memberGroupIndex).ToList());
+        // }
+        // // Logger.LogError("{} [{}] {{{}}}", memberGroupIndex.ToString(), Name, NamespaceName);
+        // // Logger.LogError("{} {}", h1Index, memberGroupIndex);
+        // // Environment.Exit(20);
+
+        // foreach (var gr in groups.Keys)
+        // {
+        //     Console.WriteLine(gr);
+        //     foreach (var el in groups.GetValueOrDefault(gr, []))
+        //     {
+        //         Console.WriteLine("    " + el.Name);
+        //     }
+        // }
+
+        // foreach (var el in classRelatedElements)
+        // {
+        //     Console.WriteLine(el.Name);
+        // }
+    }
+
+    // TODO: merge propeties and fields
+    // ! TODO: Void
+    private List<DotnetProperty> _ProcessProperties(List<HtmlNode> elements)
+    {
+        List<DotnetProperty> properties = [];
+        Logger.LogDebug("Processing class properties {} {{{}}}", Name, NamespaceName);
+        var h3Indexes = elements
+                .Select((f, i) => new { f, i })
+                .Where(x => x.f.Name == "h3")
+                .Select(x => x.i).ToList();
+        var lastIndex = elements.Count - 1;
+
+        for (var i = 0; i < h3Indexes.Count; ++i)
+        {
+            var end = i == h3Indexes.Count - 1
+                ? lastIndex
+                : h3Indexes[i + 1];
+            var currentElements = elements[h3Indexes[i]..end];
+            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
+            if (divs.Count == 3)
+            {
+                var _name = currentElements[0].InnerText.Trim();
+                var sum = string.Empty;
+                try
+                {
+                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
+                }
+                catch
+                {
+                    Logger.LogDebug("Property {} does not specify summary {} {{{}}}", _name, Name, NamespaceName);
+                }
+                properties.Add(
+                    new DotnetProperty()
+                    {
+                        Name = _name,
+                        Summary = sum,
+                        Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
+                    }
+                );
+            }
+            else
+            {
+                Logger.LogError("Property does not have all divs");
+            }
+        }
+
+        return properties;
+    }
+
+    // ! TODO: Void
+    private List<DotnetField> _ProcessFields(List<HtmlNode> elements)
+    {
+        List<DotnetField> fields = [];
+        Logger.LogDebug("Processing class fields {} {{{}}}", Name, NamespaceName);
+        var h3Indexes = elements
+                .Select((f, i) => new { f, i })
+                .Where(x => x.f.Name == "h3")
+                .Select(x => x.i).ToList();
+        var lastIndex = elements.Count - 1;
+
+        Logger.LogDebug("Found {} Fields {} {{{}}}", h3Indexes.Count, Name, NamespaceName);
+
+        for (var i = 0; i < h3Indexes.Count; ++i)
+        {
+            var end = i == h3Indexes.Count - 1
+                ? lastIndex
+                : h3Indexes[i + 1];
+            var currentElements = elements[h3Indexes[i]..end];
+            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
+            if (divs.Count == 3)
+            {
+                var _name = currentElements[0].InnerText.Trim();
+                var sum = string.Empty;
+                try
+                {
+                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
+                }
+                catch
+                {
+                    Logger.LogDebug("Field {} does not specify summary {} {{{}}}", _name, Name, NamespaceName);
+                }
+                fields.Add(
+                    new DotnetField()
+                    {
+                        Name = _name,
+                        Summary = sum,
+                        Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
+                    }
+                );
+            }
+            else
+            {
+                Logger.LogError("Property does not have all divs");
+            }
+        }
+
+        return fields;
+    }
+
+    // ! TODO: Void
+    private List<DotnetConstructor> _ProcessConstructors(List<HtmlNode> elements)
+    {
+        List<DotnetConstructor> constructors = [];
+
+        Logger.LogDebug("Processing class constructors {} {{{}}}", Name, NamespaceName);
+        var h3Indexes = elements
+                .Select((f, i) => new { f, i })
+                .Where(x => x.f.Name == "h3")
+                .Select(x => x.i).ToList();
+        var lastIndex = elements.Count - 1;
+
+        Logger.LogDebug("Found {} constructors {} {{{}}}", h3Indexes.Count, Name, NamespaceName);
+
+        var _name = string.Empty;
+        var sum = string.Empty;
+        for (var i = 0; i < h3Indexes.Count; ++i)
+        {
+            var end = i == h3Indexes.Count - 1
+                ? lastIndex
+                : h3Indexes[i + 1];
+            var currentElements = elements[h3Indexes[i]..end];
+            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
+            if (divs.Count == 3)
+            {
+                _name = currentElements[0].InnerText.Trim();
+                try
+                {
+                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
+                }
+                catch
+                {
+                    Logger.LogDebug("Constructor {} does not specify summary {} {{{}}}", _name, Name, NamespaceName);
+                }
+            }
+            else
+            {
+                Logger.LogError("Property does not have all divs");
+            }
+
+            // var h4Indexes = elements
+            //         .Select((f, i) => new { f, i })
+            //         .Where(x => x.f.Name == "h4")
+            //         .Select(x => x.i).ToList();
+
+            // Logger.LogDebug("Found {} constructor nested properties {} {{{}}}", h4Indexes.Count, Name, NamespaceName);
+
+            // for (var j = 0; i < h4Indexes.Count; ++j)
+            // {
+            //     Console.WriteLine("|||||" + h4Indexes[j] + ", " + lastIndex + "|||||");
+            //     var h4end = j == h4Indexes.Count - 1
+            //     ? lastIndex
+            //     : h4Indexes[j + 1];
+            //     // var h4CurrentElements = elements[h4Indexes[j]..h4end];
+
+            //     // Console.WriteLine(h4CurrentElements.Count);
+            //     // Console.WriteLine(">>>>>>> " + h4CurrentElements[0].InnerText.Trim());
+            // }
+            // TODO: examples
+            constructors.Add(
+                new DotnetConstructor()
+                {
+                    Name = _name,
+                    Summary = sum,
+                    Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
+                    Parameters = [],
+                }
+            );
+        }
+
+        return constructors;
+    }
+
+    // ! TODO: Void
+    private List<DotnetMethod> _ProcessMethods(List<HtmlNode> value)
+    {
+        List<DotnetMethod> methods = [];
+        Logger.LogDebug("!!!!Methods {}", value.Count);
+        return methods;
+    }
+
     internal void Process()
     {
+        RestructuralizeClassDocument();
+        return;
         Logger.LogInformation("Processing {} class {{{}}}", Name, NamespaceName);
         AssertDocumentIsClass();
 
@@ -101,34 +467,34 @@ public class AlvaoClass2
         Definition = _def;
     }
 
-    public void ProcessProperties()
+    private void ProcessProperties()
     {
         Logger.LogInformation("Processing properties of class {name} {{{ns}}}", Name, NamespaceName);
-        var properties = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='properties' and @class='section']/following-sibling::*");
-        if (properties == null)
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='properties' and @class='section']/following-sibling::*");
+        if (elements == null)
         {
             Logger.LogInformation("Class does not define properties {} {{{}}}", Name, NamespaceName);
             return;
         }
 
         var breakLoop = false;
-        var property = new DotnetProperty
+        var member = new DotnetProperty
         {
             Name = string.Empty,
         };
 
         // ? TODO: Try to filter only h3, divs between two h2
-        foreach (var element in properties)
+        foreach (var element in elements)
         {
             switch (element.Name)
             {
                 // ! TODO: Handle summary
                 case "h3":
                     // Actual property name
-                    Logger.LogInformation("Changing current property from '{}' to '{}' {{{}}}", property.Name, element.InnerText.Trim(), NamespaceName);
+                    Logger.LogInformation("Changing current property from '{}' to '{}' {{{}}}", member.Name, element.InnerText.Trim(), NamespaceName);
 
-                    property.Reset();
-                    property.Name = element.InnerText.Trim();
+                    member.Reset();
+                    member.Name = element.InnerText.Trim();
                     break;
                 case "div":
                     // Actual property summary / definition
@@ -138,7 +504,7 @@ public class AlvaoClass2
                     {
                         try
                         {
-                            property.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
+                            member.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
                         }
                         catch
                         {
@@ -150,17 +516,17 @@ public class AlvaoClass2
                     // Definition handling
                     if (!divClass.Equals("codewrapper")) break;
 
-                    property.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
-                    if (property.Name.IsNullOrEmpty()) break;
+                    member.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
+                    if (member.Name.IsNullOrEmpty()) break;
 
                     // ??? TODO: Why Properties.Add(property) does not work?
                     Properties.Add(new DotnetProperty()
                     {
-                        Name = property.Name,
-                        Summary = property.Summary,
-                        Definition = Helpers2.SanitizeXmlToString(property.Definition),
+                        Name = member.Name,
+                        Summary = member.Summary,
+                        Definition = Helpers2.SanitizeXmlToString(member.Definition),
                     });
-                    property.Reset();
+                    member.Reset();
                     break;
                 case "h2":
                     // This means there is change in the member type (properties, fields)
@@ -193,7 +559,7 @@ public class AlvaoClass2
         <dl> - Parameter X
         */
         var breakLoop = false;
-        var constructor = new DotnetConstructor()
+        var member = new DotnetConstructor()
         {
             Name = string.Empty,
         };

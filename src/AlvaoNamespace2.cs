@@ -18,7 +18,7 @@ public class AlvaoNamespace2
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
         {
-            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "2"));
+            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrapper") ?? "2"));
             builder.AddSimpleConsole(options =>
             {
                 options.IncludeScopes = true;
@@ -101,7 +101,7 @@ public class AlvaoNamespace2
             }
             catch (Exception e)
             {
-                Logger.LogError("Cannot process class: {} {{{}}}", e.Message, this.Name);
+                Logger.LogError("Cannot process class: {} {{{}}}", e.Message, Name);
                 continue;
             }
         }
