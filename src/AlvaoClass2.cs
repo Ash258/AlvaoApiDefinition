@@ -382,32 +382,62 @@ public class AlvaoClass2
                 Logger.LogError("Property does not have all divs");
             }
 
-            // var h4Indexes = elements
-            //         .Select((f, i) => new { f, i })
-            //         .Where(x => x.f.Name == "h4")
-            //         .Select(x => x.i).ToList();
+            var h4Indexes = elements
+                    .Select((f, i) => new { f, i })
+                    .Where(x => x.f.Name == "h4")
+                    .Select(x => x.i).ToList();
 
-            // Logger.LogDebug("Found {} constructor nested properties {} {{{}}}", h4Indexes.Count, Name, NamespaceName);
+            Logger.LogDebug("Found {} constructor nested properties {} {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
-            // for (var j = 0; i < h4Indexes.Count; ++j)
-            // {
-            //     Console.WriteLine("|||||" + h4Indexes[j] + ", " + lastIndex + "|||||");
-            //     var h4end = j == h4Indexes.Count - 1
-            //     ? lastIndex
-            //     : h4Indexes[j + 1];
-            //     // var h4CurrentElements = elements[h4Indexes[j]..h4end];
+            List<string> examples = [];
+            List<(string, string)> parameters = [];
+            for (var j = 0; j < h4Indexes.Count; ++j)
+            {
+                var h4end = j == h4Indexes.Count - 1
+                    ? lastIndex
+                    : h4Indexes[j + 1];
+                var h4CurrentElements = elements[h4Indexes[j]..h4end];
 
-            //     // Console.WriteLine(h4CurrentElements.Count);
-            //     // Console.WriteLine(">>>>>>> " + h4CurrentElements[0].InnerText.Trim());
-            // }
-            // TODO: examples
+                Logger.LogDebug("h4 elements count {} {} {{{}}}", h4CurrentElements.Count, Name, NamespaceName);
+
+                switch (h4CurrentElements[0].InnerText.Trim())
+                {
+                    case "Parameters":
+                        Logger.LogDebug("Processing constructor parameters {} {{{}}}", Name, NamespaceName);
+                        // THis has to be dl
+                        var constrParams = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+                        var constrParamsDesc = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
+                        if (constrParams.Count != constrParamsDesc.Count)
+                        {
+                            Logger.LogError("Mismatch between constructor paramter names and description {} {{{}}}", Name, NamespaceName);
+                            break;
+                        }
+                        for (var _ci = 0; _ci < constrParams.Count; ++_ci)
+                        {
+                            Logger.LogDebug("Adding constructor parameter {} {} {{{}}}", constrParams[_ci], Name, NamespaceName);
+                            parameters.Add((constrParams[_ci], constrParamsDesc[_ci]));
+                        }
+                        break;
+                    case "Examples":
+                        // ! TODO: Implement
+                        // ? TODO: Investigate if there are more examples somewhere
+                        // Logger.LogDebug("Processing constructor examples {} {{{}}}", Name, NamespaceName);
+                        // Console.WriteLine(h4CurrentElements[1].Name);
+                        // examples.Add(h4CurrentElements[1].Name);
+                        // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
+                        break;
+                    default:
+                        break;
+                }
+            }
             constructors.Add(
                 new DotnetConstructor()
                 {
                     Name = _name,
                     Summary = sum,
                     Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
-                    Parameters = [],
+                    Parameters = parameters,
+                    Examples = examples,
                 }
             );
         }
