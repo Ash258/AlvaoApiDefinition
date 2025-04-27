@@ -182,6 +182,42 @@ public class AlvaoClass2
 
         return (indexes, lastIndex);
     }
+
+    private (string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType)
+    {
+        var _name = TrimInnerText(elements[0]);
+        var _sum = string.Empty;
+        var _def = string.Empty;
+
+        // Summary handling
+        try
+        {
+            if (!new[] { "markdown", "summary" }.All(elements[1].GetClasses().Contains))
+            {
+                Logger.LogWarning("{} member {} does not have valid markdown summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+            }
+            _sum = TrimInnerText(elements[1].SelectSingleNode(".//p"));
+        }
+        catch
+        {
+            Logger.LogWarning("{} member {} does not specify summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+        }
+        // Definition extraction
+        try
+        {
+            if (!elements[3].GetClasses().Contains("codewrapper"))
+            {
+                Logger.LogWarning("{} member {} does not have valid definition element [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+            }
+            _def = SanitizeXmlToString(TrimInnerText(elements[3].SelectSingleNode(".//pre/code")));
+        }
+        catch
+        {
+            Logger.LogWarning("{} member {} definition extraction failed [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+        }
+
+        return (_name, _sum, _def);
+    }
     #endregion Helper functions
 
 
@@ -234,15 +270,16 @@ public class AlvaoClass2
                 case "Methods":
                     ProcessMethods(gr.Value);
                     break;
+                case "Class":
+                    // ! TODO: Do not rely on hardcoded indexes
+                    Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
+                    Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
+                    break;
                 default:
                     Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping class group {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
                     break;
             }
         }
-
-        // ! TODO: Do not rely on hardcoded indexes
-        Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
-        Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
 
         ProduceFinalCsFile();
 
@@ -319,28 +356,7 @@ public class AlvaoClass2
             Logger.LogDebug("Property spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
             var propertyElements = elements[h3Indexes[i]..end];
 
-            // First element is h3, that include name
-            // Take it hardcoded for now
-            var _name = propertyElements[0].InnerText.Trim();
-            var _sum = string.Empty;
-            var _def = string.Empty;
-            try
-            {
-                _sum = propertyElements[1].SelectSingleNode(".//p").InnerText.Trim();
-            }
-            catch
-            {
-                Logger.LogWarning("Property {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-            }
-            try
-            {
-                _def = SanitizeXmlToString(propertyElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
-
-            }
-            catch
-            {
-                Logger.LogWarning("Cannot process definition of property {} [{}] {{{}}}", _name, Name, NamespaceName);
-            }
+            (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, "Property");
 
             Properties.Add(
                 new DotnetProperty()
@@ -403,7 +419,6 @@ public class AlvaoClass2
         return fields;
     }
 
-    // ! TODO: Void
     private void ProcessConstructors(List<HtmlNode> elements)
     {
         Logger.LogInformation("Processing class constructors [{}] {{{}}}", Name, NamespaceName);
@@ -411,9 +426,6 @@ public class AlvaoClass2
 
         Logger.LogInformation("Found {} constructors [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
 
-        var _name = string.Empty;
-        var _sum = string.Empty;
-        var _def = string.Empty;
         for (var i = 0; i < h3Indexes.Count; ++i)
         {
             var end = i == h3Indexes.Count - 1
@@ -423,31 +435,8 @@ public class AlvaoClass2
             Logger.LogDebug("Constructor spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
             var currentElements = elements[h3Indexes[i]..end];
 
-            // First element is h3, that include name
-            // Take it hardcoded for now
-            _name = currentElements[0].InnerText.Trim();
-            try
-            {
-                _sum = currentElements[1].SelectSingleNode(".//p").InnerText.Trim();
-            }
-            catch
-            {
-                Logger.LogWarning("Constructor {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-            }
-            try
-            {
-                _def = SanitizeXmlToString(currentElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
-
-            }
-            catch
-            {
-                Logger.LogWarning("Cannot process definition of constructor {} [{}] {{{}}}", _name, Name, NamespaceName);
-            }
-
-            var h4Indexes = currentElements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == "h4")
-                .Select(x => x.i).ToList();
+            (var _name, var _sum, var _def) = ExtractMemberInformation(currentElements, "Constructor");
+            (var h4Indexes, var lastH4element) = FindIndexesOfElement(currentElements, "h4");
 
             Logger.LogDebug("Found {} constructor nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
@@ -456,7 +445,7 @@ public class AlvaoClass2
             for (var h4i = 0; h4i < h4Indexes.Count; ++h4i)
             {
                 var h4end = h4i == h4Indexes.Count - 1
-                    ? currentElements.Count // Take last element of the current elements in h3 group
+                    ? lastH4element // Take last element of the current elements in h3 group
                     : h4Indexes[h4i + 1];
 
                 var groupName = currentElements[h4Indexes[h4i]].InnerText.Trim();
@@ -523,30 +512,7 @@ public class AlvaoClass2
             Logger.LogDebug("Method spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
             var methodElements = elements[h3Indexes[i]..end];
 
-            // First element is h3, that include name
-            // Take it hardcoded for now
-            var _name = methodElements[0].InnerText.Trim();
-            var _sum = string.Empty;
-            var _def = string.Empty;
-            try
-            {
-                _sum = methodElements[1].SelectSingleNode(".//p").InnerText.Trim();
-            }
-            catch
-            {
-                Logger.LogWarning("Method {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-            }
-            try
-            {
-                _def = SanitizeXmlToString(methodElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
-
-            }
-            catch
-            {
-                Logger.LogWarning("Cannot process definition of method {} [{}] {{{}}}", _name, Name, NamespaceName);
-            }
-
-            // parameter, return, exception
+            (var _name, var _sum, var _def) = ExtractMemberInformation(methodElements, "Method");
             (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
 
             Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
