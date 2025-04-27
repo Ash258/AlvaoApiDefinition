@@ -14,7 +14,7 @@ public class AlvaoNamespace2
     public HtmlDocument HtmlDocument { get; set; }
     public AlvaoClass2[]? Classes { get; set; }
 
-    public AlvaoNamespace2(string url, string namespaceName)
+    public AlvaoNamespace2(string namespaceName)
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
         {
@@ -28,9 +28,7 @@ public class AlvaoNamespace2
         Logger = loggerFactory.CreateLogger<AlvaoNamespace2>();
 
         Name = namespaceName;
-        FullUrl = url.StartsWith("https:")
-            ? url
-            : $"{Helpers.BASE_HTML_URL}/{url}";
+        FullUrl = $"{Helpers.BASE_HTML_URL}/{namespaceName}.html";
         LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
         HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
 
@@ -99,9 +97,11 @@ public class AlvaoNamespace2
             }
             catch (Exception e)
             {
-                Logger.LogError("Cannot process class: [{}] {{{}}}", e.Message, Name);
+                Logger.LogError("Cannot process class ({}) [{}] {{{}}}", e.Message, member.Name, Name);
                 continue;
             }
+
+            MonkeyPatch2.AssertGenerationOK(clazz);
         }
     }
 

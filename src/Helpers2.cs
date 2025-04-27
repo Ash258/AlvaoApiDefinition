@@ -10,6 +10,12 @@ public static class Helpers2
         return node.InnerText.Trim();
     }
 
+    public static string ReplaceEndLinesWithSpace(string el)
+    {
+        return Regex.Replace(el, @"\r?\n\s*", " ");
+    }
+
+
 
 
 
@@ -18,11 +24,6 @@ public static class Helpers2
 
 
     // TODO: Reorganize and verify everything is needed
-    public static string ReplaceEndLinesWithSpace(string el)
-    {
-        return Regex.Replace(el, @"\r?\n\s*", " ");
-    }
-
     public static string GetSummary(HtmlDocument _document)
     {
         var _s = _document.DocumentNode.SelectSingleNode("//article/div[@class='markdown summary']")?.InnerText.Trim();

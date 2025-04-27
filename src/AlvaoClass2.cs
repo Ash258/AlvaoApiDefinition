@@ -552,13 +552,11 @@ public class AlvaoClass2
         sb.AppendLine(Definition);
         sb.AppendLine("{");
         {
-            Logger.LogInformation("Constructing properties for class [{}] {{{}}}", Name, NamespaceName);
             Properties.ForEach(el => sb.AppendLine(el.Produce()));
             Fields.ForEach(el => sb.AppendLine(el.Produce()));
             // Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
 
             if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
-            Logger.LogInformation("Constructing constructors for class [{}] {{{}}}", Name, NamespaceName);
             Constructors.ForEach(el => sb.AppendLine(el.Produce()));
 
             Methods.ForEach(el => sb.AppendLine(el.Produce()));
