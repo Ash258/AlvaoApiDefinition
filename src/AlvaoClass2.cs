@@ -155,6 +155,7 @@ public class AlvaoClass2
 
                 Logger.LogDebug("Processing class related elements [{}] {{{}}}", Name, NamespaceName);
                 classGroups.Add(groupName, [.. elements.Skip(h1IndexStart).Take(skip)]);
+                if (isEmpty) break;
             }
 
             groupName = TrimInnerText(elements[h2IndexStart]);
