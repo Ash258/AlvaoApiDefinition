@@ -62,7 +62,15 @@ foreach (var ns in alvaoNamespace)
 
     var alvaoNs = new AlvaoNamespace2($"{ns}.html", ns);
     State.Namespaces.Add(ns, alvaoNs);
-    alvaoNs.Process();
+    try
+    {
+        alvaoNs.Process();
+    }
+    catch (Exception e)
+    {
+        logger.LogError("Cannot process namespace {}: {}", e.Message, ns);
+        continue;
+    }
 }
 
 Console.WriteLine("");

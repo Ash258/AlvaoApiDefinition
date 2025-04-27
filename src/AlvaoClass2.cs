@@ -9,23 +9,24 @@ public class AlvaoClass2
 {
     public ILogger Logger;
 
-    public AlvaoNamespace2 Namespace { get; set; }
-    public string NamespaceName { get; set; }
-    public string Name { get; set; }
-    public string Summary { get; set; }
     public string Type { get; set; }
     public string? FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string FinalCsFile { get; set; }
-    public HtmlDocument HtmlDocument { get; set; }
-    public string Definition { get; set; } = "";
-    public List<string> Usings { get; set; }
+    public List<ScopeBoundary> Boundaries { get; set; }
 
+    public AlvaoNamespace2 Namespace { get; set; }
+    public string NamespaceName { get; set; }
+    public string Name { get; set; }
+    public string Summary { get; set; }
+    public HtmlDocument HtmlDocument { get; set; }
+    public List<string> Usings { get; set; }
+    public string Definition { get; set; } = "";
+    public List<DotnetConstructor> Constructors { get; set; }
     public List<string> Enums { get; set; }
     public List<DotnetProperty> Properties { get; set; }
     public List<DotnetField> Fields { get; set; }
     public List<string> Events { get; set; }
-    public List<DotnetConstructor> Constructors { get; set; }
     public List<DotnetMethod> Methods { get; set; }
 
     public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns)
@@ -51,6 +52,7 @@ public class AlvaoClass2
         FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
 
         Summary = Helpers2.GetSummary(HtmlDocument);
+        Boundaries = [];
         Usings = [];
         Fields = [];
         Properties = [];
@@ -73,6 +75,27 @@ public class AlvaoClass2
         return h1Index;
     }
 
+    private List<int> ExtractH2Indexes(HtmlNodeCollection elements)
+    {
+        // Constructors, Properties, Fields, Events, Methods are h2
+        Logger.LogInformation("Finding class member groups [{}] {{{}}}", Name, NamespaceName);
+        var h2Indexes = elements
+            .Select((f, i) => new { f, i })
+            .Where(x => x.f.Name == "h2")
+            .Select(x => x.i).ToList();
+
+        if (h2Indexes.Count == 0)
+        {
+            // ? TODO: is this error? Change to warning and return
+            Logger.LogError("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
+            throw new Exception($"Class does not expose any members {Name} {NamespaceName}");
+        }
+
+        Logger.LogDebug("There are {} h2 elements [{}] {{{}}}", h2Indexes.Count, Name, NamespaceName);
+
+        return h2Indexes;
+    }
+
     private static string SanitizeClassName(HtmlNode element)
     {
         return TrimInnerText(element)
@@ -84,6 +107,7 @@ public class AlvaoClass2
 
     private void AssertCorrectClassPage(string className)
     {
+        Logger.LogDebug("Asserting class [{}] {{{}}}", Name, NamespaceName);
         if (className.Equals(Name)) return;
 
         Logger.LogError("Page specify different class: {} [{}] {{{}}}", className, Name, NamespaceName);
@@ -106,6 +130,47 @@ public class AlvaoClass2
         Logger.LogError("Page boundaries are incorrect [{}] {{{}}}", Name, NamespaceName);
         throw new Exception($"Page boundaries are incorrect: {Name} {NamespaceName}");
     }
+
+    private Dictionary<string, List<HtmlNode>> SplitElementsIntoClassGroups(HtmlNodeCollection elements, int h1IndexStart, int h1IndexEnd, List<int> h2Indexes)
+    {
+        Logger.LogDebug("Processing class groups [{}] {{{}}}", Name, NamespaceName);
+        var groupName = "Class";
+        // Class specific items are saved into group "Class"
+        Dictionary<string, List<HtmlNode>> classGroups = [];
+
+        for (int i = 0; i < h2Indexes.Count; i++)
+        {
+            Logger.LogDebug("Processing class group {} [{}] {{{}}}", i, Name, NamespaceName);
+            int h2IndexStart = h2Indexes[i];
+            int h2IndexEnd = i == h2Indexes.Count - 1
+                ? h1IndexEnd // Completely last sibling element
+                : h2Indexes[i + 1] - 1; // Element before next h2
+
+            // Collect h1 scoped elements when processing first h2 element (first h1 index to first h2 index - 1)
+            if (i == 0)
+            {
+                Logger.LogDebug("Processing class related elements [{}] {{{}}}", Name, NamespaceName);
+                classGroups.Add(groupName, [.. elements.Skip(h1IndexStart).Take(h2IndexStart - h1IndexStart + 1)]);
+            }
+
+            groupName = TrimInnerText(elements[h2IndexStart]);
+
+            Logger.LogDebug("Adding class group {} [{}] {{{}}}", groupName, Name, NamespaceName);
+            // Add self and all elements before next h2
+            classGroups.Add(groupName, [.. elements.Skip(h2IndexStart).Take(h2IndexEnd - h2IndexStart + 1)]);
+
+            // Boundaries contains all elements between self and next element (including self and exclude next same level element)
+            Boundaries.Add(new ScopeBoundary(
+                "h2 - " + elements[h2IndexStart].InnerText.Trim(),
+                h2IndexStart,
+                h2IndexEnd
+            ));
+        }
+
+        Logger.LogInformation("Found {} class members [{}] {{{}}}", classGroups.Count, Name, NamespaceName);
+
+        return classGroups;
+    }
     #endregion Helper functions
 
 
@@ -121,128 +186,61 @@ public class AlvaoClass2
         Logger.LogInformation("Processing the class document [{}] {{{}}}", Name, NamespaceName);
         // Get all elements in main article container
         var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
+        Logger.LogDebug("There are {} total elements [{}] {{{}}}", elements.Count, Name, NamespaceName);
 
         // First element should be h1
-        int h1Index = ExtractHeading1Index(elements);
-        var h1IndexStart = h1Index;
+        var h1IndexStart = ExtractHeading1Index(elements);
         var h1IndexEnd = elements.Count - 1;
-        var className = SanitizeClassName(elements[h1Index]);
+        var className = SanitizeClassName(elements[h1IndexStart]);
 
         AssertCorrectClassPage(className);
 
         elements[h1IndexEnd].SetAttributeValue("isLastElement", "true");
         List<ScopeBoundary> boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
 
-        Logger.LogDebug("There are {} total elements [{}] {{{}}}", elements.Count, Name, NamespaceName);
-
-        // Constructors, Properties, Fields, Events, Methods are h2
-        Logger.LogInformation("Finding class member groups [{}] {{{}}}", Name, NamespaceName);
-        var h2Indexes = elements
-            .Select((f, i) => new { f, i })
-            .Where(x => x.f.Name == "h2")
-            .Select(x => x.i).ToList();
-
-        if (h2Indexes.Count == 0)
-        {
-            // ? TODO: is this error? Change to warning and return
-            Logger.LogError("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
-            throw new Exception($"Class does not expose any members {Name} {NamespaceName}");
-        }
+        List<int> h2Indexes = ExtractH2Indexes(elements);
 
         // First pass is h1 (class specific items), until first h2
-        var groupName = "Class";
-        List<HtmlNode> classRelatedElements = [];
-        Dictionary<string, List<HtmlNode>> groups = [];
-
-        Logger.LogDebug("There are {} h2 elements [{}] {{{}}}", h2Indexes.Count, Name, NamespaceName);
-
-        for (int i = 0; i < h2Indexes.Count; i++)
-        {
-            int h2IndexStart = h2Indexes[i];
-            int h2IndexEnd = i == h2Indexes.Count - 1
-                ? h1IndexEnd // Completely last sibling element
-                : h2Indexes[i + 1] - 1; // Element before next h2
-
-            // Collect h1 scoped elements when processing first h2 element (first h1 index to first h2 index - 1)
-            if (i == 0)
-            {
-                Logger.LogDebug("Processing class related elements [{}] {{{}}}", Name, NamespaceName);
-                classRelatedElements = [.. elements.Skip(h1IndexStart).Take(h2IndexStart - h1IndexStart + 1)];
-            }
-
-            groupName = TrimInnerText(elements[h2IndexStart]);
-            // Add self and all elements before next h2
-            groups.Add(groupName, [.. elements.Skip(h2IndexStart).Take(h2IndexEnd - h2IndexStart + 1)]);
-
-            // Boundaries contains all elements between self and next element (including self and exclude next same level element)
-            boundaries.Add(new ScopeBoundary(
-                "h2 - " + elements[h2IndexStart].InnerText.Trim(),
-                h2IndexStart,
-                h2IndexEnd
-            ));
-        }
+        Dictionary<string, List<HtmlNode>> classGroups = SplitElementsIntoClassGroups(elements, h1IndexStart, h1IndexEnd, h2Indexes);
 
         AssertClassBoundaries(elements, boundaries);
 
-        Logger.LogInformation("Found {} class members [{}] {{{}}}", groups.Count, Name, NamespaceName);
-
-        List<DotnetProperty> properties = [];
-        List<DotnetField> fields = [];
-        List<DotnetMethod> methods = [];
-
-        foreach (var gr in groups)
+        foreach (var gr in classGroups)
         {
             Logger.LogDebug("Class member {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
 
             switch (gr.Key)
             {
                 // case "Properties":
-                //     properties = _ProcessProperties(gr.Value);
+                //     Properties = _ProcessProperties(gr.Value);
                 //     break;
                 // case "Fields":
-                //     fields = _ProcessFields(gr.Value);
+                //     Fields = _ProcessFields(gr.Value);
                 //     break;
                 case "Constructors":
                     ProcessConstructors(gr.Value);
                     break;
                 // case "Methods":
-                //     methods = _ProcessMethods(gr.Value);
+                //     Methods = _ProcessMethods(gr.Value);
                 //     break;
                 default:
-                    Logger.LogWarning("Skipping {}", gr.Key);
+                    Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping class group {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
                     break;
             }
         }
 
-        foreach (var el in Constructors)
-        {
-            Console.WriteLine(el);
-        }
-
-
         // ! TODO: Do not rely on hardcoded indexes
-        Summary = classRelatedElements[2].InnerText.Trim();
-        Definition = classRelatedElements[4].InnerText.Trim();
-
-        Properties = properties;
-        Fields = fields;
-        Methods = methods;
+        Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
+        Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
 
         ProduceFinalCsFile();
 
-        foreach (var b in boundaries)
-        {
-            Console.WriteLine(b);
-            Console.WriteLine(elements[b.end].Name);
-            // Console.WriteLine(elements[b.start].Name.Equals(b.name.Split(" ")[0]));
-        }
-        // Console.WriteLine(boundaries[0].end == boundaries[^1].end);
         Environment.Exit(100);
-
         return;
 
 
 
+        // !!!!!! TODO: DROP
         // // var memberGroupIndex = elements.FindIndex(e => e.Name.Equals("h2"));
         // if (memberGroupIndex == -1)
         // {
@@ -1223,7 +1221,7 @@ public class AlvaoClass2
     // h3, 30, 39
     // h3, 40, 39
     // h2, 50, 99
-    internal record ScopeBoundary(
+    public record ScopeBoundary(
         string name,
         int start,
         int end
