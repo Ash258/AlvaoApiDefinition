@@ -231,9 +231,9 @@ public class AlvaoClass2
                 case "Constructors":
                     ProcessConstructors(gr.Value);
                     break;
-                // case "Methods":
-                //     Methods = _ProcessMethods(gr.Value);
-                //     break;
+                case "Methods":
+                    ProcessMethods(gr.Value);
+                    break;
                 default:
                     Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping class group {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
                     break;
@@ -507,144 +507,113 @@ public class AlvaoClass2
         }
     }
 
-    // ! TODO: Void
-    private List<DotnetMethod> _ProcessMethods(List<HtmlNode> elements)
+    private void ProcessMethods(List<HtmlNode> elements)
     {
-        List<DotnetMethod> methods = [];
-
-        for (int i = 0; i < elements.Count; i++)
-        {
-            HtmlNode? el = elements[i];
-            Console.WriteLine("[" + i + "] " + el.Name + "(" + el.InnerText.Trim().PadRight(200).Substring(0, 20).Trim() + ")");
-        }
-
         Logger.LogDebug("Processing class methods [{}] {{{}}}", Name, NamespaceName);
-        var h3Indexes = elements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == "h3")
-                .Select(x => x.i).ToList();
-
-        //  3   6   8
-        //  3,6
-        //  6,8
-        //  8, elements.count
-
-
-        var lastIndex = elements.Count;
-        // var lastIndex = elements.Count - 1;
+        (var h3Indexes, var h3LastIndex) = FindIndexesOfElement(elements, "h3");
 
         Logger.LogDebug("Found {} methods [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
 
-        // 2 -> 8
-        // 9 -> 14
-        // Environment.Exit(20);
-        // return methods;
-        var _name = string.Empty;
-        var sum = string.Empty;
         for (var i = 0; i < h3Indexes.Count; ++i)
         {
             var end = i == h3Indexes.Count - 1
-                ? lastIndex
+                ? h3LastIndex
                 : h3Indexes[i + 1];
-            Console.WriteLine(">>>>" + i + ",,,," + h3Indexes[i] + " -> " + end + "   ");
-            var currentElements = elements[h3Indexes[i]..end];
-            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
-            if (divs.Count == 3)
+
+            Logger.LogDebug("Method spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
+            var methodElements = elements[h3Indexes[i]..end];
+
+            // First element is h3, that include name
+            // Take it hardcoded for now
+            var _name = methodElements[0].InnerText.Trim();
+            var _sum = string.Empty;
+            var _def = string.Empty;
+            try
             {
-                _name = currentElements[0].InnerText.Trim();
-                // Logger.LogDebug("Processing method {} [{}] {{{}}}", _name, Name, NamespaceName);
-                try
-                {
-                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
-                }
-                catch
-                {
-                    Logger.LogDebug("Method {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-                }
+                _sum = methodElements[1].SelectSingleNode(".//p").InnerText.Trim();
             }
-            else
+            catch
             {
-                Logger.LogError("Method does not have all divs");
+                Logger.LogWarning("Method {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
+            }
+            try
+            {
+                _def = SanitizeXmlToString(methodElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
+
+            }
+            catch
+            {
+                Logger.LogWarning("Cannot process definition of method {} [{}] {{{}}}", _name, Name, NamespaceName);
             }
 
             // parameter, return, exception
-            var h4Indexes = currentElements
-                    .Select((f, i) => new { f, i })
-                    .Where(x => x.f.Name == "h4")
-                    .Select(x => x.i).ToList();
+            (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
 
             Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
             List<string> returns = [];
+            List<string> exceptions = [];
             List<(string, string)> parameters = [];
 
-            for (var j = 0; j < h4Indexes.Count; ++j)
+            for (var methodPropIndex = 0; methodPropIndex < h4Indexes.Count; ++methodPropIndex)
             {
+                var h4end = methodPropIndex == h4Indexes.Count - 1
+                    ? h4LastIndex
+                    : h4Indexes[methodPropIndex + 1] - 1;
 
-                Console.WriteLine(j);
-                Console.WriteLine(j + 1);
-                Console.WriteLine(h4Indexes.Count - 1);
-                Console.WriteLine(j == h4Indexes.Count - 1);
-                Console.WriteLine(end);
-                Console.WriteLine("C: " + currentElements.Count);
-                Console.WriteLine(h4Indexes[j + 1]);
-                var h4end = j == h4Indexes.Count - 1
-                    ? end
-                    : h4Indexes[j + 1];
-                Console.WriteLine(end + ":::: " + currentElements.Count);
-                // Console.WriteLine(h4Indexes[j] + ":::: " + h4end);
-                var h4CurrentElements = currentElements[h4Indexes[j]..h4end];
+                var h4CurrentElements = methodElements[h4Indexes[methodPropIndex]..h4end];
 
-                Logger.LogDebug("h4 elements count {} [{}] {{{}}}", h4CurrentElements.Count, Name, NamespaceName);
+                var methodGroupName = TrimInnerText(h4CurrentElements[0]);
+                Logger.LogInformation("Processing group {} of {} method [{}] {{{}}}", methodGroupName, _name, Name, NamespaceName);
 
-                Console.WriteLine("ANO");
-                Console.WriteLine(h4Indexes[j]);
-                Console.WriteLine();
-                continue;
-                switch (h4CurrentElements[0].InnerText.Trim())
+                switch (methodGroupName)
                 {
                     case "Parameters":
-                        Logger.LogDebug("Processing constructor parameters [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing method parameters [{}] {{{}}}", Name, NamespaceName);
                         // THis has to be dl
                         var constrParams = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
                         var constrParamsDesc = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
                         if (constrParams.Count != constrParamsDesc.Count)
                         {
-                            Logger.LogError("Mismatch between constructor paramter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogError("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             break;
                         }
-                        for (var _ci = 0; _ci < constrParams.Count; ++_ci)
+                        for (var _mpi = 0; _mpi < constrParams.Count; ++_mpi)
                         {
-                            Logger.LogDebug("Adding constructor parameter {} [{}] {{{}}}", constrParams[_ci], Name, NamespaceName);
-                            parameters.Add((constrParams[_ci], constrParamsDesc[_ci]));
+                            var _parameterName = constrParams[_mpi].Trim();
+                            Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
+                            parameters.Add((_parameterName, constrParamsDesc[_mpi].Trim()));
                         }
                         break;
-                    case "Examples":
-                        // ! TODO: Implement
-                        // ? TODO: Investigate if there are more examples somewhere
-                        // Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
-                        // Console.WriteLine(h4CurrentElements[1].Name);
-                        // examples.Add(h4CurrentElements[1].Name);
-                        // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
+                    //     case "Examples":
+                    //         // ! TODO: Implement
+                    //         // ? TODO: Investigate if there are more examples somewhere
+                    //         // Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
+                    //         // Console.WriteLine(h4CurrentElements[1].Name);
+                    //         // examples.Add(h4CurrentElements[1].Name);
+                    //         // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
+                    //         break;
+                    case "Returns":
+                        // Simple void, no need to handle returns, definition is enough
+                        // ? TODO: Investigate if there are some returns described
+                        Logger.LogWarning("Skipping Returns of method {} [{}] {{{}}}", _name, Name, NamespaceName);
                         break;
                     default:
+                        Logger.LogWarning("Skipping group {} of method {} [{}] {{{}}}", methodGroupName, _name, Name, NamespaceName);
                         break;
                 }
             }
-            Environment.Exit(40);
-            methods.Add(
+            Methods.Add(
                 new DotnetMethod()
                 {
                     Name = _name,
-                    Summary = sum,
-                    Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
+                    Summary = _sum,
+                    Definition = _def,
                     Parameters = parameters,
                     Returns = "", // ! TODO: Implement
                 }
             );
         }
-
-        return methods;
     }
 
     internal void Process()
