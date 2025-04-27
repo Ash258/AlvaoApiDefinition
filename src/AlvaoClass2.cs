@@ -1,6 +1,7 @@
 using System.Text;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
+using static AlvaoScrapper.Helpers2;
 
 namespace AlvaoScrapper;
 
@@ -59,13 +60,9 @@ public class AlvaoClass2
         Constructors = [];
     }
 
-    internal void RestructuralizeClassDocument()
+    #region Helper functions
+    private int ExtractHeading1Index(HtmlNodeCollection elements)
     {
-        Logger.LogInformation("Processing the class document [{}] {{{}}}", Name, NamespaceName);
-        // Get all elements in main article container
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
-
-        // First element should be h1
         var h1Index = elements.FindIndex(e => e.Name.Equals("h1"));
         if (h1Index == -1)
         {
@@ -73,22 +70,68 @@ public class AlvaoClass2
             throw new Exception($"Page does not specify h1 element {Name} {NamespaceName}");
         }
 
+        return h1Index;
+    }
+
+    private static string SanitizeClassName(HtmlNode element)
+    {
+        return TrimInnerText(element)
+                .Replace("Class ", "")
+                .Replace("Interface ", "")
+                .Replace("Enum ", "")
+                .Trim();
+    }
+
+    private void AssertCorrectClassPage(string className)
+    {
+        if (className.Equals(Name)) return;
+
+        Logger.LogError("Page specify different class: {} [{}] {{{}}}", className, Name, NamespaceName);
+        throw new Exception($"Page specify different class: {className} {Name} {NamespaceName}");
+    }
+
+    private void AssertClassBoundaries(HtmlNodeCollection elements, List<ScopeBoundary> boundaries)
+    {
+        foreach (var b in boundaries.OrderBy(x => x.start))
+        {
+            Logger.LogDebug("{}", b.DebugFormat(elements[b.end].Name));
+
+            if (!elements[b.start].Name.Equals(b.name.Split(" ")[0]))
+            {
+                Logger.LogError("Wrong last element of scope {} [{}] {{{}}}", b.name.Split(" ")[0], Name, NamespaceName);
+            }
+        }
+        if (boundaries[0].end == boundaries[^1].end) return;
+
+        Logger.LogError("Page boundaries are incorrect [{}] {{{}}}", Name, NamespaceName);
+        throw new Exception($"Page boundaries are incorrect: {Name} {NamespaceName}");
+    }
+    #endregion Helper functions
+
+
+
+
+
+
+
+
+    /* ! TODO: Reimplement and reorganize*/
+    internal void RestructuralizeClassDocument()
+    {
+        Logger.LogInformation("Processing the class document [{}] {{{}}}", Name, NamespaceName);
+        // Get all elements in main article container
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
+
+        // First element should be h1
+        int h1Index = ExtractHeading1Index(elements);
         var h1IndexStart = h1Index;
         var h1IndexEnd = elements.Count - 1;
+        var className = SanitizeClassName(elements[h1Index]);
+
+        AssertCorrectClassPage(className);
+
         elements[h1IndexEnd].SetAttributeValue("isLastElement", "true");
         List<ScopeBoundary> boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
-
-        var _Name = elements[h1Index].InnerText.Trim()
-            .Replace("Class ", "")
-            .Replace("Interface ", "")
-            .Replace("Enum ", "")
-            .Trim();
-
-        if (!_Name.Equals(Name))
-        {
-            Logger.LogError("Page specify different class: {} [{}] {{{}}}", _Name, Name, NamespaceName);
-            throw new Exception($"Page specify different class: {_Name} {Name} {NamespaceName}");
-        }
 
         Logger.LogDebug("There are {} total elements [{}] {{{}}}", elements.Count, Name, NamespaceName);
 
@@ -101,9 +144,11 @@ public class AlvaoClass2
 
         if (h2Indexes.Count == 0)
         {
+            // ? TODO: is this error? Change to warning and return
             Logger.LogError("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
             throw new Exception($"Class does not expose any members {Name} {NamespaceName}");
         }
+
         // First pass is h1 (class specific items), until first h2
         var groupName = "Class";
         List<HtmlNode> classRelatedElements = [];
@@ -125,16 +170,10 @@ public class AlvaoClass2
                 classRelatedElements = [.. elements.Skip(h1IndexStart).Take(h2IndexStart - h1IndexStart + 1)];
             }
 
-            groupName = elements[h2IndexStart].InnerText.Trim();
+            groupName = TrimInnerText(elements[h2IndexStart]);
             // Add self and all elements before next h2
             groups.Add(groupName, [.. elements.Skip(h2IndexStart).Take(h2IndexEnd - h2IndexStart + 1)]);
 
-            /*
-                0 => 87
-                8 => 15
-                16 => 72
-                73 => 87
-            */
             // Boundaries contains all elements between self and next element (including self and exclude next same level element)
             boundaries.Add(new ScopeBoundary(
                 "h2 - " + elements[h2IndexStart].InnerText.Trim(),
@@ -143,25 +182,13 @@ public class AlvaoClass2
             ));
         }
 
+        AssertClassBoundaries(elements, boundaries);
+
         Logger.LogInformation("Found {} class members [{}] {{{}}}", groups.Count, Name, NamespaceName);
 
         List<DotnetProperty> properties = [];
         List<DotnetField> fields = [];
         List<DotnetMethod> methods = [];
-
-        foreach (var b in boundaries.OrderBy(x => x.start))
-        {
-            Console.WriteLine(b);
-            Console.WriteLine(elements[b.end].Name);
-            if (!elements[b.start].Name.Equals(b.name.Split(" ")[0]))
-            {
-                Logger.LogError("Wrong last element of scope");
-            }
-        }
-        if (boundaries[0].end != boundaries[^1].end)
-        {
-            Logger.LogError("Wrong last element");
-        }
 
         foreach (var gr in groups)
         {
@@ -176,7 +203,7 @@ public class AlvaoClass2
                 //     fields = _ProcessFields(gr.Value);
                 //     break;
                 case "Constructors":
-                    Constructors = ProcessConstructors(gr.Value);
+                    ProcessConstructors(gr.Value);
                     break;
                 // case "Methods":
                 //     methods = _ProcessMethods(gr.Value);
@@ -192,7 +219,6 @@ public class AlvaoClass2
             Console.WriteLine(el);
         }
 
-        Environment.Exit(30);
 
         // ! TODO: Do not rely on hardcoded indexes
         Summary = classRelatedElements[2].InnerText.Trim();
@@ -214,7 +240,6 @@ public class AlvaoClass2
         Environment.Exit(100);
 
         return;
-
 
 
 
@@ -370,10 +395,8 @@ public class AlvaoClass2
     }
 
     // ! TODO: Void
-    private List<DotnetConstructor> ProcessConstructors(List<HtmlNode> elements)
+    private void ProcessConstructors(List<HtmlNode> elements)
     {
-        List<DotnetConstructor> constructors = [];
-
         Logger.LogInformation("Processing class constructors [{}] {{{}}}", Name, NamespaceName);
         var h3Indexes = elements
                 .Select((f, i) => new { f, i })
@@ -444,13 +467,14 @@ public class AlvaoClass2
                         var constrParamsDesc = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
                         if (constrParams.Count != constrParamsDesc.Count)
                         {
-                            Logger.LogError("Mismatch between constructor paramter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogError("Mismatch between constructor parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             break;
                         }
-                        for (var _ci = 0; _ci < constrParams.Count; ++_ci)
+                        for (var _cpi = 0; _cpi < constrParams.Count; ++_cpi)
                         {
-                            Logger.LogDebug("Adding constructor parameter {} [{}] {{{}}}", constrParams[_ci], Name, NamespaceName);
-                            parameters.Add((constrParams[_ci], constrParamsDesc[_ci]));
+                            var _parameterName = constrParams[_cpi].Trim();
+                            Logger.LogDebug("Adding constructor parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
+                            parameters.Add((_parameterName, constrParamsDesc[_cpi].Trim()));
                         }
                         break;
                     case "Examples":
@@ -465,7 +489,7 @@ public class AlvaoClass2
                         break;
                 }
             }
-            constructors.Add(
+            Constructors.Add(
                 new DotnetConstructor()
                 {
                     Name = _name,
@@ -476,8 +500,6 @@ public class AlvaoClass2
                 }
             );
         }
-
-        return constructors;
     }
 
     // ! TODO: Void
@@ -1058,9 +1080,9 @@ public class AlvaoClass2
 
         sb.AppendLine("}"); // End class
 
-        Logger.LogDebug("Writing cs file for class [{}] {{{}}}", Name, NamespaceName);
+        Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
-        Logger.LogDebug("Wrote {}", FinalCsFile);
+        Logger.LogDebug("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
         State.Classes.Add(Name, this);
     }
 
@@ -1206,6 +1228,11 @@ public class AlvaoClass2
         int start,
         int end
     )
-    { }
+    {
+        internal string? DebugFormat(string lastElementName)
+        {
+            return $"ScopeBoundary {{ name = {name}, start = {start}, end = {end}, lastElement = {lastElementName} }}";
+        }
+    }
     #endregion DTOs
 }

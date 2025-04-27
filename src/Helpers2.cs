@@ -5,6 +5,19 @@ namespace AlvaoScrapper;
 
 public static class Helpers2
 {
+    public static string TrimInnerText(HtmlNode node)
+    {
+        return node.InnerText.Trim();
+    }
+
+
+
+
+
+
+
+
+    // TODO: Reorganize and verify everything is needed
     public static string ReplaceEndLinesWithSpace(string el)
     {
         return Regex.Replace(el, @"\r?\n\s*", " ");
