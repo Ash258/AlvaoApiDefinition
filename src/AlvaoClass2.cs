@@ -283,65 +283,6 @@ public class AlvaoClass2
                     break;
             }
         }
-
-        ProduceFinalCsFile();
-
-        Environment.Exit(100);
-        return;
-
-
-
-        // !!!!!! TODO: DROP
-        // // var memberGroupIndex = elements.FindIndex(e => e.Name.Equals("h2"));
-        // if (memberGroupIndex == -1)
-        // {
-        //     Logger.LogWarning("Class {} does not have any members {{{}}}", Name, NamespaceName);
-        //     return;
-        // }
-
-        // var classRelatedElements = elements.Take(memberGroupIndex);
-        // var previousGroupEndIndex = memberGroupIndex;
-        // var groups = new Dictionary<string, List<HtmlNode>>();
-        // var groupName = elements[memberGroupIndex].InnerText.Trim();
-        // var groupElements = elements.Skip(classRelatedElements.Count()).ToList();
-        // groups.Add(groupName, groupElements);
-        // // Logger.LogWarning("{}", groupName);
-        // // foreach (var e in groupElements)
-        // // {
-        // // }
-        // // Break rest of the elements into groups by h2 elements (Constructors, Properties, Fields, Events, Methods)
-        // while (memberGroupIndex != -1)
-        // {
-        //     // First is always the group itself
-        //     previousGroupEndIndex = memberGroupIndex;
-        //     memberGroupIndex = elements.Skip(1).ToList().FindIndex(e => e.Name.Equals("h2"));
-        //     Console.WriteLine(memberGroupIndex);
-        //     continue;
-        //     if (memberGroupIndex == -1)
-        //     {
-        //         // There are no other groups
-        //         Logger.LogError("No other groups. -1 index");
-        //     }
-
-        //     groups.Add(elements[memberGroupIndex].InnerText.Trim(), elements.Skip(previousGroupEndIndex).Take(memberGroupIndex).ToList());
-        // }
-        // // Logger.LogError("{} [{}] {{{}}}", memberGroupIndex.ToString(), Name, NamespaceName);
-        // // Logger.LogError("{} {}", h1Index, memberGroupIndex);
-        // // Environment.Exit(20);
-
-        // foreach (var gr in groups.Keys)
-        // {
-        //     Console.WriteLine(gr);
-        //     foreach (var el in groups.GetValueOrDefault(gr, []))
-        //     {
-        //         Console.WriteLine("    " + el.Name);
-        //     }
-        // }
-
-        // foreach (var el in classRelatedElements)
-        // {
-        //     Console.WriteLine(el.Name);
-        // }
     }
 
     private void ProcessPropertiesOrFields(List<HtmlNode> elements, string type)
@@ -390,56 +331,6 @@ public class AlvaoClass2
         }
     }
 
-    // ! TODO: Void
-    private List<DotnetField> _ProcessFields(List<HtmlNode> elements)
-    {
-        List<DotnetField> fields = [];
-        Logger.LogDebug("Processing class fields [{}] {{{}}}", Name, NamespaceName);
-        var h3Indexes = elements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == "h3")
-                .Select(x => x.i).ToList();
-        var lastIndex = elements.Count - 1;
-
-        Logger.LogDebug("Found {} Fields [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
-
-        for (var i = 0; i < h3Indexes.Count; ++i)
-        {
-            var end = i == h3Indexes.Count - 1
-                ? lastIndex
-                : h3Indexes[i + 1];
-            var currentElements = elements[h3Indexes[i]..end];
-            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
-            if (divs.Count == 3)
-            {
-                var _name = currentElements[0].InnerText.Trim();
-                var sum = string.Empty;
-                try
-                {
-                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
-                }
-                catch
-                {
-                    Logger.LogDebug("Field {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-                }
-                fields.Add(
-                    new DotnetField()
-                    {
-                        Name = _name,
-                        Summary = sum,
-                        Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
-                    }
-                );
-            }
-            else
-            {
-                Logger.LogError("Property does not have all divs");
-            }
-        }
-
-        return fields;
-    }
-
     private void ProcessConstructors(List<HtmlNode> elements)
     {
         Logger.LogInformation("Processing class constructors [{}] {{{}}}", Name, NamespaceName);
@@ -476,20 +367,19 @@ public class AlvaoClass2
                 switch (groupName)
                 {
                     case "Parameters":
-                        Logger.LogDebug("Processing constructor parameters [{}] {{{}}}", Name, NamespaceName);
-                        // This has to be dl
-                        var constrParams = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
-                        var constrParamsDesc = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
-                        if (constrParams.Count != constrParamsDesc.Count)
+                        Logger.LogDebug("Processing constructor parameters [{}] {{{}}}", Name, NamespaceName);// This has to be dl
+                        var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+                        var parameterSums = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
+                        if (parameterDefs.Count != parameterSums.Count)
                         {
-                            Logger.LogError("Mismatch between constructor parameter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogError("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             break;
                         }
-                        for (var _cpi = 0; _cpi < constrParams.Count; ++_cpi)
+                        for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex)
                         {
-                            var _parameterName = constrParams[_cpi].Trim();
-                            Logger.LogDebug("Adding constructor parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
-                            parameters.Add((_parameterName, constrParamsDesc[_cpi].Trim()));
+                            var _parameterName = parameterDefs[paramIndex].Trim();
+                            Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
+                            parameters.Add((_parameterName, Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim())));
                         }
                         break;
                     case "Examples":
@@ -557,19 +447,19 @@ public class AlvaoClass2
                 {
                     case "Parameters":
                         Logger.LogDebug("Processing method parameters [{}] {{{}}}", Name, NamespaceName);
-                        // THis has to be dl
-                        var constrParams = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
-                        var constrParamsDesc = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
-                        if (constrParams.Count != constrParamsDesc.Count)
+                        // This has to be dl
+                        var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+                        var parameterSums = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
+                        if (parameterDefs.Count != parameterSums.Count)
                         {
                             Logger.LogError("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             break;
                         }
-                        for (var _mpi = 0; _mpi < constrParams.Count; ++_mpi)
+                        for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex)
                         {
-                            var _parameterName = constrParams[_mpi].Trim();
+                            var _parameterName = parameterDefs[paramIndex].Trim();
                             Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
-                            parameters.Add((_parameterName, constrParamsDesc[_mpi].Trim()));
+                            parameters.Add((_parameterName, Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim())));
                         }
                         break;
                     //     case "Examples":
@@ -606,15 +496,6 @@ public class AlvaoClass2
     internal void Process()
     {
         RestructuralizeClassDocument();
-        return;
-        Logger.LogInformation("Processing {} class {{{}}}", Name, NamespaceName);
-        AssertDocumentIsClass();
-
-        ProcessDefinition();
-        ProcessProperties();
-        ProcessConstructors();
-        ProcessMethods();
-
         ProduceFinalCsFile();
     }
 
@@ -648,365 +529,9 @@ public class AlvaoClass2
         Definition = _def;
     }
 
-    private void ProcessProperties()
-    {
-        Logger.LogInformation("Processing properties of class {name} {{{ns}}}", Name, NamespaceName);
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='properties' and @class='section']/following-sibling::*");
-        if (elements == null)
-        {
-            Logger.LogInformation("Class does not define properties [{}] {{{}}}", Name, NamespaceName);
-            return;
-        }
-
-        var breakLoop = false;
-        var member = new DotnetProperty
-        {
-            Name = string.Empty,
-        };
-
-        // ? TODO: Try to filter only h3, divs between two h2
-        foreach (var element in elements)
-        {
-            switch (element.Name)
-            {
-                // ! TODO: Handle summary
-                case "h3":
-                    // Actual property name
-                    Logger.LogInformation("Changing current property from '{}' to '{}' {{{}}}", member.Name, element.InnerText.Trim(), NamespaceName);
-
-                    member.Reset();
-                    member.Name = element.InnerText.Trim();
-                    break;
-                case "div":
-                    // Actual property summary / definition
-                    var divClass = element.GetAttributeValue("class", "none");
-                    // Summary handling
-                    if (divClass.Equals("markdown level1 summary"))
-                    {
-                        try
-                        {
-                            member.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
-                        }
-                        catch
-                        {
-                            // There is no paragraph under div
-                        }
-                        break;
-                    }
-
-                    // Definition handling
-                    if (!divClass.Equals("codewrapper")) break;
-
-                    member.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
-                    if (member.Name.IsNullOrEmpty()) break;
-
-                    // ??? TODO: Why Properties.Add(property) does not work?
-                    Properties.Add(new DotnetProperty()
-                    {
-                        Name = member.Name,
-                        Summary = member.Summary,
-                        Definition = Helpers2.SanitizeXmlToString(member.Definition),
-                    });
-                    member.Reset();
-                    break;
-                case "h2":
-                    // This means there is change in the member type (properties, fields)
-                    breakLoop = true;
-                    break;
-                case "a":
-                    // In some cases there is link element. Skip it
-                    break;
-            }
-            if (breakLoop) break;
-        }
-    }
-
-    private void ProcessConstructors()
-    {
-        Logger.LogInformation("Processing constructors of class {name} {{{ns}}}", Name, NamespaceName);
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='constructors' and @class='section']/following-sibling::*");
-        if (elements == null)
-        {
-            Logger.LogInformation("Class does not define constructors [{}] {{{}}}", Name, NamespaceName);
-            return;
-        }
-
-        /*
-        <h3> - Constructor name
-        <div> - Summary
-        <div> - Definition
-        <h4> - Parameters
-        <dl> - Parameter X
-        <dl> - Parameter X
-        */
-        var breakLoop = false;
-        var member = new DotnetConstructor()
-        {
-            Name = string.Empty,
-        };
-
-        // ! TODOOO: Rework to something more contextual
-        // ! TODO: handle examples
-        foreach (var element in elements)
-        {
-            switch (element.Name)
-            {
-                case "h3":
-                    // Actual Constructor name
-                    Logger.LogInformation("Changing current constructor from '{}' to '{}' {{{}}}", member.Name, element.InnerText.Trim(), NamespaceName);
-
-                    member.Reset();
-                    member.Name = element.InnerText.Trim();
-                    break;
-                case "div":
-                    // Actual constructor summary / definition
-                    var divClass = element.GetAttributeValue("class", "none");
-                    // Summary handling
-                    if (divClass.Equals("markdown level1 summary"))
-                    {
-                        Logger.LogInformation("Processing constructor summary {{{}}}", NamespaceName);
-                        try
-                        {
-                            member.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
-                        }
-                        catch
-                        {
-                            // There is no paragraph under div
-                        }
-                        break;
-                    }
-
-                    // Definition handling
-                    if (!divClass.Equals("codewrapper")) break;
-                    Logger.LogInformation("Processing constructor definition {{{}}}", NamespaceName);
-
-                    member.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
-                    if (member.Name.IsNullOrEmpty()) break;
-                    break;
-                case "dl":
-                    // Actual constructor parameter
-                    // ! TODO: This needs to support multiple element
-                    Logger.LogInformation("Processing constructor parameter {{{}}}", NamespaceName);
-                    var name = element.SelectSingleNode(".//dt/code").InnerText.Trim();
-                    var sum = element.SelectSingleNode(".//dd/p").InnerText.Trim();
-                    member.Parameters.Add(
-                        (name, sum)
-                    );
-
-                    // There is no other parameter defined, saved the constructor
-                    if (!element.NextSibling.Name.Equals("dl"))
-                    {
-
-                        // ? TODO: Investigate better approach to elimate hardcoding of such types
-                        if (member.Definition.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
-                        if (member.Definition.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
-
-                        Constructors.Add(new DotnetConstructor()
-                        {
-                            Name = member.Name,
-                            Summary = member.Summary,
-                            Definition = Helpers2.SanitizeXmlToString(member.Definition),
-                            Parameters = member.Parameters,
-                        });
-                        member.Reset();
-                    }
-                    break;
-                case "h4":
-                    // Skip header with parameters
-                    break;
-                case "h2":
-                    // Skip other group of members
-                    breakLoop = true;
-                    break;
-                case "a":
-                    break;
-            }
-
-            if (breakLoop) break;
-        }
-    }
-
-    private void ProcessMethods()
-    {
-        Logger.LogInformation("Processing methods of class {name} {{{ns}}}", Name, NamespaceName);
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//h2[@id='methods' and @class='section']/following-sibling::*");
-        if (elements == null)
-        {
-            Logger.LogInformation("Class does not define methods [{}] {{{}}}", Name, NamespaceName);
-            return;
-        }
-
-        var breakLoop = false;
-        var member = new DotnetMethod
-        {
-            Name = string.Empty,
-        };
-
-        /*
-        <h3> - Method name
-        <div> - Summary
-        <div> - Definition
-        <h4> - Parameters
-        <dl> - Actual paramters
-        <h4> - Returns
-        <dl> - Return value
-        */
-        // ! TODOOO: Rework to something more contextual
-        foreach (var element in elements)
-        {
-            switch (element.Name)
-            {
-                case "h3":
-                    // Actual method name
-                    Logger.LogInformation("Changing current method from '{}' to '{}' {{{}}}", member.Name, element.InnerText.Trim(), NamespaceName);
-
-                    member.Reset();
-                    member.Name = element.InnerText.Trim();
-                    break;
-                case "div":
-                    // Actual method summary / definition
-                    var divClass = element.GetAttributeValue("class", "none");
-                    // // Summary handling
-                    if (divClass.Equals("markdown level1 summary"))
-                    {
-                        Logger.LogInformation("Processing method summary {{{}}}", NamespaceName);
-                        try
-                        {
-                            member.Summary = element.SelectSingleNode(".//p").InnerText.Trim();
-                        }
-                        catch
-                        {
-                            // There is no paragraph under div
-                        }
-                        break;
-                    }
-
-                    // Definition handling
-                    if (!divClass.Equals("codewrapper")) break;
-                    Logger.LogInformation("Processing method definition {{{}}}", NamespaceName);
-
-                    member.Definition = element.SelectSingleNode(".//pre/code").InnerText.Trim();
-                    if (member.Name.IsNullOrEmpty()) break;
-                    break;
-                case "dl":
-                    // Actual method parameter/return
-                    // Class of dl is "parameters"
-                    if (!element.GetAttributeValue("class", "none").Trim().Equals("parameters"))
-                    {
-                        Logger.LogInformation("Class of element is not 'parameters'");
-                        break;
-                    }
-
-                    // Previous element has to be h4 with either "Parameters" or "Returns"
-                    Logger.LogError(element.SelectNodes(".//dt/code").Count.ToString());
-                    if (!element.PreviousSibling.Name.Equals("h4"))
-                    {
-                        Logger.LogInformation("Previous element is not h4");
-                        break;
-                    }
-                    Logger.LogWarning(element.PreviousSibling.InnerText.Trim());
-                    var previousId = element.PreviousSibling.GetAttributeValue("id", "none").Trim();
-                    if (previousId.StartsWith("parameter"))
-                    {
-                        Logger.LogInformation("Processing method parameters {{{}}}", NamespaceName);
-                    }
-                    else if (previousId.StartsWith("returns"))
-                    {
-                        Logger.LogInformation("Processing method return values {{{}}}", NamespaceName);
-                    }
-
-                    break;
-                    var names = element.SelectNodes(".//dt/code");
-                    var summaries = element.SelectNodes(".//dd/p");
-                    if (names.Count != summaries.Count)
-                    {
-                        Logger.LogError("Cannot process method {} parameters (incorrect name,summary count) {{{}}}", member.Name, NamespaceName);
-                        break;
-                    }
-                    for (var i = 0; i < names.Count; ++i)
-                    {
-                        member.Parameters.Add((names[i].InnerText.Trim(), summaries[i].InnerText.Trim()));
-                    }
-
-                    // ? TODO: Could there be a method without parameters and return?
-                    // There is no other parameter defined, saved the method
-                    // Method could end with returns or with parameters (in case of void)
-                    // Save when:
-                    //  There is no next sibling (Nothing to do - either last return or parameter)
-                    //  Next sibling element is h3 (Next method)
-                    if (!element.NextSibling.Name.Equals("dl"))
-                    {
-                        Logger.LogWarning("Saving {}", member.Name);
-                        //     Constructors.Add(new DotnetConstructor()
-                        //     {
-                        //         Name = member.Name,
-                        //         Summary = member.Summary,
-                        //         Definition = Helpers2.SanitizeXmlToString(member.Definition),
-                        //         Parameters = member.Parameters,
-                        //     });
-                        //     member.Reset();
-                    }
-                    break;
-                case "h4":
-                    // Skip header with parameters
-                    break;
-                case "h2":
-                    // Skip other group of members
-                    breakLoop = true;
-                    break;
-                case "a":
-                    break;
-            }
-
-            if (breakLoop) break;
-        }
-
-        //     bool emailQueueProcessed = false;
-
-        //     foreach (var e in elements)
-        //     {
-        //         var _name = Helpers.ExtractObjectName(e);
-
-        // // TODO: Drop
-        // if (emailQueueProcessed) continue;
-        // if (Helpers.IsClass(this, "Alvao.API.Common", "Email") && _name.Contains("Queue")) emailQueueProcessed = true;
-        // if (MonkeyPatch.IsInvalidMethod(NamespaceName, Name, _name)) continue;
-
-        //         var _definition = Helpers.ExtractObjectDefinition(_document);
-        //         if (_definition == null) continue;
-        //         if (_definition.Contains("ObsoleteAttribute")) continue;
-
-        //         var _params = _document.DocumentNode.SelectSingleNode("//*[@id=\"IDBSection\"]/dl");
-        //         if (_params != null)
-        //         {
-        //             _sb.AppendLine($"///");
-        //             var _dts = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dt");
-        //             var _dds = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dd");
-
-        //             for (int i = 0; i < _dts.Count; i++)
-        //             {
-        //                 var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
-        //                 var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
-        //                 if (_description == null) continue;
-
-        //                 _description = Helpers.ReplaceEndLinesWithSpace(_description);
-        //                 _sb.AppendLine($"/// <param name=\"{_var}\">{_description}</param>");
-        //             }
-        //         }
-
-        //         _definition = Helpers.SanitizeXmlToString(_definition);
-
-        //         // TODO: Drop
-        //         _definition = MonkeyPatch.Methods(this, _name, _definition);
-
-        //         _sb.AppendLine($"{_definition}{Helpers.GenerateMethodBody(Type)}");
-        //         Methods.Add(_sb.ToString());
-        //     }
-    }
-
     public void ProduceFinalCsFile()
     {
-        Logger.LogInformation("Constructing final dotnet cl file for class [{}] {{{}}}", Name, NamespaceName);
+        Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
         // First process usings
@@ -1043,135 +568,9 @@ public class AlvaoClass2
 
         Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
-        Logger.LogDebug("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
+        Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
         State.Classes.Add(Name, this);
     }
-
-    // public AlvaoClass(bool manual, string namespaceName, string name, string summary)
-    // {
-    //     using var loggerFactory = LoggerFactory.Create(builder =>
-    //     {
-    //         builder.AddFilter("AlvaoScrapper", LogLevel.Debug);
-    //         builder.AddConsole();
-    //     });
-    //     Logger = loggerFactory.CreateLogger<AlvaoClass>();
-
-    //     Name = name.Replace(" Class", "").Replace(" Interface", "").Trim();
-    //     Type = name.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS;
-    //     NamespaceName = namespaceName;
-    //     FinalCsFile = $"{namespaceName.Replace(".", "/")}/{Name}.cs";
-
-    //     Summary = summary;
-    //     Version = "";
-    //     Usings = [];
-    //     Fields = [];
-    //     Properties = [];
-    //     Enums = [];
-    //     Methods = [];
-    //     Events = [];
-
-    //     Constructors = [];
-    //     LocalHtmlFile = "";
-    //     HtmlDocument = null;
-    // }
-
-    // public void Process()
-    // {
-    //     Logger.LogInformation("Processing member '{}' ({}) [{}]", Name, Type, NamespaceName);
-
-    //     // TODO: Drop
-    //     // ! TODO: Check if needed
-    //     if (MonkeyPatch.IsInvalidClass(NamespaceName, Name)) return;
-
-    //     Logger.LogInformation("Processing definitition of class {name} [{ns}]", Name, NamespaceName);
-    //     var _def = Helpers.ExtractObjectDefinition(HtmlDocument);
-    //     if (_def == null) return;
-
-    //     Definition = _def;
-    //     ProcessProperties();
-    //     // ProcessFields();
-    //     // ProcessEvents();
-    //     ProcessConstructors();
-    //     // ProcessMethods();
-
-    //     // TODO: Drop
-    //     // MonkeyPatch.Using(this);
-
-    //     State.Classes.Add($"{NamespaceName}.{Name}", this);
-    //     ProduceFinalCsFile();
-    // }
-
-    // private static StringBuilder ProcessDocumentationComments(string link, HtmlDocument document, out bool skip)
-    // {
-    //     skip = false;
-    //     var _summary = Helpers.GetSummary(document);
-    //     if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) skip = true;
-    //     var _sb = new StringBuilder();
-    //     if (!_summary.Equals("")) _sb.AppendLine(_summary);
-    //     _sb.AppendLine(Helpers.GenerateSeeDoc(link));
-
-    //     return _sb;
-    // }
-
-    // public void ProcessFields()
-    // {
-    //     return;
-    //     var fields = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"FieldList\"]/tr/td[2]/a");
-    //     if (fields == null) return;
-
-    //     foreach (var f in fields)
-    //     {
-    //         var fieldName = Helpers.ExtractObjectName(f);
-    //         Console.WriteLine($"    Processing {fieldName} Field");
-
-    //         var fieldHtmlBaseFileName = f.GetAttributeValue("href", "").Split("/").Last();
-    //         var fieldLink = $"{Helpers.BASE_HTML_URL}/{fieldHtmlBaseFileName}";
-    //         var fieldLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{fieldHtmlBaseFileName}";
-    //         if (Helpers.IsInvalidAlvaoUrl(fieldLink)) continue;
-
-    //         var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
-    //         var _sb = ProcessDocumentationComments(fieldLink, fieldDocument, out bool obsolete);
-    //         if (obsolete) continue;
-
-    //         var fieldDef = Helpers.ExtractObjectDefinition(fieldDocument);
-    //         if (fieldDef == null) continue;
-    //         fieldDef = Helpers.SanitizeXmlToString(fieldDef);
-
-    //         // TODO: Drop
-    //         if (fieldName.Equals("EmailFormat")) fieldDef = fieldDef.Replace("\"]", "\"\"]");
-    //         if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName)) fieldDef = fieldDef.Replace("= \"", "= @\"");
-
-    //         _sb.AppendLine(fieldDef);
-    //         Fields.Add(_sb.ToString());
-    //     }
-    // }
-
-    // private void ProcessEvents()
-    // {
-    //     var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
-    //     if (elements == null) return;
-
-    //     foreach (var e in elements)
-    //     {
-    //         var _name = Helpers.ExtractObjectName(e);
-    //         Console.WriteLine($"    Processing {_name} Method");
-
-    //         var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
-    //         var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
-    //         var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-    //         if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
-
-    //         var _document = Helpers.LoadDocument(_link, _localHtml);
-    //         var _sb = ProcessDocumentationComments(_link, _document, out bool obsolete);
-    //         if (obsolete) continue;
-
-    //         var _definition = Helpers.ExtractObjectDefinition(_document);
-    //         if (_definition == null) continue;
-
-    //         _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
-    //         Events.Add(_sb.ToString());
-    //     }
-    // }
 
     #region DTOs
     // Start should include the element itself (h1, h2)
