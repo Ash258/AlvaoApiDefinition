@@ -86,9 +86,7 @@ public class AlvaoClass2
 
         if (h2Indexes.Count == 0)
         {
-            // ? TODO: is this error? Change to warning and return
-            Logger.LogError("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
-            throw new Exception($"Class does not expose any members {Name} {NamespaceName}");
+            Logger.LogInformation("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
         }
 
         Logger.LogDebug("There are {} h2 elements [{}] {{{}}}", h2Indexes.Count, Name, NamespaceName);
@@ -137,6 +135,8 @@ public class AlvaoClass2
         var groupName = "Class";
         // Class specific items are saved into group "Class"
         Dictionary<string, List<HtmlNode>> classGroups = [];
+        var isEmpty = h2Indexes.Count == 0;
+        if (isEmpty) h2Indexes = [h1IndexStart];
 
         for (int i = 0; i < h2Indexes.Count; i++)
         {
@@ -149,8 +149,12 @@ public class AlvaoClass2
             // Collect h1 scoped elements when processing first h2 element (first h1 index to first h2 index - 1)
             if (i == 0)
             {
+                var skip = isEmpty
+                    ? h1IndexEnd - h1IndexStart
+                    : h2IndexStart - h1IndexStart + 1;
+
                 Logger.LogDebug("Processing class related elements [{}] {{{}}}", Name, NamespaceName);
-                classGroups.Add(groupName, [.. elements.Skip(h1IndexStart).Take(h2IndexStart - h1IndexStart + 1)]);
+                classGroups.Add(groupName, [.. elements.Skip(h1IndexStart).Take(skip)]);
             }
 
             groupName = TrimInnerText(elements[h2IndexStart]);
