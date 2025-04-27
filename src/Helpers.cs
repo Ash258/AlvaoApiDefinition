@@ -2,35 +2,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 
-namespace AlvaoScapper;
+namespace AlvaoScrapper;
 
 public static class Helpers
 {
     public static string ALVAO_VERSION = "25";
     public static string ALVAO_VERSION_DOT = ALVAO_VERSION.Replace("_", ".");
-    public static string BASE_URL = $"https://doc.alvao.com/en/{ALVAO_VERSION}";
+    public static string BASE_URL = $"https://doc.alvao.com/en/{ALVAO_VERSION}/alvao-api";
     public static string BASE_HTML_URL = $"{BASE_URL}/api";
     public static string LOCAL_HTML_FOLDER = "html";
     public static bool IGNORE_CACHE = false;
-
-    public static string GenerateSeeDoc(string link)
-    {
-        return $"/// <see href=\"{link}\"/>";
-    }
-
-    public static string GetSummary(HtmlDocument _document)
-    {
-        var _s = _document.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]/div[@class=\"summary\"]")?.InnerText.Trim();
-        if (_s == null) return "";
-
-        _s = ReplaceEndLinesWithSpace(_s);
-        return $"/// <summary>{_s}</summary>";
-    }
-
-    public static bool IsInvalidAlvaoUrl(string link)
-    {
-        return !link.StartsWith("https://doc.alvao") || !link.EndsWith(".htm");
-    }
 
     public static HtmlDocument LoadDocument(string url, string localPath)
     {
@@ -46,6 +27,35 @@ public static class Helpers
         }
 
         return doc;
+    }
+
+    public static string GetSummary(HtmlDocument _document)
+    {
+        var _s = _document.DocumentNode.SelectSingleNode("//article/div[@class='markdown summary']")?.InnerText.Trim();
+        if (_s == null) return "";
+
+        _s = ReplaceEndLinesWithSpace(_s);
+        return $"/// <summary>{_s}</summary>";
+    }
+
+
+
+
+
+
+
+
+
+
+
+    public static string GenerateSeeDoc(string link)
+    {
+        return $"/// <see href=\"{link}\"/>";
+    }
+
+    public static bool IsInvalidAlvaoUrl(string link)
+    {
+        return !link.StartsWith("https://doc.alvao") || !link.EndsWith(".htm");
     }
 
     public static void AssertDirectory(string folder)
@@ -87,15 +97,6 @@ public static class Helpers
     internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
     {
         return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
-    }
-
-    public static void ProcessVersion(HtmlDocument doc)
-    {
-        var _ver = doc.DocumentNode.SelectSingleNode("//*[@id=\"TopicContent\"]");
-        if (_ver == null) return;
-
-        var _v = Regex.Replace(_ver.GetDirectInnerText().Trim(), @".*Version:\s+", "");
-        State.Versions.Add(SanitizeXmlToString(_v));
     }
 
     private static string ExtractLanguageSpecificValue(HtmlAttribute attr)
@@ -145,12 +146,17 @@ public static class Helpers
 
     public static string? ExtractObjectDefinition(HtmlDocument node)
     {
-        var nodeDef = node.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']/pre");
+        var nodeDef = node.DocumentNode.SelectSingleNode("//div[contains(@class, 'codewrapper')][following::dl[contains(@class, 'typelist') and contains(@class, 'inheritance')]]");
+        // If there are none inherited properties, just try with first codewrapper
         if (nodeDef == null)
         {
-            nodeDef = node.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']");
+            nodeDef = node.DocumentNode.SelectSingleNode("//div[contains(@class, 'codewrapper')][1]");
             if (nodeDef == null) return null;
         }
+
+        return nodeDef.InnerText.Trim();
+        // ! TODO: Drop 11 version
+        // var nodeDef = node.DocumentNode.SelectSingleNode("//div[@id='IDAB_code_Div1']/pre");
 
         string definition;
 

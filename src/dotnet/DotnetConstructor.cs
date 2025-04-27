@@ -8,7 +8,7 @@ public record DotnetConstructor()
     public string Summary { get; set; }
     public string Definition { get; set; }
     public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
-    // public List<string> Examples { get; set; }
+    public List<string> Examples { get; set; }
 
     public string Produce(int indent = 4)
     {
@@ -26,6 +26,20 @@ public record DotnetConstructor()
                 sb.Append(Helpers2.PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
                 sb.AppendLine();
             });
+        }
+
+        if (Examples.Count > 0)
+        {
+            for (int i = 0; i < Examples.Count; ++i)
+            {
+                sb.Append(Helpers2.PrefixEachLineSpaces("/// <example>"));
+                // sb.Append(Helpers2.PrefixEachLineSpaces($"/// Example {i}"));
+                sb.Append(Helpers2.PrefixEachLineSpaces("/// <code>"));
+                sb.Append(Helpers2.PrefixEachLineSpaces(Examples[i]));
+                sb.Append(Helpers2.PrefixEachLineSpaces("/// </code>"));
+                // sb.Append(Helpers2.PrefixEachLineSpaces($"/// results in <c>p</c>'s having the value (2,8)."));
+                sb.Append(Helpers2.PrefixEachLineSpaces("/// </example>"));
+            }
         }
 
         sb.Append(Helpers2.PrefixEachLineSpaces(Definition + " {}", indent));

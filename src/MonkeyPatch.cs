@@ -1,4 +1,4 @@
-namespace AlvaoScapper;
+namespace AlvaoScrapper;
 
 public static class MonkeyPatch
 {

@@ -54,19 +54,10 @@ public class AlvaoNamespace2
 
         Logger.LogInformation("Found {} headers {{{}}}", h3Headers.Count, Name);
 
-        /*
-        Elements are structures as follows:
-        h3 - Group
-        dt - Item
-        dt - Item
-
-        h3 - Group
-        dt - Item
-        */
         // Take first group from the h3 elements, as we take only following siblings of first h3
         var currentMemberType = SanitizeMemberType(h3Headers[0].InnerText.Trim());
         var relevantElements = HtmlDocument.DocumentNode.SelectNodes("//h3/following-sibling::*");
-        Logger.LogInformation("Processing namespace group {} {{{}}}", currentMemberType, Name);
+        Logger.LogInformation("Processing namespace group [{}] {{{}}}", currentMemberType, Name);
 
         List<MemberProperties> membersToProcess = [];
         foreach (var el in relevantElements)
@@ -75,7 +66,7 @@ public class AlvaoNamespace2
             if (el.Name.Equals("h3"))
             {
                 var n = SanitizeMemberType(el.InnerText.Trim());
-                Logger.LogInformation("Namespace group changed from {} to {} {{{}}}", currentMemberType, n, Name);
+                Logger.LogInformation("Namespace group changed from {} to [{}] {{{}}}", currentMemberType, n, Name);
                 currentMemberType = n;
                 continue;
             }
@@ -94,6 +85,13 @@ public class AlvaoNamespace2
 
         foreach (var member in membersToProcess)
         {
+            var validClasss = new string[] {
+                // "AadSetting",
+                "AttachmentModel",
+                // "HtmlTextModel",
+                // "CustomTables",
+            };
+            if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
             AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this);
             try
             {
@@ -101,7 +99,7 @@ public class AlvaoNamespace2
             }
             catch (Exception e)
             {
-                Logger.LogError("Cannot process class: {} {{{}}}", e.Message, Name);
+                Logger.LogError("Cannot process class: [{}] {{{}}}", e.Message, Name);
                 continue;
             }
         }
