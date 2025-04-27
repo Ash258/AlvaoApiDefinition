@@ -259,11 +259,11 @@ public class AlvaoClass2
             switch (gr.Key)
             {
                 case "Properties":
-                    ProcessProperties(gr.Value);
+                    ProcessPropertiesOrFields(gr.Value, "Property");
                     break;
-                // case "Fields":
-                //     Fields = _ProcessFields(gr.Value);
-                //     break;
+                case "Fields":
+                    ProcessPropertiesOrFields(gr.Value, "Field");
+                    break;
                 case "Constructors":
                     ProcessConstructors(gr.Value);
                     break;
@@ -341,10 +341,14 @@ public class AlvaoClass2
         // }
     }
 
-    // TODO: merge propeties and fields
-    private void ProcessProperties(List<HtmlNode> elements)
+    private void ProcessPropertiesOrFields(List<HtmlNode> elements, string type)
     {
-        Logger.LogDebug("Processing class properties [{}] {{{}}}", Name, NamespaceName);
+        var isField = String.Equals("Field", type);
+        var typePlural = isField
+            ? "Fields"
+            : "Properties";
+
+        Logger.LogDebug("Processing class {} [{}] {{{}}}", typePlural.ToLower(), Name, NamespaceName);
         (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
 
         for (var i = 0; i < h3Indexes.Count; ++i)
@@ -353,19 +357,33 @@ public class AlvaoClass2
                 ? lastIndex
                 : h3Indexes[i + 1];
 
-            Logger.LogDebug("Property spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
+            Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
             var propertyElements = elements[h3Indexes[i]..end];
 
-            (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, "Property");
+            (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, type);
 
-            Properties.Add(
-                new DotnetProperty()
-                {
-                    Name = _name,
-                    Summary = _sum,
-                    Definition = _def,
-                }
-            );
+            if (isField)
+            {
+                Fields.Add(
+                    new DotnetField()
+                    {
+                        Name = _name,
+                        Summary = _sum,
+                        Definition = _def,
+                    }
+                );
+            }
+            else
+            {
+                Properties.Add(
+                    new DotnetProperty()
+                    {
+                        Name = _name,
+                        Summary = _sum,
+                        Definition = _def,
+                    }
+                );
+            }
         }
     }
 
