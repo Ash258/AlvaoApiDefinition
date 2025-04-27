@@ -222,9 +222,9 @@ public class AlvaoClass2
 
             switch (gr.Key)
             {
-                // case "Properties":
-                //     Properties = _ProcessProperties(gr.Value);
-                //     break;
+                case "Properties":
+                    ProcessProperties(gr.Value);
+                    break;
                 // case "Fields":
                 //     Fields = _ProcessFields(gr.Value);
                 //     break;
@@ -305,52 +305,52 @@ public class AlvaoClass2
     }
 
     // TODO: merge propeties and fields
-    // ! TODO: Void
-    private List<DotnetProperty> _ProcessProperties(List<HtmlNode> elements)
+    private void ProcessProperties(List<HtmlNode> elements)
     {
-        List<DotnetProperty> properties = [];
         Logger.LogDebug("Processing class properties [{}] {{{}}}", Name, NamespaceName);
-        var h3Indexes = elements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == "h3")
-                .Select(x => x.i).ToList();
-        var lastIndex = elements.Count - 1;
+        (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
 
         for (var i = 0; i < h3Indexes.Count; ++i)
         {
             var end = i == h3Indexes.Count - 1
                 ? lastIndex
                 : h3Indexes[i + 1];
-            var currentElements = elements[h3Indexes[i]..end];
-            var divs = currentElements.Where(x => x.Name.Equals("div")).ToList();
-            if (divs.Count == 3)
-            {
-                var _name = currentElements[0].InnerText.Trim();
-                var sum = string.Empty;
-                try
-                {
-                    sum = divs[0].SelectSingleNode(".//p").InnerText.Trim();
-                }
-                catch
-                {
-                    Logger.LogDebug("Property {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
-                }
-                properties.Add(
-                    new DotnetProperty()
-                    {
-                        Name = _name,
-                        Summary = sum,
-                        Definition = Helpers2.SanitizeXmlToString(divs[^1].SelectSingleNode(".//pre/code").InnerText.Trim()),
-                    }
-                );
-            }
-            else
-            {
-                Logger.LogError("Property does not have all divs");
-            }
-        }
 
-        return properties;
+            Logger.LogDebug("Property spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
+            var propertyElements = elements[h3Indexes[i]..end];
+
+            // First element is h3, that include name
+            // Take it hardcoded for now
+            var _name = propertyElements[0].InnerText.Trim();
+            var _sum = string.Empty;
+            var _def = string.Empty;
+            try
+            {
+                _sum = propertyElements[1].SelectSingleNode(".//p").InnerText.Trim();
+            }
+            catch
+            {
+                Logger.LogWarning("Property {} does not specify summary [{}] {{{}}}", _name, Name, NamespaceName);
+            }
+            try
+            {
+                _def = SanitizeXmlToString(propertyElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
+
+            }
+            catch
+            {
+                Logger.LogWarning("Cannot process definition of property {} [{}] {{{}}}", _name, Name, NamespaceName);
+            }
+
+            Properties.Add(
+                new DotnetProperty()
+                {
+                    Name = _name,
+                    Summary = _sum,
+                    Definition = _def,
+                }
+            );
+        }
     }
 
     // ! TODO: Void
