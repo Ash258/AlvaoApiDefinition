@@ -189,7 +189,7 @@ public class AlvaoClass2
 
     private (string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType)
     {
-        var _name = TrimInnerText(elements[0]);
+        var _name = ReplaceEndLinesWithSpace(TrimInnerText(elements[0]));
         var _sum = string.Empty;
         var _def = string.Empty;
 
@@ -200,7 +200,7 @@ public class AlvaoClass2
             {
                 Logger.LogWarning("{} member {} does not have valid markdown summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
             }
-            _sum = TrimInnerText(elements[1].SelectSingleNode(".//p"));
+            _sum = ReplaceEndLinesWithSpace(TrimInnerText(elements[1].SelectSingleNode(".//p")));
         }
         catch
         {
@@ -251,7 +251,6 @@ public class AlvaoClass2
 
         List<int> h2Indexes = ExtractH2Indexes(elements);
 
-        // First pass is h1 (class specific items), until first h2
         Dictionary<string, List<HtmlNode>> classGroups = SplitElementsIntoClassGroups(elements, h1IndexStart, h1IndexEnd, h2Indexes);
 
         AssertClassBoundaries(elements, boundaries);
