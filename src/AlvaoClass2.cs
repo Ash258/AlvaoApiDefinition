@@ -171,6 +171,17 @@ public class AlvaoClass2
 
         return classGroups;
     }
+
+    private static (List<int>, int) FindIndexesOfElement(List<HtmlNode> elements, string element)
+    {
+        var indexes = elements
+                .Select((f, i) => new { f, i })
+                .Where(x => x.f.Name == element)
+                .Select(x => x.i).ToList();
+        var lastIndex = elements.Count;
+
+        return (indexes, lastIndex);
+    }
     #endregion Helper functions
 
 
@@ -396,11 +407,7 @@ public class AlvaoClass2
     private void ProcessConstructors(List<HtmlNode> elements)
     {
         Logger.LogInformation("Processing class constructors [{}] {{{}}}", Name, NamespaceName);
-        var h3Indexes = elements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == "h3")
-                .Select(x => x.i).ToList();
-        var lastIndex = elements.Count;
+        (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
 
         Logger.LogInformation("Found {} constructors [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
 
@@ -429,7 +436,7 @@ public class AlvaoClass2
             }
             try
             {
-                _def = Helpers2.SanitizeXmlToString(currentElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
+                _def = SanitizeXmlToString(currentElements[3].SelectSingleNode(".//pre/code").InnerText.Trim());
 
             }
             catch
