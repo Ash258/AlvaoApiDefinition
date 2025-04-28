@@ -56,7 +56,7 @@ public static class Helpers2
             .Trim();
     }
 
-    internal static object PrefixEachLineSpaces(string el, int indent = 4)
+    internal static string PrefixEachLineSpaces(string el, int indent = 4)
     {
         var ind = new string(' ', indent);
         return el.Contains('\n')

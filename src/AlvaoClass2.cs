@@ -23,13 +23,16 @@ public class AlvaoClass2
     public List<string> Usings { get; set; }
     public string Definition { get; set; } = "";
     public List<DotnetConstructor> Constructors { get; set; }
-    public List<string> Enums { get; set; }
+    public DotnetEnum? SpecialEnumClass { get; set; }
+    public List<DotnetEnum> Enums { get; set; }
     public List<DotnetProperty> Properties { get; set; }
     public List<DotnetField> Fields { get; set; }
     public List<string> Events { get; set; }
     public List<DotnetMethod> Methods { get; set; }
 
-    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns)
+    public bool IsEnum { get; set; }
+
+    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns, DotnetEnum[]? enums)
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
         {
@@ -44,6 +47,7 @@ public class AlvaoClass2
 
         Name = name;
         Type = memberType;
+        IsEnum = String.Equals(Type, "Enum");
         FullUrl = $"{Helpers.BASE_HTML_URL}/{href.Split("/").Last()}";
         Namespace = ns;
         NamespaceName = ns.Name;
@@ -52,6 +56,7 @@ public class AlvaoClass2
         FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
 
         Summary = Helpers2.GetSummary(HtmlDocument);
+        SpecialEnumClass = null;
         Boundaries = [];
         Usings = [];
         Fields = [];
@@ -60,6 +65,11 @@ public class AlvaoClass2
         Methods = [];
         Events = [];
         Constructors = [];
+
+        if (enums != null && enums.Length > 0)
+        {
+            Enums.AddRange(enums);
+        }
     }
 
     #region Helper functions
@@ -112,9 +122,9 @@ public class AlvaoClass2
         throw new Exception($"Page specify different class: {className} {Name} {NamespaceName}");
     }
 
-    private void AssertClassBoundaries(HtmlNodeCollection elements, List<ScopeBoundary> boundaries)
+    private void AssertClassBoundaries(HtmlNodeCollection elements)
     {
-        foreach (var b in boundaries.OrderBy(x => x.start))
+        foreach (var b in Boundaries.OrderBy(x => x.start))
         {
             Logger.LogDebug("{}", b.DebugFormat(elements[b.end].Name));
 
@@ -123,7 +133,7 @@ public class AlvaoClass2
                 Logger.LogError("Wrong last element of scope {} [{}] {{{}}}", b.name.Split(" ")[0], Name, NamespaceName);
             }
         }
-        if (boundaries[0].end == boundaries[^1].end) return;
+        if (Boundaries[0].end == Boundaries[^1].end) return;
 
         Logger.LogError("Page boundaries are incorrect [{}] {{{}}}", Name, NamespaceName);
         throw new Exception($"Page boundaries are incorrect: {Name} {NamespaceName}");
@@ -180,9 +190,9 @@ public class AlvaoClass2
     private static (List<int>, int) FindIndexesOfElement(List<HtmlNode> elements, string element)
     {
         var indexes = elements
-                .Select((f, i) => new { f, i })
-                .Where(x => x.f.Name == element)
-                .Select(x => x.i).ToList();
+            .Select((f, i) => new { f, i })
+            .Where(x => x.f.Name == element)
+            .Select(x => x.i).ToList();
         var lastIndex = elements.Count;
 
         return (indexes, lastIndex);
@@ -248,13 +258,13 @@ public class AlvaoClass2
         AssertCorrectClassPage(className);
 
         elements[h1IndexEnd].SetAttributeValue("isLastElement", "true");
-        List<ScopeBoundary> boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
+        Boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
 
         List<int> h2Indexes = ExtractH2Indexes(elements);
 
         Dictionary<string, List<HtmlNode>> classGroups = SplitElementsIntoClassGroups(elements, h1IndexStart, h1IndexEnd, h2Indexes);
 
-        AssertClassBoundaries(elements, boundaries);
+        AssertClassBoundaries(elements);
 
         foreach (var gr in classGroups)
         {
@@ -266,6 +276,11 @@ public class AlvaoClass2
                     ProcessPropertiesOrFields(gr.Value, "Property");
                     break;
                 case "Fields":
+                    if (IsEnum)
+                    {
+                        ProcessEnumFields(gr.Value);
+                        break;
+                    }
                     ProcessPropertiesOrFields(gr.Value, "Field");
                     break;
                 case "Constructors":
@@ -275,7 +290,7 @@ public class AlvaoClass2
                     ProcessMethods(gr.Value);
                     break;
                 case "Class":
-                    // ! TODO: Do not rely on hardcoded indexes
+                    // ? TODO: Do not rely on hardcoded indexes
                     Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
                     Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
                     break;
@@ -284,6 +299,34 @@ public class AlvaoClass2
                     break;
             }
         }
+    }
+
+    private void ProcessEnumFields(List<HtmlNode> elements)
+    {
+        Logger.LogDebug("Processing enum fields[{}] {{{}}}", Name, NamespaceName);
+        (List<int> h2Indexes, int lastIndex) = FindIndexesOfElement(elements, "h2");
+
+        // Print warning if there are other fields, to adjust the implementation if such enum exists
+        if (h2Indexes.Count > 1)
+        {
+            Logger.LogWarning("Enum has other members [{}] {{{}}}", Name, NamespaceName);
+            return;
+        }
+
+        var dl = elements.Skip(1).Take(1).ToList();
+
+        // Currently we can assume, that the there will be next element with dt
+        Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);// This has to be dl
+        var enumFields = dl[0].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+
+        Logger.LogDebug("Enum has {} fields [{}] {{{}}}", enumFields.Count, Name, NamespaceName);// This has to be dl
+        SpecialEnumClass = new DotnetEnum()
+        {
+            Name = Name,
+            Summary = Summary,
+            Definition = Definition,
+            Fields = enumFields
+        };
     }
 
     private void ProcessPropertiesOrFields(List<HtmlNode> elements, string type)
@@ -497,6 +540,7 @@ public class AlvaoClass2
     internal void Process()
     {
         RestructuralizeClassDocument();
+        if (IsEnum) return;
         ProduceFinalCsFile();
     }
 

@@ -14,6 +14,8 @@ public class AlvaoNamespace2
     public HtmlDocument HtmlDocument { get; set; }
     public AlvaoClass2[]? Classes { get; set; }
 
+    public Dictionary<string, DotnetEnum[]> Enums { get; set; }
+
     public AlvaoNamespace2(string namespaceName)
     {
         using var loggerFactory = LoggerFactory.Create(builder =>
@@ -31,6 +33,8 @@ public class AlvaoNamespace2
         FullUrl = $"{Helpers.BASE_HTML_URL}/{namespaceName}.html";
         LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
         HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
+
+        Enums = [];
 
         Helpers.AssertDirectory(Name.Replace(".", "/"));
     }
@@ -81,16 +85,57 @@ public class AlvaoNamespace2
             membersToProcess.Add(member);
         }
 
-        foreach (var member in membersToProcess)
+        // Enums needs to be preprocessed
+        foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum")))
+        {
+            System.Console.WriteLine("Processing enum: " + member.Name);
+            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, null);
+
+            try
+            {
+                clazz.Process();
+            }
+            catch (Exception e)
+            {
+                Logger.LogError("Cannot process enum ({}) [{}] {{{}}}", e.Message, member.Name, Name);
+                continue;
+            }
+
+            if (!member.Name.Contains('.'))
+            {
+                Logger.LogCritical("Enum does not containe parent class name [{}] {{{}}}", member.Name, Name);
+                continue;
+            }
+
+            if (clazz.SpecialEnumClass == null)
+            {
+                Logger.LogCritical("Enum was not parsed correctly [{}] {{{}}}", member.Name, Name);
+                continue;
+            }
+
+            var parent = member.Name.Split(".")[0];
+            if (Enums.TryGetValue(parent, out DotnetEnum[]? value))
+            {
+                value.AddLast(clazz.SpecialEnumClass);
+            }
+            else
+            {
+                Enums.Add(parent, [clazz.SpecialEnumClass]);
+            }
+        }
+
+        foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum")))
         {
             var validClasss = new string[] {
                 // "AadSetting",
-                "AttachmentModel",
+                "LogOperation",
                 // "HtmlTextModel",
                 // "CustomTables",
             };
             if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
-            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this);
+
+            var enums = Enums.GetValueOrDefault(member.Name, []);
+            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, enums);
             try
             {
                 clazz.Process();
