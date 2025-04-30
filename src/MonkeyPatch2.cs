@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging;
+
 namespace AlvaoScrapper;
 
 public static class MonkeyPatch2
@@ -68,23 +70,48 @@ public static class MonkeyPatch2
         }
     }
 
+    public static void PatchUnDocumentedClasses(ILogger Logger)
+    {
+        var caution = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable";
+        var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
+        if (null == swLibraryNs)
+        {
+            Logger.LogWarning("Cannot generate undocumented classes");
+            return;
+        }
+
+        foreach (var name in new string[] { "ArchiveStream", "ISwLibRepository" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                swLibraryNs,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+    }
+
     // TODO: It will be faster when this will be done while the definitions are processed
     public static void PatchDefinitions(AlvaoClass2 clazz)
     {
-        List<string> definitions = [];
-        definitions.AddRange(clazz.Properties.Select(x => x.Definition));
-        definitions.AddRange(clazz.Methods.Select(x => x.Definition));
-        definitions.AddRange(clazz.Constructors.Select(x => x.Definition));
-        definitions.AddRange(clazz.Fields.Select(x => x.Definition));
-        // definitions.AddRange(clazz.Events.Select(x => x.Definition));
+        List<string> definitions = clazz.GetAllDefinitionsAsList();
 
         List<(string, string)> map =
         [
-            (" CultureInfo ", "System.Globalization"),
-            (" HttpStatusCode ", "System.Net"),
-            (" EmbeddingCreateResponse ", "System.Net.Http"),
+            ("CultureInfo ", "System.Globalization"),
+            ("HttpStatusCode ", "System.Net"),
+            ("EmbeddingCreateResponse ", "System.Net.Http"),
             ("[JsonProperty", "Newtonsoft.Json"),
-            (" AssistantTicketTabModel ", "Alvao.API.AI.Model"),
+            ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
+            ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
         ];
 
         foreach (var d in definitions)
@@ -95,4 +122,9 @@ public static class MonkeyPatch2
             }
         }
     }
+}
+
+public class MonkeyPatchLogger
+{
+
 }

@@ -63,6 +63,46 @@ public class AlvaoClass2
         }
     }
 
+    public AlvaoClass2(
+        string name,
+        string memberType,
+        AlvaoNamespace2 ns,
+        string summary,
+        string definition,
+        List<string> usings,
+        List<DotnetConstructor> constructors,
+        List<DotnetMethod> methods,
+        List<DotnetProperty> properties,
+        List<DotnetField> fields
+    // List<DotnetEnum> enums,
+    // List<string> events
+    )
+    {
+        Logger = CreateLogger<AlvaoClass2>();
+
+        Namespace = ns;
+        Name = name;
+        Type = memberType;
+        IsEnum = String.Equals(Type, "Enum");
+        Summary = summary;
+        Definition = definition;
+        FullUrl = string.Empty;
+        NamespaceName = ns.Name;
+        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+
+        Enums = [];
+        Events = [];
+
+        Usings = usings;
+        Constructors = constructors;
+        Fields = fields;
+        Properties = properties;
+        Methods = methods;
+        SpecialEnumClass = null;
+
+        Boundaries = [];
+    }
+
     #region Helper functions
     private int ExtractHeading1Index(HtmlNodeCollection elements)
     {
@@ -650,6 +690,19 @@ public class AlvaoClass2
         File.WriteAllText(FinalCsFile, sb.ToString());
         Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
         State.Classes.Add(Name, this);
+    }
+
+    internal List<string> GetAllDefinitionsAsList()
+    {
+        List<string> definitions = [];
+
+        definitions.AddRange(Properties.Select(x => x.Definition));
+        definitions.AddRange(Methods.Select(x => x.Definition));
+        definitions.AddRange(Constructors.Select(x => x.Definition));
+        definitions.AddRange(Fields.Select(x => x.Definition));
+        // definitions.AddRange(Events.Select(x => x.Definition));
+
+        return definitions;
     }
 
     #region DTOs

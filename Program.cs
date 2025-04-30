@@ -66,5 +66,7 @@ foreach (var ns in alvaoNamespace)
     }
 }
 
+MonkeyPatch2.PatchUnDocumentedClasses(Helpers2.CreateLogger<MonkeyPatchLogger>());
+
 Console.WriteLine("");
 Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");
