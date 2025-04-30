@@ -652,21 +652,21 @@ public class AlvaoClass2
         sb.AppendLine("");
 
         // Set class specific docs
-        if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{Summary}</summary>");
+        if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{ReplaceEndLinesWithSpace(Summary)}</summary>");
         if (!FullUrl.IsNullOrEmpty()) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
 
         if (standaloneEnum)
         {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
-            sb.AppendLine(Definition);
+            sb.AppendLine(Helpers2.SanitizeXmlToString(Definition));
             sb.AppendLine("{");
             {
-                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(Helpers2.PrefixEachLineSpaces(x + ", ")));
+                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(x) + ", ")));
             }
         }
         else
         {
-            sb.AppendLine(Definition);
+            sb.AppendLine(Helpers2.SanitizeXmlToString(Definition));
             sb.AppendLine("{");
             bool indentNext = false;
             {
@@ -706,6 +706,7 @@ public class AlvaoClass2
     {
         List<string> definitions = [];
 
+        definitions.Add(Definition);
         definitions.AddRange(Properties.Select(x => x.Definition));
         definitions.AddRange(Methods.Select(x => x.Definition));
         definitions.AddRange(Constructors.Select(x => x.Definition));
