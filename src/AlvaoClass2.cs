@@ -471,7 +471,7 @@ public class AlvaoClass2
             {
                 var h4end = methodPropIndex == h4Indexes.Count - 1
                     ? h4LastIndex
-                    : h4Indexes[methodPropIndex + 1] - 1;
+                    : h4Indexes[methodPropIndex + 1];
 
                 var h4CurrentElements = methodElements[h4Indexes[methodPropIndex]..h4end];
 
