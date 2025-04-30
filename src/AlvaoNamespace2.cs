@@ -77,6 +77,7 @@ public class AlvaoNamespace2
         }
 
         // Enums needs to be preprocessed
+        Logger.LogDebug("Going to process enums");
         foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum")))
         {
             Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
@@ -105,6 +106,7 @@ public class AlvaoNamespace2
 
             if (string.IsNullOrEmpty(parent))
             {
+                Logger.LogDebug("Producting standalone cs enum file [{}] {{{}}}", member.Name, Name);
                 clazz.ProduceFinalCsFile(true);
                 continue;
             }

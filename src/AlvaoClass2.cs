@@ -307,10 +307,10 @@ public class AlvaoClass2
         var dl = elements.Skip(1).Take(1).ToList();
 
         // Currently we can assume, that the there will be next element with dt
-        Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);// This has to be dl
+        Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);
         var enumFields = dl[0].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
 
-        Logger.LogDebug("Enum has {} fields [{}] {{{}}}", enumFields.Count, Name, NamespaceName);// This has to be dl
+        Logger.LogDebug("Enum has {} fields [{}] {{{}}}", enumFields.Count, Name, NamespaceName);
         SpecialEnumClass = new DotnetEnum()
         {
             Name = Name,
@@ -318,6 +318,7 @@ public class AlvaoClass2
             Definition = Definition,
             Fields = enumFields
         };
+        Logger.LogDebug("Finished processing enum fields [{}] {{{}}}", Name, NamespaceName);
     }
 
     private void ProcessPropertiesOrFields(List<HtmlNode> elements, string type)
@@ -543,7 +544,11 @@ public class AlvaoClass2
     internal void Process()
     {
         RestructuralizeClassDocument();
-        if (IsEnum) return;
+        if (IsEnum)
+        {
+            Logger.LogDebug("Skipping final cs file produce for Enum [{}] {{{}}}", Name, NamespaceName);
+            return;
+        }
         ProduceFinalCsFile();
     }
 
