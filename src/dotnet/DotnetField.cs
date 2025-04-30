@@ -16,7 +16,13 @@ public record DotnetField()
             sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
-        sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
+
+        string def = Helpers2.SanitizeXmlToString(Definition);
+        def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");
+
+        if (!Definition.EndsWith('}')) def += ";";
+
+        sb.Append(Helpers2.PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

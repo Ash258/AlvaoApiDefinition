@@ -36,7 +36,7 @@ public record DotnetMethod()
             });
         }
 
-        sb.Append(Helpers2.PrefixEachLineSpaces(Definition + " { throw new NotImplementedException(); }", indent));
+        sb.Append(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(Definition) + " { throw new NotImplementedException(); }", indent));
 
         return sb.ToString();
     }

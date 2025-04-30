@@ -20,10 +20,10 @@ public record DotnetEnum()
 
         Definition = Definition.Replace(Name.Split(".")[0] + ".", "");
 
-        sb.AppendLine(Helpers2.PrefixEachLineSpaces(Definition, indent));
+        sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(Definition), indent));
         sb.AppendLine(Helpers2.PrefixEachLineSpaces("{", indent));
         // ? TODO: Try to sort the properties
-        Fields.ForEach(f => sb.AppendLine(Helpers2.PrefixEachLineSpaces(f + ",", indent * 2)));
+        Fields.ForEach(f => sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(f) + ",", indent * 2)));
         sb.Append(Helpers2.PrefixEachLineSpaces("}", indent));
 
         return sb.ToString();

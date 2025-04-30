@@ -21,7 +21,10 @@ public record DotnetProperty()
             Console.WriteLine("========> definition without  }<===========");
             // sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
         }
-        sb.Append(Helpers2.PrefixEachLineSpaces(Definition, indent));
+
+        string def = Helpers2.SanitizeXmlToString(Definition);
+        def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");
+        sb.Append(Helpers2.PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

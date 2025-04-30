@@ -42,7 +42,7 @@ public record DotnetConstructor()
             }
         }
 
-        sb.Append(Helpers2.PrefixEachLineSpaces(Definition + " {}", indent));
+        sb.Append(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(Definition) + " {}", indent));
 
         return sb.ToString();
     }
