@@ -246,7 +246,7 @@ public class AlvaoClass2
         }
         catch
         {
-            Logger.LogWarning("{} member {} does not specify summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+            Logger.LogInformation("{} member {} does not specify summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
         }
         // Definition extraction
         try
