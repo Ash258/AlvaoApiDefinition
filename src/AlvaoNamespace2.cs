@@ -111,12 +111,15 @@ public class AlvaoNamespace2
                 continue;
             }
 
-            if (Enums.TryGetValue(parent, out DotnetEnum[]? value))
+            var value = Enums.GetValueOrDefault(parent, []);
+            if (value.Length != 0)
             {
-                value.AddLast(clazz.SpecialEnumClass);
+                Logger.LogDebug("Adding enum '{}' to existing parent class {} [{}] {{{}}}", clazz.SpecialEnumClass.Name, parent, member.Name, Name);
+                Enums[parent] = [.. value.Concat([clazz.SpecialEnumClass])];
             }
             else
             {
+                Logger.LogDebug("Creating new parent class '{}' for enum '{}' [{}] {{{}}}", parent, clazz.SpecialEnumClass.Name, member.Name, Name);
                 Enums.Add(parent, [clazz.SpecialEnumClass]);
             }
         }
