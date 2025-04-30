@@ -112,6 +112,13 @@ public static class MonkeyPatch2
             ("[JsonProperty", "Newtonsoft.Json"),
             ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
             ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
+            ("[ExplicitKey]", "Dapper.Contrib"),
+            ("[Key]", "Dapper.Contrib.Extensions"),
+            ("[Table(", "Dapper.Contrib.Extensions"),
+            ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
+            (" IProfileConfiguration", "AutoMapper"),
+            (": vColumnLoc", "Alvao.API.Common.Model.Database"),
+            ("tRole", "Alvao.API.Common.Model.Database"),
         ];
 
         foreach (var d in definitions)
