@@ -16,7 +16,12 @@ public record DotnetProperty()
             sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
-        sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
+        if (!Definition.EndsWith('}'))
+        {
+            Console.WriteLine("========> definition without  }<===========");
+            // sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
+        }
+        sb.Append(Helpers2.PrefixEachLineSpaces(Definition, indent));
 
         return sb.ToString();
     }
