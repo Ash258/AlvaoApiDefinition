@@ -29,7 +29,7 @@ public record DotnetMethod()
 
         if (Parameters.Count > 0)
         {
-            Parameters.ForEach(param =>
+            Parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param =>
             {
                 sb.Append(Helpers2.PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
                 sb.AppendLine();

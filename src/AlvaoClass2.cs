@@ -484,8 +484,19 @@ public class AlvaoClass2
                         Logger.LogDebug("Processing method parameters [{}] {{{}}}", Name, NamespaceName);
                         // This has to be dl
                         var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
-                        var parameterSums = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
-                        if (parameterDefs.Count != parameterSums.Count)
+                        List<string> parameterSums = [];
+                        bool nameOnly = false;
+                        // Parameters do not need to specify description: https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_System_String_System_String
+                        try
+                        {
+                            parameterSums = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
+                        }
+                        catch
+                        {
+                            nameOnly = true;
+                        }
+                        // var parameterSums = new List<string> { "cosi" };
+                        if (nameOnly == false && parameterDefs.Count != parameterSums.Count)
                         {
                             Logger.LogError("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             break;
@@ -494,7 +505,8 @@ public class AlvaoClass2
                         {
                             var _parameterName = parameterDefs[paramIndex].Trim();
                             Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
-                            parameters.Add((_parameterName, Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim())));
+                            string name = nameOnly ? string.Empty : Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
+                            parameters.Add((_parameterName, name));
                         }
                         break;
                     //     case "Examples":

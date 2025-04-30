@@ -95,7 +95,7 @@ public class AlvaoNamespace2
 
             if (!member.Name.Contains('.'))
             {
-                Logger.LogCritical("Enum does not containe parent class name [{}] {{{}}}", member.Name, Name);
+                Logger.LogCritical("Enum does not contains parent class name [{}] {{{}}}", member.Name, Name);
                 continue;
             }
 
