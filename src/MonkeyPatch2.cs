@@ -84,6 +84,7 @@ public static class MonkeyPatch2
             (" HttpStatusCode ", "System.Net"),
             (" EmbeddingCreateResponse ", "System.Net.Http"),
             ("[JsonProperty", "Newtonsoft.Json"),
+            (" AssistantTicketTabModel ", "Alvao.API.AI.Model"),
         ];
 
         foreach (var d in definitions)

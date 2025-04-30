@@ -577,12 +577,12 @@ public class AlvaoClass2
         Definition = _def;
     }
 
-    public void ProduceFinalCsFile()
+    public void ProduceFinalCsFile(bool standaloneEnum = false)
     {
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
-        MonkeyPatch2.PathUsings(this);
+        MonkeyPatch2.PatchDefinitions(this);
 
         // First process usings
         if (Usings.Count != 0)
@@ -599,31 +599,44 @@ public class AlvaoClass2
         // Set class specific docs
         if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{Summary}</summary>");
         if (!FullUrl.IsNullOrEmpty()) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
-        sb.AppendLine(Definition);
-        sb.AppendLine("{");
-        bool indentNext = false;
+
+        if (standaloneEnum)
         {
-            Enums.ForEach(el => sb.AppendLine(el.Produce()));
-            indentNext = Enums.Count > 0;
+            Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
+            sb.AppendLine(Definition);
+            sb.AppendLine("{");
+            {
+                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(Helpers2.PrefixEachLineSpaces(x + ", ")));
+            }
+        }
+        else
+        {
+            sb.AppendLine(Definition);
+            sb.AppendLine("{");
+            bool indentNext = false;
+            {
+                Enums.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Enums.Count > 0;
 
-            if (indentNext && Fields.Count > 0) sb.AppendLine("");
-            Fields.ForEach(el => sb.AppendLine(el.Produce()));
-            indentNext = Fields.Count > 0;
+                if (indentNext && Fields.Count > 0) sb.AppendLine("");
+                Fields.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Fields.Count > 0;
 
-            if (indentNext && Properties.Count > 0) sb.AppendLine("");
-            Properties.ForEach(el => sb.AppendLine(el.Produce()));
-            indentNext = Properties.Count > 0;
+                if (indentNext && Properties.Count > 0) sb.AppendLine("");
+                Properties.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Properties.Count > 0;
 
-            // if (indentNext && Events.Count > 0) sb.AppendLine("");
-            // Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-            // indentNext = Events.Count > 0;
+                // if (indentNext && Events.Count > 0) sb.AppendLine("");
+                // Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+                // indentNext = Events.Count > 0;
 
-            if (indentNext && Constructors.Count > 0) sb.AppendLine("");
-            Constructors.ForEach(el => sb.AppendLine(el.Produce()));
-            indentNext = Constructors.Count > 0;
+                if (indentNext && Constructors.Count > 0) sb.AppendLine("");
+                Constructors.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Constructors.Count > 0;
 
-            if (indentNext && Methods.Count > 0) sb.AppendLine("");
-            Methods.ForEach(el => sb.AppendLine(el.Produce()));
+                if (indentNext && Methods.Count > 0) sb.AppendLine("");
+                Methods.ForEach(el => sb.AppendLine(el.Produce()));
+            }
         }
 
         sb.AppendLine("}"); // End class

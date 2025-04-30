@@ -93,11 +93,9 @@ public class AlvaoNamespace2
                 continue;
             }
 
-            if (!member.Name.Contains('.'))
-            {
-                Logger.LogCritical("Enum does not contains parent class name [{}] {{{}}}", member.Name, Name);
-                continue;
-            }
+            var parent = member.Name.Contains('.')
+                ? member.Name.Split(".")[0]
+                : string.Empty;
 
             if (clazz.SpecialEnumClass == null)
             {
@@ -105,7 +103,12 @@ public class AlvaoNamespace2
                 continue;
             }
 
-            var parent = member.Name.Split(".")[0];
+            if (string.IsNullOrEmpty(parent))
+            {
+                clazz.ProduceFinalCsFile(true);
+                continue;
+            }
+
             if (Enums.TryGetValue(parent, out DotnetEnum[]? value))
             {
                 value.AddLast(clazz.SpecialEnumClass);
