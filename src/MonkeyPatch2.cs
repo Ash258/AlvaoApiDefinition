@@ -67,4 +67,31 @@ public static class MonkeyPatch2
             );
         }
     }
+
+    // TODO: It will be faster when this will be done while the definitions are processed
+    public static void PatchDefinitions(AlvaoClass2 clazz)
+    {
+        List<string> definitions = [];
+        definitions.AddRange(clazz.Properties.Select(x => x.Definition));
+        definitions.AddRange(clazz.Methods.Select(x => x.Definition));
+        definitions.AddRange(clazz.Constructors.Select(x => x.Definition));
+        definitions.AddRange(clazz.Fields.Select(x => x.Definition));
+        // definitions.AddRange(clazz.Events.Select(x => x.Definition));
+
+        List<(string, string)> map =
+        [
+            (" CultureInfo ", "System.Globalization"),
+            (" HttpStatusCode ", "System.Net"),
+            (" EmbeddingCreateResponse ", "System.Net.Http"),
+            ("[JsonProperty", "Newtonsoft.Json"),
+        ];
+
+        foreach (var d in definitions)
+        {
+            foreach (var m in map)
+            {
+                if (d.Contains(m.Item1)) clazz.Usings.Add(m.Item2);
+            }
+        }
+    }
 }

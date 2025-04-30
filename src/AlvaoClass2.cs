@@ -582,6 +582,8 @@ public class AlvaoClass2
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
+        MonkeyPatch2.PathUsings(this);
+
         // First process usings
         if (Usings.Count != 0)
         {
