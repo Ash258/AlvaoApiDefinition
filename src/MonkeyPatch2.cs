@@ -34,7 +34,7 @@ public static class MonkeyPatch2
                 break;
             case "HtmlTextModel":
                 expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedConstructorsCount = 2;
+                expectedConstructorsCount = 1;
                 expectedPropsCount = 4;
                 expectedMethodCount = 3;
                 break;
