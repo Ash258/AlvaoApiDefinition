@@ -117,8 +117,12 @@ public static class MonkeyPatch2
             ("[Table(", "Dapper.Contrib.Extensions"),
             ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
             (" IProfileConfiguration", "AutoMapper"),
-            (": vColumnLoc", "Alvao.API.Common.Model.Database"),
+            (" vColumnLoc", "Alvao.API.Common.Model.Database"),
+            ("tPerson ", "Alvao.API.Common.Model.Database"),
             ("tRole", "Alvao.API.Common.Model.Database"),
+            ("[JsonIgnore", "Newtonsoft.Json"),
+            (" ILogger", "Microsoft.Extensions.Logging"),
+            ("ActMark.ActMarkId", "Alvao.API.Common.Model.Database"),
         ];
 
         foreach (var d in definitions)
