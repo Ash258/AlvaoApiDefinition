@@ -79,7 +79,8 @@ public class AlvaoNamespace2
         // Enums needs to be preprocessed
         foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum")))
         {
-            System.Console.WriteLine("Processing enum: " + member.Name);
+            Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
+
             AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, null);
 
             try
@@ -117,13 +118,13 @@ public class AlvaoNamespace2
 
         foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum")))
         {
-            var validClasss = new string[] {
-                // "AadSetting",
-                "LogOperation",
-                // "HtmlTextModel",
-                // "CustomTables",
-            };
-            if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
+            // var validClasss = new string[] {
+            //     // "AadSetting",
+            //     // "LogOperation",
+            //     "HtmlTextModel",
+            //     // "CustomTables",
+            // };
+            // if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
 
             var enums = Enums.GetValueOrDefault(member.Name, []);
             AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, enums);
