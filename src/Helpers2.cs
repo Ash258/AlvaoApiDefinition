@@ -1,10 +1,26 @@
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using Microsoft.Extensions.Logging;
 
 namespace AlvaoScrapper;
 
 public static class Helpers2
 {
+    public static ILogger<T> CreateLogger<T>(string filterName = "AlvaoScrapper", string envName = "Logging__LogLevel__AlvaoScrapper", string defaultValue = "4")
+    {
+        var loggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddFilter(filterName, (LogLevel)int.Parse(Environment.GetEnvironmentVariable(envName) ?? defaultValue));
+            builder.AddSimpleConsole(options =>
+            {
+                options.IncludeScopes = true;
+                options.SingleLine = true;
+            });
+        });
+
+        return loggerFactory.CreateLogger<T>();
+    }
+
     public static string TrimInnerText(HtmlNode node)
     {
         return node.InnerText.Trim();

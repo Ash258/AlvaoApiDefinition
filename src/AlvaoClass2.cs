@@ -34,16 +34,7 @@ public class AlvaoClass2
 
     public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns, DotnetEnum[]? enums)
     {
-        using var loggerFactory = LoggerFactory.Create(builder =>
-        {
-            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrapper") ?? "4"));
-            builder.AddSimpleConsole(options =>
-            {
-                options.IncludeScopes = true;
-                options.SingleLine = true;
-            });
-        });
-        Logger = loggerFactory.CreateLogger<AlvaoClass2>();
+        Logger = CreateLogger<AlvaoClass2>();
 
         Name = name;
         Type = memberType;

@@ -1,6 +1,6 @@
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
-using Microsoft.Graph.Models;
+using static AlvaoScrapper.Helpers2;
 
 namespace AlvaoScrapper;
 
@@ -18,16 +18,7 @@ public class AlvaoNamespace2
 
     public AlvaoNamespace2(string namespaceName)
     {
-        using var loggerFactory = LoggerFactory.Create(builder =>
-        {
-            builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrapper") ?? "4"));
-            builder.AddSimpleConsole(options =>
-            {
-                options.IncludeScopes = true;
-                options.SingleLine = true;
-            });
-        });
-        Logger = loggerFactory.CreateLogger<AlvaoNamespace2>();
+        Logger = CreateLogger<AlvaoNamespace2>();
 
         Name = namespaceName;
         FullUrl = $"{Helpers.BASE_HTML_URL}/{namespaceName}.html";

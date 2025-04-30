@@ -1,5 +1,6 @@
 using AlvaoScrapper;
 using Microsoft.Extensions.Logging;
+using static AlvaoScrapper.Helpers2;
 
 string[] alvaoNamespace = {
     "Alvao.API.AI",
@@ -25,15 +26,7 @@ string[] alvaoNamespace = {
     "Alvao.Context.DB",
 };
 
-using var loggerFactory = LoggerFactory.Create(builder =>
-{
-    builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "4"));
-    builder.AddSimpleConsole(options =>
-    {
-        options.SingleLine = true;
-    });
-});
-var logger = loggerFactory.CreateLogger<Program>();
+var logger = CreateLogger<Program>();
 
 string[] filter = [];
 int toTake = alvaoNamespace.Length;
