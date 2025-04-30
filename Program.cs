@@ -27,7 +27,7 @@ string[] alvaoNamespace = {
 
 using var loggerFactory = LoggerFactory.Create(builder =>
 {
-    builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "2"));
+    builder.AddFilter("AlvaoScrapper", (LogLevel)int.Parse(Environment.GetEnvironmentVariable("Logging__LogLevel__AlvaoScrappeasdfr") ?? "4"));
     builder.AddSimpleConsole(options =>
     {
         options.SingleLine = true;
