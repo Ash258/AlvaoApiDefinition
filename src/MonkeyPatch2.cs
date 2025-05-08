@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using static AlvaoScrapper.Helpers2;
 
 namespace AlvaoScrapper;
 

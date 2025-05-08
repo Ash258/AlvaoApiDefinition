@@ -519,7 +519,7 @@ public class AlvaoClass2
             Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
             List<string> returns = [];
-            List<string> exceptions = [];
+            List<(string, string)> exceptions = [];
             List<(string, string)> parameters = [];
 
             for (var methodPropIndex = 0; methodPropIndex < h4Indexes.Count; ++methodPropIndex)
@@ -576,6 +576,32 @@ public class AlvaoClass2
                         // ? TODO: Investigate if there are some returns described
                         Logger.LogWarning("Skipping Returns of method {} [{}] {{{}}}", _name, Name, NamespaceName);
                         break;
+                    case "Exceptions":
+                        Logger.LogDebug("Processing method exceptions [{}] {{{}}}", Name, NamespaceName);
+
+                        var exceptionsDefs = h4CurrentElements[1].SelectNodes(".//dt/a").Select(x => x.InnerText).ToList();
+                        List<string> exceptionsSumarries = [];
+                        try
+                        {
+                            // TODO: Try to parse the refs
+                            exceptionsSumarries = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
+                        }
+                        catch
+                        {
+                            Logger.LogWarning("Cannot process method exception summaries [{}] {{{}}}", Name, NamespaceName);
+                            break;
+                        }
+                        if (exceptionsDefs.Count != exceptionsSumarries.Count)
+                        {
+                            Logger.LogWarning("Mismatch between method exception names and description [{}] {{{}}}", Name, NamespaceName);
+                        }
+                        for (var paramIndex = 0; paramIndex < exceptionsDefs.Count; ++paramIndex)
+                        {
+                            var exceptionName = exceptionsDefs[paramIndex].Trim();
+                            Logger.LogDebug("Adding method exceptions {} [{}] {{{}}}", exceptionName, Name, NamespaceName);
+                            exceptions.Add((exceptionName, Helpers.ReplaceEndLinesWithSpace(exceptionsSumarries[paramIndex].Trim())));
+                        }
+                        break;
                     default:
                         Logger.LogWarning("Skipping group {} of method {} [{}] {{{}}}", methodGroupName, _name, Name, NamespaceName);
                         break;
@@ -588,6 +614,7 @@ public class AlvaoClass2
                     Summary = _sum,
                     Definition = _def,
                     Parameters = parameters,
+                    Exceptions = exceptions,
                     Returns = "", // ! TODO: Implement
                 };
             MonkeyPatch2.SpecificMethod(this, method, MpLogger);
