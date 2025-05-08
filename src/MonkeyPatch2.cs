@@ -133,6 +133,23 @@ public static class MonkeyPatch2
             }
         }
     }
+
+    public static void SpecificMethod(AlvaoClass2 clazz, DotnetMethod method, ILogger Logger)
+    {
+        Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
+
+        if (IsClass(clazz, "Alvao.API.Common", "ProfileValue"))
+        {
+            // ! TODO: Make it more context aware with Returns property
+            switch (method.Name)
+            {
+                case "Get":
+                    Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
+                    method.Definition = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
+                    break;
+            }
+        }
+    }
 }
 
 public class MonkeyPatchLogger

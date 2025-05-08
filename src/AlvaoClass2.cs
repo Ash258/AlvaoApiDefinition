@@ -8,6 +8,7 @@ namespace AlvaoScrapper;
 public class AlvaoClass2
 {
     public ILogger Logger;
+    public ILogger MpLogger;
 
     public string Type { get; set; }
     public string? FullUrl { get; set; }
@@ -35,6 +36,7 @@ public class AlvaoClass2
     public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns, DotnetEnum[]? enums)
     {
         Logger = CreateLogger<AlvaoClass2>();
+        MpLogger = CreateLogger<MonkeyPatchLogger>();
 
         Name = name;
         Type = memberType;
@@ -79,6 +81,7 @@ public class AlvaoClass2
     )
     {
         Logger = CreateLogger<AlvaoClass2>();
+        MpLogger = CreateLogger<MonkeyPatchLogger>();
 
         Namespace = ns;
         Name = name;
@@ -578,16 +581,17 @@ public class AlvaoClass2
                         break;
                 }
             }
-            Methods.Add(
+            var method =
                 new DotnetMethod()
                 {
-                    Name = _name,
+                    Name = _name.Split("(")[0],
                     Summary = _sum,
                     Definition = _def,
                     Parameters = parameters,
                     Returns = "", // ! TODO: Implement
-                }
-            );
+                };
+            MonkeyPatch2.SpecificMethod(this, method, MpLogger);
+            Methods.Add(method);
         }
     }
 
@@ -699,7 +703,7 @@ public class AlvaoClass2
         Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
         Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
-        State.Classes.Add(Name, this);
+        State.Classes.Add($"{NamespaceName}.{Name}", this);
     }
 
     internal List<string> GetAllDefinitionsAsList()
