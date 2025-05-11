@@ -83,6 +83,8 @@ public static class MonkeyPatch2
             return;
         }
 
+        Logger.LogInformation("Monkeypatching undocumented classes");
+
         // swLibraryNs
         foreach (var name in new string[] { "ArchiveStream", "ISwLibRepository" })
         {
@@ -152,6 +154,9 @@ public static class MonkeyPatch2
 
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
+
+                AddUsingByClassName("SwLib", "Alvao.API.AM.Model.SwLibrary", clazz.Name, toAdd);
+                AddUsingByClassName("SoftwareProfile", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AM.Model.Detection":
                 AddUsingByClassName("DetectLog", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -163,6 +168,7 @@ public static class MonkeyPatch2
                 break;
 
             case "Alvao.API.Common":
+                AddUsingByClassName("AuditLog", "Alvao.API.Common.Model", clazz.Name, toAdd);
                 AddUsingByClassName("Email", "Rebex", clazz.Name, toAdd);
 
                 AddUsingByClassName("Person", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -186,18 +192,24 @@ public static class MonkeyPatch2
                 AddUsingByClassName("TicketState", "Alvao.API.SD.Model", clazz.Name, toAdd);
                 AddUsingByClassName("TicketState", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
 
+                AddUsingByClassName("TicketProcess", "Alvao.API.SD.Model", clazz.Name, toAdd);
+
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD.Model":
                 AddUsingByClassName("TicketTemplateColumnModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("RelatedTicketRuleModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+
+                AddUsingByClassName("NewTicketModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("SendMessageSettingsModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("InitialActSettings", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
         }
 
         if (toAdd.Count == 0) return;
 
-        Logger.LogInformation("Monkeypatching usings [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
+        Logger.LogInformation("Monkeypatching usings based on class name [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
         clazz.Usings.AddRange(toAdd);
     }
 
@@ -234,12 +246,14 @@ public static class MonkeyPatch2
             ("HtmlTextModel ", "Alvao.API.Common.Model"),
             ("CostModel ", "Alvao.API.SD.Model"),
 
+            ("vColumnValueLoc", "Alvao.API.Common.Model.Database"),
+            ("vColumnLoc", "Alvao.API.Common.Model.Database"),
+
             // ("EmbeddingCreateResponse ", "System.Net.Http"),
             // ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
             // ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
             // ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
             // (" IProfileConfiguration", "AutoMapper"),
-            // (" vColumnLoc", "Alvao.API.Common.Model.Database"),
             // ("tPerson ", "Alvao.API.Common.Model.Database"),
             // ("<tPerson>", "Alvao.API.Common.Model.Database"),
             // ("tRole", "Alvao.API.Common.Model.Database"),
@@ -266,7 +280,7 @@ public static class MonkeyPatch2
             {
                 if (d.Contains(m.Item1))
                 {
-                    Logger.LogDebug("Monkeypatching using {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
+                    Logger.LogDebug("Monkeypatching using based on definition {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
                     clazz.Usings.Add(m.Item2);
                 }
             }
