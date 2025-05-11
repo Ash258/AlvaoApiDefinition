@@ -320,6 +320,10 @@ public static class MonkeyPatch2
             {
                 case "Create":
                 case "Delete":
+                    _def = method.Definition.Replace("(Webhook ", "(Alvao.API.Common.Model.Database.Webhook ");
+                    break;
+                    _def = method.Definition.Replace("(Webhook ", "(Alvao.API.Common.Model.Database.Webhook ");
+                    break;
                 case "GetById":
                     _def = method.Definition.Replace(" Webhook ", " Alvao.API.Common.Model.Database.Webhook ");
                     break;
