@@ -76,12 +76,14 @@ public static class MonkeyPatch2
         var caution = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
         var commonModelDataseNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common.Model.Database");
-        if (null == swLibraryNs || null == commonModelDataseNs)
+        var apiSd = State.Namespaces.GetValueOrDefault("Alvao.API.SD");
+        if (null == swLibraryNs || null == commonModelDataseNs || null == apiSd)
         {
             Logger.LogWarning("Cannot generate undocumented classes");
             return;
         }
 
+        // swLibraryNs
         foreach (var name in new string[] { "ArchiveStream", "ISwLibRepository" })
         {
             var clazz = new AlvaoClass2(
@@ -100,12 +102,32 @@ public static class MonkeyPatch2
             clazz.ProduceFinalCsFile();
         }
 
-        foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository" })
+        // commonModelDataseNs
+        foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository", "IObjectPropertyRepository" })
         {
             var clazz = new AlvaoClass2(
                 name,
                 "Class",
                 commonModelDataseNs,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+
+        // commonModelDataseNs
+        foreach (var name in new string[] { "AlvaoConfigurationXmlModel", "ImportViewModel" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                apiSd,
                 caution,
                 $"public class {name}",
                 [],
@@ -127,16 +149,40 @@ public static class MonkeyPatch2
         {
             case "Alvao.API.AM":
                 toAdd.Add("Alvao.API.Common.Model.Database");
+
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.AM.Model.Detection":
+                AddUsingByClassName("DetectLog", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("XmlDetection", "System.Xml.XPath", clazz.Name, toAdd);
+
+                AddUsingByClassName("CompareProperty", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("CompareProperty", "System.Data", clazz.Name, toAdd);
+                AddUsingByClassName("CompareProperty", "static Alvao.API.Common.Model.Database.KindDataType", clazz.Name, toAdd);
+                break;
+
+            case "Alvao.API.Common":
+                AddUsingByClassName("Email", "Rebex", clazz.Name, toAdd);
+
+                AddUsingByClassName("Person", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("Role", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.Common.Model.Database":
                 AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD":
                 toAdd.Add("Alvao.API.Common.Model.Database");
+
+                AddUsingByClassName("TicketState", "Alvao.API.SD.Model", clazz.Name, toAdd);
                 AddUsingByClassName("TicketState", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD.Model":
                 AddUsingByClassName("TicketTemplateColumnModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("RelatedTicketRuleModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
         }
 
@@ -253,33 +299,8 @@ public static class MonkeyPatch2
         if (IsClass(clazz, "Alvao.API.Common", "ProfileValue") && string.Equals(method.Name, "Get"))
             _def = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
 
-        if (IsClass(clazz, "Alvao.API.Common", "Role") || IsClass(clazz, "Alvao.API.Common", "Person"))
-        {
-            clazz.Usings.Add("Alvao.API.Common.Model.Database");
-        }
-
-        if (IsClass(clazz, "Alvao.API.AM", "CustomApps") || IsClass(clazz, "Alvao.API.SD", "CustomApps"))
-        {
-            clazz.Usings.AddRange(["Alvao.API.Common.Model.CustomApps", "Alvao.API.Common.Model.CustomApps.Requests"]);
-        }
-
-        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "XmlDetection"))
-        {
-            clazz.Usings.Add("System.Xml.XPath");
-        }
-
-        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "CompareProperty"))
-        {
-            clazz.Usings.AddRange(["Alvao.API.Common.Model.Database", "System.Data", "static Alvao.API.Common.Model.Database.KindDataType"]);
-        }
-        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "DetectLog"))
-        {
-            clazz.Usings.Add("Alvao.API.Common.Model.Database");
-        }
-
         if (IsClass(clazz, "Alvao.API.Common", "Email"))
         {
-            clazz.Usings.Add("Rebex");
             // TODO: Find better way, idealy with example contains
             switch (method.Name)
             {
@@ -298,8 +319,6 @@ public static class MonkeyPatch2
 
         if (IsClass(clazz, "Alvao.API.SD", "TicketState"))
         {
-            clazz.Usings.Add("Alvao.API.SD.Model");
-
             switch (method.Name)
             {
                 case "GetStatesFromProcess":
@@ -314,6 +333,7 @@ public static class MonkeyPatch2
                     break;
             }
         }
+
         if (IsClass(clazz, "Alvao.API.Common", "Webhook"))
         {
             switch (method.Name)
