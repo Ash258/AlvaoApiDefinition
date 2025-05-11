@@ -75,7 +75,8 @@ public static class MonkeyPatch2
     {
         var caution = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
-        if (null == swLibraryNs)
+        var commonModelDataseNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common.Model.Database");
+        if (null == swLibraryNs || null == commonModelDataseNs)
         {
             Logger.LogWarning("Cannot generate undocumented classes");
             return;
@@ -98,58 +99,196 @@ public static class MonkeyPatch2
 
             clazz.ProduceFinalCsFile();
         }
+
+        foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                commonModelDataseNs,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+    }
+
+    public static void PatchUsings(AlvaoClass2 clazz, ILogger Logger)
+    {
+        List<string> toAdd = [];
+
+        switch (clazz.NamespaceName)
+        {
+            case "Alvao.API.AM":
+                toAdd.Add("Alvao.API.Common.Model.Database");
+                break;
+            case "Alvao.API.Common.Model.Database":
+                AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.SD":
+                toAdd.Add("Alvao.API.Common.Model.Database");
+                AddUsingByClassName("TicketState", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.SD.Model":
+                AddUsingByClassName("TicketTemplateColumnModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                break;
+        }
+
+        if (toAdd.Count == 0) return;
+
+        Logger.LogInformation("Monkeypatching usings [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
+        clazz.Usings.AddRange(toAdd);
     }
 
     // TODO: It will be faster when this will be done while the definitions are processed
-    public static void PatchDefinitions(AlvaoClass2 clazz)
+    public static void UsingsBasedOnDefinitions(AlvaoClass2 clazz, ILogger Logger)
     {
         List<string> definitions = clazz.GetAllDefinitionsAsList();
 
         List<(string, string)> map =
         [
-            ("CultureInfo ", "System.Globalization"),
-            ("HttpStatusCode ", "System.Net"),
-            ("EmbeddingCreateResponse ", "System.Net.Http"),
-            ("[JsonProperty", "Newtonsoft.Json"),
-            ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
-            ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
+            // Exceptions
+            ("ValidationInExecuteException", "System.Runtime.Serialization"),
+            ("TicketApprovalNotInProgressException", "System.Runtime.Serialization"),
+            ("UserTokenServiceError", "System.Runtime.Serialization"),
+            ("TranslationsSecretsInvalidException", "System.Runtime.Serialization"),
+
+            // ORM specific annotations
             ("[ExplicitKey]", "Dapper.Contrib"),
             ("[Key]", "Dapper.Contrib.Extensions"),
             ("[Table(", "Dapper.Contrib.Extensions"),
-            ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
-            (" IProfileConfiguration", "AutoMapper"),
-            (" vColumnLoc", "Alvao.API.Common.Model.Database"),
-            ("tPerson ", "Alvao.API.Common.Model.Database"),
-            ("tRole", "Alvao.API.Common.Model.Database"),
-            ("[JsonIgnore", "Newtonsoft.Json"),
-            (" ILogger", "Microsoft.Extensions.Logging"),
-            ("ActMark.ActMarkId", "Alvao.API.Common.Model.Database"),
+            ("[JsonIgnore]", "Newtonsoft.Json"),
+            ("[JsonProperty", "Newtonsoft.Json"),
+
+            (" ISerializable", "System.Runtime.Serialization"),
+            (" CultureInfo ", "System.Globalization"),
+            (" XmlDetection", "System.Xml"),
+            (" HttpStatusCode ", "System.Net"),
+
+            // AI
+            (" AssistantTicketTabModel ", "Alvao.API.AI.Model"),
+
+            // ("EmbeddingCreateResponse ", "System.Net.Http"),
+            // ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
+            // ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
+            // ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
+            // (" IProfileConfiguration", "AutoMapper"),
+            // (" vColumnLoc", "Alvao.API.Common.Model.Database"),
+            // ("tPerson ", "Alvao.API.Common.Model.Database"),
+            // ("<tPerson>", "Alvao.API.Common.Model.Database"),
+            // ("tRole", "Alvao.API.Common.Model.Database"),
+            // (" ILogger", "Microsoft.Extensions.Logging"),
+            // ("ActMark.ActMarkId", "Alvao.API.Common.Model.Database"),
+            // ("TicketTemplate", "Alvao.API.Common.Model.Database"),
+            // (" CostModel", "Alvao.API.SD.Model"),
+            // ("tblKind", "Alvao.API.Common.Model.Database"),
+            // ("tHdTicket", "Alvao.API.Common.Model.Database"),
+            // ("tHdSection", "Alvao.API.Common.Model.Database"),
+            // ("tSlaRights", "Alvao.API.Common.Model.Database"),
+            // ("tAccount", "Alvao.API.Common.Model.Database"),
+            // ("tHdSectionRights", "Alvao.API.Common.Model.Database"),
+            // ("tAct", "Alvao.API.Common.Model.Database"),
+            // (" HtmlTextModel", "Alvao.API.Common.Model"),
+            // // TODO: Determine which TicketState is correct - Model or static class
+            // ("TicketState", "Alvao.API.Common.Model.Database"),
+            // // ("<TicketState>", "Alvao.API.SD"),
+            // (" CommandDesc", "Alvao.API.Common.Model.CustomApps"),
+            // ("IDocumentRepository", "Alvao.API.Common.Model.Database"),
+            // ("IDetectionRepository", "Alvao.API.Common.Model.Database"),
+            // ("static class WorkLoad", "Alvao.API.Common.Model.Database"),
         ];
 
         foreach (var d in definitions)
         {
             foreach (var m in map)
             {
-                if (d.Contains(m.Item1)) clazz.Usings.Add(m.Item2);
+                if (d.Contains(m.Item1))
+                {
+                    Logger.LogDebug("Monkeypatching using {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
+                    clazz.Usings.Add(m.Item2);
+                }
+            }
+        }
+    }
+
+    public static void CreateMethods(AlvaoClass2 clazz, ILogger Logger)
+    {
+        Logger.LogDebug("Monkeypatching missing methods [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
+
+        List<(string, string)> map =
+        [
+            ("XmlDetection", "public object Clone()"),
+        ];
+
+        foreach (var m in map)
+        {
+            if (clazz.Name.Contains(m.Item1))
+            {
+                Logger.LogDebug("Creating method {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
+                clazz.Methods.Add(new DotnetMethod()
+                {
+                    Name = $"Patched {m.Item2}",
+                    Definition = m.Item2,
+                    Summary = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable",
+                    Parameters = [],
+                    Exceptions = [],
+                    Returns = string.Empty,
+                });
             }
         }
     }
 
     public static void SpecificMethod(AlvaoClass2 clazz, DotnetMethod method, ILogger Logger)
     {
-        Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
+        var _def = string.Empty;
 
-        if (IsClass(clazz, "Alvao.API.Common", "ProfileValue"))
+        if (IsClass(clazz, "Alvao.API.Common", "ProfileValue") && string.Equals(method.Name, "Get"))
+            _def = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
+
+        if (IsClass(clazz, "Alvao.API.SD", "TicketState"))
         {
-            // ! TODO: Make it more context aware with Returns property
             switch (method.Name)
             {
-                case "Get":
-                    Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
-                    method.Definition = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
+                case "GetStatesFromProcess":
+                    // case "GetFromProcess":
+                    _def = method.Definition.Replace("<TicketState>", "<Alvao.API.Common.Model.Database.TicketState>");
+                    break;
+                case "GetRelatedTicketRules":
+                    clazz.Usings.Add("Alvao.API.SD.Model");
+                    break;
+                case "GetByBehaviorId":
+                case "GetById":
+                case "GetByName":
+                case "GetCurrentStateByTicketId":
+                    _def = method.Definition.Replace(" TicketState ", " Alvao.API.Common.Model.Database.TicketState ");
                     break;
             }
         }
+        if (IsClass(clazz, "Alvao.API.Common", "Webhook"))
+        {
+            switch (method.Name)
+            {
+                case "Create":
+                case "Delete":
+                case "GetById":
+                    _def = method.Definition.Replace(" Webhook ", " Alvao.API.Common.Model.Database.Webhook ");
+                    break;
+                case "GetTopicById":
+                    _def = method.Definition.Replace(" WebhookTopic ", " Alvao.API.Common.Model.Database.WebhookTopic ");
+                    break;
+            }
+        }
+
+        if (string.IsNullOrEmpty(_def)) return;
+
+        Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
+        method.Definition = _def;
     }
 }
 

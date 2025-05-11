@@ -630,6 +630,10 @@ public class AlvaoClass2
             Logger.LogDebug("Skipping final cs file produce for Enum [{}] {{{}}}", Name, NamespaceName);
             return;
         }
+
+        MonkeyPatch2.PatchUsings(this, MpLogger);
+        MonkeyPatch2.CreateMethods(this, MpLogger);
+
         ProduceFinalCsFile();
     }
 
@@ -668,7 +672,7 @@ public class AlvaoClass2
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
-        MonkeyPatch2.PatchDefinitions(this);
+        MonkeyPatch2.UsingsBasedOnDefinitions(this, MpLogger);
 
         // First process usings
         if (Usings.Count != 0)
