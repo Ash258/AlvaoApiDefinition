@@ -157,6 +157,14 @@ public static class MonkeyPatch2
 
                 AddUsingByClassName("SwLib", "Alvao.API.AM.Model.SwLibrary", clazz.Name, toAdd);
                 AddUsingByClassName("SoftwareProfile", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("Object", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("ImportCsv", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.AM.Model":
+                AddUsingByClassName("ObjectClass", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("CancelOemLicenseModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AM.Model.Detection":
                 AddUsingByClassName("DetectLog", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -165,6 +173,9 @@ public static class MonkeyPatch2
                 AddUsingByClassName("CompareProperty", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("CompareProperty", "System.Data", clazz.Name, toAdd);
                 AddUsingByClassName("CompareProperty", "static Alvao.API.Common.Model.Database.KindDataType", clazz.Name, toAdd);
+
+                AddUsingByClassName("DetectionMessage", "System.Xml", clazz.Name, toAdd);
+                AddUsingByClassName("DetectionArchive", "System.Xml", clazz.Name, toAdd);
                 break;
 
             case "Alvao.API.Common":
@@ -183,8 +194,12 @@ public static class MonkeyPatch2
 
                 AddUsingByClassName("MSEntraTenant", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
+            case "Alvao.API.Common.Model":
+                AddUsingByClassName("ColumnValue", "Alvao.API.Common", clazz.Name, toAdd);
+                break;
             case "Alvao.API.Common.Model.Database":
                 AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
+                AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD":
                 toAdd.Add("Alvao.API.Common.Model.Database");
@@ -196,6 +211,11 @@ public static class MonkeyPatch2
 
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
+
+                AddUsingByClassName("Message", "Alvao.API.SD.Model", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.SD.Exceptions":
+                AddUsingByClassName("RequiredFieldsException", "Alvao.API.SD.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD.Model":
                 AddUsingByClassName("TicketTemplateColumnModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -204,6 +224,10 @@ public static class MonkeyPatch2
                 AddUsingByClassName("NewTicketModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("SendMessageSettingsModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("InitialActSettings", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+
+                AddUsingByClassName("ChangeTicketStateSettingsModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+
+                AddUsingByClassName("ActCreateSettings", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
         }
 
@@ -294,6 +318,8 @@ public static class MonkeyPatch2
         List<(string, string)> map =
         [
             ("XmlDetection", "public object Clone()"),
+            ("DetectionArchive", "public void Dispose()"),
+            ("DetectionArchive", "public System.Threading.Tasks.ValueTask DisposeAsync()"),
         ];
 
         foreach (var m in map)
