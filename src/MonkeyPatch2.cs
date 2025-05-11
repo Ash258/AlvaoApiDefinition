@@ -165,6 +165,7 @@ public static class MonkeyPatch2
             ("[Table(", "Dapper.Contrib.Extensions"),
             ("[JsonIgnore]", "Newtonsoft.Json"),
             ("[JsonProperty", "Newtonsoft.Json"),
+            (" ILogger", "Microsoft.Extensions.Logging"),
 
             (" ISerializable", "System.Runtime.Serialization"),
             (" CultureInfo ", "System.Globalization"),
@@ -173,6 +174,10 @@ public static class MonkeyPatch2
 
             // AI
             (" AssistantTicketTabModel ", "Alvao.API.AI.Model"),
+
+            ("IDocumentRepository", "Alvao.API.Common.Model.Database"),
+            ("HtmlTextModel ", "Alvao.API.Common.Model"),
+            ("CostModel ", "Alvao.API.SD.Model"),
 
             // ("EmbeddingCreateResponse ", "System.Net.Http"),
             // ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
@@ -183,10 +188,8 @@ public static class MonkeyPatch2
             // ("tPerson ", "Alvao.API.Common.Model.Database"),
             // ("<tPerson>", "Alvao.API.Common.Model.Database"),
             // ("tRole", "Alvao.API.Common.Model.Database"),
-            // (" ILogger", "Microsoft.Extensions.Logging"),
             // ("ActMark.ActMarkId", "Alvao.API.Common.Model.Database"),
             // ("TicketTemplate", "Alvao.API.Common.Model.Database"),
-            // (" CostModel", "Alvao.API.SD.Model"),
             // ("tblKind", "Alvao.API.Common.Model.Database"),
             // ("tHdTicket", "Alvao.API.Common.Model.Database"),
             // ("tHdSection", "Alvao.API.Common.Model.Database"),
@@ -194,12 +197,10 @@ public static class MonkeyPatch2
             // ("tAccount", "Alvao.API.Common.Model.Database"),
             // ("tHdSectionRights", "Alvao.API.Common.Model.Database"),
             // ("tAct", "Alvao.API.Common.Model.Database"),
-            // (" HtmlTextModel", "Alvao.API.Common.Model"),
             // // TODO: Determine which TicketState is correct - Model or static class
             // ("TicketState", "Alvao.API.Common.Model.Database"),
             // // ("<TicketState>", "Alvao.API.SD"),
             // (" CommandDesc", "Alvao.API.Common.Model.CustomApps"),
-            // ("IDocumentRepository", "Alvao.API.Common.Model.Database"),
             // ("IDetectionRepository", "Alvao.API.Common.Model.Database"),
             // ("static class WorkLoad", "Alvao.API.Common.Model.Database"),
         ];
@@ -251,8 +252,29 @@ public static class MonkeyPatch2
         if (IsClass(clazz, "Alvao.API.Common", "ProfileValue") && string.Equals(method.Name, "Get"))
             _def = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
 
+        if (IsClass(clazz, "Alvao.API.AM", "CustomApps") || IsClass(clazz, "Alvao.API.SD", "CustomApps"))
+        {
+            clazz.Usings.AddRange(["Alvao.API.Common.Model.CustomApps", "Alvao.API.Common.Model.CustomApps.Requests"]);
+        }
+
+        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "XmlDetection"))
+        {
+            clazz.Usings.Add("System.Xml.XPath");
+        }
+
+        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "CompareProperty"))
+        {
+            clazz.Usings.AddRange(["Alvao.API.Common.Model.Database", "System.Data", "static Alvao.API.Common.Model.Database.KindDataType"]);
+        }
+        if (IsClass(clazz, "Alvao.API.AM.Model.Detection", "DetectLog"))
+        {
+            clazz.Usings.Add("Alvao.API.Common.Model.Database");
+        }
+
         if (IsClass(clazz, "Alvao.API.SD", "TicketState"))
         {
+            clazz.Usings.Add("Alvao.API.SD.Model");
+
             switch (method.Name)
             {
                 case "GetStatesFromProcess":
