@@ -271,6 +271,25 @@ public static class MonkeyPatch2
             clazz.Usings.Add("Alvao.API.Common.Model.Database");
         }
 
+        if (IsClass(clazz, "Alvao.API.Common", "Email"))
+        {
+            clazz.Usings.Add("Rebex");
+            // TODO: Find better way, idealy with example contains
+            switch (method.Name)
+            {
+                case "Queue":
+                    _def = method.Definition.Replace("(MailMessage ", "(Rebex.Mail.MailMessage ");
+                    if (clazz.Methods.Count == 1)
+                        _def = method.Definition.Replace("(MailMessage ", "(System.Net.Mail.MailMessage ");
+                    break;
+                case "QueueMailMessage":
+                    _def = method.Definition.Replace("(MailMessage ", "(Rebex.Mail.MailMessage ");
+                    if (clazz.Methods.Count == 3)
+                        _def = method.Definition.Replace("(MailMessage ", "(System.Net.Mail.MailMessage ");
+                    break;
+            }
+        }
+
         if (IsClass(clazz, "Alvao.API.SD", "TicketState"))
         {
             clazz.Usings.Add("Alvao.API.SD.Model");
@@ -278,11 +297,8 @@ public static class MonkeyPatch2
             switch (method.Name)
             {
                 case "GetStatesFromProcess":
-                    // case "GetFromProcess":
+                case "GetFromProcess":
                     _def = method.Definition.Replace("<TicketState>", "<Alvao.API.Common.Model.Database.TicketState>");
-                    break;
-                case "GetRelatedTicketRules":
-                    clazz.Usings.Add("Alvao.API.SD.Model");
                     break;
                 case "GetByBehaviorId":
                 case "GetById":
