@@ -89,4 +89,11 @@ public static class Helpers2
     {
         return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
     }
+
+    public static void AddUsingByClassName(string expectedName, string namespaceName, string className, List<string> toAdd)
+    {
+        if (!className.Equals(expectedName)) return;
+
+        toAdd.Add(namespaceName);
+    }
 }

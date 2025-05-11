@@ -166,7 +166,16 @@ public static class MonkeyPatch2
                 AddUsingByClassName("Email", "Rebex", clazz.Name, toAdd);
 
                 AddUsingByClassName("Person", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("PersonRights", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("Role", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps", clazz.Name, toAdd);
+                AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
+
+                AddUsingByClassName("CustomColumn", "Alvao.API.Common.Model", clazz.Name, toAdd);
+                AddUsingByClassName("Locale", "Alvao.API.Common.Model", clazz.Name, toAdd);
+
+                AddUsingByClassName("MSEntraTenant", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.Common.Model.Database":
                 AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
