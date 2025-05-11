@@ -245,12 +245,18 @@ public static class MonkeyPatch2
         }
     }
 
+    // Monkeypatch methods and usings based on classes and it's methods
     public static void SpecificMethod(AlvaoClass2 clazz, DotnetMethod method, ILogger Logger)
     {
         var _def = string.Empty;
 
         if (IsClass(clazz, "Alvao.API.Common", "ProfileValue") && string.Equals(method.Name, "Get"))
             _def = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
+
+        if (IsClass(clazz, "Alvao.API.Common", "Role") || IsClass(clazz, "Alvao.API.Common", "Person"))
+        {
+            clazz.Usings.Add("Alvao.API.Common.Model.Database");
+        }
 
         if (IsClass(clazz, "Alvao.API.AM", "CustomApps") || IsClass(clazz, "Alvao.API.SD", "CustomApps"))
         {
