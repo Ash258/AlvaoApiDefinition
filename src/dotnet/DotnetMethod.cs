@@ -48,7 +48,10 @@ public record DotnetMethod()
             });
         }
 
-        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " { throw new NotImplementedException(); }", indent));
+        var def = SanitizeXmlToString(Definition);
+        if (!Definition.EndsWith(';')) def += " { throw new NotImplementedException(); }";
+
+        sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

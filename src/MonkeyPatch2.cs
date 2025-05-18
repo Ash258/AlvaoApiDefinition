@@ -73,11 +73,23 @@ public static class MonkeyPatch2
 
     public static void PatchUnDocumentedClasses(ILogger Logger)
     {
-        var caution = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable";
+        var caution = "!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
         var commonModelDataseNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common.Model.Database");
+        var commonNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common");
         var apiSd = State.Namespaces.GetValueOrDefault("Alvao.API.SD");
-        if (null == swLibraryNs || null == commonModelDataseNs || null == apiSd)
+        var apiAm = State.Namespaces.GetValueOrDefault("Alvao.API.AM");
+        var modelDet = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.Detection");
+        var contextNs = State.Namespaces.GetValueOrDefault("Alvao.Context");
+        if (
+            null == swLibraryNs ||
+            null == commonModelDataseNs ||
+            null == apiSd ||
+            null == apiAm ||
+            null == modelDet ||
+            null == contextNs ||
+            null == commonNs
+        )
         {
             Logger.LogWarning("Cannot generate undocumented classes");
             return;
@@ -86,7 +98,7 @@ public static class MonkeyPatch2
         Logger.LogInformation("Monkeypatching undocumented classes");
 
         // swLibraryNs
-        foreach (var name in new string[] { "ArchiveStream", "ISwLibRepository" })
+        foreach (var name in new string[] { "ISwLibRepository" })
         {
             var clazz = new AlvaoClass2(
                 name,
@@ -98,6 +110,37 @@ public static class MonkeyPatch2
                 [],
                 [],
                 [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+        foreach (var name in new string[] { "ArchiveStream" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                swLibraryNs,
+                caution,
+                $"abstract public class {name}",
+                [],
+                [],
+                [
+                    new DotnetMethod() {
+                        Name = "IsUnicode",
+                        Definition = "abstract public bool IsUnicode();",
+                        Summary = caution,
+                        Exceptions = [],
+                        Parameters = [],
+                        Returns = string.Empty
+                    }
+                ],
+                [
+                    new DotnetProperty() {
+                        Name = "Unicode",
+                        Definition = "abstract public bool Unicode { get; }",
+                    }
+                ],
                 []
             );
 
@@ -123,13 +166,98 @@ public static class MonkeyPatch2
             clazz.ProduceFinalCsFile();
         }
 
-        // commonModelDataseNs
+        // apiSd
         foreach (var name in new string[] { "AlvaoConfigurationXmlModel", "ImportViewModel" })
         {
             var clazz = new AlvaoClass2(
                 name,
                 "Class",
                 apiSd,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+
+        // apiAm
+        foreach (var name in new string[] { "IFormattedTextWriter" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                apiAm,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+
+        // modelDet
+        foreach (var name in new string[] { "ArchiveStream" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                modelDet,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.ProduceFinalCsFile();
+        }
+
+        // commonNs
+        foreach (var name in new string[] { "LicenseModule", "ModuleInfo" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                commonNs,
+                caution,
+                $"public class {name}",
+                [],
+                [],
+                [],
+                [],
+                []
+            );
+
+            clazz.Enums = [
+                new DotnetEnum() {
+                    Name = "ModuleId",
+                    Summary = "Module ID",
+                    Definition = "public enum ModuleId",
+                    Fields = []
+                }
+            ];
+
+            clazz.ProduceFinalCsFile();
+        }
+
+        // contextNs
+        foreach (var name in new string[] { "IDbContextProvider" })
+        {
+            var clazz = new AlvaoClass2(
+                name,
+                "Class",
+                contextNs,
                 caution,
                 $"public class {name}",
                 [],
@@ -200,6 +328,7 @@ public static class MonkeyPatch2
             case "Alvao.API.Common.Model.Database":
                 AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
                 AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("ObjectRight", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD":
                 toAdd.Add("Alvao.API.Common.Model.Database");
@@ -213,6 +342,7 @@ public static class MonkeyPatch2
                 AddUsingByClassName("CustomApps", "Alvao.API.Common.Model.CustomApps.Requests", clazz.Name, toAdd);
 
                 AddUsingByClassName("Message", "Alvao.API.SD.Model", clazz.Name, toAdd);
+                AddUsingByClassName("Act", "Alvao.API.SD.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.SD.Exceptions":
                 AddUsingByClassName("RequiredFieldsException", "Alvao.API.SD.Model", clazz.Name, toAdd);
@@ -228,6 +358,13 @@ public static class MonkeyPatch2
                 AddUsingByClassName("ChangeTicketStateSettingsModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
 
                 AddUsingByClassName("ActCreateSettings", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                break;
+            case "Alvao.Context":
+                AddUsingByClassName("AlvaoContext", "Alvao.Context.DB", clazz.Name, toAdd);
+                break;
+            case "Alvao.Context.DB":
+                AddUsingByClassName("IConnectionScope", "System.Data", clazz.Name, toAdd);
+                AddUsingByClassName("IConnectionScope", "Microsoft.Data.SqlClient", clazz.Name, toAdd);
                 break;
         }
 
@@ -379,6 +516,17 @@ public static class MonkeyPatch2
                 case "GetByName":
                 case "GetCurrentStateByTicketId":
                     _def = method.Definition.Replace(" TicketState ", " Alvao.API.Common.Model.Database.TicketState ");
+                    break;
+            }
+        }
+
+        if (IsClass(clazz, "Alvao.API.AM", "ObjectRight"))
+        {
+            switch (method.Name)
+            {
+                case "CheckForUser":
+                case "HasUserObjectRight":
+                    _def = method.Definition.Replace("ObjectRight.Right ", "Alvao.API.AM.Model.ObjectRight.Right ");
                     break;
             }
         }
