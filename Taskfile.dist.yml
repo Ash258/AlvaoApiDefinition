@@ -1,6 +1,15 @@
 version: '3.0'
 
 tasks:
+  build:
+    cmd: dotnet run -- {{.CLI_ARGS}}
+  run:with-build:
+    cmds:
+    - task: build
+    - task: library:build
+  library:build:
+    dir: Alvao
+    cmd: dotnet build .
   test:
     cmd: dotnet run -- test
   tidy:
