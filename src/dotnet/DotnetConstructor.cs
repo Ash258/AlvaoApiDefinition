@@ -1,4 +1,5 @@
 using System.Text;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
@@ -15,7 +16,7 @@ public record DotnetConstructor()
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty())
         {
-            sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
@@ -23,7 +24,7 @@ public record DotnetConstructor()
         {
             Parameters.ForEach(param =>
             {
-                sb.Append(Helpers2.PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
+                sb.Append(PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
                 sb.AppendLine();
             });
         }
@@ -32,17 +33,17 @@ public record DotnetConstructor()
         {
             for (int i = 0; i < Examples.Count; ++i)
             {
-                sb.Append(Helpers2.PrefixEachLineSpaces("/// <example>"));
-                // sb.Append(Helpers2.PrefixEachLineSpaces($"/// Example {i}"));
-                sb.Append(Helpers2.PrefixEachLineSpaces("/// <code>"));
-                sb.Append(Helpers2.PrefixEachLineSpaces(Examples[i]));
-                sb.Append(Helpers2.PrefixEachLineSpaces("/// </code>"));
-                // sb.Append(Helpers2.PrefixEachLineSpaces($"/// results in <c>p</c>'s having the value (2,8)."));
-                sb.Append(Helpers2.PrefixEachLineSpaces("/// </example>"));
+                sb.Append(PrefixEachLineSpaces("/// <example>"));
+                // sb.Append(PrefixEachLineSpaces($"/// Example {i}"));
+                sb.Append(PrefixEachLineSpaces("/// <code>"));
+                sb.Append(PrefixEachLineSpaces(Examples[i]));
+                sb.Append(PrefixEachLineSpaces("/// </code>"));
+                // sb.Append(PrefixEachLineSpaces($"/// results in <c>p</c>'s having the value (2,8)."));
+                sb.Append(PrefixEachLineSpaces("/// </example>"));
             }
         }
 
-        sb.Append(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(Definition) + " {}", indent));
+        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " {}", indent));
 
         return sb.ToString();
     }

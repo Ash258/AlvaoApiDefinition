@@ -1,5 +1,5 @@
 using System.Text;
-using static AlvaoScrapper.Helpers2;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 

@@ -1,4 +1,5 @@
 using System.Text;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
@@ -14,17 +15,17 @@ public record DotnetEnum()
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty())
         {
-            sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
         Definition = Definition.Replace(Name.Split(".")[0] + ".", "");
 
-        sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(Definition), indent));
-        sb.AppendLine(Helpers2.PrefixEachLineSpaces("{", indent));
+        sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
+        sb.AppendLine(PrefixEachLineSpaces("{", indent));
         // ? TODO: Try to sort the properties
-        Fields.ForEach(f => sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(f) + ",", indent * 2)));
-        sb.Append(Helpers2.PrefixEachLineSpaces("}", indent));
+        Fields.ForEach(f => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(f) + ",", indent * 2)));
+        sb.Append(PrefixEachLineSpaces("}", indent));
 
         return sb.ToString();
     }

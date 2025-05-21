@@ -1,6 +1,6 @@
 using AlvaoScrapper;
 using Microsoft.Extensions.Logging;
-using static AlvaoScrapper.Helpers2;
+using static AlvaoScrapper.Helpers;
 
 string[] alvaoNamespace = {
     "Alvao.API.AI",

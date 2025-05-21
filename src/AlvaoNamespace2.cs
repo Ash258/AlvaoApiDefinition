@@ -1,6 +1,6 @@
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
-using static AlvaoScrapper.Helpers2;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 

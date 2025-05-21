@@ -1,4 +1,5 @@
 using System.Text;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
@@ -13,16 +14,16 @@ public record DotnetField()
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty())
         {
-            sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
-        string def = Helpers2.SanitizeXmlToString(Definition);
+        string def = SanitizeXmlToString(Definition);
         def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");
 
         if (!Definition.EndsWith('}')) def += ";";
 
-        sb.Append(Helpers2.PrefixEachLineSpaces(def, indent));
+        sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

@@ -1,7 +1,7 @@
 using System.Text;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
-using static AlvaoScrapper.Helpers2;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
@@ -48,7 +48,7 @@ public class AlvaoClass2
         HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
         FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
 
-        Summary = Helpers2.GetSummary(HtmlDocument);
+        Summary = GetSummary(HtmlDocument);
         SpecialEnumClass = null;
         Boundaries = [];
         Usings = [];
@@ -693,15 +693,15 @@ public class AlvaoClass2
         if (standaloneEnum)
         {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
-            sb.AppendLine(Helpers2.SanitizeXmlToString(Definition));
+            sb.AppendLine(SanitizeXmlToString(Definition));
             sb.AppendLine("{");
             {
-                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(Helpers2.PrefixEachLineSpaces(Helpers2.SanitizeXmlToString(x) + ", ")));
+                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(x) + ", ")));
             }
         }
         else
         {
-            sb.AppendLine(Helpers2.SanitizeXmlToString(Definition));
+            sb.AppendLine(SanitizeXmlToString(Definition));
             sb.AppendLine("{");
             bool indentNext = false;
             {
@@ -717,7 +717,7 @@ public class AlvaoClass2
                 indentNext = Properties.Count > 0;
 
                 // if (indentNext && Events.Count > 0) sb.AppendLine("");
-                // Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
+                // Events.ForEach(el => sb.AppendLine($"{PrefixEachLineSpaces(el)};"));
                 // indentNext = Events.Count > 0;
 
                 if (indentNext && Constructors.Count > 0) sb.AppendLine("");

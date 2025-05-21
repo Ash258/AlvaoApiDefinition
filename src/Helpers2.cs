@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace AlvaoScrapper;
 
-public static class Helpers2
+public static class Helpers
 {
     public static string ALVAO_VERSION = "25";
     public static string ALVAO_VERSION_DOT = ALVAO_VERSION.Replace("_", ".");

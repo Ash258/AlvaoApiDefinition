@@ -1,4 +1,5 @@
 using System.Text;
+using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
@@ -13,7 +14,7 @@ public record DotnetProperty()
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty())
         {
-            sb.Append(Helpers2.PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
         if (!Definition.EndsWith('}'))
@@ -22,9 +23,9 @@ public record DotnetProperty()
             // sb.Append(Helpers2.PrefixEachLineSpaces(Definition + ";", indent));
         }
 
-        string def = Helpers2.SanitizeXmlToString(Definition);
+        string def = SanitizeXmlToString(Definition);
         def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");
-        sb.Append(Helpers2.PrefixEachLineSpaces(def, indent));
+        sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }
