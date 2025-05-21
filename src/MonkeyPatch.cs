@@ -255,6 +255,7 @@ public static class MonkeyPatch {
                 break;
             case "Alvao.API.AM.Model.Detection":
                 AddUsingByClassName("DetectLog", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("XmlDetection", "System.Collections", clazz.Name, toAdd);
                 AddUsingByClassName("XmlDetection", "System.Xml.XPath", clazz.Name, toAdd);
 
                 AddUsingByClassName("CompareProperty", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
