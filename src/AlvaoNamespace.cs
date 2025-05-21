@@ -109,14 +109,6 @@ public class AlvaoNamespace {
         }
 
         foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum"))) {
-            // var validClasss = new string[] {
-            //     // "AadSetting",
-            //     // "LogOperation",
-            //     "HtmlTextModel",
-            //     // "CustomTables",
-            // };
-            // if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
-
             var enums = Enums.GetValueOrDefault(member.Name, []);
             AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, enums);
             try {
@@ -150,6 +142,7 @@ public class AlvaoNamespace {
             "Classes" => "Class",
             "Interfaces" => "Interface",
             "Enums" => "Enum",
+            "Structs" => "Struct",
             _ => "Class",
         };
     }

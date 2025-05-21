@@ -141,6 +141,7 @@ public class AlvaoClass {
                 .Replace("Class ", "")
                 .Replace("Interface ", "")
                 .Replace("Enum ", "")
+                .Replace("Struct ", "")
                 .Trim();
     }
 
