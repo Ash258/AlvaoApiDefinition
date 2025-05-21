@@ -5,7 +5,7 @@ namespace AlvaoScrapper;
 
 public static class MonkeyPatch
 {
-    public static void AssertGenerationOK(AlvaoClass2 clazz)
+    public static void AssertGenerationOK(AlvaoClass clazz)
     {
         var expectedNamespaceName = string.Empty;
         var expectedMethodCount = 0;
@@ -100,7 +100,7 @@ public static class MonkeyPatch
         // swLibraryNs
         foreach (var name in new string[] { "ISwLibRepository" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 swLibraryNs,
@@ -117,7 +117,7 @@ public static class MonkeyPatch
         }
         foreach (var name in new string[] { "ArchiveStream" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 swLibraryNs,
@@ -150,7 +150,7 @@ public static class MonkeyPatch
         // commonModelDataseNs
         foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository", "IObjectPropertyRepository" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 commonModelDataseNs,
@@ -169,7 +169,7 @@ public static class MonkeyPatch
         // apiSd
         foreach (var name in new string[] { "AlvaoConfigurationXmlModel", "ImportViewModel" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 apiSd,
@@ -188,7 +188,7 @@ public static class MonkeyPatch
         // apiAm
         foreach (var name in new string[] { "IFormattedTextWriter" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 apiAm,
@@ -207,7 +207,7 @@ public static class MonkeyPatch
         // modelDet
         foreach (var name in new string[] { "ArchiveStream" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 modelDet,
@@ -226,7 +226,7 @@ public static class MonkeyPatch
         // commonNs
         foreach (var name in new string[] { "LicenseModule", "ModuleInfo" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 commonNs,
@@ -254,7 +254,7 @@ public static class MonkeyPatch
         // contextNs
         foreach (var name in new string[] { "IDbContextProvider" })
         {
-            var clazz = new AlvaoClass2(
+            var clazz = new AlvaoClass(
                 name,
                 "Class",
                 contextNs,
@@ -271,7 +271,7 @@ public static class MonkeyPatch
         }
     }
 
-    public static void PatchUsings(AlvaoClass2 clazz, ILogger Logger)
+    public static void PatchUsings(AlvaoClass clazz, ILogger Logger)
     {
         List<string> toAdd = [];
 
@@ -375,7 +375,7 @@ public static class MonkeyPatch
     }
 
     // TODO: It will be faster when this will be done while the definitions are processed
-    public static void UsingsBasedOnDefinitions(AlvaoClass2 clazz, ILogger Logger)
+    public static void UsingsBasedOnDefinitions(AlvaoClass clazz, ILogger Logger)
     {
         List<string> definitions = clazz.GetAllDefinitionsAsList();
 
@@ -448,7 +448,7 @@ public static class MonkeyPatch
         }
     }
 
-    public static void CreateMethods(AlvaoClass2 clazz, ILogger Logger)
+    public static void CreateMethods(AlvaoClass clazz, ILogger Logger)
     {
         Logger.LogDebug("Monkeypatching missing methods [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
 
@@ -478,7 +478,7 @@ public static class MonkeyPatch
     }
 
     // Monkeypatch methods and usings based on classes and it's methods
-    public static void SpecificMethod(AlvaoClass2 clazz, DotnetMethod method, ILogger Logger)
+    public static void SpecificMethod(AlvaoClass clazz, DotnetMethod method, ILogger Logger)
     {
         var _def = string.Empty;
 

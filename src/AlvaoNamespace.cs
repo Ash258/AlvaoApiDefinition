@@ -12,7 +12,7 @@ public class AlvaoNamespace
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
-    public AlvaoClass2[]? Classes { get; set; }
+    public AlvaoClass[]? Classes { get; set; }
 
     public Dictionary<string, DotnetEnum[]> Enums { get; set; }
 
@@ -82,7 +82,7 @@ public class AlvaoNamespace
         {
             Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
 
-            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, null);
+            AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, null);
 
             try
             {
@@ -135,7 +135,7 @@ public class AlvaoNamespace
             // if (!validClasss.Contains(member.Name)) continue; // ! TODO: Drop
 
             var enums = Enums.GetValueOrDefault(member.Name, []);
-            AlvaoClass2 clazz = new(member.Name, member.Url, member.Type, this, enums);
+            AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, enums);
             try
             {
                 clazz.Process();

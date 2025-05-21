@@ -5,7 +5,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public class AlvaoClass2
+public class AlvaoClass
 {
     public ILogger Logger;
     public ILogger MpLogger;
@@ -33,9 +33,9 @@ public class AlvaoClass2
 
     public bool IsEnum { get; set; }
 
-    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums)
+    public AlvaoClass(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums)
     {
-        Logger = CreateLogger<AlvaoClass2>();
+        Logger = CreateLogger<AlvaoClass>();
         MpLogger = CreateLogger<MonkeyPatchLogger>();
 
         Name = name;
@@ -65,7 +65,7 @@ public class AlvaoClass2
         }
     }
 
-    public AlvaoClass2(
+    public AlvaoClass(
         string name,
         string memberType,
         AlvaoNamespace ns,
@@ -80,7 +80,7 @@ public class AlvaoClass2
     // List<string> events
     )
     {
-        Logger = CreateLogger<AlvaoClass2>();
+        Logger = CreateLogger<AlvaoClass>();
         MpLogger = CreateLogger<MonkeyPatchLogger>();
 
         Namespace = ns;

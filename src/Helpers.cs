@@ -115,7 +115,7 @@ public static class Helpers
         return el.TrimEnd().TrimEnd('\n').TrimEnd('\r').TrimEnd('\n').TrimEnd('\r');
     }
 
-    internal static bool IsClass(AlvaoClass2 clazz, string namespaceName, string className)
+    internal static bool IsClass(AlvaoClass clazz, string namespaceName, string className)
     {
         return clazz.NamespaceName.Equals(namespaceName) && clazz.Name.Equals(className);
     }
