@@ -3,7 +3,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public static class MonkeyPatch2
+public static class MonkeyPatch
 {
     public static void AssertGenerationOK(AlvaoClass2 clazz)
     {

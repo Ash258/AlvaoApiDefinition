@@ -617,7 +617,7 @@ public class AlvaoClass2
                     Exceptions = exceptions,
                     Returns = "", // ! TODO: Implement
                 };
-            MonkeyPatch2.SpecificMethod(this, method, MpLogger);
+            MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);
         }
     }
@@ -631,8 +631,8 @@ public class AlvaoClass2
             return;
         }
 
-        MonkeyPatch2.PatchUsings(this, MpLogger);
-        MonkeyPatch2.CreateMethods(this, MpLogger);
+        MonkeyPatch.PatchUsings(this, MpLogger);
+        MonkeyPatch.CreateMethods(this, MpLogger);
 
         ProduceFinalCsFile();
     }
@@ -672,7 +672,7 @@ public class AlvaoClass2
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
 
-        MonkeyPatch2.UsingsBasedOnDefinitions(this, MpLogger);
+        MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
 
         // First process usings
         if (Usings.Count != 0)

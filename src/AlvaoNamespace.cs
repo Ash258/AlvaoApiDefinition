@@ -146,7 +146,7 @@ public class AlvaoNamespace2
                 continue;
             }
 
-            MonkeyPatch2.AssertGenerationOK(clazz);
+            MonkeyPatch.AssertGenerationOK(clazz);
         }
     }
 
