@@ -10,6 +10,7 @@ public record DotnetMethod() {
     public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
     public List<(string, string)> Exceptions { get; set; }
     public string Returns { get; set; }
+    public string Remarks { get; set; }
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
@@ -20,8 +21,14 @@ public record DotnetMethod() {
 
         if (!Returns.IsNullOrEmpty()) {
             sb.AppendLine(PrefixEachLineSpaces($"///<returns>"));
-            sb.AppendLine(PrefixEachLineSpaces($"///{Returns}"));
+            sb.AppendLine(PrefixEachLineSpaces($"///{ReplaceEndLinesWithSpace(Returns)}"));
             sb.AppendLine(PrefixEachLineSpaces($"///</returns>"));
+        }
+
+        if (!Remarks.IsNullOrEmpty()) {
+            sb.AppendLine(PrefixEachLineSpaces($"///<remarks>"));
+            sb.AppendLine(PrefixEachLineSpaces($"///{ReplaceEndLinesWithSpace(Remarks)}"));
+            sb.AppendLine(PrefixEachLineSpaces($"///</remarks>"));
         }
 
         if (Parameters.Count > 0) {
@@ -54,5 +61,6 @@ public record DotnetMethod() {
         Parameters = [];
         Exceptions = [];
         Returns = string.Empty;
+        Remarks = string.Empty;
     }
 }

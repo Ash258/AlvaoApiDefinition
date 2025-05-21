@@ -476,6 +476,7 @@ public class AlvaoClass {
             Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
             var ret = string.Empty;
+            var remarks = string.Empty;
             List<(string, string)> exceptions = [];
             List<(string, string)> parameters = [];
 
@@ -521,6 +522,14 @@ public class AlvaoClass {
                     //         // examples.Add(h4CurrentElements[1].Name);
                     //         // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
                     //         break;
+                    case "Remarks":
+                        Logger.LogDebug("Processing method remarks [{}] {{{}}}", Name, NamespaceName);
+                        try {
+                            remarks = h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First();
+                        } catch {
+                            Logger.LogDebug("Cannot process method returns [{}] {{{}}}", Name, NamespaceName);
+                        }
+                        break;
                     case "Returns":
                         // ? TODO: Investigate if there are some returns described
                         Logger.LogDebug("Processing method returns [{}] {{{}}}", Name, NamespaceName);
@@ -566,6 +575,7 @@ public class AlvaoClass {
                     Parameters = parameters,
                     Exceptions = exceptions,
                     Returns = ret,
+                    Remarks = remarks,
                 };
             MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);

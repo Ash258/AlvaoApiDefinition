@@ -245,6 +245,7 @@ public static class MonkeyPatch {
                 AddUsingByClassName("SwLib", "Alvao.API.AM.Model.SwLibrary", clazz.Name, toAdd);
                 AddUsingByClassName("SoftwareProfile", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("Object", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("Object", "Alvao.API.AM.Exceptions", clazz.Name, toAdd);
                 AddUsingByClassName("ImportCsv", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
