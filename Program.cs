@@ -38,9 +38,9 @@ if (args.Length > 0)
         Environment.Exit(0);
     }
 
-    if (args.Contains("ignore")) Helpers.IGNORE_CACHE = true;
+    if (args.Contains("ignore")) IGNORE_CACHE = true;
 
-    var _l = Helpers.IGNORE_CACHE ? args.Length - 1 : args.Length;
+    var _l = IGNORE_CACHE ? args.Length - 1 : args.Length;
 
     filter = [.. args.TakeLast(_l)];
     if (filter.Length > 0) alvaoNamespace = [.. alvaoNamespace.Where(ns => filter.Contains(ns))];
@@ -66,7 +66,7 @@ foreach (var ns in alvaoNamespace)
     }
 }
 
-MonkeyPatch2.PatchUnDocumentedClasses(Helpers2.CreateLogger<MonkeyPatchLogger>());
+MonkeyPatch2.PatchUnDocumentedClasses(CreateLogger<MonkeyPatchLogger>());
 
 Console.WriteLine("");
 Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");

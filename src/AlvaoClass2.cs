@@ -41,11 +41,11 @@ public class AlvaoClass2
         Name = name;
         Type = memberType;
         IsEnum = String.Equals(Type, "Enum");
-        FullUrl = $"{Helpers.BASE_HTML_URL}/{href.Split("/").Last()}";
+        FullUrl = $"{BASE_HTML_URL}/{href.Split("/").Last()}";
         Namespace = ns;
         NamespaceName = ns.Name;
-        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
-        HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
+        LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
+        HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
         FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
 
         Summary = Helpers2.GetSummary(HtmlDocument);
@@ -468,7 +468,7 @@ public class AlvaoClass2
                         {
                             var _parameterName = parameterDefs[paramIndex].Trim();
                             Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
-                            string name = nameOnly ? string.Empty : Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
+                            string name = nameOnly ? string.Empty : ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
                             parameters.Add((_parameterName, name));
                         }
                         break;
@@ -559,7 +559,7 @@ public class AlvaoClass2
                         {
                             var _parameterName = parameterDefs[paramIndex].Trim();
                             Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
-                            string name = nameOnly ? string.Empty : Helpers.ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
+                            string name = nameOnly ? string.Empty : ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
                             parameters.Add((_parameterName, name));
                         }
                         break;
@@ -599,7 +599,7 @@ public class AlvaoClass2
                         {
                             var exceptionName = exceptionsDefs[paramIndex].Trim();
                             Logger.LogDebug("Adding method exceptions {} [{}] {{{}}}", exceptionName, Name, NamespaceName);
-                            exceptions.Add((exceptionName, Helpers.ReplaceEndLinesWithSpace(exceptionsSumarries[paramIndex].Trim())));
+                            exceptions.Add((exceptionName, ReplaceEndLinesWithSpace(exceptionsSumarries[paramIndex].Trim())));
                         }
                         break;
                     default:
@@ -661,7 +661,7 @@ public class AlvaoClass2
     private void ProcessDefinition()
     {
         Logger.LogInformation("Processing definitition of class {name} {{{ns}}}", Name, NamespaceName);
-        var _def = Helpers2.ExtractObjectDefinition(HtmlDocument);
+        var _def = ExtractObjectDefinition(HtmlDocument);
         if (_def == null) return;
 
         Definition = _def;

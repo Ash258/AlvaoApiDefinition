@@ -21,13 +21,13 @@ public class AlvaoNamespace2
         Logger = CreateLogger<AlvaoNamespace2>();
 
         Name = namespaceName;
-        FullUrl = $"{Helpers.BASE_HTML_URL}/{namespaceName}.html";
-        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
-        HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
+        FullUrl = $"{BASE_HTML_URL}/{namespaceName}.html";
+        LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
+        HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
 
         Enums = [];
 
-        Helpers.AssertDirectory(Name.Replace(".", "/"));
+        AssertDirectory(Name.Replace(".", "/"));
     }
 
     internal void Process()

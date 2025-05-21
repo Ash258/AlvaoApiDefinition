@@ -6,6 +6,13 @@ namespace AlvaoScrapper;
 
 public static class Helpers2
 {
+    public static string ALVAO_VERSION = "25";
+    public static string ALVAO_VERSION_DOT = ALVAO_VERSION.Replace("_", ".");
+    public static string BASE_URL = $"https://doc.alvao.com/en/{ALVAO_VERSION}/alvao-api";
+    public static string BASE_HTML_URL = $"{BASE_URL}/api";
+    public static string LOCAL_HTML_FOLDER = "html";
+    public static bool IGNORE_CACHE = false;
+
     public static ILogger<T> CreateLogger<T>(string filterName = "AlvaoScrapper", string envName = "Logging__LogLevel__AlvaoScrapper", string defaultValue = "4")
     {
         var loggerFactory = LoggerFactory.Create(builder =>
@@ -19,6 +26,29 @@ public static class Helpers2
         });
 
         return loggerFactory.CreateLogger<T>();
+    }
+
+    public static HtmlDocument LoadDocument(string url, string localPath)
+    {
+        HtmlDocument doc = new();
+        if (!IGNORE_CACHE && File.Exists(localPath))
+        {
+            doc.Load(localPath);
+        }
+        else
+        {
+            doc = new HtmlWeb().Load(url);
+            File.WriteAllText(localPath, doc.Text);
+        }
+
+        return doc;
+    }
+
+    public static void AssertDirectory(string folder)
+    {
+        if (Directory.Exists(folder)) return;
+
+        Directory.CreateDirectory(folder);
     }
 
     public static string TrimInnerText(HtmlNode node)
