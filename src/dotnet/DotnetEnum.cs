@@ -3,18 +3,15 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public record DotnetEnum()
-{
+public record DotnetEnum() {
     public string Name { get; set; }
     public string Summary { get; set; }
     public string Definition { get; set; }
     public List<string> Fields { get; set; }
 
-    public string Produce(int indent = 4)
-    {
+    public string Produce(int indent = 4) {
         var sb = new StringBuilder();
-        if (!Summary.IsNullOrEmpty())
-        {
+        if (!Summary.IsNullOrEmpty()) {
             sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
@@ -30,8 +27,7 @@ public record DotnetEnum()
         return sb.ToString();
     }
 
-    public void Reset()
-    {
+    public void Reset() {
         Name = string.Empty;
         Summary = string.Empty;
         Fields = [];

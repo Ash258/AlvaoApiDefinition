@@ -3,36 +3,29 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public record DotnetConstructor()
-{
+public record DotnetConstructor() {
     public string Name { get; set; }
     public string Summary { get; set; }
     public string Definition { get; set; }
     public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
     public List<string> Examples { get; set; }
 
-    public string Produce(int indent = 4)
-    {
+    public string Produce(int indent = 4) {
         var sb = new StringBuilder();
-        if (!Summary.IsNullOrEmpty())
-        {
+        if (!Summary.IsNullOrEmpty()) {
             sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
-        if (Parameters.Count > 0)
-        {
-            Parameters.ForEach(param =>
-            {
+        if (Parameters.Count > 0) {
+            Parameters.ForEach(param => {
                 sb.Append(PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
                 sb.AppendLine();
             });
         }
 
-        if (Examples.Count > 0)
-        {
-            for (int i = 0; i < Examples.Count; ++i)
-            {
+        if (Examples.Count > 0) {
+            for (int i = 0; i < Examples.Count; ++i) {
                 sb.Append(PrefixEachLineSpaces("/// <example>"));
                 // sb.Append(PrefixEachLineSpaces($"/// Example {i}"));
                 sb.Append(PrefixEachLineSpaces("/// <code>"));
@@ -48,8 +41,7 @@ public record DotnetConstructor()
         return sb.ToString();
     }
 
-    public void Reset()
-    {
+    public void Reset() {
         Name = string.Empty;
         Summary = string.Empty;
         Definition = string.Empty;

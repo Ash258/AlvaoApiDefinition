@@ -4,8 +4,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public class AlvaoNamespace
-{
+public class AlvaoNamespace {
     public ILogger Logger;
 
     public string Name { get; set; }
@@ -16,8 +15,7 @@ public class AlvaoNamespace
 
     public Dictionary<string, DotnetEnum[]> Enums { get; set; }
 
-    public AlvaoNamespace(string namespaceName)
-    {
+    public AlvaoNamespace(string namespaceName) {
         Logger = CreateLogger<AlvaoNamespace>();
 
         Name = namespaceName;
@@ -30,8 +28,7 @@ public class AlvaoNamespace
         AssertDirectory(Name.Replace(".", "/"));
     }
 
-    internal void Process()
-    {
+    internal void Process() {
         Logger.LogInformation("Processing {} namespace", Name);
 
         AssertDocumentIsNamespace();
@@ -39,8 +36,7 @@ public class AlvaoNamespace
         // h3 contains the main groups (classes, interfaces, ...)
         Logger.LogDebug("Searching for h3 element");
         var h3Headers = HtmlDocument.DocumentNode.SelectNodes("//h3");
-        if (h3Headers == null)
-        {
+        if (h3Headers == null) {
             Logger.LogError("Cannot find h3 element on page");
             return;
         }
@@ -53,11 +49,9 @@ public class AlvaoNamespace
         Logger.LogInformation("Processing namespace group [{}] {{{}}}", currentMemberType, Name);
 
         List<MemberProperties> membersToProcess = [];
-        foreach (var el in relevantElements)
-        {
+        foreach (var el in relevantElements) {
             // Other group occoured
-            if (el.Name.Equals("h3"))
-            {
+            if (el.Name.Equals("h3")) {
                 var n = SanitizeMemberType(el.InnerText.Trim());
                 Logger.LogInformation("Namespace group changed from {} to [{}] {{{}}}", currentMemberType, n, Name);
                 currentMemberType = n;
@@ -65,8 +59,7 @@ public class AlvaoNamespace
             }
 
             var aNode = el.SelectSingleNode(".//dt/a");
-            MemberProperties member = new()
-            {
+            MemberProperties member = new() {
                 Type = currentMemberType,
                 Name = aNode.InnerText.Trim(),
                 Url = aNode.GetAttributeValue("href", "none"),
@@ -78,18 +71,14 @@ public class AlvaoNamespace
 
         // Enums needs to be preprocessed
         Logger.LogDebug("Going to process enums");
-        foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum")))
-        {
+        foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum"))) {
             Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
 
             AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, null);
 
-            try
-            {
+            try {
                 clazz.Process();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 Logger.LogError("Cannot process enum ({}) [{}] {{{}}}", e.Message, member.Name, Name);
                 continue;
             }
@@ -98,34 +87,28 @@ public class AlvaoNamespace
                 ? member.Name.Split(".")[0]
                 : string.Empty;
 
-            if (clazz.SpecialEnumClass == null)
-            {
+            if (clazz.SpecialEnumClass == null) {
                 Logger.LogCritical("Enum was not parsed correctly [{}] {{{}}}", member.Name, Name);
                 continue;
             }
 
-            if (string.IsNullOrEmpty(parent))
-            {
+            if (string.IsNullOrEmpty(parent)) {
                 Logger.LogDebug("Producting standalone cs enum file [{}] {{{}}}", member.Name, Name);
                 clazz.ProduceFinalCsFile(true);
                 continue;
             }
 
             var value = Enums.GetValueOrDefault(parent, []);
-            if (value.Length != 0)
-            {
+            if (value.Length != 0) {
                 Logger.LogDebug("Adding enum '{}' to existing parent class {} [{}] {{{}}}", clazz.SpecialEnumClass.Name, parent, member.Name, Name);
                 Enums[parent] = [.. value.Concat([clazz.SpecialEnumClass])];
-            }
-            else
-            {
+            } else {
                 Logger.LogDebug("Creating new parent class '{}' for enum '{}' [{}] {{{}}}", parent, clazz.SpecialEnumClass.Name, member.Name, Name);
                 Enums.Add(parent, [clazz.SpecialEnumClass]);
             }
         }
 
-        foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum")))
-        {
+        foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum"))) {
             // var validClasss = new string[] {
             //     // "AadSetting",
             //     // "LogOperation",
@@ -136,12 +119,9 @@ public class AlvaoNamespace
 
             var enums = Enums.GetValueOrDefault(member.Name, []);
             AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, enums);
-            try
-            {
+            try {
                 clazz.Process();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 Logger.LogError("Cannot process class ({}) [{}] {{{}}}", e.Message, member.Name, Name);
                 continue;
             }
@@ -150,28 +130,23 @@ public class AlvaoNamespace
         }
     }
 
-    private void AssertDocumentIsNamespace()
-    {
+    private void AssertDocumentIsNamespace() {
 
         Logger.LogDebug("Verifying HTML document is namespace");
         var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
-        if (h1 == null)
-        {
+        if (h1 == null) {
             Logger.LogError("Page does not have h1");
             throw new Exception("Page does not have h1");
         }
 
-        if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}"))
-        {
+        if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}")) {
             Logger.LogError("Page contains different namespace");
             throw new Exception("Page contains different namespace");
         }
     }
 
-    internal static string SanitizeMemberType(string type)
-    {
-        return type switch
-        {
+    internal static string SanitizeMemberType(string type) {
+        return type switch {
             "Classes" => "Class",
             "Interfaces" => "Interface",
             "Enums" => "Enum",
@@ -180,8 +155,7 @@ public class AlvaoNamespace
     }
 
     #region DTOs
-    internal record MemberProperties()
-    {
+    internal record MemberProperties() {
         public string Type { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }

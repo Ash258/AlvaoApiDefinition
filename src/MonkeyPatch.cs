@@ -3,10 +3,8 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public static class MonkeyPatch
-{
-    public static void AssertGenerationOK(AlvaoClass clazz)
-    {
+public static class MonkeyPatch {
+    public static void AssertGenerationOK(AlvaoClass clazz) {
         var expectedNamespaceName = string.Empty;
         var expectedMethodCount = 0;
         var expectedPropsCount = 0;
@@ -14,8 +12,7 @@ public static class MonkeyPatch
         var expectedConstructorsCount = 0;
         var expectedEnumsCount = 0;
 
-        switch (clazz.Name)
-        {
+        switch (clazz.Name) {
             //#endregion Alvao.API.Common.Model
             case "AttachmentModel":
                 expectedNamespaceName = "Alvao.API.Common.Model";
@@ -57,8 +54,7 @@ public static class MonkeyPatch
             expectedFieldsCount != clazz.Fields.Count ||
             expectedEnumsCount != clazz.Enums.Count ||
             !Equals(expectedNamespaceName, clazz.NamespaceName)
-        )
-        {
+        ) {
             Console.WriteLine($"{clazz.NamespaceName}/{clazz.Name} Class was processed incorrectly (" +
                 $"C: {clazz.Constructors.Count} [{expectedConstructorsCount}], " +
                 $"P: {clazz.Properties.Count} [{expectedPropsCount}], " +
@@ -71,8 +67,7 @@ public static class MonkeyPatch
         }
     }
 
-    public static void PatchUnDocumentedClasses(ILogger Logger)
-    {
+    public static void PatchUnDocumentedClasses(ILogger Logger) {
         var caution = "!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
         var commonModelDataseNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common.Model.Database");
@@ -89,8 +84,7 @@ public static class MonkeyPatch
             null == modelDet ||
             null == contextNs ||
             null == commonNs
-        )
-        {
+        ) {
             Logger.LogWarning("Cannot generate undocumented classes");
             return;
         }
@@ -98,8 +92,7 @@ public static class MonkeyPatch
         Logger.LogInformation("Monkeypatching undocumented classes");
 
         // swLibraryNs
-        foreach (var name in new string[] { "ISwLibRepository" })
-        {
+        foreach (var name in new string[] { "ISwLibRepository" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -115,8 +108,7 @@ public static class MonkeyPatch
 
             clazz.ProduceFinalCsFile();
         }
-        foreach (var name in new string[] { "ArchiveStream" })
-        {
+        foreach (var name in new string[] { "ArchiveStream" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -148,8 +140,7 @@ public static class MonkeyPatch
         }
 
         // commonModelDataseNs
-        foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository", "IObjectPropertyRepository" })
-        {
+        foreach (var name in new string[] { "IDocumentRepository", "IDetectionRepository", "IObjectPropertyRepository" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -167,8 +158,7 @@ public static class MonkeyPatch
         }
 
         // apiSd
-        foreach (var name in new string[] { "AlvaoConfigurationXmlModel", "ImportViewModel" })
-        {
+        foreach (var name in new string[] { "AlvaoConfigurationXmlModel", "ImportViewModel" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -186,8 +176,7 @@ public static class MonkeyPatch
         }
 
         // apiAm
-        foreach (var name in new string[] { "IFormattedTextWriter" })
-        {
+        foreach (var name in new string[] { "IFormattedTextWriter" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -205,8 +194,7 @@ public static class MonkeyPatch
         }
 
         // modelDet
-        foreach (var name in new string[] { "ArchiveStream" })
-        {
+        foreach (var name in new string[] { "ArchiveStream" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -224,8 +212,7 @@ public static class MonkeyPatch
         }
 
         // commonNs
-        foreach (var name in new string[] { "LicenseModule", "ModuleInfo" })
-        {
+        foreach (var name in new string[] { "LicenseModule", "ModuleInfo" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -252,8 +239,7 @@ public static class MonkeyPatch
         }
 
         // contextNs
-        foreach (var name in new string[] { "IDbContextProvider" })
-        {
+        foreach (var name in new string[] { "IDbContextProvider" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -271,12 +257,10 @@ public static class MonkeyPatch
         }
     }
 
-    public static void PatchUsings(AlvaoClass clazz, ILogger Logger)
-    {
+    public static void PatchUsings(AlvaoClass clazz, ILogger Logger) {
         List<string> toAdd = [];
 
-        switch (clazz.NamespaceName)
-        {
+        switch (clazz.NamespaceName) {
             case "Alvao.API.AM":
                 toAdd.Add("Alvao.API.Common.Model.Database");
 
@@ -375,8 +359,7 @@ public static class MonkeyPatch
     }
 
     // TODO: It will be faster when this will be done while the definitions are processed
-    public static void UsingsBasedOnDefinitions(AlvaoClass clazz, ILogger Logger)
-    {
+    public static void UsingsBasedOnDefinitions(AlvaoClass clazz, ILogger Logger) {
         List<string> definitions = clazz.GetAllDefinitionsAsList();
 
         List<(string, string)> map =
@@ -435,12 +418,9 @@ public static class MonkeyPatch
             // ("static class WorkLoad", "Alvao.API.Common.Model.Database"),
         ];
 
-        foreach (var d in definitions)
-        {
-            foreach (var m in map)
-            {
-                if (d.Contains(m.Item1))
-                {
+        foreach (var d in definitions) {
+            foreach (var m in map) {
+                if (d.Contains(m.Item1)) {
                     Logger.LogDebug("Monkeypatching using based on definition {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
                     clazz.Usings.Add(m.Item2);
                 }
@@ -448,8 +428,7 @@ public static class MonkeyPatch
         }
     }
 
-    public static void CreateMethods(AlvaoClass clazz, ILogger Logger)
-    {
+    public static void CreateMethods(AlvaoClass clazz, ILogger Logger) {
         Logger.LogDebug("Monkeypatching missing methods [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
 
         List<(string, string)> map =
@@ -459,13 +438,10 @@ public static class MonkeyPatch
             ("DetectionArchive", "public System.Threading.Tasks.ValueTask DisposeAsync()"),
         ];
 
-        foreach (var m in map)
-        {
-            if (clazz.Name.Contains(m.Item1))
-            {
+        foreach (var m in map) {
+            if (clazz.Name.Contains(m.Item1)) {
                 Logger.LogDebug("Creating method {} [{}] {{{}}}", m.Item2, clazz.Name, clazz.NamespaceName);
-                clazz.Methods.Add(new DotnetMethod()
-                {
+                clazz.Methods.Add(new DotnetMethod() {
                     Name = $"Patched {m.Item2}",
                     Definition = m.Item2,
                     Summary = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable",
@@ -478,18 +454,15 @@ public static class MonkeyPatch
     }
 
     // Monkeypatch methods and usings based on classes and it's methods
-    public static void SpecificMethod(AlvaoClass clazz, DotnetMethod method, ILogger Logger)
-    {
+    public static void SpecificMethod(AlvaoClass clazz, DotnetMethod method, ILogger Logger) {
         var _def = string.Empty;
 
         if (IsClass(clazz, "Alvao.API.Common", "ProfileValue") && string.Equals(method.Name, "Get"))
             _def = method.Definition.Replace(" ProfileValue ", " Alvao.API.Common.Model.Database.ProfileValue ");
 
-        if (IsClass(clazz, "Alvao.API.Common", "Email"))
-        {
+        if (IsClass(clazz, "Alvao.API.Common", "Email")) {
             // TODO: Find better way, idealy with example contains
-            switch (method.Name)
-            {
+            switch (method.Name) {
                 case "Queue":
                     _def = method.Definition.Replace("(MailMessage ", "(Rebex.Mail.MailMessage ");
                     if (clazz.Methods.Count == 1)
@@ -503,10 +476,8 @@ public static class MonkeyPatch
             }
         }
 
-        if (IsClass(clazz, "Alvao.API.SD", "TicketState"))
-        {
-            switch (method.Name)
-            {
+        if (IsClass(clazz, "Alvao.API.SD", "TicketState")) {
+            switch (method.Name) {
                 case "GetStatesFromProcess":
                 case "GetFromProcess":
                     _def = method.Definition.Replace("<TicketState>", "<Alvao.API.Common.Model.Database.TicketState>");
@@ -520,10 +491,8 @@ public static class MonkeyPatch
             }
         }
 
-        if (IsClass(clazz, "Alvao.API.AM", "ObjectRight"))
-        {
-            switch (method.Name)
-            {
+        if (IsClass(clazz, "Alvao.API.AM", "ObjectRight")) {
+            switch (method.Name) {
                 case "CheckForUser":
                 case "HasUserObjectRight":
                     _def = method.Definition.Replace("ObjectRight.Right ", "Alvao.API.AM.Model.ObjectRight.Right ");
@@ -531,10 +500,8 @@ public static class MonkeyPatch
             }
         }
 
-        if (IsClass(clazz, "Alvao.API.Common", "Webhook"))
-        {
-            switch (method.Name)
-            {
+        if (IsClass(clazz, "Alvao.API.Common", "Webhook")) {
+            switch (method.Name) {
                 case "Create":
                 case "Delete":
                     _def = method.Definition.Replace("(Webhook ", "(Alvao.API.Common.Model.Database.Webhook ");
@@ -557,7 +524,6 @@ public static class MonkeyPatch
     }
 }
 
-public class MonkeyPatchLogger
-{
+public class MonkeyPatchLogger {
 
 }

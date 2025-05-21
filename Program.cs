@@ -30,10 +30,8 @@ var logger = CreateLogger<Program>();
 
 string[] filter = [];
 int toTake = alvaoNamespace.Length;
-if (args.Length > 0)
-{
-    if (args.Contains("test"))
-    {
+if (args.Length > 0) {
+    if (args.Contains("test")) {
         Console.WriteLine("All files are generated OK");
         Environment.Exit(0);
     }
@@ -48,19 +46,15 @@ if (args.Length > 0)
 
 // MonkeyPatch.MonkeyPatchNotAvailableNAlvao.API.Common.Modelamespaces();
 
-foreach (var ns in alvaoNamespace)
-{
+foreach (var ns in alvaoNamespace) {
     logger.LogInformation("Processing {ns} Namespace", ns);
     logger.LogDebug("Processing {ns} Namespace", ns);
 
     var alvaoNs = new AlvaoNamespace(ns);
     State.Namespaces.Add(ns, alvaoNs);
-    try
-    {
+    try {
         alvaoNs.Process();
-    }
-    catch (Exception e)
-    {
+    } catch (Exception e) {
         logger.LogError("Cannot process namespace {}: {}", e.Message, ns);
         continue;
     }
