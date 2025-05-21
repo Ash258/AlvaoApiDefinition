@@ -359,13 +359,14 @@ public class AlvaoClass {
                     }
                 );
             } else {
-                Properties.Add(
-                    new DotnetProperty() {
-                        Name = _name,
-                        Summary = _sum,
-                        Definition = _def,
-                    }
-                );
+                var prop = new DotnetProperty() {
+                    Name = _name,
+                    Summary = _sum,
+                    Definition = _def,
+                };
+                MonkeyPatch.SpecificProperty(this, prop, MpLogger);
+
+                Properties.Add(prop);
             }
         }
     }
@@ -435,15 +436,16 @@ public class AlvaoClass {
                         break;
                 }
             }
-            Constructors.Add(
-                new DotnetConstructor() {
-                    Name = _name,
-                    Summary = _sum,
-                    Definition = _def,
-                    Parameters = parameters,
-                    Examples = examples,
-                }
-            );
+            var construct = new DotnetConstructor() {
+                Name = _name,
+                Summary = _sum,
+                Definition = _def,
+                Parameters = parameters,
+                Examples = examples,
+            };
+            MonkeyPatch.SpecificConstructor(this, construct, MpLogger);
+
+            Constructors.Add(construct);
         }
     }
 

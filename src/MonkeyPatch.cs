@@ -108,29 +108,22 @@ public static class MonkeyPatch {
 
             clazz.ProduceFinalCsFile();
         }
+
+        // modelDet
         foreach (var name in new string[] { "ArchiveStream" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
-                swLibraryNs,
+                modelDet,
                 caution,
-                $"abstract public class {name}",
+                $"public abstract class {name}",
                 [],
                 [],
-                [
-                    new DotnetMethod() {
-                        Name = "IsUnicode",
-                        Definition = "abstract public bool IsUnicode();",
-                        Summary = caution,
-                        Exceptions = [],
-                        Parameters = [],
-                        Returns = string.Empty
-                    }
-                ],
+                [],
                 [
                     new DotnetProperty() {
                         Name = "Unicode",
-                        Definition = "abstract public bool Unicode { get; }",
+                        Definition = "public abstract bool IsUnicode { get; }",
                     }
                 ],
                 []
@@ -181,24 +174,6 @@ public static class MonkeyPatch {
                 name,
                 "Class",
                 apiAm,
-                caution,
-                $"public class {name}",
-                [],
-                [],
-                [],
-                [],
-                []
-            );
-
-            clazz.ProduceFinalCsFile();
-        }
-
-        // modelDet
-        foreach (var name in new string[] { "ArchiveStream" }) {
-            var clazz = new AlvaoClass(
-                name,
-                "Class",
-                modelDet,
                 caution,
                 $"public class {name}",
                 [],
@@ -307,7 +282,7 @@ public static class MonkeyPatch {
                 AddUsingByClassName("MSEntraTenant", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.Common.Model":
-                AddUsingByClassName("ColumnValue", "Alvao.API.Common", clazz.Name, toAdd);
+                AddUsingByClassName("ColumnValue", "static Alvao.API.Common.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.Common.Model.Database":
                 AddUsingByClassName("DatabaseModelAutomapperProfile", "AutoMapper", clazz.Name, toAdd);
@@ -392,30 +367,6 @@ public static class MonkeyPatch {
 
             ("vColumnValueLoc", "Alvao.API.Common.Model.Database"),
             ("vColumnLoc", "Alvao.API.Common.Model.Database"),
-
-            // ("EmbeddingCreateResponse ", "System.Net.Http"),
-            // ("AssistantTicketTabModel ", "Alvao.API.AI.Model"),
-            // ("AddUnknownSwRequest ", "Alvao.API.AM.Model.SwLibrary"),
-            // ("TicketTemplateColumnValue ", "Alvao.API.Common.Model.Database"),
-            // (" IProfileConfiguration", "AutoMapper"),
-            // ("tPerson ", "Alvao.API.Common.Model.Database"),
-            // ("<tPerson>", "Alvao.API.Common.Model.Database"),
-            // ("tRole", "Alvao.API.Common.Model.Database"),
-            // ("ActMark.ActMarkId", "Alvao.API.Common.Model.Database"),
-            // ("TicketTemplate", "Alvao.API.Common.Model.Database"),
-            // ("tblKind", "Alvao.API.Common.Model.Database"),
-            // ("tHdTicket", "Alvao.API.Common.Model.Database"),
-            // ("tHdSection", "Alvao.API.Common.Model.Database"),
-            // ("tSlaRights", "Alvao.API.Common.Model.Database"),
-            // ("tAccount", "Alvao.API.Common.Model.Database"),
-            // ("tHdSectionRights", "Alvao.API.Common.Model.Database"),
-            // ("tAct", "Alvao.API.Common.Model.Database"),
-            // // TODO: Determine which TicketState is correct - Model or static class
-            // ("TicketState", "Alvao.API.Common.Model.Database"),
-            // // ("<TicketState>", "Alvao.API.SD"),
-            // (" CommandDesc", "Alvao.API.Common.Model.CustomApps"),
-            // ("IDetectionRepository", "Alvao.API.Common.Model.Database"),
-            // ("static class WorkLoad", "Alvao.API.Common.Model.Database"),
         ];
 
         foreach (var d in definitions) {
@@ -521,6 +472,33 @@ public static class MonkeyPatch {
 
         Logger.LogInformation("Monkeypatching method {} [{}] {{{}}}", method.Name, clazz.Name, clazz.NamespaceName);
         method.Definition = _def;
+    }
+
+    public static void SpecificConstructor(AlvaoClass clazz, DotnetConstructor constructor, ILogger Logger) {
+        var _def = string.Empty;
+
+        if (IsClass(clazz, "Alvao.API.AM.Model", "Property")) {
+            _def = constructor.Definition.Replace("Kind.DataType kind = DataType.KindNone", "Kind.DataType kind = Kind.DataType.KindNone");
+        }
+
+        if (string.IsNullOrEmpty(_def)) return;
+
+        Logger.LogInformation("Monkeypatching constructor {} [{}] {{{}}}", constructor.Name, clazz.Name, clazz.NamespaceName);
+        constructor.Definition = _def;
+    }
+
+
+    public static void SpecificProperty(AlvaoClass clazz, DotnetProperty property, ILogger Logger) {
+        var _def = string.Empty;
+
+        if (IsClass(clazz, "Alvao.API.Common.Model", "ColumnValue")) {
+            _def = property.Definition.Replace("public Database.ValueDataType DataType", "public ValueDataType DataType");
+        }
+
+        if (string.IsNullOrEmpty(_def)) return;
+
+        Logger.LogInformation("Monkeypatching property {} [{}] {{{}}}", property.Name, clazz.Name, clazz.NamespaceName);
+        property.Definition = _def;
     }
 }
 
