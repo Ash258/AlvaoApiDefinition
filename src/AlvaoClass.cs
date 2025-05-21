@@ -1,6 +1,7 @@
 using System.Text;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
+using Microsoft.Kiota.Abstractions.Extensions;
 using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
@@ -30,6 +31,9 @@ public class AlvaoClass {
     public List<string> Events { get; set; }
     public List<DotnetMethod> Methods { get; set; }
 
+    // sb.ToString() of other classes
+    public List<string> InnerClasses { get; set; }
+
     public bool IsEnum { get; set; }
 
     public AlvaoClass(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums) {
@@ -56,6 +60,7 @@ public class AlvaoClass {
         Methods = [];
         Events = [];
         Constructors = [];
+        InnerClasses = [];
 
         if (enums != null && enums.Length > 0) {
             Enums.AddRange(enums);
@@ -91,6 +96,7 @@ public class AlvaoClass {
 
         Enums = [];
         Events = [];
+        InnerClasses = [];
 
         Usings = usings;
         Constructors = constructors;
@@ -604,16 +610,35 @@ public class AlvaoClass {
 
         MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
 
+        var nestedClass = false;
+        AlvaoClass? parentClass = null;
+        // It is nested class. It need to find the parent class and update it
+        if (Name.Contains('.')) {
+            nestedClass = true;
+            var parentName = Name.Split('.')[0];
+            // ? TODO: Could it be differnt namespace??
+            parentClass = State.Classes.GetOrDefault($"{NamespaceName}.{parentName}");
+            if (parentClass == null) {
+                Logger.LogCritical("Cannot find parent class of nested class [{}] {{{}}}", Name, NamespaceName);
+                nestedClass = false;
+            }
+
+            Definition = Definition.Replace(Name, Name.Replace($"{parentName}.", ""));
+        }
+
         // First process usings
-        if (Usings.Count != 0) {
+        // Skip usings and namespace for nested classes
+        if (nestedClass == false && Usings.Count != 0) {
             Logger.LogInformation("Adding usings for class [{}] {{{}}}", Name, NamespaceName);
             Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
             sb.AppendLine("");
         }
 
-        // Set namespace
-        sb.AppendLine($"namespace {NamespaceName};");
-        sb.AppendLine("");
+        if (nestedClass == false) {
+            // Set namespace
+            sb.AppendLine($"namespace {NamespaceName};");
+            sb.AppendLine("");
+        }
 
         // Set class specific docs
         if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{ReplaceEndLinesWithSpace(Summary)}</summary>");
@@ -655,12 +680,26 @@ public class AlvaoClass {
             }
         }
 
+        InnerClasses.ForEach(el => {
+            sb.AppendLine("");
+            sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));
+        });
+
         sb.AppendLine("}"); // End class
+
+        if (nestedClass) {
+            parentClass.InnerClasses.Add(sb.ToString());
+            Logger.LogInformation("Forcing regeneration of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
+            parentClass.ProduceFinalCsFile();
+            Logger.LogInformation("Class was written as part of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
+            State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
+            return;
+        }
 
         Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
         Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
+        State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
     }
 
     internal List<string> GetAllDefinitionsAsList() {
