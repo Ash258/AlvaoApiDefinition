@@ -16,7 +16,7 @@ public class AlvaoClass2
     public string FinalCsFile { get; set; }
     public List<ScopeBoundary> Boundaries { get; set; }
 
-    public AlvaoNamespace2 Namespace { get; set; }
+    public AlvaoNamespace Namespace { get; set; }
     public string NamespaceName { get; set; }
     public string Name { get; set; }
     public string Summary { get; set; }
@@ -33,7 +33,7 @@ public class AlvaoClass2
 
     public bool IsEnum { get; set; }
 
-    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace2 ns, DotnetEnum[]? enums)
+    public AlvaoClass2(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums)
     {
         Logger = CreateLogger<AlvaoClass2>();
         MpLogger = CreateLogger<MonkeyPatchLogger>();
@@ -68,7 +68,7 @@ public class AlvaoClass2
     public AlvaoClass2(
         string name,
         string memberType,
-        AlvaoNamespace2 ns,
+        AlvaoNamespace ns,
         string summary,
         string definition,
         List<string> usings,

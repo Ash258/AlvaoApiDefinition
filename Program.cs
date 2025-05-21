@@ -53,7 +53,7 @@ foreach (var ns in alvaoNamespace)
     logger.LogInformation("Processing {ns} Namespace", ns);
     logger.LogDebug("Processing {ns} Namespace", ns);
 
-    var alvaoNs = new AlvaoNamespace2(ns);
+    var alvaoNs = new AlvaoNamespace(ns);
     State.Namespaces.Add(ns, alvaoNs);
     try
     {

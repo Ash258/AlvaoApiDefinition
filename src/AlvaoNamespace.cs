@@ -4,7 +4,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public class AlvaoNamespace2
+public class AlvaoNamespace
 {
     public ILogger Logger;
 
@@ -16,9 +16,9 @@ public class AlvaoNamespace2
 
     public Dictionary<string, DotnetEnum[]> Enums { get; set; }
 
-    public AlvaoNamespace2(string namespaceName)
+    public AlvaoNamespace(string namespaceName)
     {
-        Logger = CreateLogger<AlvaoNamespace2>();
+        Logger = CreateLogger<AlvaoNamespace>();
 
         Name = namespaceName;
         FullUrl = $"{BASE_HTML_URL}/{namespaceName}.html";
