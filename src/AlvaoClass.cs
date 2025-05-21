@@ -421,7 +421,7 @@ public class AlvaoClass {
                             nameOnly = true;
                         }
                         if (parameterDefs.Count != parameterSums.Count) {
-                            Logger.LogWarning("Mismatch between constructor parameter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Mismatch between constructor parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             nameOnly = true;
                         }
                         for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex) {
@@ -475,7 +475,7 @@ public class AlvaoClass {
 
             Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
-            List<string> returns = [];
+            var ret = string.Empty;
             List<(string, string)> exceptions = [];
             List<(string, string)> parameters = [];
 
@@ -503,7 +503,7 @@ public class AlvaoClass {
                             nameOnly = true;
                         }
                         if (parameterDefs.Count != parameterSums.Count) {
-                            Logger.LogWarning("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
                             nameOnly = true;
                         }
                         for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex) {
@@ -522,9 +522,15 @@ public class AlvaoClass {
                     //         // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
                     //         break;
                     case "Returns":
-                        // Simple void, no need to handle returns, definition is enough
                         // ? TODO: Investigate if there are some returns described
-                        Logger.LogWarning("Skipping Returns of method {} [{}] {{{}}}", _name, Name, NamespaceName);
+                        Logger.LogDebug("Processing method returns [{}] {{{}}}", Name, NamespaceName);
+                        try {
+                            var returnType = h4CurrentElements[1].SelectNodes(".//dt").Select(x => x.InnerText).ToList();
+                            var sum = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
+                            ret = sum[0].Trim();
+                        } catch {
+                            Logger.LogDebug("Cannot process method returns [{}] {{{}}}", Name, NamespaceName);
+                        }
                         break;
                     case "Exceptions":
                         Logger.LogDebug("Processing method exceptions [{}] {{{}}}", Name, NamespaceName);
@@ -559,7 +565,7 @@ public class AlvaoClass {
                     Definition = _def,
                     Parameters = parameters,
                     Exceptions = exceptions,
-                    Returns = "", // ! TODO: Implement
+                    Returns = ret,
                 };
             MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);

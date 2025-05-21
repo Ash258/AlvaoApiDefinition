@@ -19,10 +19,9 @@ public record DotnetMethod() {
         }
 
         if (!Returns.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpaces($"///<returns>"));
-            sb.Append(PrefixEachLineSpaces(Returns));
-            sb.Append(PrefixEachLineSpaces($"///</returns>"));
-            sb.AppendLine();
+            sb.AppendLine(PrefixEachLineSpaces($"///<returns>"));
+            sb.AppendLine(PrefixEachLineSpaces($"///{Returns}"));
+            sb.AppendLine(PrefixEachLineSpaces($"///</returns>"));
         }
 
         if (Parameters.Count > 0) {
