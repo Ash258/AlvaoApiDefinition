@@ -92,7 +92,7 @@ public static class MonkeyPatch {
         Logger.LogInformation("Monkeypatching undocumented classes");
 
         // swLibraryNs
-        foreach (var name in new string[] { "ISwLibRepository" }) {
+        foreach (var name in new string[] { "ISwLibRepository", "ArchiveStream" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
