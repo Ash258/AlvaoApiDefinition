@@ -7,6 +7,23 @@ tasks:
     cmds:
     - task: build
     - task: library:build
+  library:clean:
+    dir: Alvao
+    vars:
+      folders: [ "API", "Context" ]
+    ignore_error: true
+    cmd:
+      for:
+        var: folders
+      cmd: rm -rf {{ .ITEM }}/**
+  library:format:
+    cmd: dotnet format Alvao/
+  library:init:
+    dir: Alvao
+    cmds:
+    - dotnet new classlib -n Alvao -o .
+    - for: [ "Dapper.Contrib.Extensions" ]
+      cmd: dotnet add package {{.ITEM}}
   library:build:
     dir: Alvao
     cmd: dotnet build .
@@ -17,9 +34,9 @@ tasks:
     aliases:
     - format
     generates:
-    - html/*.htm
+    - html/*.html
     sources:
-    - html/*.htm
+    - html/*.html
     cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm*
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
@@ -27,7 +44,7 @@ tasks:
     sources:
     - Program.cs
     - src/**
-    - Alvao/**
+    - .editorconfig
     cmd: dotnet format
   clean:
     cmd: rm -rf Alvao/ Examples/
@@ -37,13 +54,8 @@ tasks:
     aliases:
     - default
     cmds:
-    - task: clean
-    - task: dotnet:run
-    - task: tidy
     - task: format
-    - task: restore
-    - git add Alvao/
-    - git add html/
-    cmds:
-      - task: delete
-      - task: run
+    - task: library:clean
+    - task: build
+    - task: tidy
+    - task: library:format
