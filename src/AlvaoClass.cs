@@ -26,9 +26,9 @@ public class AlvaoClass {
     public List<DotnetConstructor> Constructors { get; set; }
     public DotnetEnum? SpecialEnumClass { get; set; }
     public List<DotnetEnum> Enums { get; set; }
-    public List<DotnetProperty> Properties { get; set; }
-    public List<DotnetField> Fields { get; set; }
-    public List<string> Events { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Properties { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Fields { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Events { get; set; }
     public List<DotnetMethod> Methods { get; set; }
 
     // sb.ToString() of other classes
@@ -76,10 +76,9 @@ public class AlvaoClass {
         List<string> usings,
         List<DotnetConstructor> constructors,
         List<DotnetMethod> methods,
-        List<DotnetProperty> properties,
-        List<DotnetField> fields
+        List<DotnetPropertyOrFieldOrEvent> properties,
+        List<DotnetPropertyOrFieldOrEvent> fields
     // List<DotnetEnum> enums,
-    // List<string> events
     ) {
         Logger = CreateLogger<AlvaoClass>();
         MpLogger = CreateLogger<MonkeyPatchLogger>();
@@ -285,14 +284,17 @@ public class AlvaoClass {
 
             switch (gr.Key) {
                 case "Properties":
-                    ProcessPropertiesOrFields(gr.Value, "Property");
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Property");
                     break;
                 case "Fields":
                     if (IsEnum) {
                         ProcessEnumFields(gr.Value);
                         break;
                     }
-                    ProcessPropertiesOrFields(gr.Value, "Field");
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Field");
+                    break;
+                case "Events":
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Event");
                     break;
                 case "Constructors":
                     ProcessConstructors(gr.Value);
@@ -341,11 +343,13 @@ public class AlvaoClass {
         Logger.LogDebug("Finished processing enum fields [{}] {{{}}}", Name, NamespaceName);
     }
 
-    private void ProcessPropertiesOrFields(List<HtmlNode> elements, string type) {
-        var isField = String.Equals("Field", type);
-        var typePlural = isField
-            ? "Fields"
-            : "Properties";
+    private void ProcessPropertiesOrFieldsOrEvents(List<HtmlNode> elements, string type) {
+        var typePlural = type switch {
+            "Field" => "Fields",
+            "Property" => "Properties",
+            "Event" => "Events",
+            _ => throw new NotImplementedException(),
+        };
 
         Logger.LogDebug("Processing class {} [{}] {{{}}}", typePlural.ToLower(), Name, NamespaceName);
         (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
@@ -360,23 +364,23 @@ public class AlvaoClass {
 
             (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, type);
 
-            if (isField) {
-                Fields.Add(
-                    new DotnetField() {
-                        Name = _name,
-                        Summary = _sum,
-                        Definition = _def,
-                    }
-                );
-            } else {
-                var prop = new DotnetProperty() {
-                    Name = _name,
-                    Summary = _sum,
-                    Definition = _def,
-                };
-                MonkeyPatch.SpecificProperty(this, prop, MpLogger);
+            var item = new DotnetPropertyOrFieldOrEvent() {
+                Name = _name,
+                Summary = _sum,
+                Definition = _def,
+            };
 
-                Properties.Add(prop);
+            switch (type) {
+                case "Field":
+                    Fields.Add(item);
+                    break;
+                case "Property":
+                    MonkeyPatch.SpecificProperty(this, item, MpLogger);
+                    Properties.Add(item);
+                    break;
+                case "Event":
+                    Events.Add(item);
+                    break;
             }
         }
     }
@@ -602,6 +606,7 @@ public class AlvaoClass {
 
     internal void Process() {
         RestructuralizeClassDocument();
+
         if (IsEnum) {
             Logger.LogDebug("Skipping final cs file produce for Enum [{}] {{{}}}", Name, NamespaceName);
             return;
@@ -686,40 +691,42 @@ public class AlvaoClass {
             sb.AppendLine("{");
             bool indentNext = false;
             {
-                Logger.LogDebug("Appending enums [{}] {{{}}}", Name, NamespaceName);
+                Logger.LogDebug("Appending {} enums [{}] {{{}}}", Enums.Count, Name, NamespaceName);
                 Enums.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Enums.Count > 0;
 
-                Logger.LogDebug("Appending fields [{}] {{{}}}", Name, NamespaceName);
+                Logger.LogDebug("Appending {} fields [{}] {{{}}}", Fields.Count, Name, NamespaceName);
                 if (indentNext && Fields.Count > 0) sb.AppendLine("");
                 Fields.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Fields.Count > 0;
 
-                Logger.LogDebug("Appending properties [{}] {{{}}}", Name, NamespaceName);
+                Logger.LogDebug("Appending {} properties [{}] {{{}}}", Properties.Count, Name, NamespaceName);
                 if (indentNext && Properties.Count > 0) sb.AppendLine("");
                 Properties.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Properties.Count > 0;
 
-                // Logger.LogDebug("Appending events [{}] {{{}}}", Name, NamespaceName);
-                // if (indentNext && Events.Count > 0) sb.AppendLine("");
-                // Events.ForEach(el => sb.AppendLine($"{PrefixEachLineSpaces(el)};"));
-                // indentNext = Events.Count > 0;
-
-                Logger.LogDebug("Appending constructors [{}] {{{}}}", Name, NamespaceName);
+                Logger.LogDebug("Appending {} constructors [{}] {{{}}}", Constructors.Count, Name, NamespaceName);
                 if (indentNext && Constructors.Count > 0) sb.AppendLine("");
                 Constructors.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Constructors.Count > 0;
 
+                Logger.LogDebug("Appending {} methods [{}] {{{}}}", Methods.Count, Name, NamespaceName);
                 if (indentNext && Methods.Count > 0) sb.AppendLine("");
                 Methods.ForEach(el => {
                     sb.AppendLine(el.Produce());
                     sb.AppendLine("");
                 });
+                indentNext = Methods.Count > 0;
+
+                Logger.LogDebug("Appending {} events [{}] {{{}}}", Events.Count, Name, NamespaceName);
+                if (indentNext && Events.Count > 0) sb.AppendLine("");
+                Events.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Events.Count > 0;
             }
         }
 
         if (InnerClasses.Count > 0) {
-            Logger.LogDebug("Processing innerclasses [{}] {{{}}}", Name, NamespaceName);
+            Logger.LogDebug("Processing {} innerclasses [{}] {{{}}}", InnerClasses.Count, Name, NamespaceName);
             InnerClasses.ForEach(el => {
                 sb.AppendLine("");
                 sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));

@@ -3,7 +3,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public record DotnetField() {
+public record DotnetPropertyOrFieldOrEvent() {
     public string Name { get; set; } = string.Empty;
     public string Summary { get; set; } = string.Empty;
     public string Definition { get; set; } = string.Empty;
@@ -11,7 +11,7 @@ public record DotnetField() {
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
@@ -20,7 +20,7 @@ public record DotnetField() {
 
         if (!Definition.EndsWith('}')) def += ";";
 
-        sb.Append(PrefixEachLineSpaces(def, indent));
+        sb.AppendLine(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

@@ -121,7 +121,7 @@ public static class MonkeyPatch {
                 [],
                 [],
                 [
-                    new DotnetProperty() {
+                    new DotnetPropertyOrFieldOrEvent() {
                         Name = "Unicode",
                         Definition = "public abstract bool IsUnicode { get; }",
                     }
@@ -489,7 +489,7 @@ public static class MonkeyPatch {
     }
 
 
-    public static void SpecificProperty(AlvaoClass clazz, DotnetProperty property, ILogger Logger) {
+    public static void SpecificProperty(AlvaoClass clazz, DotnetPropertyOrFieldOrEvent property, ILogger Logger) {
         var _def = string.Empty;
 
         if (IsClass(clazz, "Alvao.API.Common.Model", "ColumnValue")) {
