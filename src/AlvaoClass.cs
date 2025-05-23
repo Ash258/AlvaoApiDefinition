@@ -491,6 +491,10 @@ public class AlvaoClass {
             (var _name, var _sum, var _def, var _url) = ExtractMemberInformation(methodElements, type);
             (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
 
+            if (String.Equals(Type, "Interface")) {
+                _def = $"{_def};";
+            }
+
             Logger.LogDebug("Found {} {} nested properties [{}] {{{}}}", h4Indexes.Count, type.ToLower(), Name, NamespaceName);
 
             var ret = string.Empty;

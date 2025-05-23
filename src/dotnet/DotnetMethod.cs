@@ -36,9 +36,13 @@ public record DotnetMethod() {
         });
 
         if (!Returns.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc("<returns>"));
-            sb.AppendLine(PrefixEachLineSpacesDoc(ReplaceEndLinesWithSpace(Returns)));
-            sb.AppendLine(PrefixEachLineSpacesDoc("</returns>"));
+            if (Returns.Contains('\n')) {
+                sb.AppendLine(PrefixEachLineSpacesDoc("<returns>"));
+                sb.AppendLine(PrefixEachLineSpacesDoc(Returns));
+                sb.AppendLine(PrefixEachLineSpacesDoc("</returns>"));
+            } else {
+                sb.AppendLine(PrefixEachLineSpacesDoc($"<returns>{Returns}</returns>"));
+            }
         }
 
         if (!FullUrl.IsNullOrEmpty()) {
@@ -46,7 +50,7 @@ public record DotnetMethod() {
         }
 
         var def = SanitizeXmlToString(Definition);
-        if (!Definition.EndsWith(';')) def += " { throw new NotImplementedException(); }";
+        if (!Definition.EndsWith(';')) def += " { throw new System.NotImplementedException(); }";
 
         sb.Append(PrefixEachLineSpaces(def, indent));
 
