@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Stocktaking - list of reader's files.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblInventoryAssetPack.htm"/>
 [TableAttribute("dbo.tblInventoryAssetPack")]
-public class tblInventoryAssetPack
-{
+public class tblInventoryAssetPack {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInventoryAssetPack_dteCreated.htm"/>
     public virtual DateTime? dteCreated { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInventoryAssetPack_dteExported.htm"/>

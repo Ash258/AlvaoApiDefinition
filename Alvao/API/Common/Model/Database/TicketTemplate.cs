@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of ticket templates</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketTemplate.htm"/>
 [TableAttribute("dbo.TicketTemplate")]
-public class TicketTemplate
-{
+public class TicketTemplate {
     /// <summary>Daily (0 - off, 1 - on).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTemplate_Daily.htm"/>
     public virtual bool Daily { get; set; }

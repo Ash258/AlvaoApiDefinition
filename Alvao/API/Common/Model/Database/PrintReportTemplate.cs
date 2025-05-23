@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Templates for print reports</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PrintReportTemplate.htm"/>
 [TableAttribute("dbo.PrintReportTemplate")]
-public class PrintReportTemplate
-{
+public class PrintReportTemplate {
     /// <summary>Description of template</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PrintReportTemplate_Description.htm"/>
     public virtual string Description { get; set; }

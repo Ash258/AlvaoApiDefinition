@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Stocktaking - assets in a specific stocktaking.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblInventoryAsset.htm"/>
 [TableAttribute("dbo.tblInventoryAsset")]
-public class tblInventoryAsset
-{
+public class tblInventoryAsset {
     /// <summary>ID of the reason for not finding an asset during web asset check (AssetCheckReason.id)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInventoryAsset_AssetCheckReasonId.htm"/>
     public virtual int? AssetCheckReasonId { get; set; }

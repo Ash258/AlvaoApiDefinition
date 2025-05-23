@@ -2,8 +2,7 @@ namespace Alvao.API.SD.Model;
 
 /// <summary>Model representing act costs.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_CostModel.htm"/>
-public class CostModel
-{
+public class CostModel {
     /// <summary>Exclude from invoice</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CostModel_DontCharge.htm"/>
     public bool DontCharge { get; set; }
@@ -25,8 +24,7 @@ public class CostModel
     /// <param name="obj"> </param>
     public override bool Equals(
         Object obj
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_CostModel_GetHashCode.htm"/>
     public override int GetHashCode() { throw new System.NotImplementedException(); }

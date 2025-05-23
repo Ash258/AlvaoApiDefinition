@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>License items.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vLicHistItem.htm"/>
 [TableAttribute("dbo.vLicHistItem")]
-public class vLicHistItem
-{
+public class vLicHistItem {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vLicHistItem_ActivationKey.htm"/>
     public virtual string ActivationKey { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vLicHistItem_bolOEM.htm"/>

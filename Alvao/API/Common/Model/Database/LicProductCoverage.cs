@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Which of all products have license coverage.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicProductCoverage.htm"/>
 [TableAttribute("dbo.LicProductCoverage")]
-public class LicProductCoverage
-{
+public class LicProductCoverage {
     /// <summary>License ID - tblListHist</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicProductCoverage_LicHistId.htm"/>
     [ExplicitKeyAttribute]

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of trustworthy domains.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_AdTrustedDomain.htm"/>
 [TableAttribute("dbo.AdTrustedDomain")]
-public class AdTrustedDomain
-{
+public class AdTrustedDomain {
     /// <summary>Domain name in a "dot" notation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_AdTrustedDomain_DomainName.htm"/>
     public virtual string DomainName { get; set; }

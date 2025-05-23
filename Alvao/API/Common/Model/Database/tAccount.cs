@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Organization (in accordance with CRM, i.e. the company).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tAccount.htm"/>
 [TableAttribute("dbo.tAccount")]
-public class tAccount
-{
+public class tAccount {
     /// <summary>Address 2</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tAccount_Address2Id.htm"/>
     public virtual int? Address2Id { get; set; }

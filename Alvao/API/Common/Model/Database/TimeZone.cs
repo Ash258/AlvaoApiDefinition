@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Time zone list.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TimeZone.htm"/>
 [TableAttribute("dbo.TimeZone")]
-public class TimeZone
-{
+public class TimeZone {
     /// <summary>Localized name.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TimeZone_DisplayName.htm"/>
     public virtual string DisplayName { get; set; }

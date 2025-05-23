@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Network search setting.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblNetScanRange.htm"/>
 [TableAttribute("dbo.tblNetScanRange")]
-public class tblNetScanRange
-{
+public class tblNetScanRange {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblNetScanRange_dteLastScan.htm"/>
     public virtual DateTime? dteLastScan { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblNetScanRange_intFromIP.htm"/>

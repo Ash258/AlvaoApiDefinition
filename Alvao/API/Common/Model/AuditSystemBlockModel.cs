@@ -2,8 +2,7 @@ namespace Alvao.API.Common.Model;
 
 /// <summary>Audit system block model</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_AuditSystemBlockModel.htm"/>
-public class AuditSystemBlockModel
-{
+public class AuditSystemBlockModel {
     /// <summary>Application name which creates log record.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_AuditSystemBlockModel_Application.htm"/>
     public string Application { get; set; }

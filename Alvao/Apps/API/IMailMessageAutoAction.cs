@@ -8,8 +8,7 @@ namespace Alvao.Apps.API;
 /// Tip: To store properties and action settings, we recommend defining the Settings class in a separate script that you create from the Class Library template.
 /// </summary>
 /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/mail-message-custom-actions"/>
-public interface IMailMessageAutoAction
-{
+public interface IMailMessageAutoAction {
     public string Name { get; set; }
 
     /// <summary>The actual action can be performed when loading a message from the service mailbox before saving the message to the log of an existing ticket or before creating a new ticket. In the implemented method, define both the conditions for executing the operations and the operations themselves.</summary>

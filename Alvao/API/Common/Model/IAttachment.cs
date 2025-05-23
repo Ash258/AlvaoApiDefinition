@@ -2,8 +2,7 @@ namespace Alvao.API.Common.Model;
 
 /// <summary>Attachment interface.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_IAttachment.htm"/>
-public interface IAttachment
-{
+public interface IAttachment {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_IAttachment_ContentType.htm"/>
     string ContentType { get; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_IAttachment_DocumentId.htm"/>

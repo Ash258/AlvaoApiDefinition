@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of child tickets that person should see.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vChildTicketPersonRead.htm"/>
 [TableAttribute("dbo.vChildTicketPersonRead")]
-public class vChildTicketPersonRead
-{
+public class vChildTicketPersonRead {
     /// <summary>Ticket ID of child ticket (tHdTicket.iHdTicketId).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vChildTicketPersonRead_ChildTicketId.htm"/>
     public virtual int ChildTicketId { get; set; }

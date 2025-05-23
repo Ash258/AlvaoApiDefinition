@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>GTS NOVERA detections.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblComputerLog.htm"/>
 [TableAttribute("dbo.tblComputerLog")]
-public class tblComputerLog
-{
+public class tblComputerLog {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblComputerLog_dteCreated.htm"/>
     public virtual DateTime? dteCreated { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblComputerLog_dteProcessed.htm"/>

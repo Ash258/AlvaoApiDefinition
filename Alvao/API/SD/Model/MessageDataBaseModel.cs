@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_MessageDataBaseModel.htm"/>
-public class MessageDataBaseModel
-{
+public class MessageDataBaseModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_FirstReactionDeadline.htm"/>
     public DateTime? FirstReactionDeadline { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_Impact.htm"/>
@@ -128,6 +127,5 @@ public class MessageDataBaseModel
     public static string GetPropertyValueByName(
         string name,
         Object model
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Code list of organizations (software products library).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblCompany.htm"/>
 [TableAttribute("dbo.tblCompany")]
-public class tblCompany
-{
+public class tblCompany {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCompany_bolPrint.htm"/>
     public virtual bool bolPrint { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCompany_bolProducer.htm"/>

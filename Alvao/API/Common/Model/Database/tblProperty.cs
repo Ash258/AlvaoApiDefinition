@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Objects in the tree - properties.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProperty.htm"/>
 [TableAttribute("dbo.tblProperty")]
-public class tblProperty
-{
+public class tblProperty {
     /// <summary>1=property is inherited into the child objects</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblProperty_bolInheritable.htm"/>
     public virtual bool bolInheritable { get; set; }

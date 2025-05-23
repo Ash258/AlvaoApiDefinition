@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Active session at ALVAO WebApp.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_WebAppActiveSession.htm"/>
 [TableAttribute("dbo.WebAppActiveSession")]
-public class WebAppActiveSession
-{
+public class WebAppActiveSession {
     /// <summary>IP address of the logged in user</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_WebAppActiveSession_ClientAddress.htm"/>
     public virtual string ClientAddress { get; set; }

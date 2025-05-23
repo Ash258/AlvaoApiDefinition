@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_MessageForRequesterDataModel.htm"/>
-public class MessageForRequesterDataModel : MessageDataBaseModel
-{
+public class MessageForRequesterDataModel : MessageDataBaseModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageForRequesterDataModel_ApprovalResultWithComment.htm"/>
     public string ApprovalResultWithComment { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_FirstReactionDeadline.htm"/>

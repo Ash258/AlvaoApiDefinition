@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Properties of objects -Domain components.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_PartOfDomain.htm"/>
 [TableAttribute("dbo.vPropertyKind_PartOfDomain")]
-public class vPropertyKind_PartOfDomain
-{
+public class vPropertyKind_PartOfDomain {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_PartOfDomain_bolInheritable.htm"/>
     public virtual bool bolInheritable { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_PartOfDomain_intNameOrder.htm"/>

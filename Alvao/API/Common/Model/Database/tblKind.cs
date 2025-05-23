@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Definitions of the objects properties.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblKind.htm"/>
 [TableAttribute("dbo.tblKind")]
-public class tblKind
-{
+public class tblKind {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblKind_KindCode.htm"/>
-    public enum KindCode
-    {
+    public enum KindCode {
         Name = 0,
         HostName = 3,
         User = 5,
@@ -86,8 +84,7 @@ public class tblKind
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblKind_KindFlags.htm"/>
     [FlagsAttribute]
-    public enum KindFlags
-    {
+    public enum KindFlags {
         Classified = 1,
         ImplicitValue = 2,
         Hidden = 4,

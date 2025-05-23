@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detected registry entries. The table contains records which may differ in various computers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DetRegUninstall.htm"/>
 [TableAttribute("dbo.DetRegUninstall")]
-public class DetRegUninstall
-{
+public class DetRegUninstall {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_DetRegUninstall_ALC_ProductPath.htm"/>
     public virtual string ALC_ProductPath { get; set; }
     /// <summary>Detected activation key.</summary>

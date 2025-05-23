@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Sending unrecognized records, request for adding product to the standard software products library.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSwLibAddUnknown.htm"/>
 [TableAttribute("dbo.tSwLibAddUnknown")]
-public class tSwLibAddUnknown
-{
+public class tSwLibAddUnknown {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwLibAddUnknown_bInform.htm"/>
     public virtual bool bInform { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwLibAddUnknown_dCreated.htm"/>

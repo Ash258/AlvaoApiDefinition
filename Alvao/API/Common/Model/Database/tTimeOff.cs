@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Employee absence records.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tTimeOff.htm"/>
 [TableAttribute("dbo.tTimeOff")]
-public class tTimeOff
-{
+public class tTimeOff {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tTimeOff_bHalf.htm"/>
     public virtual bool bHalf { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tTimeOff_dCreated.htm"/>

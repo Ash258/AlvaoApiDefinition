@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Computer detection settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vDetectSettings.htm"/>
 [TableAttribute("dbo.vDetectSettings")]
-public class vDetectSettings
-{
+public class vDetectSettings {
     /// <summary>Update the registry automatically by detection.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vDetectSettings__Update.htm"/>
     public virtual bool? _Update { get; set; }

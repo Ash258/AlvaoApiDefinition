@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>System code list for texts.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tString.htm"/>
 [TableAttribute("dbo.tString")]
-public class tString
-{
+public class tString {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tString_Id.htm"/>
-    public enum Id
-    {
+    public enum Id {
         DetectWaitingForEval = 106,
         DetectCoreHwComponentsChanged = 107,
         DetectHwUpdateIsOff = 108,

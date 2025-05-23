@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>SAM notification - last unresolved notifications sent</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSamAlertLast.htm"/>
 [TableAttribute("dbo.vSamAlertLast")]
-public class vSamAlertLast
-{
+public class vSamAlertLast {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSamAlertLast_ComputerId.htm"/>
     public virtual int ComputerId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSamAlertLast_id.htm"/>

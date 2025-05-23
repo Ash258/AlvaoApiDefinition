@@ -2,8 +2,7 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping methods for checking settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_CheckSettings.htm"/>
-public class CheckSettings
-{
+public class CheckSettings {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CheckSettings__ctor.htm"/>
     public CheckSettings() { }
 

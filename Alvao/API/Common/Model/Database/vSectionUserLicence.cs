@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Drawing of user licenses by services</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSectionUserLicence.htm"/>
 [TableAttribute("dbo.vSectionUserLicence")]
-public class vSectionUserLicence
-{
+public class vSectionUserLicence {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSectionUserLicence_LicenceType.htm"/>
     public virtual string LicenceType { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSectionUserLicence_PersonCount.htm"/>

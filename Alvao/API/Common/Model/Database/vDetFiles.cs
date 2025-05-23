@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detected files.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vDetFiles.htm"/>
 [TableAttribute("dbo.vDetFiles")]
-public class vDetFiles
-{
+public class vDetFiles {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vDetFiles_dteAccessed.htm"/>
     public virtual DateTime? dteAccessed { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vDetFiles_dteCreated.htm"/>

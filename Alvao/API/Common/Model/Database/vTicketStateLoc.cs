@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of statuses in all used languages.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vTicketStateLoc.htm"/>
 [TableAttribute("dbo.vTicketStateLoc")]
-public class vTicketStateLoc
-{
+public class vTicketStateLoc {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateLoc_ApprovalAutoStart.htm"/>
     public virtual bool ApprovalAutoStart { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateLoc_ApprovalExpirationHours.htm"/>

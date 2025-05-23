@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Exceptions in service operating hours.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tOpeningHoursException.htm"/>
 [TableAttribute("dbo.tOpeningHoursException")]
-public class tOpeningHoursException
-{
+public class tOpeningHoursException {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tOpeningHoursException_bOpen.htm"/>
     public virtual bool bOpen { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tOpeningHoursException_dFrom.htm"/>

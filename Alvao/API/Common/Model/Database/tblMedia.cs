@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Media.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblMedia.htm"/>
 [TableAttribute("dbo.tblMedia")]
-public class tblMedia
-{
+public class tblMedia {
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblMedia_id.htm"/>
     [KeyAttribute]

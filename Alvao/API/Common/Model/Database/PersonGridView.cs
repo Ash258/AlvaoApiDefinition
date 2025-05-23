@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cache for the number of unread tickets from the viewpoint of a specific user.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PersonGridView.htm"/>
 [TableAttribute("dbo.PersonGridView")]
-public class PersonGridView
-{
+public class PersonGridView {
     /// <summary>Name of table (grid), see the ProfileValue.ValueName table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PersonGridView_GridName.htm"/>
     public virtual string GridName { get; set; }

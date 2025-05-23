@@ -1,8 +1,7 @@
 namespace Alvao.API.Common.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_CustomTables.htm"/>
-public static class CustomTables
-{
+public static class CustomTables {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/F_Alvao_API_Common_Model_CustomTables_KeyMapping.htm"/>
     public static readonly Dictionary<string, string> KeyMapping;
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/F_Alvao_API_Common_Model_CustomTables_tAccount.htm"/>

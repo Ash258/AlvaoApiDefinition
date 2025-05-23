@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of strings from ALVAO applications in all used languages.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vStringLoc.htm"/>
 [TableAttribute("dbo.vStringLoc")]
-public class vStringLoc
-{
+public class vStringLoc {
     /// <summary>String ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vStringLoc_iStringId.htm"/>
     public virtual int iStringId { get; set; }

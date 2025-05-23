@@ -3,8 +3,7 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_StateRequiredColumnModel.htm"/>
-public class StateRequiredColumnModel : vColumnLoc
-{
+public class StateRequiredColumnModel : vColumnLoc {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_StateRequiredColumnModel_AreObjects.htm"/>
     public bool AreObjects { get; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vColumnLoc_bUseColumnValue.htm"/>

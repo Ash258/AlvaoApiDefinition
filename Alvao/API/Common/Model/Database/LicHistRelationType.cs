@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Types of links between licenses in the AM</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicHistRelationType.htm"/>
 [TableAttribute("dbo.LicHistRelationType")]
-public class LicHistRelationType
-{
+public class LicHistRelationType {
     /// <summary>Start of link (name).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicHistRelationType_BeginName.htm"/>
     public virtual string BeginName { get; set; }

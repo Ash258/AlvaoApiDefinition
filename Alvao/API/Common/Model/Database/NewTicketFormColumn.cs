@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Column order on a New Ticket Form</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NewTicketFormColumn.htm"/>
 [TableAttribute("dbo.NewTicketFormColumn")]
-public class NewTicketFormColumn
-{
+public class NewTicketFormColumn {
     /// <summary>Link to column</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NewTicketFormColumn_ColumnId.htm"/>
     public virtual int ColumnId { get; set; }

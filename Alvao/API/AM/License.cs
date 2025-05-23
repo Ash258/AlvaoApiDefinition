@@ -3,8 +3,7 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.AM;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_License.htm"/>
-public static class License
-{
+public static class License {
 
     /// <summary>Adds new product to license or updates it's notes.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_AddOrUpdateProduct.htm"/>
@@ -16,8 +15,7 @@ public static class License
         int licenseId,
         int productId,
         string notes
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Adds or updates relation between two licenses.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_AddOrUpdateRelation.htm"/>
@@ -31,8 +29,7 @@ public static class License
         int targetLicenseId,
         int relationTypeId,
         int relationId = 0
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Assigns license to object (device or user)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_Assign.htm"/>
@@ -40,8 +37,7 @@ public static class License
     /// <param name="assgignment">Db model of assignment. Should contain License Id (tblLicHist.intLicHistId)</param>
     public static void Assign(
         tblLicHistItem assgignment
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Auto assigns licenses either to a computer (objectId != null) or specific license to all computers (licenseId != null) or all licenses to all computers (licenseId == null and objectId == null).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_AutoAssign.htm"/>
@@ -53,8 +49,7 @@ public static class License
         int? objectId = null,
         int? licenseId = null,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Auto releases licenses either from a computer (objectId != null) or specific license from all computers (licenseId != null) or all licenses from all computers (licenseId == null and objectId == null).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_AutoRelease.htm"/>
@@ -66,8 +61,7 @@ public static class License
         int? objectId = null,
         int? licenseId = null,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether the user has the right to manage the license.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CanUserManage.htm"/>
@@ -77,8 +71,7 @@ public static class License
     public static bool CanUserManage(
         int licenseId,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether the user has the right to manage any license.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CanUserManageAny.htm"/>
@@ -86,8 +79,7 @@ public static class License
     /// <param name="personId">User ID (tPerson.iPersonId) if not specified its current user id.</param>
     public static bool CanUserManageAny(
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether the user has the right to manage the license in organization.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CanUserManageInOrganization.htm"/>
@@ -97,8 +89,7 @@ public static class License
     public static bool CanUserManageInOrganization(
         int? nodeId,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether the user has the right to read the license.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CanUserRead.htm"/>
@@ -108,8 +99,7 @@ public static class License
     public static bool CanUserRead(
         int licenseId,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether the user has the right to read any license.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CanUserReadAny.htm"/>
@@ -117,8 +107,7 @@ public static class License
     /// <param name="personId">User ID (tPerson.iPersonId) if not specified its current user id.</param>
     public static bool CanUserReadAny(
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Create or update license</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_CreateOrUpdate.htm"/>
@@ -126,8 +115,7 @@ public static class License
     /// <param name="license">Db model of license.</param>
     public static int CreateOrUpdate(
         tblLicHist license
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Detele assignment</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_DeleteAssignment.htm"/>
@@ -137,8 +125,7 @@ public static class License
     public static void DeleteAssignment(
         int licItemId,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Edit assignment of license</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_EditAssignment.htm"/>
@@ -146,8 +133,7 @@ public static class License
     /// <param name="assgignment">Db model of assignment. Should contain License Id (tblLicHist.intLicHistId)</param>
     public static void EditAssignment(
         tblLicHistItem assgignment
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets license db model by license id</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_GetById.htm"/>
@@ -155,8 +141,7 @@ public static class License
     /// <param name="id">License ID (tblLicHist.intLicHistId)</param>
     public static tblLicHist GetById(
         int id
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets license item</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_GetItemById.htm"/>
@@ -164,8 +149,7 @@ public static class License
     /// <param name="licenseItemId">License item ID (tblLicHistItem.intLicHistItemId)</param>
     public static tblLicHistItem GetItemById(
         int licenseItemId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns record from which is covered product installation on object from parameter.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_GetShared.htm"/>
@@ -175,8 +159,7 @@ public static class License
     public static tblLicTrans GetShared(
         int productId,
         int objectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets all valid license items</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_GetValidItems.htm"/>
@@ -184,8 +167,7 @@ public static class License
     /// <param name="licenseId">License ID (tblLicHist.intLicHistId)</param>
     public static IEnumerable<tblLicHistItem> GetValidItems(
         int licenseId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Moves license item</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_Move.htm"/>
@@ -197,8 +179,7 @@ public static class License
         int licItemId,
         int? targetObjectId = null,
         string targetCostCenter = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Releases license item</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_Release.htm"/>
@@ -208,8 +189,7 @@ public static class License
     public static void Release(
         int licItemId,
         int? personId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes license relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_RemoveRelation.htm"/>
@@ -219,8 +199,7 @@ public static class License
     public static void RemoveRelation(
         int sourceLicenseId,
         int relationId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Remove sharing of a license.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_RemoveSharing.htm"/>
@@ -230,8 +209,7 @@ public static class License
     public static void RemoveSharing(
         int productId,
         int objectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Shares license item</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_Share.htm"/>
@@ -245,8 +223,7 @@ public static class License
         int objectId,
         int licenseObjectId,
         string note
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Sets new license count</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_License_UpdateCount.htm"/>
@@ -256,6 +233,5 @@ public static class License
     public static void UpdateCount(
         int licenseId,
         int count
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Types of links between tickets.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketRelationType.htm"/>
 [TableAttribute("dbo.TicketRelationType")]
-public class TicketRelationType
-{
+public class TicketRelationType {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketRelationType_RelationId.htm"/>
-    public enum RelationId
-    {
+    public enum RelationId {
         RelatesTo = 1,
         ParentOf_ChildOf = 2,
         PrecedesBefore_FollowsAfter = 3,

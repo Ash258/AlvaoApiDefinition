@@ -1,12 +1,11 @@
-using Microsoft.Data.SqlClient;
 using System.Data;
+using Microsoft.Data.SqlClient;
 
 namespace Alvao.Context.DB;
 
 /// <summary>Provides access to database connection and transaction operations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_Context_DB_IConnectionScope.htm"/>
-public interface IConnectionScope : IDisposable
-{
+public interface IConnectionScope : IDisposable {
     /// <summary>Get the closest parent save point name.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_Context_DB_IConnectionScope_ClosestSavePointName.htm"/>
     string ClosestSavePointName { get; }

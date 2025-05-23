@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Marking the record in the ticket log.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ActMark.htm"/>
 [TableAttribute("dbo.ActMark")]
-public class ActMark
-{
+public class ActMark {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ActMark_ActMarkId.htm"/>
-    public enum ActMarkId
-    {
+    public enum ActMarkId {
         RequestSpecification = 1,
         RequestSolution = 2,
     }

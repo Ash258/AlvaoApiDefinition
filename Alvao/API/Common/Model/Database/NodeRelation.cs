@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Table with links between objects in AM Console</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NodeRelation.htm"/>
 [TableAttribute("dbo.NodeRelation")]
-public class NodeRelation
-{
+public class NodeRelation {
     /// <summary>ID of start link object. Foreign key on tblNode table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_BeginNodeId.htm"/>
     public virtual int BeginNodeId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Objects in the tree.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblNode.htm"/>
 [TableAttribute("dbo.tblNode")]
-public class tblNode
-{
+public class tblNode {
     /// <summary>1=according to hardware detection; automatic object update is enabled; Objects with an attribute value of 1 are displayed in this tree as a "yellow triangle" symbol</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblNode_bolAutoUpdate.htm"/>
     public virtual bool bolAutoUpdate { get; set; }

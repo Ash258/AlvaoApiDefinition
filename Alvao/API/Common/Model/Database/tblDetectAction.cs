@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Scheduled evaluation of HW and SW by detection.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDetectAction.htm"/>
 [TableAttribute("dbo.tblDetectAction")]
-public class tblDetectAction
-{
+public class tblDetectAction {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblDetectAction_intDetectActionId.htm"/>
     [KeyAttribute]
     public virtual int intDetectActionId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Documents.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vDocument.htm"/>
 [TableAttribute("dbo.vDocument")]
-public class vDocument
-{
+public class vDocument {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vDocument_CreatedDate.htm"/>
     public virtual DateTime CreatedDate { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vDocument_DocumentFolderId.htm"/>

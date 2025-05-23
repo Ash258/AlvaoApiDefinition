@@ -3,8 +3,7 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.SD;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TeamsNotification.htm"/>
-public static class TeamsNotification
-{
+public static class TeamsNotification {
 
     /// <summary>Returns a list of users with correct settings for receiving MS Teams notification</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TeamsNotification_GetRecipientList.htm"/>
@@ -12,8 +11,7 @@ public static class TeamsNotification
     /// <param name="recipients">List of all users</param>
     public static IEnumerable<tPerson> GetRecipientList(
         IEnumerable<int> recipients
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Sends a custom notification to Alvao Teams Bot</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TeamsNotification_Send.htm"/>
@@ -23,8 +21,7 @@ public static class TeamsNotification
     public static void Send(
         int toPersonId,
         string cardJson
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Sends a custom notification to Alvao Teams Bot</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TeamsNotification_Send_1.htm"/>
@@ -44,6 +41,5 @@ public static class TeamsNotification
         string buttonLink,
         int? iconId,
         int? iconColor
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

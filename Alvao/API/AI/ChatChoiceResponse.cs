@@ -3,8 +3,7 @@ using Newtonsoft.Json;
 namespace Alvao.API.AI;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_ChatChoiceResponse.htm"/>
-public class ChatChoiceResponse
-{
+public class ChatChoiceResponse {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatChoiceResponse_Delta.htm"/>
     [JsonPropertyAttribute("delta")]
     public ChatMessage Delta { get; set; }

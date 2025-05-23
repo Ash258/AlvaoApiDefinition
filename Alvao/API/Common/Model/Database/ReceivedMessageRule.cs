@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Rules for incoming messages to service mailboxes.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ReceivedMessageRule.htm"/>
 [TableAttribute("dbo.ReceivedMessageRule")]
-public class ReceivedMessageRule
-{
+public class ReceivedMessageRule {
     /// <summary>Condition for comparing with the body of the loaded mail.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ReceivedMessageRule_BodyCondition.htm"/>
     public virtual string BodyCondition { get; set; }

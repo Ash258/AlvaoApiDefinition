@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Notes.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblNotice.htm"/>
 [TableAttribute("dbo.tblNotice")]
-public class tblNotice
-{
+public class tblNotice {
     /// <summary>date and time the note was created</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblNotice_dteDateTime.htm"/>
     public virtual DateTime? dteDateTime { get; set; }

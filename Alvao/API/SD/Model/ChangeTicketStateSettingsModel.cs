@@ -4,8 +4,7 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_ChangeTicketStateSettingsModel.htm"/>
-public class ChangeTicketStateSettingsModel
-{
+public class ChangeTicketStateSettingsModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ActAuthor.htm"/>
     public tPerson ActAuthor { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ApprovalNoticeModel.htm"/>

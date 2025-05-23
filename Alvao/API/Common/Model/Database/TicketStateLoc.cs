@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cache of the localizations of ticket states.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketStateLoc.htm"/>
 [TableAttribute("dbo.TicketStateLoc")]
-public class TicketStateLoc
-{
+public class TicketStateLoc {
     /// <summary>Localized customer message template for approvers. If the record has a value of NULL, then the default template is used (available in tString).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketStateLoc_CustomMessageForApproverTemplate.htm"/>
     public virtual string CustomMessageForApproverTemplate { get; set; }

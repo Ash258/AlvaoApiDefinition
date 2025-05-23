@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Record type tAct, e.g. "e-mail", "phone", "note", "process", …</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tActKind.htm"/>
 [TableAttribute("dbo.tActKind")]
-public class tActKind
-{
+public class tActKind {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tActKind_ActKind.htm"/>
-    public enum ActKind
-    {
+    public enum ActKind {
         Email = 1,
         Phone = 2,
         Meeting = 3,

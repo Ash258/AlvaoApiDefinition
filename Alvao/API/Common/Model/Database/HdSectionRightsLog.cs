@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Logging of changes in user permissions to services. The meaning of values in permission columns: 1=enable 0=refuse NULL=not set</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionRightsLog.htm"/>
 [TableAttribute("dbo.HdSectionRightsLog")]
-public class HdSectionRightsLog
-{
+public class HdSectionRightsLog {
     /// <summary>Exceptional solver permissions</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_HdSectionRightsLog_ExceptionalSolver.htm"/>
     public virtual bool? ExceptionalSolver { get; set; }

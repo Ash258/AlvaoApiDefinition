@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Language localization cache of SLA alert type, see TicketAlertType</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketAlertTypeLoc.htm"/>
 [TableAttribute("dbo.TicketAlertTypeLoc")]
-public class TicketAlertTypeLoc
-{
+public class TicketAlertTypeLoc {
     /// <summary>Language ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketAlertTypeLoc_LocaleId.htm"/>
     public virtual int LocaleId { get; set; }

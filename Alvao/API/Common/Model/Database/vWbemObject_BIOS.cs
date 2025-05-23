@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detail of the HW detection - BIOS.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vWbemObject_BIOS.htm"/>
 [TableAttribute("dbo.vWbemObject_BIOS")]
-public class vWbemObject_BIOS
-{
+public class vWbemObject_BIOS {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject_BIOS___CLASS.htm"/>
     public virtual string __CLASS { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject_BIOS_AdapterRAM.htm"/>

@@ -2,8 +2,7 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping tProperty methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_DbProperty.htm"/>
-public static class DbProperty
-{
+public static class DbProperty {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_DbProperty_AddinWebUrl.htm"/>
     public static string AddinWebUrl { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_DbProperty_AlvaoStandardSenderAddress.htm"/>

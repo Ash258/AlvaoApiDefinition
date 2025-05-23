@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detail of the HW detection - Hard disks.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vWbemObjectPhysicalMedia.htm"/>
 [TableAttribute("dbo.vWbemObjectPhysicalMedia")]
-public class vWbemObjectPhysicalMedia
-{
+public class vWbemObjectPhysicalMedia {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObjectPhysicalMedia___CLASS.htm"/>
     public virtual string __CLASS { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObjectPhysicalMedia_AdapterRAM.htm"/>

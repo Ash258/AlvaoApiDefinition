@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Application.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_App.htm"/>
 [TableAttribute("Apps.App")]
-public class App
-{
+public class App {
     /// <summary>Application description.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_App_Description.htm"/>
     public virtual string Description { get; set; }

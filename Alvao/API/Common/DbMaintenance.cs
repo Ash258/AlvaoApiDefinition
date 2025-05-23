@@ -2,8 +2,7 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping DB maintenance methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_DbMaintenance.htm"/>
-public static class DbMaintenance
-{
+public static class DbMaintenance {
 
     /// <summary>Rebuilds cache tables.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_DbMaintenance_Repair.htm"/>

@@ -5,16 +5,13 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Products / software (software products library).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct.htm"/>
 [TableAttribute("dbo.tblProduct")]
-public class tblProduct
-{
+public class tblProduct {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductCategory.htm"/>
-    public enum ProductCategory
-    {
+    public enum ProductCategory {
         OS = 1,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductState.htm"/>
-    public enum ProductState
-    {
+    public enum ProductState {
         Unclassified = 1,
         Approving = 2,
         Approved = 3,
@@ -23,16 +20,14 @@ public class tblProduct
         Rejected = 6,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_ProductType.htm"/>
-    public enum ProductType
-    {
+    public enum ProductType {
         Commercial = 1,
         Freeware = 2,
         Shareware = 3,
         Unspecified = 4,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblProduct_SamType.htm"/>
-    public enum SamType
-    {
+    public enum SamType {
         Yes = 1,
         No = 2,
         Notify = 3,

@@ -2,8 +2,7 @@ namespace Alvao.Context.DB;
 
 /// <summary>Database context interface that provides connection scope and transaction events.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_Context_DB_IDbContext.htm"/>
-public interface IDbContext
-{
+public interface IDbContext {
     /// <summary>Occurs when the inner database transaction can be commited, but there is parent scope with an opened transaction. Nothing actually happens with the transaction.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/E_Alvao_Context_DB_IDbContext_InnerTransactionCommited.htm"/>
     event EventHandler<TransactionEventArgs> InnerTransactionCommited;

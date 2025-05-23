@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Log of searched queries</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SearchLog.htm"/>
 [TableAttribute("dbo.SearchLog")]
-public class SearchLog
-{
+public class SearchLog {
     /// <summary>Query</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SearchLog__Query.htm"/>
     public virtual string _Query { get; set; }

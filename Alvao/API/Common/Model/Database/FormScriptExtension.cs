@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Definition of custom JavaScript for forms.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_FormScriptExtension.htm"/>
 [TableAttribute("dbo.FormScriptExtension")]
-public class FormScriptExtension
-{
+public class FormScriptExtension {
     /// <summary>Entity ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_FormScriptExtension_id.htm"/>
     [KeyAttribute]

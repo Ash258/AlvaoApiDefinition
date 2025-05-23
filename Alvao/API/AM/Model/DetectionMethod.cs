@@ -1,11 +1,9 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_DetectionMethod.htm"/>
-public static class DetectionMethod
-{
+public static class DetectionMethod {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_DetectionMethod_Type.htm"/>
-    public enum Type
-    {
+    public enum Type {
         None = 0,
         Direct = 1,
         Tcpip = 2,

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Permissions of persons and groups to software licenses of organizations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicRight.htm"/>
 [TableAttribute("dbo.LicRight")]
-public class LicRight
-{
+public class LicRight {
     /// <summary>Permission to modify</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicRight_CanModify.htm"/>
     public virtual byte? CanModify { get; set; }

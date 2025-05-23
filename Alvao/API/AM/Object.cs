@@ -5,8 +5,7 @@ namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping object methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Object.htm"/>
-public static class Object
-{
+public static class Object {
 
     /// <summary>Copy given object as a child of destination object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Copy.htm"/>
@@ -18,8 +17,7 @@ public static class Object
         int personId,
         int objectId,
         int destinationObjectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Create new object as a copy of object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Create.htm"/>
@@ -33,8 +31,7 @@ public static class Object
         int objectId,
         int? destinationObjectId,
         IEnumerable<int> excludeGeneratingProperties = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Create new object from template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_CreateByClass.htm"/>
@@ -48,8 +45,7 @@ public static class Object
         string objectName,
         int? destinationObjectId,
         int? creatorPersonId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Move given objects to the recycle bin. If given objects are already in the recycle bin, it is permanently deleted from a database.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Delete.htm"/>
@@ -59,8 +55,7 @@ public static class Object
     public static void Delete(
         IEnumerable<int> objectIds,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Move given object to the recycle bin. If given object is already in the recycle bin, it is permanently deleted from a database.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Delete_1.htm"/>
@@ -72,8 +67,7 @@ public static class Object
         int personId,
         int objectId,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Empty the recycle bin. Objects are permanently deleted.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_EmptyRecycleBin.htm"/>
@@ -81,8 +75,7 @@ public static class Object
     /// <param name="personId">Person ID (who empty the recycle bin) (tPerson.iPersonId)</param>
     public static void EmptyRecycleBin(
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns list of objects that are descendants of specified classId.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_FilterDescendantsOf.htm"/>
@@ -92,8 +85,7 @@ public static class Object
     public static IEnumerable<int> FilterDescendantsOf(
         IEnumerable<int> objectIds,
         int parentClassId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Finds or creates folder "Imported objects" in object tree</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_FindOrCreateImportedObjectsFolder.htm"/>
@@ -107,8 +99,7 @@ public static class Object
     public static tblNode GetById(
         int personId,
         int objectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get path to object by ID in form of object IDs from the root.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_GetNodePath.htm"/>
@@ -118,8 +109,7 @@ public static class Object
     public static IEnumerable<int> GetNodePath(
         int personId,
         int objectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets special object by its classId.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_GetSpecialObject.htm"/>
@@ -127,8 +117,7 @@ public static class Object
     /// <param name="classId">Special object class ID (tblClass.intClassId)</param>
     public static tblNode GetSpecialObject(
         ObjectClass.Code classId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns true if object is in object of specified classId.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_IsDescendantOf.htm"/>
@@ -138,8 +127,7 @@ public static class Object
     public static bool IsDescendantOf(
         int objectId,
         int classId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Move given objects in bulk to destination object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Move.htm"/>
@@ -153,8 +141,7 @@ public static class Object
         int destinationObjectId,
         bool forceCheck,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Move given object to destination object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Object_Move_1.htm"/>
@@ -168,6 +155,5 @@ public static class Object
         int objectId,
         int destinationObjectId,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

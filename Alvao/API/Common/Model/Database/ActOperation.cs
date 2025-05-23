@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Kind of process in the ticket log</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ActOperation.htm"/>
 [TableAttribute("dbo.ActOperation")]
-public class ActOperation
-{
+public class ActOperation {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ActOperation_ActOperationId.htm"/>
-    public enum ActOperationId
-    {
+    public enum ActOperationId {
         ChangeStatus = 1,
         AssignedToSolver = 2,
         Resolved = 3,

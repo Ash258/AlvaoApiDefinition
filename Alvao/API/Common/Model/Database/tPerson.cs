@@ -5,12 +5,10 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Persons in the ALVAO system.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tPerson.htm"/>
 [TableAttribute("dbo.tPerson")]
-public class tPerson
-{
+public class tPerson {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tPerson_TicketRoles.htm"/>
     [FlagsAttribute]
-    public enum TicketRoles
-    {
+    public enum TicketRoles {
         NoRole = 0,
         SectionRequester = 1,
         SectionSolver = 2,

@@ -6,13 +6,11 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping request methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket.htm"/>
-public static class Ticket
-{
+public static class Ticket {
     /// <summary>Special flags for close ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_CloseFlags.htm"/>
     [FlagsAttribute]
-    public enum CloseFlags
-    {
+    public enum CloseFlags {
         None = 0,
         IgnoreRights = 1,
         DontCallChangeState = 2,
@@ -20,24 +18,21 @@ public static class Ticket
     /// <summary>Special flags for deadline change.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeDeadlineFlags.htm"/>
     [FlagsAttribute]
-    public enum ChangeDeadlineFlags
-    {
+    public enum ChangeDeadlineFlags {
         None = 0,
         DontNotifyUser = 1,
         DontUpdateTicket = 2,
     }
     /// <summary>SLA change reason.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeSlaReason.htm"/>
-    public enum ChangeSlaReason
-    {
+    public enum ChangeSlaReason {
         TicketEdit = 0,
         MoveToService = 1,
     }
     /// <summary>Special flags for solver change.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ChangeSolverFlags.htm"/>
     [FlagsAttribute]
-    public enum ChangeSolverFlags
-    {
+    public enum ChangeSolverFlags {
         None = 0,
         DontCheckFirstSolverChange = 1,
         DontSendNotification = 2,
@@ -50,8 +45,7 @@ public static class Ticket
     /// <summary>Special flags for remove ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_RemoveFlags.htm"/>
     [FlagsAttribute]
-    public enum RemoveFlags
-    {
+    public enum RemoveFlags {
         None = 0,
         IgnoreRights = 1,
         DontCallChangeState = 2,
@@ -59,8 +53,7 @@ public static class Ticket
     /// <summary>Special flags for resolve ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Ticket_ResolveFlags.htm"/>
     [FlagsAttribute]
-    public enum ResolveFlags
-    {
+    public enum ResolveFlags {
         None = 0,
         DontNotifyUser = 1,
         IgnoreRights = 2,
@@ -77,8 +70,7 @@ public static class Ticket
         int ticketId,
         int authorPersonId,
         Ticket.CloseFlags flags = Ticket.CloseFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates new request from model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Create.htm"/>
@@ -86,8 +78,7 @@ public static class Ticket
     /// <param name="newTicketModel">New ticket model</param>
     public static tHdTicket Create(
         NewTicketModel newTicketModel
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns information about ticket by specified column. Allowed columns: SolverName, SolverEmail, TicketPriority, SectionName, RoomName, SLAname, FirstActText, StateName.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ForeignKeyInfo.htm"/>
@@ -97,8 +88,7 @@ public static class Ticket
     public static string ForeignKeyInfo(
         int ticketId,
         string columnName
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetById.htm"/>
@@ -106,8 +96,7 @@ public static class Ticket
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static tHdTicket GetById(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetByMessageTagInText.htm"/>
@@ -115,8 +104,7 @@ public static class Ticket
     /// <param name="messageTag">Request messageTag (tHdTicket.sHdTicketMessageTag)</param>
     public static tHdTicket GetByMessageTagInText(
         string messageTag
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns feedback URL for request</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetFeedbackUrl.htm"/>
@@ -124,8 +112,7 @@ public static class Ticket
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     public static string GetFeedbackUrl(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns state change notification template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetChangeStateTemplate.htm"/>
@@ -145,8 +132,7 @@ public static class Ticket
         HtmlTextModel requesterNotice = null,
         bool isAfterApproval = false,
         int? commentActId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns request name template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_GetTicketNameTemplate.htm"/>
@@ -154,8 +140,7 @@ public static class Ticket
     /// <param name="sectionId">Section ID (tHdTicket.liHdTicketHdSectionId)</param>
     public static string GetTicketNameTemplate(
         int sectionId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns whether the request does have all child requests closed.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_HasClosedAllChildTickets.htm"/>
@@ -163,8 +148,7 @@ public static class Ticket
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     public static bool HasClosedAllChildTickets(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Changes request deadline, sends notification and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeDeadline.htm"/>
@@ -180,8 +164,7 @@ public static class Ticket
         HtmlTextModel message,
         CostModel cost,
         Ticket.ChangeDeadlineFlags flags = Ticket.ChangeDeadlineFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Changes request SLA, deadline (according to SLA) and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSla.htm"/>
@@ -195,8 +178,7 @@ public static class Ticket
         int newSlaId,
         CostModel cost,
         Ticket.ChangeSlaReason reason
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Changes ticket solver, solver group or returns it to main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeSolverOrGroup.htm"/>
@@ -216,8 +198,7 @@ public static class Ticket
         CostModel cost = null,
         int? authorId = null,
         Ticket.ChangeSolverFlags flags = Ticket.ChangeSolverFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Changes request state.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_ChangeState.htm"/>
@@ -231,8 +212,7 @@ public static class Ticket
         int newStateId,
         int authorId,
         ChangeTicketStateSettingsModel settings
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Moves request to another service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_MoveToSection.htm"/>
@@ -252,8 +232,7 @@ public static class Ticket
         int? authorPersonId = null,
         int? newSolverId = -1,
         int? newSolverGroupId = -1
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Insert new row into TicketChange table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_NewTicketChange.htm"/>
@@ -273,8 +252,7 @@ public static class Ticket
         Object oldValue,
         Object newValue,
         int? columnId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Remove request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Remove.htm"/>
@@ -286,8 +264,7 @@ public static class Ticket
         int ticketId,
         int personId,
         Ticket.RemoveFlags flags = Ticket.RemoveFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Changes request state to resolved.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_Resolve.htm"/>
@@ -305,8 +282,7 @@ public static class Ticket
         CostModel cost = null,
         DateTime? backResolved = null,
         Ticket.ResolveFlags flags = Ticket.ResolveFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Restore removed request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_RestoreRemoved.htm"/>
@@ -318,8 +294,7 @@ public static class Ticket
         int ticketId,
         int personId,
         Ticket.RemoveFlags flags = Ticket.RemoveFlags.None
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Allowed columns: mHdTicketNotice, sHdTicketGroup, sHdTicketDeviceCode, sHdTicketUserPhone, mHdTicketUserContact, sHdTicketUserMobile, sHdTicketUserOffice, sHdTicketUserDepartment, sHdTicketUserWorkPosition, sHdTicketUserCompany.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_UpdateColumnValue.htm"/>
@@ -331,8 +306,7 @@ public static class Ticket
         int ticketId,
         string columnName,
         string newValue
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates full text search data.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Ticket_UpdateFts.htm"/>
@@ -340,6 +314,5 @@ public static class Ticket
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId). If 0, updates all requests.</param>
     public static void UpdateFts(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

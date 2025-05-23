@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Templates of custom notifications and alerts sent by the ALVAO SAM Assistant module.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tEmailTemplate.htm"/>
 [TableAttribute("dbo.tEmailTemplate")]
-public class tEmailTemplate
-{
+public class tEmailTemplate {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tEmailTemplate_bActive.htm"/>
     public virtual bool bActive { get; set; }
     /// <summary>Template Id.</summary>

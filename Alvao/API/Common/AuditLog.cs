@@ -4,12 +4,10 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping logging methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_AuditLog.htm"/>
-public static class AuditLog
-{
+public static class AuditLog {
     /// <summary>Message type. Values description can be found in the documentation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_AuditLog_MessageType.htm"/>
-    public enum MessageType
-    {
+    public enum MessageType {
         PersonCreate = 1,
         PersonDelete = 2,
         PersonChange = 3,
@@ -61,8 +59,7 @@ public static class AuditLog
         AuditLog.MessageType messageType,
         IEnumerable<KeyValuePair<string, string>> properties,
         AuditSystemBlockModel systemBlock
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates audit record.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_AuditLog_LogAuditRecord_1.htm"/>
@@ -74,6 +71,5 @@ public static class AuditLog
         AuditLog.MessageType messageType,
         IEnumerable<KeyValuePair<string, string>> properties,
         bool appendSystemBlock = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,8 +5,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping approval methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Approval.htm"/>
-public static class Approval
-{
+public static class Approval {
 
     /// <summary>Adds approvers to current approval. Allowed only for states with "ad-hoc" approval enabled (see method TicketState.IsAdHocApproval).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_AddApprovers.htm"/>
@@ -22,8 +21,7 @@ public static class Approval
         int? personId,
         HtmlTextModel commentForApprover,
         DateTime? approvalBegin = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Approves request and changes state according to state settings.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Approve.htm"/>
@@ -41,8 +39,7 @@ public static class Approval
         int? nextStep = null,
         bool finishApproval = false,
         bool ignoreRequiredColumns = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Cancel of active approval on ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Cancel.htm"/>
@@ -50,8 +47,7 @@ public static class Approval
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static void Cancel(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Cancels selected approvals. Allowed only for states with "ad-hoc" approval enabled (see method TicketState.IsAdHocApproval).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_CancelItems.htm"/>
@@ -61,8 +57,7 @@ public static class Approval
     public static void CancelItems(
         int ticketId,
         IEnumerable<int> approvalItemIds
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Starts request approval by person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_EnterByPerson.htm"/>
@@ -80,8 +75,7 @@ public static class Approval
         int? personId,
         HtmlTextModel approvalNotice,
         DateTime? approvalBegin = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Starts request approval with scheme.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_EnterBySchema.htm"/>
@@ -99,8 +93,7 @@ public static class Approval
         HtmlTextModel approvalNotice,
         DateTime? approvalBegin = null,
         int? initialSchemaStep = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Expires currently active approval step on ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_Expire.htm"/>
@@ -110,8 +103,7 @@ public static class Approval
     public static void Expire(
         int ticketId,
         bool ignoreRequiredColumns = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns approval item with provided ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_GetApprovalItemById.htm"/>
@@ -119,8 +111,7 @@ public static class Approval
     /// <param name="approvalItemId">Approval item ID (tHdTicketApprovalItem.iHdTicketApprovalItemId)</param>
     public static tHdTicketApprovalItem GetApprovalItemById(
         int approvalItemId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns approval items for current approval (shown on "Current approval" tab in ticket detail).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_GetCurrentApprovalItems.htm"/>
@@ -128,8 +119,7 @@ public static class Approval
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static IEnumerable<tHdTicketApprovalItem> GetCurrentApprovalItems(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets list of ticket IDs with approval ready for expiration.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Approval_GetTicketIdsForExpiration.htm"/>
@@ -147,6 +137,5 @@ public static class Approval
         HtmlTextModel comment,
         int? personId = null,
         bool ignoreRequiredColumns = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

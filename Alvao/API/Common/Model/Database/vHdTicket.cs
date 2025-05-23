@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Values for dynamically calculated ticket items.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdTicket.htm"/>
 [TableAttribute("dbo.vHdTicket")]
-public class vHdTicket
-{
+public class vHdTicket {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdTicket_IsNextActionInternalTarget.htm"/>
     public virtual int IsNextActionInternalTarget { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdTicket_IsSlaPaused.htm"/>

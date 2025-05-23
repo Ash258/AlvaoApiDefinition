@@ -5,12 +5,10 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Types of system rolls, e.g. all users, administrators, ...</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleBehavior.htm"/>
 [TableAttribute("dbo.RoleBehavior")]
-public class RoleBehavior
-{
+public class RoleBehavior {
     /// <summary>Enumeration representing system groups.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleBehavior_BehaviorId.htm"/>
-    public enum BehaviorId
-    {
+    public enum BehaviorId {
         Custom = 1,
         WorkTime = 2,
         Administrators = 3,

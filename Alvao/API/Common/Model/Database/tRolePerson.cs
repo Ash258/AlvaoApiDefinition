@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Persons' membership in groups.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tRolePerson.htm"/>
 [TableAttribute("dbo.tRolePerson")]
-public class tRolePerson
-{
+public class tRolePerson {
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tRolePerson_iRolePersonId.htm"/>
     [KeyAttribute]

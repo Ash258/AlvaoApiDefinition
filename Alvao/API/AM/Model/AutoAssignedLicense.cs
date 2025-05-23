@@ -1,8 +1,7 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_AutoAssignedLicense.htm"/>
-public class AutoAssignedLicense
-{
+public class AutoAssignedLicense {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_AutoAssignedLicense_AutoAssignFilter.htm"/>
     public string AutoAssignFilter { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_AutoAssignedLicense_Centre.htm"/>

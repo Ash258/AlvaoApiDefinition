@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Arrivals to individual ticket statuses.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vTicketStateEntered.htm"/>
 [TableAttribute("dbo.vTicketStateEntered")]
-public class vTicketStateEntered
-{
+public class vTicketStateEntered {
     /// <summary>Time of transition to status</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketStateEntered_StateEntered.htm"/>
     public virtual DateTime? StateEntered { get; set; }

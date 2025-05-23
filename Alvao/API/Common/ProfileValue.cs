@@ -2,8 +2,7 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping profile value methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_ProfileValue.htm"/>
-public static class ProfileValue
-{
+public static class ProfileValue {
 
     /// <summary>Delete ProfileValue rows.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_Delete.htm"/>
@@ -19,8 +18,7 @@ public static class ProfileValue
         int? personId = null,
         int? intValue = null,
         bool backup = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns ProfileValue row.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_Get.htm"/>
@@ -32,8 +30,7 @@ public static class ProfileValue
         int personId,
         string valueName,
         bool backup = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns table display mode.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_GetTableDisplayMode.htm"/>
@@ -43,8 +40,7 @@ public static class ProfileValue
     public static bool? GetTableDisplayMode(
         int personId,
         string valueName
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Insert or upgrade of ProfileValue row.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_InsertOrUpdate.htm"/>
@@ -60,8 +56,7 @@ public static class ProfileValue
         string stringValue,
         int? intValue,
         bool backup = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Sets table display mode.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_ProfileValue_SetTableDisplayMode.htm"/>
@@ -73,6 +68,5 @@ public static class ProfileValue
         int personId,
         string valueName,
         bool value
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Approval scheme step.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tApprovalSchemaItem.htm"/>
 [TableAttribute("dbo.tApprovalSchemaItem")]
-public class tApprovalSchemaItem
-{
+public class tApprovalSchemaItem {
     /// <summary>"Requester" approval step.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tApprovalSchemaItem_AuthorityRequester.htm"/>
     public virtual bool AuthorityRequester { get; set; }

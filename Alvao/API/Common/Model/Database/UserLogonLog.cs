@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Logging users in/out to/from Asset Management Console.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_UserLogonLog.htm"/>
 [TableAttribute("dbo.UserLogonLog")]
-public class UserLogonLog
-{
+public class UserLogonLog {
     /// <summary>Kind of action from UserLogonLogAction.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_UserLogonLog_ActionId.htm"/>
     public virtual int ActionId { get; set; }

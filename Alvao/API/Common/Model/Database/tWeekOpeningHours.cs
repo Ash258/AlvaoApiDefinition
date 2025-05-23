@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Item in the definition of service operating hours.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tWeekOpeningHours.htm"/>
 [TableAttribute("dbo.tWeekOpeningHours")]
-public class tWeekOpeningHours
-{
+public class tWeekOpeningHours {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tWeekOpeningHours_bFriday.htm"/>
     public virtual bool bFriday { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tWeekOpeningHours_bMonday.htm"/>

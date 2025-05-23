@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Information on detected files - texts.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblFileStringInfo.htm"/>
 [TableAttribute("dbo.tblFileStringInfo")]
-public class tblFileStringInfo
-{
+public class tblFileStringInfo {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblFileStringInfo_intCodePage.htm"/>
     public virtual int? intCodePage { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblFileStringInfo_intLanguage.htm"/>

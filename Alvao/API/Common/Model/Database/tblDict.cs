@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Common table for the text code lists of the system tables values.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDict.htm"/>
 [TableAttribute("dbo.tblDict")]
-public class tblDict
-{
+public class tblDict {
     /// <summary>SW - license status - text</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblDict_iLicenseStatusId.htm"/>
     public virtual int? iLicenseStatusId { get; set; }

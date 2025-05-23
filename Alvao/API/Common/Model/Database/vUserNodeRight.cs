@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Rights in the object tree - users (including the rights allowed / prohibited by membership in roles).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vUserNodeRight.htm"/>
 [TableAttribute("dbo.vUserNodeRight")]
-public class vUserNodeRight
-{
+public class vUserNodeRight {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vUserNodeRight_bolDelete.htm"/>
     public virtual bool? bolDelete { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vUserNodeRight_bolMove.htm"/>

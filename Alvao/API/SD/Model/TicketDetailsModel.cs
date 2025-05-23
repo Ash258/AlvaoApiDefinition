@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_TicketDetailsModel.htm"/>
-public class TicketDetailsModel
-{
+public class TicketDetailsModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketDetailsModel_dHdTicket.htm"/>
     public DateTime? dHdTicket { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketDetailsModel_dHdTicketDeadline.htm"/>

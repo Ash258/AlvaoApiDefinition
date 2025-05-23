@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Summary SLA notifications for the expiration of the ticket deadline.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaAlertDeadlineSummary.htm"/>
 [TableAttribute("dbo.vSlaAlertDeadlineSummary")]
-public class vSlaAlertDeadlineSummary
-{
+public class vSlaAlertDeadlineSummary {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertDeadlineSummary_dHdTicketDeadline.htm"/>
     public virtual DateTime? dHdTicketDeadline { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertDeadlineSummary_iHdTicketId.htm"/>

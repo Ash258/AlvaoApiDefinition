@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Effective service operators.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdSectionOperator.htm"/>
 [TableAttribute("dbo.vHdSectionOperator")]
-public class vHdSectionOperator
-{
+public class vHdSectionOperator {
     /// <summary>Service ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionOperator_HdSectionId.htm"/>
     public virtual int HdSectionId { get; set; }

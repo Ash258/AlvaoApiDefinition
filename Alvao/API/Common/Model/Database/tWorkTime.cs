@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Employee attendance record created in the ALVAO Attendance module.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tWorkTime.htm"/>
 [TableAttribute("dbo.tWorkTime")]
-public class tWorkTime
-{
+public class tWorkTime {
     /// <summary>Time at which the record for starting work was inserted</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tWorkTime_dCreated.htm"/>
     public virtual DateTime dCreated { get; set; }

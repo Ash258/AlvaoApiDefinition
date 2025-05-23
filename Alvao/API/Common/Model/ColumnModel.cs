@@ -1,8 +1,7 @@
 namespace Alvao.API.Common.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_ColumnModel.htm"/>
-public class ColumnModel
-{
+public class ColumnModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_bUseColumnValue.htm"/>
     public bool bUseColumnValue { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_ColumnValues.htm"/>

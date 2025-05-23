@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>IP address range for Integrated Windows Authentication.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_IntegratedAuthIpRange.htm"/>
 [TableAttribute("dbo.IntegratedAuthIpRange")]
-public class IntegratedAuthIpRange
-{
+public class IntegratedAuthIpRange {
     /// <summary>Beginning of the range of IP addresses, including.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_IntegratedAuthIpRange_FromIP.htm"/>
     public virtual long? FromIP { get; set; }

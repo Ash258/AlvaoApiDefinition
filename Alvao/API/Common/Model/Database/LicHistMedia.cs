@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>License - links to documents and media.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicHistMedia.htm"/>
 [TableAttribute("dbo.LicHistMedia")]
-public class LicHistMedia
-{
+public class LicHistMedia {
     /// <summary>License (tblLicHist.intLicHistId)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicHistMedia_LicHistId.htm"/>
     [ExplicitKeyAttribute]

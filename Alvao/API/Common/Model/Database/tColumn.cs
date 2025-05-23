@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of custom fields and certain system items.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tColumn.htm"/>
 [TableAttribute("dbo.tColumn")]
-public class tColumn
-{
+public class tColumn {
     /// <summary>Use the value list.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tColumn_bUseColumnValue.htm"/>
     public virtual bool bUseColumnValue { get; set; }

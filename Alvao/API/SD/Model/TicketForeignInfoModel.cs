@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_TicketForeignInfoModel.htm"/>
-public class TicketForeignInfoModel
-{
+public class TicketForeignInfoModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketForeignInfoModel_FirstActText.htm"/>
     public string FirstActText { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketForeignInfoModel_RoomName.htm"/>

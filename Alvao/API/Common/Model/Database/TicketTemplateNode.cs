@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Objects linked to the ticket templates.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketTemplateNode.htm"/>
 [TableAttribute("dbo.TicketTemplateNode")]
-public class TicketTemplateNode
-{
+public class TicketTemplateNode {
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTemplateNode_id.htm"/>
     [KeyAttribute]

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detail of the HW detection - all.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vWbemObject.htm"/>
 [TableAttribute("dbo.vWbemObject")]
-public class vWbemObject
-{
+public class vWbemObject {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject___CLASS.htm"/>
     public virtual string __CLASS { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject_AdapterRAM.htm"/>

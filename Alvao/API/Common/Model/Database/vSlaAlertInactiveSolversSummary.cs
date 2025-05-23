@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Summary SLA alerts for solver inactivity.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaAlertInactiveSolversSummary.htm"/>
 [TableAttribute("dbo.vSlaAlertInactiveSolversSummary")]
-public class vSlaAlertInactiveSolversSummary
-{
+public class vSlaAlertInactiveSolversSummary {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertInactiveSolversSummary_fSummarySendHour.htm"/>
     public virtual double? fSummarySendHour { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertInactiveSolversSummary_iHdTicketId.htm"/>

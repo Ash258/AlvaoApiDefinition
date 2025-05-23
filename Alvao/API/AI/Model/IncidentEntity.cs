@@ -1,8 +1,7 @@
 namespace Alvao.API.AI.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_IncidentEntity.htm"/>
-public class IncidentEntity
-{
+public class IncidentEntity {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_IncidentEntity_BadHealthPercent.htm"/>
     public double BadHealthPercent { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_IncidentEntity_Description.htm"/>

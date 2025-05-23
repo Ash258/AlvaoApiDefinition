@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Information on HW and SW detections in the computers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblDetect.htm"/>
 [TableAttribute("dbo.tblDetect")]
-public class tblDetect
-{
+public class tblDetect {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblDetect_DetectSourceMethod.htm"/>
     public virtual int? DetectSourceMethod { get; set; }
     /// <summary>Time at which the detection is performed.</summary>

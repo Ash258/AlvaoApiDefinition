@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>System settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblSystemSetting.htm"/>
 [TableAttribute("dbo.tblSystemSetting")]
-public class tblSystemSetting
-{
+public class tblSystemSetting {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblSystemSetting_bolDetect_RestrictDetectionCnt.htm"/>
     public virtual bool bolDetect_RestrictDetectionCnt { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblSystemSetting_bolNode_Rights.htm"/>

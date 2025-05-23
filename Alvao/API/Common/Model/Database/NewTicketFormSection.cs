@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary></summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NewTicketFormSection.htm"/>
 [TableAttribute("dbo.NewTicketFormSection")]
-public class NewTicketFormSection
-{
+public class NewTicketFormSection {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NewTicketFormSection_Expand.htm"/>
     public virtual bool Expand { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NewTicketFormSection_id.htm"/>

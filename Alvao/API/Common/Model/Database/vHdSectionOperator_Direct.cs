@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Effective main solvers without absentee stand-ins.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdSectionOperator_Direct.htm"/>
 [TableAttribute("dbo.vHdSectionOperator_Direct")]
-public class vHdSectionOperator_Direct
-{
+public class vHdSectionOperator_Direct {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionOperator_Direct_liHdSectionOperatorHdSectionId.htm"/>
     public virtual int liHdSectionOperatorHdSectionId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionOperator_Direct_liHdSectionOperatorPersonId.htm"/>

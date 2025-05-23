@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Permissions individuals and groups have in services (Main solver, Solver, ...).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdSectionRights.htm"/>
 [TableAttribute("dbo.tHdSectionRights")]
-public class tHdSectionRights
-{
+public class tHdSectionRights {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdSectionRights_bHdSectionRightsManager.htm"/>
     public virtual bool? bHdSectionRightsManager { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdSectionRights_bHdSectionRightsOperator.htm"/>

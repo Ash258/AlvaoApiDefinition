@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of SLAs in all used languages.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaLoc.htm"/>
 [TableAttribute("dbo.vSlaLoc")]
-public class vSlaLoc
-{
+public class vSlaLoc {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaLoc_dSlaRemoved.htm"/>
     public virtual DateTime? dSlaRemoved { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaLoc_iSlaId.htm"/>

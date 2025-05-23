@@ -22,8 +22,7 @@ namespace Alvao.Apps.API;
 /// Tip: To store the properties and settings of the command, we recommend defining the Settings class in a separate script that you create from the Class Library template.
 /// </summary>
 /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/general-custom-commands"/>
-public interface IGeneralCommand
-{
+public interface IGeneralCommand {
 
     /// <summary>
     /// This method checks the defined conditions for displaying the command.

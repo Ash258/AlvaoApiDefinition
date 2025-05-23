@@ -1,12 +1,11 @@
-using Alvao.API.Common.Model.Database;
 using System.Globalization;
+using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping person methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Person.htm"/>
-public static class Person
-{
+public static class Person {
 
     /// <summary>Adds person to group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_AddToGroup.htm"/>
@@ -16,8 +15,7 @@ public static class Person
     public static void AddToGroup(
         int personId,
         IEnumerable<int> roleIds
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_ConvertUtcToPersonLocal.htm"/>
     ///
@@ -26,8 +24,7 @@ public static class Person
     public static DateTime ConvertUtcToPersonLocal(
         tPerson person,
         DateTime utcDate
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_Create.htm"/>
@@ -47,8 +44,7 @@ public static class Person
         string personalNumber,
         string azureAdObjectId = null,
         int? azureAdTenantId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns all persons</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetAll.htm"/>
@@ -56,8 +52,7 @@ public static class Person
     /// <param name="includeRemoved">Include removed persons in result</param>
     public static IEnumerable<tPerson> GetAll(
         bool includeRemoved = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Search for person by AzureObjectId. If not found, tries to find by person SID and then by email.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByAzureIdSidOrEmail.htm"/>
@@ -69,8 +64,7 @@ public static class Person
         string azureAdObjectId,
         string userSid = null,
         string email = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Return all persons which are synchronized from Azure Active Directory tenant.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByAzureTenant.htm"/>
@@ -78,8 +72,7 @@ public static class Person
     /// <param name="azureAdTenantId">Azure Tenant ID</param>
     public static IEnumerable<tPerson> GetByAzureTenant(
         int azureAdTenantId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns person by email</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByEmail.htm"/>
@@ -87,8 +80,7 @@ public static class Person
     /// <param name="email">Person email</param>
     public static tPerson GetByEmail(
         string email
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns person</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetById.htm"/>
@@ -96,8 +88,7 @@ public static class Person
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     public static tPerson GetById(
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Search for person by persons login</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetByLogin.htm"/>
@@ -105,8 +96,7 @@ public static class Person
     /// <param name="login">Person login</param>
     public static tPerson GetByLogin(
         string login
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns CultureInfo for given person. If person does not have set preffered language , CultureInfo of system language is returned.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetCultureInfoOrDefault.htm"/>
@@ -114,8 +104,7 @@ public static class Person
     /// <param name="person">Person to get CultureInfo for</param>
     public static CultureInfo GetCultureInfoOrDefault(
         tPerson person
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns custom list of persons.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetCustomList.htm"/>
@@ -127,8 +116,7 @@ public static class Person
         string columns,
         string filterCondition,
         string sorting
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns group ID (tRole.iRoleId) of all groups that the person is member of.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetGroupMembership.htm"/>
@@ -138,8 +126,7 @@ public static class Person
     public static IEnumerable<int> GetGroupMembership(
         int personId,
         bool onlyDirectMembership
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns guest person</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetGuest.htm"/>
@@ -153,8 +140,7 @@ public static class Person
     public static string GetNameFromMail(
         string email,
         string displayName
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns system person</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetSystem.htm"/>
@@ -166,8 +152,7 @@ public static class Person
     /// <param name="person">Person to get timezone for</param>
     public static string GetTimezone(
         tPerson person
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Gets Azure Active Directory Bearer token from the on-behalf-of flow. The token can be used for communication with other Azure services on behalf of the user.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_GetToken.htm"/>
@@ -177,8 +162,7 @@ public static class Person
     public static string GetToken(
         int personId,
         string scope
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Inserts an email address to persons email usage</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_InsertToEmailUsage.htm"/>
@@ -188,8 +172,7 @@ public static class Person
     public static void InsertToEmailUsage(
         int personId,
         string email
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether person is member of group.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_IsMemberOfGroup.htm"/>
@@ -199,8 +182,7 @@ public static class Person
     public static bool IsMemberOfGroup(
         int personId,
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Recompute contents of PersonManager table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_RecomputePersonManager.htm"/>
@@ -214,8 +196,7 @@ public static class Person
     public static void RemoveFromGroup(
         int personId,
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates person.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Person_Update.htm"/>
@@ -223,6 +204,5 @@ public static class Person
     /// <param name="person">Person to update</param>
     public static void Update(
         tPerson person
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

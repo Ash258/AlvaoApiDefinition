@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Logging of changes in permissions of users in Asset Management.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NodeRightLog.htm"/>
 [TableAttribute("dbo.NodeRightLog")]
-public class NodeRightLog
-{
+public class NodeRightLog {
     /// <summary>Object kind name.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRightLog_Class.htm"/>
     public virtual string Class { get; set; }

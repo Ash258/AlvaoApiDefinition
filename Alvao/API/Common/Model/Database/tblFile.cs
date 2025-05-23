@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detected files on the computer (SW detection).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblFile.htm"/>
 [TableAttribute("dbo.tblFile")]
-public class tblFile
-{
+public class tblFile {
     /// <summary>The date of the library according to which the file has been recognized.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblFile_EvalSwLibDate.htm"/>
     public virtual DateTime? EvalSwLibDate { get; set; }

@@ -3,8 +3,7 @@ using Newtonsoft.Json;
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Property.htm"/>
-public class Property
-{
+public class Property {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_Property_CanModify.htm"/>
     [JsonIgnoreAttribute]
     public bool CanModify { get; set; }
@@ -71,14 +70,12 @@ public class Property
     public Property(
         int propertyId,
         int sequenceId
-    )
-    { }
+    ) { }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_Property__ctor_2.htm"/>
     public Property(
         string name,
         string value
-    )
-    { }
+    ) { }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_Property_IsInherited.htm"/>
     public bool IsInherited() { throw new System.NotImplementedException(); }

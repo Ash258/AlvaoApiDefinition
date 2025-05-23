@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Installed software vs licenses and software profiles. Note: This view is outdated and should not be used. It will be removed in a future version of ALVAO.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSwInstLicProfile_ProductComputer.htm"/>
 [TableAttribute("dbo.vSwInstLicProfile_ProductComputer")]
-public class vSwInstLicProfile_ProductComputer
-{
+public class vSwInstLicProfile_ProductComputer {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSwInstLicProfile_ProductComputer_bError.htm"/>
     public virtual int bError { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSwInstLicProfile_ProductComputer_CoversMoreProds.htm"/>

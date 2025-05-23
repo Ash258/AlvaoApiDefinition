@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_EmailModel.htm"/>
-public class EmailModel : IEquatable<EmailModel>
-{
+public class EmailModel : IEquatable<EmailModel> {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_EmailModel_Address.htm"/>
     public string Address { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_EmailModel_ShouldDisplay.htm"/>
@@ -19,37 +18,32 @@ public class EmailModel : IEquatable<EmailModel>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel__ctor_1.htm"/>
     public EmailModel(
         IEqualityComparer<EmailModel> comparerer
-    )
-    { }
+    ) { }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel__ctor_2.htm"/>
     public EmailModel(
         string addressWithText,
         IEqualityComparer<EmailModel> comparerer = null
-    )
-    { }
+    ) { }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel__ctor_3.htm"/>
     public EmailModel(
         string address,
         string text,
         IEqualityComparer<EmailModel> comparerer = null
-    )
-    { }
+    ) { }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel_Equals.htm"/>
     ///
     /// <param name="other"> </param>
     public bool Equals(
         EmailModel other
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel_Equals_1.htm"/>
     ///
     /// <param name="obj"> </param>
     public override bool Equals(
         Object obj
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel_GetHashCode.htm"/>
     public override int GetHashCode() { throw new System.NotImplementedException(); }
@@ -61,8 +55,7 @@ public class EmailModel : IEquatable<EmailModel>
     public static EmailModel ToEmailModel(
         EmailModel left,
         EmailModel right
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_EmailModel_ToString.htm"/>
     public override string ToString() { throw new System.NotImplementedException(); }

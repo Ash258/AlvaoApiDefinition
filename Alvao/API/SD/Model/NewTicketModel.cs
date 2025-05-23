@@ -5,8 +5,7 @@ namespace Alvao.API.SD.Model;
 
 /// <summary>New request model.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_NewTicketModel.htm"/>
-public class NewTicketModel
-{
+public class NewTicketModel {
     /// <summary>If true, it will automatically assign Solver if there is only 1 in target Service and there is no other main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_NewTicketModel_AssignSolver.htm"/>
     public bool AssignSolver { get; set; }

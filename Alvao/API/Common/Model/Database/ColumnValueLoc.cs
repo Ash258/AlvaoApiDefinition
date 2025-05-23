@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cache of value list item localizations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ColumnValueLoc.htm"/>
 [TableAttribute("dbo.ColumnValueLoc")]
-public class ColumnValueLoc
-{
+public class ColumnValueLoc {
     /// <summary>Custom field ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ColumnValueLoc_ColumnId.htm"/>
     public virtual int ColumnId { get; set; }

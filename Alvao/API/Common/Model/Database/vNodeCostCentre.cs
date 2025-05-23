@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cost center of the objects in the tree.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vNodeCostCentre.htm"/>
 [TableAttribute("dbo.vNodeCostCentre")]
-public class vNodeCostCentre
-{
+public class vNodeCostCentre {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNodeCostCentre_Centre.htm"/>
     public virtual string Centre { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNodeCostCentre_ClassId.htm"/>

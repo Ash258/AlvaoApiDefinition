@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Map for determining the type of object based on device descriptions in SNMP.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SnmpDeviceTypeMap.htm"/>
 [TableAttribute("dbo.SnmpDeviceTypeMap")]
-public class SnmpDeviceTypeMap
-{
+public class SnmpDeviceTypeMap {
     /// <summary>Object type (see tblClass).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SnmpDeviceTypeMap_ClassId.htm"/>
     public virtual int? ClassId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>column values on ticket template.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketTemplateColumnValue.htm"/>
 [TableAttribute("dbo.TicketTemplateColumnValue")]
-public class TicketTemplateColumnValue
-{
+public class TicketTemplateColumnValue {
     /// <summary>Column Id.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTemplateColumnValue_ColumnId.htm"/>
     public virtual int ColumnId { get; set; }

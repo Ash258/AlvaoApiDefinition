@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Service operating hours.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tOpeningHours.htm"/>
 [TableAttribute("dbo.tOpeningHours")]
-public class tOpeningHours
-{
+public class tOpeningHours {
     /// <summary>End of the current operating hours interval.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tOpeningHours_ActualOpeningHoursEnd.htm"/>
     public virtual DateTime? ActualOpeningHoursEnd { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>SAM notifications sent.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SamAlert.htm"/>
 [TableAttribute("dbo.SamAlert")]
-public class SamAlert
-{
+public class SamAlert {
     /// <summary>Computer</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SamAlert_ComputerId.htm"/>
     public virtual int ComputerId { get; set; }

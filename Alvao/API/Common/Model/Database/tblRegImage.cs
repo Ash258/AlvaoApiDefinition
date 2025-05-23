@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Software products library - recognition rules for records from the register.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblRegImage.htm"/>
 [TableAttribute("dbo.tblRegImage")]
-public class tblRegImage
-{
+public class tblRegImage {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblRegImage_bolProductKey.htm"/>
     public virtual bool bolProductKey { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblRegImage_bolValid.htm"/>

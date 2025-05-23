@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Registered webhooks integrating Alvao with other applications.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_Webhook.htm"/>
 [TableAttribute("dbo.Webhook")]
-public class Webhook
-{
+public class Webhook {
     /// <summary>Ticket field ID for wich the webhook should be invoked (tColumn.iColumnId).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_Webhook_ColumnId.htm"/>
     public virtual int? ColumnId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Connection to MS SCCM</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SccmConnection.htm"/>
 [TableAttribute("dbo.SccmConnection")]
-public class SccmConnection
-{
+public class SccmConnection {
     /// <summary>URL of the web application registered in Azura used to connect via the Cloud Management Gateway.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SccmConnection_ApplicationUri.htm"/>
     public virtual string ApplicationUri { get; set; }

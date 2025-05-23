@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>System ticket statuses, see dbo.TicketState.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketStateBehavior.htm"/>
 [TableAttribute("dbo.TicketStateBehavior")]
-public class TicketStateBehavior
-{
+public class TicketStateBehavior {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketStateBehavior_BehaviorId.htm"/>
-    public enum BehaviorId
-    {
+    public enum BehaviorId {
         NewTicket = 1,
         PassToSolver = 2,
         Resolve = 3,

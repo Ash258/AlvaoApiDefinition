@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Security for properties.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_KindRight.htm"/>
 [TableAttribute("dbo.KindRight")]
-public class KindRight
-{
+public class KindRight {
     /// <summary>Permission to change value.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_CanModify.htm"/>
     public virtual byte? CanModify { get; set; }

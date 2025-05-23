@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_ResolvedTicketRelationsModel.htm"/>
-public class ResolvedTicketRelationsModel
-{
+public class ResolvedTicketRelationsModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ResolvedTicketRelationsModel_BeginTicketId.htm"/>
     public int BeginTicketId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ResolvedTicketRelationsModel_EndTicketId.htm"/>

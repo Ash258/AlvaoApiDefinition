@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Results of approval steps in all languages used.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdTicketApprovalItemResultLoc.htm"/>
 [TableAttribute("dbo.vHdTicketApprovalItemResultLoc")]
-public class vHdTicketApprovalItemResultLoc
-{
+public class vHdTicketApprovalItemResultLoc {
     /// <summary>Language localization ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdTicketApprovalItemResultLoc_ApprovalItemResultLocaleId.htm"/>
     public virtual int ApprovalItemResultLocaleId { get; set; }

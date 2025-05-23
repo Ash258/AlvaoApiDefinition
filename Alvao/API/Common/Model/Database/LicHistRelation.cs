@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>A table containing links between licenses in AM Console</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicHistRelation.htm"/>
 [TableAttribute("dbo.LicHistRelation")]
-public class LicHistRelation
-{
+public class LicHistRelation {
     /// <summary>Initial license link ID. A foreign key on the tblLicHist table.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicHistRelation_BeginLicHistId.htm"/>
     public virtual int BeginLicHistId { get; set; }

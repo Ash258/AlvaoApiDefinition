@@ -1,8 +1,7 @@
 namespace Alvao.API.AI.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_AssistantTicketTabModel.htm"/>
-public class AssistantTicketTabModel
-{
+public class AssistantTicketTabModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_AssistantTicketTabModel_EntityInfo.htm"/>
     public EntityInfo EntityInfo { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_AssistantTicketTabModel_MajorIncident.htm"/>

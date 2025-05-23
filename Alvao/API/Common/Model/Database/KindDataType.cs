@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Property data types in AM.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_KindDataType.htm"/>
 [TableAttribute("dbo.KindDataType")]
-public class KindDataType
-{
+public class KindDataType {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum.htm"/>
-    public enum KindDataTypeIdEnum
-    {
+    public enum KindDataTypeIdEnum {
         Text = 1,
         Date = 2,
         Float = 3,

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Used people's passwords.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PersonPasswordHistory.htm"/>
 [TableAttribute("dbo.PersonPasswordHistory")]
-public class PersonPasswordHistory
-{
+public class PersonPasswordHistory {
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PersonPasswordHistory_id.htm"/>
     [KeyAttribute]

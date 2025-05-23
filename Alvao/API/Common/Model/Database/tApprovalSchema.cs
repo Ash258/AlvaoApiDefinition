@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Approval schemes.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tApprovalSchema.htm"/>
 [TableAttribute("dbo.tApprovalSchema")]
-public class tApprovalSchema
-{
+public class tApprovalSchema {
     /// <summary>Automatic approval of steps with the same approver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tApprovalSchema_AutoApproveStepsSameApprover.htm"/>
     public virtual bool AutoApproveStepsSameApprover { get; set; }

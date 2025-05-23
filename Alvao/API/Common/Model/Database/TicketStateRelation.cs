@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Allowed transitions among ticket statuses, see dbo.TicketState.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketStateRelation.htm"/>
 [TableAttribute("dbo.TicketStateRelation")]
-public class TicketStateRelation
-{
+public class TicketStateRelation {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketStateRelation_BeginTicketStateId.htm"/>
     public virtual int BeginTicketStateId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketStateRelation_EndTicketStateId.htm"/>

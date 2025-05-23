@@ -14,8 +14,7 @@ namespace Alvao.Apps.API;
 /// Tip: A prerequisite for creating a working automated action is a good knowledge of Alvao database and Alvao.API.
 /// </summary>
 /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/periodic-custom-actions"/>
-public interface IPeriodicAction
-{
+public interface IPeriodicAction {
     public string Name { get; set; }
 
     /// <summary>In the method, define both the conditions for performing the operations and the operations themselves.</summary>

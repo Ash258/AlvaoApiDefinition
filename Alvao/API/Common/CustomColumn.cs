@@ -1,13 +1,12 @@
+using System.Globalization;
 using Alvao.API.Common.Model;
 using Alvao.API.Common.Model.Database;
-using System.Globalization;
 
 namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping custom column methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_CustomColumn.htm"/>
-public static class CustomColumn
-{
+public static class CustomColumn {
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CustomColumn_GetAll.htm"/>
     ///
@@ -16,16 +15,14 @@ public static class CustomColumn
     public static IEnumerable<ColumnValue> GetAll(
         string customTableName,
         int entityId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CustomColumn_GetAllColumns.htm"/>
     ///
     /// <param name="customTableName"> </param>
     public static IEnumerable<tColumn> GetAllColumns(
         string customTableName
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get value of custom column</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CustomColumn_GetValue.htm"/>
@@ -43,8 +40,7 @@ public static class CustomColumn
         CultureInfo language,
         string timeZone,
         bool returnPersonName = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Suggests possible values for custom column matching specific sample</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CustomColumn_SuggestValues.htm"/>
@@ -60,8 +56,7 @@ public static class CustomColumn
         string sample,
         int localeId,
         int top = 100
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates custom column values.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_CustomColumn_UpdateValues.htm"/>
@@ -71,6 +66,5 @@ public static class CustomColumn
     public static void UpdateValues(
         CustomColumnsModel model,
         bool auditLogChanges = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

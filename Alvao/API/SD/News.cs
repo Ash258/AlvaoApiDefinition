@@ -2,8 +2,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping news methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_News.htm"/>
-public static class News
-{
+public static class News {
 
     /// <summary>Send news post to recipients</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_News_Send_1.htm"/>
@@ -15,8 +14,7 @@ public static class News
         int newsId,
         List<string> recipients,
         string newsLink
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Send news post by email</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_News_Send.htm"/>
@@ -30,6 +28,5 @@ public static class News
         bool sendToRequesters,
         bool sendToSectionTeam,
         string specificRecipients
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

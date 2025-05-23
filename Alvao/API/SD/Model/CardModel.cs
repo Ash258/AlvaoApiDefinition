@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_CardModel.htm"/>
-public class CardModel
-{
+public class CardModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CardModel_ButtonLink.htm"/>
     public string ButtonLink { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CardModel_ButtonText.htm"/>
@@ -41,6 +40,5 @@ public class CardModel
         string title,
         CardType type,
         int localeId = 1033
-    )
-    { }
+    ) { }
 }

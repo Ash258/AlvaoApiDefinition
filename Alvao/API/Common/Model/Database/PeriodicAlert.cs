@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Periodic alerts not defined by an SQL query. Sent by e-mail, periodically with the selected regularity.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PeriodicAlert.htm"/>
 [TableAttribute("dbo.PeriodicAlert")]
-public class PeriodicAlert
-{
+public class PeriodicAlert {
     /// <summary>If the CSV attachment is be attached to the notification. 1 = enabled, 0 = disabled</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PeriodicAlert_AttachCSV.htm"/>
     public virtual bool AttachCSV { get; set; }

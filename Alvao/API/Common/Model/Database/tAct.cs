@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>The record in communication or ticket log.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tAct.htm"/>
 [TableAttribute("dbo.tAct")]
-public class tAct
-{
+public class tAct {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tAct_ActHtml.htm"/>
     public virtual string ActHtml { get; set; }
     /// <summary>Record marking. A foreign key to the ActMark table.</summary>

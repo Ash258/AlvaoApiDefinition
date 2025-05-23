@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Outgoing email queue.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_MailMessage.htm"/>
 [TableAttribute("dbo.MailMessage")]
-public class MailMessage
-{
+public class MailMessage {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_MailMessage_EmlMail.htm"/>
     public virtual byte[] EmlMail { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_MailMessage_id.htm"/>

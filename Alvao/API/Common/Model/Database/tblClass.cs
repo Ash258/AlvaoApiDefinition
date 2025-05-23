@@ -5,12 +5,10 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>ID of the objects types. Texts in tblDict.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblClass.htm"/>
 [TableAttribute("dbo.tblClass")]
-public class tblClass
-{
+public class tblClass {
     /// <summary>Enumeration representing node class codes.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblClass_ClassCode.htm"/>
-    public enum ClassCode
-    {
+    public enum ClassCode {
         GeneralObject = 1,
         SpecObjTrash = 2,
         SpecObjTemplate = 3,

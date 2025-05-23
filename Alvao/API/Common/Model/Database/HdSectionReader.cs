@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Effective readers in services.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionReader.htm"/>
 [TableAttribute("dbo.HdSectionReader")]
-public class HdSectionReader
-{
+public class HdSectionReader {
     /// <summary>ID of the service where the user is a reader.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_HdSectionReader_HdSectionId.htm"/>
     public virtual int HdSectionId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Auxiliary view for the language localization of service names and descriptions.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vHdSectionLoc.htm"/>
 [TableAttribute("dbo.vHdSectionLoc")]
-public class vHdSectionLoc
-{
+public class vHdSectionLoc {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionLoc_AllowSkipCustomForm.htm"/>
     public virtual bool AllowSkipCustomForm { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vHdSectionLoc_bHdSectionDefault.htm"/>

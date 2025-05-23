@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cache of processed localizations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_AssetCheckReasonLoc.htm"/>
 [TableAttribute("dbo.AssetCheckReasonLoc")]
-public class AssetCheckReasonLoc
-{
+public class AssetCheckReasonLoc {
     /// <summary>Reason ID (AssetCheckReason.id)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_AssetCheckReasonLoc_AssetCheckReasonId.htm"/>
     public virtual int AssetCheckReasonId { get; set; }

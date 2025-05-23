@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Log - changes in the properties values and information on the detection results.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLog.htm"/>
 [TableAttribute("dbo.tblLog")]
-public class tblLog
-{
+public class tblLog {
     /// <summary>date and time</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLog_dteLog.htm"/>
     public virtual DateTime? dteLog { get; set; }

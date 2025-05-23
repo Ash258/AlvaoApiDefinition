@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Ticket log record for changes to the ticket field value.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketChange.htm"/>
 [TableAttribute("dbo.TicketChange")]
-public class TicketChange
-{
+public class TicketChange {
     /// <summary>Changed field (tColumn.iColumnId)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketChange_ColumnId.htm"/>
     public virtual int ColumnId { get; set; }

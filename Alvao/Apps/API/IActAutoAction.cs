@@ -9,8 +9,7 @@ namespace Alvao.Apps.API;
 /// Caution: If you want to use only some of the methods of the implemented interface in the automatic action, leave an exception in the body of the other methods from the interface: throw new NotImplementedException();.
 /// </summary>
 /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions"/>
-public interface IActAutoAction
-{
+public interface IActAutoAction {
     public string Name { get; set; }
 
     /// <summary>Custom action based on event modification. In the implemented method, define both the conditions for executing the operations and the event operations themselves.</summary>

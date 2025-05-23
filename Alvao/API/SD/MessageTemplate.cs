@@ -1,12 +1,11 @@
-using Alvao.API.Common.Model;
 using System.Globalization;
+using Alvao.API.Common.Model;
 
 namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping message templates methods</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_MessageTemplate.htm"/>
-public static class MessageTemplate
-{
+public static class MessageTemplate {
 
     /// <summary>Evaluates template of message for approver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_EvaluateMessageForApprover.htm"/>
@@ -22,8 +21,7 @@ public static class MessageTemplate
         int? actId,
         CultureInfo language = null,
         HtmlTextModel commentForApprover = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Evaluates template of message for requester.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_EvaluateMessageForRequester.htm"/>
@@ -41,8 +39,7 @@ public static class MessageTemplate
         HtmlTextModel requesterNotice = null,
         bool isAfterApproval = false,
         bool formatDateTimeToUniversalSortable = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get last approval result with comment</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_GetLastApprovalResultWithComment.htm"/>
@@ -50,8 +47,7 @@ public static class MessageTemplate
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static string GetLastApprovalResultWithComment(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get latest important message</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_MessageTemplate_GetLatestImportantMessage.htm"/>
@@ -59,6 +55,5 @@ public static class MessageTemplate
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static string GetLatestImportantMessage(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

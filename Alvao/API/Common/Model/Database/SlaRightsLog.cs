@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Logging of changes in SLA assignment The meaning of values in permission columns: 1=enable 0=refuse NULL=not set</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SlaRightsLog.htm"/>
 [TableAttribute("dbo.SlaRightsLog")]
-public class SlaRightsLog
-{
+public class SlaRightsLog {
     /// <summary>Access permissions</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SlaRightsLog_Access.htm"/>
     public virtual bool? Access { get; set; }

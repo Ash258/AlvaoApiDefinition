@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Objects in the Objects Tree. Differentiation between system objects and discarded assets.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vNodeClass.htm"/>
 [TableAttribute("dbo.vNodeClass")]
-public class vNodeClass
-{
+public class vNodeClass {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNodeClass_bComputer.htm"/>
     public virtual bool bComputer { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNodeClass_bolAutoUpdate.htm"/>

@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Configuration of the SMTP server for ALVAO.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSmtp.htm"/>
 [TableAttribute("dbo.tSmtp")]
-public class tSmtp
-{
+public class tSmtp {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSmtp_AuthTypeEnum.htm"/>
-    public enum AuthTypeEnum
-    {
+    public enum AuthTypeEnum {
         OAuth = 0,
         Basic = 1,
         Integrated = 2,

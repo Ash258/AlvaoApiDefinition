@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Ticket approval step.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdTicketApprovalItem.htm"/>
 [TableAttribute("dbo.tHdTicketApprovalItem")]
-public class tHdTicketApprovalItem
-{
+public class tHdTicketApprovalItem {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdTicketApprovalItem_ApprovalResult.htm"/>
-    public enum ApprovalResult
-    {
+    public enum ApprovalResult {
         NA = 1,
         Accepted = 2,
         Rejected = 3,

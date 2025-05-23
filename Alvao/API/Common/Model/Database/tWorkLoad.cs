@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Employee labor contracts.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tWorkLoad.htm"/>
 [TableAttribute("dbo.tWorkLoad")]
-public class tWorkLoad
-{
+public class tWorkLoad {
     /// <summary>Labor contract end date + 1 (UTC). NULL represents a labor contract for an indefinite period.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tWorkLoad_dEnd.htm"/>
     public virtual DateTime? dEnd { get; set; }

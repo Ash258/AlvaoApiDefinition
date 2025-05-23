@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Effective service managers.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionManager.htm"/>
 [TableAttribute("dbo.HdSectionManager")]
-public class HdSectionManager
-{
+public class HdSectionManager {
     /// <summary>ID of the service where the user is a manager.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_HdSectionManager_HdSectionId.htm"/>
     public virtual int HdSectionId { get; set; }

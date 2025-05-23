@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Types of links between objects in the AM.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NodeRelationType.htm"/>
 [TableAttribute("dbo.NodeRelationType")]
-public class NodeRelationType
-{
+public class NodeRelationType {
     /// <summary>1 = health of the final object is influenced by the health of the starting object. 0 = otherwise.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelationType_AffectsNodeHealth.htm"/>
     public virtual bool AffectsNodeHealth { get; set; }

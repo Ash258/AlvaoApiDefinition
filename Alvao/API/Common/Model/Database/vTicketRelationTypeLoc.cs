@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>List of ticket link types in all used languages.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vTicketRelationTypeLoc.htm"/>
 [TableAttribute("dbo.vTicketRelationTypeLoc")]
-public class vTicketRelationTypeLoc
-{
+public class vTicketRelationTypeLoc {
     /// <summary>Start of link (name).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vTicketRelationTypeLoc_BeginName.htm"/>
     public virtual string BeginName { get; set; }

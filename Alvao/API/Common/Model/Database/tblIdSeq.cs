@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Numeric sequences - definitions.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblIdSeq.htm"/>
 [TableAttribute("dbo.tblIdSeq")]
-public class tblIdSeq
-{
+public class tblIdSeq {
     /// <summary>1=series is active</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblIdSeq_bUse.htm"/>
     public virtual bool bUse { get; set; }

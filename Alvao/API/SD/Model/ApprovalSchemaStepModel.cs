@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_ApprovalSchemaStepModel.htm"/>
-public class ApprovalSchemaStepModel
-{
+public class ApprovalSchemaStepModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ApprovalSchemaStepModel_AuthorityManagerOfUser.htm"/>
     public bool AuthorityManagerOfUser { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_ApprovalSchemaStepModel_AuthorityRequester.htm"/>

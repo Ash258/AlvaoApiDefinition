@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>SAM configuration of notifications.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SamAlertConfig.htm"/>
 [TableAttribute("dbo.SamAlertConfig")]
-public class SamAlertConfig
-{
+public class SamAlertConfig {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SamAlertConfig_CheckingDetectPeriod.htm"/>
     public virtual int CheckingDetectPeriod { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SamAlertConfig_MaxDetectAgeDays.htm"/>

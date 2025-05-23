@@ -2,12 +2,10 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping database column methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Database.htm"/>
-public static class Database
-{
+public static class Database {
     /// <summary>Data type of the value provided as string</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Database_ValueDataType.htm"/>
-    public enum ValueDataType
-    {
+    public enum ValueDataType {
         Default = 0,
         Text = 1,
     }
@@ -30,8 +28,7 @@ public static class Database
         int recordId,
         string tableName,
         string columnName
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Write a new value to the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, tPerson, tPersonCust, tRole, TicketState. For tHdTicket table info, see: Ticket.UpdateColumnValue.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Database_WriteColumn.htm"/>
@@ -47,6 +44,5 @@ public static class Database
         string columnName,
         string newValue,
         Database.ValueDataType newValueDataType = Database.ValueDataType.Default
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

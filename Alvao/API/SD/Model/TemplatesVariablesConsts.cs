@@ -1,8 +1,7 @@
 namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_TemplatesVariablesConsts.htm"/>
-public sealed class TemplatesVariablesConsts
-{
+public sealed class TemplatesVariablesConsts {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/F_Alvao_API_SD_Model_TemplatesVariablesConsts_ApprovalByEmail.htm"/>
     public const string ApprovalByEmail = "ApprovalByEmail";
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/F_Alvao_API_SD_Model_TemplatesVariablesConsts_ApprovalByForm.htm"/>

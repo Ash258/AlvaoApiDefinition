@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Setting time of sending an alert and the period of the last alert repetition.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TransferConfirmAlertConfig.htm"/>
 [TableAttribute("dbo.TransferConfirmAlertConfig")]
-public class TransferConfirmAlertConfig
-{
+public class TransferConfirmAlertConfig {
     /// <summary>Repetition period of the last alert.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TransferConfirmAlertConfig_RepeatTeamAlertAfterDays.htm"/>
     public virtual int? RepeatTeamAlertAfterDays { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>The rules for automatic creation of linked tickets while transiting the source ticket to a certain status.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RelatedTicketRule.htm"/>
 [TableAttribute("dbo.RelatedTicketRule")]
-public class RelatedTicketRule
-{
+public class RelatedTicketRule {
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_RelatedTicketRule_id.htm"/>
     [KeyAttribute]

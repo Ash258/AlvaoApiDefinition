@@ -2,8 +2,7 @@ namespace Alvao.API.Common.Model;
 
 /// <summary>Custom columns model</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_CustomColumnsModel.htm"/>
-public class CustomColumnsModel
-{
+public class CustomColumnsModel {
     /// <summary>Column values to update.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_CustomColumnsModel_ColumnValues.htm"/>
     public IEnumerable<ColumnValue> ColumnValues { get; set; }

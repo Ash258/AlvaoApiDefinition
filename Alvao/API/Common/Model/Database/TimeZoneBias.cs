@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Time zone shifts compared to UTC for each year</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TimeZoneBias.htm"/>
 [TableAttribute("dbo.TimeZoneBias")]
-public class TimeZoneBias
-{
+public class TimeZoneBias {
     /// <summary>Shift compared to UTC in minutes.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TimeZoneBias_Bias.htm"/>
     public virtual int Bias { get; set; }

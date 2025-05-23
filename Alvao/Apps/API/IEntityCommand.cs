@@ -10,8 +10,7 @@ namespace Alvao.Apps.API;
 ///    Entity - the type of entity for which the command will be displayed(Entity.Ticket or Entity.Object).
 /// </summary>
 /// <see href="https://doc.alvao.com/en/11.2/modules/alvao-am-custom-apps/applications/i-entity-command"/>
-public interface IEntityCommand
-{
+public interface IEntityCommand {
     public string Id { get; set; }
     public Entity Entity { get; set; }
 

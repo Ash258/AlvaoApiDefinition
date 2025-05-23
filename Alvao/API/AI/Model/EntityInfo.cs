@@ -1,8 +1,7 @@
 namespace Alvao.API.AI.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_EntityInfo.htm"/>
-public class EntityInfo
-{
+public class EntityInfo {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_EntityInfo_AssistantEnabled.htm"/>
     public bool AssistantEnabled { get; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_Model_EntityInfo_CommunicationVector.htm"/>

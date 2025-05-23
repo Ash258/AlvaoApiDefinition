@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detected events from the Event log of computers</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DetectEventLog.htm"/>
 [TableAttribute("dbo.DetectEventLog")]
-public class DetectEventLog
-{
+public class DetectEventLog {
     /// <summary>Detection ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_DetectEventLog_DetectId.htm"/>
     public virtual int DetectId { get; set; }

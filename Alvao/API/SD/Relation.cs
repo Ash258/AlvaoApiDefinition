@@ -2,8 +2,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping request relations methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Relation.htm"/>
-public static class Relation
-{
+public static class Relation {
 
     /// <summary>Creates link between two requests.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_Create.htm"/>
@@ -17,8 +16,7 @@ public static class Relation
         int endTicketId,
         int ticketRelationTypeId,
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates link between object and request</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_CreateWithObject.htm"/>
@@ -32,8 +30,7 @@ public static class Relation
         int objectId,
         int createdPersonId,
         bool callCustomAction
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns all linked objects to specific request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_GetLinkedNodes.htm"/>
@@ -41,8 +38,7 @@ public static class Relation
     /// <param name="ticketId">Request ID to link (tHdTicket.iHdTicketId)</param>
     public static IEnumerable<int> GetLinkedNodes(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes links of specific requests with specific object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_RemoveMultipleWithObject.htm"/>
@@ -56,8 +52,7 @@ public static class Relation
         int objectId,
         int removedPersonId,
         bool callCustomAction
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes specific links to object.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_RemoveWithObjectsByIds.htm"/>
@@ -71,8 +66,7 @@ public static class Relation
         IEnumerable<int> ticketNodeIds,
         int removedPersonId,
         bool callCustomAction
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Synchronize links of specific request with specific objects. New objects in the list are linked and links to not presented objects are removed.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Relation_SynchronizeWithObjectsByObjectIds.htm"/>
@@ -86,6 +80,5 @@ public static class Relation
         IEnumerable<int> objectIds,
         int changedPersonId,
         bool callCustomAction
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Data query defined by an SQL query</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DataQuery.htm"/>
 [TableAttribute("dbo.DataQuery")]
-public class DataQuery
-{
+public class DataQuery {
     /// <summary>Description</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_DataQuery_Description.htm"/>
     public virtual string Description { get; set; }

@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Language localization for selected database values. The following items are supported: tHdSection.sHdSectionShort, tHdSection.mHdSectionDesc.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization.htm"/>
 [TableAttribute("dbo.tLocalization")]
-public class tLocalization
-{
+public class tLocalization {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization_Column.htm"/>
-    public enum Column
-    {
+    public enum Column {
         ColumnValueShort = 0,
         CustomMessageForApproverTemplate = 1,
         CustomNotificationForRequesterTemplate = 2,
@@ -28,8 +26,7 @@ public class tLocalization
         TextHtml = 15,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocalization_Table.htm"/>
-    public enum Table
-    {
+    public enum Table {
         tColumn = 0,
         tColumnValue = 1,
         tEmailTemplate = 2,
@@ -71,6 +68,5 @@ public class tLocalization
         tLocalization.Table table,
         tLocalization.Column column,
         string translation
-    )
-    { }
+    ) { }
 }

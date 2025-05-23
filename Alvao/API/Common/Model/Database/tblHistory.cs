@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Log - history of objects in the tree - move, deletion, insertion, etc.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblHistory.htm"/>
 [TableAttribute("dbo.tblHistory")]
-public class tblHistory
-{
+public class tblHistory {
     /// <summary>date and time</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblHistory_dteDateTime.htm"/>
     public virtual DateTime? dteDateTime { get; set; }

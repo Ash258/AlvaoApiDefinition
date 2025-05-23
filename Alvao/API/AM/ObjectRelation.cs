@@ -2,8 +2,7 @@ namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping object relation methods</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_ObjectRelation.htm"/>
-public static class ObjectRelation
-{
+public static class ObjectRelation {
 
     /// <summary>Create object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Create.htm"/>
@@ -19,8 +18,7 @@ public static class ObjectRelation
         int relationTypeId,
         int personId,
         int relationId = 0
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Edit object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Edit.htm"/>
@@ -32,8 +30,7 @@ public static class ObjectRelation
         int relationId,
         int relationTypeId,
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Remove object relation.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRelation_Remove.htm"/>
@@ -43,6 +40,5 @@ public static class ObjectRelation
     public static void Remove(
         int relationId,
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

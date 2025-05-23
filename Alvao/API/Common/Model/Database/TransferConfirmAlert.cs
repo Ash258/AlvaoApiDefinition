@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Sent alerts to sign the handover protocols.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TransferConfirmAlert.htm"/>
 [TableAttribute("dbo.TransferConfirmAlert")]
-public class TransferConfirmAlert
-{
+public class TransferConfirmAlert {
     /// <summary>Document ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TransferConfirmAlert_DocumentId.htm"/>
     public virtual int DocumentId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Numeric sequence.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_wIdSeq.htm"/>
 [TableAttribute("dbo.wIdSeq")]
-public class wIdSeq
-{
+public class wIdSeq {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_wIdSeq_bUse.htm"/>
     public virtual bool bUse { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_wIdSeq_IdSeqType.htm"/>

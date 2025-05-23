@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Table with list of paid overtime hours</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_WorkOvertimeDisposal.htm"/>
 [TableAttribute("dbo.WorkOvertimeDisposal")]
-public class WorkOvertimeDisposal
-{
+public class WorkOvertimeDisposal {
     /// <summary>ID of the person who paid for overtime hours</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_WorkOvertimeDisposal_CreatedByPersonId.htm"/>
     public virtual int CreatedByPersonId { get; set; }

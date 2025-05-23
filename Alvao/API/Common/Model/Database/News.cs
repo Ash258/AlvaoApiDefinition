@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>News.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_News.htm"/>
 [TableAttribute("dbo.News")]
-public class News
-{
+public class News {
     /// <summary>User who created the news post.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_News_CreatedByPersonId.htm"/>
     public virtual int CreatedByPersonId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Tickets.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdTicket.htm"/>
 [TableAttribute("dbo.tHdTicket")]
-public class tHdTicket
-{
+public class tHdTicket {
     /// <summary>ID of the record on the ongoing approval process (tHdTicketApproval.iHdTicketApprovalId).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdTicket_ApprovalId.htm"/>
     public virtual int? ApprovalId { get; set; }

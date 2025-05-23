@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Events viewed by a person.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_PersonEventDisplay.htm"/>
 [TableAttribute("dbo.PersonEventDisplay")]
-public class PersonEventDisplay
-{
+public class PersonEventDisplay {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PersonEventDisplay_ActId.htm"/>
     public virtual int? ActId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_PersonEventDisplay_Id.htm"/>

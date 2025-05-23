@@ -2,8 +2,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping requests methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Sections.htm"/>
-public static class Sections
-{
+public static class Sections {
 
     /// <summary>Export sections into xml file.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Sections_Export.htm"/>
@@ -13,6 +12,5 @@ public static class Sections
     public static MemoryStream Export(
         int? sectionId,
         bool includeSubtree
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

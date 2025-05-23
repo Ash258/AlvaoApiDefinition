@@ -1,8 +1,7 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ImportCsvSettings.htm"/>
-public class ImportCsvSettings
-{
+public class ImportCsvSettings {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ImportCsvSettings_ConnectionString.htm"/>
     public string ConnectionString { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ImportCsvSettings_DateTimeFormat.htm"/>
@@ -41,6 +40,5 @@ public class ImportCsvSettings
     /// <param name="value"> </param>
     public void SetKeyFields(
         string[] value
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

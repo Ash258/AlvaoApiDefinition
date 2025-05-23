@@ -1,11 +1,9 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Log.htm"/>
-public class Log
-{
+public class Log {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_Log_Kind.htm"/>
-    public enum Kind
-    {
+    public enum Kind {
         Null = 0,
         Info = 1,
         Warning = 2,

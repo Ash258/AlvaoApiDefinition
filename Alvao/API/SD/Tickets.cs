@@ -2,8 +2,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping requests methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Tickets.htm"/>
-public static class Tickets
-{
+public static class Tickets {
 
     /// <summary>Returns custom list of tickets.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_GetCustomTicketList.htm"/>
@@ -21,8 +20,7 @@ public static class Tickets
         int localeId,
         int maxRecords,
         int? personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether exists a cyclic relation between requests.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_CheckCyclicRelationsBeforeMergingTicket.htm"/>
@@ -32,8 +30,7 @@ public static class Tickets
     public static bool CheckCyclicRelationsBeforeMergingTicket(
         IEnumerable<int> ticketsIds,
         int destinationTicketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Merges requests to another request.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Tickets_Merge.htm"/>
@@ -45,6 +42,5 @@ public static class Tickets
         IEnumerable<int> sourceTicketsId,
         int destinationTicketId,
         bool removeRelations
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

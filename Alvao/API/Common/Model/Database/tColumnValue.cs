@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Value lists for custom fields.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tColumnValue.htm"/>
 [TableAttribute("dbo.tColumnValue")]
-public class tColumnValue
-{
+public class tColumnValue {
     /// <summary>Full name including path via parent items.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tColumnValue_ColumnValueShort.htm"/>
     public virtual string ColumnValueShort { get; set; }

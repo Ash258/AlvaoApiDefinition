@@ -4,8 +4,7 @@ namespace Alvao.API.AI;
 
 /// <summary>Facade for Service Desk AI Assistant methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Assistant.htm"/>
-public static class Assistant
-{
+public static class Assistant {
 
     /// <summary>Get model with AI Assistant data of the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_GetModel.htm"/>
@@ -13,8 +12,7 @@ public static class Assistant
     /// <param name="ticketId">Id of the ticket.</param>
     public static AssistantTicketTabModel GetModel(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update vector data of articles.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateArticles.htm"/>
@@ -24,8 +22,7 @@ public static class Assistant
     public static int UpdateArticles(
         IEnumerable<int> articleIds,
         DateTime endTime
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update centroid vectors for service from the vectors of tickets in the service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateServiceVectors.htm"/>
@@ -33,8 +30,7 @@ public static class Assistant
     /// <param name="serviceId">Id of the service with tickets.</param>
     public static void UpdateServiceVectors(
         int serviceId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update AI Assistant data of the ticket on the change of act.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateTicketOnActChange.htm"/>
@@ -44,8 +40,7 @@ public static class Assistant
     public static void UpdateTicketOnActChange(
         int actId,
         bool checkImportantAndRequester
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update AI Assistant data of the new created ticket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateTicketOnCreated.htm"/>
@@ -53,8 +48,7 @@ public static class Assistant
     /// <param name="ticketId">Id of the ticket.</param>
     public static void UpdateTicketOnCreated(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update AI Assistant data of the ticket on the change of ticket properties.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateTicketOnChange.htm"/>
@@ -64,8 +58,7 @@ public static class Assistant
     public static void UpdateTicketOnChange(
         int ticketId,
         string properties
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update AI Assistant data of the tickets.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateTickets.htm"/>
@@ -75,8 +68,7 @@ public static class Assistant
     public static int UpdateTickets(
         IEnumerable<int> ticketIds,
         DateTime endTime
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update part of AI Assistant data of the tickets that are influenced by change in objects.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange.htm"/>
@@ -86,6 +78,5 @@ public static class Assistant
     public static int UpdateTicketsOnObjectChange(
         IEnumerable<int> ticketIds,
         DateTime endTime
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

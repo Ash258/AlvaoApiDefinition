@@ -4,8 +4,7 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_CancelOemLicenseModel.htm"/>
-public class CancelOemLicenseModel : tblLicHist
-{
+public class CancelOemLicenseModel : tblLicHist {
     /// <summary>Assign automatically</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_AutoAssign.htm"/>
     public virtual bool AutoAssign { get; set; }

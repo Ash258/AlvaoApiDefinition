@@ -5,12 +5,10 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Icons.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblIcon.htm"/>
 [TableAttribute("dbo.tblIcon")]
-public class tblIcon
-{
+public class tblIcon {
     /// <summary>Enumeration of system icon uids.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblIcon_IconUid.htm"/>
-    public enum IconUid
-    {
+    public enum IconUid {
         HwCard = 10,
         Subnet = 134,
     }

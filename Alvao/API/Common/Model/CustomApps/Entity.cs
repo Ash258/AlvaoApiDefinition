@@ -2,8 +2,7 @@
 
 namespace Alvao.API.Common.Model.CustomApps;
 
-public enum Entity
-{
+public enum Entity {
     Request,
     Object
 }

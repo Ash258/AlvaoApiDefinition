@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Translations of the object kind names in all languages ​​used.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vClassLoc.htm"/>
 [TableAttribute("dbo.vClassLoc")]
-public class vClassLoc
-{
+public class vClassLoc {
     /// <summary>LCID of the language into which the localization is performed.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vClassLoc_ClassLocaleId.htm"/>
     public virtual int ClassLocaleId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Tenant diagnostics log records</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TenantDiagnosticsLog.htm"/>
 [TableAttribute("dbo.TenantDiagnosticsLog")]
-public class TenantDiagnosticsLog
-{
+public class TenantDiagnosticsLog {
     /// <summary>Name of application that generated the log record.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TenantDiagnosticsLog_Application.htm"/>
     public virtual string Application { get; set; }

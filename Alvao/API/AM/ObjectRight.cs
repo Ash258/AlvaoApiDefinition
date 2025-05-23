@@ -4,8 +4,7 @@ namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping object right methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_ObjectRight.htm"/>
-public static class ObjectRight
-{
+public static class ObjectRight {
 
     /// <summary>Sets object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Add.htm"/>
@@ -15,8 +14,7 @@ public static class ObjectRight
     public static void Add(
         tblUserNodeRight model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Delete.htm"/>
@@ -26,8 +24,7 @@ public static class ObjectRight
     public static void Delete(
         int id,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Check if object rights in the tree are enabled.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Enabled.htm"/>
@@ -43,8 +40,7 @@ public static class ObjectRight
         int personId,
         int objectId,
         Alvao.API.AM.Model.ObjectRight.Right right
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates object permission for user and creates record in audit log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectRight_Update.htm"/>
@@ -54,6 +50,5 @@ public static class ObjectRight
     public static void Update(
         tblUserNodeRight model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

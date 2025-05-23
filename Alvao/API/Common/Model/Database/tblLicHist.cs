@@ -5,11 +5,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>License - list of purchased software licenses.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist.htm"/>
 [TableAttribute("dbo.tblLicHist")]
-public class tblLicHist
-{
+public class tblLicHist {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseKind.htm"/>
-    public enum LicenseKind
-    {
+    public enum LicenseKind {
         perDevice = 1,
         perUser = 2,
         perConnection = 3,
@@ -17,8 +15,7 @@ public class tblLicHist
         perCore = 5,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseType.htm"/>
-    public enum LicenseType
-    {
+    public enum LicenseType {
         Normal = 1,
         UnlimitedVolumeLicense = 2,
         Floating = 3,

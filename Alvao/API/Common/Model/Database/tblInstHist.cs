@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Records on installation and uninstallation of products on the computers (manual as well as detected)</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblInstHist.htm"/>
 [TableAttribute("dbo.tblInstHist")]
-public class tblInstHist
-{
+public class tblInstHist {
     /// <summary>Date on which the installation was detected</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInstHist_dteInstallDetected.htm"/>
     public virtual DateTime? dteInstallDetected { get; set; }

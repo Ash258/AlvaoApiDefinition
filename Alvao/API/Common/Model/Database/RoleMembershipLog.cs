@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Logging of changes in membership in groups.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RoleMembershipLog.htm"/>
 [TableAttribute("dbo.RoleMembershipLog")]
-public class RoleMembershipLog
-{
+public class RoleMembershipLog {
     /// <summary>Group name.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_RoleMembershipLog_Group.htm"/>
     public virtual string Group { get; set; }

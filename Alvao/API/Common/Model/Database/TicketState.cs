@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Ticket statuses. Statuses are defined in the process (see dbo.TicketType).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketState.htm"/>
 [TableAttribute("dbo.TicketState")]
-public class TicketState
-{
+public class TicketState {
     /// <summary>State text</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketState__TicketState.htm"/>
     public virtual string _TicketState { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Definitions of commands for the "Administrator's Tools" function.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblCommandDef.htm"/>
 [TableAttribute("dbo.tblCommandDef")]
-public class tblCommandDef
-{
+public class tblCommandDef {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_intCommandDefId.htm"/>
     [KeyAttribute]
     public virtual int intCommandDefId { get; set; }

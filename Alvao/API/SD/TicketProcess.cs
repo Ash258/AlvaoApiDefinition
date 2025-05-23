@@ -1,15 +1,13 @@
-using Alvao.API.SD.Model;
 using System.Globalization;
+using Alvao.API.SD.Model;
 
 namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping ticket type methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TicketProcess.htm"/>
-public static class TicketProcess
-{
+public static class TicketProcess {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TicketProcess_RelatedTicketRuleRequesterMode.htm"/>
-    public enum RelatedTicketRuleRequesterMode
-    {
+    public enum RelatedTicketRuleRequesterMode {
         Requester = 1,
         Solver = 2,
         OtherPerson = 3,
@@ -22,8 +20,7 @@ public static class TicketProcess
     /// <param name="ticketId">Ticket ID (tHdTicket.iHdTicketId)</param>
     public static void EvaluateRelatedTicketRules(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns collection of TicketProcessColumnModel, which is a representation of the columns set on the process</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_TicketProcess_GetColumns.htm"/>
@@ -33,6 +30,5 @@ public static class TicketProcess
     public static IEnumerable<TicketProcessColumnModel> GetColumns(
         int processId,
         CultureInfo language = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

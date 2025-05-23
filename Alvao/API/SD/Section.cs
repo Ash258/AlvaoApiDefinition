@@ -4,8 +4,7 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping service methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Section.htm"/>
-public static class Section
-{
+public static class Section {
 
     /// <summary>Adds service right to person and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_AddRight.htm"/>
@@ -15,8 +14,7 @@ public static class Section
     public static void AddRight(
         tHdSectionRights model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Adds multiple service rights to person and creates records in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_AddRights_1.htm"/>
@@ -28,8 +26,7 @@ public static class Section
         tHdSectionRights model,
         IEnumerable<int> sectionIds,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Adds multiple service rights to person and creates records in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_AddRights.htm"/>
@@ -43,8 +40,7 @@ public static class Section
         IEnumerable<int> rolesIds,
         IEnumerable<int> personsIds,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Adds SLA permission on service and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_AddSlaRight.htm"/>
@@ -54,8 +50,7 @@ public static class Section
     public static void AddSlaRight(
         tSlaRights model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Adds SLA permissions on service and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_AddSlaRights.htm"/>
@@ -69,8 +64,7 @@ public static class Section
         IEnumerable<int> rolesIds,
         IEnumerable<int> personsIds,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Copies service with sourceSectionId under service with destinationSectionId.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_Copy.htm"/>
@@ -84,8 +78,7 @@ public static class Section
         int? destinationSectionId,
         bool copyWithSubtree,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates new service from model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_Create.htm"/>
@@ -93,8 +86,7 @@ public static class Section
     /// <param name="sectionModel">Section model (tHdSection) from Alvao.API namespace.</param>
     public static int Create(
         tHdSection sectionModel
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes every service rights and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DeleteAllRights.htm"/>
@@ -104,8 +96,7 @@ public static class Section
     public static void DeleteAllRights(
         int[] sectionsId,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes all SLA permission on multiple services and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DeleteAllSlaRights.htm"/>
@@ -115,8 +106,7 @@ public static class Section
     public static void DeleteAllSlaRights(
         int[] sectionsId,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes service right and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DeleteRight.htm"/>
@@ -126,8 +116,7 @@ public static class Section
     public static void DeleteRight(
         int rightId,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes multiple service rights and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DeleteRights.htm"/>
@@ -137,8 +126,7 @@ public static class Section
     public static void DeleteRights(
         int[] rightIds,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Removes multiple SLA permission on service and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DeleteSlaRights.htm"/>
@@ -148,8 +136,7 @@ public static class Section
     public static void DeleteSlaRights(
         int[] slaRightIds,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Disable inheritance on the service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_DisableInheritance.htm"/>
@@ -159,8 +146,7 @@ public static class Section
     public static void DisableInheritance(
         int sectionId,
         bool auditLogChanges = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Enable inheritance on the service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_EnableInheritance.htm"/>
@@ -170,8 +156,7 @@ public static class Section
     public static void EnableInheritance(
         int sectionId,
         bool auditLogChanges = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns section database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_GetById.htm"/>
@@ -179,8 +164,7 @@ public static class Section
     /// <param name="sectionId">Section ID (tHdSection.iHdSectionId)</param>
     public static tHdSection GetById(
         int sectionId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns section database model.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_GetByTicketId.htm"/>
@@ -188,8 +172,7 @@ public static class Section
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     public static tHdSection GetByTicketId(
         int ticketId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get ID of Solver in Section, if there is only 1 Solver and there is no other main solver.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_GetOnlySolverId.htm"/>
@@ -199,8 +182,7 @@ public static class Section
     public static int GetOnlySolverId(
         int ticketId,
         int sectionId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns whether inheritance is enabled on the service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_IsInheritanceEnabled.htm"/>
@@ -208,8 +190,7 @@ public static class Section
     /// <param name="sectionId">Section ID (tHdSection.iHdSectionId).</param>
     public static bool IsInheritanceEnabled(
         int sectionId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether provided e-mail is used by any service</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_IsSectionEmail.htm"/>
@@ -217,8 +198,7 @@ public static class Section
     /// <param name="email">E-mail address</param>
     public static bool IsSectionEmail(
         string email
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns whether role is solver group in specified service.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_IsSolverGroup.htm"/>
@@ -228,8 +208,7 @@ public static class Section
     public static bool IsSolverGroup(
         int sectionId,
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Moves service with sectionId under service with newParentSectionId</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_Move.htm"/>
@@ -239,8 +218,7 @@ public static class Section
     public static void Move(
         int sectionId,
         int? newParentSectionId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Recalculate inheritance on the service (and all child services with enabled inheritance).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_RecalculateInheritance.htm"/>
@@ -250,8 +228,7 @@ public static class Section
     public static void RecalculateInheritance(
         int sectionId,
         bool auditLogChanges = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Recounts the count of solvers and requesters consuming the license of Service Desk.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_RecountSolversAndRequesters.htm"/>
@@ -267,8 +244,7 @@ public static class Section
         int sourceSectionId,
         int[] destinationSections,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Replaces multiple services SLA permissions with another service SLA permissions and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_ReplaceSlaRights.htm"/>
@@ -280,8 +256,7 @@ public static class Section
         int sourceSectionId,
         int[] destinationSections,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates service right and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_UpdateRight.htm"/>
@@ -291,8 +266,7 @@ public static class Section
     public static void UpdateRight(
         tHdSectionRights model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates SLA permission on service and creates record in log.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Section_UpdateSlaRight.htm"/>
@@ -302,6 +276,5 @@ public static class Section
     public static void UpdateSlaRight(
         tSlaRights model,
         int authorId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

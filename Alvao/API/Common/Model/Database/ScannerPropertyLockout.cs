@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Locking of values of object properties (dbo.tblProperty) for editing by scanners (dbo.Scanner).</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ScannerPropertyLockout.htm"/>
 [TableAttribute("dbo.ScannerPropertyLockout")]
-public class ScannerPropertyLockout
-{
+public class ScannerPropertyLockout {
     /// <summary>Object kind (tblClass.intClassId)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ScannerPropertyLockout_ClassId.htm"/>
     public virtual int ClassId { get; set; }

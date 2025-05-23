@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detection profiles</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DetectProfile.htm"/>
 [TableAttribute("dbo.DetectProfile")]
-public class DetectProfile
-{
+public class DetectProfile {
     /// <summary>Default profile</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_DetectProfile_DefaultProfile.htm"/>
     public virtual bool DefaultProfile { get; set; }

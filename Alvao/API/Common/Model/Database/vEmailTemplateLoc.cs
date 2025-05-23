@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Translations of custom notifications in all languages ​​used.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vEmailTemplateLoc.htm"/>
 [TableAttribute("dbo.vEmailTemplateLoc")]
-public class vEmailTemplateLoc
-{
+public class vEmailTemplateLoc {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vEmailTemplateLoc_bActive.htm"/>
     public virtual bool bActive { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vEmailTemplateLoc_EmailTemplateLocaleId.htm"/>

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Links Between Tickets.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketRelation.htm"/>
 [TableAttribute("dbo.TicketRelation")]
-public class TicketRelation
-{
+public class TicketRelation {
     /// <summary>The ticket ID at the beginning of the link, see tHdTicket.iHdTicket.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketRelation_BeginHdTicketId.htm"/>
     public virtual int BeginHdTicketId { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Summary SLA notifications for the ticket first responses.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaAlertFirstReactionSummary.htm"/>
 [TableAttribute("dbo.vSlaAlertFirstReactionSummary")]
-public class vSlaAlertFirstReactionSummary
-{
+public class vSlaAlertFirstReactionSummary {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertFirstReactionSummary_iHdTicketId.htm"/>
     public virtual int iHdTicketId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertFirstReactionSummary_iPersonLocaleId.htm"/>

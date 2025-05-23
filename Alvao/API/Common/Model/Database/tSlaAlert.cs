@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Ticket log records for notification sent for an unresolved issue or upcoming deadline.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSlaAlert.htm"/>
 [TableAttribute("dbo.tSlaAlert")]
-public class tSlaAlert
-{
+public class tSlaAlert {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSlaAlert_dHdTicketDeadline.htm"/>
     public virtual DateTime? dHdTicketDeadline { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSlaAlert_dSent.htm"/>

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Translations of the object properties in all languages ​​used.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vKindLoc.htm"/>
 [TableAttribute("dbo.vKindLoc")]
-public class vKindLoc
-{
+public class vKindLoc {
     /// <summary>1 = global property for a class of objects. "0" indicates the property is considered local for each class of objects (printers, computers etc.). An automatic list of values is then put together from the values of this property for the given object class,</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vKindLoc_bolGlobalScope.htm"/>
     public virtual bool bolGlobalScope { get; set; }

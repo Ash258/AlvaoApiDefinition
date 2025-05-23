@@ -4,8 +4,7 @@ namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping role methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Role.htm"/>
-public static class Role
-{
+public static class Role {
 
     /// <summary>Add role as member to another role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_AddToRole.htm"/>
@@ -15,8 +14,7 @@ public static class Role
     public static void AddToRole(
         int addedRoleId,
         int intoRoleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Create new role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_Create.htm"/>
@@ -30,8 +28,7 @@ public static class Role
         string description,
         string azureAdObjectId = null,
         int? azureAdTenantId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Delete role</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_Delete.htm"/>
@@ -39,8 +36,7 @@ public static class Role
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
     public static void Delete(
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get list of all roles.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetAll.htm"/>
@@ -52,8 +48,7 @@ public static class Role
     /// <param name="azureAdObjectId">Azure object ID of role</param>
     public static tRole GetByAzureObjectId(
         string azureAdObjectId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get detail of role</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetById.htm"/>
@@ -61,8 +56,7 @@ public static class Role
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
     public static tRole GetById(
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get detail of role</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetByName.htm"/>
@@ -70,8 +64,7 @@ public static class Role
     /// <param name="name">Role name (tRole.sRole)</param>
     public static tRole GetByName(
         string name
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get all direct member roles of specified role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetDirectMemberRoles.htm"/>
@@ -79,8 +72,7 @@ public static class Role
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
     public static IEnumerable<tRole> GetDirectMemberRoles(
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get all direct member user ID's of specified role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetDirectMemberUserIds.htm"/>
@@ -88,8 +80,7 @@ public static class Role
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
     public static IEnumerable<int> GetDirectMemberUserIds(
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get all direct member users of specified role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetDirectMemberUsers.htm"/>
@@ -97,8 +88,7 @@ public static class Role
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
     public static IEnumerable<tPerson> GetDirectMemberUsers(
         int roleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get members of specified role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetMembers.htm"/>
@@ -114,8 +104,7 @@ public static class Role
         bool includeDisabled = false,
         bool includeHidden = false,
         bool onlyWithEmail = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Returns list of request IDs, that provided groups are solving.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetRequestIdsSolvingByGroups.htm"/>
@@ -125,8 +114,7 @@ public static class Role
     public static IEnumerable<int> GetRequestIdsSolvingByGroups(
         IEnumerable<int> roleIds,
         bool onlyWithoutSolver = false
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Get a special purpose system role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_GetSystemRole.htm"/>
@@ -134,8 +122,7 @@ public static class Role
     /// <param name="roleBehavior">type of system role</param>
     public static tRole GetSystemRole(
         RoleBehavior.BehaviorId roleBehavior
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether role is member of another role or system defined role. If both parameters (memberRoleId, roleBehaviorId) are defined, only memberRoleId will be processed.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_IsMemberOfAnotherRole.htm"/>
@@ -147,8 +134,7 @@ public static class Role
         int roleId,
         int? memberRoleId = null,
         int? roleBehaviorId = null
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Remove member role from another role.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_RemoveFromRole.htm"/>
@@ -158,8 +144,7 @@ public static class Role
     public static void RemoveFromRole(
         int removedRoleId,
         int fromRoleId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Update role</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Role_Update.htm"/>
@@ -167,6 +152,5 @@ public static class Role
     /// <param name="role">Role model</param>
     public static void Update(
         tRole role
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

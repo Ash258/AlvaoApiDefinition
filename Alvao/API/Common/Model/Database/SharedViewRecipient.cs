@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Table of users and groups which the view is shared with.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SharedViewRecipient.htm"/>
 [TableAttribute("dbo.SharedViewRecipient")]
-public class SharedViewRecipient
-{
+public class SharedViewRecipient {
     /// <summary>Record identifier.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SharedViewRecipient_id.htm"/>
     [KeyAttribute]

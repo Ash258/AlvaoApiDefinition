@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Table of shared views.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SharedView.htm"/>
 [TableAttribute("dbo.SharedView")]
-public class SharedView
-{
+public class SharedView {
     /// <summary>Name of a table which the shared view is assigned to. The same as dbo.ProfileValue.ValueName.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SharedView_GridName.htm"/>
     public virtual string GridName { get; set; }

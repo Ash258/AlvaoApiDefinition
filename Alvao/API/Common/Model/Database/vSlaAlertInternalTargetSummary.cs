@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Summary SLA alerts for the expiration of tickets internal target date.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSlaAlertInternalTargetSummary.htm"/>
 [TableAttribute("dbo.vSlaAlertInternalTargetSummary")]
-public class vSlaAlertInternalTargetSummary
-{
+public class vSlaAlertInternalTargetSummary {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertInternalTargetSummary_iHdTicketId.htm"/>
     public virtual int iHdTicketId { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSlaAlertInternalTargetSummary_InternalTarget.htm"/>

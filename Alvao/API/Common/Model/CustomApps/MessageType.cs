@@ -2,8 +2,7 @@
 
 namespace Alvao.API.Common.Model.CustomApps;
 
-public enum MessageType
-{
+public enum MessageType {
     None,
     Info,
     Warning,

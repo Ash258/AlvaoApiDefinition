@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Software products library version.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblVersion.htm"/>
 [TableAttribute("dbo.tblVersion")]
-public class tblVersion
-{
+public class tblVersion {
     /// <summary>Software product library version date</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblVersion_dteSwLib.htm"/>
     public virtual DateTime? dteSwLib { get; set; }

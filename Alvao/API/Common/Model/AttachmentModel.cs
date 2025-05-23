@@ -2,8 +2,7 @@ namespace Alvao.API.Common.Model;
 
 /// <summary>Wrapper for attachment.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_AttachmentModel.htm"/>
-public class AttachmentModel : IAttachment
-{
+public class AttachmentModel : IAttachment {
     /// <summary>Attachment content type.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_AttachmentModel_ContentType.htm"/>
     public string ContentType { get; set; }
@@ -30,8 +29,7 @@ public class AttachmentModel : IAttachment
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_AttachmentModel__ctor.htm"/>
     public AttachmentModel(
         IAttachment source
-    )
-    { }
+    ) { }
 
     /// <summary>Returns original attachment stream.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_AttachmentModel_GetStream.htm"/>

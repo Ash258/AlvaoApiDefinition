@@ -1,8 +1,7 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectPropertyModel.htm"/>
-public class ObjectPropertyModel
-{
+public class ObjectPropertyModel {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectPropertyModel_GlobalScope.htm"/>
     public int GlobalScope { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectPropertyModel_Id.htm"/>

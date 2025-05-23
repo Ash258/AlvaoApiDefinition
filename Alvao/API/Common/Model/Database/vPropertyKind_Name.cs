@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Properties of objects - Name.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_Name.htm"/>
 [TableAttribute("dbo.vPropertyKind_Name")]
-public class vPropertyKind_Name
-{
+public class vPropertyKind_Name {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Name_bolInheritable.htm"/>
     public virtual bool bolInheritable { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Name_intNameOrder.htm"/>

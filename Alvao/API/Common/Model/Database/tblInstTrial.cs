@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Special installation.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblInstTrial.htm"/>
 [TableAttribute("dbo.tblInstTrial")]
-public class tblInstTrial
-{
+public class tblInstTrial {
     /// <summary>Computer - tblNode</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInstTrial_lintComputerNodeId.htm"/>
     public virtual int lintComputerNodeId { get; set; }

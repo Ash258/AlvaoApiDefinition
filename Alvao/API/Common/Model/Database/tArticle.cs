@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Article in Knowledge Base.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tArticle.htm"/>
 [TableAttribute("dbo.tArticle")]
-public class tArticle
-{
+public class tArticle {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tArticle_dArticleCreated.htm"/>
     public virtual DateTime? dArticleCreated { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tArticle_dArticleModified.htm"/>

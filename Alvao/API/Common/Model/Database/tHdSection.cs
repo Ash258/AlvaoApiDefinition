@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>ALVAO Service Desk product services.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdSection.htm"/>
 [TableAttribute("dbo.tHdSection")]
-public class tHdSection
-{
+public class tHdSection {
     /// <summary>If it is 1 and a custom form is set up on the service to submit a new ticket, operators can submit the ticket in the standard way.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdSection_AllowSkipCustomForm.htm"/>
     public virtual bool AllowSkipCustomForm { get; set; }

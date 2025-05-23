@@ -4,8 +4,7 @@ using System.Net;
 namespace Alvao.API.AI;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_AIClient.htm"/>
-public class AIClient
-{
+public class AIClient {
     /// <summary>Get or set the culture used for the AI responses.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_AIClient_Culture.htm"/>
     public CultureInfo Culture { get; set; }
@@ -27,16 +26,14 @@ public class AIClient
     public HttpResponseMessage GetAzureResponse(
         string uri,
         Object data
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_AIClient_GetEmbeddingResponse.htm"/>
     ///
     /// <param name="text"> </param>
     public EmbeddingCreateResponse GetEmbeddingResponse(
         string text
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_AIClient_GetSolutionProposal.htm"/>
     ///
@@ -45,16 +42,14 @@ public class AIClient
     public string GetSolutionProposal(
         string subject,
         string body
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_AIClient_GetSummaryForShortText.htm"/>
     ///
     /// <param name="text"> </param>
     public string GetSummaryForShortText(
         string text
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_AIClient_GetSummaryFromChatCompletions.htm"/>
     ///
@@ -63,6 +58,5 @@ public class AIClient
     public string GetSummaryFromChatCompletions(
         string model,
         string text
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

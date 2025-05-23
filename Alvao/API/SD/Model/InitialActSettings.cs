@@ -4,8 +4,7 @@ namespace Alvao.API.SD.Model;
 
 /// <summary>Ticket initial act settings</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_InitialActSettings.htm"/>
-public class InitialActSettings : ActCreateSettings
-{
+public class InitialActSettings : ActCreateSettings {
     /// <summary>Initial act author. If null, ticket requester is set.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_InitialActSettings_ActAuthor.htm"/>
     public tPerson ActAuthor { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Detail of the HW detection - Computer rack.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vWbemObject_SystemEnclosure.htm"/>
 [TableAttribute("dbo.vWbemObject_SystemEnclosure")]
-public class vWbemObject_SystemEnclosure
-{
+public class vWbemObject_SystemEnclosure {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject_SystemEnclosure___CLASS.htm"/>
     public virtual string __CLASS { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vWbemObject_SystemEnclosure_AdapterRAM.htm"/>

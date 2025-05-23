@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Kind of change of a license or a license item.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_LicHistLogKind.htm"/>
 [TableAttribute("dbo.LicHistLogKind")]
-public class LicHistLogKind
-{
+public class LicHistLogKind {
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_LicHistLogKind_id.htm"/>
     [ExplicitKeyAttribute]

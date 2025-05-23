@@ -6,11 +6,9 @@ namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping request diary act methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Act.htm"/>
-public static class Act
-{
+public static class Act {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Act_TicketLogMode.htm"/>
-    public enum TicketLogMode
-    {
+    public enum TicketLogMode {
         None = 0,
         Communication = 1,
         Important = 2,
@@ -26,8 +24,7 @@ public static class Act
     public static bool CanRead(
         int actId,
         int personId
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates new act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_Create.htm"/>
@@ -47,8 +44,7 @@ public static class Act
         tPerson toPerson,
         tActKind.ActKind actKind,
         ActCreateSettings settings
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates new act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_Create_1.htm"/>
@@ -68,8 +64,7 @@ public static class Act
         int? toPersonId,
         tActKind.ActKind actKind,
         ActCreateSettings settings
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Creates new act, which informs users that a bound request was created</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Act_CreateAboutNewBoundTicket.htm"/>
@@ -79,6 +74,5 @@ public static class Act
     public static void CreateAboutNewBoundTicket(
         int ticketId,
         string ticketMark
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

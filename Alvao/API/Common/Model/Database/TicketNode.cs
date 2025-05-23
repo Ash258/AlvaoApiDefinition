@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Objects associated to the ticket over the ticket "Objects" item.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketNode.htm"/>
 [TableAttribute("dbo.TicketNode")]
-public class TicketNode
-{
+public class TicketNode {
     /// <summary>Link creation date and time (UTC)</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketNode_Created.htm"/>
     public virtual DateTime? Created { get; set; }

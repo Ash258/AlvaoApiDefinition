@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Stocktaking - list of stocktakings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblInventory.htm"/>
 [TableAttribute("dbo.tblInventory")]
-public class tblInventory
-{
+public class tblInventory {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInventory_bolSelectionLocked.htm"/>
     public virtual bool bolSelectionLocked { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblInventory_dteClosed.htm"/>

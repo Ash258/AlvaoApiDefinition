@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Cache of SLA localizations.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_SlaLoc.htm"/>
 [TableAttribute("dbo.SlaLoc")]
-public class SlaLoc
-{
+public class SlaLoc {
     /// <summary>Language ID.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_SlaLoc_LocaleId.htm"/>
     public virtual int LocaleId { get; set; }

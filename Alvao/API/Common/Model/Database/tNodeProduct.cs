@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Software profiles - exceptions for the computer.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tNodeProduct.htm"/>
 [TableAttribute("dbo.tNodeProduct")]
-public class tNodeProduct
-{
+public class tNodeProduct {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tNodeProduct_liNodeId.htm"/>
     [ExplicitKeyAttribute]
     public virtual int? liNodeId { get; set; }

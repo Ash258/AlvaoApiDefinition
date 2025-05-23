@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>View settings table</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ProfileValue.htm"/>
 [TableAttribute("dbo.ProfileValue")]
-public class ProfileValue
-{
+public class ProfileValue {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ProfileValue_Backup.htm"/>
     public virtual bool Backup { get; set; }
     /// <summary>Int settings value</summary>

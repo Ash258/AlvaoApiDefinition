@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Setting of notifications from the services to individual persons.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tHdSectionPerson.htm"/>
 [TableAttribute("dbo.tHdSectionPerson")]
-public class tHdSectionPerson
-{
+public class tHdSectionPerson {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdSectionPerson_bHdSectionPersonNotifySolverOnHdTicketCreated.htm"/>
     public virtual bool? bHdSectionPersonNotifySolverOnHdTicketCreated { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tHdSectionPerson_bHdSectionPersonNotifySolverOnHdTicketHdSectionChanged.htm"/>

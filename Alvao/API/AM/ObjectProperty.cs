@@ -5,8 +5,7 @@ namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping object property methods.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_ObjectProperty.htm"/>
-public static class ObjectProperty
-{
+public static class ObjectProperty {
 
     /// <summary>Adds property to object template.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Add.htm"/>
@@ -22,8 +21,7 @@ public static class ObjectProperty
         string value,
         int? order,
         bool inheritable
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Return possible values for property</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_GetPosibleValues.htm"/>
@@ -31,8 +29,7 @@ public static class ObjectProperty
     /// <param name="property">Groups properties connected to property.</param>
     public static IEnumerable<tblKindValue> GetPosibleValues(
         Property property
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Return template properties for specific object kind.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_GetTemplateProperties.htm"/>
@@ -40,8 +37,7 @@ public static class ObjectProperty
     /// <param name="classCode">Object (template) class (tblClass.intClassId)</param>
     public static IEnumerable<tblKind> GetTemplateProperties(
         tblClass.ClassCode classCode
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Checks whether object template contains specific property</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_TemplateContains.htm"/>
@@ -51,8 +47,7 @@ public static class ObjectProperty
     public static bool TemplateContains(
         int classId,
         tblKind.KindCode kindCode
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates value of one property on specific object</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Update.htm"/>
@@ -66,8 +61,7 @@ public static class ObjectProperty
         tblKind.KindCode kindCode,
         string value,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 
     /// <summary>Updates object properties.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_ObjectProperty_Update_1.htm"/>
@@ -81,6 +75,5 @@ public static class ObjectProperty
         int objectId,
         IDictionary<string, string> properties,
         bool callCustomAction = true
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

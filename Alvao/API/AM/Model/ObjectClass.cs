@@ -1,11 +1,9 @@
 namespace Alvao.API.AM.Model;
 
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass.htm"/>
-public static class ObjectClass
-{
+public static class ObjectClass {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass_Code.htm"/>
-    public enum Code
-    {
+    public enum Code {
         GeneralObject = 1,
         SpecObjTrash = 2,
         SpecObjTemplate = 3,
@@ -61,8 +59,7 @@ public static class ObjectClass
         FirstUserClass = 5_000,
     }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectClass_ImportedObjectsFolderType.htm"/>
-    public enum ImportedObjectsFolderType
-    {
+    public enum ImportedObjectsFolderType {
         ImportedObjects = 33,
         ImportedAdObjects = 34,
         ImportedEntraIdObjects = 61,
@@ -73,6 +70,5 @@ public static class ObjectClass
     /// <param name="classCode"> </param>
     public static bool IsSpecial(
         int? classCode
-    )
-    { throw new System.NotImplementedException(); }
+    ) { throw new System.NotImplementedException(); }
 }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Table for temporary storage of read messages for custom actions.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ReceivedMessage.htm"/>
 [TableAttribute("dbo.ReceivedMessage")]
-public class ReceivedMessage
-{
+public class ReceivedMessage {
     /// <summary>Date and time of message storage in the database.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ReceivedMessage_Created.htm"/>
     public virtual DateTime Created { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>ALVAO system settings.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tProperty.htm"/>
 [TableAttribute("dbo.tProperty")]
-public class tProperty
-{
+public class tProperty {
     /// <summary>Truth value.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tProperty_bPropertyValue.htm"/>
     public virtual bool? bPropertyValue { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Groups of persons for the entire ALVAO.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tRole.htm"/>
 [TableAttribute("dbo.tRole")]
-public class tRole
-{
+public class tRole {
     /// <summary>Time of group creation in Active Directory (Active Directory - whenCreated attribute).</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tRole_AdCreated.htm"/>
     public virtual DateTime? AdCreated { get; set; }

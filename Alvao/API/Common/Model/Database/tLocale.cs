@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Language environments.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tLocale.htm"/>
 [TableAttribute("dbo.tLocale")]
-public class tLocale
-{
+public class tLocale {
     /// <summary>If set to 1, the language is used and is displayed in menus.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tLocale_bLocaleEnabled.htm"/>
     public virtual bool bLocaleEnabled { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Attachments (to documents, notes, events, e-mails, ...) concerning the entire ALVAO system.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tDocument.htm"/>
 [TableAttribute("dbo.tDocument")]
-public class tDocument
-{
+public class tDocument {
     /// <summary>Document ID in ALVAO Asset Management (tblDocument), to which the attachment belongs.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDocument_AMDocumentId.htm"/>
     public virtual int? AMDocumentId { get; set; }

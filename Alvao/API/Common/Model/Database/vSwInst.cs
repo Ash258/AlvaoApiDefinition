@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Installed software - valid products and outside system objects.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vSwInst.htm"/>
 [TableAttribute("dbo.vSwInst")]
-public class vSwInst
-{
+public class vSwInst {
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSwInst_dteInstallDetected.htm"/>
     public virtual DateTime? dteInstallDetected { get; set; }
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vSwInst_dteInstalled.htm"/>

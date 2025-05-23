@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Tokens for logging in to MS Exchange.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_HdSectionEwsTokens.htm"/>
 [TableAttribute("dbo.HdSectionEwsTokens")]
-public class HdSectionEwsTokens
-{
+public class HdSectionEwsTokens {
     /// <summary>Access token</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_HdSectionEwsTokens_AccessToken.htm"/>
     public virtual string AccessToken { get; set; }

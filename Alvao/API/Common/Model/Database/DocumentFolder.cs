@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Document folder</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DocumentFolder.htm"/>
 [TableAttribute("dbo.DocumentFolder")]
-public class DocumentFolder
-{
+public class DocumentFolder {
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_DocumentFolder_id.htm"/>
     [KeyAttribute]

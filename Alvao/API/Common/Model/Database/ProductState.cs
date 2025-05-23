@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>Status of the products</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ProductState.htm"/>
 [TableAttribute("dbo.ProductState")]
-public class ProductState
-{
+public class ProductState {
     /// <summary>Product status - written</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ProductState__ProductState.htm"/>
     public virtual string _ProductState { get; set; }

@@ -5,8 +5,7 @@ namespace Alvao.API.Common.Model.Database;
 /// <summary>License.</summary>
 /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vLicHistBase.htm"/>
 [TableAttribute("dbo.vLicHistBase")]
-public class vLicHistBase
-{
+public class vLicHistBase {
     /// <summary>License downgrade.</summary>
     /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vLicHistBase_bolDowngrade.htm"/>
     public virtual int bolDowngrade { get; set; }
