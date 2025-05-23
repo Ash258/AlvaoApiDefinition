@@ -11,13 +11,9 @@ public record DotnetPropertyOrFieldOrEvent() {
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
-        if (!Summary.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<summary>{Summary}</summary>", indent));
-        }
 
-        if (!FullUrl.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
-        }
+        GenerateSummary(Summary, indent, [], sb);
+        GenerateSeeUrl(FullUrl, indent, sb);
 
         string def = SanitizeXmlToString(Definition);
         def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");

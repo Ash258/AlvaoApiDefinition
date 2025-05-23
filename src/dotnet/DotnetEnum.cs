@@ -12,20 +12,15 @@ public record DotnetEnum() {
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
-        if (!Summary.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<summary>{Summary}</summary>", indent));
-        }
 
-        if (!FullUrl.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
-        }
+        GenerateSummary(Summary, indent, [], sb);
+        GenerateSeeUrl(FullUrl, indent, sb);
 
         Definition = Definition.Replace(Name.Split(".")[0] + ".", "");
 
-        sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
-        sb.AppendLine(PrefixEachLineSpaces("{", indent));
+        sb.AppendLine(PrefixEachLineSpaces($"{SanitizeXmlToString(Definition)}  {{", indent));
         // ? TODO: Try to sort the properties
-        Fields.ForEach(f => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(f) + ",", indent * 2)));
+        Fields.ForEach(f => sb.AppendLine(PrefixEachLineSpaces($"{SanitizeXmlToString(f)},", indent * 2)));
         sb.Append(PrefixEachLineSpaces("}", indent));
 
         return sb.ToString();

@@ -100,31 +100,58 @@ public static class Helpers {
     }
 
     // Generate doc comment summary
-    public static void GenerateSummary(string summary, List<(string, string)> examples, StringBuilder sb, bool useValueElement = false) {
+    public static void GenerateSummary(string summary, int indent, List<(string, string)> examples, StringBuilder sb, bool useValueElement = false) {
         // Do nothing when summary and Examples are empty
-        if (summary.IsNullOrEmpty() && examples.Count == 0) return;
+        if (string.IsNullOrEmpty(summary) && examples.Count == 0) return;
 
         var element = useValueElement ? "value" : "summary";
         var sum = summary.Trim();
 
         //Add single line summary
         if (examples.Count == 0 && !summary.Contains('\n')) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>{sum}</{element}>"));
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>{sum}</{element}>", indent));
             return;
         }
 
-        sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>"));
-        if (!summary.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc(sum));
+        sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>", indent));
+        if (string.IsNullOrEmpty(summary)) {
+            sb.AppendLine(PrefixEachLineSpacesDoc(sum, indent));
         }
 
         examples.ForEach(x => {
-            sb.AppendLine(PrefixEachLineSpacesDoc("<example>"));
-            sb.AppendLine(PrefixEachLineSpacesDoc("<code>"));
-            sb.AppendLine(PrefixEachLineSpacesDoc(x.Item2));
-            sb.AppendLine(PrefixEachLineSpacesDoc("</code>"));
-            sb.AppendLine(PrefixEachLineSpacesDoc("</example>"));
+            sb.AppendLine(PrefixEachLineSpacesDoc("<example>", indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc("<code>", indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc(x.Item2, indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc("</code>", indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc("</example>", indent));
         });
-        sb.AppendLine(PrefixEachLineSpacesDoc($"</{element}>"));
+        sb.AppendLine(PrefixEachLineSpacesDoc($"</{element}>", indent));
+    }
+
+    // Generate doc comment see with URL
+    public static void GenerateSeeUrl(string? fullUrl, int indent, StringBuilder sb) {
+        if (string.IsNullOrEmpty(fullUrl)) return;
+
+        sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{fullUrl}\"/>", indent));
+    }
+
+    // Generate param docs only when there is description
+    public static void GenerateParameters(List<(string, string)> parameters, int indent, StringBuilder sb) {
+        parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>", indent));
+        });
+    }
+
+    // Generates doc comment returns
+    public static void GenerateSingleOrMultiLineElement(string val, int indent, string elementName, StringBuilder sb) {
+        if (string.IsNullOrEmpty(val)) return;
+
+        if (val.Contains('\n')) {
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<{elementName}>", indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc(val, indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc($"</{elementName}>", indent));
+        } else {
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<{elementName}>{val}</{elementName}>", indent));
+        }
     }
 }
