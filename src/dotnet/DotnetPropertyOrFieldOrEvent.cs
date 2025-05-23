@@ -12,7 +12,7 @@ public record DotnetPropertyOrFieldOrEvent() {
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<summary>{Summary}</summary>", indent));
         }
 
         if (!FullUrl.IsNullOrEmpty()) {
