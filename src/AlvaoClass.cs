@@ -515,20 +515,26 @@ public class AlvaoClass {
                             parameters.Add((_parameterName, name));
                         }
                         break;
-                    //     case "Examples":
-                    //         // ! TODO: Implement
-                    //         // ? TODO: Investigate if there are more examples somewhere
-                    //         // Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
-                    //         // Console.WriteLine(h4CurrentElements[1].Name);
-                    //         // examples.Add(h4CurrentElements[1].Name);
-                    //         // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
-                    //         break;
+                    case "Examples":
+                        // ? TODO: Investigate if there are more examples somewhere
+                        // Only example code
+                        Logger.LogDebug("Processing method examples [{}] {{{}}}", Name, NamespaceName);
+                        var count = 1;
+                        if (h4CurrentElements.Count == 2) {
+                            // ? TODO: Check if there are example names, descriptions or something like that
+                            try {
+                                examples.Add((count.ToString(), TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code"))));
+                            } catch {
+                                Logger.LogWarning("Cannot process examples of method {} [{}] {{{}}}", _name, Name, NamespaceName);
+                            }
+                        }
+                        break;
                     case "Remarks":
                         Logger.LogDebug("Processing method remarks [{}] {{{}}}", Name, NamespaceName);
                         try {
                             remarks = h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First();
                         } catch {
-                            Logger.LogDebug("Cannot process method returns [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Cannot process method remarks [{}] {{{}}}", Name, NamespaceName);
                         }
                         break;
                     case "Returns":
@@ -664,6 +670,8 @@ public class AlvaoClass {
                 SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(x) + ", ")));
             }
         } else {
+            Logger.LogInformation("Processing normal class file [{}] {{{}}}", Name, NamespaceName);
+
             sb.AppendLine(SanitizeXmlToString(Definition));
             sb.AppendLine("{");
             bool indentNext = false;
@@ -682,6 +690,9 @@ public class AlvaoClass {
                 Properties.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Properties.Count > 0;
 
+                // Logger.LogDebug("Appending operators [{}] {{{}}}", Name, NamespaceName);
+
+                // Logger.LogDebug("Appending events [{}] {{{}}}", Name, NamespaceName);
                 // if (indentNext && Events.Count > 0) sb.AppendLine("");
                 // Events.ForEach(el => sb.AppendLine($"{PrefixEachLineSpaces(el)};"));
                 // indentNext = Events.Count > 0;

@@ -87,11 +87,18 @@ public static class Helpers {
             .Trim();
     }
 
-    internal static string PrefixEachLineSpaces(string el, int indent = 4) {
+    internal static string PrefixEachLineSpacesDoc(string el, int indent = 4) {
+        return PrefixEachLineSpaces(el, indent, true);
+    }
+
+    internal static string PrefixEachLineSpaces(string el, int indent = 4, bool includeDocComment = false) {
         var ind = new string(' ', indent);
+        var comment = includeDocComment ? "/// " : "";
+        var prefix = $"{ind}{comment}";
+
         return el.Contains('\n')
-            ? TrimEndNewLine(el.Split('\n').Select(x => $"{ind}{TrimEndNewLine(x)}").ToArray().JoinAsString("\n"))
-            : TrimEndNewLine($"{ind}{el}");
+            ? TrimEndNewLine(el.Split('\n').Select(x => $"{prefix}{TrimEndNewLine(x)}").ToArray().JoinAsString("\n"))
+            : TrimEndNewLine($"{prefix}{el}");
     }
 
     public static string TrimEndNewLine(string el) {
