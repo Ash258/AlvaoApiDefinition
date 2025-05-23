@@ -398,12 +398,11 @@ public static class MonkeyPatch {
                     Name = $"Patched {m.Item2}",
                     Definition = m.Item2,
                     Summary = "!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable",
-                    Parameters = [],
-                    Exceptions = [],
-                    Returns = string.Empty,
                 });
             }
         }
+
+        Logger.LogDebug("Method monkeypatching done [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
     }
 
     // Monkeypatch methods and usings based on classes and it's methods

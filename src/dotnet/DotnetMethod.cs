@@ -4,18 +4,19 @@ using static AlvaoScrapper.Helpers;
 namespace AlvaoScrapper;
 
 public record DotnetMethod() {
-    public string Name { get; set; }
-    public string Summary { get; set; }
-    public string Definition { get; set; }
-    public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
-    public List<(string, string)> Exceptions { get; set; }
-    public string Returns { get; set; }
-    public string Remarks { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Summary { get; set; } = string.Empty;
+    public string Definition { get; set; } = string.Empty;
+    public List<(string, string)> Parameters { get; set; } = []; // Just name and summary of parameters for now
+    public List<(string, string)> Exceptions { get; set; } = [];
+    public List<(string, string)> Examples { get; set; } = [];
+    public string Returns { get; set; } = string.Empty;
+    public string Remarks { get; set; } = string.Empty;
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpaces($"///<summary>{Summary}</summary>", indent));
             sb.AppendLine("");
         }
 
@@ -31,20 +32,24 @@ public record DotnetMethod() {
             sb.AppendLine(PrefixEachLineSpaces($"///</remarks>"));
         }
 
-        if (Parameters.Count > 0) {
-            Parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
-                sb.Append(PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
-                sb.AppendLine();
-            });
-        }
+        Parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
+            sb.Append(PrefixEachLineSpaces($"///<param name=\"{param.Item1}\">{param.Item2}</param>"));
+            sb.AppendLine();
+        });
 
-        if (Exceptions.Count > 0) {
-            Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
-                sb.AppendLine(PrefixEachLineSpaces($"///<exception cref=\"{ex.Item1}\">"));
-                sb.AppendLine(PrefixEachLineSpaces($"///{ex.Item2}"));
-                sb.AppendLine(PrefixEachLineSpaces($"///</exception>"));
-            });
-        }
+        Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
+            sb.AppendLine(PrefixEachLineSpaces($"///<exception cref=\"{ex.Item1}\">"));
+            sb.AppendLine(PrefixEachLineSpaces($"///{ex.Item2}"));
+            sb.AppendLine(PrefixEachLineSpaces($"///</exception>"));
+        });
+
+        Examples.ForEach(x => {
+            sb.AppendLine(PrefixEachLineSpaces("///<example>"));
+            sb.AppendLine(PrefixEachLineSpaces("///<code>"));
+            sb.AppendLine(PrefixEachLineSpaces(x.Item2));
+            sb.AppendLine(PrefixEachLineSpaces("///</code>"));
+            sb.AppendLine(PrefixEachLineSpaces("///</example>"));
+        });
 
         var def = SanitizeXmlToString(Definition);
         if (!Definition.EndsWith(';')) def += " { throw new NotImplementedException(); }";
@@ -52,15 +57,5 @@ public record DotnetMethod() {
         sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
-    }
-
-    public void Reset() {
-        Name = string.Empty;
-        Summary = string.Empty;
-        Definition = string.Empty;
-        Parameters = [];
-        Exceptions = [];
-        Returns = string.Empty;
-        Remarks = string.Empty;
     }
 }

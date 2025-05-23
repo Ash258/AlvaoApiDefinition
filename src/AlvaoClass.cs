@@ -477,6 +477,7 @@ public class AlvaoClass {
 
             var ret = string.Empty;
             var remarks = string.Empty;
+            List<(string, string)> examples = [];
             List<(string, string)> exceptions = [];
             List<(string, string)> parameters = [];
 
@@ -576,6 +577,7 @@ public class AlvaoClass {
                     Exceptions = exceptions,
                     Returns = ret,
                     Remarks = remarks,
+                    Examples = examples,
                 };
             MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);
@@ -613,14 +615,6 @@ public class AlvaoClass {
         }
     }
 
-    private void ProcessDefinition() {
-        Logger.LogInformation("Processing definitition of class {name} {{{ns}}}", Name, NamespaceName);
-        var _def = ExtractObjectDefinition(HtmlDocument);
-        if (_def == null) return;
-
-        Definition = _def;
-    }
-
     public void ProduceFinalCsFile(bool standaloneEnum = false) {
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
         var sb = new StringBuilder();
@@ -653,6 +647,7 @@ public class AlvaoClass {
 
         if (nestedClass == false) {
             // Set namespace
+            Logger.LogInformation("Adding namespace for class [{}] {{{}}}", Name, NamespaceName);
             sb.AppendLine($"namespace {NamespaceName};");
             sb.AppendLine("");
         }
@@ -673,13 +668,16 @@ public class AlvaoClass {
             sb.AppendLine("{");
             bool indentNext = false;
             {
+                Logger.LogDebug("Appending enums [{}] {{{}}}", Name, NamespaceName);
                 Enums.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Enums.Count > 0;
 
+                Logger.LogDebug("Appending fields [{}] {{{}}}", Name, NamespaceName);
                 if (indentNext && Fields.Count > 0) sb.AppendLine("");
                 Fields.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Fields.Count > 0;
 
+                Logger.LogDebug("Appending properties [{}] {{{}}}", Name, NamespaceName);
                 if (indentNext && Properties.Count > 0) sb.AppendLine("");
                 Properties.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Properties.Count > 0;
@@ -688,6 +686,7 @@ public class AlvaoClass {
                 // Events.ForEach(el => sb.AppendLine($"{PrefixEachLineSpaces(el)};"));
                 // indentNext = Events.Count > 0;
 
+                Logger.LogDebug("Appending constructors [{}] {{{}}}", Name, NamespaceName);
                 if (indentNext && Constructors.Count > 0) sb.AppendLine("");
                 Constructors.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Constructors.Count > 0;
@@ -697,10 +696,13 @@ public class AlvaoClass {
             }
         }
 
-        InnerClasses.ForEach(el => {
-            sb.AppendLine("");
-            sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));
-        });
+        if (InnerClasses.Count > 0) {
+            Logger.LogDebug("Processing innerclasses [{}] {{{}}}", Name, NamespaceName);
+            InnerClasses.ForEach(el => {
+                sb.AppendLine("");
+                sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));
+            });
+        }
 
         sb.AppendLine("}"); // End class
 

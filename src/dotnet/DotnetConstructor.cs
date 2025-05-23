@@ -4,11 +4,11 @@ using static AlvaoScrapper.Helpers;
 namespace AlvaoScrapper;
 
 public record DotnetConstructor() {
-    public string Name { get; set; }
-    public string Summary { get; set; }
-    public string Definition { get; set; }
-    public List<(string, string)> Parameters { get; set; } // Just name and summary of parameters for now
-    public List<string> Examples { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Summary { get; set; } = string.Empty;
+    public string Definition { get; set; } = string.Empty;
+    public List<(string, string)> Parameters { get; set; } = []; // Just name and summary of parameters for now
+    public List<string> Examples { get; set; } = [];
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
@@ -39,12 +39,5 @@ public record DotnetConstructor() {
         sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " {}", indent));
 
         return sb.ToString();
-    }
-
-    public void Reset() {
-        Name = string.Empty;
-        Summary = string.Empty;
-        Definition = string.Empty;
-        Parameters = [];
     }
 }
