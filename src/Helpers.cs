@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
@@ -96,5 +97,34 @@ public static class Helpers {
         if (!className.Equals(expectedName)) return;
 
         toAdd.Add(namespaceName);
+    }
+
+    // Generate doc comment summary
+    public static void GenerateSummary(string summary, List<(string, string)> examples, StringBuilder sb, bool useValueElement = false) {
+        // Do nothing when summary and Examples are empty
+        if (summary.IsNullOrEmpty() && examples.Count == 0) return;
+
+        var element = useValueElement ? "value" : "summary";
+        var sum = summary.Trim();
+
+        //Add single line summary
+        if (examples.Count == 0 && !summary.Contains('\n')) {
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>{sum}</{element}>"));
+            return;
+        }
+
+        sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>"));
+        if (!summary.IsNullOrEmpty()) {
+            sb.AppendLine(PrefixEachLineSpacesDoc(sum));
+        }
+
+        examples.ForEach(x => {
+            sb.AppendLine(PrefixEachLineSpacesDoc("<example>"));
+            sb.AppendLine(PrefixEachLineSpacesDoc("<code>"));
+            sb.AppendLine(PrefixEachLineSpacesDoc(x.Item2));
+            sb.AppendLine(PrefixEachLineSpacesDoc("</code>"));
+            sb.AppendLine(PrefixEachLineSpacesDoc("</example>"));
+        });
+        sb.AppendLine(PrefixEachLineSpacesDoc($"</{element}>"));
     }
 }

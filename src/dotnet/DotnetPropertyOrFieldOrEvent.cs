@@ -7,12 +7,16 @@ public record DotnetPropertyOrFieldOrEvent() {
     public string Name { get; set; } = string.Empty;
     public string Summary { get; set; } = string.Empty;
     public string Definition { get; set; } = string.Empty;
+    public string FullUrl { get; set; } = string.Empty;
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
-            sb.AppendLine("");
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
+        }
+
+        if (!FullUrl.IsNullOrEmpty()) {
+            sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
         }
 
         string def = SanitizeXmlToString(Definition);

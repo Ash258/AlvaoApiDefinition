@@ -222,9 +222,12 @@ public class AlvaoClass {
     }
 
     // Extract name, summary and definition from elements
-    private (string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType) {
+    private (string, string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType) {
         var _sum = string.Empty;
         var _def = string.Empty;
+
+        // URL handlind
+        var _url = $"{FullUrl}#{elements[0].Id}";
 
         // Name handling
         var _name = ReplaceEndLinesWithSpace(TrimInnerText(elements[0]));
@@ -249,7 +252,7 @@ public class AlvaoClass {
             Logger.LogWarning("{} member {} definition extraction failed [{}] {{{}}}", memberType, _name, Name, NamespaceName);
         }
 
-        return (_name, _sum, _def);
+        return (_name, _sum, _def, _url);
     }
     #endregion Helper functions
 
@@ -325,6 +328,7 @@ public class AlvaoClass {
 
         // There should be exactly 1 element after h2, that contain all fields
         var dl = elements.Skip(1).Take(1).ToList();
+        var url = $"{FullUrl}#{elements[0].Id}";
 
         // Currently we assume, that the there will be next element with dt
         Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);
@@ -335,7 +339,8 @@ public class AlvaoClass {
             Name = Name,
             Summary = Summary,
             Definition = Definition,
-            Fields = enumFields
+            Fields = enumFields,
+            FullUrl = url,
         };
         Logger.LogDebug("Finished processing enum fields [{}] {{{}}}", Name, NamespaceName);
     }
@@ -359,12 +364,13 @@ public class AlvaoClass {
             Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
             var propertyElements = elements[h3Indexes[i]..end];
 
-            (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, type);
+            (var _name, var _sum, var _def, var _url) = ExtractMemberInformation(propertyElements, type);
 
             var item = new DotnetPropertyOrFieldOrEvent() {
                 Name = _name,
                 Summary = _sum,
                 Definition = _def,
+                FullUrl = _url,
             };
 
             switch (type) {
@@ -396,12 +402,12 @@ public class AlvaoClass {
             Logger.LogDebug("Constructor spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
             var currentElements = elements[h3Indexes[i]..end];
 
-            (var _name, var _sum, var _def) = ExtractMemberInformation(currentElements, "Constructor");
+            (var _name, var _sum, var _def, var _url) = ExtractMemberInformation(currentElements, "Constructor");
             (var h4Indexes, var lastH4element) = FindIndexesOfElement(currentElements, "h4");
 
             Logger.LogDebug("Found {} constructor nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
-            List<string> examples = [];
+            List<(string, string)> examples = [];
             List<(string, string)> parameters = [];
             for (var h4i = 0; h4i < h4Indexes.Count; ++h4i) {
                 var h4end = h4i == h4Indexes.Count - 1
@@ -438,11 +444,11 @@ public class AlvaoClass {
                     case "Examples":
                         // ? TODO: Investigate if there are more examples somewhere
                         Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
-                        // var count = 1;
+                        var count = 1;
                         if (h4CurrentElements.Count == 2) {
                             // ? TODO: Check if there are example names, descriptions or something like that
                             try {
-                                examples.Add(TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code")));
+                                examples.Add((count.ToString(), TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code"))));
                             } catch {
                                 Logger.LogWarning("Cannot process examples of constructor {} [{}] {{{}}}", _name, Name, NamespaceName);
                             }
@@ -459,6 +465,7 @@ public class AlvaoClass {
                 Definition = _def,
                 Parameters = parameters,
                 Examples = examples,
+                FullUrl = _url,
             };
             MonkeyPatch.SpecificConstructor(this, construct, MpLogger);
             Constructors.Add(construct);
@@ -481,7 +488,7 @@ public class AlvaoClass {
             Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
             var methodElements = elements[h3Indexes[i]..end];
 
-            (var _name, var _sum, var _def) = ExtractMemberInformation(methodElements, type);
+            (var _name, var _sum, var _def, var _url) = ExtractMemberInformation(methodElements, type);
             (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
 
             Logger.LogDebug("Found {} {} nested properties [{}] {{{}}}", h4Indexes.Count, type.ToLower(), Name, NamespaceName);
@@ -600,6 +607,7 @@ public class AlvaoClass {
                     Returns = ret,
                     Remarks = remarks,
                     Examples = examples,
+                    FullUrl = _url,
                 };
             MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);
