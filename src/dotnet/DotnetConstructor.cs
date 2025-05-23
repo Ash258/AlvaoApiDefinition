@@ -12,29 +12,31 @@ public record DotnetConstructor() {
 
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
-        if (!Summary.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
-            sb.AppendLine("");
-        }
 
-        if (Parameters.Count > 0) {
-            Parameters.ForEach(param => {
-                sb.Append(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>"));
-                sb.AppendLine();
-            });
-        }
-
-        if (Examples.Count > 0) {
-            for (int i = 0; i < Examples.Count; ++i) {
-                sb.Append(PrefixEachLineSpacesDoc("<example>"));
-                // sb.Append(PrefixEachLineSpacesDoc($"Example {i}"));
-                sb.Append(PrefixEachLineSpacesDoc("<code>"));
-                sb.Append(PrefixEachLineSpaces(Examples[i]));
-                sb.Append(PrefixEachLineSpacesDoc("</code>"));
-                // sb.Append(PrefixEachLineSpacesDoc($"results in <c>p</c>'s having the value (2,8)."));
-                sb.Append(PrefixEachLineSpacesDoc("</example>"));
+        if (!Summary.IsNullOrEmpty() || Examples.Count > 0) {
+            sb.AppendLine(PrefixEachLineSpacesDoc("<summary>", indent));
+            if (!Summary.IsNullOrEmpty()) {
+                sb.AppendLine(PrefixEachLineSpacesDoc(Summary.Trim(), indent));
             }
+
+            Examples.ForEach(x => {
+                sb.AppendLine(PrefixEachLineSpacesDoc("<example>"));
+                // sb.AppendLine(PrefixEachLineSpacesDoc($"Example {i}"));
+                sb.AppendLine(PrefixEachLineSpacesDoc("<code>"));
+                sb.AppendLine(PrefixEachLineSpacesDoc(x));
+                sb.AppendLine(PrefixEachLineSpacesDoc("</code>"));
+                // sb.AppendLine(PrefixEachLineSpacesDoc($"results in <c>p</c>'s having the value (2,8)."));
+                sb.AppendLine(PrefixEachLineSpacesDoc("</example>"));
+
+            });
+
+            sb.AppendLine(PrefixEachLineSpacesDoc("</summary>", indent));
         }
+
+        Parameters.ForEach(param => {
+            sb.Append(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>"));
+            sb.AppendLine();
+        });
 
         sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " {}", indent));
 

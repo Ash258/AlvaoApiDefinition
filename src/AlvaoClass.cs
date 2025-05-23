@@ -436,9 +436,17 @@ public class AlvaoClass {
                         }
                         break;
                     case "Examples":
-                        // ! TODO: Implement
                         // ? TODO: Investigate if there are more examples somewhere
-                        Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping processing constructor examples [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
+                        // var count = 1;
+                        if (h4CurrentElements.Count == 2) {
+                            // ? TODO: Check if there are example names, descriptions or something like that
+                            try {
+                                examples.Add(TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code")));
+                            } catch {
+                                Logger.LogWarning("Cannot process examples of constructor {} [{}] {{{}}}", _name, Name, NamespaceName);
+                            }
+                        }
                         break;
                     default:
                         break;
