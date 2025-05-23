@@ -298,7 +298,10 @@ public class AlvaoClass {
                     ProcessConstructors(gr.Value);
                     break;
                 case "Methods":
-                    ProcessMethods(gr.Value);
+                    ProcessMethodsOrOperators(gr.Value, "Method");
+                    break;
+                case "Operators":
+                    ProcessMethodsOrOperators(gr.Value, "Operator");
                     break;
                 case "Class":
                     // ? TODO: Do not rely on hardcoded indexes
@@ -456,24 +459,26 @@ public class AlvaoClass {
         }
     }
 
-    private void ProcessMethods(List<HtmlNode> elements) {
-        Logger.LogDebug("Processing class methods [{}] {{{}}}", Name, NamespaceName);
+    private void ProcessMethodsOrOperators(List<HtmlNode> elements, string type) {
+        string typePlural = $"{type}s";
+
+        Logger.LogDebug("Processing class {} [{}] {{{}}}", typePlural.ToLower(), Name, NamespaceName);
         (var h3Indexes, var h3LastIndex) = FindIndexesOfElement(elements, "h3");
 
-        Logger.LogDebug("Found {} methods [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
+        Logger.LogDebug("Found {} {} [{}] {{{}}}", h3Indexes.Count, typePlural.ToLower(), Name, NamespaceName);
 
         for (var i = 0; i < h3Indexes.Count; ++i) {
             var end = i == h3Indexes.Count - 1
                 ? h3LastIndex
                 : h3Indexes[i + 1];
 
-            Logger.LogDebug("Method spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
+            Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
             var methodElements = elements[h3Indexes[i]..end];
 
-            (var _name, var _sum, var _def) = ExtractMemberInformation(methodElements, "Method");
+            (var _name, var _sum, var _def) = ExtractMemberInformation(methodElements, type);
             (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
 
-            Logger.LogDebug("Found {} method nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
+            Logger.LogDebug("Found {} {} nested properties [{}] {{{}}}", h4Indexes.Count, type.ToLower(), Name, NamespaceName);
 
             var ret = string.Empty;
             var remarks = string.Empty;
@@ -489,11 +494,11 @@ public class AlvaoClass {
                 var h4CurrentElements = methodElements[h4Indexes[methodPropIndex]..h4end];
 
                 var methodGroupName = TrimInnerText(h4CurrentElements[0]);
-                Logger.LogInformation("Processing group {} of {} method [{}] {{{}}}", methodGroupName, _name, Name, NamespaceName);
+                Logger.LogInformation("Processing group {} of {} {} [{}] {{{}}}", methodGroupName, _name, type.ToLower(), Name, NamespaceName);
 
                 switch (methodGroupName) {
                     case "Parameters":
-                        Logger.LogDebug("Processing method parameters [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing {} parameters [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         // This has to be dl
                         var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
                         List<string> parameterSums = [];
@@ -505,12 +510,12 @@ public class AlvaoClass {
                             nameOnly = true;
                         }
                         if (parameterDefs.Count != parameterSums.Count) {
-                            Logger.LogDebug("Mismatch between method parameter names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Mismatch between {} parameter names and description [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                             nameOnly = true;
                         }
                         for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex) {
                             var _parameterName = parameterDefs[paramIndex].Trim();
-                            Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
+                            Logger.LogDebug("Adding {} parameter {} [{}] {{{}}}", type.ToLower(), _parameterName, Name, NamespaceName);
                             string name = nameOnly ? string.Empty : ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
                             parameters.Add((_parameterName, name));
                         }
@@ -518,38 +523,38 @@ public class AlvaoClass {
                     case "Examples":
                         // ? TODO: Investigate if there are more examples somewhere
                         // Only example code
-                        Logger.LogDebug("Processing method examples [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing {} examples [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         var count = 1;
                         if (h4CurrentElements.Count == 2) {
                             // ? TODO: Check if there are example names, descriptions or something like that
                             try {
                                 examples.Add((count.ToString(), TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code"))));
                             } catch {
-                                Logger.LogWarning("Cannot process examples of method {} [{}] {{{}}}", _name, Name, NamespaceName);
+                                Logger.LogWarning("Cannot process examples of {} {} [{}] {{{}}}", type.ToLower(), _name, Name, NamespaceName);
                             }
                         }
                         break;
                     case "Remarks":
-                        Logger.LogDebug("Processing method remarks [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         try {
                             remarks = h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First();
                         } catch {
-                            Logger.LogDebug("Cannot process method remarks [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Cannot process {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         }
                         break;
                     case "Returns":
                         // ? TODO: Investigate if there are some returns described
-                        Logger.LogDebug("Processing method returns [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing {} returns [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         try {
                             var returnType = h4CurrentElements[1].SelectNodes(".//dt").Select(x => x.InnerText).ToList();
                             var sum = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
                             ret = sum[0].Trim();
                         } catch {
-                            Logger.LogDebug("Cannot process method returns [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogDebug("Cannot process {} returns [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         }
                         break;
                     case "Exceptions":
-                        Logger.LogDebug("Processing method exceptions [{}] {{{}}}", Name, NamespaceName);
+                        Logger.LogDebug("Processing {} exceptions [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
 
                         var exceptionsDefs = h4CurrentElements[1].SelectNodes(".//dt/a").Select(x => x.InnerText).ToList();
                         List<string> exceptionsSumarries = [];
@@ -557,23 +562,28 @@ public class AlvaoClass {
                             // TODO: Try to parse the refs
                             exceptionsSumarries = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
                         } catch {
-                            Logger.LogWarning("Cannot process method exception summaries [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogWarning("Cannot process {} exception summaries [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                             break;
                         }
                         if (exceptionsDefs.Count != exceptionsSumarries.Count) {
-                            Logger.LogWarning("Mismatch between method exception names and description [{}] {{{}}}", Name, NamespaceName);
+                            Logger.LogWarning("Mismatch between {} exception names and description [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         }
                         for (var paramIndex = 0; paramIndex < exceptionsDefs.Count; ++paramIndex) {
                             var exceptionName = exceptionsDefs[paramIndex].Trim();
-                            Logger.LogDebug("Adding method exceptions {} [{}] {{{}}}", exceptionName, Name, NamespaceName);
+                            Logger.LogDebug("Adding {} exceptions {} [{}] {{{}}}", type.ToLower(), exceptionName, Name, NamespaceName);
                             exceptions.Add((exceptionName, ReplaceEndLinesWithSpace(exceptionsSumarries[paramIndex].Trim())));
                         }
                         break;
+                    case "Type Parameters":
+                        // No need to process. Just info debug it if there are multiple classes (currently only 1)
+                        Logger.LogInformation("!!!!!!!!!!!!!!!!!!!Skipping group {} of {} {} [{}] {{{}}}", methodGroupName, type.ToLower(), _name, Name, NamespaceName);
+                        break;
                     default:
-                        Logger.LogWarning("Skipping group {} of method {} [{}] {{{}}}", methodGroupName, _name, Name, NamespaceName);
+                        Logger.LogWarning("Skipping group {} of {} {} [{}] {{{}}}", methodGroupName, type.ToLower(), _name, Name, NamespaceName);
                         break;
                 }
             }
+
             var method =
                 new DotnetMethod() {
                     Name = _name.Split("(")[0],
@@ -690,8 +700,6 @@ public class AlvaoClass {
                 Properties.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Properties.Count > 0;
 
-                // Logger.LogDebug("Appending operators [{}] {{{}}}", Name, NamespaceName);
-
                 // Logger.LogDebug("Appending events [{}] {{{}}}", Name, NamespaceName);
                 // if (indentNext && Events.Count > 0) sb.AppendLine("");
                 // Events.ForEach(el => sb.AppendLine($"{PrefixEachLineSpaces(el)};"));
@@ -703,7 +711,10 @@ public class AlvaoClass {
                 indentNext = Constructors.Count > 0;
 
                 if (indentNext && Methods.Count > 0) sb.AppendLine("");
-                Methods.ForEach(el => sb.AppendLine(el.Produce()));
+                Methods.ForEach(el => {
+                    sb.AppendLine(el.Produce());
+                    sb.AppendLine("");
+                });
             }
         }
 
