@@ -25,7 +25,7 @@ public static class Helpers {
     }
 
     public static HtmlDocument LoadDocument(string url, string localPath) {
-        HtmlDocument doc = new();
+        var doc = new HtmlDocument();
         if (!IGNORE_CACHE && File.Exists(localPath)) {
             doc.Load(localPath);
         } else {
@@ -50,34 +50,17 @@ public static class Helpers {
         return Regex.Replace(el, @"\r?\n\s*", " ");
     }
 
-
-
-
-
-
-
-
-
-    // TODO: Reorganize and verify everything is needed
     public static string GetSummary(HtmlDocument _document) {
-        var _s = _document.DocumentNode.SelectSingleNode("//article/div[@class='markdown summary']")?.InnerText.Trim();
+        var _node = _document.DocumentNode.SelectSingleNode("//article/div[@class='markdown summary']");
+        if (_node == null) return "";
+
+        var _s = TrimInnerText(_node);
         if (_s == null) return "";
 
         return ReplaceEndLinesWithSpace(_s);
     }
 
-    public static string? ExtractObjectDefinition(HtmlDocument node) {
-        var nodeDef = node.DocumentNode.SelectSingleNode("//div[contains(@class, 'codewrapper')][following::dl[contains(@class, 'typelist') and contains(@class, 'inheritance')]]");
-        // If there are none inherited properties, just try with first codewrapper
-        if (nodeDef == null) {
-            nodeDef = node.DocumentNode.SelectSingleNode("//div[contains(@class, 'codewrapper')][1]");
-            if (nodeDef == null) return null;
-        }
-
-        var def = SanitizeXmlToString(nodeDef.InnerText.Trim());
-        return def;
-    }
-
+    // Replace enncoded xml tags with normal characters
     public static string SanitizeXmlToString(string el) {
         return el
             .Replace("&lt;", "<")

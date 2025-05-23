@@ -19,10 +19,9 @@ public class AlvaoNamespace {
         Logger = CreateLogger<AlvaoNamespace>();
 
         Name = namespaceName;
-        FullUrl = $"{BASE_HTML_URL}/{namespaceName}.html";
+        FullUrl = $"{BASE_HTML_URL}/{Name}.html";
         LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
         HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
-
         Enums = [];
 
         AssertDirectory(Name.Replace(".", "/"));
@@ -94,7 +93,7 @@ public class AlvaoNamespace {
             }
 
             if (string.IsNullOrEmpty(parent)) {
-                Logger.LogDebug("Producting standalone cs enum file [{}] {{{}}}", member.Name, Name);
+                Logger.LogDebug("Producing standalone cs enum file [{}] {{{}}}", member.Name, Name);
                 clazz.ProduceFinalCsFile(true);
                 continue;
             }

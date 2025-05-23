@@ -44,8 +44,6 @@ if (args.Length > 0) {
     if (filter.Length > 0) alvaoNamespace = [.. alvaoNamespace.Where(ns => filter.Contains(ns))];
 }
 
-// MonkeyPatch.MonkeyPatchNotAvailableNAlvao.API.Common.Modelamespaces();
-
 foreach (var ns in alvaoNamespace) {
     logger.LogInformation("Processing {ns} Namespace", ns);
     logger.LogDebug("Processing {ns} Namespace", ns);

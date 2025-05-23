@@ -4,6 +4,7 @@ using static AlvaoScrapper.Helpers;
 namespace AlvaoScrapper;
 
 public static class MonkeyPatch {
+    // Monkeypatch not documented classes to make project compilable
     public static void PatchUnDocumentedClasses(ILogger Logger) {
         var caution = "!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
@@ -169,6 +170,7 @@ public static class MonkeyPatch {
         }
     }
 
+    // Monkeypatch usings based on class names
     public static void PatchUsings(AlvaoClass clazz, ILogger Logger) {
         List<string> toAdd = [];
 
@@ -318,6 +320,7 @@ public static class MonkeyPatch {
         }
     }
 
+    // Create methods, that are not specified in the documentaiont
     public static void CreateMethods(AlvaoClass clazz, ILogger Logger) {
         Logger.LogDebug("Monkeypatching missing methods [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
 
@@ -342,7 +345,7 @@ public static class MonkeyPatch {
         Logger.LogDebug("Method monkeypatching done [{}] {{{}}}", clazz.Name, clazz.NamespaceName);
     }
 
-    // Monkeypatch methods and usings based on classes and it's methods
+    // Monkeypatch methods definitions and usings based on class names and it's methods definitions
     public static void SpecificMethod(AlvaoClass clazz, DotnetMethod method, ILogger Logger) {
         var _def = string.Empty;
 
@@ -412,6 +415,7 @@ public static class MonkeyPatch {
         method.Definition = _def;
     }
 
+    // Monkeypatch constructors definitions based on class names and it's constructor definitions
     public static void SpecificConstructor(AlvaoClass clazz, DotnetConstructor constructor, ILogger Logger) {
         var _def = string.Empty;
 
@@ -425,6 +429,7 @@ public static class MonkeyPatch {
         constructor.Definition = _def;
     }
 
+    // Monkeypatch properties definitions based on class names and it's properties definitions
     public static void SpecificProperty(AlvaoClass clazz, DotnetPropertyOrFieldOrEvent property, ILogger Logger) {
         var _def = string.Empty;
 
@@ -439,6 +444,4 @@ public static class MonkeyPatch {
     }
 }
 
-public class MonkeyPatchLogger {
-
-}
+public class MonkeyPatchLogger { }

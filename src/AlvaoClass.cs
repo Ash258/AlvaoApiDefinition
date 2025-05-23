@@ -78,7 +78,6 @@ public class AlvaoClass {
         List<DotnetMethod> methods,
         List<DotnetPropertyOrFieldOrEvent> properties,
         List<DotnetPropertyOrFieldOrEvent> fields
-    // List<DotnetEnum> enums,
     ) {
         Logger = CreateLogger<AlvaoClass>();
         MpLogger = CreateLogger<MonkeyPatchLogger>();
@@ -137,11 +136,11 @@ public class AlvaoClass {
 
     private static string SanitizeClassName(HtmlNode element) {
         return TrimInnerText(element)
-                .Replace("Class ", "")
-                .Replace("Interface ", "")
-                .Replace("Enum ", "")
-                .Replace("Struct ", "")
-                .Trim();
+            .Replace("Class ", "")
+            .Replace("Interface ", "")
+            .Replace("Enum ", "")
+            .Replace("Struct ", "")
+            .Trim();
     }
 
     private void AssertCorrectClassPage(string className) {
@@ -211,6 +210,7 @@ public class AlvaoClass {
         return classGroups;
     }
 
+    // Returns first and last index of specific element name
     private static (List<int>, int) FindIndexesOfElement(List<HtmlNode> elements, string element) {
         var indexes = elements
             .Select((f, i) => new { f, i })
@@ -221,10 +221,13 @@ public class AlvaoClass {
         return (indexes, lastIndex);
     }
 
+    // Extract name, summary and definition from elements
     private (string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType) {
-        var _name = ReplaceEndLinesWithSpace(TrimInnerText(elements[0]));
         var _sum = string.Empty;
         var _def = string.Empty;
+
+        // Name handling
+        var _name = ReplaceEndLinesWithSpace(TrimInnerText(elements[0]));
 
         // Summary handling
         try {
@@ -235,6 +238,7 @@ public class AlvaoClass {
         } catch {
             Logger.LogInformation("{} member {} does not specify summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
         }
+
         // Definition extraction
         try {
             if (!elements[3].GetClasses().Contains("codewrapper")) {
@@ -249,19 +253,13 @@ public class AlvaoClass {
     }
     #endregion Helper functions
 
-
-
-
-
-
-
-
-    /* ! TODO: Reimplement and reorganize*/
     internal void RestructuralizeClassDocument() {
         Logger.LogInformation("Processing the class document [{}] {{{}}}", Name, NamespaceName);
         // Get all elements in main article container
         var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
         Logger.LogDebug("There are {} total elements [{}] {{{}}}", elements.Count, Name, NamespaceName);
+
+        AssertDocumentIsClass();
 
         // First element should be h1
         var h1IndexStart = ExtractHeading1Index(elements);
@@ -272,9 +270,7 @@ public class AlvaoClass {
 
         elements[h1IndexEnd].SetAttributeValue("isLastElement", "true");
         Boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
-
         List<int> h2Indexes = ExtractH2Indexes(elements);
-
         Dictionary<string, List<HtmlNode>> classGroups = SplitElementsIntoClassGroups(elements, h1IndexStart, h1IndexEnd, h2Indexes);
 
         AssertClassBoundaries(elements);
@@ -327,9 +323,10 @@ public class AlvaoClass {
             return;
         }
 
+        // There should be exactly 1 element after h2, that contain all fields
         var dl = elements.Skip(1).Take(1).ToList();
 
-        // Currently we can assume, that the there will be next element with dt
+        // Currently we assume, that the there will be next element with dt
         Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);
         var enumFields = dl[0].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
 
@@ -441,15 +438,13 @@ public class AlvaoClass {
                     case "Examples":
                         // ! TODO: Implement
                         // ? TODO: Investigate if there are more examples somewhere
-                        // Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
-                        // Console.WriteLine(h4CurrentElements[1].Name);
-                        // examples.Add(h4CurrentElements[1].Name);
-                        // examples.Add(h4CurrentElements[1].SelectSingleNode(".//code").InnerText.Trim());
+                        Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping processing constructor examples [{}] {{{}}}", Name, NamespaceName);
                         break;
                     default:
                         break;
                 }
             }
+
             var construct = new DotnetConstructor() {
                 Name = _name,
                 Summary = _sum,
@@ -458,7 +453,6 @@ public class AlvaoClass {
                 Examples = examples,
             };
             MonkeyPatch.SpecificConstructor(this, construct, MpLogger);
-
             Constructors.Add(construct);
         }
     }
@@ -622,28 +616,29 @@ public class AlvaoClass {
         Logger.LogDebug("Verifying HTML document is class");
         var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
         if (h1 == null) {
-            Logger.LogError("");
-            throw new Exception("Page does not have h1");
+            Logger.LogError("Page does not have h1 [{}] {{{}}}", Name, NamespaceName);
+            throw new Exception($"Page does not have h1: {Name} {NamespaceName}");
         }
 
-        var fqdnId = NamespaceName.Replace(".", "_");
-        fqdnId = fqdnId + "_" + Name.Replace(".", "_");
-        var actual = h1.InnerText.Trim();
+        var actual = TrimInnerText(h1);
         var expected = $"{Type} {Name}";
+        var fqdnId = NamespaceName.Replace(".", "_");
+        fqdnId = $"{fqdnId}_{Name.Replace(".", "_")}";
+
         if (!h1.GetAttributeValue("id", "none").Equals(fqdnId) || !actual.Equals(expected)) {
-            Logger.LogError("Page contains different class: Expected {}, Actual: {}", expected, actual);
-            throw new Exception($"Page contains different class: Expected {expected}, Actual: {actual}");
+            Logger.LogError("Page contains different class: Expected {}, Actual: {} [{}] {{{}}}", expected, actual, Name, NamespaceName);
+            throw new Exception($"Page contains different class: Expected {expected}, Actual: {actual}: {Name} {NamespaceName}");
         }
     }
 
     public void ProduceFinalCsFile(bool standaloneEnum = false) {
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
-        var sb = new StringBuilder();
 
         MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
-
+        var sb = new StringBuilder();
         var nestedClass = false;
         AlvaoClass? parentClass = null;
+
         // It is nested class. It need to find the parent class and update it
         if (Name.Contains('.')) {
             nestedClass = true;
@@ -655,6 +650,7 @@ public class AlvaoClass {
                 nestedClass = false;
             }
 
+            // Remove parent from classname
             Definition = Definition.Replace(Name, Name.Replace($"{parentName}.", ""));
         }
 
@@ -758,7 +754,7 @@ public class AlvaoClass {
         definitions.AddRange(Methods.Select(x => x.Definition));
         definitions.AddRange(Constructors.Select(x => x.Definition));
         definitions.AddRange(Fields.Select(x => x.Definition));
-        // definitions.AddRange(Events.Select(x => x.Definition));
+        definitions.AddRange(Events.Select(x => x.Definition));
 
         return definitions;
     }
