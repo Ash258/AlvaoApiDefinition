@@ -1,0 +1,5 @@
+namespace Alvao.API.AM;
+
+/// <summary>!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable</summary>
+public class IFormattedTextWriter {
+}
