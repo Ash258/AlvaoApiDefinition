@@ -26,5 +26,18 @@ It is not ideal as Alvao is being compiled with Dotnet Framework and not Dotnet 
     ```
 
 1. Create new application class and implement it.
-   - Example could be found in [ExampleEmailSendingOnTicketCreation.cs](./ExampleEmailSendingOnTicketCreation.cs)
-   - Additional examples are avialable on [Alvao documentation site](https://doc.alvao.com/en/11.2/modules/alvao-sd-custom-apps/applications)
+   - Examples could be found in Examples folder.
+
+## Logging levels
+
+`export Logging__LogLevel__AlvaoScrapper=1`
+
+| Name        | Value | Description |
+| :---------- | :---: |
+| Trace       |   0   |
+| Debug       |   1   |
+| Information |   2   |
+| Warning     |   3   |
+| Error       |   4   |
+| Critical    |   5   |
+| None        |   6   |

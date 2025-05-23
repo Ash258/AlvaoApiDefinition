@@ -1,0 +1,40 @@
+{
+    "trace": {
+        "scope": "csharp",
+        "prefix": "trace",
+        "body": "Logger.LogTrace(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "debug": {
+        "scope": "csharp",
+        "prefix": "debug",
+        "body": "Logger.LogDebug(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "information": {
+        "scope": "csharp",
+        "prefix": "information",
+        "body": "Logger.LogInformation(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "warning": {
+        "scope": "csharp",
+        "prefix": "warning",
+        "body": "Logger.LogWarning(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "error": {
+        "scope": "csharp",
+        "prefix": "error",
+        "body": "Logger.LogError(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "critical": {
+        "scope": "csharp",
+        "prefix": "critical",
+        "body": "Logger.LogCritical(\"${0} [{}] {{{}}}\", Name, NamespaceName);"
+    },
+    "errorAndException": {
+        "scope": "csharp",
+        "prefix": "errorAndException",
+        "body": [
+            "Logger.LogError(\"${0} [{}] {{{}}}\", Name, NamespaceName);",
+            "throw new Exception($\"${0}: {Name} {NamespaceName}\");"
+        ]
+    }
+}

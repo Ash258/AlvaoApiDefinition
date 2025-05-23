@@ -1,103 +1,155 @@
-using System.Text;
 using HtmlAgilityPack;
+using Microsoft.Extensions.Logging;
+using static AlvaoScrapper.Helpers;
 
-namespace AlvaoScapper;
+namespace AlvaoScrapper;
 
-public class AlvaoNamespace
-{
+public class AlvaoNamespace {
+    public ILogger Logger;
+
     public string Name { get; set; }
     public string FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
-    public string Folder { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
     public AlvaoClass[]? Classes { get; set; }
 
-    public AlvaoNamespace(string fullUrl, string name)
-    {
-        Name = name;
-        FullUrl = fullUrl;
-        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{fullUrl.Split("/").Last()}";
-        Folder = $"{Name.Replace(".", "/")}";
-        HtmlDocument = Helpers.LoadDocument(fullUrl, LocalHtmlFile);
+    public Dictionary<string, DotnetEnum[]> Enums { get; set; }
 
-        Helpers.AssertDirectory(Folder);
+    public AlvaoNamespace(string namespaceName) {
+        Logger = CreateLogger<AlvaoNamespace>();
+
+        Name = namespaceName;
+        FullUrl = $"{BASE_HTML_URL}/{Name}.html";
+        LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
+        HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
+        Enums = [];
+
+        AssertDirectory(Name.Replace(".", "/"));
     }
 
-    internal void Process()
-    {
-        ProcessClases();
-        ProcessEnums();
-    }
+    internal void Process() {
+        Logger.LogInformation("Processing {} namespace", Name);
 
-    private void ProcessEnums()
-    {
-        var enums = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"enumerationList\"]/tr/td[2]/a");
-        if (enums == null) return;
+        AssertDocumentIsNamespace();
 
-        foreach (var e in enums)
-        {
-            var enumName = Helpers.ExtractObjectName(e);
-            Console.WriteLine($"  Processing {enumName} Enum");
+        // h3 contains the main groups (classes, interfaces, ...)
+        Logger.LogDebug("Searching for group (h3) element {{{}}}", Name);
+        var h3Headers = HtmlDocument.DocumentNode.SelectNodes("//h3");
+        if (h3Headers == null) {
+            Logger.LogError("Cannot find any groups on page {{{}}}", Name);
+            return;
+        }
 
-            var enumHtmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
-            var enumLink = $"{Helpers.BASE_HTML_URL}/{enumHtmlBaseFileName}";
-            var enumLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{enumHtmlBaseFileName}";
-            if (!enumLink.StartsWith("https://doc.alvao")) continue;
-            if (!enumLink.EndsWith(".htm")) continue;
+        Logger.LogInformation("Found {} headers {{{}}}", h3Headers.Count, Name);
 
-            var enumDocument = Helpers.LoadDocument(enumLink, enumLocalHtml);
-            var _summary = Helpers.GetSummary(enumDocument);
-            if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) continue;
-            var sb = new StringBuilder();
-            if (!_summary.Equals("")) sb.AppendLine(_summary);
-            sb.AppendLine(Helpers.GenerateSeeDoc(enumLink));
+        // Take first group from the h3 elements, as we take only following siblings of first h3
+        var currentMemberType = SanitizeMemberType(TrimInnerText(h3Headers[0]));
+        var relevantElements = HtmlDocument.DocumentNode.SelectNodes("//h3/following-sibling::*");
+        List<MemberProperties> membersToProcess = [];
 
-            var enumDef = Helpers.ExtractObjectDefinition(enumDocument);
-            if (enumDef == null) continue;
-            enumDef = Helpers.SanitizeXmlToString(enumDef);
+        Logger.LogInformation("Processing namespace group [{}] {{{}}}", currentMemberType, Name);
 
-            var members = enumDocument.DocumentNode.SelectNodes("//table[@id='enumMemberList']/tr");
-
-            sb.AppendLine(enumDef);
-            sb.AppendLine("{");
-            foreach (var m in members.TakeLast(members.Count - 1))
-            {
-                var name = m.SelectSingleNode(".//td[1]").InnerText.Trim();
-                var value = m.SelectSingleNode(".//td[2]").InnerText.Trim();
-                if (value.Contains(',')) value = value.Replace(",", "_");
-                sb.AppendLine($"    {name} = {value},");
+        foreach (var el in relevantElements) {
+            // Other group occoured
+            if (el.Name.Equals("h3")) {
+                var n = SanitizeMemberType(TrimInnerText(el));
+                Logger.LogInformation("Namespace group changed from {} to [{}] {{{}}}", currentMemberType, n, Name);
+                currentMemberType = n;
+                continue;
             }
-            sb.AppendLine("}");
 
-            // It is class level enum
-            if (enumName.Contains('.'))
-            {
-                var key = $"{Name}.{enumName.Split(".").First()}";
-                var clazzToUpdate = State.Classes.FirstOrDefault(el => el.Key.Equals(key)).Value;
-                if (clazzToUpdate == null) continue;
+            var aNode = el.SelectSingleNode(".//dt/a");
+            var member = new MemberProperties() {
+                Type = currentMemberType,
+                Name = aNode.InnerText.Trim(),
+                Url = aNode.GetAttributeValue("href", "none"),
+            };
 
-                clazzToUpdate.Enums.Add(sb.ToString());
-                clazzToUpdate.ProduceFinalCsFile();
+            Logger.LogInformation("Found {} '{}' {{{}}}", currentMemberType, member.Name, Name);
+            membersToProcess.Add(member);
+        }
+
+        // Enums needs to be preprocessed
+        Logger.LogDebug("Going to process enums {{{}}}", Name);
+        foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum"))) {
+            Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
+
+            var clazz = new AlvaoClass(member.Name, member.Url, member.Type, this, null);
+
+            try {
+                clazz.Process();
+            } catch (Exception e) {
+                Logger.LogError("Cannot process enum ({}) [{}] {{{}}}", e.Message, member.Name, Name);
+                continue;
             }
-            else
-            {
-                sb.Insert(0, Environment.NewLine);
-                sb.Insert(0, Environment.NewLine);
-                sb.Insert(0, $"namespace {Name};");
 
-                File.WriteAllText($"{Folder}/{enumName}.cs", sb.ToString());
+            var parent = member.Name.Contains('.')
+                ? member.Name.Split(".")[0]
+                : string.Empty;
+
+            if (clazz.SpecialEnumClass == null) {
+                Logger.LogCritical("Enum was not parsed correctly [{}] {{{}}}", member.Name, Name);
+                continue;
+            }
+
+            if (string.IsNullOrEmpty(parent)) {
+                Logger.LogDebug("Producing standalone cs enum file [{}] {{{}}}", member.Name, Name);
+                clazz.ProduceFinalCsFile(true);
+                continue;
+            }
+
+            var value = Enums.GetValueOrDefault(parent, []);
+            if (value.Length != 0) {
+                Logger.LogDebug("Adding enum '{}' to existing parent class {} [{}] {{{}}}", clazz.SpecialEnumClass.Name, parent, member.Name, Name);
+                Enums[parent] = [.. value.Concat([clazz.SpecialEnumClass])];
+            } else {
+                Logger.LogDebug("Creating new parent class '{}' for enum '{}' [{}] {{{}}}", parent, clazz.SpecialEnumClass.Name, member.Name, Name);
+                Enums.Add(parent, [clazz.SpecialEnumClass]);
+            }
+        }
+
+        foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum"))) {
+            var enums = Enums.GetValueOrDefault(member.Name, []);
+            var clazz = new AlvaoClass(member.Name, member.Url, member.Type, this, enums);
+
+            try {
+                clazz.Process();
+            } catch (Exception e) {
+                Logger.LogError("Cannot process class ({}) [{}] {{{}}}", e.Message, member.Name, Name);
+                continue;
             }
         }
     }
 
-    private void ProcessClases()
-    {
-        var classes = HtmlDocument.DocumentNode.SelectNodes("//*[@id=\"tocNav\"]/div[@class='toclevel2']");
-        if (classes == null) return;
+    private void AssertDocumentIsNamespace() {
+        Logger.LogDebug("Verifying HTML document is namespace {{{}}}", Name);
+        var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
+        if (h1 == null) {
+            Logger.LogError("Page does not have h1 {{{}}}", Name);
+            throw new Exception($"Page does not have h1 {Name}");
+        }
 
-        foreach (var cl in classes)
-        {
-            AlvaoClass.ProcessClass(cl, this);
+        if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}")) {
+            Logger.LogError("Page contains different namespace {{{}}}", Name);
+            throw new Exception($"Page contains different namespace {Name}");
         }
     }
+
+    internal static string SanitizeMemberType(string type) {
+        return type switch {
+            "Classes" => "Class",
+            "Interfaces" => "Interface",
+            "Enums" => "Enum",
+            "Structs" => "Struct",
+            _ => "Class",
+        };
+    }
+
+    #region DTOs
+    internal record MemberProperties() {
+        public string Type { get; set; }
+        public string Name { get; set; }
+        public string Url { get; set; }
+    }
+    #endregion DTOs
 }

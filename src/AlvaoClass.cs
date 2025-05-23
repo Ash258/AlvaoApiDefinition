@@ -1,48 +1,58 @@
 using System.Text;
-using System.Text.RegularExpressions;
 using HtmlAgilityPack;
+using Microsoft.Extensions.Logging;
+using Microsoft.Kiota.Abstractions.Extensions;
+using static AlvaoScrapper.Helpers;
 
-namespace AlvaoScapper;
+namespace AlvaoScrapper;
 
-public class AlvaoClass
-{
-    public enum ClassType
-    {
-        CLASS,
-        INTERFACE,
-    }
-    public AlvaoNamespace Namespace { get; set; }
-    public string NamespaceName { get; set; }
-    public string Version { get; set; }
-    public string Name { get; set; }
-    public string Summary { get; set; }
-    public ClassType Type { get; set; }
+public class AlvaoClass {
+    public ILogger Logger;
+    public ILogger MpLogger;
+
+    public string Type { get; set; }
     public string? FullUrl { get; set; }
     public string LocalHtmlFile { get; set; }
     public string FinalCsFile { get; set; }
+    public List<ScopeBoundary> Boundaries { get; set; }
+
+    public AlvaoNamespace Namespace { get; set; }
+    public string NamespaceName { get; set; }
+    public string Name { get; set; }
+    public string Summary { get; set; }
     public HtmlDocument HtmlDocument { get; set; }
-    public string Definition { get; set; } = "";
     public List<string> Usings { get; set; }
+    public string Definition { get; set; } = "";
+    public List<DotnetConstructor> Constructors { get; set; }
+    public DotnetEnum? SpecialEnumClass { get; set; }
+    public List<DotnetEnum> Enums { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Properties { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Fields { get; set; }
+    public List<DotnetPropertyOrFieldOrEvent> Events { get; set; }
+    public List<DotnetMethod> Methods { get; set; }
 
-    public List<string> Enums { get; set; }
-    public List<string> Properties { get; set; }
-    public List<string> Fields { get; set; }
-    public List<string> Events { get; set; }
-    public List<string> Constructors { get; set; }
-    public List<string> Methods { get; set; }
+    // sb.ToString() of other classes
+    public List<string> InnerClasses { get; set; }
 
-    public AlvaoClass(string href, string namespaceName, string name)
-    {
-        Name = name.Replace(" Class", "").Replace(" Interface", "").Trim();
-        Type = name.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS;
-        FullUrl = $"{Helpers.BASE_HTML_URL}/{href.Split("/").Last()}";
-        NamespaceName = namespaceName;
-        LocalHtmlFile = $"{Helpers.LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
-        HtmlDocument = Helpers.LoadDocument(FullUrl, LocalHtmlFile);
-        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{Name}.cs";
+    public bool IsEnum { get; set; }
 
-        Summary = Helpers.GetSummary(HtmlDocument);
-        Version = "";
+    public AlvaoClass(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums) {
+        Logger = CreateLogger<AlvaoClass>();
+        MpLogger = CreateLogger<MonkeyPatchLogger>();
+
+        Name = name;
+        Type = memberType;
+        IsEnum = String.Equals(Type, "Enum");
+        FullUrl = $"{BASE_HTML_URL}/{href.Split("/").Last()}";
+        Namespace = ns;
+        NamespaceName = ns.Name;
+        LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
+        HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
+        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+
+        Summary = GetSummary(HtmlDocument);
+        SpecialEnumClass = null;
+        Boundaries = [];
         Usings = [];
         Fields = [];
         Properties = [];
@@ -50,300 +60,732 @@ public class AlvaoClass
         Methods = [];
         Events = [];
         Constructors = [];
+        InnerClasses = [];
+
+        if (enums != null && enums.Length > 0) {
+            Enums.AddRange(enums);
+        }
     }
 
-    public AlvaoClass(bool manual, string namespaceName, string name, string summary)
-    {
-        Name = name.Replace(" Class", "").Replace(" Interface", "").Trim();
-        Type = name.EndsWith("Interface") ? ClassType.INTERFACE : ClassType.CLASS;
-        NamespaceName = namespaceName;
-        FinalCsFile = $"{namespaceName.Replace(".", "/")}/{Name}.cs";
+    public AlvaoClass(
+        string name,
+        string memberType,
+        AlvaoNamespace ns,
+        string summary,
+        string definition,
+        List<string> usings,
+        List<DotnetConstructor> constructors,
+        List<DotnetMethod> methods,
+        List<DotnetPropertyOrFieldOrEvent> properties,
+        List<DotnetPropertyOrFieldOrEvent> fields
+    ) {
+        Logger = CreateLogger<AlvaoClass>();
+        MpLogger = CreateLogger<MonkeyPatchLogger>();
 
+        Namespace = ns;
+        Name = name;
+        Type = memberType;
+        IsEnum = String.Equals(Type, "Enum");
         Summary = summary;
-        Version = "";
-        Usings = [];
-        Fields = [];
-        Properties = [];
+        Definition = definition;
+        FullUrl = string.Empty;
+        NamespaceName = ns.Name;
+        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+
         Enums = [];
-        Methods = [];
         Events = [];
+        InnerClasses = [];
 
-        Constructors = [];
-        LocalHtmlFile = "";
-        HtmlDocument = null;
+        Usings = usings;
+        Constructors = constructors;
+        Fields = fields;
+        Properties = properties;
+        Methods = methods;
+        SpecialEnumClass = null;
+
+        Boundaries = [];
     }
 
-    internal static void ProcessClass(HtmlNode cl, AlvaoNamespace an)
-    {
-        var aNode = cl.SelectNodes(".//a").Last();
-        var className = aNode.GetAttributeValue("title", "");
-        if (!className.EndsWith(" Class") && !className.EndsWith(" Interface")) return;
+    #region Helper functions
+    private int ExtractHeading1Index(HtmlNodeCollection elements) {
+        var h1Index = elements.FindIndex(e => e.Name.Equals("h1"));
+        if (h1Index == -1) {
+            Logger.LogError("Page does not specify h1 element [{}] {{{}}}", Name, NamespaceName);
+            throw new Exception($"Page does not specify h1 element {Name} {NamespaceName}");
+        }
 
-        var clazz = new AlvaoClass(aNode.GetAttributeValue("href", ""), an.Name, className);
-        clazz.Process();
+        return h1Index;
     }
 
-    public void Process()
-    {
-        Console.WriteLine($"  Processing {Name} Class");
+    private List<int> ExtractH2Indexes(HtmlNodeCollection elements) {
+        // Constructors, Properties, Fields, Events, Methods are h2
+        Logger.LogInformation("Finding class member groups [{}] {{{}}}", Name, NamespaceName);
+        var h2Indexes = elements
+            .Select((f, i) => new { f, i })
+            .Where(x => x.f.Name == "h2")
+            .Select(x => x.i).ToList();
 
-        // TODO: Drop
-        if (MonkeyPatch.IsInvalidClass(NamespaceName, Name)) return;
+        if (h2Indexes.Count == 0) {
+            Logger.LogInformation("Class does not expose any members [{}] {{{}}}", Name, NamespaceName);
+        }
 
-        var _def = Helpers.ExtractObjectDefinition(HtmlDocument);
-        if (_def == null) return;
+        Logger.LogDebug("There are {} h2 elements [{}] {{{}}}", h2Indexes.Count, Name, NamespaceName);
 
-        Definition = Helpers.SanitizeXmlToString(_def);
-        Helpers.ProcessVersion(HtmlDocument);
-        ProcessProperties();
-        ProcessFields();
-        ProcessEvents();
-        ProcessConstructors();
-        ProcessMethods();
-
-        // TODO: Drop
-        MonkeyPatch.Using(this);
-
-        State.Classes.Add($"{NamespaceName}.{Name}", this);
-        ProduceFinalCsFile();
+        return h2Indexes;
     }
 
-    private static StringBuilder ProcessDocumentationComments(string link, HtmlDocument document, out bool skip)
-    {
-        skip = false;
-        var _summary = Helpers.GetSummary(document);
-        if (_summary.Contains("Obsolete") || _summary.Contains("obsolete")) skip = true;
-        var _sb = new StringBuilder();
-        if (!_summary.Equals("")) _sb.AppendLine(_summary);
-        _sb.AppendLine(Helpers.GenerateSeeDoc(link));
-
-        return _sb;
+    private static string SanitizeClassName(HtmlNode element) {
+        return TrimInnerText(element)
+            .Replace("Class ", "")
+            .Replace("Interface ", "")
+            .Replace("Enum ", "")
+            .Replace("Struct ", "")
+            .Trim();
     }
 
-    public void ProcessProperties()
-    {
-        var properties = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"PropertyList\"]/tr/td[2]/a");
-        if (properties == null) return;
+    private void AssertCorrectClassPage(string className) {
+        Logger.LogDebug("Asserting class [{}] {{{}}}", Name, NamespaceName);
+        if (className.Equals(Name)) return;
 
-        foreach (var p in properties)
-        {
-            var propName = Helpers.ExtractObjectName(p);
-            Console.WriteLine($"    Processing {propName} Property");
+        Logger.LogError("Page specify different class: {} [{}] {{{}}}", className, Name, NamespaceName);
+        throw new Exception($"Page specify different class: {className} {Name} {NamespaceName}");
+    }
 
-            // TODO: Drop
-            if (MonkeyPatch.IsInvalidProperty(NamespaceName, Name, propName)) return;
+    private void AssertClassBoundaries(HtmlNodeCollection elements) {
+        foreach (var b in Boundaries.OrderBy(x => x.start)) {
+            Logger.LogDebug("{}", b.DebugFormat(elements[b.end].Name));
 
-            var propHtmlBaseFileName = p.GetAttributeValue("href", "").Split("/").Last();
-            var propLink = $"{Helpers.BASE_HTML_URL}/{propHtmlBaseFileName}";
-            var propLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{propHtmlBaseFileName}";
-            if (Helpers.IsInvalidAlvaoUrl(propLink)) continue;
+            if (!elements[b.start].Name.Equals(b.name.Split(" ")[0])) {
+                Logger.LogError("Wrong last element of scope {} [{}] {{{}}}", b.name.Split(" ")[0], Name, NamespaceName);
+            }
+        }
+        if (Boundaries[0].end == Boundaries[^1].end) return;
 
-            var propDocument = Helpers.LoadDocument(propLink, propLocalHtml);
-            var _sb = ProcessDocumentationComments(propLink, propDocument, out bool obsolete);
-            if (obsolete) continue;
+        Logger.LogError("Page boundaries are incorrect [{}] {{{}}}", Name, NamespaceName);
+        throw new Exception($"Page boundaries are incorrect: {Name} {NamespaceName}");
+    }
 
-            var propDef = Helpers.ExtractObjectDefinition(propDocument);
-            if (propDef == null) continue;
+    private Dictionary<string, List<HtmlNode>> SplitElementsIntoClassGroups(HtmlNodeCollection elements, int h1IndexStart, int h1IndexEnd, List<int> h2Indexes) {
+        Logger.LogDebug("Processing class groups [{}] {{{}}}", Name, NamespaceName);
+        var groupName = "Class";
+        // Class specific items are saved into group "Class"
+        Dictionary<string, List<HtmlNode>> classGroups = [];
+        var isEmpty = h2Indexes.Count == 0;
+        if (isEmpty) h2Indexes = [h1IndexStart];
 
-            // TODO: Drop
-            if (Helpers.IsClass(this, "Alvao.API.Common.Model", "ColumnValue") && propName.Equals("DataType"))
-                propDef = propDef.Replace(" Database.ValueDataType ", " Alvao.API.Common.Database.ValueDataType ");
+        for (int i = 0; i < h2Indexes.Count; i++) {
+            Logger.LogDebug("Processing class group {} [{}] {{{}}}", i, Name, NamespaceName);
+            int h2IndexStart = h2Indexes[i];
+            int h2IndexEnd = i == h2Indexes.Count - 1
+                ? h1IndexEnd // Completely last sibling element
+                : h2Indexes[i + 1] - 1; // Element before next h2
 
-            propDef = Helpers.SanitizeXmlToString(propDef);
+            // Collect h1 scoped elements when processing first h2 element (first h1 index to first h2 index - 1)
+            if (i == 0) {
+                var skip = isEmpty
+                    ? h1IndexEnd - h1IndexStart
+                    : h2IndexStart - h1IndexStart + 1;
 
-            // TODO: Drop
-            MonkeyPatch.UsingProperties(this, propDef);
+                Logger.LogDebug("Processing class related elements [{}] {{{}}}", Name, NamespaceName);
+                classGroups.Add(groupName, [.. elements.Skip(h1IndexStart).Take(skip)]);
+                if (isEmpty) break;
+            }
 
-            _sb.AppendLine(propDef);
-            Properties.Add(_sb.ToString());
+            groupName = TrimInnerText(elements[h2IndexStart]);
+
+            Logger.LogDebug("Adding class group {} [{}] {{{}}}", groupName, Name, NamespaceName);
+            // Add self and all elements before next h2
+            classGroups.Add(groupName, [.. elements.Skip(h2IndexStart).Take(h2IndexEnd - h2IndexStart + 1)]);
+
+            // Boundaries contains all elements between self and next element (including self and exclude next same level element)
+            Boundaries.Add(new ScopeBoundary(
+                "h2 - " + elements[h2IndexStart].InnerText.Trim(),
+                h2IndexStart,
+                h2IndexEnd
+            ));
+        }
+
+        Logger.LogInformation("Found {} class members [{}] {{{}}}", classGroups.Count, Name, NamespaceName);
+
+        return classGroups;
+    }
+
+    // Returns first and last index of specific element name
+    private static (List<int>, int) FindIndexesOfElement(List<HtmlNode> elements, string element) {
+        var indexes = elements
+            .Select((f, i) => new { f, i })
+            .Where(x => x.f.Name == element)
+            .Select(x => x.i).ToList();
+        var lastIndex = elements.Count;
+
+        return (indexes, lastIndex);
+    }
+
+    // Extract name, summary and definition from elements
+    private (string, string, string) ExtractMemberInformation(List<HtmlNode> elements, string memberType) {
+        var _sum = string.Empty;
+        var _def = string.Empty;
+
+        // Name handling
+        var _name = ReplaceEndLinesWithSpace(TrimInnerText(elements[0]));
+
+        // Summary handling
+        try {
+            if (!new[] { "markdown", "summary" }.All(elements[1].GetClasses().Contains)) {
+                Logger.LogWarning("{} member {} does not have valid markdown summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+            }
+            _sum = ReplaceEndLinesWithSpace(TrimInnerText(elements[1].SelectSingleNode(".//p")));
+        } catch {
+            Logger.LogInformation("{} member {} does not specify summary [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+        }
+
+        // Definition extraction
+        try {
+            if (!elements[3].GetClasses().Contains("codewrapper")) {
+                Logger.LogWarning("{} member {} does not have valid definition element [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+            }
+            _def = SanitizeXmlToString(TrimInnerText(elements[3].SelectSingleNode(".//pre/code")));
+        } catch {
+            Logger.LogWarning("{} member {} definition extraction failed [{}] {{{}}}", memberType, _name, Name, NamespaceName);
+        }
+
+        return (_name, _sum, _def);
+    }
+    #endregion Helper functions
+
+    internal void RestructuralizeClassDocument() {
+        Logger.LogInformation("Processing the class document [{}] {{{}}}", Name, NamespaceName);
+        // Get all elements in main article container
+        var elements = HtmlDocument.DocumentNode.SelectNodes("//article/*");
+        Logger.LogDebug("There are {} total elements [{}] {{{}}}", elements.Count, Name, NamespaceName);
+
+        AssertDocumentIsClass();
+
+        // First element should be h1
+        var h1IndexStart = ExtractHeading1Index(elements);
+        var h1IndexEnd = elements.Count - 1;
+        var className = SanitizeClassName(elements[h1IndexStart]);
+
+        AssertCorrectClassPage(className);
+
+        elements[h1IndexEnd].SetAttributeValue("isLastElement", "true");
+        Boundaries = [new ScopeBoundary("h1", h1IndexStart, h1IndexEnd)];
+        List<int> h2Indexes = ExtractH2Indexes(elements);
+        Dictionary<string, List<HtmlNode>> classGroups = SplitElementsIntoClassGroups(elements, h1IndexStart, h1IndexEnd, h2Indexes);
+
+        AssertClassBoundaries(elements);
+
+        foreach (var gr in classGroups) {
+            Logger.LogDebug("Class member {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
+
+            switch (gr.Key) {
+                case "Properties":
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Property");
+                    break;
+                case "Fields":
+                    if (IsEnum) {
+                        ProcessEnumFields(gr.Value);
+                        break;
+                    }
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Field");
+                    break;
+                case "Events":
+                    ProcessPropertiesOrFieldsOrEvents(gr.Value, "Event");
+                    break;
+                case "Constructors":
+                    ProcessConstructors(gr.Value);
+                    break;
+                case "Methods":
+                    ProcessMethodsOrOperators(gr.Value, "Method");
+                    break;
+                case "Operators":
+                    ProcessMethodsOrOperators(gr.Value, "Operator");
+                    break;
+                case "Class":
+                    // ? TODO: Do not rely on hardcoded indexes
+                    Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
+                    Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
+                    break;
+                default:
+                    Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping class group {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
+                    break;
+            }
         }
     }
 
-    public void ProcessFields()
-    {
-        var fields = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"FieldList\"]/tr/td[2]/a");
-        if (fields == null) return;
+    private void ProcessEnumFields(List<HtmlNode> elements) {
+        Logger.LogDebug("Processing enum fields[{}] {{{}}}", Name, NamespaceName);
+        (List<int> h2Indexes, int lastIndex) = FindIndexesOfElement(elements, "h2");
 
-        foreach (var f in fields)
-        {
-            var fieldName = Helpers.ExtractObjectName(f);
-            Console.WriteLine($"    Processing {fieldName} Field");
+        // Print warning if there are other fields, to adjust the implementation if such enum exists
+        if (h2Indexes.Count > 1) {
+            Logger.LogWarning("Enum has other members [{}] {{{}}}", Name, NamespaceName);
+            return;
+        }
 
-            var fieldHtmlBaseFileName = f.GetAttributeValue("href", "").Split("/").Last();
-            var fieldLink = $"{Helpers.BASE_HTML_URL}/{fieldHtmlBaseFileName}";
-            var fieldLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{fieldHtmlBaseFileName}";
-            if (Helpers.IsInvalidAlvaoUrl(fieldLink)) continue;
+        // There should be exactly 1 element after h2, that contain all fields
+        var dl = elements.Skip(1).Take(1).ToList();
 
-            var fieldDocument = Helpers.LoadDocument(fieldLink, fieldLocalHtml);
-            var _sb = ProcessDocumentationComments(fieldLink, fieldDocument, out bool obsolete);
-            if (obsolete) continue;
+        // Currently we assume, that the there will be next element with dt
+        Logger.LogDebug("Processing enum field parameters [{}] {{{}}}", Name, NamespaceName);
+        var enumFields = dl[0].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
 
-            var fieldDef = Helpers.ExtractObjectDefinition(fieldDocument);
-            if (fieldDef == null) continue;
-            fieldDef = Helpers.SanitizeXmlToString(fieldDef);
+        Logger.LogDebug("Enum has {} fields [{}] {{{}}}", enumFields.Count, Name, NamespaceName);
+        SpecialEnumClass = new DotnetEnum() {
+            Name = Name,
+            Summary = Summary,
+            Definition = Definition,
+            Fields = enumFields
+        };
+        Logger.LogDebug("Finished processing enum fields [{}] {{{}}}", Name, NamespaceName);
+    }
 
-            // TODO: Drop
-            if (fieldName.Equals("EmailFormat")) fieldDef = fieldDef.Replace("\"]", "\"\"]");
-            if (new[] { "EmailFormat", "EmailPattern" }.Contains(fieldName)) fieldDef = fieldDef.Replace("= \"", "= @\"");
+    private void ProcessPropertiesOrFieldsOrEvents(List<HtmlNode> elements, string type) {
+        var typePlural = type switch {
+            "Field" => "Fields",
+            "Property" => "Properties",
+            "Event" => "Events",
+            _ => throw new NotImplementedException(),
+        };
 
-            _sb.AppendLine(fieldDef);
-            Fields.Add(_sb.ToString());
+        Logger.LogDebug("Processing class {} [{}] {{{}}}", typePlural.ToLower(), Name, NamespaceName);
+        (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
+
+        for (var i = 0; i < h3Indexes.Count; ++i) {
+            var end = i == h3Indexes.Count - 1
+                ? lastIndex
+                : h3Indexes[i + 1];
+
+            Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
+            var propertyElements = elements[h3Indexes[i]..end];
+
+            (var _name, var _sum, var _def) = ExtractMemberInformation(propertyElements, type);
+
+            var item = new DotnetPropertyOrFieldOrEvent() {
+                Name = _name,
+                Summary = _sum,
+                Definition = _def,
+            };
+
+            switch (type) {
+                case "Field":
+                    Fields.Add(item);
+                    break;
+                case "Property":
+                    MonkeyPatch.SpecificProperty(this, item, MpLogger);
+                    Properties.Add(item);
+                    break;
+                case "Event":
+                    Events.Add(item);
+                    break;
+            }
         }
     }
 
-    private void ProcessEvents()
-    {
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"EventList\"]/tr/td[2]/a");
-        if (elements == null) return;
+    private void ProcessConstructors(List<HtmlNode> elements) {
+        Logger.LogInformation("Processing class constructors [{}] {{{}}}", Name, NamespaceName);
+        (List<int> h3Indexes, int lastIndex) = FindIndexesOfElement(elements, "h3");
 
-        foreach (var e in elements)
-        {
-            var _name = Helpers.ExtractObjectName(e);
-            Console.WriteLine($"    Processing {_name} Method");
+        Logger.LogInformation("Found {} constructors [{}] {{{}}}", h3Indexes.Count, Name, NamespaceName);
 
-            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
-            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
-            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-            if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
+        for (var i = 0; i < h3Indexes.Count; ++i) {
+            var end = i == h3Indexes.Count - 1
+                ? lastIndex // Take last element in the whole group
+                : h3Indexes[i + 1] - 1; // Take next // ! TODO: Realy - 1???
 
-            var _document = Helpers.LoadDocument(_link, _localHtml);
-            var _sb = ProcessDocumentationComments(_link, _document, out bool obsolete);
-            if (obsolete) continue;
+            Logger.LogDebug("Constructor spans from {} to {} [{}] {{{}}}", h3Indexes[i], end, Name, NamespaceName);
+            var currentElements = elements[h3Indexes[i]..end];
 
-            var _definition = Helpers.ExtractObjectDefinition(_document);
-            if (_definition == null) continue;
+            (var _name, var _sum, var _def) = ExtractMemberInformation(currentElements, "Constructor");
+            (var h4Indexes, var lastH4element) = FindIndexesOfElement(currentElements, "h4");
 
-            _sb.AppendLine(Helpers.SanitizeXmlToString(_definition));
-            Events.Add(_sb.ToString());
-        }
-    }
+            Logger.LogDebug("Found {} constructor nested properties [{}] {{{}}}", h4Indexes.Count, Name, NamespaceName);
 
-    private void ProcessConstructors()
-    {
-        var constructors = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"ConstructorList\"]/tr/td[2]/a");
-        if (constructors == null) return;
+            List<string> examples = [];
+            List<(string, string)> parameters = [];
+            for (var h4i = 0; h4i < h4Indexes.Count; ++h4i) {
+                var h4end = h4i == h4Indexes.Count - 1
+                    ? lastH4element // Take last element of the current elements in h3 group
+                    : h4Indexes[h4i + 1];
 
-        foreach (var c in constructors)
-        {
-            var constrName = Helpers.ExtractObjectName(c);
-            Console.WriteLine($"    Processing {constrName} Constructor");
+                var groupName = currentElements[h4Indexes[h4i]].InnerText.Trim();
+                Logger.LogDebug("Constructor group {} spans from {} to {} [{}] {{{}}}", groupName, h3Indexes[i], end, Name, NamespaceName);
+                var h4CurrentElements = currentElements[h4Indexes[h4i]..h4end];
 
-            var constrHtmlBaseFileName = c.GetAttributeValue("href", "").Split("/").Last();
-            var constrLink = $"{Helpers.BASE_HTML_URL}/{constrHtmlBaseFileName}";
-            var constrLocalHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{constrHtmlBaseFileName}";
-            if (Helpers.IsInvalidAlvaoUrl(constrLink)) continue;
-
-            var constrDocument = Helpers.LoadDocument(constrLink, constrLocalHtml);
-            var _sb = ProcessDocumentationComments(constrLink, constrDocument, out bool obsolete);
-            if (obsolete) continue;
-
-            var constrDef = Helpers.ExtractObjectDefinition(constrDocument);
-            if (constrDef == null) continue;
-
-            constrDef = Helpers.SanitizeXmlToString(constrDef);
-
-            // TODO: Drop
-            if (constrDef.Contains(" StreamingContext ")) Usings.Add("System.Runtime.Serialization");
-            if (constrDef.Contains(" SerializationInfo ")) Usings.Add("System.Runtime.Serialization");
-
-            _sb.AppendLine(constrDef);
-
-            Constructors.Add(_sb.ToString());
-        }
-    }
-
-    private void ProcessMethods()
-    {
-        var elements = HtmlDocument.DocumentNode.SelectNodes("//table[@id=\"MethodList\"]/tr/td[2]/a");
-        if (elements == null) return;
-
-        bool emailQueueProcessed = false;
-
-        foreach (var e in elements)
-        {
-            var _name = Helpers.ExtractObjectName(e);
-
-            // TODO: Drop
-            if (emailQueueProcessed) continue;
-            if (Helpers.IsClass(this, "Alvao.API.Common", "Email") && _name.Contains("Queue")) emailQueueProcessed = true;
-            if (MonkeyPatch.IsInvalidMethod(NamespaceName, Name, _name)) continue;
-
-            Console.WriteLine($"    Processing {_name} Method");
-
-            var _htmlBaseFileName = e.GetAttributeValue("href", "").Split("/").Last();
-            var _link = $"{Helpers.BASE_HTML_URL}/{_htmlBaseFileName}";
-            var _localHtml = $"{Helpers.LOCAL_HTML_FOLDER}/{_htmlBaseFileName}";
-            if (Helpers.IsInvalidAlvaoUrl(_link)) continue;
-
-            var _document = Helpers.LoadDocument(_link, _localHtml);
-            var _sb = ProcessDocumentationComments(_link, _document, out bool obsolete);
-            if (obsolete) continue;
-
-            var _definition = Helpers.ExtractObjectDefinition(_document);
-            if (_definition == null) continue;
-            if (_definition.Contains("ObsoleteAttribute")) continue;
-
-            var _params = _document.DocumentNode.SelectSingleNode("//*[@id=\"IDBSection\"]/dl");
-            if (_params != null)
-            {
-                _sb.AppendLine($"///");
-                var _dts = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dt");
-                var _dds = _document.DocumentNode.SelectNodes("//*[@id=\"IDBSection\"]/dl/dd");
-
-                for (int i = 0; i < _dts.Count; i++)
-                {
-                    var _var = _dts[i].SelectSingleNode(".//span")?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
-                    var _description = _dds[i]?.InnerText.Trim().Replace("&lt;", "<").Replace("&gt;", ">").Replace("&nbsp;", " ");
-                    if (_description == null) continue;
-
-                    _description = Helpers.ReplaceEndLinesWithSpace(_description);
-                    _sb.AppendLine($"/// <param name=\"{_var}\">{_description}</param>");
+                switch (groupName) {
+                    case "Parameters":
+                        Logger.LogDebug("Processing constructor parameters [{}] {{{}}}", Name, NamespaceName);// This has to be dl
+                        bool nameOnly = false;
+                        var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+                        List<string> parameterSums = [];
+                        // Parameters do not need to specify description: https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_System_String_System_String
+                        try {
+                            parameterSums = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
+                        } catch {
+                            nameOnly = true;
+                        }
+                        if (parameterDefs.Count != parameterSums.Count) {
+                            Logger.LogDebug("Mismatch between constructor parameter names and description [{}] {{{}}}", Name, NamespaceName);
+                            nameOnly = true;
+                        }
+                        for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex) {
+                            var _parameterName = parameterDefs[paramIndex].Trim();
+                            Logger.LogDebug("Adding method parameter {} [{}] {{{}}}", _parameterName, Name, NamespaceName);
+                            string name = nameOnly ? string.Empty : ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
+                            parameters.Add((_parameterName, name));
+                        }
+                        break;
+                    case "Examples":
+                        // ? TODO: Investigate if there are more examples somewhere
+                        Logger.LogDebug("Processing constructor examples [{}] {{{}}}", Name, NamespaceName);
+                        // var count = 1;
+                        if (h4CurrentElements.Count == 2) {
+                            // ? TODO: Check if there are example names, descriptions or something like that
+                            try {
+                                examples.Add(TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code")));
+                            } catch {
+                                Logger.LogWarning("Cannot process examples of constructor {} [{}] {{{}}}", _name, Name, NamespaceName);
+                            }
+                        }
+                        break;
+                    default:
+                        break;
                 }
             }
 
-            _definition = Helpers.SanitizeXmlToString(_definition);
-
-            // TODO: Drop
-            _definition = MonkeyPatch.Methods(this, _name, _definition);
-
-            _sb.AppendLine($"{_definition}{Helpers.GenerateMethodBody(Type)}");
-            Methods.Add(_sb.ToString());
+            var construct = new DotnetConstructor() {
+                Name = _name,
+                Summary = _sum,
+                Definition = _def,
+                Parameters = parameters,
+                Examples = examples,
+            };
+            MonkeyPatch.SpecificConstructor(this, construct, MpLogger);
+            Constructors.Add(construct);
         }
     }
 
-    public void ProduceFinalCsFile()
-    {
-        var sb = new StringBuilder();
+    private void ProcessMethodsOrOperators(List<HtmlNode> elements, string type) {
+        string typePlural = $"{type}s";
 
-        if (Usings.Count != 0)
-        {
+        Logger.LogDebug("Processing class {} [{}] {{{}}}", typePlural.ToLower(), Name, NamespaceName);
+        (var h3Indexes, var h3LastIndex) = FindIndexesOfElement(elements, "h3");
+
+        Logger.LogDebug("Found {} {} [{}] {{{}}}", h3Indexes.Count, typePlural.ToLower(), Name, NamespaceName);
+
+        for (var i = 0; i < h3Indexes.Count; ++i) {
+            var end = i == h3Indexes.Count - 1
+                ? h3LastIndex
+                : h3Indexes[i + 1];
+
+            Logger.LogDebug("{} spans from {} to {} [{}] {{{}}}", type, h3Indexes[i], end, Name, NamespaceName);
+            var methodElements = elements[h3Indexes[i]..end];
+
+            (var _name, var _sum, var _def) = ExtractMemberInformation(methodElements, type);
+            (var h4Indexes, var h4LastIndex) = FindIndexesOfElement(methodElements, "h4");
+
+            Logger.LogDebug("Found {} {} nested properties [{}] {{{}}}", h4Indexes.Count, type.ToLower(), Name, NamespaceName);
+
+            var ret = string.Empty;
+            var remarks = string.Empty;
+            List<(string, string)> examples = [];
+            List<(string, string)> exceptions = [];
+            List<(string, string)> parameters = [];
+
+            for (var methodPropIndex = 0; methodPropIndex < h4Indexes.Count; ++methodPropIndex) {
+                var h4end = methodPropIndex == h4Indexes.Count - 1
+                    ? h4LastIndex
+                    : h4Indexes[methodPropIndex + 1];
+
+                var h4CurrentElements = methodElements[h4Indexes[methodPropIndex]..h4end];
+
+                var methodGroupName = TrimInnerText(h4CurrentElements[0]);
+                Logger.LogInformation("Processing group {} of {} {} [{}] {{{}}}", methodGroupName, _name, type.ToLower(), Name, NamespaceName);
+
+                switch (methodGroupName) {
+                    case "Parameters":
+                        Logger.LogDebug("Processing {} parameters [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        // This has to be dl
+                        var parameterDefs = h4CurrentElements[1].SelectNodes(".//dt/code").Select(x => x.InnerText).ToList();
+                        List<string> parameterSums = [];
+                        bool nameOnly = false;
+                        // Parameters do not need to specify description: https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_System_String_System_String
+                        try {
+                            parameterSums = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
+                        } catch {
+                            nameOnly = true;
+                        }
+                        if (parameterDefs.Count != parameterSums.Count) {
+                            Logger.LogDebug("Mismatch between {} parameter names and description [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                            nameOnly = true;
+                        }
+                        for (var paramIndex = 0; paramIndex < parameterDefs.Count; ++paramIndex) {
+                            var _parameterName = parameterDefs[paramIndex].Trim();
+                            Logger.LogDebug("Adding {} parameter {} [{}] {{{}}}", type.ToLower(), _parameterName, Name, NamespaceName);
+                            string name = nameOnly ? string.Empty : ReplaceEndLinesWithSpace(parameterSums[paramIndex].Trim());
+                            parameters.Add((_parameterName, name));
+                        }
+                        break;
+                    case "Examples":
+                        // ? TODO: Investigate if there are more examples somewhere
+                        // Only example code
+                        Logger.LogDebug("Processing {} examples [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        var count = 1;
+                        if (h4CurrentElements.Count == 2) {
+                            // ? TODO: Check if there are example names, descriptions or something like that
+                            try {
+                                examples.Add((count.ToString(), TrimInnerText(h4CurrentElements[1].SelectSingleNode(".//code"))));
+                            } catch {
+                                Logger.LogWarning("Cannot process examples of {} {} [{}] {{{}}}", type.ToLower(), _name, Name, NamespaceName);
+                            }
+                        }
+                        break;
+                    case "Remarks":
+                        Logger.LogDebug("Processing {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        try {
+                            remarks = h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First();
+                        } catch {
+                            Logger.LogDebug("Cannot process {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        }
+                        break;
+                    case "Returns":
+                        // ? TODO: Investigate if there are some returns described
+                        Logger.LogDebug("Processing {} returns [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        try {
+                            var returnType = h4CurrentElements[1].SelectNodes(".//dt").Select(x => x.InnerText).ToList();
+                            var sum = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
+                            ret = sum[0].Trim();
+                        } catch {
+                            Logger.LogDebug("Cannot process {} returns [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        }
+                        break;
+                    case "Exceptions":
+                        Logger.LogDebug("Processing {} exceptions [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+
+                        var exceptionsDefs = h4CurrentElements[1].SelectNodes(".//dt/a").Select(x => x.InnerText).ToList();
+                        List<string> exceptionsSumarries = [];
+                        try {
+                            // TODO: Try to parse the refs
+                            exceptionsSumarries = [.. h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText)];
+                        } catch {
+                            Logger.LogWarning("Cannot process {} exception summaries [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                            break;
+                        }
+                        if (exceptionsDefs.Count != exceptionsSumarries.Count) {
+                            Logger.LogWarning("Mismatch between {} exception names and description [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
+                        }
+                        for (var paramIndex = 0; paramIndex < exceptionsDefs.Count; ++paramIndex) {
+                            var exceptionName = exceptionsDefs[paramIndex].Trim();
+                            Logger.LogDebug("Adding {} exceptions {} [{}] {{{}}}", type.ToLower(), exceptionName, Name, NamespaceName);
+                            exceptions.Add((exceptionName, ReplaceEndLinesWithSpace(exceptionsSumarries[paramIndex].Trim())));
+                        }
+                        break;
+                    case "Type Parameters":
+                        // No need to process. Just info debug it if there are multiple classes (currently only 1)
+                        Logger.LogInformation("!!!!!!!!!!!!!!!!!!!Skipping group {} of {} {} [{}] {{{}}}", methodGroupName, type.ToLower(), _name, Name, NamespaceName);
+                        break;
+                    default:
+                        Logger.LogWarning("Skipping group {} of {} {} [{}] {{{}}}", methodGroupName, type.ToLower(), _name, Name, NamespaceName);
+                        break;
+                }
+            }
+
+            var method =
+                new DotnetMethod() {
+                    Name = _name.Split("(")[0],
+                    Summary = _sum,
+                    Definition = _def,
+                    Parameters = parameters,
+                    Exceptions = exceptions,
+                    Returns = ret,
+                    Remarks = remarks,
+                    Examples = examples,
+                };
+            MonkeyPatch.SpecificMethod(this, method, MpLogger);
+            Methods.Add(method);
+        }
+    }
+
+    internal void Process() {
+        RestructuralizeClassDocument();
+
+        if (IsEnum) {
+            Logger.LogDebug("Skipping final cs file produce for Enum [{}] {{{}}}", Name, NamespaceName);
+            return;
+        }
+
+        MonkeyPatch.PatchUsings(this, MpLogger);
+        MonkeyPatch.CreateMethods(this, MpLogger);
+
+        ProduceFinalCsFile();
+    }
+
+    private void AssertDocumentIsClass() {
+        Logger.LogDebug("Verifying HTML document is class");
+        var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
+        if (h1 == null) {
+            Logger.LogError("Page does not have h1 [{}] {{{}}}", Name, NamespaceName);
+            throw new Exception($"Page does not have h1: {Name} {NamespaceName}");
+        }
+
+        var actual = TrimInnerText(h1);
+        var expected = $"{Type} {Name}";
+        var fqdnId = NamespaceName.Replace(".", "_");
+        fqdnId = $"{fqdnId}_{Name.Replace(".", "_")}";
+
+        if (!h1.GetAttributeValue("id", "none").Equals(fqdnId) || !actual.Equals(expected)) {
+            Logger.LogError("Page contains different class: Expected {}, Actual: {} [{}] {{{}}}", expected, actual, Name, NamespaceName);
+            throw new Exception($"Page contains different class: Expected {expected}, Actual: {actual}: {Name} {NamespaceName}");
+        }
+    }
+
+    public void ProduceFinalCsFile(bool standaloneEnum = false) {
+        Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
+
+        MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
+        var sb = new StringBuilder();
+        var nestedClass = false;
+        AlvaoClass? parentClass = null;
+
+        // It is nested class. It need to find the parent class and update it
+        if (Name.Contains('.')) {
+            nestedClass = true;
+            var parentName = Name.Split('.')[0];
+            // ? TODO: Could it be differnt namespace??
+            parentClass = State.Classes.GetOrDefault($"{NamespaceName}.{parentName}");
+            if (parentClass == null) {
+                Logger.LogCritical("Cannot find parent class of nested class [{}] {{{}}}", Name, NamespaceName);
+                nestedClass = false;
+            }
+
+            // Remove parent from classname
+            Definition = Definition.Replace(Name, Name.Replace($"{parentName}.", ""));
+        }
+
+        // First process usings
+        // Skip usings and namespace for nested classes
+        if (nestedClass == false && Usings.Count != 0) {
+            Logger.LogInformation("Adding usings for class [{}] {{{}}}", Name, NamespaceName);
             Usings.Distinct().Order().ToList().ForEach(el => sb.AppendLine($"using {el};"));
             sb.AppendLine("");
         }
 
-        sb.AppendLine($"namespace {NamespaceName};");
-        sb.AppendLine("");
-
-        if (!Summary.Equals("")) sb.AppendLine(Summary);
-        if (FullUrl != null && !FullUrl.Equals("")) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
-        sb.AppendLine(Definition);
-        sb.AppendLine("{");
-
-        Enums.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
-        Properties.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)}"));
-        Fields.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-        Events.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)};"));
-
-        if ((Enums.Count > 0 || Properties.Count > 0 || Fields.Count > 0 || Events.Count > 0) && Constructors.Count > 0) sb.AppendLine("");
-        Constructors.ForEach(el => sb.AppendLine($"{Helpers.PrefixEachLineSpaces(el)} {{}}"));
-
-        Methods.ForEach((el) =>
-        {
+        if (nestedClass == false) {
+            // Set namespace
+            Logger.LogInformation("Adding namespace for class [{}] {{{}}}", Name, NamespaceName);
+            sb.AppendLine($"namespace {NamespaceName};");
             sb.AppendLine("");
-            sb.AppendLine(Helpers.PrefixEachLineSpaces(el));
-        });
-        sb.AppendLine("}");
+        }
 
+        // Set class specific docs
+        if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{ReplaceEndLinesWithSpace(Summary)}</summary>");
+        if (!FullUrl.IsNullOrEmpty()) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
+
+        if (standaloneEnum) {
+            Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
+            sb.AppendLine(SanitizeXmlToString(Definition));
+            sb.AppendLine("{");
+            {
+                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(x) + ", ")));
+            }
+        } else {
+            Logger.LogInformation("Processing normal class file [{}] {{{}}}", Name, NamespaceName);
+
+            sb.AppendLine(SanitizeXmlToString(Definition));
+            sb.AppendLine("{");
+            bool indentNext = false;
+            {
+                Logger.LogDebug("Appending {} enums [{}] {{{}}}", Enums.Count, Name, NamespaceName);
+                Enums.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Enums.Count > 0;
+
+                Logger.LogDebug("Appending {} fields [{}] {{{}}}", Fields.Count, Name, NamespaceName);
+                if (indentNext && Fields.Count > 0) sb.AppendLine("");
+                Fields.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Fields.Count > 0;
+
+                Logger.LogDebug("Appending {} properties [{}] {{{}}}", Properties.Count, Name, NamespaceName);
+                if (indentNext && Properties.Count > 0) sb.AppendLine("");
+                Properties.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Properties.Count > 0;
+
+                Logger.LogDebug("Appending {} constructors [{}] {{{}}}", Constructors.Count, Name, NamespaceName);
+                if (indentNext && Constructors.Count > 0) sb.AppendLine("");
+                Constructors.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Constructors.Count > 0;
+
+                Logger.LogDebug("Appending {} methods [{}] {{{}}}", Methods.Count, Name, NamespaceName);
+                if (indentNext && Methods.Count > 0) sb.AppendLine("");
+                Methods.ForEach(el => {
+                    sb.AppendLine(el.Produce());
+                    sb.AppendLine("");
+                });
+                indentNext = Methods.Count > 0;
+
+                Logger.LogDebug("Appending {} events [{}] {{{}}}", Events.Count, Name, NamespaceName);
+                if (indentNext && Events.Count > 0) sb.AppendLine("");
+                Events.ForEach(el => sb.AppendLine(el.Produce()));
+                indentNext = Events.Count > 0;
+            }
+        }
+
+        if (InnerClasses.Count > 0) {
+            Logger.LogDebug("Processing {} innerclasses [{}] {{{}}}", InnerClasses.Count, Name, NamespaceName);
+            InnerClasses.ForEach(el => {
+                sb.AppendLine("");
+                sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));
+            });
+        }
+
+        sb.AppendLine("}"); // End class
+
+        if (nestedClass) {
+            parentClass.InnerClasses.Add(sb.ToString());
+            Logger.LogInformation("Forcing regeneration of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
+            parentClass.ProduceFinalCsFile();
+            Logger.LogInformation("Class was written as part of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
+            State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
+            return;
+        }
+
+        Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
+        Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
+        State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
     }
+
+    internal List<string> GetAllDefinitionsAsList() {
+        List<string> definitions = [];
+
+        definitions.Add(Definition);
+        definitions.AddRange(Properties.Select(x => x.Definition));
+        definitions.AddRange(Methods.Select(x => x.Definition));
+        definitions.AddRange(Constructors.Select(x => x.Definition));
+        definitions.AddRange(Fields.Select(x => x.Definition));
+        definitions.AddRange(Events.Select(x => x.Definition));
+
+        return definitions;
+    }
+
+    #region DTOs
+    // Start should include the element itself (h1, h2)
+    // End should not include the next element (except h1)
+    // End index of last element should equal the end index of h1
+    // This should look like:
+    // h1, 0, 99
+    // h2, 10, 49
+    // h3, 20, 29
+    // h3, 30, 39
+    // h3, 40, 39
+    // h2, 50, 99
+    public record ScopeBoundary(
+        string name,
+        int start,
+        int end
+    ) {
+        internal string? DebugFormat(string lastElementName) {
+            return $"ScopeBoundary {{ name = {name}, start = {start}, end = {end}, lastElement = {lastElementName} }}";
+        }
+    }
+    #endregion DTOs
 }

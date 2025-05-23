@@ -1,38 +1,61 @@
 version: '3.0'
 
 tasks:
+  build:
+    cmd: dotnet run -- {{.CLI_ARGS}}
+  run:with-build:
+    cmds:
+    - task: build
+    - task: library:build
+  library:clean:
+    dir: Alvao
+    vars:
+      folders: [ "API", "Context" ]
+    ignore_error: true
+    cmd:
+      for:
+        var: folders
+      cmd: rm -rf {{ .ITEM }}/**
+  library:format:
+    cmd: dotnet format Alvao/
+  library:init:
+    dir: Alvao
+    cmds:
+    - dotnet new classlib -n Alvao -o .
+    - for: [ "Dapper.Contrib.Extensions" ]
+      cmd: dotnet add package {{.ITEM}}
+  library:build:
+    dir: Alvao
+    cmd: dotnet build .
   test:
     cmd: dotnet run -- test
   tidy:
     ignore_error: true
     aliases:
-      - format
+    - format
     generates:
-      - html/*.htm
+    - html/*.html
     sources:
-      - html/*.htm
-    cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm
+    - html/*.html
+    cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm*
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
     sources:
-      - Program.cs
-      - src/**
-      - Alvao/**
+    - Program.cs
+    - src/**
+    - .editorconfig
     cmd: dotnet format
   clean:
-    cmd: git checkout -- Alvao
-  delete:
-    cmd: rm -rf Alvao/
+    cmd: rm -rf Alvao/ Examples/
+  restore:
+    cmd: git checkout -- Examples/
   run:
     aliases:
-      - default
+    - default
     cmds:
-      - task: clean
-      - task: dotnet:run
-      - task: tidy
-      - task: format
-  run:reset:
-    cmds:
-      - task: delete
-      - task: run
+    - task: format
+    - task: library:clean
+    - task: build
+    - task: tidy
+    - task: library:format
