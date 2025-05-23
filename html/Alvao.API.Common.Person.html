@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Person | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Person | Alvao.API Documentation ">
+      
+      <meta name="description" content="Facade class grouping person methods.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.Common.Person">
+
+
+
+  <h1 id="Alvao_API_Common_Person" data-uid="Alvao.API.Common.Person" class="text-break">
+Class Person  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.Common.html">Common</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Facade class grouping person methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Person</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Person</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_Common_Person_AddToGroup_" data-uid="Alvao.API.Common.Person.AddToGroup*"></a>
+
+  <h3 id="Alvao_API_Common_Person_AddToGroup_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="Alvao.API.Common.Person.AddToGroup(System.Int32,System.Collections.Generic.IEnumerable{System.Int32})">
+  AddToGroup(int, IEnumerable&lt;int&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds person to group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddToGroup(int personId, IEnumerable&lt;int&gt; roleIds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>roleIds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>Group IDs <i>(tRole.iRoleId)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_ConvertUtcToPersonLocal_" data-uid="Alvao.API.Common.Person.ConvertUtcToPersonLocal*"></a>
+
+  <h3 id="Alvao_API_Common_Person_ConvertUtcToPersonLocal_Alvao_API_Common_Model_Database_tPerson_System_DateTime_" data-uid="Alvao.API.Common.Person.ConvertUtcToPersonLocal(Alvao.API.Common.Model.Database.tPerson,System.DateTime)">
+  ConvertUtcToPersonLocal(tPerson, DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime ConvertUtcToPersonLocal(tPerson person, DateTime utcDate)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>person</code> <a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd></dd>
+    <dt><code>utcDate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_Create_" data-uid="Alvao.API.Common.Person.Create*"></a>
+
+  <h3 id="Alvao_API_Common_Person_Create_System_String_System_String_System_String_System_String_System_String_System_String_System_Nullable_System_Int32__" data-uid="Alvao.API.Common.Person.Create(System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Int32})">
+  Create(string, string, string, string, string, string, int?)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates person.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Create(string fullName, string login, string email, string phone, string personalNumber, string azureAdObjectId = null, int? azureAdTenantId = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>fullName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name and surname</p>
+</dd>
+    <dt><code>login</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>User name</p>
+</dd>
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>E-mail</p>
+</dd>
+    <dt><code>phone</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Work phone</p>
+</dd>
+    <dt><code>personalNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Personal number</p>
+</dd>
+    <dt><code>azureAdObjectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Object ID from Azure AD</p>
+</dd>
+    <dt><code>azureAdTenantId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Tenant ID from Azure AD</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Created person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws when <code class="paramref">fullName</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_Common_Person_GetAll_" data-uid="Alvao.API.Common.Person.GetAll*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetAll_System_Boolean_" data-uid="Alvao.API.Common.Person.GetAll(System.Boolean)">
+  GetAll(bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns all persons</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tPerson&gt; GetAll(bool includeRemoved = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>includeRemoved</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Include removed persons in result</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a>&gt;</dt>
+    <dd><p>Collection of <i>tPerson</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetByAzureIdSidOrEmail_" data-uid="Alvao.API.Common.Person.GetByAzureIdSidOrEmail*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetByAzureIdSidOrEmail_System_String_System_String_System_String_" data-uid="Alvao.API.Common.Person.GetByAzureIdSidOrEmail(System.String,System.String,System.String)">
+  GetByAzureIdSidOrEmail(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Search for person by AzureObjectId. If not found, tries to find by person SID and then by email.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetByAzureIdSidOrEmail(string azureAdObjectId, string userSid = null, string email = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>azureAdObjectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Azure Active Directory object ID. Cannot be null.</p>
+</dd>
+    <dt><code>userSid</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>User SID from on-premise AD or null</p>
+</dd>
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>User email or null</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Found person <i>(tPerson)</i> or null if there was no such person</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws when <code class="paramref">azureAdObjectId</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_Common_Person_GetByAzureTenant_" data-uid="Alvao.API.Common.Person.GetByAzureTenant*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetByAzureTenant_System_Int32_" data-uid="Alvao.API.Common.Person.GetByAzureTenant(System.Int32)">
+  GetByAzureTenant(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return all persons which are synchronized from Azure Active Directory tenant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tPerson&gt; GetByAzureTenant(int azureAdTenantId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>azureAdTenantId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Azure Tenant ID</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetByEmail_" data-uid="Alvao.API.Common.Person.GetByEmail*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetByEmail_System_String_" data-uid="Alvao.API.Common.Person.GetByEmail(System.String)">
+  GetByEmail(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns person by email</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetByEmail(string email)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person email</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person object email <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetById_" data-uid="Alvao.API.Common.Person.GetById*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetById_System_Int32_" data-uid="Alvao.API.Common.Person.GetById(System.Int32)">
+  GetById(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns person</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetById(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person object <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetByLogin_" data-uid="Alvao.API.Common.Person.GetByLogin*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetByLogin_System_String_" data-uid="Alvao.API.Common.Person.GetByLogin(System.String)">
+  GetByLogin(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Search for person by persons login</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetByLogin(string login)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>login</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person login</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetCultureInfoOrDefault_" data-uid="Alvao.API.Common.Person.GetCultureInfoOrDefault*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetCultureInfoOrDefault_Alvao_API_Common_Model_Database_tPerson_" data-uid="Alvao.API.Common.Person.GetCultureInfoOrDefault(Alvao.API.Common.Model.Database.tPerson)">
+  GetCultureInfoOrDefault(tPerson)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns <i>CultureInfo</i> for given person. If person does not have set preffered language , CultureInfo of system language is returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CultureInfo GetCultureInfoOrDefault(tPerson person)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>person</code> <a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person to get CultureInfo for</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
+    <dd><p>Found <i>CultureInfo</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetCustomList_" data-uid="Alvao.API.Common.Person.GetCustomList*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetCustomList_System_String_System_String_System_String_" data-uid="Alvao.API.Common.Person.GetCustomList(System.String,System.String,System.String)">
+  GetCustomList(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns custom list of persons.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;dynamic&gt; GetCustomList(string columns, string filterCondition, string sorting)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>columns</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Database columns from tPerson and tPersonCust. These columns will be included in the result</p>
+</dd>
+    <dt><code>filterCondition</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>SQL filter condition (without WHERE keyword)</p>
+</dd>
+    <dt><code>sorting</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>SQL sorting condition (without ORDER BY keyword)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">dynamic</span>&gt;</dt>
+    <dd><p>List of dynamic objects. Each object has properties specified in columns parameter.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetGroupMembership_" data-uid="Alvao.API.Common.Person.GetGroupMembership*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetGroupMembership_System_Int32_System_Boolean_" data-uid="Alvao.API.Common.Person.GetGroupMembership(System.Int32,System.Boolean)">
+  GetGroupMembership(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns group ID <i>(tRole.iRoleId)</i> of all groups that the person is member of.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;int&gt; GetGroupMembership(int personId, bool onlyDirectMembership)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>onlyDirectMembership</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Get only direct membership</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>List of groups ID</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetGuest_" data-uid="Alvao.API.Common.Person.GetGuest*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetGuest" data-uid="Alvao.API.Common.Person.GetGuest">
+  GetGuest()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns guest person</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetGuest()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Guest person object <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetNameFromMail_" data-uid="Alvao.API.Common.Person.GetNameFromMail*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetNameFromMail_System_String_System_String_" data-uid="Alvao.API.Common.Person.GetNameFromMail(System.String,System.String)">
+  GetNameFromMail(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds person name by email or name and surname</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetNameFromMail(string email, string displayName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person email</p>
+</dd>
+    <dt><code>displayName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person email display name</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person name and surname</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetPersonByEmail_" data-uid="Alvao.API.Common.Person.GetPersonByEmail*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetPersonByEmail_System_String_" data-uid="Alvao.API.Common.Person.GetPersonByEmail(System.String)">
+  GetPersonByEmail(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns person by email
+GetPersonByEmail is deprecated, please use GetByEmail instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;GetPersonByEmail is deprecated, please use GetByEmail instead.&quot;)]
+public static tPerson GetPersonByEmail(string email)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Person email</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person object email <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetPersonById_" data-uid="Alvao.API.Common.Person.GetPersonById*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetPersonById_System_Int32_" data-uid="Alvao.API.Common.Person.GetPersonById(System.Int32)">
+  GetPersonById(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns person
+GetPersonById is deprecated, please use GetById instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;GetPersonById is deprecated, please use GetById instead.&quot;)]
+public static tPerson GetPersonById(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person object <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetPersonCultureInfoOrDefault_" data-uid="Alvao.API.Common.Person.GetPersonCultureInfoOrDefault*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetPersonCultureInfoOrDefault_Alvao_API_Common_Model_Database_tPerson_" data-uid="Alvao.API.Common.Person.GetPersonCultureInfoOrDefault(Alvao.API.Common.Model.Database.tPerson)">
+  GetPersonCultureInfoOrDefault(tPerson)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns <i>CultureInfo</i> for given person. If person does not have set preffered language , CultureInfo of system language is returned.
+GetPersonCultureInfoOrDefault is deprecated, please use GetCultureInfoOrDefault instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;GetPersonCultureInfoOrDefault is deprecated, please use GetCultureInfoOrDefault instead.&quot;)]
+public static CultureInfo GetPersonCultureInfoOrDefault(tPerson person)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>person</code> <a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person to get CultureInfo for</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
+    <dd><p>Found <i>CultureInfo</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetSystem_" data-uid="Alvao.API.Common.Person.GetSystem*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetSystem" data-uid="Alvao.API.Common.Person.GetSystem">
+  GetSystem()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns system person</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tPerson GetSystem()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>System person object <i>(tPerson)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetTimezone_" data-uid="Alvao.API.Common.Person.GetTimezone*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetTimezone_Alvao_API_Common_Model_Database_tPerson_" data-uid="Alvao.API.Common.Person.GetTimezone(Alvao.API.Common.Model.Database.tPerson)">
+  GetTimezone(tPerson)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns user's timezone. If person does not have timezone specified, system timezone is returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetTimezone(tPerson person)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>person</code> <a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person to get timezone for</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Timezone name</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_GetToken_" data-uid="Alvao.API.Common.Person.GetToken*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetToken_System_Int32_System_String_" data-uid="Alvao.API.Common.Person.GetToken(System.Int32,System.String)">
+  GetToken(int, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=246"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets Azure Active Directory Bearer token from the on-behalf-of flow. The token can be used for communication with other Azure services on behalf of the user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetToken(int personId, string scope)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The ID of the person (tPerson.iPersonId) who is the subject of the token.</p>
+</dd>
+    <dt><code>scope</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Scope (target application) the token is intended for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Bearer token or null if getting a token is impossible.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Exceptions.UserTokenServiceError.html">UserTokenServiceError</a></dt>
+    <dd><p>An unexpected error occurred.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_Common_Person_GetUserNodeIdByPersonId_" data-uid="Alvao.API.Common.Person.GetUserNodeIdByPersonId*"></a>
+
+  <h3 id="Alvao_API_Common_Person_GetUserNodeIdByPersonId_System_Int32_" data-uid="Alvao.API.Common.Person.GetUserNodeIdByPersonId(System.Int32)">
+  GetUserNodeIdByPersonId(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns <i>NodeId</i> for given personId. If person does not connected object user null is returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int? GetUserNodeIdByPersonId(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person Id to get NodeId for</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Found <i>NodeId</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_InsertToEmailUsage_" data-uid="Alvao.API.Common.Person.InsertToEmailUsage*"></a>
+
+  <h3 id="Alvao_API_Common_Person_InsertToEmailUsage_System_Int32_System_String_" data-uid="Alvao.API.Common.Person.InsertToEmailUsage(System.Int32,System.String)">
+  InsertToEmailUsage(int, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inserts an email address to persons email usage</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void InsertToEmailUsage(int personId, string email)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Email address</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_IsMemberOfGroup_" data-uid="Alvao.API.Common.Person.IsMemberOfGroup*"></a>
+
+  <h3 id="Alvao_API_Common_Person_IsMemberOfGroup_System_Int32_System_Int32_" data-uid="Alvao.API.Common.Person.IsMemberOfGroup(System.Int32,System.Int32)">
+  IsMemberOfGroup(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether person is member of group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsMemberOfGroup(int personId, int roleId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>roleId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Group ID <i>(tRole.iRoleId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Is person member of group</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_RecomputePersonManager_" data-uid="Alvao.API.Common.Person.RecomputePersonManager*"></a>
+
+  <h3 id="Alvao_API_Common_Person_RecomputePersonManager" data-uid="Alvao.API.Common.Person.RecomputePersonManager">
+  RecomputePersonManager()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Recompute contents of PersonManager table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RecomputePersonManager()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_RemoveFromGroup_" data-uid="Alvao.API.Common.Person.RemoveFromGroup*"></a>
+
+  <h3 id="Alvao_API_Common_Person_RemoveFromGroup_System_Int32_System_Int32_" data-uid="Alvao.API.Common.Person.RemoveFromGroup(System.Int32,System.Int32)">
+  RemoveFromGroup(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes person from group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RemoveFromGroup(int personId, int roleId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>roleId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Group ID <i>(tRole.iRoleId)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Person_Update_" data-uid="Alvao.API.Common.Person.Update*"></a>
+
+  <h3 id="Alvao_API_Common_Person_Update_Alvao_API_Common_Model_Database_tPerson_" data-uid="Alvao.API.Common.Person.Update(Alvao.API.Common.Model.Database.tPerson)">
+  Update(tPerson)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Person.cs&amp;version=GBdev&amp;line=36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates person.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Update(tPerson person)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>person</code> <a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a></dt>
+    <dd><p>Person to update</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws when <code class="paramref">person</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

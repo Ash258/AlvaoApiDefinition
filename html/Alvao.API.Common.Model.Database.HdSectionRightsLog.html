@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HdSectionRightsLog | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HdSectionRightsLog | Alvao.API Documentation ">
+      
+      <meta name="description" content="Logging of changes in user permissions to services. The meaning of values in permission columns: 1=enable 0=not set">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog">
+
+
+
+  <h1 id="Alvao_API_Common_Model_Database_HdSectionRightsLog" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog" class="text-break">
+Class HdSectionRightsLog  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=809"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.Common.html">Common</a>.<a class="xref" href="Alvao.API.Common.Model.html">Model</a>.<a class="xref" href="Alvao.API.Common.Model.Database.html">Database</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Logging of changes in user permissions to services.
+The meaning of values in permission columns:
+1=enable
+0=not set</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Table(&quot;dbo.HdSectionRightsLog&quot;)]
+public class HdSectionRightsLog</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">HdSectionRightsLog</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ExceptionalSolver_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ExceptionalSolver*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ExceptionalSolver" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ExceptionalSolver">
+  ExceptionalSolver
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=816"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exceptional solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ExceptionalSolver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ExceptionalSolverOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ExceptionalSolverOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ExceptionalSolverOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ExceptionalSolverOld">
+  ExceptionalSolverOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=820"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original exceptional solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ExceptionalSolverOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSection_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSection*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSection" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSection">
+  HdSection
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=824"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Service name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string HdSection { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionId_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionId" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionId">
+  HdSectionId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=828"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Service ID</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? HdSectionId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionIdOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionIdOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionIdOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionIdOld">
+  HdSectionIdOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=832"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ID of the original service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? HdSectionIdOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_HdSectionOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.HdSectionOld">
+  HdSectionOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=836"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original service name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string HdSectionOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_MainSolver_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.MainSolver*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_MainSolver" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.MainSolver">
+  MainSolver
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=845"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Main solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool MainSolver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_MainSolverOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.MainSolverOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_MainSolverOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.MainSolverOld">
+  MainSolverOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=849"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original main solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool MainSolverOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Manager_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Manager*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Manager" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Manager">
+  Manager
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=853"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Manager permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Manager { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ManagerOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ManagerOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ManagerOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ManagerOld">
+  ManagerOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=857"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original manager permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ManagerOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ModifiedByPerson_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ModifiedByPerson*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ModifiedByPerson" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ModifiedByPerson">
+  ModifiedByPerson
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=861"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the user who did the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ModifiedByPerson { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ModifiedByPersonId_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ModifiedByPersonId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ModifiedByPersonId" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ModifiedByPersonId">
+  ModifiedByPersonId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=865"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User ID of a person who performed the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? ModifiedByPersonId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Person_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Person*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Person" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Person">
+  Person
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=869"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User name of a person who is the permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Person { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonId_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonId" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonId">
+  PersonId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=873"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User ID of a person who is the permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? PersonId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonIdOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonIdOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonIdOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonIdOld">
+  PersonIdOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=877"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User ID of a person who was originally a permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? PersonIdOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_PersonOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.PersonOld">
+  PersonOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=881"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User name of a person who was originally a permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string PersonOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Reader_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Reader*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Reader" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Reader">
+  Reader
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=885"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reader permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Reader { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ReaderOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ReaderOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_ReaderOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.ReaderOld">
+  ReaderOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=889"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original reader permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ReaderOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRole_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRole*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRole" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRole">
+  RequesterRole
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=893"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the group of requesters associated with the permissions (mapping of requesters to the solver team).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string RequesterRole { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleId_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleId" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleId">
+  RequesterRoleId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=897"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ID of the group of requesters associated with the permissions (mapping of requesters to the solver team).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? RequesterRoleId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleIdOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleIdOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleIdOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleIdOld">
+  RequesterRoleIdOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=901"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ID of the group of requesters originally associated with the permissions (mapping of requesters to the solver team).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? RequesterRoleIdOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RequesterRoleOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RequesterRoleOld">
+  RequesterRoleOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=905"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the group of requesters originally associated with the permissions (mapping of requesters to the solver team).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string RequesterRoleOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Role_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Role*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Role" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Role">
+  Role
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=909"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User group name which is the permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Role { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleId_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleId" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleId">
+  RoleId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=913"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User group ID which is the permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? RoleId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleIdOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleIdOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleIdOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleIdOld">
+  RoleIdOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=914"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? RoleIdOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_RoleOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.RoleOld">
+  RoleOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=918"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>User group name of a person who was originally a permission holder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string RoleOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Solver_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Solver*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_Solver" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.Solver">
+  Solver
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=922"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool Solver { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverGroup_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverGroup*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverGroup" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverGroup">
+  SolverGroup
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=923"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverGroup { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverGroupOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverGroupOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverGroupOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverGroupOld">
+  SolverGroupOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=924"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverGroupOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverOld">
+  SolverOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=928"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original solver permissions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake1_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake1*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake1" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake1">
+  SolverTake1
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=932"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solver permissions with the right to take the ticket over (main)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverTake1 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake1Old_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake1Old*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake1Old" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake1Old">
+  SolverTake1Old
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=936"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original solver permissions with the right to take the ticket over (main)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverTake1Old { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake2_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake2*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake2" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake2">
+  SolverTake2
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=940"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solver permissions with the right to take the ticket over (secondary)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverTake2 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake2Old_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake2Old*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_SolverTake2Old" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.SolverTake2Old">
+  SolverTake2Old
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=944"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Original solver permissions with the right to take the ticket over (secondary)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SolverTake2Old { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TicketReporter_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TicketReporter*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TicketReporter" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TicketReporter">
+  TicketReporter
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=948"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Permissions of the ticket reporter (formerly of the irregular operator)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TicketReporter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TicketReporterOld_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TicketReporterOld*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TicketReporterOld" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TicketReporterOld">
+  TicketReporterOld
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=952"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The original permissions of the ticket reporter (formerly of irregular operator)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TicketReporterOld { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TimeStamp_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TimeStamp*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_TimeStamp" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.TimeStamp">
+  TimeStamp
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=956"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Change performance date and time (UTC)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DateTime TimeStamp { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_HdSectionRightsLog_id_" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.id*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_HdSectionRightsLog_id" data-uid="Alvao.API.Common.Model.Database.HdSectionRightsLog.id">
+  id
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=840"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record ID</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Key]
+public virtual int id { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

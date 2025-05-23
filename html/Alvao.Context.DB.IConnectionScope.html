@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IConnectionScope | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IConnectionScope | Alvao.API Documentation ">
+      
+      <meta name="description" content="Provides access to database connection and transaction operations.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.Context.DB.IConnectionScope">
+
+
+
+  <h1 id="Alvao_Context_DB_IConnectionScope" data-uid="Alvao.Context.DB.IConnectionScope" class="text-break">
+Interface IConnectionScope  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.Context.html">Context</a>.<a class="xref" href="Alvao.Context.DB.html">DB</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.Context.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides access to database connection and transaction operations.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IConnectionScope : IDisposable</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable.dispose">IDisposable.Dispose()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_ClosestSavePointName_" data-uid="Alvao.Context.DB.IConnectionScope.ClosestSavePointName*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_ClosestSavePointName" data-uid="Alvao.Context.DB.IConnectionScope.ClosestSavePointName">
+  ClosestSavePointName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the closest parent save point name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ClosestSavePointName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_Connection_" data-uid="Alvao.Context.DB.IConnectionScope.Connection*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_Connection" data-uid="Alvao.Context.DB.IConnectionScope.Connection">
+  Connection
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get opened connection to current database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDbConnection Connection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbconnection">IDbConnection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_LegacyConnection_" data-uid="Alvao.Context.DB.IConnectionScope.LegacyConnection*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_LegacyConnection" data-uid="Alvao.Context.DB.IConnectionScope.LegacyConnection">
+  LegacyConnection
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get opened legacy connection to current database.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SqlConnection LegacyConnection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient.sqlconnection">SqlConnection</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="Alvao_Context_DB_IConnectionScope_LegacyConnection_examples">Examples</h4>
+  <p>The example contains the code used to search the person's ID in the database.
+It uses the <a class="xref" href="Alvao.Context.AlvaoContext.html#Alvao_Context_AlvaoContext_GetConnectionScope">GetConnectionScope()</a> method to obtain the database connection scope.
+Scope properties <a class="xref" href="Alvao.Context.DB.IConnectionScope.html#Alvao_Context_DB_IConnectionScope_LegacyConnection">LegacyConnection</a> and <a class="xref" href="Alvao.Context.DB.IConnectionScope.html#Alvao_Context_DB_IConnectionScope_LegacyTransaction">LegacyTransaction</a>
+are used in the parameters of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient.sqlcommand">SqlCommand</a> constructor.</p>
+<pre><code class="lang-csharp">public static int? GetPersonIdByAzureId(string azureObjectId)
+{
+    using (var scope = AlvaoContext.GetConnectionScope())
+    {
+        using (var cmd = new SqlCommand(
+            "SELECT iPersonId FROM tPerson WHERE AzureAdObjectId = @azureObjectId",
+			scope.LegacyConnection,
+			scope.LegacyTransaction))
+        {
+            cmd.Parameters.AddWithValue("@azureObjectId", azureObjectId);
+            return cmd.ExecuteScalar() as int?;
+        }
+	}
+}</code></pre>
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_LegacyTransaction_" data-uid="Alvao.Context.DB.IConnectionScope.LegacyTransaction*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_LegacyTransaction" data-uid="Alvao.Context.DB.IConnectionScope.LegacyTransaction">
+  LegacyTransaction
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get active legacy database transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SqlTransaction LegacyTransaction { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.data.sqlclient.sqltransaction">SqlTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_Transaction_" data-uid="Alvao.Context.DB.IConnectionScope.Transaction*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_Transaction" data-uid="Alvao.Context.DB.IConnectionScope.Transaction">
+  Transaction
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get active database transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDbTransaction Transaction { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.idbtransaction">IDbTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_BeginTransaction_" data-uid="Alvao.Context.DB.IConnectionScope.BeginTransaction*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_BeginTransaction_System_Nullable_System_Data_IsolationLevel__System_Boolean_" data-uid="Alvao.Context.DB.IConnectionScope.BeginTransaction(System.Nullable{System.Data.IsolationLevel},System.Boolean)">
+  BeginTransaction(IsolationLevel?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts a database transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void BeginTransaction(IsolationLevel? level = null, bool useSavePoint = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>level</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.isolationlevel">IsolationLevel</a>?</dt>
+    <dd><p>The isolation level under which the transaction should run.</p>
+</dd>
+    <dt><code>useSavePoint</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether to use a savepoint for inner transaction.
+If this inner transaction was rolled back, it would only be rolled back to this savepoint. Outer transaction would continue.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_CommitTransaction_" data-uid="Alvao.Context.DB.IConnectionScope.CommitTransaction*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_CommitTransaction" data-uid="Alvao.Context.DB.IConnectionScope.CommitTransaction">
+  CommitTransaction()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Commits the database transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void CommitTransaction()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_Context_DB_IConnectionScope_RollbackTransaction_" data-uid="Alvao.Context.DB.IConnectionScope.RollbackTransaction*"></a>
+
+  <h3 id="Alvao_Context_DB_IConnectionScope_RollbackTransaction" data-uid="Alvao.Context.DB.IConnectionScope.RollbackTransaction">
+  RollbackTransaction()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/Alvao.Context/DB/IConnectionScope.cs&amp;version=GBdev&amp;line=37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rolls back a transaction from a pending state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RollbackTransaction()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

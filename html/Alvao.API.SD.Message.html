@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Message | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Message | Alvao.API Documentation ">
+      
+      <meta name="description" content="Facade class grouping email methods.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.SD.Message">
+
+
+
+  <h1 id="Alvao_API_SD_Message" data-uid="Alvao.API.SD.Message" class="text-break">
+Class Message  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.SD.html">SD</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Facade class grouping email methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Message</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Message</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_SD_Message_GetMailNotificationRecipientList_" data-uid="Alvao.API.SD.Message.GetMailNotificationRecipientList*"></a>
+
+  <h3 id="Alvao_API_SD_Message_GetMailNotificationRecipientList_System_Collections_Generic_IEnumerable_System_Int32__" data-uid="Alvao.API.SD.Message.GetMailNotificationRecipientList(System.Collections.Generic.IEnumerable{System.Int32})">
+  GetMailNotificationRecipientList(IEnumerable&lt;int&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get recipients list with correct settings for receiving email notification</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tPerson&gt; GetMailNotificationRecipientList(IEnumerable&lt;int&gt; recipientIds)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>recipientIds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>List of ids of all users</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tPerson.html">tPerson</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_GetSubject_" data-uid="Alvao.API.SD.Message.GetSubject*"></a>
+
+  <h3 id="Alvao_API_SD_Message_GetSubject_System_String_System_String_System_String_System_Int32_" data-uid="Alvao.API.SD.Message.GetSubject(System.String,System.String,System.String,System.Int32)">
+  GetSubject(string, string, string, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Crops message subject to correct length and add ticket tag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetSubject(string subject, string ticketTag, string prefix = &quot;&quot;, int maxSubjectLength = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Original subject</p>
+</dd>
+    <dt><code>ticketTag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Ticket tag</p>
+</dd>
+    <dt><code>prefix</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>FW:/RE:</p>
+</dd>
+    <dt><code>maxSubjectLength</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>0 â keep default</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Returns correct subject format.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_IsAutoReplyHeader_" data-uid="Alvao.API.SD.Message.IsAutoReplyHeader*"></a>
+
+  <h3 id="Alvao_API_SD_Message_IsAutoReplyHeader_System_String_" data-uid="Alvao.API.SD.Message.IsAutoReplyHeader(System.String)">
+  IsAutoReplyHeader(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if the text value contains any strings used for automatic replies in the Auto-Submitted header of email.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAutoReplyHeader(string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Text of Auto-Submitted header</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Returns true if the email is an automatic reply, otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_IsAutoReplySubject_" data-uid="Alvao.API.SD.Message.IsAutoReplySubject*"></a>
+
+  <h3 id="Alvao_API_SD_Message_IsAutoReplySubject_System_String_" data-uid="Alvao.API.SD.Message.IsAutoReplySubject(System.String)">
+  IsAutoReplySubject(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if the message subject contains any pattern used for automatic reply.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAutoReplySubject(string subject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Message subject</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Returns true if the subject text contains any pattern, otherwise false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_ParseMulti_" data-uid="Alvao.API.SD.Message.ParseMulti*"></a>
+
+  <h3 id="Alvao_API_SD_Message_ParseMulti_System_String_System_Boolean_" data-uid="Alvao.API.SD.Message.ParseMulti(System.String,System.Boolean)">
+  ParseMulti(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses multiple mail adresses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (List&lt;EmailModel&gt;, int, int) ParseMulti(string addresses, bool removeServiceMail = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>addresses</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Mail adresses</p>
+</dd>
+    <dt><code>removeServiceMail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Remove service mail address</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.SD.Model.EmailModel.html">EmailModel</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p>List of mail models, number of valid mails and number of removed service mails</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_ParseMultiAndValidate_" data-uid="Alvao.API.SD.Message.ParseMultiAndValidate*"></a>
+
+  <h3 id="Alvao_API_SD_Message_ParseMultiAndValidate_System_String_" data-uid="Alvao.API.SD.Message.ParseMultiAndValidate(System.String)">
+  ParseMultiAndValidate(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses multiple mail adresses and validate them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (List&lt;EmailModel&gt;, bool, int) ParseMultiAndValidate(string addresses)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>addresses</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Mail adresses</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.SD.Model.EmailModel.html">EmailModel</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p>List of mail models, true if adresses are valid and number of removed service mails</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_RemoveLeadingRefw_" data-uid="Alvao.API.SD.Message.RemoveLeadingRefw*"></a>
+
+  <h3 id="Alvao_API_SD_Message_RemoveLeadingRefw_System_String_" data-uid="Alvao.API.SD.Message.RemoveLeadingRefw(System.String)">
+  RemoveLeadingRefw(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes RE: and FW: tag from subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RemoveLeadingRefw(string subject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Subject</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Subject without RE or FW tag</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_Message_RemoveSectionEmails_" data-uid="Alvao.API.SD.Message.RemoveSectionEmails*"></a>
+
+  <h3 id="Alvao_API_SD_Message_RemoveSectionEmails_System_Collections_Generic_List_Alvao_API_SD_Model_EmailModel__" data-uid="Alvao.API.SD.Message.RemoveSectionEmails(System.Collections.Generic.List{Alvao.API.SD.Model.EmailModel})">
+  RemoveSectionEmails(List&lt;EmailModel&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes section mails from recipients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (List&lt;EmailModel&gt;, int) RemoveSectionEmails(List&lt;EmailModel&gt; mailRecipients)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mailRecipients</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.SD.Model.EmailModel.html">EmailModel</a>&gt;</dt>
+    <dd><p>Mail recipients</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.SD.Model.EmailModel.html">EmailModel</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</dt>
+    <dd><p>Recipients without section mails</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws when <code class="paramref">mailRecipients</code> is null.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_SD_Message_Send_" data-uid="Alvao.API.SD.Message.Send*"></a>
+
+  <h3 id="Alvao_API_SD_Message_Send_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_" data-uid="Alvao.API.SD.Message.Send(System.Int32,System.String,System.Int32,Alvao.API.Common.Model.HtmlTextModel,Alvao.API.SD.Model.SendMessageSettingsModel)">
+  Send(int, string, int, HtmlTextModel, SendMessageSettingsModel)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends message within the request and creates new record in request diary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tAct Send(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Message subject</p>
+</dd>
+    <dt><code>fromPersonId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID of message author <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="Alvao.API.Common.Model.HtmlTextModel.html">HtmlTextModel</a></dt>
+    <dd><p>Message body</p>
+</dd>
+    <dt><code>settings</code> <a class="xref" href="Alvao.API.SD.Model.SendMessageSettingsModel.html">SendMessageSettingsModel</a></dt>
+    <dd><p>Multiple settings of message</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tAct.html">tAct</a></dt>
+    <dd><p>Created act <i>(tAct)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="Alvao_API_SD_Message_Send_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel__examples">Examples</h4>
+  <pre><code class="lang-csharp">//Send message with attachment from request and save to diary of request 
+public class Attachment : Alvao.API.Common.Model.IAttachment
+{
+    private Alvao.API.Common.Model.Database.tDocument document;
+    public Attachment(Alvao.API.Common.Model.Database.tDocument document)
+    {
+        this.document = document;
+    }
+    public string Name =&gt; document.sDocument;
+    public Guid UniqueName { get; } = Guid.NewGuid();
+    public int? DocumentId
+    {
+        get =&gt; document.iDocumentId == 0 ? null : (int?)document.iDocumentId;
+        set =&gt; document.iDocumentId = value ?? 0;
+    }
+    public string ContentType =&gt; document.sDocumentContentType;
+    public string Url =&gt; document.Url;
+    public bool EmbeddedImage =&gt; document.EmbededImage;
+    public Stream GetStream()
+    {
+        return new MemoryStream(document.oDocument);
+    }
+}
+
+Alvao.API.Common.Model.Database.tDocument document = new Alvao.API.Common.Model.Database.tDocument(); //Create document
+document.sDocument = "file.png"; //Document name
+document.sDocumentContentType = "application/octet-stream"; //Document type
+Stream s = System.IO.File.Open("file.png", FileMode.Open, FileAccess.Read, FileShare.Read); //Open document
+document.oDocument = new byte[s.Length];
+s.ReadAllBuffered(document.oDocument); //Document stream
+Attachment attachment = new Attachment(document); //Create attachment from document
+List&lt;Alvao.API.Common.Model.IAttachment&gt; Attachments = new List&lt;Alvao.API.Common.Model.IAttachment&gt;(); //Create list of attachments
+Attachments.Add(attachment); //Insert attachment into list
+Alvao.API.Common.Model.HtmlTextModel emailMessage = new Alvao.API.Common.Model.HtmlTextModel("Message in HTML", Attachments); //Create message with attachment
+Alvao.API.SD.Model.SendMessageSettingsModel emailModel = new Alvao.API.SD.Model.SendMessageSettingsModel(); //Create email model
+int ticketId = 50; //Request id
+int fromPersonId = 25; //Email sender id
+int toPersonId = 8; //Email recipient
+Alvao.API.Common.Model.Database.tPerson personTo = Alvao.API.Common.Person.GetById(toPersonId); //Get recipient by id
+emailModel.RecipientsTo = personTo.sPersonEmail; //Set recipient email 
+Alvao.API.SD.Message.Send(ticketId, "Subject of email", fromPersonId, emailMessage, emailModel); //Send message</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Throws when request with <code class="paramref">ticketId</code> does not exist.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_SD_Message_SendMessage_" data-uid="Alvao.API.SD.Message.SendMessage*"></a>
+
+  <h3 id="Alvao_API_SD_Message_SendMessage_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_" data-uid="Alvao.API.SD.Message.SendMessage(System.Int32,System.String,System.Int32,Alvao.API.Common.Model.HtmlTextModel,Alvao.API.SD.Model.SendMessageSettingsModel)">
+  SendMessage(int, string, int, HtmlTextModel, SendMessageSettingsModel)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends message within the request and creates new record in request diary.
+SendMessage is deprecated, please use Send instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;SendMessage is deprecated, please use Send instead.&quot;)]
+public static tAct SendMessage(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Message subject</p>
+</dd>
+    <dt><code>fromPersonId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID of message author <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="Alvao.API.Common.Model.HtmlTextModel.html">HtmlTextModel</a></dt>
+    <dd><p>Message body</p>
+</dd>
+    <dt><code>settings</code> <a class="xref" href="Alvao.API.SD.Model.SendMessageSettingsModel.html">SendMessageSettingsModel</a></dt>
+    <dd><p>Multiple settings of message</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tAct.html">tAct</a></dt>
+    <dd><p>Created act <i>(tAct)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="Alvao_API_SD_Message_SendMessage_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel__examples">Examples</h4>
+  <pre><code class="lang-csharp">//Send message with attachment from request and save to diary of request 
+public class Attachment : Alvao.API.Common.Model.IAttachment
+{
+    private Alvao.API.Common.Model.Database.tDocument document;
+    public Attachment(Alvao.API.Common.Model.Database.tDocument document)
+    {
+        this.document = document;
+    }
+    public string Name =&gt; document.sDocument;
+    public Guid UniqueName { get; } = Guid.NewGuid();
+    public int? DocumentId
+    {
+        get =&gt; document.iDocumentId == 0 ? null : (int?)document.iDocumentId;
+        set =&gt; document.iDocumentId = value ?? 0;
+    }
+    public string ContentType =&gt; document.sDocumentContentType;
+    public string Url =&gt; document.Url;
+    public bool EmbeddedImage =&gt; document.EmbededImage;
+    public Stream GetStream()
+    {
+        return new MemoryStream(document.oDocument);
+    }
+}
+
+Alvao.API.Common.Model.Database.tDocument document = new Alvao.API.Common.Model.Database.tDocument(); //Create document
+document.sDocument = "file.png"; //Document name
+document.sDocumentContentType = "application/octet-stream"; //Document type
+Stream s = System.IO.File.Open("file.png", FileMode.Open, FileAccess.Read, FileShare.Read); //Open document
+document.oDocument = new byte[s.Length];
+s.ReadAllBuffered(document.oDocument); //Document stream
+Attachment attachment = new Attachment(document); //Create attachment from document
+List&lt;Alvao.API.Common.Model.IAttachment&gt; Attachments = new List&lt;Alvao.API.Common.Model.IAttachment&gt;(); //Create list of attachments
+Attachments.Add(attachment); //Insert attachment into list
+Alvao.API.Common.Model.HtmlTextModel emailMessage = new Alvao.API.Common.Model.HtmlTextModel("Message in HTML", Attachments); //Create message with attachment
+Alvao.API.SD.Model.SendMessageSettingsModel emailModel = new Alvao.API.SD.Model.SendMessageSettingsModel(); //Create email model
+int ticketId = 50; //Request id
+int fromPersonId = 25; //Email sender id
+int toPersonId = 8; //Email recipient
+Alvao.API.Common.Model.Database.tPerson personTo = Alvao.API.Common.Person.GetById(toPersonId); //Get recipient by id
+emailModel.RecipientsTo = personTo.sPersonEmail; //Set recipient email 
+Alvao.API.SD.Message.SendMessage(ticketId, "Subject of email", fromPersonId, emailMessage, emailModel); //Send message</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Throws when request with <code class="paramref">ticketId</code> does not exist.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_SD_Message_Validate_" data-uid="Alvao.API.SD.Message.Validate*"></a>
+
+  <h3 id="Alvao_API_SD_Message_Validate_System_String_System_Boolean_" data-uid="Alvao.API.SD.Message.Validate(System.String,System.Boolean)">
+  Validate(string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/Message.cs&amp;version=GBdev&amp;line=124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Valides mail adresses in string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Validate(string addresses, bool multi)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>addresses</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Mail adresses</p>
+</dd>
+    <dt><code>multi</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>There are multiple adresses in adresses</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Returns true if all adresses are valid, otherwise false</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

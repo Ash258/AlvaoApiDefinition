@@ -1,0 +1,3419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class tblWbemObject | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class tblWbemObject | Alvao.API Documentation ">
+      
+      <meta name="description" content="HW detected in the computers.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.Common.Model.Database.tblWbemObject">
+
+
+
+  <h1 id="Alvao_API_Common_Model_Database_tblWbemObject" data-uid="Alvao.API.Common.Model.Database.tblWbemObject" class="text-break">
+Class tblWbemObject  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/tblWbemObject.cs&amp;version=GBdev&amp;line=3"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.Common.html">Common</a>.<a class="xref" href="Alvao.API.Common.Model.html">Model</a>.<a class="xref" href="Alvao.API.Common.Model.Database.html">Database</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>HW detected in the computers.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Table(&quot;dbo.tblWbemObject&quot;)]
+public class tblWbemObject : ICloneable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">tblWbemObject</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icloneable">ICloneable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Active_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Active*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Active" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Active">
+  Active
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5488"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? Active { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_AdapterRAM_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AdapterRAM*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_AdapterRAM" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AdapterRAM">
+  AdapterRAM
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5489"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual double? AdapterRAM { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_AdapterType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AdapterType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_AdapterType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AdapterType">
+  AdapterType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5490"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string AdapterType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_AlvaoVirtualMachineHostname_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AlvaoVirtualMachineHostname*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_AlvaoVirtualMachineHostname" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AlvaoVirtualMachineHostname">
+  AlvaoVirtualMachineHostname
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5491"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string AlvaoVirtualMachineHostname { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_AttachedTo_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AttachedTo*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_AttachedTo" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.AttachedTo">
+  AttachedTo
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5492"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string AttachedTo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Availability_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Availability*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Availability" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Availability">
+  Availability
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5493"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? Availability { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_BankLabel_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.BankLabel*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_BankLabel" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.BankLabel">
+  BankLabel
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5494"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string BankLabel { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_BaseBoard_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.BaseBoard*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_BaseBoard" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.BaseBoard">
+  BaseBoard
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5495"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string BaseBoard { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_CSDVersion_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CSDVersion*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_CSDVersion" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CSDVersion">
+  CSDVersion
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5501"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string CSDVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Capacity_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Capacity*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Capacity" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Capacity">
+  Capacity
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5497"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long? Capacity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Caption_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Caption*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Caption" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Caption">
+  Caption
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Caption { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ChassisTypes_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ChassisTypes*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ChassisTypes" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ChassisTypes">
+  ChassisTypes
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5499"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? ChassisTypes { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Compressed_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Compressed*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Compressed" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Compressed">
+  Compressed
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5500"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? Compressed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_CurrentClockSpeed_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CurrentClockSpeed*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_CurrentClockSpeed" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CurrentClockSpeed">
+  CurrentClockSpeed
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5502"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? CurrentClockSpeed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_CurrentRefreshRate_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CurrentRefreshRate*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_CurrentRefreshRate" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.CurrentRefreshRate">
+  CurrentRefreshRate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5503"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? CurrentRefreshRate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DHCPEnabled_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DHCPEnabled*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DHCPEnabled" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DHCPEnabled">
+  DHCPEnabled
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5509"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? DHCPEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DNSServerSearchOrder_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DNSServerSearchOrder*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DNSServerSearchOrder" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DNSServerSearchOrder">
+  DNSServerSearchOrder
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5510"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string DNSServerSearchOrder { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DataWidth_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DataWidth*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DataWidth" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DataWidth">
+  DataWidth
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5504"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? DataWidth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Description_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Description*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Description" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5505"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Description { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceID_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceID*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceID" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceID">
+  DeviceID
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5506"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string DeviceID { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceLocator_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceLocator*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceLocator" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceLocator">
+  DeviceLocator
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5507"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string DeviceLocator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DeviceType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DeviceType">
+  DeviceType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5508"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string DeviceType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Drive_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Drive*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Drive" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Drive">
+  Drive
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5511"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Drive { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DriveLetter_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DriveLetter*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DriveLetter" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DriveLetter">
+  DriveLetter
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5515"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Drive letter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string DriveLetter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_DriveType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DriveType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_DriveType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.DriveType">
+  DriveType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5516"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? DriveType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_EDIDVersion_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.EDIDVersion*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_EDIDVersion" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.EDIDVersion">
+  EDIDVersion
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5517"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string EDIDVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_FileSystem_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FileSystem*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_FileSystem" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FileSystem">
+  FileSystem
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5518"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string FileSystem { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_FormFactor_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FormFactor*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_FormFactor" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FormFactor">
+  FormFactor
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5519"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? FormFactor { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_FreeSpace_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FreeSpace*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_FreeSpace" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.FreeSpace">
+  FreeSpace
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5520"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual double? FreeSpace { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IPAddress_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPAddress*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IPAddress" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPAddress">
+  IPAddress
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5526"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string IPAddress { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IPEnabled_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPEnabled*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IPEnabled" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPEnabled">
+  IPEnabled
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5527"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? IPEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IPSubnet_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPSubnet*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IPSubnet" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IPSubnet">
+  IPSubnet
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string IPSubnet { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IRQNumber_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IRQNumber*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IRQNumber" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IRQNumber">
+  IRQNumber
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5529"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? IRQNumber { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_InfraredSupported_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InfraredSupported*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_InfraredSupported" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InfraredSupported">
+  InfraredSupported
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5521"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? InfraredSupported { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_InstallDate_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InstallDate*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_InstallDate" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InstallDate">
+  InstallDate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5522"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DateTime? InstallDate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_InterfaceType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InterfaceType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_InterfaceType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.InterfaceType">
+  InterfaceType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5523"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string InterfaceType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IsActivated_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsActivated*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IsActivated" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsActivated">
+  IsActivated
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5530"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? IsActivated { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IsEnabled_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsEnabled*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IsEnabled" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsEnabled">
+  IsEnabled
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5531"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? IsEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_IsOwned_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsOwned*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_IsOwned" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.IsOwned">
+  IsOwned
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? IsOwned { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MACAddress_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MACAddress*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MACAddress" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MACAddress">
+  MACAddress
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5534"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string MACAddress { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ManufactureDate_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufactureDate*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ManufactureDate" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufactureDate">
+  ManufactureDate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5535"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DateTime? ManufactureDate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Manufacturer_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Manufacturer*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Manufacturer" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Manufacturer">
+  Manufacturer
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5536"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Manufacturer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersion_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersion*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersion" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersion">
+  ManufacturerVersion
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5537"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ManufacturerVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionFull20_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersionFull20*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionFull20" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersionFull20">
+  ManufacturerVersionFull20
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ManufacturerVersionFull20 { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionInfo_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersionInfo*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionInfo" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ManufacturerVersionInfo">
+  ManufacturerVersionInfo
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5539"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ManufacturerVersionInfo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MaxCapacity_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxCapacity*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MaxCapacity" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxCapacity">
+  MaxCapacity
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5540"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MaxCapacity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MaxClockSpeed_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxClockSpeed*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MaxClockSpeed" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxClockSpeed">
+  MaxClockSpeed
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5541"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MaxClockSpeed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MaxHorizontalImageSize_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxHorizontalImageSize*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MaxHorizontalImageSize" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxHorizontalImageSize">
+  MaxHorizontalImageSize
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5542"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MaxHorizontalImageSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MaxRefreshRate_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxRefreshRate*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MaxRefreshRate" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxRefreshRate">
+  MaxRefreshRate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5543"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MaxRefreshRate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MaxVerticalImageSize_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxVerticalImageSize*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MaxVerticalImageSize" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MaxVerticalImageSize">
+  MaxVerticalImageSize
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5544"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MaxVerticalImageSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MediaType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MediaType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MediaType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MediaType">
+  MediaType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5545"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string MediaType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MemoryDevices_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MemoryDevices*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MemoryDevices" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MemoryDevices">
+  MemoryDevices
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5546"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MemoryDevices { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MemoryType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MemoryType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MemoryType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MemoryType">
+  MemoryType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5547"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MemoryType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MinRefreshRate_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MinRefreshRate*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MinRefreshRate" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MinRefreshRate">
+  MinRefreshRate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5548"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? MinRefreshRate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Model_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Model*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Model" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Model">
+  Model
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Model { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_MonitorManufacturer_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MonitorManufacturer*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_MonitorManufacturer" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.MonitorManufacturer">
+  MonitorManufacturer
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5550"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string MonitorManufacturer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Monochrome_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Monochrome*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Monochrome" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Monochrome">
+  Monochrome
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5551"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? Monochrome { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_NetConnectionID_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NetConnectionID*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_NetConnectionID" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NetConnectionID">
+  NetConnectionID
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5552"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string NetConnectionID { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_NumberOfCores_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NumberOfCores*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_NumberOfCores" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NumberOfCores">
+  NumberOfCores
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5556"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Number of physical CPU cores.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? NumberOfCores { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_NumberOfLogicalProcessors_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NumberOfLogicalProcessors*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_NumberOfLogicalProcessors" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.NumberOfLogicalProcessors">
+  NumberOfLogicalProcessors
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5557"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? NumberOfLogicalProcessors { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_OSLanguage_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.OSLanguage*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_OSLanguage" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.OSLanguage">
+  OSLanguage
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5559"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? OSLanguage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Organization_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Organization*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Organization" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Organization">
+  Organization
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5558"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Organization { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_PNPDeviceID_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PNPDeviceID*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_PNPDeviceID" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PNPDeviceID">
+  PNPDeviceID
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5562"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string PNPDeviceID { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_PartOfDomain_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PartOfDomain*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_PartOfDomain" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PartOfDomain">
+  PartOfDomain
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5560"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool? PartOfDomain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_PhysicalPresenceVersionInfo_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PhysicalPresenceVersionInfo*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_PhysicalPresenceVersionInfo" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PhysicalPresenceVersionInfo">
+  PhysicalPresenceVersionInfo
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string PhysicalPresenceVersionInfo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_PortName_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PortName*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_PortName" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.PortName">
+  PortName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5563"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string PortName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ProcessorId_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ProcessorId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ProcessorId" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ProcessorId">
+  ProcessorId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5564"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ProcessorId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Domain_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Domain*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Domain" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Domain">
+  Prop_Domain
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5565"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Prop_Domain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Name_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Name*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Name" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Name">
+  Prop_Name
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5566"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Prop_Name { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Product_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Product*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Product" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Product">
+  Prop_Product
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5567"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Prop_Product { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Size_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Size*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Prop_Size" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Prop_Size">
+  Prop_Size
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5568"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual double? Prop_Size { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ProtectionStatus_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ProtectionStatus*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ProtectionStatus" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ProtectionStatus">
+  ProtectionStatus
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5572"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The status of drive section encryption by the BitLocker tool. 0 = off, 1 = on, 2 = unknown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? ProtectionStatus { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_RegisteredUser_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.RegisteredUser*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_RegisteredUser" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.RegisteredUser">
+  RegisteredUser
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5573"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string RegisteredUser { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SMBIOSBIOSVersion_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SMBIOSBIOSVersion*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SMBIOSBIOSVersion" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SMBIOSBIOSVersion">
+  SMBIOSBIOSVersion
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5579"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SMBIOSBIOSVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ScreenHeight_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ScreenHeight*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ScreenHeight" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ScreenHeight">
+  ScreenHeight
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5574"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? ScreenHeight { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ScreenWidth_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ScreenWidth*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ScreenWidth" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ScreenWidth">
+  ScreenWidth
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5575"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? ScreenWidth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SerialNumber_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SerialNumber*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SerialNumber" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SerialNumber">
+  SerialNumber
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5576"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SerialNumber { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Service_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Service*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Service" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Service">
+  Service
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5577"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Service { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_ServiceName_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ServiceName*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_ServiceName" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.ServiceName">
+  ServiceName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5578"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string ServiceName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SocketDesignation_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SocketDesignation*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SocketDesignation" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SocketDesignation">
+  SocketDesignation
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SocketDesignation { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SpecVersion_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SpecVersion*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SpecVersion" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SpecVersion">
+  SpecVersion
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5581"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SpecVersion { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Speed_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Speed*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Speed" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Speed">
+  Speed
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Speed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_StatusInfo_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.StatusInfo*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_StatusInfo" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.StatusInfo">
+  StatusInfo
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5583"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? StatusInfo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SystemDirectory_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SystemDirectory*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SystemDirectory" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SystemDirectory">
+  SystemDirectory
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5584"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SystemDirectory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_SystemType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SystemType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_SystemType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.SystemType">
+  SystemType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string SystemType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_TotalPhysicalMemory_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.TotalPhysicalMemory*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_TotalPhysicalMemory" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.TotalPhysicalMemory">
+  TotalPhysicalMemory
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5586"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long? TotalPhysicalMemory { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_TypeDetail_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.TypeDetail*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_TypeDetail" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.TypeDetail">
+  TypeDetail
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5593"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? TypeDetail { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_UPSPort_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.UPSPort*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_UPSPort" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.UPSPort">
+  UPSPort
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string UPSPort { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_UserName_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.UserName*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_UserName" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.UserName">
+  UserName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5595"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string UserName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Version_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Version*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Version" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5596"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Version { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_VideoModeDescription_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.VideoModeDescription*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_VideoModeDescription" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.VideoModeDescription">
+  VideoModeDescription
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5597"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string VideoModeDescription { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_VolumeSerialNumber_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.VolumeSerialNumber*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_VolumeSerialNumber" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.VolumeSerialNumber">
+  VolumeSerialNumber
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5598"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string VolumeSerialNumber { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_WakeUpType_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.WakeUpType*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_WakeUpType" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.WakeUpType">
+  WakeUpType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5599"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? WakeUpType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject___CLASS_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.__CLASS*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject___CLASS" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.__CLASS">
+  __CLASS
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5487"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string __CLASS { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_bolVirtualObject_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.bolVirtualObject*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_bolVirtualObject" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.bolVirtualObject">
+  bolVirtualObject
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5496"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool bolVirtualObject { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_intWbemObjectId_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.intWbemObjectId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_intWbemObjectId" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.intWbemObjectId">
+  intWbemObjectId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5524"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Key]
+public virtual int intWbemObjectId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_lintDetectId_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.lintDetectId*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_lintDetectId" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.lintDetectId">
+  lintDetectId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5533"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int lintDetectId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtChassisTypesDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtChassisTypesDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtChassisTypesDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtChassisTypesDesc">
+  txtChassisTypesDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5587"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtChassisTypesDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtFormFactorDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtFormFactorDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtFormFactorDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtFormFactorDesc">
+  txtFormFactorDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtFormFactorDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtMemoryTypeDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtMemoryTypeDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtMemoryTypeDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtMemoryTypeDesc">
+  txtMemoryTypeDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5589"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtMemoryTypeDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtStatusInfoDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtStatusInfoDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtStatusInfoDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtStatusInfoDesc">
+  txtStatusInfoDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5590"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtStatusInfoDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtTypeDetailDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtTypeDetailDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtTypeDetailDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtTypeDetailDesc">
+  txtTypeDetailDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtTypeDetailDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_txtWakeUpTypeDesc_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtWakeUpTypeDesc*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_txtWakeUpTypeDesc" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.txtWakeUpTypeDesc">
+  txtWakeUpTypeDesc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/ModelGenerator.cs&amp;version=GBdev&amp;line=5592"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string txtWakeUpTypeDesc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_Common_Model_Database_tblWbemObject_Clone_" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Clone*"></a>
+
+  <h3 id="Alvao_API_Common_Model_Database_tblWbemObject_Clone" data-uid="Alvao.API.Common.Model.Database.tblWbemObject.Clone">
+  Clone()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/Database/tblWbemObject.cs&amp;version=GBdev&amp;line=5"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new object that is a copy of the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Clone()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>A new object that is a copy of this instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

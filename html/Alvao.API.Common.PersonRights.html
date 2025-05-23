@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PersonRights | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PersonRights | Alvao.API Documentation ">
+      
+      <meta name="description" content="Facade class grouping person rights methods. Person rights are usually cached.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.Common.PersonRights">
+
+
+
+  <h1 id="Alvao_API_Common_PersonRights" data-uid="Alvao.API.Common.PersonRights" class="text-break">
+Class PersonRights  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.Common.html">Common</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Facade class grouping person rights methods. Person rights are usually cached.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class PersonRights</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PersonRights</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_Common_PersonRights_CanReadPerson_" data-uid="Alvao.API.Common.PersonRights.CanReadPerson*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_CanReadPerson_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.CanReadPerson(System.Int32,System.Int32)">
+  CanReadPerson(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=236"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user can read particular user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CanReadPerson(int personId, int personToReadId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>personToReadId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person to read ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User can read particular request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_CanReadTicket_" data-uid="Alvao.API.Common.PersonRights.CanReadTicket*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_CanReadTicket_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.CanReadTicket(System.Int32,System.Int32)">
+  CanReadTicket(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user can read particular request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool CanReadTicket(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User can read particular request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_ClearUserRightsCache_" data-uid="Alvao.API.Common.PersonRights.ClearUserRightsCache*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_ClearUserRightsCache_System_Int32_" data-uid="Alvao.API.Common.PersonRights.ClearUserRightsCache(System.Int32)">
+  ClearUserRightsCache(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resets user's rights cache. Useful after user rights changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ClearUserRightsCache(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_HaveAnyAssetManagementRole_" data-uid="Alvao.API.Common.PersonRights.HaveAnyAssetManagementRole*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_HaveAnyAssetManagementRole_System_Int32_System_Boolean_" data-uid="Alvao.API.Common.PersonRights.HaveAnyAssetManagementRole(System.Int32,System.Boolean)">
+  HaveAnyAssetManagementRole(int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has any role in Asset Management.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HaveAnyAssetManagementRole(int personId, bool includeRemovedHidden)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>includeRemovedHidden</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Include removed and hidden users</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has any role in Asset Management</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_HaveGlobalRole_" data-uid="Alvao.API.Common.PersonRights.HaveGlobalRole*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_HaveGlobalRole_System_Int32_Alvao_API_Common_Model_Database_RoleBehavior_BehaviorId_System_Boolean_" data-uid="Alvao.API.Common.PersonRights.HaveGlobalRole(System.Int32,Alvao.API.Common.Model.Database.RoleBehavior.BehaviorId,System.Boolean)">
+  HaveGlobalRole(int, BehaviorId, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is member of system group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HaveGlobalRole(int personId, RoleBehavior.BehaviorId behavior, bool includeRemovedHidden)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>behavior</code> <a class="xref" href="Alvao.API.Common.Model.Database.RoleBehavior.html">RoleBehavior</a>.<a class="xref" href="Alvao.API.Common.Model.Database.RoleBehavior.BehaviorId.html">BehaviorId</a></dt>
+    <dd><p>System group</p>
+</dd>
+    <dt><code>includeRemovedHidden</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Include removed and hidden users</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is member</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_HaveGlobalRole_" data-uid="Alvao.API.Common.PersonRights.HaveGlobalRole*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_HaveGlobalRole_System_Int32_Alvao_API_Common_PersonRights_GlobalRoles_System_Boolean_" data-uid="Alvao.API.Common.PersonRights.HaveGlobalRole(System.Int32,Alvao.API.Common.PersonRights.GlobalRoles,System.Boolean)">
+  HaveGlobalRole(int, GlobalRoles, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has role in system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HaveGlobalRole(int personId, PersonRights.GlobalRoles roles, bool includeRemovedHidden)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>roles</code> <a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.GlobalRoles.html">GlobalRoles</a></dt>
+    <dd><p>Roles flags (it is possible to combine them with |)</p>
+</dd>
+    <dt><code>includeRemovedHidden</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Include removed and hidden users</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has role in system</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_HaveTicketRole_" data-uid="Alvao.API.Common.PersonRights.HaveTicketRole*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_HaveTicketRole_System_Int32_System_Nullable_System_Int32__System_Nullable_System_Int32__Alvao_API_Common_PersonRights_TicketRoles_System_Boolean_" data-uid="Alvao.API.Common.PersonRights.HaveTicketRole(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},Alvao.API.Common.PersonRights.TicketRoles,System.Boolean)">
+  HaveTicketRole(int, int?, int?, TicketRoles, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has roles for particular request or service (or both).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HaveTicketRole(int personId, int? ticketId, int? sectionId, PersonRights.TicketRoles roles, bool includeRemovedTicket)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+    <dt><code>sectionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Service ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+    <dt><code>roles</code> <a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.TicketRoles.html">TicketRoles</a></dt>
+    <dd><p>Roles flags (it is possible to combine them with |)</p>
+</dd>
+    <dt><code>includeRemovedTicket</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Include removed request</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has role for particular request or service</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsAdmin_" data-uid="Alvao.API.Common.PersonRights.IsAdmin*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsAdmin_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsAdmin(System.Int32)">
+  IsAdmin(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is administrator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAdmin(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is administrator</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsAdminOrAdministratorsRoleIsEmpty_" data-uid="Alvao.API.Common.PersonRights.IsAdminOrAdministratorsRoleIsEmpty*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsAdminOrAdministratorsRoleIsEmpty_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsAdminOrAdministratorsRoleIsEmpty(System.Int32)">
+  IsAdminOrAdministratorsRoleIsEmpty(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is administrator. Revoked: If no administrator is set, returns true (everybody is administrator).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;IsAdminOrAdministratorsRoleIsEmpty is deprecated, please use IsAdmin instead.&quot;)]
+public static bool IsAdminOrAdministratorsRoleIsEmpty(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is administrator</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsAnySectionRoleMember_" data-uid="Alvao.API.Common.PersonRights.IsAnySectionRoleMember*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsAnySectionRoleMember_System_Int32_Alvao_API_Common_PersonRights_SectionRoles_" data-uid="Alvao.API.Common.PersonRights.IsAnySectionRoleMember(System.Int32,Alvao.API.Common.PersonRights.SectionRoles)">
+  IsAnySectionRoleMember(int, SectionRoles)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has some role in any service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAnySectionRoleMember(int personId, PersonRights.SectionRoles role)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>role</code> <a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.SectionRoles.html">SectionRoles</a></dt>
+    <dd><p>Service role</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has any service role</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsAnySectionSolverTeamMember_" data-uid="Alvao.API.Common.PersonRights.IsAnySectionSolverTeamMember*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsAnySectionSolverTeamMember_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsAnySectionSolverTeamMember(System.Int32)">
+  IsAnySectionSolverTeamMember(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=246"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is member of any service solver team (solver, manager)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsAnySectionSolverTeamMember(int personId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is member of any service solver team (solver, manager)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsOnlyTicketRequesterOrTicketParticipant_" data-uid="Alvao.API.Common.PersonRights.IsOnlyTicketRequesterOrTicketParticipant*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsOnlyTicketRequesterOrTicketParticipant_System_Int32_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsOnlyTicketRequesterOrTicketParticipant(System.Int32,System.Int32,System.Int32)">
+  IsOnlyTicketRequesterOrTicketParticipant(int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=323"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is only requester or participant for particular request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsOnlyTicketRequesterOrTicketParticipant(int personId, int ticketId, int sectionId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+    <dt><code>sectionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Section ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is only requester or participant for particular request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsRequesterOrRequesterManager_" data-uid="Alvao.API.Common.PersonRights.IsRequesterOrRequesterManager*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsRequesterOrRequesterManager_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsRequesterOrRequesterManager(System.Int32,System.Int32)">
+  IsRequesterOrRequesterManager(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=214"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is requester or requester's manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsRequesterOrRequesterManager(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is requester or requester's manager</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsSectionRoleMember_" data-uid="Alvao.API.Common.PersonRights.IsSectionRoleMember*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsSectionRoleMember_System_Int32_System_Int32_Alvao_API_Common_PersonRights_SectionRoles_" data-uid="Alvao.API.Common.PersonRights.IsSectionRoleMember(System.Int32,System.Int32,Alvao.API.Common.PersonRights.SectionRoles)">
+  IsSectionRoleMember(int, int, SectionRoles)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has role in service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSectionRoleMember(int personId, int sectionId, PersonRights.SectionRoles role)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>sectionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Service ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+    <dt><code>role</code> <a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.SectionRoles.html">SectionRoles</a></dt>
+    <dd><p>Service role</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has role in service</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsSectionRoleMemberForTicket_" data-uid="Alvao.API.Common.PersonRights.IsSectionRoleMemberForTicket*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsSectionRoleMemberForTicket_System_Int32_System_Int32_Alvao_API_Common_PersonRights_SectionRoles_" data-uid="Alvao.API.Common.PersonRights.IsSectionRoleMemberForTicket(System.Int32,System.Int32,Alvao.API.Common.PersonRights.SectionRoles)">
+  IsSectionRoleMemberForTicket(int, int, SectionRoles)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user has service role for particular request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSectionRoleMemberForTicket(int personId, int ticketId, PersonRights.SectionRoles role)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+    <dt><code>role</code> <a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.SectionRoles.html">SectionRoles</a></dt>
+    <dd><p>Service role</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User has service role for request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketApprovalAuthority_" data-uid="Alvao.API.Common.PersonRights.IsTicketApprovalAuthority*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketApprovalAuthority_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketApprovalAuthority(System.Int32,System.Int32)">
+  IsTicketApprovalAuthority(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is request approval authority (approves request).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketApprovalAuthority(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is request approval authority</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketRequestParticipant_" data-uid="Alvao.API.Common.PersonRights.IsTicketRequestParticipant*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketRequestParticipant_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketRequestParticipant(System.Int32,System.Int32)">
+  IsTicketRequestParticipant(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is ticket participant on the ticket.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketRequestParticipant(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is ticket participant.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketRequestedForDifferent_" data-uid="Alvao.API.Common.PersonRights.IsTicketRequestedForDifferent*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketRequestedForDifferent_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketRequestedForDifferent(System.Int32)">
+  IsTicketRequestedForDifferent(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether requester is not in requested for on the ticket.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketRequestedForDifferent(int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is different.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketSectionOnlyReader_" data-uid="Alvao.API.Common.PersonRights.IsTicketSectionOnlyReader*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketSectionOnlyReader_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketSectionOnlyReader(System.Int32,System.Int32)">
+  IsTicketSectionOnlyReader(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is only reader for particular service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketSectionOnlyReader(int personId, int sectionId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>sectionId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Service ID <i>(tHdSection.iHdSectionId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is only section reader</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketSolver_" data-uid="Alvao.API.Common.PersonRights.IsTicketSolver*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketSolver_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketSolver(System.Int32,System.Int32)">
+  IsTicketSolver(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is request solver.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketSolver(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is request solver</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_IsTicketSolverTeamMember_" data-uid="Alvao.API.Common.PersonRights.IsTicketSolverTeamMember*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_IsTicketSolverTeamMember_System_Int32_System_Int32_" data-uid="Alvao.API.Common.PersonRights.IsTicketSolverTeamMember(System.Int32,System.Int32)">
+  IsTicketSolverTeamMember(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns whether user is member of service solver team (solver, manager) for particular request</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsTicketSolverTeamMember(int personId, int ticketId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Request ID <i>(tHdTicket.iHdTicketId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>User is member of service solver team (solver, manager) for particular request</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_PersonRights_SectionSolverTeamRoles_" data-uid="Alvao.API.Common.PersonRights.SectionSolverTeamRoles*"></a>
+
+  <h3 id="Alvao_API_Common_PersonRights_SectionSolverTeamRoles" data-uid="Alvao.API.Common.PersonRights.SectionSolverTeamRoles">
+  SectionSolverTeamRoles()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/PersonRights.cs&amp;version=GBdev&amp;line=88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PersonRights.TicketRoles SectionSolverTeamRoles()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.PersonRights.html">PersonRights</a>.<a class="xref" href="Alvao.API.Common.PersonRights.TicketRoles.html">TicketRoles</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

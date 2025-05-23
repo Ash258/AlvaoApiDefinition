@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DbProperty | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DbProperty | Alvao.API Documentation ">
+      
+      <meta name="description" content="Facade class grouping tProperty methods.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Alvao.API.Common.DbProperty">
+
+
+
+  <h1 id="Alvao_API_Common_DbProperty" data-uid="Alvao.API.Common.DbProperty" class="text-break">
+Class DbProperty  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.Common.html">Common</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Facade class grouping tProperty methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DbProperty</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DbProperty</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_Common_DbProperty_AMDefaultComputerClass_" data-uid="Alvao.API.Common.DbProperty.AMDefaultComputerClass*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AMDefaultComputerClass" data-uid="Alvao.API.Common.DbProperty.AMDefaultComputerClass">
+  AMDefaultComputerClass
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int AMDefaultComputerClass { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AM_MyDocumentsWorkflowText_" data-uid="Alvao.API.Common.DbProperty.AM_MyDocumentsWorkflowText*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AM_MyDocumentsWorkflowText" data-uid="Alvao.API.Common.DbProperty.AM_MyDocumentsWorkflowText">
+  AM_MyDocumentsWorkflowText
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AM_MyDocumentsWorkflowText { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AM_Query_PreferredProperties_" data-uid="Alvao.API.Common.DbProperty.AM_Query_PreferredProperties*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AM_Query_PreferredProperties" data-uid="Alvao.API.Common.DbProperty.AM_Query_PreferredProperties">
+  AM_Query_PreferredProperties
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AM_Query_PreferredProperties { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AM_Scim_ImportUsers_" data-uid="Alvao.API.Common.DbProperty.AM_Scim_ImportUsers*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AM_Scim_ImportUsers" data-uid="Alvao.API.Common.DbProperty.AM_Scim_ImportUsers">
+  AM_Scim_ImportUsers
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AM_Scim_ImportUsers { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AddinWebUrl_" data-uid="Alvao.API.Common.DbProperty.AddinWebUrl*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AddinWebUrl" data-uid="Alvao.API.Common.DbProperty.AddinWebUrl">
+  AddinWebUrl
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AddinWebUrl { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AlvaoStandardSenderAddress_" data-uid="Alvao.API.Common.DbProperty.AlvaoStandardSenderAddress*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AlvaoStandardSenderAddress" data-uid="Alvao.API.Common.DbProperty.AlvaoStandardSenderAddress">
+  AlvaoStandardSenderAddress
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AlvaoStandardSenderAddress { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AnalysisDatabase_" data-uid="Alvao.API.Common.DbProperty.AnalysisDatabase*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AnalysisDatabase" data-uid="Alvao.API.Common.DbProperty.AnalysisDatabase">
+  AnalysisDatabase
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AnalysisDatabase { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AnalysisEnabled_" data-uid="Alvao.API.Common.DbProperty.AnalysisEnabled*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AnalysisEnabled" data-uid="Alvao.API.Common.DbProperty.AnalysisEnabled">
+  AnalysisEnabled
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AnalysisEnabled { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AnalysisServer_" data-uid="Alvao.API.Common.DbProperty.AnalysisServer*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AnalysisServer" data-uid="Alvao.API.Common.DbProperty.AnalysisServer">
+  AnalysisServer
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AnalysisServer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AssetManagement_Agent_CreateNewComputers_" data-uid="Alvao.API.Common.DbProperty.AssetManagement_Agent_CreateNewComputers*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AssetManagement_Agent_CreateNewComputers" data-uid="Alvao.API.Common.DbProperty.AssetManagement_Agent_CreateNewComputers">
+  AssetManagement_Agent_CreateNewComputers
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool AssetManagement_Agent_CreateNewComputers { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AssetManagement_PrintTemplateHtml_" data-uid="Alvao.API.Common.DbProperty.AssetManagement_PrintTemplateHtml*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AssetManagement_PrintTemplateHtml" data-uid="Alvao.API.Common.DbProperty.AssetManagement_PrintTemplateHtml">
+  AssetManagement_PrintTemplateHtml
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AssetManagement_PrintTemplateHtml { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AssetManagement_TransferProtocol_PageSettings_" data-uid="Alvao.API.Common.DbProperty.AssetManagement_TransferProtocol_PageSettings*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AssetManagement_TransferProtocol_PageSettings" data-uid="Alvao.API.Common.DbProperty.AssetManagement_TransferProtocol_PageSettings">
+  AssetManagement_TransferProtocol_PageSettings
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AssetManagement_TransferProtocol_PageSettings { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AssetManagement_WebServiceAgentAuthCode_" data-uid="Alvao.API.Common.DbProperty.AssetManagement_WebServiceAgentAuthCode*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AssetManagement_WebServiceAgentAuthCode" data-uid="Alvao.API.Common.DbProperty.AssetManagement_WebServiceAgentAuthCode">
+  AssetManagement_WebServiceAgentAuthCode
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string AssetManagement_WebServiceAgentAuthCode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Authentication_DefaultDomain_" data-uid="Alvao.API.Common.DbProperty.Authentication_DefaultDomain*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Authentication_DefaultDomain" data-uid="Alvao.API.Common.DbProperty.Authentication_DefaultDomain">
+  Authentication_DefaultDomain
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=111"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Authentication_DefaultDomain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Authentication_LdapServer_" data-uid="Alvao.API.Common.DbProperty.Authentication_LdapServer*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Authentication_LdapServer" data-uid="Alvao.API.Common.DbProperty.Authentication_LdapServer">
+  Authentication_LdapServer
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Authentication_LdapServer { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_AutoLogoutMinutes_" data-uid="Alvao.API.Common.DbProperty.AutoLogoutMinutes*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_AutoLogoutMinutes" data-uid="Alvao.API.Common.DbProperty.AutoLogoutMinutes">
+  AutoLogoutMinutes
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int AutoLogoutMinutes { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ContextHelpUrl_" data-uid="Alvao.API.Common.DbProperty.ContextHelpUrl*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ContextHelpUrl" data-uid="Alvao.API.Common.DbProperty.ContextHelpUrl">
+  ContextHelpUrl
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ContextHelpUrl { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Create_Doc_" data-uid="Alvao.API.Common.DbProperty.Create_Doc*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Create_Doc" data-uid="Alvao.API.Common.DbProperty.Create_Doc">
+  Create_Doc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Create_Doc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_CustomAppsWebServiceUrl_" data-uid="Alvao.API.Common.DbProperty.CustomAppsWebServiceUrl*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_CustomAppsWebServiceUrl" data-uid="Alvao.API.Common.DbProperty.CustomAppsWebServiceUrl">
+  CustomAppsWebServiceUrl
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string CustomAppsWebServiceUrl { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_DbOptimization_LastErrorMessage_" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastErrorMessage*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_DbOptimization_LastErrorMessage" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastErrorMessage">
+  DbOptimization_LastErrorMessage
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DbOptimization_LastErrorMessage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_DbOptimization_LastRequestCreated_" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastRequestCreated*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_DbOptimization_LastRequestCreated" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastRequestCreated">
+  DbOptimization_LastRequestCreated
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime? DbOptimization_LastRequestCreated { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_DbOptimization_LastRequestFinished_" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastRequestFinished*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_DbOptimization_LastRequestFinished" data-uid="Alvao.API.Common.DbProperty.DbOptimization_LastRequestFinished">
+  DbOptimization_LastRequestFinished
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime? DbOptimization_LastRequestFinished { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_DefaultTimeZone_" data-uid="Alvao.API.Common.DbProperty.DefaultTimeZone*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_DefaultTimeZone" data-uid="Alvao.API.Common.DbProperty.DefaultTimeZone">
+  DefaultTimeZone
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DefaultTimeZone { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Documents_Path_" data-uid="Alvao.API.Common.DbProperty.Documents_Path*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Documents_Path" data-uid="Alvao.API.Common.DbProperty.Documents_Path">
+  Documents_Path
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Documents_Path { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Documents_SaveToDb_" data-uid="Alvao.API.Common.DbProperty.Documents_SaveToDb*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Documents_SaveToDb" data-uid="Alvao.API.Common.DbProperty.Documents_SaveToDb">
+  Documents_SaveToDb
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Documents_SaveToDb { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_GlobalAttachmentBlacklist_" data-uid="Alvao.API.Common.DbProperty.GlobalAttachmentBlacklist*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_GlobalAttachmentBlacklist" data-uid="Alvao.API.Common.DbProperty.GlobalAttachmentBlacklist">
+  GlobalAttachmentBlacklist
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GlobalAttachmentBlacklist { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_GlobalAttachmentWhitelist_" data-uid="Alvao.API.Common.DbProperty.GlobalAttachmentWhitelist*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_GlobalAttachmentWhitelist" data-uid="Alvao.API.Common.DbProperty.GlobalAttachmentWhitelist">
+  GlobalAttachmentWhitelist
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GlobalAttachmentWhitelist { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_HTMLHeader_" data-uid="Alvao.API.Common.DbProperty.HTMLHeader*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_HTMLHeader" data-uid="Alvao.API.Common.DbProperty.HTMLHeader">
+  HTMLHeader
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string HTMLHeader { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ImportCSVColumnSeparator_" data-uid="Alvao.API.Common.DbProperty.ImportCSVColumnSeparator*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ImportCSVColumnSeparator" data-uid="Alvao.API.Common.DbProperty.ImportCSVColumnSeparator">
+  ImportCSVColumnSeparator
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ImportCSVColumnSeparator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_InsiderPreview_" data-uid="Alvao.API.Common.DbProperty.InsiderPreview*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_InsiderPreview" data-uid="Alvao.API.Common.DbProperty.InsiderPreview">
+  InsiderPreview
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool InsiderPreview { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Inventory_SenderAddress_" data-uid="Alvao.API.Common.DbProperty.Inventory_SenderAddress*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Inventory_SenderAddress" data-uid="Alvao.API.Common.DbProperty.Inventory_SenderAddress">
+  Inventory_SenderAddress
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Inventory_SenderAddress { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_KnowledgeBaseAIAssistant_NotificationSchedule_" data-uid="Alvao.API.Common.DbProperty.KnowledgeBaseAIAssistant_NotificationSchedule*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_KnowledgeBaseAIAssistant_NotificationSchedule" data-uid="Alvao.API.Common.DbProperty.KnowledgeBaseAIAssistant_NotificationSchedule">
+  KnowledgeBaseAIAssistant_NotificationSchedule
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string KnowledgeBaseAIAssistant_NotificationSchedule { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_LicenceExpirationLastSend_" data-uid="Alvao.API.Common.DbProperty.LicenceExpirationLastSend*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_LicenceExpirationLastSend" data-uid="Alvao.API.Common.DbProperty.LicenceExpirationLastSend">
+  LicenceExpirationLastSend
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime LicenceExpirationLastSend { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_MailSendIntervalSeconds_" data-uid="Alvao.API.Common.DbProperty.MailSendIntervalSeconds*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_MailSendIntervalSeconds" data-uid="Alvao.API.Common.DbProperty.MailSendIntervalSeconds">
+  MailSendIntervalSeconds
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int MailSendIntervalSeconds { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_MailSendMaxAttempts_" data-uid="Alvao.API.Common.DbProperty.MailSendMaxAttempts*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_MailSendMaxAttempts" data-uid="Alvao.API.Common.DbProperty.MailSendMaxAttempts">
+  MailSendMaxAttempts
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int MailSendMaxAttempts { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_MailSendRetryIntervalMinutes_" data-uid="Alvao.API.Common.DbProperty.MailSendRetryIntervalMinutes*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_MailSendRetryIntervalMinutes" data-uid="Alvao.API.Common.DbProperty.MailSendRetryIntervalMinutes">
+  MailSendRetryIntervalMinutes
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=178"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int MailSendRetryIntervalMinutes { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_MailerDaemons_" data-uid="Alvao.API.Common.DbProperty.MailerDaemons*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_MailerDaemons" data-uid="Alvao.API.Common.DbProperty.MailerDaemons">
+  MailerDaemons
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string MailerDaemons { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_NonClasProdStateWarn_" data-uid="Alvao.API.Common.DbProperty.NonClasProdStateWarn*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_NonClasProdStateWarn" data-uid="Alvao.API.Common.DbProperty.NonClasProdStateWarn">
+  NonClasProdStateWarn
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool NonClasProdStateWarn { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_RestApiUrl_" data-uid="Alvao.API.Common.DbProperty.RestApiUrl*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_RestApiUrl" data-uid="Alvao.API.Common.DbProperty.RestApiUrl">
+  RestApiUrl
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RestApiUrl { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ServiceDesk_HtmlStyle_" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_HtmlStyle*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ServiceDesk_HtmlStyle" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_HtmlStyle">
+  ServiceDesk_HtmlStyle
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ServiceDesk_HtmlStyle { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ServiceDesk_OperatorsNotificationsSubject_" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_OperatorsNotificationsSubject*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ServiceDesk_OperatorsNotificationsSubject" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_OperatorsNotificationsSubject">
+  ServiceDesk_OperatorsNotificationsSubject
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ServiceDesk_OperatorsNotificationsSubject { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ServiceDesk_RecommendedColors_" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_RecommendedColors*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ServiceDesk_RecommendedColors" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_RecommendedColors">
+  ServiceDesk_RecommendedColors
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ServiceDesk_RecommendedColors { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_ServiceDesk_SubmissionMethod_" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_SubmissionMethod*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_ServiceDesk_SubmissionMethod" data-uid="Alvao.API.Common.DbProperty.ServiceDesk_SubmissionMethod">
+  ServiceDesk_SubmissionMethod
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ServiceDesk_SubmissionMethod { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Show_Domain_" data-uid="Alvao.API.Common.DbProperty.Show_Domain*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Show_Domain" data-uid="Alvao.API.Common.DbProperty.Show_Domain">
+  Show_Domain
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Show_Domain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_SlaAlert_FromEmail_" data-uid="Alvao.API.Common.DbProperty.SlaAlert_FromEmail*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_SlaAlert_FromEmail" data-uid="Alvao.API.Common.DbProperty.SlaAlert_FromEmail">
+  SlaAlert_FromEmail
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SlaAlert_FromEmail { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_Transfer_Generate_New_Doc_" data-uid="Alvao.API.Common.DbProperty.Transfer_Generate_New_Doc*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_Transfer_Generate_New_Doc" data-uid="Alvao.API.Common.DbProperty.Transfer_Generate_New_Doc">
+  Transfer_Generate_New_Doc
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Transfer_Generate_New_Doc { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebAppUrl_" data-uid="Alvao.API.Common.DbProperty.WebAppUrl*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebAppUrl" data-uid="Alvao.API.Common.DbProperty.WebAppUrl">
+  WebAppUrl
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string WebAppUrl { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_CompanyLogo_BackgroundImageDocumentId_" data-uid="Alvao.API.Common.DbProperty.WebApp_CompanyLogo_BackgroundImageDocumentId*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_CompanyLogo_BackgroundImageDocumentId" data-uid="Alvao.API.Common.DbProperty.WebApp_CompanyLogo_BackgroundImageDocumentId">
+  WebApp_CompanyLogo_BackgroundImageDocumentId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int WebApp_CompanyLogo_BackgroundImageDocumentId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_HomePage_BackgroundImageDocumentId_" data-uid="Alvao.API.Common.DbProperty.WebApp_HomePage_BackgroundImageDocumentId*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_HomePage_BackgroundImageDocumentId" data-uid="Alvao.API.Common.DbProperty.WebApp_HomePage_BackgroundImageDocumentId">
+  WebApp_HomePage_BackgroundImageDocumentId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int WebApp_HomePage_BackgroundImageDocumentId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_MainMenu_CustomHead_" data-uid="Alvao.API.Common.DbProperty.WebApp_MainMenu_CustomHead*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_MainMenu_CustomHead" data-uid="Alvao.API.Common.DbProperty.WebApp_MainMenu_CustomHead">
+  WebApp_MainMenu_CustomHead
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string WebApp_MainMenu_CustomHead { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_MainMenu_CustomTail_" data-uid="Alvao.API.Common.DbProperty.WebApp_MainMenu_CustomTail*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_MainMenu_CustomTail" data-uid="Alvao.API.Common.DbProperty.WebApp_MainMenu_CustomTail">
+  WebApp_MainMenu_CustomTail
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string WebApp_MainMenu_CustomTail { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_Settings_InstallApplications_ShowAmAgentLink_" data-uid="Alvao.API.Common.DbProperty.WebApp_Settings_InstallApplications_ShowAmAgentLink*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_Settings_InstallApplications_ShowAmAgentLink" data-uid="Alvao.API.Common.DbProperty.WebApp_Settings_InstallApplications_ShowAmAgentLink">
+  WebApp_Settings_InstallApplications_ShowAmAgentLink
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool WebApp_Settings_InstallApplications_ShowAmAgentLink { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_DbProperty_WebApp_ShowWarningForAdmins_" data-uid="Alvao.API.Common.DbProperty.WebApp_ShowWarningForAdmins*"></a>
+
+  <h3 id="Alvao_API_Common_DbProperty_WebApp_ShowWarningForAdmins" data-uid="Alvao.API.Common.DbProperty.WebApp_ShowWarningForAdmins">
+  WebApp_ShowWarningForAdmins
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/DbProperty.cs&amp;version=GBdev&amp;line=48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool WebApp_ShowWarningForAdmins { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
