@@ -12,7 +12,7 @@ public record DotnetEnum() {
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
         if (!Summary.IsNullOrEmpty()) {
-            sb.Append(PrefixEachLineSpaces($"///<value>{Summary}</value>", indent));
+            sb.Append(PrefixEachLineSpacesDoc($"<value>{Summary}</value>", indent));
             sb.AppendLine("");
         }
 
