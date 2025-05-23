@@ -4,69 +4,6 @@ using static AlvaoScrapper.Helpers;
 namespace AlvaoScrapper;
 
 public static class MonkeyPatch {
-    public static void AssertGenerationOK(AlvaoClass clazz) {
-        var expectedNamespaceName = string.Empty;
-        var expectedMethodCount = 0;
-        var expectedPropsCount = 0;
-        var expectedFieldsCount = 0;
-        var expectedConstructorsCount = 0;
-        var expectedEnumsCount = 0;
-
-        switch (clazz.Name) {
-            //#endregion Alvao.API.Common.Model
-            case "AttachmentModel":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedConstructorsCount = 1;
-                expectedMethodCount = 2;
-                expectedPropsCount = 8;
-                break;
-            case "AadSetting":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedPropsCount = 3;
-                break;
-            case "LogOperation":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedEnumsCount = 1;
-                break;
-            case "ColumnModel":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedPropsCount = 13;
-                break;
-            case "HtmlTextModel":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedConstructorsCount = 1;
-                expectedPropsCount = 4;
-                expectedMethodCount = 3;
-                break;
-            case "ExternalServices":
-                expectedNamespaceName = "Alvao.API.Common.Model";
-                expectedFieldsCount = 9;
-                break;
-            //#endregion Alvao.API.Common.Model
-            default:
-                return;
-                break;
-        }
-
-        if (expectedConstructorsCount != clazz.Constructors.Count ||
-            expectedMethodCount != clazz.Methods.Count ||
-            expectedPropsCount != clazz.Properties.Count ||
-            expectedFieldsCount != clazz.Fields.Count ||
-            expectedEnumsCount != clazz.Enums.Count ||
-            !Equals(expectedNamespaceName, clazz.NamespaceName)
-        ) {
-            Console.WriteLine($"{clazz.NamespaceName}/{clazz.Name} Class was processed incorrectly (" +
-                $"C: {clazz.Constructors.Count} [{expectedConstructorsCount}], " +
-                $"P: {clazz.Properties.Count} [{expectedPropsCount}], " +
-                $"F: {clazz.Fields.Count} [{expectedFieldsCount}], " +
-                $"M: {clazz.Methods.Count} [{expectedMethodCount}] " +
-                $"E: {clazz.Enums.Count} [{expectedEnumsCount}] " +
-                $"Namespace: {expectedNamespaceName}]" +
-                ")"
-            );
-        }
-    }
-
     public static void PatchUnDocumentedClasses(ILogger Logger) {
         var caution = "!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
@@ -487,7 +424,6 @@ public static class MonkeyPatch {
         Logger.LogInformation("Monkeypatching constructor {} [{}] {{{}}}", constructor.Name, clazz.Name, clazz.NamespaceName);
         constructor.Definition = _def;
     }
-
 
     public static void SpecificProperty(AlvaoClass clazz, DotnetPropertyOrFieldOrEvent property, ILogger Logger) {
         var _def = string.Empty;

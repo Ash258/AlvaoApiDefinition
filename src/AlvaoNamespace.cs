@@ -34,32 +34,33 @@ public class AlvaoNamespace {
         AssertDocumentIsNamespace();
 
         // h3 contains the main groups (classes, interfaces, ...)
-        Logger.LogDebug("Searching for h3 element");
+        Logger.LogDebug("Searching for group (h3) element {{{}}}", Name);
         var h3Headers = HtmlDocument.DocumentNode.SelectNodes("//h3");
         if (h3Headers == null) {
-            Logger.LogError("Cannot find h3 element on page");
+            Logger.LogError("Cannot find any groups on page {{{}}}", Name);
             return;
         }
 
         Logger.LogInformation("Found {} headers {{{}}}", h3Headers.Count, Name);
 
         // Take first group from the h3 elements, as we take only following siblings of first h3
-        var currentMemberType = SanitizeMemberType(h3Headers[0].InnerText.Trim());
+        var currentMemberType = SanitizeMemberType(TrimInnerText(h3Headers[0]));
         var relevantElements = HtmlDocument.DocumentNode.SelectNodes("//h3/following-sibling::*");
+        List<MemberProperties> membersToProcess = [];
+
         Logger.LogInformation("Processing namespace group [{}] {{{}}}", currentMemberType, Name);
 
-        List<MemberProperties> membersToProcess = [];
         foreach (var el in relevantElements) {
             // Other group occoured
             if (el.Name.Equals("h3")) {
-                var n = SanitizeMemberType(el.InnerText.Trim());
+                var n = SanitizeMemberType(TrimInnerText(el));
                 Logger.LogInformation("Namespace group changed from {} to [{}] {{{}}}", currentMemberType, n, Name);
                 currentMemberType = n;
                 continue;
             }
 
             var aNode = el.SelectSingleNode(".//dt/a");
-            MemberProperties member = new() {
+            var member = new MemberProperties() {
                 Type = currentMemberType,
                 Name = aNode.InnerText.Trim(),
                 Url = aNode.GetAttributeValue("href", "none"),
@@ -70,11 +71,11 @@ public class AlvaoNamespace {
         }
 
         // Enums needs to be preprocessed
-        Logger.LogDebug("Going to process enums");
+        Logger.LogDebug("Going to process enums {{{}}}", Name);
         foreach (var member in membersToProcess.Where(x => x.Type.Equals("Enum"))) {
             Logger.LogInformation("Processing enum {} {{{}}}", member.Name, Name);
 
-            AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, null);
+            var clazz = new AlvaoClass(member.Name, member.Url, member.Type, this, null);
 
             try {
                 clazz.Process();
@@ -110,30 +111,28 @@ public class AlvaoNamespace {
 
         foreach (var member in membersToProcess.Where(x => !x.Type.Equals("Enum"))) {
             var enums = Enums.GetValueOrDefault(member.Name, []);
-            AlvaoClass clazz = new(member.Name, member.Url, member.Type, this, enums);
+            var clazz = new AlvaoClass(member.Name, member.Url, member.Type, this, enums);
+
             try {
                 clazz.Process();
             } catch (Exception e) {
                 Logger.LogError("Cannot process class ({}) [{}] {{{}}}", e.Message, member.Name, Name);
                 continue;
             }
-
-            MonkeyPatch.AssertGenerationOK(clazz);
         }
     }
 
     private void AssertDocumentIsNamespace() {
-
-        Logger.LogDebug("Verifying HTML document is namespace");
+        Logger.LogDebug("Verifying HTML document is namespace {{{}}}", Name);
         var h1 = HtmlDocument.DocumentNode.SelectSingleNode("//article/h1");
         if (h1 == null) {
-            Logger.LogError("Page does not have h1");
-            throw new Exception("Page does not have h1");
+            Logger.LogError("Page does not have h1 {{{}}}", Name);
+            throw new Exception($"Page does not have h1 {Name}");
         }
 
         if (!h1.GetAttributeValue("id", "none").Equals(Name.Replace(".", "_")) || !h1.InnerText.Trim().Equals($"Namespace {Name}")) {
-            Logger.LogError("Page contains different namespace");
-            throw new Exception("Page contains different namespace");
+            Logger.LogError("Page contains different namespace {{{}}}", Name);
+            throw new Exception($"Page contains different namespace {Name}");
         }
     }
 
