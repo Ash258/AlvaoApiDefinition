@@ -36,9 +36,7 @@ public record DotnetMethod() {
         });
 
         GenerateSingleOrMultiLineElement(Returns, indent, "returns", sb);
-
-        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
-        if (!Definition.EndsWith(';')) sb.Append(" { throw new System.NotImplementedException(); }");
+        GenerateDefinition(Definition, MemberDefinitionType.Method, indent, sb);
 
         return sb.ToString();
     }

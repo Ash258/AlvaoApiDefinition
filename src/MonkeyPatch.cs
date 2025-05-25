@@ -288,6 +288,7 @@ public static class MonkeyPatch {
             ("TranslationsSecretsInvalidException", "System.Runtime.Serialization"),
 
             // ORM specific annotations
+            ("[Ignore]", "AutoMapper.Configuration.Annotations"),
             ("[ExplicitKey]", "Dapper.Contrib"),
             ("[Key]", "Dapper.Contrib.Extensions"),
             ("[Table(", "Dapper.Contrib.Extensions"),

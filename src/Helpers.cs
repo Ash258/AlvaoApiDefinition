@@ -13,6 +13,13 @@ public static class Helpers {
     public static string LOCAL_HTML_FOLDER = "html";
     public static bool IGNORE_CACHE = false;
 
+    public enum MemberDefinitionType {
+        PropertyOrFieldOrEvent,
+        Constructor,
+        Method,
+        Enum,
+    }
+
     public static ILogger<T> CreateLogger<T>(string filterName = "AlvaoScrapper", string envName = "Logging__LogLevel__AlvaoScrapper", string defaultValue = "4") {
         var loggerFactory = LoggerFactory.Create(builder => {
             builder.AddFilter(filterName, (LogLevel)int.Parse(Environment.GetEnvironmentVariable(envName) ?? defaultValue));
@@ -64,9 +71,11 @@ public static class Helpers {
     // Replace enncoded xml tags with normal characters
     public static string SanitizeXmlToString(string el) {
         return el
+            .Replace("&amp;", "&")
+            .Replace("&nbsp;", " ")
             .Replace("&lt;", "<")
             .Replace("&gt;", ">")
-            .Replace("&nbsp;", " ")
+            .Replace("&#39;", "'")
             .Replace("&quot;", "\"")
             .Trim();
     }
@@ -140,6 +149,37 @@ public static class Helpers {
         parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
             sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>", indent));
         });
+    }
+
+    // Generate member definition
+    public static void GenerateDefinition(string definition, MemberDefinitionType type, int indent, StringBuilder sb, List<string> fields = null) {
+        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(definition), indent));
+
+        var append = string.Empty;
+
+        switch (type) {
+            case MemberDefinitionType.Enum:
+                sb.Append(" {");
+                fields?.ForEach(f => sb.AppendLine(PrefixEachLineSpaces($"{SanitizeXmlToString(f)},", indent * 2)));
+                sb.Append(PrefixEachLineSpaces("}", indent));
+                break;
+            case MemberDefinitionType.PropertyOrFieldOrEvent:
+                if (!definition.EndsWith('}')) append = ";";
+                break;
+            case MemberDefinitionType.Method:
+                if (!definition.EndsWith(';')) append = " { throw new System.NotImplementedException(); }";
+                break;
+            case MemberDefinitionType.Constructor:
+                append = " {}";
+                break;
+            default:
+                append = " {}";
+                break;
+        }
+
+        if (string.IsNullOrEmpty(append)) return;
+
+        sb.Append(append);
     }
 
     // Generates doc comment returns

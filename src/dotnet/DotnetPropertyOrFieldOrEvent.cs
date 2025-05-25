@@ -14,13 +14,7 @@ public record DotnetPropertyOrFieldOrEvent() {
 
         GenerateSummary(Summary, indent, [], sb);
         GenerateSeeUrl(FullUrl, indent, sb);
-
-        string def = SanitizeXmlToString(Definition);
-        def = def.Replace("[Ignore]", "//[Ignore] // ! TODO: Investigate where this come from");
-
-        if (!Definition.EndsWith('}')) def += ";";
-
-        sb.Append(PrefixEachLineSpaces(def, indent));
+        GenerateDefinition(Definition, MemberDefinitionType.PropertyOrFieldOrEvent, indent, sb);
 
         return sb.ToString();
     }

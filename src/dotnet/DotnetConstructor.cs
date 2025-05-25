@@ -17,8 +17,7 @@ public record DotnetConstructor() {
         GenerateSummary(Summary, indent, Examples, sb);
         GenerateSeeUrl(FullUrl, indent, sb);
         GenerateParameters(Parameters, indent, sb);
-
-        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " {}", indent));
+        GenerateDefinition(Definition, MemberDefinitionType.Constructor, indent, sb);
 
         return sb.ToString();
     }
