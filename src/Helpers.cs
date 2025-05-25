@@ -160,7 +160,21 @@ public static class Helpers {
         switch (type) {
             case MemberDefinitionType.Enum:
                 sb.Append(" {");
-                fields?.ForEach(f => sb.AppendLine(PrefixEachLineSpaces($"{SanitizeXmlToString(f)},", indent * 2)));
+
+                if (fields != null && fields.Count > 0) {
+                    fields.Sort((a, b) => {
+                        var aNum = int.Parse(a.Split('=')[1].Trim().TrimEnd(',').Trim());
+                        var bNum = int.Parse(b.Split('=')[1].Trim().TrimEnd(',').Trim());
+
+                        return aNum.CompareTo(bNum);
+                    });
+
+                    fields.ForEach(f => {
+                        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(f), indent * 2));
+                        sb.AppendLine(",");
+                    });
+                }
+
                 sb.Append(PrefixEachLineSpaces("}", indent));
                 break;
             case MemberDefinitionType.PropertyOrFieldOrEvent:

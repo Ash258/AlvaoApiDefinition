@@ -53,6 +53,7 @@ tasks:
   run:
     aliases:
     - default
+    - r
     cmds:
     - task: format
     - task: build
@@ -62,6 +63,7 @@ tasks:
   run:clean:
     aliases:
     - default
+    - r:c
     cmds:
     - task: library:clean
     - task: run
