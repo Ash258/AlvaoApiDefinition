@@ -7,6 +7,8 @@ tasks:
     cmds:
     - task: build
     - task: library:build
+  html-cache:clean:
+    cmd: rm -rf html/**
   library:clean:
     dir: Alvao
     vars:
@@ -18,12 +20,6 @@ tasks:
       cmd: rm -rf {{ .ITEM }}/**
   library:format:
     cmd: dotnet format Alvao/
-  library:init:
-    dir: Alvao
-    cmds:
-    - dotnet new classlib -n Alvao -o .
-    - for: [ "Dapper.Contrib.Extensions" ]
-      cmd: dotnet add package {{.ITEM}}
   library:build:
     dir: Alvao
     cmd: dotnet build .
