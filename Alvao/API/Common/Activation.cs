@@ -1,31 +1,19 @@
-using Alvao.Global;
-using static Alvao.Global.ModuleInfo;
-
 namespace Alvao.API.Common;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Activation.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html"/>
 public static class Activation {
-    /// <summary>Returns Organization name of the activation key. Return Value String Organization name</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Activation_OrganizationName.htm"/>
+    /// <summary>Returns Organization name of the activation key. Organization name</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_OrganizationName"/>
     public static string OrganizationName { get; }
-
-    /// <summary>Returns specific license module of the activation key. Return Value LicenseModule License module.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Activation_GetModule.htm"/>
-    ///
-    /// <param name="moduleId"> </param>
-    public static LicenseModule GetModule(
-        ModuleId moduleId
-    ) { throw new System.NotImplementedException(); }
-
+    /// <summary>Returns specific license module of the activation key. License module.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_GetModule_Alvao_Global_ModuleInfo_ModuleId_"/>
+    public static LicenseModule GetModule(ModuleInfo.ModuleId moduleId) { throw new System.NotImplementedException(); }
     /// <summary>Returns whether the ALVAO key entered in the database is loaded correctly.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Activation_IsKeyLoaded.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_IsKeyLoaded"/>
+    /// <returns>True, if the key format is valid.</returns>
     public static bool IsKeyLoaded() { throw new System.NotImplementedException(); }
-
     /// <summary>Returns whether ALVAO module is activated.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Activation_IsModuleActivated.htm"/>
-    ///
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_IsModuleActivated_Alvao_Global_ModuleInfo_ModuleId_"/>
     /// <param name="moduleId">ALVAO module id</param>
-    public static bool IsModuleActivated(
-        ModuleId moduleId
-    ) { throw new System.NotImplementedException(); }
+    public static bool IsModuleActivated(ModuleInfo.ModuleId moduleId) { throw new System.NotImplementedException(); }
 }
