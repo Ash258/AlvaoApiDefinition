@@ -1,14 +1,11 @@
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ProductInstallation.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ProductInstallation.html"/>
 public class ProductInstallation {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ProductInstallation_Centre.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ProductInstallation.html#Alvao_API_AM_Model_ProductInstallation_Centre"/>
     public string Centre { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ProductInstallation_ObjectId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ProductInstallation.html#Alvao_API_AM_Model_ProductInstallation_ObjectId"/>
     public int ObjectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ProductInstallation_ProductId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ProductInstallation.html#Alvao_API_AM_Model_ProductInstallation_ProductId"/>
     public int ProductId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_ProductInstallation__ctor.htm"/>
-    public ProductInstallation() { }
 }

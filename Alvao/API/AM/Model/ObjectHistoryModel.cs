@@ -1,34 +1,31 @@
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectHistoryModel.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html"/>
 public class ObjectHistoryModel {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_ObjectHistoryModel_EHistoryFlag.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.EHistoryFlag.html#fields"/>
     public enum EHistoryFlag {
+        HistfInsertNew = 4,
+        HistfMask = 65280,
         HistfMoveDest = 1,
         HistfMoveSrc = 2,
-        HistfTo = 3,
-        HistfInsertNew = 4,
-        HistfToNew = 5,
         HistfShift = 8,
-        HistfMask = 65_280,
+        HistfTo = 3,
+        HistfToNew = 5,
     }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_DetectId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_DetectId"/>
     public int DetectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_Flags.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_Flags"/>
     public int Flags { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_ObjectId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_ObjectId"/>
     public int ObjectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_Op2ObjectId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_Op2ObjectId"/>
     public int? Op2ObjectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_Op2ObjectName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_Op2ObjectName"/>
     public string Op2ObjectName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_OpObjectId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_OpObjectId"/>
     public int? OpObjectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_OpObjectName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_OpObjectName"/>
     public string OpObjectName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AM_Model_ObjectHistoryModel_PersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_PersonId"/>
     public int PersonId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Model_ObjectHistoryModel__ctor.htm"/>
-    public ObjectHistoryModel() { }
 }
