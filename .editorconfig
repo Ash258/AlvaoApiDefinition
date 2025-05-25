@@ -35,3 +35,6 @@ dotnet_style_parentheses_in_other_binary_operators = always_for_clarity
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity
 dotnet_style_allow_multiple_blank_lines_experimental = false
+
+csharp_style_var_for_built_in_types = true
+csharp_style_var_when_type_is_apparent = true

@@ -6,7 +6,8 @@ namespace AlvaoScrapper;
 public static class MonkeyPatch {
     // Monkeypatch not documented classes to make project compilable
     public static void PatchUnDocumentedClasses(ILogger Logger) {
-        var caution = "!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable";
+        var caution = "!!!CAUTION: This class is not documented. It was generated as empty, to make the project compilable";
+        var cautionM = "!!!CAUTION: This member is not documented. It was generated as empty, to make the project compilable";
         var swLibraryNs = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.SwLibrary");
         var commonModelDataseNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common.Model.Database");
         var commonNs = State.Namespaces.GetValueOrDefault("Alvao.API.Common");
@@ -61,6 +62,7 @@ public static class MonkeyPatch {
                 [
                     new DotnetPropertyOrFieldOrEvent() {
                         Name = "Unicode",
+                        Summary = cautionM,
                         Definition = "public abstract bool IsUnicode { get; }",
                     }
                 ],
@@ -137,16 +139,15 @@ public static class MonkeyPatch {
                 [],
                 [],
                 []
-            );
-
-            clazz.Enums = [
-                new DotnetEnum() {
-                    Name = "ModuleId",
-                    Summary = "Module ID",
-                    Definition = "public enum ModuleId",
-                    Fields = []
-                }
-            ];
+            ) {
+                Enums = [
+                    new DotnetEnum() {
+                        Name = "ModuleId",
+                        Summary = cautionM,
+                        Definition = "public enum ModuleId",
+                    }
+                ]
+            };
 
             clazz.ProduceFinalCsFile();
         }

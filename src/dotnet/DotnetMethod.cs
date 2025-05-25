@@ -24,9 +24,16 @@ public record DotnetMethod() {
         GenerateSingleOrMultiLineElement(Remarks, indent, "remarks", sb);
 
         Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<exception cref=\"{ex.Item1}\">"));
-            sb.AppendLine(PrefixEachLineSpacesDoc(ex.Item2));
-            sb.AppendLine(PrefixEachLineSpacesDoc("</exception>"));
+            sb.Append(PrefixEachLineSpacesDoc($"<exception cref=\"{ex.Item1}\">"));
+
+            if (ex.Item2.Contains('\n')) {
+                sb.AppendLine();
+                sb.AppendLine(PrefixEachLineSpacesDoc(ex.Item2));
+                sb.AppendLine(PrefixEachLineSpacesDoc("</exception>"));
+            } else {
+                sb.Append(PrefixEachLineSpacesDoc($"{ex.Item2}</exception>"));
+                sb.AppendLine();
+            }
         });
 
         GenerateSingleOrMultiLineElement(Returns, indent, "returns", sb);
