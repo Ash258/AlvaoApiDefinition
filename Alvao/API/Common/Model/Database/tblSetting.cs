@@ -1,19 +1,17 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Mapping properties to system functions.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblSetting.htm"/>
-[TableAttribute("dbo.tblSetting")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblSetting.html"/>
+[Table("dbo.tblSetting")]
 public class tblSetting {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblSetting_intValue.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblSetting.html#Alvao_API_Common_Model_Database_tblSetting_intValue"/>
     public virtual int? intValue { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblSetting_txtKey.htm"/>
-    [ExplicitKeyAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblSetting.html#Alvao_API_Common_Model_Database_tblSetting_txtKey"/>
+    [ExplicitKey]
     public virtual string txtKey { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblSetting_txtValue.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblSetting.html#Alvao_API_Common_Model_Database_tblSetting_txtValue"/>
     public virtual string txtValue { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblSetting__ctor.htm"/>
-    public tblSetting() { }
 }

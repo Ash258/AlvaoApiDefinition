@@ -1,19 +1,17 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Executed action which is logged.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_UserLogonLogAction.htm"/>
-[TableAttribute("dbo.UserLogonLogAction")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.UserLogonLogAction.html"/>
+[Table("dbo.UserLogonLogAction")]
 public class UserLogonLogAction {
     /// <summary>Action ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_UserLogonLogAction_Id.htm"/>
-    [ExplicitKeyAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.UserLogonLogAction.html#Alvao_API_Common_Model_Database_UserLogonLogAction_Id"/>
+    [ExplicitKey]
     public virtual int Id { get; set; }
     /// <summary>Action name.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_UserLogonLogAction_Name.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.UserLogonLogAction.html#Alvao_API_Common_Model_Database_UserLogonLogAction_Name"/>
     public virtual string Name { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_UserLogonLogAction__ctor.htm"/>
-    public UserLogonLogAction() { }
 }

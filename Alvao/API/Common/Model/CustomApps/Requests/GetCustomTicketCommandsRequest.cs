@@ -1,0 +1,9 @@
+namespace Alvao.API.Common.Model.CustomApps.Requests;
+
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Requests.GetCustomTicketCommandsRequest.html"/>
+public class GetCustomTicketCommandsRequest : BaseRequest {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Requests.GetCustomTicketCommandsRequest.html#Alvao_API_Common_Model_CustomApps_Requests_GetCustomTicketCommandsRequest_PersonId"/>
+    public int PersonId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Requests.GetCustomTicketCommandsRequest.html#Alvao_API_Common_Model_CustomApps_Requests_GetCustomTicketCommandsRequest_TicketId"/>
+    public int TicketId { get; set; }
+}

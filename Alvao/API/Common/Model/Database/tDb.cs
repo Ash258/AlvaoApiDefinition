@@ -1,26 +1,24 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Database version, database language ID, activation keys for the entire ALVAO.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tDb.htm"/>
-[TableAttribute("dbo.tDb")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html"/>
+[Table("dbo.tDb")]
 public class tDb {
     /// <summary>Product version for which the database is intended.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_AlvaoVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_AlvaoVersion"/>
     public virtual string AlvaoVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_iDbLocaleId.htm"/>
-    public virtual int iDbLocaleId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_iDbVersion.htm"/>
-    [ExplicitKeyAttribute]
-    public virtual int? iDbVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_sDb.htm"/>
-    public virtual string sDb { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_sDbActivation.htm"/>
-    public virtual string sDbActivation { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tDb_Version.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_Version"/>
     public virtual string Version { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tDb__ctor.htm"/>
-    public tDb() { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_iDbLocaleId"/>
+    public virtual int iDbLocaleId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_iDbVersion"/>
+    [ExplicitKey]
+    public virtual int? iDbVersion { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_sDb"/>
+    public virtual string sDb { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDb.html#Alvao_API_Common_Model_Database_tDb_sDbActivation"/>
+    public virtual string sDbActivation { get; set; }
 }

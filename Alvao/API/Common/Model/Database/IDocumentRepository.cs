@@ -1,0 +1,7 @@
+using Alvao.API.Common.Model.Database;
+
+namespace Alvao.API.Common.Model.Database;
+
+/// <summary>!!!CAUTION: This method is not documented. It was generated as empty, to make the project compilable</summary>
+public class IDocumentRepository {
+}

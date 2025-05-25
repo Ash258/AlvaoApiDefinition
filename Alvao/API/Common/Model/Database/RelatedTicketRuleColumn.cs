@@ -1,19 +1,17 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Copied items of the source ticket while creating linked tickets.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_RelatedTicketRuleColumn.htm"/>
-[TableAttribute("dbo.RelatedTicketRuleColumn")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRuleColumn.html"/>
+[Table("dbo.RelatedTicketRuleColumn")]
 public class RelatedTicketRuleColumn {
     /// <summary>Ticket item ID (see tColumn.iColumnId)</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_RelatedTicketRuleColumn_ColumnId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRuleColumn.html#Alvao_API_Common_Model_Database_RelatedTicketRuleColumn_ColumnId"/>
     public virtual int ColumnId { get; set; }
     /// <summary>Rule ID (see RelatedTicketRule.id)</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_RelatedTicketRuleColumn_RelatedTicketRuleId.htm"/>
-    [ExplicitKeyAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRuleColumn.html#Alvao_API_Common_Model_Database_RelatedTicketRuleColumn_RelatedTicketRuleId"/>
+    [ExplicitKey]
     public virtual int RelatedTicketRuleId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_RelatedTicketRuleColumn__ctor.htm"/>
-    public RelatedTicketRuleColumn() { }
 }

@@ -2,17 +2,14 @@ using Newtonsoft.Json;
 
 namespace Alvao.API.AI;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_BaseResponse.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.BaseResponse.html"/>
 public class BaseResponse {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_BaseResponse_Error.htm"/>
-    [JsonPropertyAttribute("error")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.BaseResponse.html#Alvao_API_AI_BaseResponse_Error"/>
+    [JsonProperty("error")]
     public Error Error { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_BaseResponse_ObjectTypeName.htm"/>
-    [JsonPropertyAttribute("object")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.BaseResponse.html#Alvao_API_AI_BaseResponse_ObjectTypeName"/>
+    [JsonProperty("object")]
     public string ObjectTypeName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_BaseResponse_Successful.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.BaseResponse.html#Alvao_API_AI_BaseResponse_Successful"/>
     public bool Successful { get; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_BaseResponse__ctor.htm"/>
-    public BaseResponse() { }
 }

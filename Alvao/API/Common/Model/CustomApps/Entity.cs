@@ -1,8 +1,10 @@
-// CAUTION: Manually guessed object based on the documentation. It does not need to be completely accurate.
-
 namespace Alvao.API.Common.Model.CustomApps;
 
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Entity.html"/>
+[Flags]
 public enum Entity {
-    Request,
-    Object
+    General = 1,
+    None = 0,
+    Object = 4,
+    Request = 2,
 }

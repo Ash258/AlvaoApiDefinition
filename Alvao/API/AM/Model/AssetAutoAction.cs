@@ -1,15 +1,15 @@
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_AssetAutoAction.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.AssetAutoAction.html"/>
 public static class AssetAutoAction {
     /// <summary>Flags representing asset management auto action types.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Model_AssetAutoAction_AutoActionTypes.htm"/>
-    [FlagsAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.AssetAutoAction.AutoActionTypes.html#fields"/>
+    [Flags]
     public enum AutoActionTypes {
         None = 1,
-        ObjectPropertyModifying = 2,
-        ObjectPropertyModified = 4,
-        ObjectMoving = 8,
         ObjectMoved = 16,
+        ObjectMoving = 8,
+        ObjectPropertyModified = 4,
+        ObjectPropertyModifying = 2,
     }
 }

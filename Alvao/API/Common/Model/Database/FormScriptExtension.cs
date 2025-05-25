@@ -3,20 +3,17 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Definition of custom JavaScript for forms.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_FormScriptExtension.htm"/>
-[TableAttribute("dbo.FormScriptExtension")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.FormScriptExtension.html"/>
+[Table("dbo.FormScriptExtension")]
 public class FormScriptExtension {
-    /// <summary>Entity ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_FormScriptExtension_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>JavaScript inserted into the page.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_FormScriptExtension_Javascript.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.FormScriptExtension.html#Alvao_API_Common_Model_Database_FormScriptExtension_Javascript"/>
     public virtual string Javascript { get; set; }
     /// <summary>Link to service.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_FormScriptExtension_SectionId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.FormScriptExtension.html#Alvao_API_Common_Model_Database_FormScriptExtension_SectionId"/>
     public virtual int SectionId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_FormScriptExtension__ctor.htm"/>
-    public FormScriptExtension() { }
+    /// <summary>Entity ID.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.FormScriptExtension.html#Alvao_API_Common_Model_Database_FormScriptExtension_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }

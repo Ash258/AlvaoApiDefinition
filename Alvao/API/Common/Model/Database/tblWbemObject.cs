@@ -3,220 +3,221 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>HW detected in the computers.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblWbemObject.htm"/>
-[TableAttribute("dbo.tblWbemObject")]
-public class tblWbemObject {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject___CLASS.htm"/>
-    public virtual string __CLASS { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Active.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html"/>
+[Table("dbo.tblWbemObject")]
+public class tblWbemObject : ICloneable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Active"/>
     public virtual bool? Active { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_AdapterRAM.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_AdapterRAM"/>
     public virtual double? AdapterRAM { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_AdapterType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_AdapterType"/>
     public virtual string AdapterType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_AlvaoVirtualMachineHostname.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_AlvaoVirtualMachineHostname"/>
     public virtual string AlvaoVirtualMachineHostname { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_AttachedTo.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_AttachedTo"/>
     public virtual string AttachedTo { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Availability.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Availability"/>
     public virtual int? Availability { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_BankLabel.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_BankLabel"/>
     public virtual string BankLabel { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_BaseBoard.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_BaseBoard"/>
     public virtual string BaseBoard { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_bolVirtualObject.htm"/>
-    public virtual bool bolVirtualObject { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Capacity.htm"/>
-    public virtual long? Capacity { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Caption.htm"/>
-    public virtual string Caption { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Compressed.htm"/>
-    public virtual bool? Compressed { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_CSDVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_CSDVersion"/>
     public virtual string CSDVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_CurrentClockSpeed.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Capacity"/>
+    public virtual long? Capacity { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Caption"/>
+    public virtual string Caption { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ChassisTypes"/>
+    public virtual int? ChassisTypes { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Compressed"/>
+    public virtual bool? Compressed { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_CurrentClockSpeed"/>
     public virtual int? CurrentClockSpeed { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_CurrentRefreshRate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_CurrentRefreshRate"/>
     public virtual int? CurrentRefreshRate { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DataWidth.htm"/>
-    public virtual int? DataWidth { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Description.htm"/>
-    public virtual string Description { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DeviceID.htm"/>
-    public virtual string DeviceID { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DeviceLocator.htm"/>
-    public virtual string DeviceLocator { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DeviceType.htm"/>
-    public virtual string DeviceType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DHCPEnabled.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DHCPEnabled"/>
     public virtual bool? DHCPEnabled { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DNSServerSearchOrder.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DNSServerSearchOrder"/>
     public virtual string DNSServerSearchOrder { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Drive.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DataWidth"/>
+    public virtual int? DataWidth { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Description"/>
+    public virtual string Description { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DeviceID"/>
+    public virtual string DeviceID { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DeviceLocator"/>
+    public virtual string DeviceLocator { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DeviceType"/>
+    public virtual string DeviceType { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Drive"/>
     public virtual string Drive { get; set; }
     /// <summary>Drive letter.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DriveLetter.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DriveLetter"/>
     public virtual string DriveLetter { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_DriveType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_DriveType"/>
     public virtual int? DriveType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_EDIDVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_EDIDVersion"/>
     public virtual string EDIDVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_FileSystem.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_FileSystem"/>
     public virtual string FileSystem { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_FormFactor.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_FormFactor"/>
     public virtual int? FormFactor { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_FreeSpace.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_FreeSpace"/>
     public virtual double? FreeSpace { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ChassisTypes.htm"/>
-    public virtual int? ChassisTypes { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_InfraredSupported.htm"/>
-    public virtual bool? InfraredSupported { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_InstallDate.htm"/>
-    public virtual DateTime? InstallDate { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_InterfaceType.htm"/>
-    public virtual string InterfaceType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_intWbemObjectId.htm"/>
-    [KeyAttribute]
-    public virtual int intWbemObjectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IPAddress.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IPAddress"/>
     public virtual string IPAddress { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IPEnabled.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IPEnabled"/>
     public virtual bool? IPEnabled { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IPSubnet.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IPSubnet"/>
     public virtual string IPSubnet { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IRQNumber.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IRQNumber"/>
     public virtual int? IRQNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IsActivated.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_InfraredSupported"/>
+    public virtual bool? InfraredSupported { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_InstallDate"/>
+    public virtual DateTime? InstallDate { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_InterfaceType"/>
+    public virtual string InterfaceType { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IsActivated"/>
     public virtual bool? IsActivated { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IsEnabled.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IsEnabled"/>
     public virtual bool? IsEnabled { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_IsOwned.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_IsOwned"/>
     public virtual bool? IsOwned { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_lintDetectId.htm"/>
-    public virtual int lintDetectId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MACAddress.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MACAddress"/>
     public virtual string MACAddress { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ManufactureDate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ManufactureDate"/>
     public virtual DateTime? ManufactureDate { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Manufacturer.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Manufacturer"/>
     public virtual string Manufacturer { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersion"/>
     public virtual string ManufacturerVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionFull20.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionFull20"/>
     public virtual string ManufacturerVersionFull20 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionInfo.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ManufacturerVersionInfo"/>
     public virtual string ManufacturerVersionInfo { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MaxCapacity.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MaxCapacity"/>
     public virtual int? MaxCapacity { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MaxClockSpeed.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MaxClockSpeed"/>
     public virtual int? MaxClockSpeed { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MaxHorizontalImageSize.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MaxHorizontalImageSize"/>
     public virtual int? MaxHorizontalImageSize { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MaxRefreshRate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MaxRefreshRate"/>
     public virtual int? MaxRefreshRate { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MaxVerticalImageSize.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MaxVerticalImageSize"/>
     public virtual int? MaxVerticalImageSize { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MediaType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MediaType"/>
     public virtual string MediaType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MemoryDevices.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MemoryDevices"/>
     public virtual int? MemoryDevices { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MemoryType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MemoryType"/>
     public virtual int? MemoryType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MinRefreshRate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MinRefreshRate"/>
     public virtual int? MinRefreshRate { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Model.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Model"/>
     public virtual string Model { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_MonitorManufacturer.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_MonitorManufacturer"/>
     public virtual string MonitorManufacturer { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Monochrome.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Monochrome"/>
     public virtual bool? Monochrome { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_NetConnectionID.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_NetConnectionID"/>
     public virtual string NetConnectionID { get; set; }
     /// <summary>Number of physical CPU cores.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_NumberOfCores.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_NumberOfCores"/>
     public virtual int? NumberOfCores { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_NumberOfLogicalProcessors.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_NumberOfLogicalProcessors"/>
     public virtual int? NumberOfLogicalProcessors { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Organization.htm"/>
-    public virtual string Organization { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_OSLanguage.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_OSLanguage"/>
     public virtual int? OSLanguage { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_PartOfDomain.htm"/>
-    public virtual bool? PartOfDomain { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_PhysicalPresenceVersionInfo.htm"/>
-    public virtual string PhysicalPresenceVersionInfo { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_PNPDeviceID.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Organization"/>
+    public virtual string Organization { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_PNPDeviceID"/>
     public virtual string PNPDeviceID { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_PortName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_PartOfDomain"/>
+    public virtual bool? PartOfDomain { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_PhysicalPresenceVersionInfo"/>
+    public virtual string PhysicalPresenceVersionInfo { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_PortName"/>
     public virtual string PortName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ProcessorId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ProcessorId"/>
     public virtual string ProcessorId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Prop_Domain.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Prop_Domain"/>
     public virtual string Prop_Domain { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Prop_Name.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Prop_Name"/>
     public virtual string Prop_Name { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Prop_Product.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Prop_Product"/>
     public virtual string Prop_Product { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Prop_Size.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Prop_Size"/>
     public virtual double? Prop_Size { get; set; }
     /// <summary>The status of drive section encryption by the BitLocker tool. 0 = off, 1 = on, 2 = unknown.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ProtectionStatus.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ProtectionStatus"/>
     public virtual int? ProtectionStatus { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_RegisteredUser.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_RegisteredUser"/>
     public virtual string RegisteredUser { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ScreenHeight.htm"/>
-    public virtual int? ScreenHeight { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ScreenWidth.htm"/>
-    public virtual int? ScreenWidth { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SerialNumber.htm"/>
-    public virtual string SerialNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Service.htm"/>
-    public virtual string Service { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_ServiceName.htm"/>
-    public virtual string ServiceName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SMBIOSBIOSVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SMBIOSBIOSVersion"/>
     public virtual string SMBIOSBIOSVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SocketDesignation.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ScreenHeight"/>
+    public virtual int? ScreenHeight { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ScreenWidth"/>
+    public virtual int? ScreenWidth { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SerialNumber"/>
+    public virtual string SerialNumber { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Service"/>
+    public virtual string Service { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_ServiceName"/>
+    public virtual string ServiceName { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SocketDesignation"/>
     public virtual string SocketDesignation { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SpecVersion.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SpecVersion"/>
     public virtual string SpecVersion { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Speed.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Speed"/>
     public virtual string Speed { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_StatusInfo.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_StatusInfo"/>
     public virtual int? StatusInfo { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SystemDirectory.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SystemDirectory"/>
     public virtual string SystemDirectory { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_SystemType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_SystemType"/>
     public virtual string SystemType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_TotalPhysicalMemory.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_TotalPhysicalMemory"/>
     public virtual long? TotalPhysicalMemory { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtFormFactorDesc.htm"/>
-    public virtual string txtFormFactorDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtChassisTypesDesc.htm"/>
-    public virtual string txtChassisTypesDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtMemoryTypeDesc.htm"/>
-    public virtual string txtMemoryTypeDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtStatusInfoDesc.htm"/>
-    public virtual string txtStatusInfoDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtTypeDetailDesc.htm"/>
-    public virtual string txtTypeDetailDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_txtWakeUpTypeDesc.htm"/>
-    public virtual string txtWakeUpTypeDesc { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_TypeDetail.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_TypeDetail"/>
     public virtual int? TypeDetail { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_UPSPort.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_UPSPort"/>
     public virtual string UPSPort { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_UserName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_UserName"/>
     public virtual string UserName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_Version.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Version"/>
     public virtual string Version { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_VideoModeDescription.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_VideoModeDescription"/>
     public virtual string VideoModeDescription { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_VolumeSerialNumber.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_VolumeSerialNumber"/>
     public virtual string VolumeSerialNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblWbemObject_WakeUpType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_WakeUpType"/>
     public virtual int? WakeUpType { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblWbemObject__ctor.htm"/>
-    public tblWbemObject() { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject___CLASS"/>
+    public virtual string __CLASS { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_bolVirtualObject"/>
+    public virtual bool bolVirtualObject { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_intWbemObjectId"/>
+    [Key]
+    public virtual int intWbemObjectId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_lintDetectId"/>
+    public virtual int lintDetectId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtChassisTypesDesc"/>
+    public virtual string txtChassisTypesDesc { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtFormFactorDesc"/>
+    public virtual string txtFormFactorDesc { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtMemoryTypeDesc"/>
+    public virtual string txtMemoryTypeDesc { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtStatusInfoDesc"/>
+    public virtual string txtStatusInfoDesc { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtTypeDetailDesc"/>
+    public virtual string txtTypeDetailDesc { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtWakeUpTypeDesc"/>
+    public virtual string txtWakeUpTypeDesc { get; set; }
+    /// <summary>Creates a new object that is a copy of the current instance.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Clone"/>
+    /// <returns>A new object that is a copy of this instance.</returns>
+    public object Clone() { throw new System.NotImplementedException(); }
 }

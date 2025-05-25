@@ -2,15 +2,12 @@ using Newtonsoft.Json;
 
 namespace Alvao.API.AI;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_ChatMessage.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatMessage.html"/>
 public class ChatMessage {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatMessage_Content.htm"/>
-    [JsonPropertyAttribute("content")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatMessage.html#Alvao_API_AI_ChatMessage_Content"/>
+    [JsonProperty("content")]
     public string Content { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatMessage_Role.htm"/>
-    [JsonPropertyAttribute("role")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatMessage.html#Alvao_API_AI_ChatMessage_Role"/>
+    [JsonProperty("role")]
     public string Role { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_ChatMessage__ctor.htm"/>
-    public ChatMessage() { }
 }

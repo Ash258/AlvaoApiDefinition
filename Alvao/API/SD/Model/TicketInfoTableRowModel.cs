@@ -1,22 +1,15 @@
 namespace Alvao.API.SD.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_TicketInfoTableRowModel.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html"/>
 public class TicketInfoTableRowModel {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketInfoTableRowModel_Label.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html#Alvao_API_SD_Model_TicketInfoTableRowModel_Label"/>
     public string Label { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_TicketInfoTableRowModel_Value.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html#Alvao_API_SD_Model_TicketInfoTableRowModel_Value"/>
     public string Value { get; set; }
 
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_TicketInfoTableRowModel__ctor.htm"/>
-    public TicketInfoTableRowModel(
-        string label,
-        string value
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html#Alvao_API_SD_Model_TicketInfoTableRowModel__ctor_System_String_System_String_"/>
+    public TicketInfoTableRowModel(string label, string value) { }
 
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_TicketInfoTableRowModel_GetTicketInfoTableRows.htm"/>
-    ///
-    /// <param name="ticketDetail"> </param>
-    public static List<TicketInfoTableRowModel> GetTicketInfoTableRows(
-        TicketDetailsModel ticketDetail
-    ) { throw new System.NotImplementedException(); }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html#Alvao_API_SD_Model_TicketInfoTableRowModel_GetTicketInfoTableRows_Alvao_API_SD_Model_TicketDetailsModel_"/>
+    public static List<TicketInfoTableRowModel> GetTicketInfoTableRows(TicketDetailsModel ticketDetail) { throw new System.NotImplementedException(); }
 }

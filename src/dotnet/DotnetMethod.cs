@@ -20,6 +20,7 @@ public record DotnetMethod() {
         GenerateSummary(Summary, indent, Examples, sb);
         GenerateSeeUrl(FullUrl, indent, sb);
         GenerateParameters(Parameters, indent, sb);
+
         GenerateSingleOrMultiLineElement(Remarks, indent, "remarks", sb);
 
         Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
@@ -37,10 +38,8 @@ public record DotnetMethod() {
 
         GenerateSingleOrMultiLineElement(Returns, indent, "returns", sb);
 
-        var def = SanitizeXmlToString(Definition);
-        if (!Definition.EndsWith(';')) def += " { throw new System.NotImplementedException(); }";
-
-        sb.Append(PrefixEachLineSpaces(def, indent));
+        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
+        if (!Definition.EndsWith(';')) sb.Append(" { throw new System.NotImplementedException(); }");
 
         return sb.ToString();
     }

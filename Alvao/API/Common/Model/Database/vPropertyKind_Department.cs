@@ -3,26 +3,17 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Properties of objects - Cost center.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_Department.htm"/>
-[TableAttribute("dbo.vPropertyKind_Department")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html"/>
+[Table("dbo.vPropertyKind_Department")]
 public class vPropertyKind_Department {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_bolInheritable.htm"/>
-    public virtual bool bolInheritable { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_intNameOrder.htm"/>
-    public virtual int? intNameOrder { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_intPropertyId.htm"/>
-    public virtual int intPropertyId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_intState.htm"/>
-    public virtual int? intState { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_lintKindId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html#Alvao_API_Common_Model_Database_vPropertyKind_Department_bolInheritable"/>
+    public virtual int bolInheritable { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html#Alvao_API_Common_Model_Database_vPropertyKind_Department_lintKindId"/>
     public virtual int lintKindId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_lintNodeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html#Alvao_API_Common_Model_Database_vPropertyKind_Department_lintNodeId"/>
     public virtual int lintNodeId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_txtKind.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html#Alvao_API_Common_Model_Database_vPropertyKind_Department_txtKind"/>
     public virtual string txtKind { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_Department_txtValue.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Department.html#Alvao_API_Common_Model_Database_vPropertyKind_Department_txtValue"/>
     public virtual string txtValue { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vPropertyKind_Department__ctor.htm"/>
-    public vPropertyKind_Department() { }
 }

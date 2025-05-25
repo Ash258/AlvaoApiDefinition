@@ -1,131 +1,121 @@
 namespace Alvao.API.SD.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_MessageDataBaseModel.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html"/>
 public class MessageDataBaseModel {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_FirstReactionDeadline.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_FirstReactionDeadline"/>
     public DateTime? FirstReactionDeadline { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_Impact.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_Impact"/>
     public int Impact { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageActId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageActId"/>
     public string OriginalMessageActId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageAttachmentList.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageAttachmentList"/>
     public string OriginalMessageAttachmentList { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageHtml.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageHtml"/>
     public string OriginalMessageHtml { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageSubject.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_OriginalMessageSubject"/>
     public string OriginalMessageSubject { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_Priority.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_Priority"/>
     public int? Priority { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_RelatedAccountId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_RelatedAccountId"/>
     public int? RelatedAccountId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketDeadline.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketDeadline"/>
     public DateTime? TicketDeadline { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketId"/>
     public string TicketId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketMessageTag.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketMessageTag"/>
     public string TicketMessageTag { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForAccountName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForAccountName"/>
     public string TicketRequestedForAccountName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForDepartment.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForDepartment"/>
     public string TicketRequestedForDepartment { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForEmail.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForEmail"/>
     public string TicketRequestedForEmail { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForEmail2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForEmail2"/>
     public string TicketRequestedForEmail2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForManagerName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForManagerName"/>
     public string TicketRequestedForManagerName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForMobile.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForMobile"/>
     public string TicketRequestedForMobile { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForName"/>
     public string TicketRequestedForName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForOffice.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForOffice"/>
     public string TicketRequestedForOffice { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForOtherContacts.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForOtherContacts"/>
     public string TicketRequestedForOtherContacts { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPersonalNumber.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPersonalNumber"/>
     public string TicketRequestedForPersonalNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPhoneToWork.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPhoneToWork"/>
     public string TicketRequestedForPhoneToWork { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPhoneToWork2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPhoneToWork2"/>
     public string TicketRequestedForPhoneToWork2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPosition.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequestedForPosition"/>
     public string TicketRequestedForPosition { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterAccountName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterAccountName"/>
     public string TicketRequesterAccountName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterDepartment.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterDepartment"/>
     public string TicketRequesterDepartment { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterEmail.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterEmail"/>
     public string TicketRequesterEmail { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterEmail2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterEmail2"/>
     public string TicketRequesterEmail2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterManagerName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterManagerName"/>
     public string TicketRequesterManagerName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterMobile.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterMobile"/>
     public string TicketRequesterMobile { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterName"/>
     public string TicketRequesterName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterOffice.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterOffice"/>
     public string TicketRequesterOffice { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterOtherContacts.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterOtherContacts"/>
     public string TicketRequesterOtherContacts { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPersonalNumber.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPersonalNumber"/>
     public string TicketRequesterPersonalNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPhoneToWork.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPhoneToWork"/>
     public string TicketRequesterPhoneToWork { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPhoneToWork2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPhoneToWork2"/>
     public string TicketRequesterPhoneToWork2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPosition.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketRequesterPosition"/>
     public string TicketRequesterPosition { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketService.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketService"/>
     public string TicketService { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketServicePhone.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketServicePhone"/>
     public string TicketServicePhone { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketServiceProcess.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketServiceProcess"/>
     public string TicketServiceProcess { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSla.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSla"/>
     public string TicketSla { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverAccountName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverAccountName"/>
     public string TicketSolverAccountName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverDepartment.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverDepartment"/>
     public string TicketSolverDepartment { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverEmail.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverEmail"/>
     public string TicketSolverEmail { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverEmail2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverEmail2"/>
     public string TicketSolverEmail2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverManagerName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverManagerName"/>
     public string TicketSolverManagerName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverMobile.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverMobile"/>
     public string TicketSolverMobile { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverName"/>
     public string TicketSolverName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverOffice.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverOffice"/>
     public string TicketSolverOffice { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverOtherContacts.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverOtherContacts"/>
     public string TicketSolverOtherContacts { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPersonalNumber.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPersonalNumber"/>
     public string TicketSolverPersonalNumber { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPhoneToWork.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPhoneToWork"/>
     public string TicketSolverPhoneToWork { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPhoneToWork2.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPhoneToWork2"/>
     public string TicketSolverPhoneToWork2 { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPosition.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketSolverPosition"/>
     public string TicketSolverPosition { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketStatus.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketStatus"/>
     public string TicketStatus { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_TicketTitle.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_TicketTitle"/>
     public string TicketTitle { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_MessageDataBaseModel_Urgency.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_Urgency"/>
     public int Urgency { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_MessageDataBaseModel__ctor.htm"/>
-    public MessageDataBaseModel() { }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_MessageDataBaseModel_GetPropertyValueByName.htm"/>
-    ///
-    /// <param name="name"> </param>
-    /// <param name="model"> </param>
-    public static string GetPropertyValueByName(
-        string name,
-        Object model
-    ) { throw new System.NotImplementedException(); }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_GetPropertyValueByName_System_String_System_Object_"/>
+    public static string GetPropertyValueByName(string name, object model) { throw new System.NotImplementedException(); }
 }

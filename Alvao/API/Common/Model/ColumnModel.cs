@@ -1,34 +1,33 @@
 namespace Alvao.API.Common.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_ColumnModel.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html"/>
 public class ColumnModel {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_bUseColumnValue.htm"/>
-    public bool bUseColumnValue { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_ColumnValues.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_ColumnValues"/>
     public IEnumerable<ColumnValue> ColumnValues { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_DataLength.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_DataLength"/>
     public int? DataLength { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_DataType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_DataType"/>
     public string DataType { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_iColumnId.htm"/>
-    public int iColumnId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_Localize.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_Localize"/>
     public bool Localize { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_mDescription.htm"/>
-    public string mDescription { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_Multiline.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_Multiline"/>
     public bool Multiline { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_nOrder.htm"/>
-    public double nOrder { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_RoleName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_Precision"/>
+    public int? Precision { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_RoleName"/>
     public string RoleName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_sColumn.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_bUseColumnValue"/>
+    public bool bUseColumnValue { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_iColumnId"/>
+    public int iColumnId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_mDescription"/>
+    public string mDescription { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_nOrder"/>
+    public double nOrder { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_sColumn"/>
     public string sColumn { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_sTable.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_sTable"/>
     public string sTable { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_ColumnModel_sTitle.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.ColumnModel.html#Alvao_API_Common_Model_ColumnModel_sTitle"/>
     public string sTitle { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_ColumnModel__ctor.htm"/>
-    public ColumnModel() { }
 }

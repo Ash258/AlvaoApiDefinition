@@ -2,15 +2,12 @@ using Newtonsoft.Json;
 
 namespace Alvao.API.AI;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_EmbeddingResponse.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.EmbeddingResponse.html"/>
 public class EmbeddingResponse {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_EmbeddingResponse_Embedding.htm"/>
-    [JsonPropertyAttribute("embedding")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.EmbeddingResponse.html#Alvao_API_AI_EmbeddingResponse_Embedding"/>
+    [JsonProperty("embedding")]
     public List<double> Embedding { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_EmbeddingResponse_Index.htm"/>
-    [JsonPropertyAttribute("index")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.EmbeddingResponse.html#Alvao_API_AI_EmbeddingResponse_Index"/>
+    [JsonProperty("index")]
     public int? Index { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_EmbeddingResponse__ctor.htm"/>
-    public EmbeddingResponse() { }
 }

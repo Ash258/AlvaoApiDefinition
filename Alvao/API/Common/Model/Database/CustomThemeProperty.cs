@@ -3,20 +3,17 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Property of the custom theme.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_CustomThemeProperty.htm"/>
-[TableAttribute("dbo.CustomThemeProperty")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.CustomThemeProperty.html"/>
+[Table("dbo.CustomThemeProperty")]
 public class CustomThemeProperty {
-    /// <summary>Record ID</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_CustomThemeProperty_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>Name of the theme property.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_CustomThemeProperty_Name.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.CustomThemeProperty.html#Alvao_API_Common_Model_Database_CustomThemeProperty_Name"/>
     public virtual string Name { get; set; }
     /// <summary>Value of the theme property.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_CustomThemeProperty_Value.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.CustomThemeProperty.html#Alvao_API_Common_Model_Database_CustomThemeProperty_Value"/>
     public virtual string Value { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_CustomThemeProperty__ctor.htm"/>
-    public CustomThemeProperty() { }
+    /// <summary>Record ID</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.CustomThemeProperty.html#Alvao_API_Common_Model_Database_CustomThemeProperty_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }

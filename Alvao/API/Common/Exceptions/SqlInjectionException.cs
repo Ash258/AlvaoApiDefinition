@@ -1,16 +1,13 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.Common.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Exceptions_SqlInjectionException.htm"/>
-public class SqlInjectionException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_SqlInjectionException__ctor.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.SqlInjectionException.html"/>
+public class SqlInjectionException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.SqlInjectionException.html#Alvao_API_Common_Exceptions_SqlInjectionException__ctor"/>
     public SqlInjectionException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_SqlInjectionException__ctor_1.htm"/>
-    public SqlInjectionException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_SqlInjectionException__ctor_2.htm"/>
-    public SqlInjectionException(
-        string message,
-        Exception inner
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.SqlInjectionException.html#Alvao_API_Common_Exceptions_SqlInjectionException__ctor_System_String_"/>
+    public SqlInjectionException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.SqlInjectionException.html#Alvao_API_Common_Exceptions_SqlInjectionException__ctor_System_String_System_Exception_"/>
+    public SqlInjectionException(string message, Exception inner) { }
 }

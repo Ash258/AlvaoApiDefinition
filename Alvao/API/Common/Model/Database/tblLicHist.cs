@@ -3,112 +3,111 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>License - list of purchased software licenses.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist.htm"/>
-[TableAttribute("dbo.tblLicHist")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html"/>
+[Table("dbo.tblLicHist")]
 public class tblLicHist {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseKind.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.LicenseKind.html#fields"/>
     public enum LicenseKind {
-        perDevice = 1,
-        perUser = 2,
         perConnection = 3,
-        perProcessor = 4,
         perCore = 5,
+        perDevice = 1,
+        perProcessor = 4,
+        perUser = 2,
     }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblLicHist_LicenseType.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.LicenseType.html#fields"/>
     public enum LicenseType {
-        Normal = 1,
-        UnlimitedVolumeLicense = 2,
-        Floating = 3,
-        OEM = 4,
         CAL = 5,
+        Floating = 3,
+        Normal = 1,
+        OEM = 4,
+        UnlimitedVolumeLicense = 2,
     }
     /// <summary>Assign automatically</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_AutoAssign.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_AutoAssign"/>
     public virtual bool AutoAssign { get; set; }
     /// <summary>Filter for automatic assignment of licenses.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_AutoAssignFilter.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_AutoAssignFilter"/>
     public virtual string AutoAssignFilter { get; set; }
     /// <summary>A tag indicating whether the license should be automatically and immediately assigned.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_AutoAssignNow.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_AutoAssignNow"/>
     public virtual bool AutoAssignNow { get; set; }
     /// <summary>Cover package components when package itself is not installed. 0 = the license will cover the components of the package only if the license package itself is installed. 1 = the license covers the components of the package even if the package itself is not installed.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_CoverPackPartsWithoutPackageInstalled.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_CoverPackPartsWithoutPackageInstalled"/>
     public virtual bool CoverPackPartsWithoutPackageInstalled { get; set; }
     /// <summary>Created.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_CreatedDate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_CreatedDate"/>
     public virtual DateTime? CreatedDate { get; set; }
     /// <summary>Author - tPerson</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_CreatedPersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_CreatedPersonId"/>
     public virtual int? CreatedPersonId { get; set; }
-    /// <summary>Purchase date</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_dteDate.htm"/>
-    public virtual DateTime dteDate { get; set; }
-    /// <summary>Date of expiration</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_dteDateExpire.htm"/>
-    public virtual DateTime? dteDateExpire { get; set; }
-    /// <summary>Date of upgrading to ...</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_dteUpgradeTo.htm"/>
-    public virtual DateTime? dteUpgradeTo { get; set; }
-    /// <summary>Record ID</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_intLicHistId.htm"/>
-    [KeyAttribute]
-    public virtual int intLicHistId { get; set; }
     /// <summary>The person who has invalidated the license.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_InvalidatedByPersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_InvalidatedByPersonId"/>
     public virtual int? InvalidatedByPersonId { get; set; }
     /// <summary>The date on which the license was invalidated.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_InvalidatedDate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_InvalidatedDate"/>
     public virtual DateTime? InvalidatedDate { get; set; }
     /// <summary>A flag indicating whether the license is valid.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_IsValid.htm"/>
-    [ComputedAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_IsValid"/>
+    [Computed]
     public virtual bool IsValid { get; set; }
-    /// <summary>Number of purchased licenses</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_LicenseCount.htm"/>
-    public virtual int? LicenseCount { get; set; }
-    /// <summary>1 = devices2 = user3 = connection4 = processor</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_LicKindId.htm"/>
+    /// <summary>1 = devices 2 = user 3 = connection 4 = processor</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_LicKindId"/>
     public virtual int LicKindId { get; set; }
     /// <summary>License type.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_LicTypeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_LicTypeId"/>
     public virtual int? LicTypeId { get; set; }
-    /// <summary>Product - tblProduct</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_lintProductId.htm"/>
-    public virtual int lintProductId { get; set; }
+    /// <summary>Number of purchased licenses</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_LicenseCount"/>
+    public virtual int? LicenseCount { get; set; }
     /// <summary>A flag indicating whether multiple license items can be assigned to the same object.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_MultiAssign.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_MultiAssign"/>
     public virtual bool MultiAssign { get; set; }
     /// <summary>Check whether the assigned license covers any installations on endpoint devices or not (SaaS, CAL).</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_NoProductInstallation.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_NoProductInstallation"/>
     public virtual bool NoProductInstallation { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_Organization.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_Organization"/>
+    //[Ignore] // ! TODO: Investigate where this come from
     public string Organization { get; set; }
     /// <summary>Organization ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_OrganizationNodeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_OrganizationNodeId"/>
     public virtual int? OrganizationNodeId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_Product.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_Product"/>
+    //[Ignore] // ! TODO: Investigate where this come from
     public string Product { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_ProductNotes.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_ProductNotes"/>
     public virtual string ProductNotes { get; set; }
+    /// <summary>Unique license identifier in the external system.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_UId"/>
+    public virtual string UId { get; set; }
+    /// <summary>Purchase date</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_dteDate"/>
+    public virtual DateTime dteDate { get; set; }
+    /// <summary>Date of expiration</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_dteDateExpire"/>
+    public virtual DateTime? dteDateExpire { get; set; }
+    /// <summary>Date of upgrading to ...</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_dteUpgradeTo"/>
+    public virtual DateTime? dteUpgradeTo { get; set; }
+    /// <summary>Record ID</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_intLicHistId"/>
+    [Key]
+    public virtual int intLicHistId { get; set; }
+    /// <summary>Product - tblProduct</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_lintProductId"/>
+    public virtual int lintProductId { get; set; }
     /// <summary>Activation key</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_txtActivationKey.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_txtActivationKey"/>
     public virtual string txtActivationKey { get; set; }
     /// <summary>Cost center</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_txtDepartment.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_txtDepartment"/>
     public virtual string txtDepartment { get; set; }
     /// <summary>Inventory number</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_txtInventoryNum.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_txtInventoryNum"/>
     public virtual string txtInventoryNum { get; set; }
     /// <summary>License name</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_txtLicName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_txtLicName"/>
     public virtual string txtLicName { get; set; }
     /// <summary>Note</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_txtMemo.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_txtMemo"/>
     public virtual string txtMemo { get; set; }
-    /// <summary>Unique license identifier in the external system.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblLicHist_UId.htm"/>
-    public virtual string UId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblLicHist__ctor.htm"/>
-    public tblLicHist() { }
 }

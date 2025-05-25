@@ -730,10 +730,7 @@ public class AlvaoClass {
 
                 Logger.LogDebug("Appending {} methods [{}] {{{}}}", Methods.Count, Name, NamespaceName);
                 if (indentNext && Methods.Count > 0) sb.AppendLine("");
-                Methods.ForEach(el => {
-                    sb.AppendLine(el.Produce());
-                    sb.AppendLine("");
-                });
+                Methods.ForEach(el => sb.AppendLine(el.Produce()));
                 indentNext = Methods.Count > 0;
 
                 Logger.LogDebug("Appending {} events [{}] {{{}}}", Events.Count, Name, NamespaceName);

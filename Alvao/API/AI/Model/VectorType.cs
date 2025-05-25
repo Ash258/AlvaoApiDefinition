@@ -1,11 +1,11 @@
 namespace Alvao.API.AI.Model;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_Model_VectorType.htm"/>
-[FlagsAttribute]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.VectorType.html"/>
+[Flags]
 public enum VectorType {
-    None = 0,
+    All = Communication | Fields | Objects,
     Communication = 1,
     Fields = 2,
+    None = 0,
     Objects = 4,
-    All = 7,
 }

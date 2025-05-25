@@ -20,7 +20,7 @@ public record DotnetPropertyOrFieldOrEvent() {
 
         if (!Definition.EndsWith('}')) def += ";";
 
-        sb.AppendLine(PrefixEachLineSpaces(def, indent));
+        sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }
