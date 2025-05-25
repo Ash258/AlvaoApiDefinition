@@ -690,7 +690,6 @@ public class AlvaoClass {
         }
 
         // Set class specific docs
-
         var indent = 0;
         GenerateSummary(Summary, indent, [], sb);
         GenerateSeeUrl(FullUrl, indent, sb);

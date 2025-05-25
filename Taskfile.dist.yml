@@ -55,7 +55,13 @@ tasks:
     - default
     cmds:
     - task: format
-    - task: library:clean
     - task: build
     - task: tidy
     - task: library:format
+    - task: library:build
+  run:clean:
+    aliases:
+    - default
+    cmds:
+    - task: library:clean
+    - task: run

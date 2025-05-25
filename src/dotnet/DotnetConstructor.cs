@@ -3,11 +3,7 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public record DotnetConstructor() {
-    public string Name { get; set; } = string.Empty;
-    public string Summary { get; set; } = string.Empty;
-    public string Definition { get; set; } = string.Empty;
-    public string FullUrl { get; set; } = string.Empty;
+public record DotnetConstructor() : DotnetBase {
     public List<(string, string)> Parameters { get; set; } = []; // Just name and summary of parameters for now
     public List<(string, string)> Examples { get; set; } = [];
 
