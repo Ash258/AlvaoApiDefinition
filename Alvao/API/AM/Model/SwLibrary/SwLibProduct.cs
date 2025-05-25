@@ -4,17 +4,17 @@ namespace Alvao.API.AM.Model.SwLibrary;
 public class SwLibProduct : SwLibBase {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibProduct.ProductState.html#fields"/>
     public enum ProductState {
+        Unclassified = 1,
+        Approving = 2,
         Approved = 3,
         ApprovedScheduledForDecommissioning = 4,
-        Approving = 2,
         Discontinued = 5,
         Rejected = 6,
-        Unclassified = 1,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibProduct.SamType.html#fields"/>
     public enum SamType {
-        AuditNo = 2,
         AuditYes = 1,
+        AuditNo = 2,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibProduct.html#Alvao_API_AM_Model_SwLibrary_SwLibProduct_CategoryId"/>
     public int? CategoryId { get; set; }

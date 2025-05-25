@@ -8,9 +8,9 @@ namespace Alvao.API.Common.Model.Database;
 public class TicketAlertType {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketAlertType.TicketAlertTypeId.html#fields"/>
     public enum TicketAlertTypeId {
-        Deadline = 2,
-        FirstReaction = 1,
         Inactive = 0,
+        FirstReaction = 1,
+        Deadline = 2,
         InternalTarget = 3,
     }
     /// <summary>Alert text without parameter</summary>

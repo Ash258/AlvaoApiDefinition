@@ -8,18 +8,18 @@ namespace Alvao.API.Common.Model.Database;
 public class tActKind {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tActKind.ActKind.html#fields"/>
     public enum ActKind {
-        Email = 1,
         Empty = -1,
-        Form = 7,
-        Letter = 4,
-        Meeting = 3,
-        Note = 8,
-        Notification = 11,
-        Other = 10,
-        PaperNote = 6,
+        Email = 1,
         Phone = 2,
-        Process = 9,
+        Meeting = 3,
+        Letter = 4,
         VoiceMessage = 5,
+        PaperNote = 6,
+        Form = 7,
+        Note = 8,
+        Process = 9,
+        Other = 10,
+        Notification = 11,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tActKind.html#Alvao_API_Common_Model_Database_tActKind_Removable"/>
     public virtual bool Removable { get; set; }

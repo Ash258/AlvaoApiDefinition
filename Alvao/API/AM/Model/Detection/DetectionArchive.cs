@@ -6,14 +6,14 @@ namespace Alvao.API.AM.Model.Detection;
 public class DetectionArchive : ArchiveStream, IAsyncDisposable, IDisposable {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.ObjectType.html#fields"/>
     public enum ObjectType {
-        File = 4,
-        FileStringInfo = 6,
-        FileVerInfo = 5,
-        Folder = 3,
         None = 0,
         OsVersionInfo = 1,
-        OsVersionInfoEx = 7,
         RegValue = 2,
+        Folder = 3,
+        File = 4,
+        FileVerInfo = 5,
+        FileStringInfo = 6,
+        OsVersionInfoEx = 7,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.Version.html#fields"/>
     public enum Version {

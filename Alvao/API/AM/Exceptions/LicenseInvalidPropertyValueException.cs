@@ -6,15 +6,15 @@ namespace Alvao.API.AM.Exceptions;
 public class LicenseInvalidPropertyValueException : LicenseException, ISerializable {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseInvalidPropertyValueException.LicenseProperty.html#fields"/>
     public enum LicenseProperty {
-        AvailableLicensesExceeded = 8,
-        ExpireBeforeValid = 2,
         LicenseCount = 0,
         LicenseCountAssigned = 1,
+        ExpireBeforeValid = 2,
         LicenseName = 3,
         LicenseTypeAndQuantityUnitCombination = 4,
-        PerProcessorAssigned = 6,
         PerUserAssigned = 5,
+        PerProcessorAssigned = 6,
         QuantityUnitAndObjectTypeCombination = 7,
+        AvailableLicensesExceeded = 8,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseInvalidPropertyValueException.html#Alvao_API_AM_Exceptions_LicenseInvalidPropertyValueException_Property"/>
     public LicenseInvalidPropertyValueException.LicenseProperty Property { get; set; }

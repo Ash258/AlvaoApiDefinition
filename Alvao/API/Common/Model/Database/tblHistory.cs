@@ -8,10 +8,10 @@ namespace Alvao.API.Common.Model.Database;
 public class tblHistory {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblHistory.HistoryFlags.html#fields"/>
     public enum HistoryFlags {
-        InsertNew = 1024,
         MoveDest = 256,
         MoveSrc = 512,
         MoveTo = 768,
+        InsertNew = 1024,
         ToNew = 1280,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblHistory.html#Alvao_API_Common_Model_Database_tblHistory_RemovedByPersonId"/>

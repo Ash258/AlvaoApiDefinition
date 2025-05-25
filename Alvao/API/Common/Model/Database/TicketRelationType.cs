@@ -8,11 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class TicketRelationType {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketRelationType.RelationId.html#fields"/>
     public enum RelationId {
-        Blocks_IsBlockedBy = 4,
-        IsDuplicateBy_Duplicated = 5,
+        RelatesTo = 1,
         ParentOf_ChildOf = 2,
         PrecedesBefore_FollowsAfter = 3,
-        RelatesTo = 1,
+        Blocks_IsBlockedBy = 4,
+        IsDuplicateBy_Duplicated = 5,
     }
     /// <summary>The name of the link from the ticket view at the beginning of the link</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketRelationType.html#Alvao_API_Common_Model_Database_TicketRelationType_BeginName"/>

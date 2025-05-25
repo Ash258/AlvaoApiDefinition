@@ -8,15 +8,15 @@ namespace Alvao.API.Common.Model.Database;
 public class TicketStateBehavior {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateBehavior.BehaviorId.html#fields"/>
     public enum BehaviorId {
-        Close = 11,
-        ExpiredApproval = 9,
-        ManualChange = 10,
         NewTicket = 1,
         PassToSolver = 2,
-        Remove = 6,
-        Reopen = 4,
         Resolve = 3,
+        Reopen = 4,
+        Remove = 6,
         RestoreRemoved = 7,
+        ExpiredApproval = 9,
+        ManualChange = 10,
+        Close = 11,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateBehavior.html#Alvao_API_Common_Model_Database_TicketStateBehavior__TicketStateBehavior"/>
     public virtual string _TicketStateBehavior { get; set; }

@@ -4,18 +4,18 @@ namespace Alvao.API.AM.Model;
 public class Log {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Log.Kind.html#fields"/>
     public enum Kind {
+        Null = 0,
+        Info = 1,
+        Warning = 2,
+        Error = 3,
+        PropertyChanged = 4,
         ComputerOff = 5,
-        DetCantUpdateObject = 8,
         DetNoAnsFile = 6,
         DiffDetVsTree = 7,
-        DuplicitComputer = 12,
-        Error = 3,
+        DetCantUpdateObject = 8,
         HwDetectionPerformed = 9,
-        Info = 1,
-        InventoryPerformed = 11,
-        Null = 0,
-        PropertyChanged = 4,
         SwDetectionPerformed = 10,
-        Warning = 2,
+        InventoryPerformed = 11,
+        DuplicitComputer = 12,
     }
 }

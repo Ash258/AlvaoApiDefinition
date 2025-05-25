@@ -6,12 +6,12 @@ namespace Alvao.API.Common;
 public class MSEntraTenant {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.MSEntraTenant.Feature.html#fields"/>
     public enum Feature {
+        UserPresence = 0,
+        UserPortraits = 1,
         FilePicker = 2,
         Intune = 3,
         KnowledgeBaseSharepoint = 4,
         MsToDo = 5,
-        UserPortraits = 1,
-        UserPresence = 0,
     }
     /// <summary>Get list of all tenants.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.MSEntraTenant.html#Alvao_API_Common_MSEntraTenant_GetAll"/>

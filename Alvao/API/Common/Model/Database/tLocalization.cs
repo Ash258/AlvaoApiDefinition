@@ -13,28 +13,28 @@ public class tLocalization {
         CustomNotificationForRequesterTemplate = 2,
         Description = 3,
         Keywords = 4,
-        Name = 14,
-        SolverInstructions = 10,
-        TextHtml = 15,
-        TicketState = 12,
-        TicketType = 13,
         mDescription = 5,
         mHdSectionDesc = 6,
         mSubject = 7,
         mTextBody = 8,
         sHdSectionShort = 9,
+        SolverInstructions = 10,
         sTitle = 11,
+        TicketState = 12,
+        TicketType = 13,
+        Name = 14,
+        TextHtml = 15,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.Table.html#fields"/>
     public enum Table {
-        NewTicketFormSection = 6,
-        NewTicketFormTextBlock = 7,
-        TicketState = 4,
-        TicketType = 5,
         tColumn = 0,
         tColumnValue = 1,
         tEmailTemplate = 2,
         tHdSection = 3,
+        TicketState = 4,
+        TicketType = 5,
+        NewTicketFormSection = 6,
+        NewTicketFormTextBlock = 7,
     }
     /// <summary>If there is 1, this translation needs to be updated because the original text has been modified since last translation.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_NeedsUpdate"/>

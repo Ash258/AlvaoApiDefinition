@@ -13,12 +13,12 @@ public class tblProduct {
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.ProductState.html#fields"/>
     public enum ProductState {
+        Unclassified = 1,
+        Approving = 2,
         Approved = 3,
         ApprovedRetirementPlanned = 4,
-        Approving = 2,
         Excluded = 5,
         Rejected = 6,
-        Unclassified = 1,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.ProductType.html#fields"/>
     public enum ProductType {
@@ -29,9 +29,9 @@ public class tblProduct {
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.SamType.html#fields"/>
     public enum SamType {
+        Yes = 1,
         No = 2,
         Notify = 3,
-        Yes = 1,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.html#Alvao_API_Common_Model_Database_tblProduct_AddToSoftwareLibrary"/>
     [Ignore]

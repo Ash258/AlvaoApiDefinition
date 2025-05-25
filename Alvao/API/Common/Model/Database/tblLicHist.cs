@@ -9,19 +9,19 @@ namespace Alvao.API.Common.Model.Database;
 public class tblLicHist {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.LicenseKind.html#fields"/>
     public enum LicenseKind {
-        perConnection = 3,
-        perCore = 5,
         perDevice = 1,
-        perProcessor = 4,
         perUser = 2,
+        perConnection = 3,
+        perProcessor = 4,
+        perCore = 5,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.LicenseType.html#fields"/>
     public enum LicenseType {
-        CAL = 5,
-        Floating = 3,
         Normal = 1,
-        OEM = 4,
         UnlimitedVolumeLicense = 2,
+        Floating = 3,
+        OEM = 4,
+        CAL = 5,
     }
     /// <summary>Assign automatically</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_AutoAssign"/>

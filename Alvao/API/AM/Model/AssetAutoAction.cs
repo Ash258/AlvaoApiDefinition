@@ -7,9 +7,9 @@ public static class AssetAutoAction {
     [Flags]
     public enum AutoActionTypes {
         None = 1,
-        ObjectMoved = 16,
-        ObjectMoving = 8,
-        ObjectPropertyModified = 4,
         ObjectPropertyModifying = 2,
+        ObjectPropertyModified = 4,
+        ObjectMoving = 8,
+        ObjectMoved = 16,
     }
 }

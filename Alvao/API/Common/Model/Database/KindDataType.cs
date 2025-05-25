@@ -8,9 +8,9 @@ namespace Alvao.API.Common.Model.Database;
 public class KindDataType {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html#fields"/>
     public enum KindDataTypeIdEnum {
+        Text = 1,
         Date = 2,
         Float = 3,
-        Text = 1,
         User = 4,
     }
     /// <summary>Property data type name.</summary>

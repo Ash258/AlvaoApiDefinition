@@ -4,12 +4,12 @@ namespace Alvao.API.AM.Model.SwLibrary;
 public class SwLibrary {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibrary.ObjectType.html#fields"/>
     public enum ObjectType {
-        Company = 1,
-        FileImage = 5,
         None = 0,
+        Company = 1,
         Product = 2,
         ProductPack = 3,
         RegImage = 4,
+        FileImage = 5,
     }
 
     /// <summary>Certification autority</summary>

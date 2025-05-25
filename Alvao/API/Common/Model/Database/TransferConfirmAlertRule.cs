@@ -8,11 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class TransferConfirmAlertRule {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.RuleType.html#fields"/>
     public enum RuleType {
-        AlertManager = 5,
-        AlertRecipient = 2,
-        AlertTeam = 4,
-        AlertTransferringPerson = 3,
         InitialMessage = 1,
+        AlertRecipient = 2,
+        AlertTransferringPerson = 3,
+        AlertTeam = 4,
+        AlertManager = 5,
         Unknown = 6,
     }
     /// <summary>A flag indicating whether or not the alert is active.</summary>

@@ -9,8 +9,8 @@ public class tblIcon {
     /// <summary>Enumeration of system icon uids.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblIcon.IconUid.html#fields"/>
     public enum IconUid {
-        ActiveDir = 107,
         HwCard = 10,
+        ActiveDir = 107,
         Subnet = 134,
     }
     /// <summary>Icon in SVG format</summary>

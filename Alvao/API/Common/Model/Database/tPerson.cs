@@ -11,19 +11,19 @@ public class tPerson {
     [Flags]
     public enum TicketRoles {
         NoRole = 0,
-        SectionExceptionalSolver = 256,
-        SectionMainSolver = 4,
-        SectionManager = 8,
-        [Obsolete("Use SectionMainSolver instead.")]
-        SectionOperator = 4,
-        SectionReader = 16,
         SectionRequester = 1,
         SectionSolver = 2,
+        SectionMainSolver = 4,
+        [Obsolete("Use SectionMainSolver instead.")]
+        SectionOperator = 4,
+        SectionManager = 8,
+        SectionReader = 16,
+        TicketSolver = 32,
         TicketApprovalAuthority = 64,
+        TicketRequesterOrRequesterManager = 128,
+        SectionExceptionalSolver = 256,
         TicketFollower = 1024,
         TicketRequestParticipant = 2048,
-        TicketRequesterOrRequesterManager = 128,
-        TicketSolver = 32,
     }
     /// <summary>Application (client) ID in AAD</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tPerson.html#Alvao_API_Common_Model_Database_tPerson_AadAppClientId"/>

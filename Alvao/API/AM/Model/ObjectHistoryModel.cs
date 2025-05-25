@@ -4,13 +4,13 @@ namespace Alvao.API.AM.Model;
 public class ObjectHistoryModel {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.EHistoryFlag.html#fields"/>
     public enum EHistoryFlag {
-        HistfInsertNew = 4,
-        HistfMask = 65280,
         HistfMoveDest = 1,
         HistfMoveSrc = 2,
-        HistfShift = 8,
         HistfTo = 3,
+        HistfInsertNew = 4,
         HistfToNew = 5,
+        HistfShift = 8,
+        HistfMask = 65280,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_DetectId"/>
     public int DetectId { get; set; }

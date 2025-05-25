@@ -11,54 +11,54 @@ public static class Ticket {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.ChangeDeadlineFlags.html#fields"/>
     [Flags]
     public enum ChangeDeadlineFlags {
+        None = 0,
         DontNotifyUser = 1,
         DontUpdateTicket = 2,
-        None = 0,
     }
     /// <summary>SLA change reason.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.ChangeSlaReason.html#fields"/>
     public enum ChangeSlaReason {
-        MoveToService = 1,
         TicketEdit = 0,
+        MoveToService = 1,
     }
     /// <summary>Special flags for solver change.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.ChangeSolverFlags.html#fields"/>
     [Flags]
     public enum ChangeSolverFlags {
+        None = 0,
         DontCheckFirstSolverChange = 1,
+        DontSendNotification = 2,
+        IgnoreRequiredColumns = 4,
         DontLogAssignToMainSolver = 8,
         [Obsolete("Use DontLogAssignToMainSolver instead.")]
         DontLogAssignToOperator = 8,
-        DontSendNotification = 2,
-        IgnoreRequiredColumns = 4,
-        LogAsSystemPerson = 32,
         LogAssignToSolverGroup = 16,
-        None = 0,
+        LogAsSystemPerson = 32,
     }
     /// <summary>Special flags for close ticket.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.CloseFlags.html#fields"/>
     [Flags]
     public enum CloseFlags {
-        DontCallChangeState = 2,
-        IgnoreRights = 1,
         None = 0,
+        IgnoreRights = 1,
+        DontCallChangeState = 2,
     }
     /// <summary>Special flags for remove ticket.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.RemoveFlags.html#fields"/>
     [Flags]
     public enum RemoveFlags {
-        DontCallChangeState = 2,
-        IgnoreRights = 1,
         None = 0,
+        IgnoreRights = 1,
+        DontCallChangeState = 2,
     }
     /// <summary>Special flags for resolve ticket.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.ResolveFlags.html#fields"/>
     [Flags]
     public enum ResolveFlags {
-        DontCallChangeState = 4,
+        None = 0,
         DontNotifyUser = 1,
         IgnoreRights = 2,
-        None = 0,
+        DontCallChangeState = 4,
     }
     /// <summary>Changes request deadline, sends notification and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_ChangeDeadline_System_Int32_System_Nullable_System_DateTime__Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_CostModel_Alvao_API_SD_Ticket_ChangeDeadlineFlags_"/>

@@ -8,11 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class tHdTicketApprovalItem {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicketApprovalItem.ApprovalResult.html#fields"/>
     public enum ApprovalResult {
-        Accepted = 2,
-        Canceled = 5,
-        Expired = 4,
         NA = 1,
+        Accepted = 2,
         Rejected = 3,
+        Expired = 4,
+        Canceled = 5,
     }
     /// <summary>Approverâs comment in HTML</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicketApprovalItem.html#Alvao_API_Common_Model_Database_tHdTicketApprovalItem_ApprovalItemNotesHtml"/>

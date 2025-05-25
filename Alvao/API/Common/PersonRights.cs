@@ -9,65 +9,65 @@ public static class PersonRights {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.PersonRights.GlobalRoles.html#fields"/>
     [Flags]
     public enum GlobalRoles {
-        Accountants = 524288,
-        Administrator = 256,
-        ApplicationManager = 1024,
-        AssetAdministrators = 16384,
-        AssetManagers = 131072,
-        AssetReaders = 65536,
-        AssetRelationsManagers = 1048576,
-        AssetRelationsReaders = 2097152,
-        ContactManager = 8192,
-        ContactReader = 67108864,
-        CustomApplicationsManager = 16777216,
-        HWAndSWDetectionsManagers = 262144,
         NoRole = 0,
-        SectionAdmin = 4194304,
-        SettingsManager = 8388608,
-        SoftwareLicenseManagers = 32768,
+        Administrator = 256,
+        WorkTime = 512,
+        ApplicationManager = 1024,
         SoftwareManager = 2048,
         TeamManager = 4096,
+        ContactManager = 8192,
+        AssetAdministrators = 16384,
+        SoftwareLicenseManagers = 32768,
+        AssetReaders = 65536,
+        AssetManagers = 131072,
+        HWAndSWDetectionsManagers = 262144,
+        Accountants = 524288,
+        AssetRelationsManagers = 1048576,
+        AssetRelationsReaders = 2097152,
+        SectionAdmin = 4194304,
+        SettingsManager = 8388608,
+        CustomApplicationsManager = 16777216,
         TicketRequesterAuthority = 33554432,
-        WorkTime = 512,
+        ContactReader = 67108864,
     }
     /// <summary>Flags representing service roles.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.PersonRights.SectionRoles.html#fields"/>
     [Flags]
     public enum SectionRoles {
-        ExceptionalSolver = 8,
-        [Obsolete("Use RequestsReporter instead.")]
-        IrregularOperator = 64,
-        MainSolver = 2,
-        Manager = 1,
         None = 0,
+        Manager = 1,
+        MainSolver = 2,
         [Obsolete("Use MainSolver instead.")]
         Operator = 2,
-        Reader = 32,
-        Requester = 16,
-        RequestsReporter = 64,
         Solver = 4,
+        ExceptionalSolver = 8,
+        Requester = 16,
+        Reader = 32,
+        [Obsolete("Use RequestsReporter instead.")]
+        IrregularOperator = 64,
+        RequestsReporter = 64,
     }
     /// <summary>Flags representing request and service roles</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.PersonRights.TicketRoles.html#fields"/>
     [Flags]
     public enum TicketRoles {
         NoRole = 0,
-        SectionExceptionalSolver = 256,
-        SectionMainSolver = 4,
-        SectionManager = 8,
-        [Obsolete("Use SectionMainSolver instead.")]
-        SectionOperator = 4,
-        SectionReader = 16,
         SectionRequester = 1,
         SectionSolver = 2,
-        TicketApprovalAuthority = 64,
-        TicketFollower = 1024,
-        TicketReaderDueToSectionSla = 4096,
-        TicketRequestParticipant = 2048,
-        TicketRequestParticipantManager = 8192,
-        TicketRequester = 512,
-        TicketRequesterOrRequesterManager = 128,
+        SectionMainSolver = 4,
+        [Obsolete("Use SectionMainSolver instead.")]
+        SectionOperator = 4,
+        SectionManager = 8,
+        SectionReader = 16,
         TicketSolver = 32,
+        TicketApprovalAuthority = 64,
+        TicketRequesterOrRequesterManager = 128,
+        SectionExceptionalSolver = 256,
+        TicketRequester = 512,
+        TicketFollower = 1024,
+        TicketRequestParticipant = 2048,
+        TicketReaderDueToSectionSla = 4096,
+        TicketRequestParticipantManager = 8192,
         TicketSolverGroupMember = 16384,
     }
     /// <summary>Returns whether user can read particular user.</summary>
