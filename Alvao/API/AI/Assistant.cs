@@ -18,7 +18,7 @@ public static class Assistant {
     /// <param name="endTime">End time to finish processing of articles.</param>
     /// <returns>Identificator of the last processed article.</returns>
     public static int UpdateArticles(IEnumerable<int> articleIds, DateTime endTime) { throw new NotImplementedException(); }
-    /// <summary>Update centroid vectors for service from the vectors of tickets in the service.</summary>
+    /// <summary>Update centroid vectors for service from the vectors of tickets  in the service.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Assistant.html#Alvao_API_AI_Assistant_UpdateServiceVectors_System_Int32_"/>
     /// <param name="serviceId">Id of the service with tickets.</param>
     public static void UpdateServiceVectors(int serviceId) { throw new NotImplementedException(); }
