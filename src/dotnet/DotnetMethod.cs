@@ -31,8 +31,7 @@ public record DotnetMethod() {
                 sb.AppendLine(PrefixEachLineSpacesDoc(ex.Item2));
                 sb.AppendLine(PrefixEachLineSpacesDoc("</exception>"));
             } else {
-                sb.Append(PrefixEachLineSpacesDoc($"{ex.Item2}</exception>"));
-                sb.AppendLine();
+                sb.AppendLine($"{ex.Item2}</exception>");
             }
         });
 
