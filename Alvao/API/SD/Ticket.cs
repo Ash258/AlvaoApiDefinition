@@ -69,7 +69,7 @@ public static class Ticket {
     /// <param name="flags">Deadline change flag</param>
     /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <returns>Created act id (tAct.iActId)</returns>
-    public static int ChangeDeadline(int ticketId, DateTime? newDeadline, HtmlTextModel message, CostModel cost, Ticket.ChangeDeadlineFlags flags = ChangeDeadlineFlags.None) { throw new System.NotImplementedException(); }
+    public static int ChangeDeadline(int ticketId, DateTime? newDeadline, HtmlTextModel message, CostModel cost, Ticket.ChangeDeadlineFlags flags = ChangeDeadlineFlags.None) { throw new NotImplementedException(); }
     /// <summary>Changes request SLA, deadline (according to SLA) and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_ChangeSla_System_Int32_System_Int32_Alvao_API_SD_Model_CostModel_Alvao_API_SD_Ticket_ChangeSlaReason_"/>
     /// <param name="ticketId">Request id (tHdTicket.iHdTicketId)</param>
@@ -79,7 +79,7 @@ public static class Ticket {
     /// <exception cref="ArgumentException">Throws when request with ticketId or SLA with newSlaId does not exist.</exception>
     /// <exception cref="ValidationException">Throws when the ticket requester or the requestedFor user does not have the specified SLA  for the service.</exception>
     /// <exception cref="NotImplementedException">Throws when SLA change reason is not implemented.</exception>
-    public static void ChangeSla(int ticketId, int newSlaId, CostModel cost, Ticket.ChangeSlaReason reason) { throw new System.NotImplementedException(); }
+    public static void ChangeSla(int ticketId, int newSlaId, CostModel cost, Ticket.ChangeSlaReason reason) { throw new NotImplementedException(); }
     /// <summary>
     /// Changes ticket solver or returns it to main solver.
     /// <example>
@@ -101,7 +101,7 @@ public static class Ticket {
     /// <exception cref="ArgumentNullException">Throws when message is null.</exception>
     /// <returns>Act ID (tAct.iActId) with log of solver change.</returns>
     [Obsolete("Use ChangeSolverOrGroup instead.")]
-    public static int ChangeSolver(int ticketId, int? newSolverId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
+    public static int ChangeSolver(int ticketId, int? newSolverId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new NotImplementedException(); }
     /// <summary>
     /// Changes ticket solver group or returns it to main solver.
     /// <example>
@@ -123,7 +123,7 @@ public static class Ticket {
     /// <exception cref="ArgumentNullException">Throws when message is null.</exception>
     /// <returns>Act ID (tAct.iActId) with log of solver group change.</returns>
     [Obsolete("Use ChangeSolverOrGroup instead.")]
-    public static int ChangeSolverGroup(int ticketId, int? newSolverGroupId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
+    public static int ChangeSolverGroup(int ticketId, int? newSolverGroupId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new NotImplementedException(); }
     /// <summary>
     /// Changes ticket solver, solver group or returns it to main solver.
     /// <example>
@@ -148,7 +148,7 @@ public static class Ticket {
     /// <param name="flags">Flags for special cases.</param>
     /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <returns>0 if no act was logged otherwise act ID (tAct.iActId) with log of solver or solver group change.</returns>
-    public static int ChangeSolverOrGroup(int ticketId, int? solverId = -1, int? solverGroupId = -1, HtmlTextModel message = null, CostModel cost = null, int? authorId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
+    public static int ChangeSolverOrGroup(int ticketId, int? solverId = -1, int? solverGroupId = -1, HtmlTextModel message = null, CostModel cost = null, int? authorId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new NotImplementedException(); }
     /// <summary>
     /// Changes request state.
     /// <example>
@@ -174,7 +174,7 @@ public static class Ticket {
     /// <exception cref="ArgumentException">Throws when request with ticketId does not exist or request state with newStateId doest not exist.</exception>
     /// <exception cref="ValidationException">Throws when closing request and not all of its child requests have been closed or when reopening request which is already opened.</exception>
     /// <returns>True if state is changed succesfully, otherwise False.</returns>
-    public static bool ChangeState(int ticketId, int newStateId, int authorId, ChangeTicketStateSettingsModel settings) { throw new System.NotImplementedException(); }
+    public static bool ChangeState(int ticketId, int newStateId, int authorId, ChangeTicketStateSettingsModel settings) { throw new NotImplementedException(); }
     /// <summary>Changes request state to closed and cancels internal due date.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_Close_System_Int32_System_Int32_Alvao_API_SD_Ticket_CloseFlags_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
@@ -182,7 +182,7 @@ public static class Ticket {
     /// <param name="flags">Flags for special behavior.</param>
     /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <exception cref="ValidationException">Throws when authorPersonId does not have rights to close request.</exception>
-    public static void Close(int ticketId, int authorPersonId, Ticket.CloseFlags flags = CloseFlags.None) { throw new System.NotImplementedException(); }
+    public static void Close(int ticketId, int authorPersonId, Ticket.CloseFlags flags = CloseFlags.None) { throw new NotImplementedException(); }
     /// <summary>
     /// Creates new request from model.
     /// <example>
@@ -202,24 +202,24 @@ public static class Ticket {
     /// <exception cref="ArgumentException">Throws when newTicketModel is null or has custom column which is not supported.</exception>
     /// <exception cref="SlaAccessException">Throws when request requester does not have SLA in the section.</exception>
     /// <returns>Created request (tHdTicket)</returns>
-    public static tHdTicket Create(NewTicketModel newTicketModel) { throw new System.NotImplementedException(); }
+    public static tHdTicket Create(NewTicketModel newTicketModel) { throw new NotImplementedException(); }
     /// <summary>Returns information about ticket by specified column.  Allowed columns: SolverName, SolverEmail, TicketPriority, SectionName, RoomName, SLAname, FirstActText, StateName.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_ForeignKeyInfo_System_Int32_System_String_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <param name="columnName">Specified column name.</param>
     /// <exception cref="ArgumentException">Throws when ticketId does not exist or columnName is not defined or is forbidden.</exception>
     /// <returns>Text value of specified column.</returns>
-    public static string ForeignKeyInfo(int ticketId, string columnName) { throw new System.NotImplementedException(); }
+    public static string ForeignKeyInfo(int ticketId, string columnName) { throw new NotImplementedException(); }
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_GetById_System_Int32_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <returns>Request model (tHdTicket)</returns>
-    public static tHdTicket GetById(int ticketId) { throw new System.NotImplementedException(); }
+    public static tHdTicket GetById(int ticketId) { throw new NotImplementedException(); }
     /// <summary>Returns request database model.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_GetByMessageTagInText_System_String_"/>
     /// <param name="messageTag">Request messageTag (tHdTicket.sHdTicketMessageTag)</param>
     /// <returns>Request model (tHdTicket)</returns>
-    public static tHdTicket GetByMessageTagInText(string messageTag) { throw new System.NotImplementedException(); }
+    public static tHdTicket GetByMessageTagInText(string messageTag) { throw new NotImplementedException(); }
     /// <summary>Returns state change notification template.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_GetChangeStateTemplate_System_Int32_System_Int32_System_Int32_System_Boolean_Alvao_API_Common_Model_HtmlTextModel_System_Boolean_System_Nullable_System_Int32__"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
@@ -231,23 +231,23 @@ public static class Ticket {
     /// <param name="commentActId">ID (tAct.iActId) of act with comment text</param>
     /// <exception cref="ArgumentException">Throws when request with ticketId or request state with stateId does not exist.</exception>
     /// <returns>Filled template for ticket state notification.</returns>
-    public static string GetChangeStateTemplate(int ticketId, int stateId, int localeId, bool html, HtmlTextModel requesterNotice = null, bool isAfterApproval = false, int? commentActId = null) { throw new System.NotImplementedException(); }
+    public static string GetChangeStateTemplate(int ticketId, int stateId, int localeId, bool html, HtmlTextModel requesterNotice = null, bool isAfterApproval = false, int? commentActId = null) { throw new NotImplementedException(); }
     /// <summary>Returns feedback URL for request</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_GetFeedbackUrl_System_Int32_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <returns>Feedback URL</returns>
-    public static string GetFeedbackUrl(int ticketId) { throw new System.NotImplementedException(); }
+    public static string GetFeedbackUrl(int ticketId) { throw new NotImplementedException(); }
     /// <summary>Returns request name template.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_GetTicketNameTemplate_System_Int32_"/>
     /// <param name="sectionId">Section ID (tHdTicket.liHdTicketHdSectionId)</param>
     /// <returns>Template for request name</returns>
-    public static string GetTicketNameTemplate(int sectionId) { throw new System.NotImplementedException(); }
+    public static string GetTicketNameTemplate(int sectionId) { throw new NotImplementedException(); }
     /// <summary>Returns whether the request does have all child requests closed.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_HasClosedAllChildTickets_System_Int32_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <exception cref="ArgumentException">Throws when ticketId does not exist.</exception>
     /// <returns>True, if request has all child requests closed.</returns>
-    public static bool HasClosedAllChildTickets(int ticketId) { throw new System.NotImplementedException(); }
+    public static bool HasClosedAllChildTickets(int ticketId) { throw new NotImplementedException(); }
     /// <summary>Moves request to another service.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_MoveToSection_System_Int32_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_CostModel_System_Nullable_System_Int32__System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
@@ -261,7 +261,7 @@ public static class Ticket {
     /// <exception cref="ArgumentNullException">Throws when message is null.</exception>
     /// <exception cref="SlaAccessException">Throws when request requester does not have SLA in new section.</exception>
     /// <returns>Created act ID (tAct.iActId).</returns>
-    public static int MoveToSection(int ticketId, int newSectionId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, int? newSolverId = -1, int? newSolverGroupId = -1) { throw new System.NotImplementedException(); }
+    public static int MoveToSection(int ticketId, int newSectionId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, int? newSolverId = -1, int? newSolverGroupId = -1) { throw new NotImplementedException(); }
     /// <summary>Insert new row into TicketChange table.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_NewTicketChange_System_Int32_System_Int32_System_String_System_String_System_Object_System_Object_System_Nullable_System_Int32__"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
@@ -273,14 +273,14 @@ public static class Ticket {
     /// <param name="columnId">Column ID (tColumn.iColumnId).</param>
     /// <exception cref="ArgumentException">Throws when ticketId or personId does not exist. Throws when ticketId or personId or columnId is 0. Or when columnId is not defined or 0 and tableName is defined, but columnName is empty and vice versa.</exception>
     /// <returns>Newly added ID of tColumn row (iColumnId).</returns>
-    public static int NewTicketChange(int ticketId, int personId, string tableName, string columnName, object oldValue, object newValue, int? columnId = null) { throw new System.NotImplementedException(); }
+    public static int NewTicketChange(int ticketId, int personId, string tableName, string columnName, object oldValue, object newValue, int? columnId = null) { throw new NotImplementedException(); }
     /// <summary>Remove request.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_Remove_System_Int32_System_Int32_Alvao_API_SD_Ticket_RemoveFlags_"/>
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId).</param>
     /// <param name="personId">Person ID (who removes request)(tPerson.iPersonId).</param>
     /// <param name="flags">Flags for special behavior.</param>
     /// <exception cref="ArgumentException">Throws when ticketId does not exist.</exception>
-    public static void Remove(int ticketId, int personId, Ticket.RemoveFlags flags = RemoveFlags.None) { throw new System.NotImplementedException(); }
+    public static void Remove(int ticketId, int personId, Ticket.RemoveFlags flags = RemoveFlags.None) { throw new NotImplementedException(); }
     /// <summary>
     /// Changes request state to resolved.
     /// <example>
@@ -303,23 +303,23 @@ public static class Ticket {
     /// <exception cref="ValidationException">Throws when not all of its child requests have been closed or request state has changed during process.</exception>
     /// <exception cref="BackResolveException">Throws when backResolved is in future or before date of request creation.</exception>
     /// <returns>Created act ID (tAct.iActId)</returns>
-    public static int Resolve(int ticketId, int authorPersonId, HtmlTextModel message, CostModel cost = null, DateTime? backResolved = null, Ticket.ResolveFlags flags = ResolveFlags.None) { throw new System.NotImplementedException(); }
+    public static int Resolve(int ticketId, int authorPersonId, HtmlTextModel message, CostModel cost = null, DateTime? backResolved = null, Ticket.ResolveFlags flags = ResolveFlags.None) { throw new NotImplementedException(); }
     /// <summary>Restore removed request.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_RestoreRemoved_System_Int32_System_Int32_Alvao_API_SD_Ticket_RemoveFlags_"/>
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId).</param>
     /// <param name="personId">Person ID (who restores removed request)(tPerson.iPersonId).</param>
     /// <param name="flags">Flags for special behavior.</param>
     /// <exception cref="ArgumentException">Throws when ticketId does not exist.</exception>
-    public static void RestoreRemoved(int ticketId, int personId, Ticket.RemoveFlags flags = RemoveFlags.None) { throw new System.NotImplementedException(); }
+    public static void RestoreRemoved(int ticketId, int personId, Ticket.RemoveFlags flags = RemoveFlags.None) { throw new NotImplementedException(); }
     /// <summary>Allowed columns: mHdTicketNotice, sHdTicketGroup, sHdTicketDeviceCode, sHdTicketUserPhone, mHdTicketUserContact, sHdTicketUserMobile, sHdTicketUserOffice, sHdTicketUserDepartment, sHdTicketUserWorkPosition, sHdTicketUserCompany.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_UpdateColumnValue_System_Int32_System_String_System_String_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId).</param>
     /// <param name="columnName">Specified column name.</param>
     /// <param name="newValue">New column value.</param>
     /// <exception cref="ArgumentException">Throws when ticketId does not exist or columnName is not defined or is forbidden.</exception>
-    public static void UpdateColumnValue(int ticketId, string columnName, string newValue) { throw new System.NotImplementedException(); }
+    public static void UpdateColumnValue(int ticketId, string columnName, string newValue) { throw new NotImplementedException(); }
     /// <summary>Updates full text search data.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_UpdateFts_System_Int32_"/>
     /// <param name="ticketId">Request ID(tHdTicket.iHdTicketId). If 0, updates all requests.</param>
-    public static void UpdateFts(int ticketId) { throw new System.NotImplementedException(); }
+    public static void UpdateFts(int ticketId) { throw new NotImplementedException(); }
 }

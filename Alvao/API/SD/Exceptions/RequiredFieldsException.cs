@@ -20,5 +20,5 @@ public class RequiredFieldsException : ValidationException, ISerializable {
     public RequiredFieldsException(string message, Exception innerException) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.RequiredFieldsException.html#Alvao_API_SD_Exceptions_RequiredFieldsException_GetMessageWithRequiredFields"/>
-    public string GetMessageWithRequiredFields() { throw new System.NotImplementedException(); }
+    public string GetMessageWithRequiredFields() { throw new NotImplementedException(); }
 }

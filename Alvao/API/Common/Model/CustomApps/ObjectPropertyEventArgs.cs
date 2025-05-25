@@ -24,5 +24,5 @@ public class ObjectPropertyEventArgs {
     /// <summary>Returns a string that represents the current object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.ObjectPropertyEventArgs.html#Alvao_API_Common_Model_CustomApps_ObjectPropertyEventArgs_ToString"/>
     /// <returns>A string that represents the current object.</returns>
-    public override string ToString() { throw new System.NotImplementedException(); }
+    public override string ToString() { throw new NotImplementedException(); }
 }

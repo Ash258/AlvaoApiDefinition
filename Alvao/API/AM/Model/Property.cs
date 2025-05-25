@@ -73,11 +73,11 @@ public class Property {
     public Property(string name, string value, string columnName, Kind.DataType kind = Kind.DataType.KindNone) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_IsInherited"/>
-    public bool IsInherited() { throw new System.NotImplementedException(); }
+    public bool IsInherited() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_IsQueryProperty"/>
-    public bool IsQueryProperty() { throw new System.NotImplementedException(); }
+    public bool IsQueryProperty() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_IsSystemProperty"/>
-    public bool IsSystemProperty() { throw new System.NotImplementedException(); }
+    public bool IsSystemProperty() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_Validate_System_Int32_"/>
-    public bool Validate(int localeId) { throw new System.NotImplementedException(); }
+    public bool Validate(int localeId) { throw new NotImplementedException(); }
 }

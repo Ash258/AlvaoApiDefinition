@@ -27,22 +27,22 @@ public class EmailModel : IEquatable<EmailModel> {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_Equals_Alvao_API_SD_Model_EmailModel_"/>
     /// <param name="other">An object to compare with this object.</param>
     /// <returns>true if the current object is equal to the other parameter; otherwise, false.</returns>
-    public bool Equals(EmailModel other) { throw new System.NotImplementedException(); }
+    public bool Equals(EmailModel other) { throw new NotImplementedException(); }
     /// <summary>Determines whether the specified object is equal to the current object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_Equals_System_Object_"/>
     /// <param name="obj">The object to compare with the current object.</param>
     /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
-    public override bool Equals(object obj) { throw new System.NotImplementedException(); }
+    public override bool Equals(object obj) { throw new NotImplementedException(); }
     /// <summary>Serves as the default hash function.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_GetHashCode"/>
     /// <returns>A hash code for the current object.</returns>
-    public override int GetHashCode() { throw new System.NotImplementedException(); }
+    public override int GetHashCode() { throw new NotImplementedException(); }
     /// <summary>Returns a string that represents the current object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_ToString"/>
     /// <returns>A string that represents the current object.</returns>
-    public override string ToString() { throw new System.NotImplementedException(); }
+    public override string ToString() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_op_Explicit_System_String__Alvao_API_SD_Model_EmailModel"/>
-    public static explicit operator EmailModel(string value) { throw new System.NotImplementedException(); }
+    public static explicit operator EmailModel(string value) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_op_Implicit_Alvao_API_SD_Model_EmailModel__System_String"/>
-    public static implicit operator string(EmailModel value) { throw new System.NotImplementedException(); }
+    public static implicit operator string(EmailModel value) { throw new NotImplementedException(); }
 }

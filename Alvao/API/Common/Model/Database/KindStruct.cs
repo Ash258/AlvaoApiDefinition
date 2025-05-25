@@ -19,7 +19,7 @@ public struct KindStruct {
     /// <summary>Returns the fully qualified type name of this instance.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindStruct.html#Alvao_API_Common_Model_Database_KindStruct_ToString"/>
     /// <returns>The fully qualified type name.</returns>
-    public override string ToString() { throw new System.NotImplementedException(); }
+    public override string ToString() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindStruct.html#Alvao_API_Common_Model_Database_KindStruct_ToStringName"/>
-    public string ToStringName() { throw new System.NotImplementedException(); }
+    public string ToStringName() { throw new NotImplementedException(); }
 }

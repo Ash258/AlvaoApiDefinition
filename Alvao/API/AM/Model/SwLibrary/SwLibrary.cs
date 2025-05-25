@@ -24,7 +24,7 @@ public class SwLibrary {
     public SwLibrary(ArchiveStream archiveStream, ISwLibRepository swLibRepository) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibrary.html#Alvao_API_AM_Model_SwLibrary_SwLibrary_Load_System_Threading_CancellationToken_"/>
-    public void Load(CancellationToken token) { throw new System.NotImplementedException(); }
+    public void Load(CancellationToken token) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibrary.html#Alvao_API_AM_Model_SwLibrary_SwLibrary_UpgradeAsync_System_DateTime_System_Threading_CancellationToken_"/>
-    public Task<bool> UpgradeAsync(DateTime newSwLibDate, CancellationToken token) { throw new System.NotImplementedException(); }
+    public Task<bool> UpgradeAsync(DateTime newSwLibDate, CancellationToken token) { throw new NotImplementedException(); }
 }

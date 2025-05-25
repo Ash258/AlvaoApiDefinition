@@ -27,5 +27,5 @@ public class AzureAdTenant {
     [Key]
     public virtual int id { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.AzureAdTenant.html#Alvao_API_Common_Model_Database_AzureAdTenant_GetSettingByFeature_Alvao_API_Common_MSEntraTenant_Feature_"/>
-    public bool GetSettingByFeature(MSEntraTenant.Feature feature) { throw new System.NotImplementedException(); }
+    public bool GetSettingByFeature(MSEntraTenant.Feature feature) { throw new NotImplementedException(); }
 }

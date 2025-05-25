@@ -37,9 +37,9 @@ public class AttachmentModel : IAttachment {
 
     /// <summary>Returns original attachment stream.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.AttachmentModel.html#Alvao_API_Common_Model_AttachmentModel_GetStream"/>
-    public Stream GetStream() { throw new System.NotImplementedException(); }
+    public Stream GetStream() { throw new NotImplementedException(); }
     /// <summary>Saves attachment to database (tDocument using documentRepository)</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.AttachmentModel.html#Alvao_API_Common_Model_AttachmentModel_SaveToDB_Alvao_API_Common_Repository_IDocumentRepository_"/>
     /// <param name="documentRepository">Document repository</param>
-    public void SaveToDB(IDocumentRepository documentRepository) { throw new System.NotImplementedException(); }
+    public void SaveToDB(IDocumentRepository documentRepository) { throw new NotImplementedException(); }
 }

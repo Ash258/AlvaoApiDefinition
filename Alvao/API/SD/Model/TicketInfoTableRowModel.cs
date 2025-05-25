@@ -11,5 +11,5 @@ public class TicketInfoTableRowModel {
     public TicketInfoTableRowModel(string label, string value) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketInfoTableRowModel.html#Alvao_API_SD_Model_TicketInfoTableRowModel_GetTicketInfoTableRows_Alvao_API_SD_Model_TicketDetailsModel_"/>
-    public static List<TicketInfoTableRowModel> GetTicketInfoTableRows(TicketDetailsModel ticketDetail) { throw new System.NotImplementedException(); }
+    public static List<TicketInfoTableRowModel> GetTicketInfoTableRows(TicketDetailsModel ticketDetail) { throw new NotImplementedException(); }
 }

@@ -37,9 +37,9 @@ public class DetectionArchive : ArchiveStream, IAsyncDisposable, IDisposable {
     public DetectionArchive(XmlNode xmlDataNode) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ReadObjectType"/>
-    public DetectionArchive.ObjectType ReadObjectType() { throw new System.NotImplementedException(); }
+    public DetectionArchive.ObjectType ReadObjectType() { throw new NotImplementedException(); }
     /// <summary>!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable</summary>
-    public void Dispose() { throw new System.NotImplementedException(); }
+    public void Dispose() { throw new NotImplementedException(); }
     /// <summary>!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable</summary>
-    public System.Threading.Tasks.ValueTask DisposeAsync() { throw new System.NotImplementedException(); }
+    public System.Threading.Tasks.ValueTask DisposeAsync() { throw new NotImplementedException(); }
 }

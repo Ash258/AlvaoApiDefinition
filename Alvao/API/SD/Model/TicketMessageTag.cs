@@ -13,5 +13,5 @@ public class TicketMessageTag {
     public TicketMessageTag(string prefix, string suffix) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TicketMessageTag.html#Alvao_API_SD_Model_TicketMessageTag_GetIdFromText_System_String_"/>
-    public int? GetIdFromText(string text) { throw new System.NotImplementedException(); }
+    public int? GetIdFromText(string text) { throw new NotImplementedException(); }
 }

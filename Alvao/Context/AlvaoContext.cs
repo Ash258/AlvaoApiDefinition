@@ -11,5 +11,5 @@ public static class AlvaoContext {
     /// <summary>Get connection scope for current database.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.Context.AlvaoContext.html#Alvao_Context_AlvaoContext_GetConnectionScope"/>
     /// <returns>Connection scope based on the context provider DbContextProvider.</returns>
-    public static IConnectionScope GetConnectionScope() { throw new System.NotImplementedException(); }
+    public static IConnectionScope GetConnectionScope() { throw new NotImplementedException(); }
 }

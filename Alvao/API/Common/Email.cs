@@ -14,18 +14,18 @@ public static class Email {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Email.html#Alvao_API_Common_Email_Queue_Rebex_Mail_MailMessage_Alvao_API_Common_Email_MailQueuePriority_"/>
     /// <param name="message">Message to queue</param>
     /// <param name="queuePriority">Priority of this message in sending queue</param>
-    public static void Queue(Rebex.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new System.NotImplementedException(); }
+    public static void Queue(Rebex.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new NotImplementedException(); }
     /// <summary>Queues mail message by inserting it into database.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Email.html#Alvao_API_Common_Email_Queue_System_Net_Mail_MailMessage_Alvao_API_Common_Email_MailQueuePriority_"/>
     /// <param name="message">Message to queue</param>
     /// <param name="queuePriority">Priority of this message in sending queue</param>
-    public static void Queue(System.Net.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new System.NotImplementedException(); }
+    public static void Queue(System.Net.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new NotImplementedException(); }
     /// <summary>Queues mail message by inserting it into database. QueueMailMessage is deprecated, please use Queue instead.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Email.html#Alvao_API_Common_Email_QueueMailMessage_Rebex_Mail_MailMessage_Alvao_API_Common_Email_MailQueuePriority_"/>
     /// <param name="message">Message to queue</param>
     /// <param name="queuePriority">Priority of this message in sending queue</param>
     [Obsolete("QueueMailMessage is deprecated, please use Queue instead.")]
-    public static void QueueMailMessage(Rebex.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new System.NotImplementedException(); }
+    public static void QueueMailMessage(Rebex.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new NotImplementedException(); }
     /// <summary>
     /// Queues mail message by inserting it into database. QueueMailMessage is deprecated, please use Queue instead.
     /// <example>
@@ -44,5 +44,5 @@ public static class Email {
     /// <param name="message">Message to queue</param>
     /// <param name="queuePriority">Priority of this message in sending queue</param>
     [Obsolete("QueueMailMessage is deprecated, please use Queue instead.")]
-    public static void QueueMailMessage(System.Net.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new System.NotImplementedException(); }
+    public static void QueueMailMessage(System.Net.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new NotImplementedException(); }
 }

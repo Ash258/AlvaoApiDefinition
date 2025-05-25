@@ -33,13 +33,13 @@ public class CompareProperty {
     public CompareProperty(Kind.KindCode kindCode, string wmiAttribute, bool isKey, string dbColumnName, KindDataType.KindDataTypeIdEnum dbColumnType = KindDataTypeIdEnum.Text) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.CompareProperty.html#Alvao_API_AM_Model_Detection_CompareProperty_IsKeySameValue_System_Data_DataRow_System_Data_DataRow_"/>
-    public bool IsKeySameValue(DataRow treeObject, DataRow wmiObject) { throw new System.NotImplementedException(); }
+    public bool IsKeySameValue(DataRow treeObject, DataRow wmiObject) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.CompareProperty.html#Alvao_API_AM_Model_Detection_CompareProperty_IsSameValue_System_Data_DataRow_System_Data_DataRow_"/>
-    public bool IsSameValue(DataRow treeObject, DataRow wmiObject) { throw new System.NotImplementedException(); }
+    public bool IsSameValue(DataRow treeObject, DataRow wmiObject) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.CompareProperty.html#Alvao_API_AM_Model_Detection_CompareProperty_Load_Alvao_API_AM_Repository_IDetectionRepository_System_Int32_"/>
-    public bool Load(IDetectionRepository repo, int nodeId) { throw new System.NotImplementedException(); }
+    public bool Load(IDetectionRepository repo, int nodeId) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.CompareProperty.html#Alvao_API_AM_Model_Detection_CompareProperty_NormalizedWmiValue_System_Data_DataRow_"/>
-    public string NormalizedWmiValue(DataRow wmiObject) { throw new System.NotImplementedException(); }
+    public string NormalizedWmiValue(DataRow wmiObject) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.CompareProperty.html#Alvao_API_AM_Model_Detection_CompareProperty_UpdateValue_Alvao_API_AM_Repository_IObjectPropertyRepository_System_Int32_System_Object_System_String_System_Nullable_System_DateTime__System_Nullable_System_Double__System_Nullable_System_Int32__System_Int32_System_Boolean_"/>
-    public bool UpdateValue(IObjectPropertyRepository repo, int nodeId, object treeValue, string wmiValueString, DateTime? wmiValueDate, double? wmiValueDouble, int? wmiValueInt, int personId, bool isNewObject) { throw new System.NotImplementedException(); }
+    public bool UpdateValue(IObjectPropertyRepository repo, int nodeId, object treeValue, string wmiValueString, DateTime? wmiValueDate, double? wmiValueDouble, int? wmiValueInt, int personId, bool isNewObject) { throw new NotImplementedException(); }
 }

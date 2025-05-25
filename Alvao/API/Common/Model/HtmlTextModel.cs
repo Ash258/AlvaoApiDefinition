@@ -66,15 +66,15 @@ public class HtmlTextModel {
     /// <summary>Adds attachments from ticket creating report.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.HtmlTextModel.html#Alvao_API_Common_Model_HtmlTextModel_AddAttachmentsBasedOnTemplate_Alvao_API_Common_Repository_IDocumentRepository_"/>
     /// <param name="documentRepository">Document repository</param>
-    public void AddAttachmentsBasedOnTemplate(IDocumentRepository documentRepository) { throw new System.NotImplementedException(); }
+    public void AddAttachmentsBasedOnTemplate(IDocumentRepository documentRepository) { throw new NotImplementedException(); }
     /// <summary>Updates embeded image cid after saving to DB and returns the value.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.HtmlTextModel.html#Alvao_API_Common_Model_HtmlTextModel_UpdateAndGetEmbededImage_Alvao_API_Common_Repository_IDocumentRepository_Alvao_API_Common_Model_IAttachment_"/>
     /// <param name="documentRepository">Document repository</param>
     /// <param name="attach">Attachment to update</param>
     /// <returns>True, if it is embeded image, false otherwise.</returns>
-    protected bool UpdateAndGetEmbededImage(IDocumentRepository documentRepository, IAttachment attach) { throw new System.NotImplementedException(); }
+    protected bool UpdateAndGetEmbededImage(IDocumentRepository documentRepository, IAttachment attach) { throw new NotImplementedException(); }
     /// <summary>Updates attachments cid in HTML text after saving to DB.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.HtmlTextModel.html#Alvao_API_Common_Model_HtmlTextModel_UpdateAttachmentMark_Alvao_API_Common_Model_IAttachment_"/>
     /// <param name="attach">Attachment to update.</param>
-    protected void UpdateAttachmentMark(IAttachment attach) { throw new System.NotImplementedException(); }
+    protected void UpdateAttachmentMark(IAttachment attach) { throw new NotImplementedException(); }
 }

@@ -18,9 +18,9 @@ public class CommandResult {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.CommandResult.html#Alvao_API_Common_Model_CustomApps_CommandResult_Equals_System_Object_"/>
     /// <param name="obj">The object to compare with the current object.</param>
     /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
-    public override bool Equals(object obj) { throw new System.NotImplementedException(); }
+    public override bool Equals(object obj) { throw new NotImplementedException(); }
     /// <summary>Serves as the default hash function.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.CommandResult.html#Alvao_API_Common_Model_CustomApps_CommandResult_GetHashCode"/>
     /// <returns>A hash code for the current object.</returns>
-    public override int GetHashCode() { throw new System.NotImplementedException(); }
+    public override int GetHashCode() { throw new NotImplementedException(); }
 }

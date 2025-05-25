@@ -27,5 +27,5 @@ public class DetectionMessage {
     public DetectionMessage(XmlNode msgNode) { }
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionMessage.html#Alvao_API_AM_Model_Detection_DetectionMessage_MessageTypeToDetectStatus_Alvao_API_AM_Model_Detection_DetectionMessage_MessageType_"/>
-    public static Detection.Status MessageTypeToDetectStatus(DetectionMessage.MessageType msgType) { throw new System.NotImplementedException(); }
+    public static Detection.Status MessageTypeToDetectStatus(DetectionMessage.MessageType msgType) { throw new NotImplementedException(); }
 }
