@@ -2,21 +2,21 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary></summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc.htm"/>
-[TableAttribute("dbo.vNewTicketFormTextBlockLoc")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html"/>
+[Table("dbo.vNewTicketFormTextBlockLoc")]
 public class vNewTicketFormTextBlockLoc {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_id.htm"/>
-    public virtual int id { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_iLocaleId.htm"/>
-    public virtual int iLocaleId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_Order.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_ColSpan"/>
+    public virtual int? ColSpan { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_Column"/>
+    public virtual int? Column { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_LocaleId"/>
+    public virtual int LocaleId { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_Order"/>
     public virtual int Order { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_SectionId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_SectionId"/>
     public virtual int SectionId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_TextHtml.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_TextHtml"/>
     public virtual string TextHtml { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc__ctor.htm"/>
-    public vNewTicketFormTextBlockLoc() { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNewTicketFormTextBlockLoc.html#Alvao_API_Common_Model_Database_vNewTicketFormTextBlockLoc_id"/>
+    public virtual int id { get; set; }
 }

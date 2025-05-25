@@ -2,24 +2,21 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Definitions of commands for the "Administrator's Tools" function.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tblCommandDef.htm"/>
-[TableAttribute("dbo.tblCommandDef")]
+/// <summary>Definitions of commands for the &quot;Administrator's Tools&quot; function.</summary>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html"/>
+[Table("dbo.tblCommandDef")]
 public class tblCommandDef {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_intCommandDefId.htm"/>
-    [KeyAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_intCommandDefId"/>
+    [Key]
     public virtual int intCommandDefId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_intCommandDefUID.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_intCommandDefUID"/>
     public virtual int? intCommandDefUID { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_intGroup.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_intGroup"/>
     public virtual int? intGroup { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_txtCommand.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_txtCommand"/>
     public virtual string txtCommand { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_txtName.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_txtName"/>
     public virtual string txtName { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tblCommandDef_txtRunDir.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCommandDef.html#Alvao_API_Common_Model_Database_tblCommandDef_txtRunDir"/>
     public virtual string txtRunDir { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tblCommandDef__ctor.htm"/>
-    public tblCommandDef() { }
 }

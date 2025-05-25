@@ -1,21 +1,19 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Software profiles - membership of products in profiles.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_tSwProfileProduct.htm"/>
-[TableAttribute("dbo.tSwProfileProduct")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwProfileProduct.html"/>
+[Table("dbo.tSwProfileProduct")]
 public class tSwProfileProduct {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwProfileProduct_liMemberSwProfileId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwProfileProduct.html#Alvao_API_Common_Model_Database_tSwProfileProduct_liMemberSwProfileId"/>
     public virtual int? liMemberSwProfileId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwProfileProduct_liProductId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwProfileProduct.html#Alvao_API_Common_Model_Database_tSwProfileProduct_liProductId"/>
     public virtual int liProductId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwProfileProduct_liSwPresenceId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwProfileProduct.html#Alvao_API_Common_Model_Database_tSwProfileProduct_liSwPresenceId"/>
     public virtual int liSwPresenceId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_tSwProfileProduct_liSwProfileId.htm"/>
-    [ExplicitKeyAttribute]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwProfileProduct.html#Alvao_API_Common_Model_Database_tSwProfileProduct_liSwProfileId"/>
+    [ExplicitKey]
     public virtual int liSwProfileId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_tSwProfileProduct__ctor.htm"/>
-    public tSwProfileProduct() { }
 }

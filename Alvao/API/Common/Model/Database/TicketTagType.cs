@@ -1,22 +1,20 @@
+using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Ticket tag type</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_TicketTagType.htm"/>
-[TableAttribute("dbo.TicketTagType")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketTagType.html"/>
+[Table("dbo.TicketTagType")]
 public class TicketTagType {
     /// <summary>Tag color (HEX)</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTagType_Color.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketTagType.html#Alvao_API_Common_Model_Database_TicketTagType_Color"/>
     public virtual string Color { get; set; }
-    /// <summary>Record ID</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTagType_id.htm"/>
-    [ExplicitKeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>Tag name</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_TicketTagType_Name.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketTagType.html#Alvao_API_Common_Model_Database_TicketTagType_Name"/>
     public virtual string Name { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_TicketTagType__ctor.htm"/>
-    public TicketTagType() { }
+    /// <summary>Record ID</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketTagType.html#Alvao_API_Common_Model_Database_TicketTagType_id"/>
+    [ExplicitKey]
+    public virtual int id { get; set; }
 }

@@ -2,36 +2,33 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Table with links between objects in AM Console</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_NodeRelation.htm"/>
-[TableAttribute("dbo.NodeRelation")]
+/// <summary>Table with links between objects in Asset Management</summary>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html"/>
+[Table("dbo.NodeRelation")]
 public class NodeRelation {
     /// <summary>ID of start link object. Foreign key on tblNode table.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_BeginNodeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_BeginNodeId"/>
     public virtual int BeginNodeId { get; set; }
     /// <summary>User ID of a person who created the link (tPerson.iPersonId).</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_CreatedByPersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_CreatedByPersonId"/>
     public virtual int CreatedByPersonId { get; set; }
     /// <summary>Link creation date and time (UTC)</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_CreatedDate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_CreatedDate"/>
     public virtual DateTime CreatedDate { get; set; }
     /// <summary>ID of end link object. Foreign key on tblNode table.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_EndNodeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_EndNodeId"/>
     public virtual int EndNodeId { get; set; }
-    /// <summary>Record ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>Link Type. Foreign key on NodeRelationType table.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_NodeRelationTypeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_NodeRelationTypeId"/>
     public virtual int NodeRelationTypeId { get; set; }
     /// <summary>User ID of a person who deleted the link (tPerson.iPersonId).</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_RemovedByPersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_RemovedByPersonId"/>
     public virtual int? RemovedByPersonId { get; set; }
     /// <summary>Link removal date and time (UTC)</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_NodeRelation_RemovedDate.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_RemovedDate"/>
     public virtual DateTime? RemovedDate { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_NodeRelation__ctor.htm"/>
-    public NodeRelation() { }
+    /// <summary>Record ID.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }

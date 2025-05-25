@@ -2,9 +2,9 @@ using AutoMapper;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Společný automapper profil pro generované databázové modely</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_DatabaseModelAutomapperProfile.htm"/>
-public class DatabaseModelAutomapperProfile : Profile {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_DatabaseModelAutomapperProfile__ctor.htm"/>
+/// <summary>SpoleÄnÃ½ automapper profil pro generovanÃ© databÃ¡zovÃ© modely</summary>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DatabaseModelAutomapperProfile.html"/>
+public class DatabaseModelAutomapperProfile : Profile, IProfileExpression, IProfileConfiguration {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DatabaseModelAutomapperProfile.html#Alvao_API_Common_Model_Database_DatabaseModelAutomapperProfile__ctor"/>
     public DatabaseModelAutomapperProfile() { }
 }

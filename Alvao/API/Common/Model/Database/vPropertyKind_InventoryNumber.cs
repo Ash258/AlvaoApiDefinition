@@ -3,26 +3,17 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Properties of objects - Asset number.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber.htm"/>
-[TableAttribute("dbo.vPropertyKind_InventoryNumber")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html"/>
+[Table("dbo.vPropertyKind_InventoryNumber")]
 public class vPropertyKind_InventoryNumber {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_bolInheritable.htm"/>
-    public virtual bool bolInheritable { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_intNameOrder.htm"/>
-    public virtual int? intNameOrder { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_intPropertyId.htm"/>
-    public virtual int intPropertyId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_intState.htm"/>
-    public virtual int? intState { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_lintKindId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html#Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_bolInheritable"/>
+    public virtual int bolInheritable { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html#Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_lintKindId"/>
     public virtual int lintKindId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_lintNodeId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html#Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_lintNodeId"/>
     public virtual int lintNodeId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_txtKind.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html#Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_txtKind"/>
     public virtual string txtKind { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_txtValue.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_InventoryNumber.html#Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber_txtValue"/>
     public virtual string txtValue { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vPropertyKind_InventoryNumber__ctor.htm"/>
-    public vPropertyKind_InventoryNumber() { }
 }

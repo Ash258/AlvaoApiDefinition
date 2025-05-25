@@ -3,26 +3,23 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>User membership in system roles of Asset Management.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_vAssetPersonSystemRole.htm"/>
-[TableAttribute("dbo.vAssetPersonSystemRole")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html"/>
+[Table("dbo.vAssetPersonSystemRole")]
 public class vAssetPersonSystemRole {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Detect.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Detect"/>
     public virtual bool? Detect { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Hw.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Hw"/>
     public virtual bool? Hw { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Inventory.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Inventory"/>
     public virtual bool? Inventory { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_PersonId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_PersonId"/>
     public virtual int PersonId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Reader.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_Reader"/>
     public virtual bool? Reader { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_RelationReader.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_RelationReader"/>
     public virtual bool? RelationReader { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_RelationWriter.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_RelationWriter"/>
     public virtual bool? RelationWriter { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_vAssetPersonSystemRole_SysAdmin.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vAssetPersonSystemRole.html#Alvao_API_Common_Model_Database_vAssetPersonSystemRole_SysAdmin"/>
     public virtual bool? SysAdmin { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_vAssetPersonSystemRole__ctor.htm"/>
-    public vAssetPersonSystemRole() { }
 }

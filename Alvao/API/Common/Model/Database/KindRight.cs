@@ -3,29 +3,26 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Security for properties.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_KindRight.htm"/>
-[TableAttribute("dbo.KindRight")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html"/>
+[Table("dbo.KindRight")]
 public class KindRight {
     /// <summary>Permission to change value.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_CanModify.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_CanModify"/>
     public virtual byte? CanModify { get; set; }
     /// <summary>Permission to read.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_CanRead.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_CanRead"/>
     public virtual byte? CanRead { get; set; }
-    /// <summary>Object kind ID. The value NULL meals that the permission applies to all object kinds.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_ClassId.htm"/>
+    /// <summary>Object type ID. The value NULL meals that the permission applies to all object types.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_ClassId"/>
     public virtual int? ClassId { get; set; }
-    /// <summary>Record ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>Property definition ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_KindId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_KindId"/>
     public virtual int KindId { get; set; }
     /// <summary>Group ID.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_KindRight_RoleId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_RoleId"/>
     public virtual int RoleId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_KindRight__ctor.htm"/>
-    public KindRight() { }
+    /// <summary>Record ID.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindRight.html#Alvao_API_Common_Model_Database_KindRight_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }

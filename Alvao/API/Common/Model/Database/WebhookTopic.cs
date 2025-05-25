@@ -3,17 +3,14 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Webhook topics</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_WebhookTopic.htm"/>
-[TableAttribute("dbo.WebhookTopic")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.WebhookTopic.html"/>
+[Table("dbo.WebhookTopic")]
 public class WebhookTopic {
-    /// <summary>Record ID</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_WebhookTopic_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
     /// <summary>Webhook topic name</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_WebhookTopic_Name.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.WebhookTopic.html#Alvao_API_Common_Model_Database_WebhookTopic_Name"/>
     public virtual string Name { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_WebhookTopic__ctor.htm"/>
-    public WebhookTopic() { }
+    /// <summary>Record ID</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.WebhookTopic.html#Alvao_API_Common_Model_Database_WebhookTopic_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }

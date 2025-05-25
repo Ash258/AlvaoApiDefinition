@@ -9,21 +9,16 @@ public class vHdSectionAllSolver {
     /// <summary>1 = is exceptional solver.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vHdSectionAllSolver.html#Alvao_API_Common_Model_Database_vHdSectionAllSolver_ExceptionalSolver"/>
     public virtual int ExceptionalSolver { get; set; }
-
     /// <summary>User ID.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vHdSectionAllSolver.html#Alvao_API_Common_Model_Database_vHdSectionAllSolver_PersonId"/>
     public virtual int? PersonId { get; set; }
-
     /// <summary>Link to the group of requesters for which the permission for the given person is valid.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vHdSectionAllSolver.html#Alvao_API_Common_Model_Database_vHdSectionAllSolver_RequesterRoleId"/>
     public virtual int RequesterRoleId { get; set; }
-
     /// <summary>ID of the service.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vHdSectionAllSolver.html#Alvao_API_Common_Model_Database_vHdSectionAllSolver_SectionId"/>
     public virtual int SectionId { get; set; }
-
     /// <summary>1 = is solver.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vHdSectionAllSolver.html#Alvao_API_Common_Model_Database_vHdSectionAllSolver_Solver"/>
     public virtual int Solver { get; set; }
-
 }

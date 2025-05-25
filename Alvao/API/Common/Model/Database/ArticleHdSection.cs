@@ -3,17 +3,14 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Assigning articles from the knowledge base to services.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Model_Database_ArticleHdSection.htm"/>
-[TableAttribute("dbo.ArticleHdSection")]
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ArticleHdSection.html"/>
+[Table("dbo.ArticleHdSection")]
 public class ArticleHdSection {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ArticleHdSection_ArticleId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ArticleHdSection.html#Alvao_API_Common_Model_Database_ArticleHdSection_ArticleId"/>
     public virtual int? ArticleId { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ArticleHdSection_id.htm"/>
-    [KeyAttribute]
-    public virtual int id { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Model_Database_ArticleHdSection_SectionId.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ArticleHdSection.html#Alvao_API_Common_Model_Database_ArticleHdSection_SectionId"/>
     public virtual int? SectionId { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Model_Database_ArticleHdSection__ctor.htm"/>
-    public ArticleHdSection() { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ArticleHdSection.html#Alvao_API_Common_Model_Database_ArticleHdSection_id"/>
+    [Key]
+    public virtual int id { get; set; }
 }
