@@ -1,6 +1,5 @@
 using Alvao.API.Common.Model;
 using Alvao.API.Common.Model.Database;
-using Alvao.API.SD.Model;
 
 namespace Alvao.API.SD.Model;
 

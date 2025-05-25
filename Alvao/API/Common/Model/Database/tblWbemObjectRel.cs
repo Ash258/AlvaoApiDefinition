@@ -1,4 +1,3 @@
-using Dapper.Contrib;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;

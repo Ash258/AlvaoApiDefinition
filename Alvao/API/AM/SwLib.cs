@@ -1,5 +1,4 @@
 using Alvao.API.AM.Model.SwLibrary;
-using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.AM;
 

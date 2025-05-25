@@ -3,7 +3,7 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.SD;
 
 /// <summary>Facade&nbsp;class&nbsp;grouping&nbsp;ticket&nbsp;participant methods.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_TicketParticipant.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TicketParticipant.html"/>
 public static class TicketParticipant {
     /// <summary>Add ticket participants to the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TicketParticipant.html#Alvao_API_SD_TicketParticipant_Add_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__"/>

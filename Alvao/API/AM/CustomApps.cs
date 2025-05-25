@@ -1,6 +1,5 @@
 using Alvao.API.Common.Model.CustomApps;
 using Alvao.API.Common.Model.CustomApps.Requests;
-using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.AM;
 

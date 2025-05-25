@@ -1,5 +1,3 @@
-using Rebex;
-
 namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping mail methods.</summary>
