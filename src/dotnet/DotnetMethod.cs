@@ -49,10 +49,10 @@ public record DotnetMethod() {
             sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
         }
 
-        var def = SanitizeXmlToString(Definition);
-        if (!Definition.EndsWith(';')) def += " { throw new System.NotImplementedException(); }";
+        sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
+        if (!Definition.EndsWith(';')) sb.Append(" { throw new System.NotImplementedException(); }");
 
-        sb.Append(PrefixEachLineSpaces(def, indent));
+        // sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

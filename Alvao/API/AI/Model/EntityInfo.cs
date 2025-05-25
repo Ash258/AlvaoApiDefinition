@@ -42,8 +42,6 @@ public class EntityInfo {
     public string Summary { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.EntityInfo.html#Alvao_API_AI_Model_EntityInfo_GetCleanedText"/>
     public string GetCleanedText() { throw new System.NotImplementedException(); }
-
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.EntityInfo.html#Alvao_API_AI_Model_EntityInfo_GetCommunicationText"/>
     public string GetCommunicationText() { throw new System.NotImplementedException(); }
-
 }
