@@ -1,16 +1,13 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.SD.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Exceptions_InheritanceException.htm"/>
-public class InheritanceException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_InheritanceException__ctor.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.InheritanceException.html"/>
+public class InheritanceException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.InheritanceException.html#Alvao_API_SD_Exceptions_InheritanceException__ctor"/>
     public InheritanceException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_InheritanceException__ctor_1.htm"/>
-    public InheritanceException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_InheritanceException__ctor_2.htm"/>
-    public InheritanceException(
-        string message,
-        Exception inner
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.InheritanceException.html#Alvao_API_SD_Exceptions_InheritanceException__ctor_System_String_"/>
+    public InheritanceException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.InheritanceException.html#Alvao_API_SD_Exceptions_InheritanceException__ctor_System_String_System_Exception_"/>
+    public InheritanceException(string message, Exception inner) { }
 }

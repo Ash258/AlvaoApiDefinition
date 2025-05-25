@@ -1,35 +1,22 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.SD.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Exceptions_ValidationInExecuteException.htm"/>
-public class ValidationInExecuteException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Exceptions_ValidationInExecuteException_Field.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html"/>
+public class ValidationInExecuteException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException_Field"/>
     public string Field { get; }
 
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor"/>
     public ValidationInExecuteException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_1.htm"/>
-    public ValidationInExecuteException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_2.htm"/>
-    public ValidationInExecuteException(
-        string message,
-        Exception innerException
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_3.htm"/>
-    public ValidationInExecuteException(
-        string format,
-        params Object[] args
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_4.htm"/>
-    public ValidationInExecuteException(
-        string field,
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_5.htm"/>
-    public ValidationInExecuteException(
-        string field,
-        string format,
-        params Object[] args
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_System_String_"/>
+    public ValidationInExecuteException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_System_String_System_Exception_"/>
+    public ValidationInExecuteException(string message, Exception innerException) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_System_String_System_Object___"/>
+    public ValidationInExecuteException(string format, params object[] args) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_System_String_System_String_"/>
+    public ValidationInExecuteException(string field, string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Exceptions.ValidationInExecuteException.html#Alvao_API_SD_Exceptions_ValidationInExecuteException__ctor_System_String_System_String_System_Object___"/>
+    public ValidationInExecuteException(string field, string format, params object[] args) { }
 }
