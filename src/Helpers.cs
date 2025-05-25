@@ -80,11 +80,11 @@ public static class Helpers {
             .Trim();
     }
 
-    internal static string PrefixEachLineSpacesDoc(string el, int indent = 4) {
+    public static string PrefixEachLineSpacesDoc(string el, int indent = 4) {
         return PrefixEachLineSpaces(el, indent, true);
     }
 
-    internal static string PrefixEachLineSpaces(string el, int indent = 4, bool includeDocComment = false) {
+    public static string PrefixEachLineSpaces(string el, int indent = 4, bool includeDocComment = false) {
         var ind = new string(' ', indent);
         var comment = includeDocComment ? "/// " : "";
         var prefix = $"{ind}{comment}";
@@ -114,7 +114,9 @@ public static class Helpers {
         if (string.IsNullOrEmpty(summary) && examples.Count == 0) return;
 
         var element = useValueElement ? "value" : "summary";
-        var sum = summary.Trim();
+        var sum = summary
+            .Replace("Â", "")
+            .Trim();
 
         //Add single line summary
         if (examples.Count == 0 && !summary.Contains('\n')) {
@@ -146,9 +148,14 @@ public static class Helpers {
 
     // Generate param docs only when there is description
     public static void GenerateParameters(List<(string, string)> parameters, int indent, StringBuilder sb) {
-        parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>", indent));
-        });
+        if (parameters == null || parameters.Count == 0) return;
+
+        parameters
+            .Where(x => !string.IsNullOrEmpty(x.Item2))
+            .ToList()
+            .ForEach(param => {
+                sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>", indent));
+            });
     }
 
     // Generate member definition

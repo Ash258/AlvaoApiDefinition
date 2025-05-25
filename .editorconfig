@@ -37,5 +37,6 @@ dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity
 dotnet_style_parentheses_in_other_binary_operators = always_for_clarity
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity
+csharp_style_prefer_primary_constructors = false
 csharp_style_var_for_built_in_types = true
 csharp_style_var_when_type_is_apparent = true
