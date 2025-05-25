@@ -114,7 +114,7 @@ public static class Helpers {
         }
 
         sb.AppendLine(PrefixEachLineSpacesDoc($"<{element}>", indent));
-        if (string.IsNullOrEmpty(summary)) {
+        if (!string.IsNullOrEmpty(summary)) {
             sb.AppendLine(PrefixEachLineSpacesDoc(sum, indent));
         }
 
