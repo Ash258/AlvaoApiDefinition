@@ -9,12 +9,8 @@ public static class ObjectRight {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRight.html#Alvao_API_AM_ObjectRight_Add_Alvao_API_Common_Model_Database_tblUserNodeRight_System_Int32_"/>
     /// <param name="model">Permission model</param>
     /// <param name="authorId">Person ID (who set permission) (tPerson.iPersonId)</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when model is null.
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when model is not valid.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when model is null.</exception>
+    /// <exception cref="ArgumentException">Throws when model is not valid.</exception>
     public static void Add(tblUserNodeRight model, int authorId) { throw new System.NotImplementedException(); }
     /// <summary>Check if person from the tree has right to read the object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRight.html#Alvao_API_AM_ObjectRight_CanNodePersonRead_System_Int32_System_Int32_System_Int32_"/>
@@ -28,9 +24,7 @@ public static class ObjectRight {
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="right">Right for object.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when right is not supported.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when right is not supported.</exception>
     /// <returns>Returns true if person has exact right for object, otherwise false</returns>
     public static bool CheckForUser(int personId, int objectId, Alvao.API.AM.Model.ObjectRight.Right right) { throw new System.NotImplementedException(); }
     /// <summary>Removes object permission for user and creates record in audit log.</summary>
@@ -47,9 +41,7 @@ public static class ObjectRight {
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="right">Right for object.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when right is not supported.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when right is not supported.</exception>
     /// <returns>Returns true if person has exact right for object, otherwise false</returns>
     [Obsolete("HasUserObjectRight is deprecated, please use CheckForUser instead.")]
     public static bool HasUserObjectRight(int personId, int objectId, Alvao.API.AM.Model.ObjectRight.Right right) { throw new System.NotImplementedException(); }
@@ -57,11 +49,7 @@ public static class ObjectRight {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRight.html#Alvao_API_AM_ObjectRight_Update_Alvao_API_Common_Model_Database_tblUserNodeRight_System_Int32_"/>
     /// <param name="model">Permission model</param>
     /// <param name="authorId">Person ID (who updated permission) (tPerson.iPersonId)</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when model is null.
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when model is not valid.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when model is null.</exception>
+    /// <exception cref="ArgumentException">Throws when model is not valid.</exception>
     public static void Update(tblUserNodeRight model, int authorId) { throw new System.NotImplementedException(); }
 }

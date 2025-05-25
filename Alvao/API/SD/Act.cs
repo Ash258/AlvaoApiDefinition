@@ -18,12 +18,8 @@ public static class Act {
     /// <param name="toPerson">Person (to) (tPerson)</param>
     /// <param name="actKind">Act kind(tActKind.iActKindId)</param>
     /// <param name="settings">Multiple settings of act properties</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when ticketId, subject, message or fromPerson is null or empty.
-    /// </exception>
-    /// <exception cref="ValidationException">
-    /// Throws when person fromPerson cannot create act in request with ticketId or mail receivers emails are not valid.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when ticketId, subject, message or fromPerson is null or empty.</exception>
+    /// <exception cref="ValidationException">Throws when person fromPerson cannot create act in request with ticketId or mail receivers emails are not valid.</exception>
     /// <returns>Created act(tAct)</returns>
     public static tAct Create(int ticketId, string subject, HtmlTextModel message, tPerson fromPerson, tPerson toPerson, tActKind.ActKind actKind, ActCreateSettings settings) { throw new System.NotImplementedException(); }
     /// <summary>
@@ -49,12 +45,8 @@ public static class Act {
     /// <param name="toPersonId">Person ID (to) (tPerson.iPersonId)</param>
     /// <param name="actKind">Act kind(tActKind.iActKindId)</param>
     /// <param name="settings">Multiple settings of act properties</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when ticketId, subject, message or fromPersonId is null or empty.
-    /// </exception>
-    /// <exception cref="ValidationException">
-    /// Throws when person with fromPersonId cannot create act in request with ticketId or mail receivers emails are not valid.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when ticketId, subject, message or fromPersonId is null or empty.</exception>
+    /// <exception cref="ValidationException">Throws when person with fromPersonId cannot create act in request with ticketId or mail receivers emails are not valid.</exception>
     /// <returns>Created act(tAct)</returns>
     public static tAct Create(int ticketId, string subject, HtmlTextModel message, int fromPersonId, int? toPersonId, tActKind.ActKind actKind, ActCreateSettings settings) { throw new System.NotImplementedException(); }
     /// <summary>Creates new act, which informs users that a bound request was created</summary>

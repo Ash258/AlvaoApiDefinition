@@ -14,8 +14,6 @@ public static class DbMaintenance {
     public static void Run() { throw new System.NotImplementedException(); }
     /// <summary>Updates Query report views</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbMaintenance.html#Alvao_API_Common_DbMaintenance_UpdateQueryViews"/>
-    /// <exception cref="QueryViewUpdateException">
-    /// Throws when any error occurs. Message contains all error messages separated with new line.
-    /// </exception>
+    /// <exception cref="QueryViewUpdateException">Throws when any error occurs. Message contains all error messages separated with new line.</exception>
     public static void UpdateQueryViews() { throw new System.NotImplementedException(); }
 }

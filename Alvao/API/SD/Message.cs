@@ -48,9 +48,7 @@ public static class Message {
     /// <summary>Removes section mails from recipients.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_RemoveSectionEmails_System_Collections_Generic_List_Alvao_API_SD_Model_EmailModel__"/>
     /// <param name="mailRecipients">Mail recipients</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when mailRecipients is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when mailRecipients is null.</exception>
     /// <returns>Recipients without section mails</returns>
     public static (List<EmailModel>, int) RemoveSectionEmails(List<EmailModel> mailRecipients) { throw new System.NotImplementedException(); }
     /// <summary>
@@ -106,9 +104,7 @@ public static class Message {
     /// <param name="fromPersonId">Person ID of message author (tPerson.iPersonId)</param>
     /// <param name="message">Message body</param>
     /// <param name="settings">Multiple settings of message</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when request with ticketId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <returns>Created act (tAct)</returns>
     public static tAct Send(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings) { throw new System.NotImplementedException(); }
     /// <summary>
@@ -164,9 +160,7 @@ public static class Message {
     /// <param name="fromPersonId">Person ID of message author (tPerson.iPersonId)</param>
     /// <param name="message">Message body</param>
     /// <param name="settings">Multiple settings of message</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when request with ticketId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <returns>Created act (tAct)</returns>
     [Obsolete("SendMessage is deprecated, please use Send instead.")]
     public static tAct SendMessage(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings) { throw new System.NotImplementedException(); }

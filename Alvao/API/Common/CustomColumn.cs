@@ -35,8 +35,6 @@ public static class CustomColumn {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.CustomColumn.html#Alvao_API_Common_CustomColumn_UpdateValues_Alvao_API_Common_Model_CustomColumnsModel_System_Boolean_"/>
     /// <param name="model">Custom columns model</param>
     /// <param name="auditLogChanges">Log tPersonCust changes to audit log.</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when model is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when model is null.</exception>
     public static void UpdateValues(CustomColumnsModel model, bool auditLogChanges = false) { throw new System.NotImplementedException(); }
 }

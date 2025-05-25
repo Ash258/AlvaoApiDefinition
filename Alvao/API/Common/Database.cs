@@ -22,9 +22,7 @@ public static class Database {
     /// <param name="recordId">Record ID.</param>
     /// <param name="tableName">Table name, case sensitive.</param>
     /// <param name="columnName">Column name, case sensitive.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when specified recordId or tableName or columnName does not exist in the database.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when specified recordId or tableName or columnName does not exist in the database.</exception>
     /// <returns>Textual value of the selected column in the database.</returns>
     public static string ReadColumn(int recordId, string tableName, string columnName) { throw new System.NotImplementedException(); }
     /// <summary>Write a new value to the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, tPerson, tPersonCust, tRole, TicketState.  For tHdTicket table info, see: Ticket.UpdateColumnValue.</summary>
@@ -34,8 +32,6 @@ public static class Database {
     /// <param name="columnName">Column name, case sensitive.</param>
     /// <param name="newValue">Textual value that must be convertible to the target column type. Null is allowed, if specified then null is written to the column.</param>
     /// <param name="newValueDataType">Data type of the newValue parameter. Usable only for integer custom columns with value list when you need to set the text value instead of its Id.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when specified recordId or tableName or columnName does not exist in the database.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when specified recordId or tableName or columnName does not exist in the database.</exception>
     public static void WriteColumn(int recordId, string tableName, string columnName, string newValue, Database.ValueDataType newValueDataType = ValueDataType.Default) { throw new System.NotImplementedException(); }
 }

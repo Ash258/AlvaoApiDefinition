@@ -21,9 +21,7 @@ public static class TicketState {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TicketState.html#Alvao_API_SD_TicketState_GetByName_System_String_System_Int32_"/>
     /// <param name="stateName">State name(TicketState.TicketState)</param>
     /// <param name="ticketId">Ticket ID(tHdTicket.iHdTicket)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when ticket with given ticketId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when ticket with given ticketId does not exist.</exception>
     /// <returns>Request state (TicketState)</returns>
     public static Alvao.API.Common.Model.Database.TicketState GetByName(string stateName, int ticketId) { throw new System.NotImplementedException(); }
     /// <summary>Returns current TicketState database model of the ticket.</summary>

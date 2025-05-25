@@ -22,9 +22,7 @@ public static class Person {
     /// <param name="personalNumber">Personal number</param>
     /// <param name="azureAdObjectId">Object ID from Azure AD</param>
     /// <param name="azureAdTenantId">Tenant ID from Azure AD</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when fullName is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when fullName is null.</exception>
     /// <returns>Created person ID (tPerson.iPersonId)</returns>
     public static int Create(string fullName, string login, string email, string phone, string personalNumber, string azureAdObjectId = null, int? azureAdTenantId = null) { throw new System.NotImplementedException(); }
     /// <summary>Returns all persons</summary>
@@ -37,9 +35,7 @@ public static class Person {
     /// <param name="azureAdObjectId">Azure Active Directory object ID. Cannot be null.</param>
     /// <param name="userSid">User SID from on-premise AD or null</param>
     /// <param name="email">User email or null</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when azureAdObjectId is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when azureAdObjectId is null.</exception>
     /// <returns>Found person (tPerson) or null if there was no such person</returns>
     public static tPerson GetByAzureIdSidOrEmail(string azureAdObjectId, string userSid = null, string email = null) { throw new System.NotImplementedException(); }
     /// <summary>Return all persons which are synchronized from Azure Active Directory tenant.</summary>
@@ -119,9 +115,7 @@ public static class Person {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Person.html#Alvao_API_Common_Person_GetToken_System_Int32_System_String_"/>
     /// <param name="personId">The ID of the person (tPerson.iPersonId) who is the subject of the token.</param>
     /// <param name="scope">Scope (target application) the token is intended for.</param>
-    /// <exception cref="UserTokenServiceError">
-    /// An unexpected error occurred.
-    /// </exception>
+    /// <exception cref="UserTokenServiceError">An unexpected error occurred.</exception>
     /// <returns>Bearer token or null if getting a token is impossible.</returns>
     public static string GetToken(int personId, string scope) { throw new System.NotImplementedException(); }
     /// <summary>Returns NodeId for given personId. If person does not connected object user null is returned.</summary>
@@ -151,8 +145,6 @@ public static class Person {
     /// <summary>Updates person.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Person.html#Alvao_API_Common_Person_Update_Alvao_API_Common_Model_Database_tPerson_"/>
     /// <param name="person">Person to update</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when person is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when person is null.</exception>
     public static void Update(tPerson person) { throw new System.NotImplementedException(); }
 }

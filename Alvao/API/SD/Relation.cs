@@ -9,9 +9,7 @@ public static class Relation {
     /// <param name="endTicketId">Request where the link ends (tHdTicket.iHdTicketId)</param>
     /// <param name="ticketRelationTypeId">Link type, possible values are in table (TicketRelationType)</param>
     /// <param name="personId">Person ID (tPerson.iPersonId) who created the link. The person must exist in the database.</param>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when request with beginTicketId or endTicketId does not exist or when relation type with ticketRelationTypeId does not exist or when creating relation result in cyclical relation or when relation between these requests already exists.
-    /// </exception>
+    /// <exception cref="InvalidOperationException">Throws when request with beginTicketId or endTicketId does not exist or when relation type with ticketRelationTypeId does not exist or when creating relation result in cyclical relation or when relation between these requests already exists.</exception>
     /// <returns>Created link ID (TicketRelation.id)</returns>
     public static int Create(int beginTicketId, int endTicketId, int ticketRelationTypeId, int personId) { throw new System.NotImplementedException(); }
     /// <summary>Creates link between object and request</summary>
@@ -46,8 +44,6 @@ public static class Relation {
     /// <param name="objectIds">Object IDs (tblNode.iNodeId)</param>
     /// <param name="changedPersonId">Person ID (who changed link) (tPerson.iPersonId)</param>
     /// <param name="callCustomAction">If true, ticket changed event is triggered.</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when objectIds is null.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when objectIds is null.</exception>
     public static void SynchronizeWithObjectsByObjectIds(int ticketId, IEnumerable<int> objectIds, int changedPersonId, bool callCustomAction) { throw new System.NotImplementedException(); }
 }

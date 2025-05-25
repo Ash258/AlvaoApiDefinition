@@ -13,12 +13,8 @@ public static class MessageTemplate {
     /// <param name="actId">Message for approver ID tAct.iActId</param>
     /// <param name="language">Template language</param>
     /// <param name="commentForApprover">Comment for approver</param>
-    /// <exception cref="ArgumentNullException">
-    /// Throws when template is null.
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when request with ticketId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentNullException">Throws when template is null.</exception>
+    /// <exception cref="ArgumentException">Throws when request with ticketId does not exist.</exception>
     /// <returns>Evaluated template</returns>
     public static string EvaluateMessageForApprover(string template, int ticketId, int? actId, CultureInfo language = null, HtmlTextModel commentForApprover = null) { throw new System.NotImplementedException(); }
     /// <summary>Evaluates template of message for requester.</summary>

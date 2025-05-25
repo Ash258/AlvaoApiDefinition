@@ -21,15 +21,9 @@ public static class Object {
     /// <param name="personId">Person ID (who copied object) (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId or destinationObjectId does not exist.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object cannot be copied.
-    /// </exception>
-    /// <exception cref="UnauthorizedAccessException">
-    /// Throws when person with personId doesn't have rights to create object in destinationObjectId.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId or destinationObjectId does not exist.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object cannot be copied.</exception>
+    /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to create object in destinationObjectId.</exception>
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     public static int Copy(int personId, int objectId, int destinationObjectId) { throw new System.NotImplementedException(); }
     /// <summary>Copy given object as a child of destination object. CopyObject is deprecated, please use Copy instead.</summary>
@@ -37,15 +31,9 @@ public static class Object {
     /// <param name="personId">Person ID (who copied object) (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId or destinationObjectId does not exist.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object cannot be copied.
-    /// </exception>
-    /// <exception cref="UnauthorizedAccessException">
-    /// Throws when person with personId doesn't have rights to create object in destinationObjectId.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId or destinationObjectId does not exist.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object cannot be copied.</exception>
+    /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to create object in destinationObjectId.</exception>
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     [Obsolete("CopyObject is deprecated, please use Copy instead.")]
     public static int CopyObject(int personId, int objectId, int destinationObjectId) { throw new System.NotImplementedException(); }
@@ -64,15 +52,9 @@ public static class Object {
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId). Null for root</param>
     /// <param name="excludeGeneratingProperties">IDs of the object property types (tblKind.intKindId) for which the value from the numeric sequence will not be generated.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object cannot be copied.
-    /// </exception>
-    /// <exception cref="UnauthorizedAccessException">
-    /// Throws when person with personId doesn't have rights to create object in destinationObjectId.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object cannot be copied.</exception>
+    /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to create object in destinationObjectId.</exception>
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     public static int Create(int personId, int objectId, int? destinationObjectId, IEnumerable<int> excludeGeneratingProperties = null) { throw new System.NotImplementedException(); }
     /// <summary>Create new object from template.</summary>
@@ -81,9 +63,7 @@ public static class Object {
     /// <param name="objectName">Object name. When null, template name will be used.</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId). Use null for root.</param>
     /// <param name="creatorPersonId">Person ID (who created object) (tPerson.iPersonId). When null, _system person will be used.</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object class with ID classId or object with ID destinationObjectId or person with ID creatorPersonId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object class with ID classId or object with ID destinationObjectId or person with ID creatorPersonId does not exist.</exception>
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     public static int CreateByClass(int classId, string objectName, int? destinationObjectId, int? creatorPersonId) { throw new System.NotImplementedException(); }
     /// <summary>
@@ -100,15 +80,9 @@ public static class Object {
     /// <param name="personId">Person ID (who copied object) (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId). Null for root</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object cannot be copied.
-    /// </exception>
-    /// <exception cref="UnauthorizedAccessException">
-    /// Throws when person with personId doesn't have rights to create object in destinationObjectId.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object cannot be copied.</exception>
+    /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to create object in destinationObjectId.</exception>
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     [Obsolete("CreateObject is deprecated, please use Create instead.")]
     public static int CreateObject(int personId, int objectId, int? destinationObjectId) { throw new System.NotImplementedException(); }
@@ -116,51 +90,31 @@ public static class Object {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_Delete_System_Collections_Generic_IEnumerable_System_Int32__System_Boolean_"/>
     /// <param name="objectIds">List of object IDs (tblNode.intNodeId)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object in objectIds is deleted and is user who is responsible for some asset or organization that has linked licenses.
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when deleting only one object in objectIds and it does not exist.
-    /// </exception>
-    /// <exception cref="InvalidBulkMoveException">
-    /// Throws when object in objectIds is deleted and user does not have permission or is deleting system object.
-    /// </exception>
+    /// <exception cref="InvalidOperationException">Throws when object in objectIds is deleted and is user who is responsible for some asset or organization that has linked licenses.</exception>
+    /// <exception cref="ArgumentException">Throws when deleting only one object in objectIds and it does not exist.</exception>
+    /// <exception cref="InvalidBulkMoveException">Throws when object in objectIds is deleted and user does not have permission or is deleting system object.</exception>
     public static void Delete(IEnumerable<int> objectIds, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>Move given object to the recycle bin. If given object is already in the recycle bin, it is permanently deleted from a database.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_Delete_System_Int32_System_Boolean_"/>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object with objectId is deleted and is user who is responsible for some asset or organization that has linked licenses.
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when deleting object with objectId and it does not exist.
-    /// </exception>
-    /// <exception cref="InvalidBulkMoveException">
-    /// Throws when object with objectId is deleted and user does not have permission or is deleting system object.
-    /// </exception>
+    /// <exception cref="InvalidOperationException">Throws when object with objectId is deleted and is user who is responsible for some asset or organization that has linked licenses.</exception>
+    /// <exception cref="ArgumentException">Throws when deleting object with objectId and it does not exist.</exception>
+    /// <exception cref="InvalidBulkMoveException">Throws when object with objectId is deleted and user does not have permission or is deleting system object.</exception>
     public static void Delete(int objectId, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>Move given object to the recycle bin. If given object is already in the recycle bin, it is permanently deleted from a database. DeleteObject is deprecated, please use Delete instead.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_DeleteObject_System_Int32_System_Boolean_"/>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId does not exist.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object is special or the recycle bin does not exist or when wanted to permanently delete responsible user or organization with license.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId does not exist.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object is special or the recycle bin does not exist or when wanted to permanently delete responsible user or organization with license.</exception>
     [Obsolete("DeleteObject is deprecated, please use Delete instead.")]
     public static void DeleteObject(int objectId, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>Empty the recycle bin. Objects are permanently deleted.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_EmptyRecycleBin_System_Int32_"/>
     /// <param name="personId">Person ID (who empty the recycle bin) (tPerson.iPersonId)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when the recycle bin does not exist or when wanted to permanently delete responsible user or organization with license.
-    /// </exception>
-    /// <exception cref="UnauthorizedAccessException">
-    /// Throws when person with personId is not a member of Asset Management Administrators group.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when the recycle bin does not exist or when wanted to permanently delete responsible user or organization with license.</exception>
+    /// <exception cref="UnauthorizedAccessException">Throws when person with personId is not a member of Asset Management Administrators group.</exception>
     public static void EmptyRecycleBin(int personId) { throw new System.NotImplementedException(); }
     /// <summary>Returns list of objects that are descendants of specified classId.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_FilterDescendantsOf_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_"/>
@@ -209,45 +163,27 @@ public static class Object {
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId)</param>
     /// <param name="forceCheck">If true, object checking will not be performed (does not apply to permission checking or system objects)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="InvalidBulkMoveException">
-    /// Throws when object in objectIds is moved to the Recycle bin and is user who is responsible for some asset or organization that has linked licenses. Can be also thrown when other conditions are not met (e.g. permissions, moving object to itself or when object is not movable).
-    /// </exception>
-    /// <exception cref="InvalidMoveException">
-    /// Throws when moving only one object in objectIds and some conditions are not met (e.g. moving object to itself).
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when moving only one object in objectIds and it does not exist.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when at least one of the objects in objectIds is moved to the location where will be no user responsible for it or when moving PC with licenses from one organization to another organization.
-    /// </exception>
+    /// <exception cref="InvalidBulkMoveException">Throws when object in objectIds is moved to the Recycle bin and is user who is responsible for some asset or organization that has linked licenses. Can be also thrown when other conditions are not met (e.g. permissions, moving object to itself or when object is not movable).</exception>
+    /// <exception cref="InvalidMoveException">Throws when moving only one object in objectIds and some conditions are not met (e.g. moving object to itself).</exception>
+    /// <exception cref="ArgumentException">Throws when moving only one object in objectIds and it does not exist.</exception>
+    /// <exception cref="InvalidOperationException">Throws when at least one of the objects in objectIds is moved to the location where will be no user responsible for it or when moving PC with licenses from one organization to another organization.</exception>
     public static void Move(IEnumerable<int> objectIds, int destinationObjectId, bool forceCheck, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>Move given object to destination object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_Move_System_Int32_System_Int32_System_Boolean_"/>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="InvalidBulkMoveException">
-    /// Throws when object with objectId is moved to the Recycle bin and is user who is responsible for some asset or organization that has linked licenses. Can be also thrown when other conditions are not met (e.g. permissions or when object is not movable).
-    /// </exception>
-    /// <exception cref="InvalidMoveException">
-    /// Throws when object with objectId does not met any condition for moving (e.g. moving object to itself).
-    /// </exception>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId does not exist.
-    /// </exception>
-    /// <exception cref="InvalidOperationException">
-    /// Throws when object with objectId is moved to the location where will be no user responsible for it or when moving PC with licenses from one organization to another organization.
-    /// </exception>
+    /// <exception cref="InvalidBulkMoveException">Throws when object with objectId is moved to the Recycle bin and is user who is responsible for some asset or organization that has linked licenses. Can be also thrown when other conditions are not met (e.g. permissions or when object is not movable).</exception>
+    /// <exception cref="InvalidMoveException">Throws when object with objectId does not met any condition for moving (e.g. moving object to itself).</exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId does not exist.</exception>
+    /// <exception cref="InvalidOperationException">Throws when object with objectId is moved to the location where will be no user responsible for it or when moving PC with licenses from one organization to another organization.</exception>
     public static void Move(int objectId, int destinationObjectId, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>Move given object to destination object. MoveObject is deprecated, please use Move instead.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_MoveObject_System_Int32_System_Int32_System_Boolean_"/>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="destinationObjectId">ID of object which will be parent (tblNode.intNodeId)</param>
     /// <param name="callCustomAction">If true, object auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when object with objectId or destinationObjectId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when object with objectId or destinationObjectId does not exist.</exception>
     [Obsolete("MoveObject is deprecated, please use Move instead.")]
     public static void MoveObject(int objectId, int destinationObjectId, bool callCustomAction = true) { throw new System.NotImplementedException(); }
 }

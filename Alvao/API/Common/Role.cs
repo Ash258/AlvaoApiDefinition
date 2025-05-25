@@ -16,17 +16,13 @@ public static class Role {
     /// <param name="description">Role description</param>
     /// <param name="azureAdObjectId">Object ID from Azure AD</param>
     /// <param name="azureAdTenantId">Tenant ID from table AzureAdTenant</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when name is null, empty or too long or when description is null or too long.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when name is null, empty or too long or when description is null or too long.</exception>
     /// <returns>ID of created role (tRole.iRoleId)</returns>
     public static int Create(string name, string description, string azureAdObjectId = null, int? azureAdTenantId = null) { throw new System.NotImplementedException(); }
     /// <summary>Delete role</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Role.html#Alvao_API_Common_Role_Delete_System_Int32_"/>
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when role with roleId does not exist or cannot be deleted.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when role with roleId does not exist or cannot be deleted.</exception>
     public static void Delete(int roleId) { throw new System.NotImplementedException(); }
     /// <summary>Get list of all roles.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Role.html#Alvao_API_Common_Role_GetAll"/>
@@ -40,9 +36,7 @@ public static class Role {
     /// <summary>Get detail of role</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Role.html#Alvao_API_Common_Role_GetById_System_Int32_"/>
     /// <param name="roleId">Role ID (tRole.iRoleId)</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when role with roleId does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when role with roleId does not exist.</exception>
     /// <returns>Role model (tRole)</returns>
     public static tRole GetById(int roleId) { throw new System.NotImplementedException(); }
     /// <summary>Get detail of role</summary>
@@ -100,8 +94,6 @@ public static class Role {
     /// <summary>Update role</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Role.html#Alvao_API_Common_Role_Update_Alvao_API_Common_Model_Database_tRole_"/>
     /// <param name="role">Role model</param>
-    /// <exception cref="ArgumentException">
-    /// Throws when role does not exist.
-    /// </exception>
+    /// <exception cref="ArgumentException">Throws when role does not exist.</exception>
     public static void Update(tRole role) { throw new System.NotImplementedException(); }
 }
