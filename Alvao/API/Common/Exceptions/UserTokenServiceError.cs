@@ -1,20 +1,16 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.Common.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_Common_Exceptions_UserTokenServiceError.htm"/>
-public class UserTokenServiceError : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_Common_Exceptions_UserTokenServiceError_ErrorCodes.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.UserTokenServiceError.html"/>
+public class UserTokenServiceError : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.UserTokenServiceError.html#Alvao_API_Common_Exceptions_UserTokenServiceError_ErrorCodes"/>
     public IEnumerable<int> ErrorCodes { get; }
 
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_UserTokenServiceError__ctor.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.UserTokenServiceError.html#Alvao_API_Common_Exceptions_UserTokenServiceError__ctor"/>
     public UserTokenServiceError() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_UserTokenServiceError__ctor_1.htm"/>
-    public UserTokenServiceError(
-        string message,
-        IEnumerable<int> errorCodes
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_Common_Exceptions_UserTokenServiceError__ctor_2.htm"/>
-    public UserTokenServiceError(
-        string message,
-        Exception innerException
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.UserTokenServiceError.html#Alvao_API_Common_Exceptions_UserTokenServiceError__ctor_System_String_System_Collections_Generic_IEnumerable_System_Int32__"/>
+    public UserTokenServiceError(string message, IEnumerable<int> errorCodes) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.UserTokenServiceError.html#Alvao_API_Common_Exceptions_UserTokenServiceError__ctor_System_String_System_Exception_"/>
+    public UserTokenServiceError(string message, Exception innerException) { }
 }

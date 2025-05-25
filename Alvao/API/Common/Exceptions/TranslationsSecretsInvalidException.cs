@@ -6,11 +6,8 @@ namespace Alvao.API.Common.Exceptions;
 public class TranslationsSecretsInvalidException : Exception, ISerializable {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.TranslationsSecretsInvalidException.html#Alvao_API_Common_Exceptions_TranslationsSecretsInvalidException__ctor"/>
     public TranslationsSecretsInvalidException() { }
-    /// <param name="message"></param>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.TranslationsSecretsInvalidException.html#Alvao_API_Common_Exceptions_TranslationsSecretsInvalidException__ctor_System_String_"/>
     public TranslationsSecretsInvalidException(string message) { }
-    /// <param name="message"></param>
-    /// <param name="innerException"></param>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Exceptions.TranslationsSecretsInvalidException.html#Alvao_API_Common_Exceptions_TranslationsSecretsInvalidException__ctor_System_String_System_Exception_"/>
     public TranslationsSecretsInvalidException(string message, Exception innerException) { }
 }
