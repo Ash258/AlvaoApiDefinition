@@ -23,6 +23,7 @@ public static class Act {
     /// <returns>Created act(tAct)</returns>
     public static tAct Create(int ticketId, string subject, HtmlTextModel message, tPerson fromPerson, tPerson toPerson, tActKind.ActKind actKind, ActCreateSettings settings) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Creates new act in request diary.
     /// <example>
     /// <code>
     /// //Create note in request

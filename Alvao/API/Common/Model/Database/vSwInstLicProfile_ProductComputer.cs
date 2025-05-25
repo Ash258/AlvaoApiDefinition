@@ -3,6 +3,8 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>
+/// Installed software vs licenses and software profiles.
+/// Note: This view is outdated and should not be used. It will be removed in a future version of ALVAO.
 /// </summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vSwInstLicProfile_ProductComputer.html"/>
 [Table("dbo.vSwInstLicProfile_ProductComputer")]

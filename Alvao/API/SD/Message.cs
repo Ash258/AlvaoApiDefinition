@@ -52,6 +52,7 @@ public static class Message {
     /// <returns>Recipients without section mails</returns>
     public static (List<EmailModel>, int) RemoveSectionEmails(List<EmailModel> mailRecipients) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Sends message within the request and creates new record in request diary.
     /// <example>
     /// <code>
     /// //Send message with attachment from request and save to diary of request
@@ -108,6 +109,7 @@ public static class Message {
     /// <returns>Created act (tAct)</returns>
     public static tAct Send(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Sends message within the request and creates new record in request diary. SendMessage is deprecated, please use Send instead.
     /// <example>
     /// <code>
     /// //Send message with attachment from request and save to diary of request

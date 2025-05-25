@@ -19,6 +19,7 @@ public class HtmlTextModel {
     public string Plaintext { get; }
 
     /// <summary>
+    /// Creates a new instance.
     /// <example>
     /// <code>
     /// public class Attachment : Alvao.API.Common.Model.IAttachment

@@ -27,6 +27,7 @@ public static class Email {
     [Obsolete("QueueMailMessage is deprecated, please use Queue instead.")]
     public static void QueueMailMessage(Rebex.Mail.MailMessage message, Email.MailQueuePriority queuePriority = MailQueuePriority.Standard) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Queues mail message by inserting it into database. QueueMailMessage is deprecated, please use Queue instead.
     /// <example>
     /// <code>
     /// System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();

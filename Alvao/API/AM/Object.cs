@@ -38,6 +38,7 @@ public static class Object {
     [Obsolete("CopyObject is deprecated, please use Copy instead.")]
     public static int CopyObject(int personId, int objectId, int destinationObjectId) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Create new object as a copy of object.
     /// <example>
     /// <code>
     /// int selectedObjectId = 50; //Object which will be copied
@@ -67,6 +68,7 @@ public static class Object {
     /// <returns>Created object ID (tblNode.intNodeId)</returns>
     public static int CreateByClass(int classId, string objectName, int? destinationObjectId, int? creatorPersonId) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Create new object as a copy of object. CreateObject is deprecated, please use Create instead.
     /// <example>
     /// <code>
     /// int selectedObjectId = 50; //Object which will be copied

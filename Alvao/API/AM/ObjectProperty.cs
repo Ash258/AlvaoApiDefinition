@@ -68,6 +68,7 @@ public static class ObjectProperty {
     /// <exception cref="InvalidPropertyValueTypeException">Throws when property value type was not recognized or is not supported.</exception>
     public static void Update(int objectId, tblKind.KindCode kindCode, object value, bool callCustomAction = true, bool shouldLog = true) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Updates object properties.
     /// <example>
     /// <code>
     /// int objectId = 50; //Object which will be updated
@@ -90,6 +91,7 @@ public static class ObjectProperty {
     /// <exception cref="PropertyValueViolatesUniquenessException">Throws when property value violates uniqueness.</exception>
     public static void Update(int personId, int objectId, IDictionary<string, object> properties, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Updates object properties.
     /// <example>
     /// <code>
     /// int objectId = 50; //Object which will be updated
@@ -113,6 +115,7 @@ public static class ObjectProperty {
     [Obsolete("Update with IDictionary<string, string> is deprecated, please use Update with IDictionary<string, object> instead.")]
     public static void Update(int personId, int objectId, IDictionary<string, string> properties, bool callCustomAction = true) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Updates object properties. UpdateProperties is deprecated, please use Update instead.
     /// <example>
     /// <code>
     /// int objectId = 50; //Object which will be updated

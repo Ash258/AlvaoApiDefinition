@@ -81,6 +81,7 @@ public static class Ticket {
     /// <exception cref="NotImplementedException">Throws when SLA change reason is not implemented.</exception>
     public static void ChangeSla(int ticketId, int newSlaId, CostModel cost, Ticket.ChangeSlaReason reason) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Changes ticket solver or returns it to main solver.
     /// <example>
     /// <code>
     /// int ticketId = 25; //Request id
@@ -102,6 +103,7 @@ public static class Ticket {
     [Obsolete("Use ChangeSolverOrGroup instead.")]
     public static int ChangeSolver(int ticketId, int? newSolverId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Changes ticket solver group or returns it to main solver.
     /// <example>
     /// <code>
     /// int ticketId = 25; //Request id
@@ -123,6 +125,7 @@ public static class Ticket {
     [Obsolete("Use ChangeSolverOrGroup instead.")]
     public static int ChangeSolverGroup(int ticketId, int? newSolverGroupId, HtmlTextModel message, CostModel cost = null, int? authorPersonId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Changes ticket solver, solver group or returns it to main solver.
     /// <example>
     /// <code>
     /// int ticketId = 25; // Request id
@@ -147,6 +150,7 @@ public static class Ticket {
     /// <returns>0 if no act was logged otherwise act ID (tAct.iActId) with log of solver or solver group change.</returns>
     public static int ChangeSolverOrGroup(int ticketId, int? solverId = -1, int? solverGroupId = -1, HtmlTextModel message = null, CostModel cost = null, int? authorId = null, Ticket.ChangeSolverFlags flags = ChangeSolverFlags.None) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Changes request state.
     /// <example>
     /// <code>
     /// int ticketId = 50; //Request id
@@ -180,6 +184,7 @@ public static class Ticket {
     /// <exception cref="ValidationException">Throws when authorPersonId does not have rights to close request.</exception>
     public static void Close(int ticketId, int authorPersonId, Ticket.CloseFlags flags = CloseFlags.None) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Creates new request from model.
     /// <example>
     /// <code>
     /// Alvao.API.SD.Model.NewTicketModel newTicketModel = new Alvao.API.SD.Model.NewTicketModel(); //Create model for request.
@@ -277,6 +282,7 @@ public static class Ticket {
     /// <exception cref="ArgumentException">Throws when ticketId does not exist.</exception>
     public static void Remove(int ticketId, int personId, Ticket.RemoveFlags flags = RemoveFlags.None) { throw new System.NotImplementedException(); }
     /// <summary>
+    /// Changes request state to resolved.
     /// <example>
     /// <code>
     /// int ticketId = 50; //Request id
