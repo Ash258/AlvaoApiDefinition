@@ -1,34 +1,31 @@
 namespace Alvao.API.SD.Model;
 
 /// <summary>Model representing act costs.</summary>
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_SD_Model_CostModel.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html"/>
 public class CostModel {
     /// <summary>Exclude from invoice</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CostModel_DontCharge.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_DontCharge"/>
     public bool DontCharge { get; set; }
     /// <summary>Distance</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CostModel_TravelDistance.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_TravelDistance"/>
     public double? TravelDistance { get; set; }
     /// <summary>Time traveled.</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CostModel_TravelTime.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_TravelTime"/>
     public TimeSpan? TravelTime { get; set; }
     /// <summary>Work</summary>
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_SD_Model_CostModel_WorkTime.htm"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_WorkTime"/>
     public TimeSpan? WorkTime { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_CostModel__ctor.htm"/>
-    public CostModel() { }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_CostModel_Equals.htm"/>
-    ///
-    /// <param name="obj"> </param>
-    public override bool Equals(
-        Object obj
-    ) { throw new System.NotImplementedException(); }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_CostModel_GetHashCode.htm"/>
+    /// <summary>Determines whether the specified object is equal to the current object.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_Equals_System_Object_"/>
+    /// <param name="obj">The object to compare with the current object.</param>
+    /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+    public override bool Equals(object obj) { throw new System.NotImplementedException(); }
+    /// <summary>Serves as the default hash function.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_GetHashCode"/>
+    /// <returns>A hash code for the current object.</returns>
     public override int GetHashCode() { throw new System.NotImplementedException(); }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_SD_Model_CostModel_ToString.htm"/>
+    /// <summary>Returns a string that represents the current object.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_ToString"/>
+    /// <returns>A string that represents the current object.</returns>
     public override string ToString() { throw new System.NotImplementedException(); }
 }
