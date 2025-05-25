@@ -690,8 +690,10 @@ public class AlvaoClass {
         }
 
         // Set class specific docs
-        if (!Summary.Equals("")) sb.AppendLine($"/// <summary>{ReplaceEndLinesWithSpace(Summary)}</summary>");
-        if (!FullUrl.IsNullOrEmpty()) sb.AppendLine($"/// <see href=\"{FullUrl}\"/>");
+
+        var indent = 0;
+        GenerateSummary(Summary, indent, [], sb);
+        GenerateSeeUrl(FullUrl, indent, sb);
 
         if (standaloneEnum) {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);

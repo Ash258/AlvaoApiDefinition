@@ -14,15 +14,9 @@ public record DotnetConstructor() {
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
 
-        GenerateSummary(Summary, Examples, sb);
-
-        Parameters.ForEach(param => {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>"));
-        });
-
-        if (!FullUrl.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
-        }
+        GenerateSummary(Summary, indent, Examples, sb);
+        GenerateSeeUrl(FullUrl, indent, sb);
+        GenerateParameters(Parameters, indent, sb);
 
         sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition) + " {}", indent));
 

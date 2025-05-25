@@ -17,17 +17,11 @@ public record DotnetMethod() {
     public string Produce(int indent = 4) {
         var sb = new StringBuilder();
 
-        GenerateSummary(Summary, Examples, sb);
+        GenerateSummary(Summary, indent, Examples, sb);
+        GenerateSeeUrl(FullUrl, indent, sb);
+        GenerateParameters(Parameters, indent, sb);
 
-        Parameters.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(param => {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<param name=\"{param.Item1}\">{param.Item2}</param>"));
-        });
-
-        if (!Remarks.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc("<remarks>"));
-            sb.AppendLine(PrefixEachLineSpacesDoc(ReplaceEndLinesWithSpace(Remarks)));
-            sb.AppendLine(PrefixEachLineSpacesDoc("</remarks>"));
-        }
+        GenerateSingleOrMultiLineElement(Returns, indent, "remarks", sb);
 
         Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
             sb.AppendLine(PrefixEachLineSpacesDoc($"<exception cref=\"{ex.Item1}\">"));
@@ -35,19 +29,7 @@ public record DotnetMethod() {
             sb.AppendLine(PrefixEachLineSpacesDoc("</exception>"));
         });
 
-        if (!Returns.IsNullOrEmpty()) {
-            if (Returns.Contains('\n')) {
-                sb.AppendLine(PrefixEachLineSpacesDoc("<returns>"));
-                sb.AppendLine(PrefixEachLineSpacesDoc(Returns));
-                sb.AppendLine(PrefixEachLineSpacesDoc("</returns>"));
-            } else {
-                sb.AppendLine(PrefixEachLineSpacesDoc($"<returns>{Returns}</returns>"));
-            }
-        }
-
-        if (!FullUrl.IsNullOrEmpty()) {
-            sb.AppendLine(PrefixEachLineSpacesDoc($"<see href=\"{FullUrl}\"/>", indent));
-        }
+        GenerateSingleOrMultiLineElement(Returns, indent, "returns", sb);
 
         sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
         if (!Definition.EndsWith(';')) sb.Append(" { throw new System.NotImplementedException(); }");
