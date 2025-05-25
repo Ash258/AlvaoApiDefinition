@@ -3,9 +3,9 @@ namespace Alvao.API.SD.Model;
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html"/>
 public class EmailModel : IEquatable<EmailModel> {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_EmailFormat"/>
-    public const string EmailFormat = "(?:(?:(?<text>([^\\<;]{1,})|([&#39;\"][^@]{1,}[&#39;\"]\\s*))?\\<(?<address>[\\w\\.!#$%&amp;&#39;*+\\-/=?\\^_`{|}~]+@[A-Za-z0-9\\.\\+\\-_%]+)\\>)|(?:(?<address>[\\w\\.!#$%&amp;&#39;*+\\-/=?\\^_`{|}~]+@[A-Za-z0-9\\.\\+\\-_%]+)))([&#39;])?(?:[;\\,])?";
+    public const string EmailFormat = "(?:(?:(?<text>([^\\<;]{1,})|(['\"][^@]{1,}['\"]\\s*))?\\<(?<address>[\\w\\.!#$%&'*+\\-/=?\\^_`{|}~]+@[A-Za-z0-9\\.\\+\\-_%]+)\\>)|(?:(?<address>[\\w\\.!#$%&'*+\\-/=?\\^_`{|}~]+@[A-Za-z0-9\\.\\+\\-_%]+)))(['])?(?:[;\\,])?";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_EmailPattern"/>
-    public const string EmailPattern = "^[\\w!#$%&amp;&#39;*+\\-/=?\\^_`{|}~]+(\\.[\\w!#$%&amp;&#39;*+\\-/=?\\^_`{|}~]+)*@(?!-)((([\\-\\w]*(\\w)+\\.(?!-))+[a-zA-Z]{2,})|(([0-9]{1,3}\\.){3}[0-9]{1,3}))$";
+    public const string EmailPattern = "^[\\w!#$%&'*+\\-/=?\\^_`{|}~]+(\\.[\\w!#$%&'*+\\-/=?\\^_`{|}~]+)*@(?!-)((([\\-\\w]*(\\w)+\\.(?!-))+[a-zA-Z]{2,})|(([0-9]{1,3}\\.){3}[0-9]{1,3}))$";
 
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.EmailModel.html#Alvao_API_SD_Model_EmailModel_Address"/>
     public string Address { get; set; }

@@ -1,3 +1,4 @@
+using AutoMapper.Configuration.Annotations;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
@@ -58,7 +59,7 @@ public class tPerson {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tPerson.html#Alvao_API_Common_Model_Database_tPerson_PersonBehaviorId"/>
     public virtual int PersonBehaviorId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tPerson.html#Alvao_API_Common_Model_Database_tPerson_PersonEmail"/>
-    //[Ignore] // ! TODO: Investigate where this come from
+    [Ignore]
     public string PersonEmail { get; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tPerson.html#Alvao_API_Common_Model_Database_tPerson_PersonPortrait"/>
     public virtual byte[] PersonPortrait { get; set; }

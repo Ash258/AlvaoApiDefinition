@@ -1,3 +1,4 @@
+using AutoMapper.Configuration.Annotations;
 using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
@@ -192,30 +193,30 @@ public class tblKind {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.KindFlags.html#fields"/>
     [Flags]
     public enum KindFlags {
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         Classified = 1,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         Hidden = 4,
         ImplicitValue = 2,
         NoInherit = 32,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         Password = 128,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         PropViewTabPosition = 64,
         SelectOnly = 8192,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         Unique = 4096,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_Classified = 8,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_Key = 16,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_LoginName = 256,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_Measure = 2048,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_REG = 512,
-        [Obsolete("It&#39;s no longer in use.")]
+        [Obsolete("It's no longer in use.")]
         WMI_Scanner = 1024,
     }
     /// <summary>Property categories</summary>
@@ -228,10 +229,10 @@ public class tblKind {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_ColumnName"/>
     public virtual string ColumnName { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_DataType"/>
-    //[Ignore] // ! TODO: Investigate where this come from
+    [Ignore]
     public string DataType { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_IsSystem"/>
-    //[Ignore] // ! TODO: Investigate where this come from
+    [Ignore]
     public bool IsSystem { get; set; }
     /// <summary>Property data type ID.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_KindDataTypeId"/>
