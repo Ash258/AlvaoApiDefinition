@@ -2,7 +2,7 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD;
 
-/// <summary>Facade&nbsp;class&nbsp;grouping&nbsp;ticket&nbsp;participant methods.</summary>
+/// <summary>Facade class grouping ticket participant methods.</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TicketParticipant.html"/>
 public static class TicketParticipant {
     /// <summary>Add ticket participants to the ticket.</summary>
