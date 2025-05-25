@@ -21,7 +21,7 @@ public record DotnetMethod() {
         GenerateSeeUrl(FullUrl, indent, sb);
         GenerateParameters(Parameters, indent, sb);
 
-        GenerateSingleOrMultiLineElement(Returns, indent, "remarks", sb);
+        GenerateSingleOrMultiLineElement(Remarks, indent, "remarks", sb);
 
         Exceptions.Where(x => !string.IsNullOrEmpty(x.Item2)).ToList().ForEach(ex => {
             sb.AppendLine(PrefixEachLineSpacesDoc($"<exception cref=\"{ex.Item1}\">"));
@@ -33,8 +33,6 @@ public record DotnetMethod() {
 
         sb.Append(PrefixEachLineSpaces(SanitizeXmlToString(Definition), indent));
         if (!Definition.EndsWith(';')) sb.Append(" { throw new System.NotImplementedException(); }");
-
-        // sb.Append(PrefixEachLineSpaces(def, indent));
 
         return sb.ToString();
     }

@@ -12,7 +12,7 @@ public class TransactionEventArgs : EventArgs {
     public string SavePointName { get; }
 
     /// <summary>Initializes new instance of TransactionEventArgs class.</summary>
-    /// <param name="savePointName">Name of the transaction save point.</param>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.Context.DB.TransactionEventArgs.html#Alvao_Context_DB_TransactionEventArgs__ctor_System_String_"/>
+    /// <param name="savePointName">Name of the transaction save point.</param>
     public TransactionEventArgs(string savePointName = null) { }
 }

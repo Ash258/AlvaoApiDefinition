@@ -1,17 +1,14 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.AM.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException.htm"/>
-[SerializableAttribute]
-public class ObjectRelationConditionViolatedException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.ObjectRelationConditionViolatedException.html"/>
+[Serializable]
+public class ObjectRelationConditionViolatedException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.ObjectRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor"/>
     public ObjectRelationConditionViolatedException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor_1.htm"/>
-    public ObjectRelationConditionViolatedException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor_2.htm"/>
-    public ObjectRelationConditionViolatedException(
-        string message,
-        Exception innerException
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.ObjectRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor_System_String_"/>
+    public ObjectRelationConditionViolatedException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.ObjectRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_ObjectRelationConditionViolatedException__ctor_System_String_System_Exception_"/>
+    public ObjectRelationConditionViolatedException(string message, Exception innerException) { }
 }

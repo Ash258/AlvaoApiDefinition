@@ -1,16 +1,13 @@
+using System.Runtime.Serialization;
+
 namespace Alvao.API.AM.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException.htm"/>
-public class LicenseRelationConditionViolatedException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseRelationConditionViolatedException.html"/>
+public class LicenseRelationConditionViolatedException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor"/>
     public LicenseRelationConditionViolatedException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor_1.htm"/>
-    public LicenseRelationConditionViolatedException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor_2.htm"/>
-    public LicenseRelationConditionViolatedException(
-        string message,
-        Exception innerException
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor_System_String_"/>
+    public LicenseRelationConditionViolatedException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.LicenseRelationConditionViolatedException.html#Alvao_API_AM_Exceptions_LicenseRelationConditionViolatedException__ctor_System_String_System_Exception_"/>
+    public LicenseRelationConditionViolatedException(string message, Exception innerException) { }
 }

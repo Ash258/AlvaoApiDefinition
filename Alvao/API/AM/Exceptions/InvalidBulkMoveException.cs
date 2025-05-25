@@ -2,23 +2,16 @@ using System.Runtime.Serialization;
 
 namespace Alvao.API.AM.Exceptions;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AM_Exceptions_InvalidBulkMoveException.htm"/>
-[SerializableAttribute]
-public class InvalidBulkMoveException : Exception {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.InvalidBulkMoveException.html"/>
+[Serializable]
+public class InvalidBulkMoveException : Exception, ISerializable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.InvalidBulkMoveException.html#Alvao_API_AM_Exceptions_InvalidBulkMoveException_FailedObjectIds"/>
+    public IEnumerable<int> FailedObjectIds { get; set; }
+
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.InvalidBulkMoveException.html#Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor"/>
     public InvalidBulkMoveException() { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor_2.htm"/>
-    public InvalidBulkMoveException(
-        string message
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor_1.htm"/>
-    public InvalidBulkMoveException(
-        SerializationInfo info,
-        StreamingContext context
-    ) { }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor_3.htm"/>
-    public InvalidBulkMoveException(
-        string message,
-        Exception innerException
-    ) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.InvalidBulkMoveException.html#Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor_System_String_"/>
+    public InvalidBulkMoveException(string message) { }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Exceptions.InvalidBulkMoveException.html#Alvao_API_AM_Exceptions_InvalidBulkMoveException__ctor_System_String_System_Exception_"/>
+    public InvalidBulkMoveException(string message, Exception innerException) { }
 }

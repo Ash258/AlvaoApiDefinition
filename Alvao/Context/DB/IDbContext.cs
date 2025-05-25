@@ -4,8 +4,8 @@ namespace Alvao.Context.DB;
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.Context.DB.IDbContext.html"/>
 public interface IDbContext {
     /// <summary>Get current database connection scope.</summary>
-    /// <returns>A scope with access to database connection and transaction.</returns>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.Context.DB.IDbContext.html#Alvao_Context_DB_IDbContext_GetScope"/>
+    /// <returns>A scope with access to database connection and transaction.</returns>
     IConnectionScope GetScope();
 
     /// <summary>Occurs when the inner database transaction can be commited, but there is parent scope with an opened transaction. Nothing actually happens with the transaction.</summary>
