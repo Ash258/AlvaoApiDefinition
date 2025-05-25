@@ -2,21 +2,18 @@ using Newtonsoft.Json;
 
 namespace Alvao.API.AI;
 
-/// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/T_Alvao_API_AI_ChatChoiceResponse.htm"/>
+/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatChoiceResponse.html"/>
 public class ChatChoiceResponse {
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatChoiceResponse_Delta.htm"/>
-    [JsonPropertyAttribute("delta")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatChoiceResponse.html#Alvao_API_AI_ChatChoiceResponse_Delta"/>
+    [JsonProperty("delta")]
     public ChatMessage Delta { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatChoiceResponse_FinishReason.htm"/>
-    [JsonPropertyAttribute("finish_reason")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatChoiceResponse.html#Alvao_API_AI_ChatChoiceResponse_FinishReason"/>
+    [JsonProperty("finish_reason")]
     public string FinishReason { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatChoiceResponse_Index.htm"/>
-    [JsonPropertyAttribute("index")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatChoiceResponse.html#Alvao_API_AI_ChatChoiceResponse_Index"/>
+    [JsonProperty("index")]
     public int? Index { get; set; }
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/P_Alvao_API_AI_ChatChoiceResponse_Message.htm"/>
-    [JsonPropertyAttribute("message")]
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.ChatChoiceResponse.html#Alvao_API_AI_ChatChoiceResponse_Message"/>
+    [JsonProperty("message")]
     public ChatMessage Message { get; set; }
-
-    /// <see href="https://doc.alvao.com/en/alvao_11_2/alvao_api/html/M_Alvao_API_AI_ChatChoiceResponse__ctor.htm"/>
-    public ChatChoiceResponse() { }
 }
