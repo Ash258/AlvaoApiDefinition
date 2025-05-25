@@ -4,8 +4,6 @@ namespace Alvao.API.Common.Model.CustomApps.Requests;
 public class OnTicketCreatedRequest : BaseRequest {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Requests.OnTicketCreatedRequest.html#Alvao_API_Common_Model_CustomApps_Requests_OnTicketCreatedRequest_PersonId"/>
     public int PersonId { get; set; }
-
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomApps.Requests.OnTicketCreatedRequest.html#Alvao_API_Common_Model_CustomApps_Requests_OnTicketCreatedRequest_TicketId"/>
     public int TicketId { get; set; }
-
 }
