@@ -188,7 +188,7 @@ public static class Helpers {
                 if (!definition.EndsWith('}')) append = ";";
                 break;
             case MemberDefinitionType.Method:
-                if (!definition.EndsWith(';')) append = " { throw new System.NotImplementedException(); }";
+                if (!definition.EndsWith(';')) append = " { throw new NotImplementedException(); }";
                 break;
             case MemberDefinitionType.Constructor:
                 append = " {}";
