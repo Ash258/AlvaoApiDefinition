@@ -23,6 +23,12 @@ tasks:
   library:build:
     dir: Alvao
     cmd: dotnet build .
+  library:publish:
+    dir: Alvao
+    cmd: dotnet publish -c Release
+  library:pack:
+    dir: Alvao
+    cmd: dotnet pack -c Release
   test:
     cmd: dotnet run -- test
   tidy:
@@ -56,6 +62,8 @@ tasks:
     - task: tidy
     - task: library:format
     - task: library:build
+    - task: library:publish
+    - task: library:pack
   run:clean:
     aliases:
     - default
