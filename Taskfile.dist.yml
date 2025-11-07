@@ -1,5 +1,11 @@
 version: '3.0'
 
+vars:
+  ALVAO_VERSION: '25.3.0'
+  OWNER: Ash258
+  NUGET_NAME: "{{.OWNER}}.Alvao.Mock.API"
+  NUGET_API_KEY: "{{.NUGET_API_KEY}}"
+
 tasks:
   build:
     cmd: dotnet run -- {{.CLI_ARGS}}
@@ -25,10 +31,12 @@ tasks:
     cmd: dotnet build .
   library:publish:
     dir: Alvao
-    cmd: dotnet publish -c Release
+    cmd: dotnet nuget push bin/Release/{{.NUGET_NAME}}.{{.ALVAO_VERSION}}.nupkg --api-key {{.NUGET_API_KEY}} --source https://nuget.pkg.github.com/{{.OWNER}}/index.json
   library:pack:
     dir: Alvao
-    cmd: dotnet pack -c Release
+    cmds:
+    - sed -i.backup -E 's/Version>\d+</Version>{{.ALVAO_VERSION}}</' Alvao.csproj
+    - dotnet pack --configuration Release
   test:
     cmd: dotnet run -- test
   tidy:
@@ -63,7 +71,6 @@ tasks:
     - task: library:build
     - task: library:format
     - task: library:build
-    - task: library:publish
     - task: library:pack
   run:clean:
     aliases:
