@@ -209,7 +209,6 @@ public static class MonkeyPatch {
 
             case "Alvao.API.Common":
                 AddUsingByClassName("AuditLog", "Alvao.API.Common.Model", clazz.Name, toAdd);
-                AddUsingByClassName("Email", "Rebex", clazz.Name, toAdd);
 
                 AddUsingByClassName("Person", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("PersonRights", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
