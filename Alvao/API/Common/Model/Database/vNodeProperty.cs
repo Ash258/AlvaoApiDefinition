@@ -6,9 +6,6 @@ namespace Alvao.API.Common.Model.Database;
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html"/>
 [Table("dbo.vNodeProperty")]
 public class vNodeProperty {
-    /// <summary>If the value of the property can be changed.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_CanModify"/>
-    public virtual bool? CanModify { get; set; }
     /// <summary>Name of the column in the NodeCust table.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_ColumnName"/>
     public virtual string ColumnName { get; set; }
@@ -18,10 +15,6 @@ public class vNodeProperty {
     /// <summary>Object ID (tblNode.intNodeId) from which the property is inherited.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_InheritedFromNodeId"/>
     public virtual int? InheritedFromNodeId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_IsDetected"/>
-    public virtual bool? IsDetected { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_IsFromAD"/>
-    public virtual bool? IsFromAD { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodeProperty.html#Alvao_API_Common_Model_Database_vNodeProperty_KindCode"/>
     public virtual int? KindCode { get; set; }
     /// <summary>Property data type ID</summary>

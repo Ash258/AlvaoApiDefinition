@@ -10,12 +10,8 @@ public class vNodePropertyMix {
     public virtual string AdGuid { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_IsHidden"/>
     public virtual bool? IsHidden { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_bolAutoUpdate"/>
-    public virtual bool bolAutoUpdate { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_bolComputerStateOn"/>
     public virtual bool? bolComputerStateOn { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_bolIgnoreDifferences"/>
-    public virtual bool bolIgnoreDifferences { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_intNodeId"/>
     public virtual int intNodeId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vNodePropertyMix.html#Alvao_API_Common_Model_Database_vNodePropertyMix_intNodeId1"/>

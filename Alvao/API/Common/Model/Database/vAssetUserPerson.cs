@@ -3,7 +3,7 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>
-/// The user's link in the object tree to the user in the Administration service (tPerson.
+/// The user's link in the object tree to the user in the Administration service (tPerson).
 /// Link based on priority:
 /// 
 /// AD GUID

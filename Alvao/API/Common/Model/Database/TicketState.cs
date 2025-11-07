@@ -33,6 +33,9 @@ public class TicketState {
     /// <summary>Display the command &quot;Transfer To Another Service&quot; at the top of the command panel: 0 - off, 1 - on</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketState.html#Alvao_API_Common_Model_Database_TicketState_DisplayCommandMoveToService"/>
     public virtual bool DisplayCommandMoveToService { get; set; }
+    /// <summary>Display the command &quot;New object&quot; at the top of the command panel: 0 - off, 1 - on</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketState.html#Alvao_API_Common_Model_Database_TicketState_DisplayCommandNewObject"/>
+    public virtual bool DisplayCommandNewObject { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketState.html#Alvao_API_Common_Model_Database_TicketState_IsApprovalState"/>
     public virtual bool IsApprovalState { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketState.html#Alvao_API_Common_Model_Database_TicketState_LocalizedState"/>

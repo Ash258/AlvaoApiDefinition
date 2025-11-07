@@ -122,7 +122,7 @@ public class tAct {
     /// <summary>Atribut XSpamStatus read from email</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tAct.html#Alvao_API_Common_Model_Database_tAct_sActXSpamStatus"/>
     public virtual string sActXSpamStatus { get; set; }
-    /// <summary>Name of computer on which the record was created. This attribute is only filled in by the ALVAO Service. This attribute is only available from version 2.9, records created with an older version will have a NULL value</summary>
+    /// <summary>Name of computer on which the record was created. This attribute is only filled in by the Alvao Service. This attribute is only available from version 2.9, records created with an older version will have a NULL value</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tAct.html#Alvao_API_Common_Model_Database_tAct_sRecordCreatedByMachine"/>
     public virtual string sRecordCreatedByMachine { get; set; }
 }

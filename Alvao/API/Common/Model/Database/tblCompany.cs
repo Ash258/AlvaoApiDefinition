@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Code list of organizations (software products library).</summary>
+/// <summary>Code list of organizations (software product library).</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblCompany.html"/>
 [Table("dbo.tblCompany")]
 public class tblCompany {

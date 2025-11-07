@@ -21,6 +21,9 @@ public class RelatedTicketRule {
     /// <summary>SQL condition for creating a ticket</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRule.html#Alvao_API_Common_Model_Database_RelatedTicketRule_SqlCondition"/>
     public virtual string SqlCondition { get; set; }
+    /// <summary>Ticket descrition template</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRule.html#Alvao_API_Common_Model_Database_RelatedTicketRule_TicketDescriptionTemplate"/>
+    public virtual string TicketDescriptionTemplate { get; set; }
     /// <summary>Ticket name template</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RelatedTicketRule.html#Alvao_API_Common_Model_Database_RelatedTicketRule_TicketNameTemplate"/>
     public virtual string TicketNameTemplate { get; set; }

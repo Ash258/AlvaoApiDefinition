@@ -179,7 +179,7 @@ public class tHdTicket {
     /// <summary>Ticket name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicket.html#Alvao_API_Common_Model_Database_tHdTicket_sHdTicket"/>
     public virtual string sHdTicket { get; set; }
-    /// <summary>device number.</summary>
+    /// <summary>Device number.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicket.html#Alvao_API_Common_Model_Database_tHdTicket_sHdTicketDeviceCode"/>
     public virtual string sHdTicketDeviceCode { get; set; }
     /// <summary>Group.</summary>

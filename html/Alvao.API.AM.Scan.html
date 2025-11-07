@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.8.0">
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
     <title>
       Class Scan | Alvao.API Documentation
@@ -70,7 +70,7 @@
         <article data-uid="Alvao.API.AM.Scan">
           <h1 id="Alvao_API_AM_Scan" data-uid="Alvao.API.AM.Scan" class="text-break">
             Class Scan <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBdev&amp;line=9">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBPATCH&amp;line=9">
             </a>
           </h1>
           <div class="facts text-secondary">
@@ -161,7 +161,7 @@
           "Alvao.API.AM.Scan.AddManualScanRequestsAsync(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.Threading.CancellationToken)">
             AddManualScanRequestsAsync(IEnumerable&lt;int&gt;, int, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBdev&amp;line=18">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBPATCH&amp;line=18">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -228,13 +228,50 @@
                 Throws when user does nor have permission to create manual scans
               </p>
             </dd>
+          </dl><a id="Alvao_API_AM_Scan_LastSWScan_" data-uid="Alvao.API.AM.Scan.LastSWScan*"></a>
+          <h3 id="Alvao_API_AM_Scan_LastSWScan_System_Int32_" data-uid="Alvao.API.AM.Scan.LastSWScan(System.Int32)">
+            LastSWScan(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBPATCH&amp;line=38">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Returns the date of the last SW scan for the given computer
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static DateTime? LastSWScan(int computerId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>computerId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Computer ID <i>(tblNode.intNodeId)</i>
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?
+            </dt>
+            <dd></dd>
           </dl><a id="Alvao_API_AM_Scan_SetScanProfile_" data-uid="Alvao.API.AM.Scan.SetScanProfile*"></a>
           <h3 id="Alvao_API_AM_Scan_SetScanProfile_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_"
           data-uid=
           "Alvao.API.AM.Scan.SetScanProfile(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)">
             SetScanProfile(IEnumerable&lt;int&gt;, int) <a class="header-action link-secondary" title="View source"
             href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBdev&amp;line=29">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Scan.cs&amp;version=GBPATCH&amp;line=29">
             </a>
           </h3>
           <div class="markdown level1 summary">

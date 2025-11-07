@@ -24,6 +24,8 @@ public class vTicketStateLoc {
     public virtual bool DisplayCommandAssignToSolver { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vTicketStateLoc.html#Alvao_API_Common_Model_Database_vTicketStateLoc_DisplayCommandMoveToService"/>
     public virtual bool DisplayCommandMoveToService { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vTicketStateLoc.html#Alvao_API_Common_Model_Database_vTicketStateLoc_DisplayCommandNewObject"/>
+    public virtual bool DisplayCommandNewObject { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vTicketStateLoc.html#Alvao_API_Common_Model_Database_vTicketStateLoc_IsApprovalState"/>
     public virtual bool IsApprovalState { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vTicketStateLoc.html#Alvao_API_Common_Model_Database_vTicketStateLoc_LocalizedDescription"/>

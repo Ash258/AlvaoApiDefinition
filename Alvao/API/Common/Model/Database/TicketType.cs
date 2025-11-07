@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Processes. Among others, the process defines possible ticket statuses, solving process, custom ticket items, etc.</summary>
+/// <summary>Processes. Among others, the process defines possible ticket statuses, workflow, ticket custom fields, etc.</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketType.html"/>
 [Table("dbo.TicketType")]
 public class TicketType {

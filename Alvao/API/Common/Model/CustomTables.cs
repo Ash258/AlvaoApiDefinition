@@ -4,6 +4,8 @@ namespace Alvao.API.Common.Model;
 public static class CustomTables {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomTables.html#Alvao_API_Common_Model_CustomTables_KeyMapping"/>
     public static readonly Dictionary<string, string> KeyMapping;
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomTables.html#Alvao_API_Common_Model_CustomTables_NodeRelation"/>
+    public const string NodeRelation = "NodeRelationCust";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomTables.html#Alvao_API_Common_Model_CustomTables_TicketState"/>
     public const string TicketState = "TicketStateCust";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.CustomTables.html#Alvao_API_Common_Model_CustomTables_tAccount"/>

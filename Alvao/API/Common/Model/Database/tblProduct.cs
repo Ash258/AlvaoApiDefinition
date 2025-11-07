@@ -3,7 +3,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Products / software (software products library).</summary>
+/// <summary>Products / software (software product library).</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.html"/>
 [Table("dbo.tblProduct")]
 public class tblProduct {

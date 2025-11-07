@@ -7,6 +7,11 @@ public static class News {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_DeleteAllTranslations_System_Int32_"/>
     /// <param name="newsId">Id of news for which delete all translations.</param>
     public static void DeleteAllTranslations(int newsId) { throw new NotImplementedException(); }
+    /// <summary>Gets news db model by id</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_GetById_System_Int32_"/>
+    /// <param name="id">News ID (News.id)</param>
+    /// <exception cref="UnauthorizedAccessException">Throws when user does not have rights to read the license.</exception>
+    public static Alvao.API.Common.Model.Database.News GetById(int id) { throw new NotImplementedException(); }
     /// <summary>Send news post by email</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_Send_System_Int32_System_Boolean_System_Boolean_System_String_"/>
     /// <param name="newsId">News post ID</param>
@@ -20,15 +25,21 @@ public static class News {
     /// <param name="recipients">List of email addresses of recipients</param>
     /// <param name="newsLink">Web link of the news that will be embeded into mail message</param>
     public static void Send(int newsId, List<string> recipients, string newsLink) { throw new NotImplementedException(); }
-    /// <summary>Create new translations of news with id newsId to all enabled languages.</summary>
+    /// <summary>Create new translations of news with id newsId to all enabled languages with less than 25000 characters.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_Translate_System_Int32_"/>
     /// <param name="newsId">Id of news to translate.</param>
     /// <returns>Whether the translation was successful.</returns>
     public static bool Translate(int newsId) { throw new NotImplementedException(); }
-    /// <summary>Create new translation of news with id newsId to language with id localeId.</summary>
+    /// <summary>Create new translation of news with id newsId to language with id localeId with less than 25000 characters.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_TranslateToLanguage_System_Int32_System_Int32_"/>
     /// <param name="newsId">Id of new for translation.</param>
     /// <param name="localeId">Id of languages to be translated.</param>
     /// <returns>Whether the translation was successful.</returns>
     public static bool TranslateToLanguage(int newsId, int localeId) { throw new NotImplementedException(); }
+    /// <summary>Create new translation of news with id newsId to language with id localeId of any length.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.News.html#Alvao_API_SD_News_TranslateToLanguageAsync_System_Int32_System_Int32_"/>
+    /// <param name="newsId">Id of new for translation.</param>
+    /// <param name="localeId">Id of languages to be translated.</param>
+    /// <returns>Whether the translation was successful.</returns>
+    public static Task<bool> TranslateToLanguageAsync(int newsId, int localeId) { throw new NotImplementedException(); }
 }

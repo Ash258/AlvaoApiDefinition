@@ -27,7 +27,4 @@ public class vDetectSettings {
     /// <summary>Full SW detection, include files.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vDetectSettings.html#Alvao_API_Common_Model_Database_vDetectSettings_SwInclude"/>
     public virtual string SwInclude { get; set; }
-    /// <summary>Agent port number during detection by Agent over TCP/IP.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vDetectSettings.html#Alvao_API_Common_Model_Database_vDetectSettings_TcpIpPort"/>
-    public virtual int? TcpIpPort { get; set; }
 }

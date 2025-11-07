@@ -16,12 +16,8 @@ public class vComputer {
     public virtual bool? IsHidden { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_bSwAllAllowed"/>
     public virtual bool bSwAllAllowed { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_bolAutoUpdate"/>
-    public virtual bool bolAutoUpdate { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_bolComputerStateOn"/>
     public virtual bool? bolComputerStateOn { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_bolIgnoreDifferences"/>
-    public virtual bool bolIgnoreDifferences { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_intNodeId"/>
     public virtual int intNodeId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vComputer.html#Alvao_API_Common_Model_Database_vComputer_intState"/>

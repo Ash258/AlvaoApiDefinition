@@ -189,6 +189,7 @@ public class tblKind {
         LansweeperSiteId = 186,
         ZabbixDeviceId = 187,
         ZabbixLastCheckIn = 188,
+        MsSccmDeviceId = 189,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.KindFlags.html#fields"/>
     [Flags]

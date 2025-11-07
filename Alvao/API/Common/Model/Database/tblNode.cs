@@ -6,6 +6,9 @@ namespace Alvao.API.Common.Model.Database;
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html"/>
 [Table("dbo.tblNode")]
 public class tblNode {
+    /// <summary>Object creation date.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_Created"/>
+    public virtual DateTime? Created { get; set; }
     /// <summary>Computer detection profile</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_DetectProfileId"/>
     public virtual int? DetectProfileId { get; set; }
@@ -44,15 +47,9 @@ public class tblNode {
     /// <summary>1=all software is allowed on PC for profiles</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bSwAllAllowed"/>
     public virtual bool bSwAllAllowed { get; set; }
-    /// <summary>1=according to hardware detection; automatic object update is enabled; Objects with an attribute value of 1 are displayed in this tree as a &quot;yellow triangle&quot; symbol</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bolAutoUpdate"/>
-    public virtual bool bolAutoUpdate { get; set; }
     /// <summary>1=object represents the last computer to respond to ping, 0=computer did not respond, NULL=ping not applied</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bolComputerStateOn"/>
     public virtual bool? bolComputerStateOn { get; set; }
-    /// <summary>1=any differences found on this object during hardware detection will be ignored and the program will not attempt to update the tree object</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bolIgnoreDifferences"/>
-    public virtual bool bolIgnoreDifferences { get; set; }
     /// <summary>Object id</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_intNodeId"/>
     [Key]
@@ -75,7 +72,7 @@ public class tblNode {
     /// <summary>object name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtName"/>
     public virtual string txtName { get; set; }
-    /// <summary>path to tree object, for example, &quot;Company/Prague Office/Sales Department&quot;</summary>
+    /// <summary>path to object in tree, e.g., &quot;Contoso/Prague/Sales Department&quot;</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtPath"/>
     public virtual string txtPath { get; set; }
 }

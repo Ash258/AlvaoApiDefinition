@@ -25,6 +25,11 @@ public static class ObjectRelation {
     /// <exception cref="ObjectRelationConditionViolatedException">Throws when object relation with relationId cannot be edited due to a condition violation (eg. cyclicity, one to many or duplicate).</exception>
     /// <returns>Edited object new relation ID (NodeRelation.id)</returns>
     public static int Edit(int relationId, int relationTypeId, int personId) { throw new NotImplementedException(); }
+    /// <summary>Recalculate required relation fields for a given relation type or ID.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_RecalcRequiredRelationFields_System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
+    /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
+    /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
+    public static void RecalcRequiredRelationFields(int? relationTypeId, int? relationId) { throw new NotImplementedException(); }
     /// <summary>Remove object relation.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Remove_System_Int32_System_Int32_"/>
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>

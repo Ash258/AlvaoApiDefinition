@@ -112,6 +112,11 @@ public static class Section {
     /// <returns>Request model (tHdTicket)</returns>
     public static tHdSection GetById(int sectionId) { throw new NotImplementedException(); }
     /// <summary>Returns section database model.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Section.html#Alvao_API_SD_Section_GetByIdAsync_System_Int32_"/>
+    /// <param name="sectionId">Section ID (tHdSection.iHdSectionId)</param>
+    /// <returns>Request model (tHdTicket)</returns>
+    public static Task<tHdSection> GetByIdAsync(int sectionId) { throw new NotImplementedException(); }
+    /// <summary>Returns section database model.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Section.html#Alvao_API_SD_Section_GetByTicketId_System_Int32_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <returns>Request model (tHdTicket)</returns>

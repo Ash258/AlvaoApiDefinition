@@ -51,6 +51,14 @@ public static class ObjectProperty {
     /// <param name="nodeId">Object ID (tblNode.intNodeId)</param>
     /// <param name="codes">Object property kind codes to return</param>
     public static IDictionary<tblKind.KindCode, string> GetValuesByKindCodes(int nodeId, IEnumerable<tblKind.KindCode> codes) { throw new NotImplementedException(); }
+    /// <summary>Returns if the user has rights for object property.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectProperty.html#Alvao_API_AM_ObjectProperty_HasObjectPropertyRight_System_Int32_System_Int32_System_Int32_Alvao_API_AM_Model_PropertyRight_Right_"/>
+    /// <param name="objectId">Object Id</param>
+    /// <param name="propertyKindId">Property kind ID</param>
+    /// <param name="personId">Person Id</param>
+    /// <param name="right">Type of right</param>
+    /// <returns>Bool value if the user has rights for object property</returns>
+    public static bool HasObjectPropertyRight(int objectId, int propertyKindId, int personId, PropertyRight.Right right) { throw new NotImplementedException(); }
     /// <summary>Checks whether object template contains specific property</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectProperty.html#Alvao_API_AM_ObjectProperty_TemplateContains_System_Int32_Alvao_API_Common_Model_Database_tblKind_KindCode_"/>
     /// <param name="classId">Object (template) class (tblClass.intClassId)</param>
@@ -79,17 +87,18 @@ public static class ObjectProperty {
     /// </code>
     /// </example>
     /// </summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectProperty.html#Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectProperty.html#Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_System_Boolean_"/>
     /// <param name="personId">Person ID (who updates properties) (tPerson.iPersonId)</param>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="properties">Object properties to update</param>
     /// <param name="callCustomAction">If true, object property auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
+    /// <param name="shouldLog">If true, the property value change is logged into tblLog. Default value is true.</param>
     /// <exception cref="ObjectNotFoundException">Throws when object with objectId or objectId does not exist.</exception>
-    /// <exception cref="UnauthorizedObjectOperationEception">Throws when person with personId doesn't have rights to move object with objectId.</exception>
+    /// <exception cref="UnauthorizedObjectOperationException">Throws when person with personId doesn't have rights to move object with objectId.</exception>
     /// <exception cref="MissingPropertyException">Throws when property was not found on object.</exception>
     /// <exception cref="InvalidPropertyValueTypeException">Throws when property value was not validated, because it has wrong type.</exception>
     /// <exception cref="PropertyValueViolatesUniquenessException">Throws when property value violates uniqueness.</exception>
-    public static void Update(int personId, int objectId, IDictionary<string, object> properties, bool callCustomAction = true) { throw new NotImplementedException(); }
+    public static void Update(int personId, int objectId, IDictionary<string, object> properties, bool callCustomAction = true, bool shouldLog = true) { throw new NotImplementedException(); }
     /// <summary>
     /// Updates object properties.
     /// <example>
@@ -108,7 +117,7 @@ public static class ObjectProperty {
     /// <param name="properties">Object properties to update</param>
     /// <param name="callCustomAction">If true, object property auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
     /// <exception cref="ObjectNotFoundException">Throws when object with objectId or objectId does not exist.</exception>
-    /// <exception cref="UnauthorizedObjectOperationEception">Throws when person with personId doesn't have rights to move object with objectId.</exception>
+    /// <exception cref="UnauthorizedObjectOperationException">Throws when person with personId doesn't have rights to move object with objectId.</exception>
     /// <exception cref="MissingPropertyException">Throws when property was not found on object.</exception>
     /// <exception cref="InvalidPropertyValueTypeException">Throws when property value was not validated, because it has wrong type.</exception>
     /// <exception cref="PropertyValueViolatesUniquenessException">Throws when property value violates uniqueness.</exception>
@@ -132,7 +141,7 @@ public static class ObjectProperty {
     /// <param name="properties">Object properties to update</param>
     /// <param name="callCustomAction">If true, object property auto actions are triggered. Default value is true. This method cannot be called in running transaction (if calling it is necessary, set the callCustomAction parameter to false).</param>
     /// <exception cref="ObjectNotFoundException">Throws when object with objectId or objectId does not exist.</exception>
-    /// <exception cref="UnauthorizedObjectOperationEception">Throws when person with personId doesn't have rights to move object with objectId.</exception>
+    /// <exception cref="UnauthorizedObjectOperationException">Throws when person with personId doesn't have rights to move object with objectId.</exception>
     /// <exception cref="MissingPropertyException">Throws when property was not found on object.</exception>
     /// <exception cref="InvalidPropertyValueTypeException">Throws when property value was not validated, because it has wrong type.</exception>
     /// <exception cref="PropertyValueViolatesUniquenessException">Throws when property value violates uniqueness.</exception>

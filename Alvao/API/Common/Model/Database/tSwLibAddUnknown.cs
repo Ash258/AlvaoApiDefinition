@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Sending unrecognized records, request for adding product to the standard software products library.</summary>
+/// <summary>Sending unrecognized records, request for adding product to the standard software product library.</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSwLibAddUnknown.html"/>
 [Table("dbo.tSwLibAddUnknown")]
 public class tSwLibAddUnknown {

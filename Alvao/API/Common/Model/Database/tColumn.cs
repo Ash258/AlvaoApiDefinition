@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>List of custom fields and certain system items.</summary>
+/// <summary>List of custom fields and certain system fields.</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tColumn.html"/>
 [Table("dbo.tColumn")]
 public class tColumn {

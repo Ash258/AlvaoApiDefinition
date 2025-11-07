@@ -24,6 +24,8 @@ public class tLocalization {
         TicketType = 13,
         Name = 14,
         TextHtml = 15,
+        txtName = 16,
+        ClassName = 17,
     }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.Table.html#fields"/>
     public enum Table {
@@ -35,6 +37,8 @@ public class tLocalization {
         TicketType = 5,
         NewTicketFormSection = 6,
         NewTicketFormTextBlock = 7,
+        tblKind = 8,
+        tblClass = 9,
     }
 
     /// <summary>If there is 1, this translation needs to be updated because the original text has been modified since last translation.</summary>

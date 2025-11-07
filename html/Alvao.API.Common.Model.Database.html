@@ -204,6 +204,21 @@ Classes
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.ExternalService.html">ExternalService</a></dt>
+      <dd><p>External services</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.ExternalServiceMetric.html">ExternalServiceMetric</a></dt>
+      <dd><p>External services metrics</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.ExternalServiceMetricValue.html">ExternalServiceMetricValue</a></dt>
+      <dd><p>Values of external service usages</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.FormScriptExtension.html">FormScriptExtension</a></dt>
       <dd><p>Definition of custom JavaScript for forms.</p>
 </dd>
@@ -272,6 +287,11 @@ The meaning of values in permission columns:
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.Import.html">Import</a></dt>
+      <dd><p>Imported CSV files</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.IntegratedAuthIpRange.html">IntegratedAuthIpRange</a></dt>
       <dd><p>IP address range for Integrated Windows Authentication.</p>
 </dd>
@@ -284,6 +304,11 @@ The meaning of values in permission columns:
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.KindRight.html">KindRight</a></dt>
       <dd><p>Security for properties.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.KnowledgeFeedback.html">KnowledgeFeedback</a></dt>
+      <dd><p>Feedback on knowledge.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -436,6 +461,11 @@ The meaning of values in permission columns:
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.NodeRelationCustChange.html">NodeRelationCustChange</a></dt>
+      <dd><p>Changes of object relation custom fields.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.NodeRelationType.html">NodeRelationType</a></dt>
       <dd><p>Types of links between objects in the AM.</p>
 </dd>
@@ -443,6 +473,11 @@ The meaning of values in permission columns:
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.NodeRelationTypeBehavior.html">NodeRelationTypeBehavior</a></dt>
       <dd><p>Types of links between objects in the AM from the viewpoint of system/custom links.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Alvao.API.Common.Model.Database.NodeRelationTypeColumn.html">NodeRelationTypeColumn</a></dt>
+      <dd><p>Custom fields used by object relation type.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -770,7 +805,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.TicketStateRequiredColumn.html">TicketStateRequiredColumn</a></dt>
-      <dd><p>Required items for individual ticket statuses, see dbo.<a href="#U_dbo.TicketState">TicketState</a>.</p>
+      <dd><p>Required fields for individual ticket statuses, see dbo.<a href="#U_dbo.TicketState">TicketState</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -805,7 +840,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.TicketType.html">TicketType</a></dt>
-      <dd><p>Processes. Among others, the process defines possible ticket statuses, solving process, custom ticket items, etc.</p>
+      <dd><p>Processes. Among others, the process defines possible ticket statuses, workflow, ticket custom fields, etc.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -950,7 +985,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tColumn.html">tColumn</a></dt>
-      <dd><p>List of custom fields and certain system items.</p>
+      <dd><p>List of custom fields and certain system fields.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -966,11 +1001,6 @@ NULL=not set</p>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tDb.html">tDb</a></dt>
       <dd><p>Database version, database language ID, activation keys for the entire ALVAO.</p>
-</dd>
-    </dl>
-    <dl class="jumplist">
-      <dt><a class="xref" href="Alvao.API.Common.Model.Database.tDetectedClassKind.html">tDetectedClassKind</a></dt>
-      <dd><p>Detected properties of the computer components.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1120,7 +1150,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tSwLibAddUnknown.html">tSwLibAddUnknown</a></dt>
-      <dd><p>Sending unrecognized records, request for adding product to the standard software products library.</p>
+      <dd><p>Sending unrecognized records, request for adding product to the standard software product library.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1185,7 +1215,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblCompany.html">tblCompany</a></dt>
-      <dd><p>Code list of organizations (software products library).</p>
+      <dd><p>Code list of organizations (software product library).</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1240,7 +1270,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblFileImage.html">tblFileImage</a></dt>
-      <dd><p>Recognition rules for files (software products library).</p>
+      <dd><p>Recognition rules for files (software product library).</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1350,22 +1380,22 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblProduct.html">tblProduct</a></dt>
-      <dd><p>Products / software (software products library).</p>
+      <dd><p>Products / software (software product library).</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblProductCategory.html">tblProductCategory</a></dt>
-      <dd><p>ID of the products categories (OS). Text in tblDict.</p>
+      <dd><p>ID of the product categories (OS). Text in tblDict.</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblProductPack.html">tblProductPack</a></dt>
-      <dd><p>Definition of software products packages (software products library).</p>
+      <dd><p>Definition of software product packages (software product library).</p>
 </dd>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblProductType.html">tblProductType</a></dt>
-      <dd><p>ID of the products types (commercial, freeware, ...) (software products library).</p>
+      <dd><p>ID of the product types (commercial, freeware, ...) (software product library).</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1375,7 +1405,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblRegImage.html">tblRegImage</a></dt>
-      <dd><p>Software products library - recognition rules for records from the register.</p>
+      <dd><p>Software product library - recognition rules for records from the register.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1395,7 +1425,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblSwLibUpdate.html">tblSwLibUpdate</a></dt>
-      <dd><p>Information on which computer is executing the software products library update.</p>
+      <dd><p>Information on which computer is executing the software product library update.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1410,7 +1440,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblVersion.html">tblVersion</a></dt>
-      <dd><p>Software products library version.</p>
+      <dd><p>Software product library version.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -1460,7 +1490,7 @@ NULL=not set</p>
     </dl>
     <dl class="jumplist">
       <dt><a class="xref" href="Alvao.API.Common.Model.Database.vAssetUserPerson.html">vAssetUserPerson</a></dt>
-      <dd><p>The user's link in the object tree to the user in the Administration service (tPerson.
+      <dd><p>The user's link in the object tree to the user in the Administration service (tPerson).
 Link based on priority:</p>
 <ol>
 <li>AD GUID</li>

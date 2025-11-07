@@ -44,6 +44,9 @@ public class tDocument {
     /// <summary>ID of the print report template (PrintReportTemplate) to which the attachment belongs.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDocument.html#Alvao_API_Common_Model_Database_tDocument_PrintReportTemplateId"/>
     public virtual int? PrintReportTemplateId { get; set; }
+    /// <summary>Related ticket rule ID to which the attachment belongs.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDocument.html#Alvao_API_Common_Model_Database_tDocument_RelatedTicketRuleId"/>
+    public virtual int? RelatedTicketRuleId { get; set; }
     /// <summary>Ticket status (TicketState.id) to whose instructions for resolvers this file belongs.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tDocument.html#Alvao_API_Common_Model_Database_tDocument_SolverInstructionsTicketStateId"/>
     public virtual int? SolverInstructionsTicketStateId { get; set; }

@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Definition of software products packages (software products library).</summary>
+/// <summary>Definition of software product packages (software product library).</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProductPack.html"/>
 [Table("dbo.tblProductPack")]
 public class tblProductPack {

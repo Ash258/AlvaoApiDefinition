@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.8.0">
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
     <title>
       Class Assistant | Alvao.API Documentation
@@ -70,7 +70,7 @@
         <article data-uid="Alvao.API.AI.Assistant">
           <h1 id="Alvao_API_AI_Assistant" data-uid="Alvao.API.AI.Assistant" class="text-break">
             Class Assistant <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=11">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=11">
             </a>
           </h1>
           <div class="facts text-secondary">
@@ -153,11 +153,38 @@
           </dl>
           <h2 class="section" id="methods">
             Methods
-          </h2><a id="Alvao_API_AI_Assistant_GetModel_" data-uid="Alvao.API.AI.Assistant.GetModel*"></a>
+          </h2><a id="Alvao_API_AI_Assistant_GetAIClient_" data-uid="Alvao.API.AI.Assistant.GetAIClient*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetAIClient" data-uid="Alvao.API.AI.Assistant.GetAIClient">
+            GetAIClient() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=27">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get instance of client for sending requests to Azure OpenAI.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static AIClient GetAIClient()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AI.AIClient.html">AIClient</a>
+            </dt>
+            <dd>
+              <p>
+                Instance of a client for sending requests to Azure OpenAI.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetModel_" data-uid="Alvao.API.AI.Assistant.GetModel*"></a>
           <h3 id="Alvao_API_AI_Assistant_GetModel_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.GetModel(System.Int32)">
             GetModel(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=18">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=18">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -198,7 +225,7 @@
           </dl><a id="Alvao_API_AI_Assistant_GetSettings_" data-uid="Alvao.API.AI.Assistant.GetSettings*"></a>
           <h3 id="Alvao_API_AI_Assistant_GetSettings" data-uid="Alvao.API.AI.Assistant.GetSettings">
             GetSettings() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=83">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=104">
             </a>
           </h3>
           <div class="markdown level1 summary"></div>
@@ -214,6 +241,96 @@
               <a class="xref" href="Alvao.API.AI.Model.AssistantSettings.html">AssistantSettings</a>
             </dt>
             <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_System_String_System_Int32_System_Int32_"
+          data-uid="Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles(System.String,System.Int32,System.Int32)">
+            GetSimilarKnowledgeArticles(string, int, int) <a class="header-action link-secondary" title="View source"
+            href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=99">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar knowledge articles for the given text.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static List&lt;KnowledgeTile&gt; GetSimilarKnowledgeArticles(string text, int personId = 0, int count = 5)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantich search in articles
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to articles. (0 - search in all articles)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar articles to return
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.KnowledgeTile.html">KnowledgeTile</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found articles that are similar to input text.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsDailyLimitExceeded_" data-uid=
+          "Alvao.API.AI.Assistant.IsDailyLimitExceeded*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsDailyLimitExceeded" data-uid="Alvao.API.AI.Assistant.IsDailyLimitExceeded">
+            IsDailyLimitExceeded() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=112">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Tests if daily usage quota has not been exceeded.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsDailyLimitExceeded()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd>
+              <p>
+                True if enabled and within daily quota; otherwise false.
+              </p>
+            </dd>
           </dl><a id="Alvao_API_AI_Assistant_UpdateArticles_" data-uid="Alvao.API.AI.Assistant.UpdateArticles*"></a>
           <h3 id=
           "Alvao_API_AI_Assistant_UpdateArticles_System_Collections_Generic_IEnumerable_System_Int32__System_DateTime_"
@@ -221,7 +338,7 @@
           "Alvao.API.AI.Assistant.UpdateArticles(System.Collections.Generic.IEnumerable{System.Int32},System.DateTime)">
             UpdateArticles(IEnumerable&lt;int&gt;, DateTime) <a class="header-action link-secondary" title=
             "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=29">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=38">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -275,7 +392,7 @@
           <h3 id="Alvao_API_AI_Assistant_UpdateServiceVectors_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.UpdateServiceVectors(System.Int32)">
             UpdateServiceVectors(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=38">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=47">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -304,7 +421,7 @@
           <h3 id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.UpdateTicketOnActChange(System.Int32)">
             UpdateTicketOnActChange(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=47">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=56">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -336,7 +453,7 @@
           "Alvao.API.AI.Assistant.UpdateTicketOnChange(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
             UpdateTicketOnChange(int, IEnumerable&lt;string&gt;) <a class="header-action link-secondary" title=
             "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=57">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=66">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -378,7 +495,7 @@
           "Alvao.API.AI.Assistant.UpdateTickets(System.Collections.Generic.IEnumerable{System.Int32},System.DateTime)">
             UpdateTickets(IEnumerable&lt;int&gt;, DateTime) <a class="header-action link-secondary" title="View source"
             href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=68">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=77">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -432,7 +549,7 @@
           <h3 id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_System_Int32_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange(System.Int32,System.Int32)">
             UpdateTicketsOnObjectChange(int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=78">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=87">
             </a>
           </h3>
           <div class="markdown level1 summary">

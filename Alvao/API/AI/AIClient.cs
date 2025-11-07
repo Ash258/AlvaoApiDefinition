@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Net;
+using Alvao.API.AI.Model;
 
 namespace Alvao.API.AI;
 
@@ -15,23 +16,21 @@ public class AIClient {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_LastStatusCode"/>
     public HttpStatusCode LastStatusCode { get; }
 
-    /// <summary>Create a new instance of the AI client.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient__ctor"/>
-    public AIClient() { }
-
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetAzureResponse_System_String_System_Object_"/>
     public HttpResponseMessage GetAzureResponse(string uri, object data) { throw new NotImplementedException(); }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_ChatChoiceResponse__"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetAzureResponseAsync_System_String_System_Object_"/>
+    public Task<HttpResponseMessage> GetAzureResponseAsync(string uri, object data) { throw new NotImplementedException(); }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChatChoiceResponse__"/>
     public static string GetChoicesText(IEnumerable<ChatChoiceResponse> choices) { throw new NotImplementedException(); }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_ChoiceResponse__"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChoiceResponse__"/>
     public static string GetChoicesText(IEnumerable<ChoiceResponse> choices) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetEmbeddingResponse_System_String_"/>
     public EmbeddingCreateResponse GetEmbeddingResponse(string text) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetKeywords_System_String_System_String_"/>
     public string GetKeywords(string model, string text) { throw new NotImplementedException(); }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_ChatCompletionCreateResponse_"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_ChatCompletionCreateResponse_"/>
     public static string GetResponseText(ChatCompletionCreateResponse response) { throw new NotImplementedException(); }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_CompletionCreateResponse_"/>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_CompletionCreateResponse_"/>
     public string GetResponseText(CompletionCreateResponse response) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.AIClient.html#Alvao_API_AI_AIClient_GetResult__1_System_Net_Http_HttpResponseMessage_"/>
     public T GetResult<T>(HttpResponseMessage response) { throw new NotImplementedException(); }

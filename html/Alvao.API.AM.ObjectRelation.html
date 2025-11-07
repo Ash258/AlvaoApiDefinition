@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.8.0">
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
     <title>
       Class ObjectRelation | Alvao.API Documentation
@@ -70,7 +70,7 @@
         <article data-uid="Alvao.API.AM.ObjectRelation">
           <h1 id="Alvao_API_AM_ObjectRelation" data-uid="Alvao.API.AM.ObjectRelation" class="text-break">
             Class ObjectRelation <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBdev&amp;line=10">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBPATCH&amp;line=10">
             </a>
           </h1>
           <div class="facts text-secondary">
@@ -158,7 +158,7 @@
           data-uid=
           "Alvao.API.AM.ObjectRelation.Create(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
             Create(int, int, int, int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBdev&amp;line=24">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBPATCH&amp;line=24">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -271,7 +271,7 @@
           <h3 id="Alvao_API_AM_ObjectRelation_Edit_System_Int32_System_Int32_System_Int32_" data-uid=
           "Alvao.API.AM.ObjectRelation.Edit(System.Int32,System.Int32,System.Int32)">
             Edit(int, int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBdev&amp;line=39">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBPATCH&amp;line=39">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -362,11 +362,53 @@
                 condition violation (eg. cyclicity, one to many or duplicate).
               </p>
             </dd>
+          </dl><a id="Alvao_API_AM_ObjectRelation_RecalcRequiredRelationFields_" data-uid=
+          "Alvao.API.AM.ObjectRelation.RecalcRequiredRelationFields*"></a>
+          <h3 id=
+          "Alvao_API_AM_ObjectRelation_RecalcRequiredRelationFields_System_Nullable_System_Int32__System_Nullable_System_Int32__"
+          data-uid=
+          "Alvao.API.AM.ObjectRelation.RecalcRequiredRelationFields(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            RecalcRequiredRelationFields(int?, int?) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBPATCH&amp;line=61">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Recalculate required relation fields for a given relation type or ID.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static void RecalcRequiredRelationFields(int? relationTypeId, int? relationId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>relationTypeId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
+            </dt>
+            <dd>
+              <p>
+                Object relation type ID <i>(NodeRelationType.id)</i>
+              </p>
+            </dd>
+            <dt>
+              <code>relationId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
+            </dt>
+            <dd>
+              <p>
+                Object relation ID <i>(NodeRelation.id)</i>
+              </p>
+            </dd>
           </dl><a id="Alvao_API_AM_ObjectRelation_Remove_" data-uid="Alvao.API.AM.ObjectRelation.Remove*"></a>
           <h3 id="Alvao_API_AM_ObjectRelation_Remove_System_Int32_System_Int32_" data-uid=
           "Alvao.API.AM.ObjectRelation.Remove(System.Int32,System.Int32)">
             Remove(int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBdev&amp;line=51">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectRelation.cs&amp;version=GBPATCH&amp;line=51">
             </a>
           </h3>
           <div class="markdown level1 summary">

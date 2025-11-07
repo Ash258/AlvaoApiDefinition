@@ -2,7 +2,7 @@ using Dapper.Contrib.Extensions;
 
 namespace Alvao.API.Common.Model.Database;
 
-/// <summary>Software products library version.</summary>
+/// <summary>Software product library version.</summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblVersion.html"/>
 [Table("dbo.tblVersion")]
 public class tblVersion {

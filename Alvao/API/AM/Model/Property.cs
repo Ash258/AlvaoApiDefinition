@@ -18,9 +18,6 @@ public class Property {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_HasGlobalScope"/>
     [JsonIgnore]
     public bool HasGlobalScope { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_IsDetected"/>
-    [JsonIgnore]
-    public bool IsDetected { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Property.html#Alvao_API_AM_Model_Property_IsFromAd"/>
     [JsonIgnore]
     public bool IsFromAd { get; set; }

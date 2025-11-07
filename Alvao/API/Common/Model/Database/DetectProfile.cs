@@ -15,9 +15,6 @@ public class DetectProfile {
     /// <summary>HW detection method ID</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_HwMethodId"/>
     public virtual int? HwMethodId { get; set; }
-    /// <summary>HW detection agent port number during detection by Agent over TCP/IP</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_HwTcpIpPort"/>
-    public virtual int? HwTcpIpPort { get; set; }
     /// <summary>Profile name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_ProfileName"/>
     public virtual string ProfileName { get; set; }
@@ -33,9 +30,6 @@ public class DetectProfile {
     /// <summary>SW detection method ID</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_SwMethodId"/>
     public virtual int? SwMethodId { get; set; }
-    /// <summary>SW detection agent port number during detection by Agent over TCP/IP</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_SwTcpIpPort"/>
-    public virtual int? SwTcpIpPort { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.DetectProfile.html#Alvao_API_Common_Model_Database_DetectProfile_id"/>
     [Key]

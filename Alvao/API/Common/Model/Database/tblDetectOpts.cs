@@ -10,8 +10,6 @@ public class tblDetectOpts {
     public virtual bool? bolSwFull { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblDetectOpts.html#Alvao_API_Common_Model_Database_tblDetectOpts_intDetectPeriod"/>
     public virtual int? intDetectPeriod { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblDetectOpts.html#Alvao_API_Common_Model_Database_tblDetectOpts_intTcpipPort"/>
-    public virtual int? intTcpipPort { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblDetectOpts.html#Alvao_API_Common_Model_Database_tblDetectOpts_lintComputerNodeId"/>
     public virtual int? lintComputerNodeId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblDetectOpts.html#Alvao_API_Common_Model_Database_tblDetectOpts_lintDetectId"/>

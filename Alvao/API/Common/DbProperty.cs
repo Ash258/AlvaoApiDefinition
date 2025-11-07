@@ -11,6 +11,8 @@ public static class DbProperty {
     public static string AM_Query_PreferredProperties { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AM_Scim_ImportUsers"/>
     public static bool AM_Scim_ImportUsers { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AM_ShowDomainInComputerName"/>
+    public static bool AM_ShowDomainInComputerName { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AddinWebUrl"/>
     public static string AddinWebUrl { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AlvaoStandardSenderAddress"/>
@@ -35,6 +37,10 @@ public static class DbProperty {
     public static string Authentication_LdapServer { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AutoLogoutMinutes"/>
     public static int AutoLogoutMinutes { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AutomaticReportSecurityIncidents_NUKIB_Email"/>
+    public static string AutomaticReportSecurityIncidents_NUKIB_Email { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_AutomaticReportSecurityIncidents_NUKIB_EmailTemplate"/>
+    public static string AutomaticReportSecurityIncidents_NUKIB_EmailTemplate { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_ContextHelpUrl"/>
     public static string ContextHelpUrl { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_Create_Doc"/>
@@ -77,6 +83,8 @@ public static class DbProperty {
     public static int MailSendRetryIntervalMinutes { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_MailerDaemons"/>
     public static string MailerDaemons { get; set; }
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_NewObject_Invoice_UseForObjectWithProperty"/>
+    public static string NewObject_Invoice_UseForObjectWithProperty { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_NonClasProdStateWarn"/>
     public static bool NonClasProdStateWarn { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_RestApiUrl"/>
@@ -89,8 +97,6 @@ public static class DbProperty {
     public static string ServiceDesk_RecommendedColors { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_ServiceDesk_SubmissionMethod"/>
     public static int ServiceDesk_SubmissionMethod { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_Show_Domain"/>
-    public static bool Show_Domain { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_SlaAlert_FromEmail"/>
     public static string SlaAlert_FromEmail { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.DbProperty.html#Alvao_API_Common_DbProperty_Transfer_Generate_New_Doc"/>

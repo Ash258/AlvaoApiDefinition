@@ -8,7 +8,7 @@ namespace Alvao.API.Common.Model.Database;
 public class tArticle {
     /// <summary>ID of an article from external services</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tArticle.html#Alvao_API_Common_Model_Database_tArticle_ExternalArticleId"/>
-    public virtual int? ExternalArticleId { get; set; }
+    public virtual string ExternalArticleId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tArticle.html#Alvao_API_Common_Model_Database_tArticle_HtmlArticle"/>
     public virtual string HtmlArticle { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tArticle.html#Alvao_API_Common_Model_Database_tArticle_HtmlArticleBinary"/>

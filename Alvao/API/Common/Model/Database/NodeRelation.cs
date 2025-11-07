@@ -27,6 +27,9 @@ public class NodeRelation {
     /// <summary>Link removal date and time (UTC)</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_RemovedDate"/>
     public virtual DateTime? RemovedDate { get; set; }
+    /// <summary>The relation does not have any of the required fields filled in.</summary>
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_RequiredRelationFieldAlert"/>
+    public virtual bool RequiredRelationFieldAlert { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelation.html#Alvao_API_Common_Model_Database_NodeRelation_id"/>
     [Key]

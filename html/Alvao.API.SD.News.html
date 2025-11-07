@@ -89,7 +89,7 @@
 
 
   <h1 id="Alvao_API_SD_News" data-uid="Alvao.API.SD.News" class="text-break">
-Class News  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=9"><i class="bi bi-code-slash"></i></a>
+Class News  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=9"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="Alvao_API_SD_News_DeleteAllTranslations_System_Int32_" data-uid="Alvao.API.SD.News.DeleteAllTranslations(System.Int32)">
   DeleteAllTranslations(int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Delete all translation of news with id <code class="paramref">newsId</code>.</p>
@@ -186,11 +186,55 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
 
 
 
+  <a id="Alvao_API_SD_News_GetById_" data-uid="Alvao.API.SD.News.GetById*"></a>
+
+  <h3 id="Alvao_API_SD_News_GetById_System_Int32_" data-uid="Alvao.API.SD.News.GetById(System.Int32)">
+  GetById(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets news db model by id</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static News GetById(int id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>News ID <i>(News.id)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.News.html">News</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.unauthorizedaccessexception">UnauthorizedAccessException</a></dt>
+    <dd><p>Throws when user does not have rights to read the license.</p>
+</dd>
+  </dl>
+
+
+
   <a id="Alvao_API_SD_News_Send_" data-uid="Alvao.API.SD.News.Send*"></a>
 
   <h3 id="Alvao_API_SD_News_Send_System_Int32_System_Boolean_System_Boolean_System_String_" data-uid="Alvao.API.SD.News.Send(System.Int32,System.Boolean,System.Boolean,System.String)">
   Send(int, bool, bool, string)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=18"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send news post by email</p>
@@ -232,7 +276,7 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="Alvao_API_SD_News_Send_System_Int32_System_Collections_Generic_List_System_String__System_String_" data-uid="Alvao.API.SD.News.Send(System.Int32,System.Collections.Generic.List{System.String},System.String)">
   Send(int, List&lt;string&gt;, string)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=39"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Send news post to recipients</p>
@@ -271,10 +315,10 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="Alvao_API_SD_News_Translate_System_Int32_" data-uid="Alvao.API.SD.News.Translate(System.Int32)">
   Translate(int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=39"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=49"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Create new translations of news with id <code class="paramref">newsId</code> to all enabled languages.</p>
+  <div class="markdown level1 summary"><p>Create new translations of news with id <code class="paramref">newsId</code> to all enabled languages with less than 25000 characters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -310,10 +354,10 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="Alvao_API_SD_News_TranslateToLanguage_System_Int32_System_Int32_" data-uid="Alvao.API.SD.News.TranslateToLanguage(System.Int32,System.Int32)">
   TranslateToLanguage(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBdev&amp;line=50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Create new translation of news with id <code class="paramref">newsId</code> to language with id <code class="paramref">localeId</code>.</p>
+  <div class="markdown level1 summary"><p>Create new translation of news with id <code class="paramref">newsId</code> to language with id <code class="paramref">localeId</code> with less than 25000 characters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -334,6 +378,48 @@ Class News  <a class="header-action link-secondary" title="View source" href="ht
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Whether the translation was successful.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_SD_News_TranslateToLanguageAsync_" data-uid="Alvao.API.SD.News.TranslateToLanguageAsync*"></a>
+
+  <h3 id="Alvao_API_SD_News_TranslateToLanguageAsync_System_Int32_System_Int32_" data-uid="Alvao.API.SD.News.TranslateToLanguageAsync(System.Int32,System.Int32)">
+  TranslateToLanguageAsync(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/SD/News.cs&amp;version=GBPATCH&amp;line=71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create new translation of news with id <code class="paramref">newsId</code> to language with id <code class="paramref">localeId</code> of any length.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;bool&gt; TranslateToLanguageAsync(int newsId, int localeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newsId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Id of new for translation.</p>
+</dd>
+    <dt><code>localeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Id of languages to be translated.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
     <dd><p>Whether the translation was successful.</p>
 </dd>
   </dl>

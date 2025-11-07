@@ -2,6 +2,14 @@ namespace Alvao.API.SD.Model;
 
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html"/>
 public sealed class TemplatesVariablesConsts {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Alert1SentDate"/>
+    public const string Alert1SentDate = "Alert1SentDate";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Alert2SentDate"/>
+    public const string Alert2SentDate = "Alert2SentDate";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Alert3SentDate"/>
+    public const string Alert3SentDate = "Alert3SentDate";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_AlertNo"/>
+    public const string AlertNo = "AlertNo";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ApprovalByEmail"/>
     public const string ApprovalByEmail = "ApprovalByEmail";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ApprovalByForm"/>
@@ -16,6 +24,16 @@ public sealed class TemplatesVariablesConsts {
     public const string CommentForApprover = "CommentForApprover";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_CommentForRequester"/>
     public const string CommentForRequester = "CommentForRequester";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ComputerProductTable"/>
+    public const string ComputerProductTable = "ComputerProductTable";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ComputerSwManager"/>
+    public const string ComputerSwManager = "ComputerSwManager";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ComputerSwManagersManager"/>
+    public const string ComputerSwManagersManager = "ComputerSwManagersManager";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Date"/>
+    public const string Date = "Date";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_DetectPeriod"/>
+    public const string DetectPeriod = "DetectPeriod";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_DeviceCode"/>
     public const string DeviceCode = "sHdTicketDeviceCode";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_FeedbackGeneralForm"/>
@@ -24,6 +42,10 @@ public sealed class TemplatesVariablesConsts {
     public const string FeedbackUrl = "FeedbackUrl";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_FirstReactionDeadline"/>
     public const string FirstReactionDeadline = "FirstReactionDeadline";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_FromAlertDays"/>
+    public const string FromAlertDays = "FromAlertDays";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_FromPersonName"/>
+    public const string FromPersonName = "FromPersonName";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Group"/>
     public const string Group = "sHdTicketGroup";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Impact"/>
@@ -34,6 +56,14 @@ public sealed class TemplatesVariablesConsts {
     public const string MessageForRequester = "MessageForRequester";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_MessageForSolver"/>
     public const string MessageForSolver = "MessageForSolver";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_MyAssetURL"/>
+    public const string MyAssetURL = "MyAssetURL";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_MyDocumentsURL"/>
+    public const string MyDocumentsURL = "MyDocumentsURL";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_NotConfirmedDocuments"/>
+    public const string NotConfirmedDocuments = "NotConfirmedDocuments";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ObjectType"/>
+    public const string ObjectType = "ObjectType";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Objects"/>
     public const string Objects = "Objects";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ObjectsPath"/>
@@ -58,6 +88,10 @@ public sealed class TemplatesVariablesConsts {
     public const string RequesterDepartment = "sHdTicketUserDepartment";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Sla"/>
     public const string Sla = "SLA";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TeamAlertDays"/>
+    public const string TeamAlertDays = "TeamAlertDays";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Text"/>
+    public const string Text = "Text";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketDeadline"/>
     public const string TicketDeadline = "TicketDeadline";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketID"/>
@@ -68,6 +102,8 @@ public sealed class TemplatesVariablesConsts {
     public const string TicketMessageTag = "TicketMessageTag";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketMessageTagLink"/>
     public const string TicketMessageTagLink = "TicketMessageTagLink";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketProcess"/>
+    public const string TicketProcess = "TicketProcess";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketRequestedForAccountName"/>
     public const string TicketRequestedForAccountName = "TicketRequestedForAccountName";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketRequestedForDepartment"/>
@@ -160,6 +196,16 @@ public sealed class TemplatesVariablesConsts {
     public const string TicketTitle = "TicketTitle";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketUrl"/>
     public const string TicketUrl = "TicketUrl";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketUserCompany"/>
+    public const string TicketUserCompany = "TicketUserCompany";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TicketUserOffice"/>
+    public const string TicketUserOffice = "TicketUserOffice";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ToAlertDays"/>
+    public const string ToAlertDays = "ToAlertDays";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_ToPersonName"/>
+    public const string ToPersonName = "ToPersonName";
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_TransferNumber"/>
+    public const string TransferNumber = "TransferNumber";
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.TemplatesVariablesConsts.html#Alvao_API_SD_Model_TemplatesVariablesConsts_Urgency"/>
     public const string Urgency = "Urgency";
 }

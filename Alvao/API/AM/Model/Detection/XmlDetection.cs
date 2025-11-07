@@ -6,6 +6,8 @@ namespace Alvao.API.AM.Model.Detection;
 
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html"/>
 public class XmlDetection : XmlDocument, IEnumerable, ICloneable, IXPathNavigable {
+    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html#Alvao_API_AM_Model_Detection_XmlDetection_IsSwLibDetection"/>
+    public bool IsSwLibDetection { get; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html#Alvao_API_AM_Model_Detection_XmlDetection_PersonId"/>
     public int PersonId { get; }
 

@@ -53,6 +53,7 @@ public static class AuditLog {
         OrganizationDeleted = 43,
         OrganizationEdited = 44,
         OrganizationRecovered = 45,
+        PersonRecovered = 46,
     }
 
     /// <summary>Creates system block.</summary>
