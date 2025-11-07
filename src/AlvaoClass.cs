@@ -697,13 +697,19 @@ public class AlvaoClass {
         // This order of members is important for code generation. Generation has to be done in same order
         List<int> all = [Enums.Count, Fields.Count, Properties.Count, Constructors.Count, Methods.Count, Events.Count];
         var _def = SanitizeXmlToString(Definition);
+        var closingBracketInserted = false;
 
         if (standaloneEnum) {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
-            sb.AppendLine(SanitizeXmlToString(Definition));
-            sb.AppendLine("{");
-            {
-                SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(x) + ", ")));
+            // When there are no members, inline the object
+            if (all.All(x => x == 0)) {
+                sb.AppendLine($"{_def} {{ }}");
+                closingBracketInserted = true;
+            } else {
+                sb.AppendLine($"{_def} {{");
+                {
+                    SpecialEnumClass.Fields.ForEach(x => sb.AppendLine(PrefixEachLineSpaces(SanitizeXmlToString(x) + ", ")));
+                }
             }
         } else {
             Logger.LogInformation("Processing normal class file [{}] {{{}}}", Name, NamespaceName);
@@ -748,7 +754,9 @@ public class AlvaoClass {
             });
         }
 
-        sb.AppendLine("}"); // End class
+        if (!closingBracketInserted) {
+            sb.AppendLine("}"); // End class
+        }
 
         if (nestedClass) {
             parentClass.InnerClasses.Add(sb.ToString());
