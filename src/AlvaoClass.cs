@@ -694,6 +694,10 @@ public class AlvaoClass {
         GenerateSummary(Summary, indent, [], sb);
         GenerateSeeUrl(FullUrl, indent, sb);
 
+        // This order of members is important for code generation. Generation has to be done in same order
+        List<int> all = [Enums.Count, Fields.Count, Properties.Count, Constructors.Count, Methods.Count, Events.Count];
+        var _def = SanitizeXmlToString(Definition);
+
         if (standaloneEnum) {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
             sb.AppendLine(SanitizeXmlToString(Definition));
@@ -706,36 +710,33 @@ public class AlvaoClass {
 
             sb.AppendLine(SanitizeXmlToString(Definition));
             sb.AppendLine("{");
-            bool indentNext = false;
+
+            // this code generated csharp class with members defined in respective arrays.
+            // Update the code to insert exactly 1 empty line between two differnt member types (fields, props, methods, ...)
             {
+                int indexOfMember = 0;
                 Logger.LogDebug("Appending {} enums [{}] {{{}}}", Enums.Count, Name, NamespaceName);
                 Enums.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Enums.Count > 0;
 
                 Logger.LogDebug("Appending {} fields [{}] {{{}}}", Fields.Count, Name, NamespaceName);
-                if (indentNext && Fields.Count > 0) sb.AppendLine("");
+                InsertSpaceBetweenMemberTypes(sb, all, ref indexOfMember);
                 Fields.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Fields.Count > 0;
 
                 Logger.LogDebug("Appending {} properties [{}] {{{}}}", Properties.Count, Name, NamespaceName);
-                if (indentNext && Properties.Count > 0) sb.AppendLine("");
+                InsertSpaceBetweenMemberTypes(sb, all, ref indexOfMember);
                 Properties.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Properties.Count > 0;
 
                 Logger.LogDebug("Appending {} constructors [{}] {{{}}}", Constructors.Count, Name, NamespaceName);
-                if (indentNext && Constructors.Count > 0) sb.AppendLine("");
+                InsertSpaceBetweenMemberTypes(sb, all, ref indexOfMember);
                 Constructors.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Constructors.Count > 0;
 
                 Logger.LogDebug("Appending {} methods [{}] {{{}}}", Methods.Count, Name, NamespaceName);
-                if (indentNext && Methods.Count > 0) sb.AppendLine("");
+                InsertSpaceBetweenMemberTypes(sb, all, ref indexOfMember);
                 Methods.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Methods.Count > 0;
 
                 Logger.LogDebug("Appending {} events [{}] {{{}}}", Events.Count, Name, NamespaceName);
-                if (indentNext && Events.Count > 0) sb.AppendLine("");
+                InsertSpaceBetweenMemberTypes(sb, all, ref indexOfMember);
                 Events.ForEach(el => sb.AppendLine(el.Produce()));
-                indentNext = Events.Count > 0;
             }
         }
 
@@ -762,6 +763,17 @@ public class AlvaoClass {
         File.WriteAllText(FinalCsFile, sb.ToString());
         Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
         State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
+    }
+
+    /**
+    * Insert space in between two member types.
+    * Space is inserted if current number of members it non-zero and if any of previous members is non-zero
+    */
+    internal static void InsertSpaceBetweenMemberTypes(StringBuilder sb, List<int> all, ref int indexOfMember) {
+        indexOfMember++;
+        if (all[indexOfMember] != 0 && all.Take(indexOfMember).Any(x => x != 0)) {
+            sb.AppendLine("");
+        }
     }
 
     internal List<string> GetAllDefinitionsAsList() {
