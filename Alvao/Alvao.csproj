@@ -6,12 +6,12 @@
     <Nullable>enable</Nullable>
     <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,CS8765,CS8767</NoWarn>
 
-    <PackageId>Smatlactvo.Alvao.Mock.API</PackageId>
-    <Version>25</Version>
+    <PackageId>Ash258.Alvao.Mock.API</PackageId>
+    <Version>25.3.0-1</Version>
     <Authors>Jakub Čábera</Authors>
-    <Company>Šmatláctvo</Company>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Ash258/AlvaoApiDefinition.git</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -127,7 +127,7 @@ public static class MonkeyPatch {
         }
 
         // commonNs
-        foreach (var name in new string[] { "LicenseModule", "ModuleInfo" }) {
+        foreach (var name in new string[] { "LicenseModule", "ModuleInfo", "DocumentFieldDictionary", "AnalyzeResult", "AnalyzedDocument", "ServiceBase" }) {
             var clazz = new AlvaoClass(
                 name,
                 "Class",
@@ -186,13 +186,20 @@ public static class MonkeyPatch {
                 AddUsingByClassName("SoftwareProfile", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("Object", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("Object", "Alvao.API.AM.Exceptions", clazz.Name, toAdd);
+                AddUsingByClassName("Object", "Alvao.API.AM.Model.XmlExport", clazz.Name, toAdd);
                 AddUsingByClassName("ImportCsv", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
+
+                AddUsingByClassName("LinkModel", "Alvao.API.Common.Model", clazz.Name, toAdd);
+                AddUsingByClassName("AMDocument", "Alvao.API.Common.Model", clazz.Name, toAdd);
+                AddUsingByClassName("AMDocument", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("InvoiceProcessor", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AM.Model":
                 AddUsingByClassName("ObjectClass", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 AddUsingByClassName("ObjectProperty", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("CancelOemLicenseModel", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("InvoiceProperty", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AM.Model.Detection":
                 AddUsingByClassName("DetectLog", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -221,6 +228,8 @@ public static class MonkeyPatch {
                 AddUsingByClassName("Locale", "Alvao.API.Common.Model", clazz.Name, toAdd);
 
                 AddUsingByClassName("MSEntraTenant", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("Locale", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
+                AddUsingByClassName("ExternalService", "Alvao.API.Common.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.Common.Model":
                 AddUsingByClassName("ColumnValue", "static Alvao.API.Common.Database", clazz.Name, toAdd);
@@ -266,6 +275,13 @@ public static class MonkeyPatch {
                 AddUsingByClassName("IConnectionScope", "System.Data", clazz.Name, toAdd);
                 AddUsingByClassName("IConnectionScope", "Microsoft.Data.SqlClient", clazz.Name, toAdd);
                 break;
+            case "Alvao.API.AI.Service":
+                AddUsingByClassName("IDocumentIntelligenceClientService", "Alvao.API.Common", clazz.Name, toAdd);
+                AddUsingByClassName("IDocumentIntelligenceClientService", "Azure", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.AI.Service.Implementation":
+                AddUsingByClassName("DocumentIntelligenceClientService", "Azure", clazz.Name, toAdd);
+                break;
         }
 
         if (toAdd.Count == 0) return;
@@ -280,6 +296,8 @@ public static class MonkeyPatch {
 
         List<(string, string)> map =
         [
+            (" StringBuilder ", "System.Text"),
+
             // Exceptions
             ("ValidationInExecuteException", "System.Runtime.Serialization"),
             ("TicketApprovalNotInProgressException", "System.Runtime.Serialization"),
@@ -293,8 +311,10 @@ public static class MonkeyPatch {
             ("[Table(", "Dapper.Contrib.Extensions"),
             ("[JsonIgnore]", "Newtonsoft.Json"),
             ("[JsonProperty", "Newtonsoft.Json"),
+            ("[JsonPropertyName", "System.Text.Json.Serialization"),
             (" ILogger", "Microsoft.Extensions.Logging"),
 
+            (" IAttachment", "Alvao.API.Common.Model"),
             (" ISerializable", "System.Runtime.Serialization"),
             (" CultureInfo ", "System.Globalization"),
             (" XmlDetection", "System.Xml"),
@@ -309,6 +329,18 @@ public static class MonkeyPatch {
 
             ("vColumnValueLoc", "Alvao.API.Common.Model.Database"),
             ("vColumnLoc", "Alvao.API.Common.Model.Database"),
+
+            ("ImportViewModel", "Alvao.API.AM.Model.XmlExport"),
+            ("ImportCsvSettings", "Alvao.API.AM.Model.CsvImport"),
+
+            ("EmbeddingCreateResponse", "Alvao.API.AI.Model"),
+            ("InvoiceTemplate", "Alvao.API.AI.Model"),
+            ("AMDocumentsModel", "Alvao.API.AI.Model"),
+
+            (" DocumentFieldDictionary ", "Alvao.API.Common"),
+            (" DocumentIntelligenceClientService ", "Alvao.API.Common"),
+            ("AnalyzedDocument", "Alvao.API.Common"),
+            ("AttachmentModel", "Alvao.API.Common.Model"),
         ];
 
         foreach (var d in definitions) {
@@ -406,6 +438,14 @@ public static class MonkeyPatch {
                     break;
                 case "GetTopicById":
                     _def = method.Definition.Replace(" WebhookTopic ", " Alvao.API.Common.Model.Database.WebhookTopic ");
+                    break;
+            }
+        }
+
+        if (IsClass(clazz, "Alvao.API.SD", "News")) {
+            switch (method.Name) {
+                case "GetById":
+                    _def = method.Definition.Replace(" News", " Alvao.API.Common.Model.Database.News");
                     break;
             }
         }

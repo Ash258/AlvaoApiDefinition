@@ -9,9 +9,10 @@ Purpose of this repository is to scrape **publicly available** documentation of 
 1. Create new dotnet project
     1. `dotnet new console --name custom.app.development`
     1. `cd custom.app.development`
-1. Add required packages
+1. Add packages, that are part of Alvao application
 
     ```bash
+    dotnet add package Azure.Core
     dotnet add package AutoMapper
     dotnet add package Dapper
     dotnet add package Dapper.Contrib
@@ -19,14 +20,15 @@ Purpose of this repository is to scrape **publicly available** documentation of 
     dotnet add package Microsoft.EntityFrameworkCore
     dotnet add package Newtonsoft.Json
     dotnet add package Volo.Abp.EntityFrameworkCore
-    dotnet add package Smatlactvo.Mock.AlvaoAP
     dotnet add package Microsoft.Graph
     ```
 
-1. Create new application class and implement it.
-   - Examples could be found in Examples folder.
+1. Add this package:
+   1. `dotnet add package Ash258.Alvao.Mock.API`
 
-## Logging levels
+## Development
+
+### Logging levels
 
 `export Logging__LogLevel__AlvaoScrapper=1`
 

@@ -1,7 +1,7 @@
 version: '3.0'
 
 vars:
-  ALVAO_VERSION: '25.3.0'
+  ALVAO_VERSION: '25.3.0-1'
   OWNER: Ash258
   NUGET_NAME: "{{.OWNER}}.Alvao.Mock.API"
   NUGET_API_KEY: "{{.NUGET_API_KEY}}"
@@ -35,7 +35,7 @@ tasks:
   library:pack:
     dir: Alvao
     cmds:
-    - sed -i.backup -E 's/Version>\d+</Version>{{.ALVAO_VERSION}}</' Alvao.csproj
+    - sed -i.backup -E 's/Version>[0-9.\-]+</Version>{{.ALVAO_VERSION}}</' Alvao.csproj
     - dotnet pack --configuration Release
   test:
     cmd: dotnet run -- test
@@ -79,3 +79,9 @@ tasks:
     cmds:
     - task: library:clean
     - task: run
+  run:clean:html:
+    aliases:
+    - r:c:h
+    cmds:
+    - task: html-cache:clean
+    - task: run:clean
