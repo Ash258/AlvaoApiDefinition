@@ -714,8 +714,8 @@ public class AlvaoClass {
         } else {
             Logger.LogInformation("Processing normal class file [{}] {{{}}}", Name, NamespaceName);
 
-            sb.AppendLine(SanitizeXmlToString(Definition));
-            sb.AppendLine("{");
+            sb.Append(SanitizeXmlToString(Definition));
+            sb.AppendLine(" {");
 
             // this code generated csharp class with members defined in respective arrays.
             // Update the code to insert exactly 1 empty line between two differnt member types (fields, props, methods, ...)
@@ -750,7 +750,7 @@ public class AlvaoClass {
             Logger.LogDebug("Processing {} innerclasses [{}] {{{}}}", InnerClasses.Count, Name, NamespaceName);
             InnerClasses.ForEach(el => {
                 sb.AppendLine("");
-                sb.AppendLine(PrefixEachLineSpaces(el, 4 * 2));
+                sb.AppendLine(PrefixEachLineSpaces(el, 4));
             });
         }
 
