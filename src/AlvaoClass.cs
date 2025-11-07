@@ -702,7 +702,7 @@ public class AlvaoClass {
         if (standaloneEnum) {
             Logger.LogInformation("Processing standalone enum file [{}] {{{}}}", Name, NamespaceName);
             // When there are no members, inline the object
-            if (all.All(x => x == 0)) {
+            if (SpecialEnumClass.Fields.Count == 0) {
                 sb.AppendLine($"{_def} {{ }}");
                 closingBracketInserted = true;
             } else {
