@@ -219,6 +219,7 @@ public class tblKind {
         Unique = 4096,
         SelectOnly = 8192,
     }
+
     /// <summary>Property categories</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_Category"/>
     public virtual string Category { get; set; }

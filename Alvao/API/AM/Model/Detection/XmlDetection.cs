@@ -8,6 +8,7 @@ namespace Alvao.API.AM.Model.Detection;
 public class XmlDetection : XmlDocument, IEnumerable, ICloneable, IXPathNavigable {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html#Alvao_API_AM_Model_Detection_XmlDetection_PersonId"/>
     public int PersonId { get; }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html#Alvao_API_AM_Model_Detection_XmlDetection_ElementStringValue_System_Xml_XmlDocument_System_String_"/>
     public static string ElementStringValue(XmlDocument xml, string xpath) { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.XmlDetection.html#Alvao_API_AM_Model_Detection_XmlDetection_EncodeInvalidXmlChars_System_IO_MemoryStream_"/>

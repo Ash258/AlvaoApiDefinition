@@ -11,6 +11,7 @@ public class ActMark {
         RequestSpecification = 1,
         RequestSolution = 2,
     }
+
     /// <summary>Record marking name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ActMark.html#Alvao_API_Common_Model_Database_ActMark_Name"/>
     public virtual string Name { get; set; }

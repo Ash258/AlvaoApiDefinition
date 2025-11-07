@@ -12,6 +12,7 @@ public class tSmtp {
         Basic = 1,
         Integrated = 2,
     }
+
     /// <summary>Authentication type: 0 = OAuth, 1 = Basic, 2 = Integrated</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tSmtp.html#Alvao_API_Common_Model_Database_tSmtp_AuthType"/>
     public virtual int AuthType { get; set; }

@@ -36,6 +36,7 @@ public class tLocalization {
         NewTicketFormSection = 6,
         NewTicketFormTextBlock = 7,
     }
+
     /// <summary>If there is 1, this translation needs to be updated because the original text has been modified since last translation.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_NeedsUpdate"/>
     public virtual bool NeedsUpdate { get; set; }

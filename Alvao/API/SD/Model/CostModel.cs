@@ -15,6 +15,7 @@ public class CostModel {
     /// <summary>Work</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_WorkTime"/>
     public TimeSpan? WorkTime { get; set; }
+
     /// <summary>Determines whether the specified object is equal to the current object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.CostModel.html#Alvao_API_SD_Model_CostModel_Equals_System_Object_"/>
     /// <param name="obj">The object to compare with the current object.</param>

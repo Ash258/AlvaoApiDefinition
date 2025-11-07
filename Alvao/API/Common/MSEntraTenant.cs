@@ -13,6 +13,7 @@ public class MSEntraTenant {
         KnowledgeBaseSharepoint = 4,
         MsToDo = 5,
     }
+
     /// <summary>Get list of all tenants.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.MSEntraTenant.html#Alvao_API_Common_MSEntraTenant_GetAll"/>
     /// <returns>list of all tenants (AzureAdTenant)</returns>

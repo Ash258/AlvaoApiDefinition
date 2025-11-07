@@ -116,6 +116,7 @@ public class MessageDataBaseModel {
     public string TicketTitle { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_Urgency"/>
     public int Urgency { get; set; }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.MessageDataBaseModel.html#Alvao_API_SD_Model_MessageDataBaseModel_GetPropertyValueByName_System_String_System_Object_"/>
     public static string GetPropertyValueByName(string name, object model) { throw new NotImplementedException(); }
 }

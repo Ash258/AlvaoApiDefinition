@@ -1,9 +1,8 @@
 namespace Alvao.API.AM.Model.Detection.Software;
 
 /// <summary>
-/// OSVERSIONINFOA and OSVERSIONINFOEXA structure emulation
-/// https://docs.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-osversioninfoa
-/// https://docs.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-osversioninfoexa
+/// OSVERSIONINFOA and OSVERSIONINFOEXA structure emulation https://docs.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-osversioninfoa
+///               https://docs.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-osversioninfoexa
 /// </summary>
 /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.Software.OsVersionInfo.html"/>
 public class OsVersionInfo {

@@ -33,6 +33,7 @@ public class tblProduct {
         No = 2,
         Notify = 3,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblProduct.html#Alvao_API_Common_Model_Database_tblProduct_AddToSoftwareLibrary"/>
     [Ignore]
     public bool AddToSoftwareLibrary { get; }

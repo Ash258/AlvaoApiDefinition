@@ -15,6 +15,7 @@ public class TransferConfirmAlertRule {
         AlertManager = 5,
         Unknown = 6,
     }
+
     /// <summary>A flag indicating whether or not the alert is active.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.html#Alvao_API_Common_Model_Database_TransferConfirmAlertRule_Active"/>
     public virtual bool Active { get; set; }

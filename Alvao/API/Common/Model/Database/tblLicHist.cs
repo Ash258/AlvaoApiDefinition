@@ -23,6 +23,7 @@ public class tblLicHist {
         OEM = 4,
         CAL = 5,
     }
+
     /// <summary>Assign automatically</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblLicHist.html#Alvao_API_Common_Model_Database_tblLicHist_AutoAssign"/>
     public virtual bool AutoAssign { get; set; }

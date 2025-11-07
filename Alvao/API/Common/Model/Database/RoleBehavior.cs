@@ -36,6 +36,7 @@ public class RoleBehavior {
         KnowledgeBaseRootAdministrator = 26,
         ContactsReader = 27,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RoleBehavior.html#Alvao_API_Common_Model_Database_RoleBehavior__RoleBehavior"/>
     public virtual string _RoleBehavior { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.RoleBehavior.html#Alvao_API_Common_Model_Database_RoleBehavior_id"/>

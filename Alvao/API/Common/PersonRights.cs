@@ -70,6 +70,7 @@ public static class PersonRights {
         TicketRequestParticipantManager = 8192,
         TicketSolverGroupMember = 16384,
     }
+
     /// <summary>Returns whether user can read particular user.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.PersonRights.html#Alvao_API_Common_PersonRights_CanReadPerson_System_Int32_System_Int32_"/>
     /// <param name="personId">Person ID (tPerson.iPersonId)</param>

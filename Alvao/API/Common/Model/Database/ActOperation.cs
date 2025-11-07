@@ -23,6 +23,7 @@ public class ActOperation {
         ApprovalResult = 13,
         ApprovalEnter = 14,
     }
+
     /// <summary>Process kind name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.ActOperation.html#Alvao_API_Common_Model_Database_ActOperation_Name"/>
     public virtual string Name { get; set; }

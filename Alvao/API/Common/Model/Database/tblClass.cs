@@ -82,6 +82,7 @@ public class tblClass {
         Desk = 73,
         FirstUserClass = 5000,
     }
+
     /// <summary>Default object template (tblNode.intNodeId)</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId"/>
     public virtual int? DefaultObjectTemplateNodeId { get; set; }

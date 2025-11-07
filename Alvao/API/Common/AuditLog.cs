@@ -54,6 +54,7 @@ public static class AuditLog {
         OrganizationEdited = 44,
         OrganizationRecovered = 45,
     }
+
     /// <summary>Creates system block.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_CreateSystemBlockModel"/>
     /// <returns>System block model.</returns>

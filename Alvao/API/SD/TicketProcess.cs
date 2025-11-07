@@ -13,6 +13,7 @@ public static class TicketProcess {
         OtherPerson = 3,
         CustomColumnPerson = 4,
     }
+
     /// <summary>Evaluates Related Ticket Rules on current state Module ALVAO Advanced Workflows is required.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TicketProcess.html#Alvao_API_SD_TicketProcess_EvaluateRelatedTicketRules_System_Int32_"/>
     /// <param name="ticketId">Ticket ID (tHdTicket.iHdTicketId)</param>

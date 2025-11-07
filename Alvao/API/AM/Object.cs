@@ -11,7 +11,10 @@ public static class Object {
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_ClosestParentOfType_System_Int32_System_Int32_"/>
     /// <param name="objectId">Object ID (tblNode.intNodeId)</param>
     /// <param name="parentObjectTypeId">Object type ID (tblClass.intClassId) of the parent object.</param>
-    /// <returns>Object ID (tblNode.intNodeId) of the parent that has specified type. If there is no such a parent, 0 is returned.</returns>
+    /// <returns>
+    /// Object ID (tblNode.intNodeId) of the parent that has specified type. If there is no such a
+    ///                 parent, 0 is returned.
+    /// </returns>
     public static int ClosestParentOfType(int objectId, int parentObjectTypeId) { throw new NotImplementedException(); }
     /// <summary>Copy given object as a child of destination object.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_Copy_System_Int32_System_Int32_System_Int32_"/>
@@ -121,9 +124,13 @@ public static class Object {
     /// <param name="parentClassId">Object class ID (tblClass.intClassId)</param>
     /// <returns>List of objects that are in specified classId</returns>
     public static IEnumerable<int> FilterDescendantsOf(IEnumerable<int> objectIds, int parentClassId) { throw new NotImplementedException(); }
-    /// <summary>Finds or creates folder &quot;Imported objects&quot; in object tree</summary>
+    /// <summary>Finds or creates folder "Imported objects" in object tree</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Object.html#Alvao_API_AM_Object_FindOrCreateImportedObjectsFolder"/>
-    /// <remarks>Default place for this folder in the object tree is the root.</remarks>
+    /// <remarks>
+    /// 
+    ///               Default place for this folder in the object tree is the root.
+    ///
+    /// </remarks>
     /// <returns>Imported objects folder ID (tblNode.intNodeId)</returns>
     public static int FindOrCreateImportedObjectsFolder() { throw new NotImplementedException(); }
     /// <summary>Gets object by ID.</summary>

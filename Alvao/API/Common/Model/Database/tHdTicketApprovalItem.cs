@@ -14,6 +14,7 @@ public class tHdTicketApprovalItem {
         Expired = 4,
         Canceled = 5,
     }
+
     /// <summary>Approverâs comment in HTML</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicketApprovalItem.html#Alvao_API_Common_Model_Database_tHdTicketApprovalItem_ApprovalItemNotesHtml"/>
     public virtual string ApprovalItemNotesHtml { get; set; }

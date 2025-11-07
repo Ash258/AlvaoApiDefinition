@@ -97,10 +97,12 @@ public class ObjectClass {
         ImportedFromActiveDirectory = 34,
         ImportedFromEntraId = 61,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_ClassCode"/>
     public tblClass.ClassCode ClassCode { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_Name"/>
     public string Name { get; set; }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_IsSpecial_System_Nullable_System_Int32__"/>
     public static bool IsSpecial(int? classCode) { throw new NotImplementedException(); }
 }

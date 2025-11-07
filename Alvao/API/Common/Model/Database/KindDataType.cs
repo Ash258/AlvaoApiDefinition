@@ -13,6 +13,7 @@ public class KindDataType {
         Float = 3,
         User = 4,
     }
+
     /// <summary>Property data type name.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindDataType.html#Alvao_API_Common_Model_Database_KindDataType_DataTypeName"/>
     public virtual string DataTypeName { get; set; }

@@ -30,6 +30,7 @@ public class ImportCsvSettings {
     public bool SkipErrors { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ImportCsvSettings.html#Alvao_API_AM_Model_ImportCsvSettings_TextOutput"/>
     public IFormattedTextWriter TextOutput { get; set; }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ImportCsvSettings.html#Alvao_API_AM_Model_ImportCsvSettings_GetKeyFields"/>
     public string[] GetKeyFields() { throw new NotImplementedException(); }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ImportCsvSettings.html#Alvao_API_AM_Model_ImportCsvSettings_SetKeyFields_System_String___"/>

@@ -216,6 +216,7 @@ public class tblWbemObject : ICloneable {
     public virtual string txtTypeDetailDesc { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_txtWakeUpTypeDesc"/>
     public virtual string txtWakeUpTypeDesc { get; set; }
+
     /// <summary>Creates a new object that is a copy of the current instance.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblWbemObject.html#Alvao_API_Common_Model_Database_tblWbemObject_Clone"/>
     /// <returns>A new object that is a copy of this instance.</returns>

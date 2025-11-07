@@ -14,6 +14,7 @@ public class tblHistory {
         InsertNew = 1024,
         ToNew = 1280,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblHistory.html#Alvao_API_Common_Model_Database_tblHistory_RemovedByPersonId"/>
     public virtual int? RemovedByPersonId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblHistory.html#Alvao_API_Common_Model_Database_tblHistory_RemovedDate"/>

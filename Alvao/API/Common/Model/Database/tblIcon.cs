@@ -13,6 +13,7 @@ public class tblIcon {
         ActiveDir = 107,
         Subnet = 134,
     }
+
     /// <summary>Icon in SVG format</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblIcon.html#Alvao_API_Common_Model_Database_tblIcon_Svg"/>
     public virtual byte[] Svg { get; set; }

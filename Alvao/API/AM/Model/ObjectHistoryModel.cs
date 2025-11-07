@@ -12,6 +12,7 @@ public class ObjectHistoryModel {
         HistfShift = 8,
         HistfMask = 65280,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_DetectId"/>
     public int DetectId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectHistoryModel.html#Alvao_API_AM_Model_ObjectHistoryModel_Flags"/>

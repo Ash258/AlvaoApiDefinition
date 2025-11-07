@@ -12,6 +12,7 @@ public class ScanInfo {
         LicenseExceeded = 5,
         DiscardedOrRecycled = 6,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.ScanInfo.html#Alvao_API_AM_Model_Detection_ScanInfo_AgentData"/>
     public AgentData AgentData { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.ScanInfo.html#Alvao_API_AM_Model_Detection_ScanInfo_ComputerName"/>

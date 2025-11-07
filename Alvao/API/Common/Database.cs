@@ -9,6 +9,7 @@ public static class Database {
         Default = 0,
         Text = 1,
     }
+
     /// <summary>Returns database hash string</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_GetHash"/>
     /// <returns>Database hash</returns>

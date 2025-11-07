@@ -14,6 +14,7 @@ public class TicketRelationType {
         Blocks_IsBlockedBy = 4,
         IsDuplicateBy_Duplicated = 5,
     }
+
     /// <summary>The name of the link from the ticket view at the beginning of the link</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketRelationType.html#Alvao_API_Common_Model_Database_TicketRelationType_BeginName"/>
     public virtual string BeginName { get; set; }

@@ -16,6 +16,7 @@ public struct KindStruct {
     public int lintKindId;
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindStruct.html#Alvao_API_Common_Model_Database_KindStruct_txtKind"/>
     public string txtKind;
+
     /// <summary>Returns the fully qualified type name of this instance.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.KindStruct.html#Alvao_API_Common_Model_Database_KindStruct_ToString"/>
     /// <returns>The fully qualified type name.</returns>

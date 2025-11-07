@@ -16,6 +16,7 @@ public class SwLibProduct : SwLibBase {
         AuditYes = 1,
         AuditNo = 2,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibProduct.html#Alvao_API_AM_Model_SwLibrary_SwLibProduct_CategoryId"/>
     public int? CategoryId { get; set; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.SwLibrary.SwLibProduct.html#Alvao_API_AM_Model_SwLibrary_SwLibProduct_Description"/>

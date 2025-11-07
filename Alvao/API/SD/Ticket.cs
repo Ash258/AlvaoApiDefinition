@@ -60,6 +60,7 @@ public static class Ticket {
         IgnoreRights = 2,
         DontCallChangeState = 4,
     }
+
     /// <summary>Changes request deadline, sends notification and creates act in request diary.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Ticket.html#Alvao_API_SD_Ticket_ChangeDeadline_System_Int32_System_Nullable_System_DateTime__Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_CostModel_Alvao_API_SD_Ticket_ChangeDeadlineFlags_"/>
     /// <param name="ticketId">Request id (tHdTicket.iHdTicketId)</param>

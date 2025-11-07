@@ -21,6 +21,7 @@ public class tActKind {
         Other = 10,
         Notification = 11,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tActKind.html#Alvao_API_Common_Model_Database_tActKind_Removable"/>
     public virtual bool Removable { get; set; }
     /// <summary>Record ID: 1 = e-mail 2 = phone 3 = personal meeting 4 = letter 5 = voice message 6 = written message 7 = form 8 = note 9 = process 10 = other 11 = alert</summary>

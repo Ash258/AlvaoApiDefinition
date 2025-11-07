@@ -5,6 +5,7 @@ public static class Activation {
     /// <summary>Returns Organization name of the activation key. Organization name</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_OrganizationName"/>
     public static string OrganizationName { get; }
+
     /// <summary>Returns specific license module of the activation key. License module.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Activation.html#Alvao_API_Common_Activation_GetModule_Alvao_Global_ModuleInfo_ModuleId_"/>
     public static LicenseModule GetModule(ModuleInfo.ModuleId moduleId) { throw new NotImplementedException(); }

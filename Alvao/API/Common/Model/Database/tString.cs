@@ -30,6 +30,7 @@ public class tString {
         DataFromAgentReceived = 132,
         DetectNotLoadedComputerDiscardedOrRemoved = 136,
     }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_iStringId"/>
     [ExplicitKey]
     public virtual int iStringId { get; set; }

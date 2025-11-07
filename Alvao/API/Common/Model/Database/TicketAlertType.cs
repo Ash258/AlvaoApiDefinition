@@ -13,6 +13,7 @@ public class TicketAlertType {
         Deadline = 2,
         InternalTarget = 3,
     }
+
     /// <summary>Alert text without parameter</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketAlertType.html#Alvao_API_Common_Model_Database_TicketAlertType_MsgTemplateNoParams"/>
     public virtual string MsgTemplateNoParams { get; set; }

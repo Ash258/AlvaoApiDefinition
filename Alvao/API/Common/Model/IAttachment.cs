@@ -16,6 +16,7 @@ public interface IAttachment {
     Guid UniqueName { get; }
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.IAttachment.html#Alvao_API_Common_Model_IAttachment_Url"/>
     string Url { get; }
+
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.IAttachment.html#Alvao_API_Common_Model_IAttachment_GetStream"/>
     Stream GetStream();
 }

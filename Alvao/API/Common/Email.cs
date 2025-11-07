@@ -10,6 +10,7 @@ public static class Email {
         Standard = 10000,
         High = 15000,
     }
+
     /// <summary>Queues mail message by inserting it into database.</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Email.html#Alvao_API_Common_Email_Queue_Rebex_Mail_MailMessage_Alvao_API_Common_Email_MailQueuePriority_"/>
     /// <param name="message">Message to queue</param>

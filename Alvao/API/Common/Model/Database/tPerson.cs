@@ -25,6 +25,7 @@ public class tPerson {
         TicketFollower = 1024,
         TicketRequestParticipant = 2048,
     }
+
     /// <summary>Application (client) ID in AAD</summary>
     /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tPerson.html#Alvao_API_Common_Model_Database_tPerson_AadAppClientId"/>
     public virtual string AadAppClientId { get; set; }
