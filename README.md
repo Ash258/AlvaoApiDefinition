@@ -32,7 +32,7 @@ Purpose of this repository is to scrape **publicly available** documentation of 
 
 `export Logging__LogLevel__AlvaoScrapper=1`
 
-| Name        | Value | Description |
+| Name        | Value |
 | :---------- | :---: |
 | Trace       |   0   |
 | Debug       |   1   |
