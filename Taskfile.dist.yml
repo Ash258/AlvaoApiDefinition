@@ -60,6 +60,7 @@ tasks:
     - task: format
     - task: build
     - task: tidy
+    - task: library:build
     - task: library:format
     - task: library:build
     - task: library:publish
