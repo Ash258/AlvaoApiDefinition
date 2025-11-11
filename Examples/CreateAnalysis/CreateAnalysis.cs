@@ -1,4 +1,3 @@
-
 using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
@@ -17,12 +16,12 @@ namespace Alvao.Helpdesk
         public string Name
         {
             get { return name; }
-            set { }
+            set { name = value; }
         }
 
         public CreateAnalysis()
         {
-            name = Settings.CA_ActionName;
+            name = Settings.ActionName;
         }
 
         public void OnTicketChanged(SqlConnection con, SqlTransaction trans, int ticketId, int personId, string properties)
@@ -36,22 +35,22 @@ namespace Alvao.Helpdesk
             bool createAnalysis;
             try
             {
-                createAnalysis = con.QueryFirstOrDefault<bool>(@"SELECT createAnalysis from tHdTicketCust where liHdTicketId = @ticketId",
+                createAnalysis = con.QueryFirstOrDefault<bool>(@"SELECT createAnalysis from tHdTicketCust where liHdTicketId = @ticketId", 
                     new { ticketId }, trans);
             }
             catch (SqlException)
             {
                 return;
-            }
+            }            
 
-            int? analysisServiceId = con.QueryFirstOrDefault<int?>(@"SELECT iHdSectionId from tHdSection where sHdSection = @sectionName",
-                new { sectionName = Settings.CA_AnalysisServiceName }, trans);
+            int? analysisServiceId = con.QueryFirstOrDefault<int?>(@"SELECT iHdSectionId from tHdSection where sHdSection = @sectionName", 
+                new { sectionName = Settings.AnalysisServiceName }, trans);
 
             string section = API.Common.Database.ReadColumn(ticketId, "TicketForeignKeyInfo", "SectionName");
             string name = API.Common.Database.ReadColumn(ticketId, "tHdTicket", "sHdTicket");
 
             // Check values.
-            if (section == Settings.CA_ServiceName && createAnalysis)
+            if (section == Settings.ServiceName && createAnalysis)
             {
                 // Create a new request for analysis.
 
