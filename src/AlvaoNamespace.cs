@@ -30,6 +30,8 @@ public class AlvaoNamespace {
     internal void Process() {
         Logger.LogInformation("Processing {} namespace", Name);
 
+        if (Name.Equals("Alvao.Apps.API")) return;
+
         AssertDocumentIsNamespace();
 
         // h3 contains the main groups (classes, interfaces, ...)

@@ -15,6 +15,7 @@ public static class MonkeyPatch {
         var apiAm = State.Namespaces.GetValueOrDefault("Alvao.API.AM");
         var modelDet = State.Namespaces.GetValueOrDefault("Alvao.API.AM.Model.Detection");
         var contextNs = State.Namespaces.GetValueOrDefault("Alvao.Context");
+        var appsApi = State.Namespaces.GetValueOrDefault("Alvao.Apps.API");
         if (
             null == swLibraryNs ||
             null == commonModelDataseNs ||
@@ -22,7 +23,8 @@ public static class MonkeyPatch {
             null == apiAm ||
             null == modelDet ||
             null == contextNs ||
-            null == commonNs
+            null == commonNs ||
+            null == appsApi
         ) {
             Logger.LogWarning("Cannot generate undocumented classes");
             return;
@@ -167,6 +169,328 @@ public static class MonkeyPatch {
                 []
             );
 
+            clazz.ProduceFinalCsFile();
+        }
+
+        PatchManuallyDocumentedActions(appsApi);
+    }
+
+    public static void PatchManuallyDocumentedActions(AlvaoNamespace appsApi) {
+        var ar = new[] {
+            new {
+                N = "IPeriodicAction",
+                S = "By implementing the IPeriodicAction interface in a application script, you can define custom periodic actions. Custom actions can be run at a regular time interval. The system runs periodic custom actions every hour.<br/><br/>In the application, create a new script using the IPeriodicAction template and name it appropriately according to the functionality that the action performs. In the newly created script, set the value of the Name property (the name of the action itself) in the class constructor.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/periodic-custom-actions/",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnPeriod",
+                        Summary = "In the method, define both the conditions for performing the operations and the operations themselves.",
+                        Definition = "void OnPeriod(SqlConnection con);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/periodic-custom-actions/#onperiod",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                        ],
+                    },
+                },
+            },
+            new {
+                N = "IEntityCommand",
+                S = "By implementing this interface, you can define custom commands for an object or a ticket.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/i-entity-command",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "Show",
+                        Summary = "This method controls display of the command in command menus.",
+                        Definition = " EntityCommandShowResult Show(int entityId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/i-entity-command#show",
+                        Parameters = [
+                            ("entityId", "the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command should be displayed."),
+                            ("personId", "the ID of the user(tPerson.iPersonId) to whom the command should be displayed."),
+                        ],
+                        Returns = "An instance of the class EntityCommandShowResult with properties:<br/>- Name (string) - a display name of the command<br/>- Show (bool) - true = the command will be displayed, false = the command will not be displayed.<br/>- Position (int) - the position in UI at which the command will be displayed:<br/>- 1 = first position of the entity main menu<br/>- 2 = last position of the entity main menu<br/>- 3 = first position of the nested menu in the entity main menu<br/>- 4 = last position of the nested menu in the entity main menu<br/>- Icon(string) - a command icon name; Use the Microsoft fluent library viewer with “20 Regular” filter on. After finding the most suitable icon, copy its name without “fluent:” and replace “-“ characters with “_”.<br/>- Example: The icon fluent: edit - 20 - regular use in your code as edit_20_regular.",
+                    },
+                    new() {
+                        Name = "Run",
+                        Summary = "This method implements the command itself.",
+                        Definition = "CommandResult Run(int entityId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/i-entity-command#run",
+                        Parameters = [
+                            ("entityId", "the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the command was run."),
+                            ("personId", "the user ID(tPerson.iPersonId) who ran the command."),
+                        ],
+                        Returns = "An instance of the CommandResult class containing properties:<br/><br/><br/>- MessageType (MessageType) - specify whether a message should be displayed to the user as a result of the command execution:<br/>- None – no message will be displayed<br/>- Info - an information message will be displayed<br/>- Warning - a warning message will be displayed<br/>- Error - an error message will be displayed<br/>- MessageText(string) - specify a text of the message that will be displayed to the user.<br/>- NavigateToUrl(string) - optionally specify an URL to navigate to after the command execution.",
+                    },
+                },
+            },
+            new {
+                N = "IGeneralCommand",
+                S = @"
+                By implementing the IGeneralCommand interface in a application script, you can define custom main menu commands.
+                By placing a command in the main menu, you can give users access to frequently used pages and operations that are not tied to a specific ticket in ALVAO Service Desk or Asset Management function. Commands are displayed in the main menu of the Alvao WebApp application. In the Service Desk or Asset Management application, create a new script using the IGeneralCommand template and name it appropriately according to the functionality of the custom command. In the newly created script, set the id, name, position, and icon property values in the constructor of the command class:
+                ",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/general-custom-commands",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "Show",
+                        Summary = "This method checks the defined conditions for displaying the command.",
+                        Definition = "bool Show(SqlConnection con, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/general-custom-commands/#show",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("personId", "User ID (tPerson.iPersonId) to which the command should be displayed."),
+                        ],
+                        Returns = "The true value of whether the command should be displayed to the user in the main menu of the application.",
+                    },
+                    new() {
+                        Name = "Run",
+                        Summary = "This method runs the command itself.",
+                        Definition = "Tuple<bool, string, string> Run(SqlConnection con, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/general-custom-commands/#run",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("personId", "The user ID (tPerson.iPersonId) that runs the command.")
+                        ],
+                        Returns = "- bool - the truth value of whether the command was executed.<br/>- string - text that can be displayed in the message to the user.<br/>- string - URL to open in the browser.",
+                    },
+                },
+            },
+            new {
+                N = "ITicketAutoAction",
+                S = "By implementing the ITicketAutoAction interface in a application script, you can define custom actions based on a change in the value of a ticket field or respond to a newly created ticket. In the newly created script, set the value of the Name property (the name of the automatic action) in the action class constructor.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-custom-actions/",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnTicketChanged",
+                        Summary = "Custom action based on a change in the value of a ticket field (custom/system). In the implemented method, define both the conditions for performing the operations and the operations themselves.",
+                        Definition = "void OnTicketChanged(SqlConnection con, SqlTransaction trans, int ticketId, int personId, string properties);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-custom-actions/#onticketchanged",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the database transaction in progress."),
+                            ("ticketId", "The ID of the ticket (tHdTicket.iHdTicketId) to which the custom action applies."),
+                            ("personId", "The ID of the user (tPerson.iPersonId) who executed the event on the ticket.In some cases it could be the system, then the value is NULL."),
+                            ("properties", "the changed ticket fields separated by a comma(table.column)."),
+                        ],
+                    },
+                    new() {
+                        Name= "OnTicketCreated",
+                        Summary = "Custom action based on the creation of a ticket. In the implemented method, define both the conditions for executing the operations and the operations with the ticket itself.",
+                        Definition = "void OnTicketCreated(SqlConnection con, SqlTransaction trans, int ticketId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-custom-actions/#onticketcreated",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("ticketId", "New ticket ID (tHdTicket.iHdTicketId)."),
+                            ("personId", "ID of the user (tPerson.iPersonId) who created the ticket (does not always have to be the requester)."),
+                        ],
+                    },
+                },
+            },
+            new {
+                N = "IActAutoAction",
+                S = "By implementing the IActAutoAction interface in a application script, you can define custom actions when creating an event on a ticket. In the newly created script, set the value of the Name property (the name of the automatic action) in the constructor of the action class.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnActChanged",
+                        Summary = "Custom action based on event modification. In the implemented method, define both the conditions for executing the operations and the event operations themselves.",
+                        Definition = "void OnActChanged(SqlConnection con, SqlTransaction trans, int actId, int personId, string properties);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions#onactchanged",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the database transaction in progress."),
+                            ("actId", "The ID of the event (tAct.iActId) that was changed."),
+                            ("personId", "The ID of the user (tPerson.iPersonId) who changed the event."),
+                            ("properties", "the changed event fields separated by a comma(table.column)."),
+                        ],
+                    },
+                    new() {
+                        Name = "OnActCreated",
+                        Summary = "Custom action based on event creation. In the implemented method, define both the conditions for executing the operations and the event operations themselves.",
+                        Definition = "void OnActCreated(SqlConnection con, SqlTransaction trans, int actId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions#onactcreated",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the database transaction in progress."),
+                            ("actId", "The ID of the event (tAct.iActId) that was changed."),
+                            ("personId", "The ID of the user (tPerson.iPersonId) who changed the event."),
+                        ],
+                    },
+                    new() {
+                        Name = "OnActRemoved",
+                        Summary = "Custom action based on event removal. In the implemented method, define both the conditions for executing the operations and the event operations themselves.",
+                        Definition = "void OnActRemoved(SqlConnection con, SqlTransaction trans, int actId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/act-custom-actions#onactremoved",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the database transaction in progress."),
+                            ("actId", "The ID of the event (tAct.iActId) that was changed."),
+                            ("personId", "The ID of the user (tPerson.iPersonId) who changed the event."),
+                        ],
+                    },
+                },
+            },
+            new {
+                N = "ITicketApprovalAutoAction",
+                S = "You can define custom actions by implementing the ITicketApprovalAutoAction interface in application scripts. Automatic actions are only called for manually triggered approvals with automatic status transition disabled. In the newly created script, set the value of the Name property (the name of the automatic action) in the action class constructor.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnApproved",
+                        Summary = "Custom action based on ticket approval. In the implemented method, define both the conditions for executing the operations and the operations themselves.",
+                        Definition = "void OnApproved(SqlConnection con, SqlTransaction trans, int ticketId, int approvalItemId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions#onapproved",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("ticketId", "Ticket ID (tHdTicket.iHdTicketId)."),
+                            ("approvalItemId", "approval step ID (tHdTicketApprovalItem.iHdTicketApprovalItemId)."),
+                        ],
+                    },
+                    new() {
+                        Name = "OnRejected",
+                        Summary = "Custom action based on the approval of the ticket rejection. In the implemented method, define both the conditions for executing the operations and the operations themselves.",
+                        Definition = "void OnRejected(SqlConnection con, SqlTransaction trans, int ticketId, int approvalItemId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions#onrejected",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("ticketId", "Ticket ID (tHdTicket.iHdTicketId)."),
+                            ("approvalItemId", "approval step ID (tHdTicketApprovalItem.iHdTicketApprovalItemId)."),
+                        ]
+                    },
+                    new() {
+                        Name = "OnApproverAdded",
+                        Summary = "Custom action based on adding a ticket approver. In the implemented method, define both the conditions for executing the operations and the operations themselves.",
+                        Definition = "void OnApproverAdded(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions#onapproveradded",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("ticketId", "Ticket ID (tHdTicket.iHdTicketId)."),
+                            ("approvalItemId", "approvalItemIds - List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId)."),
+                        ]
+                    },
+                    new() {
+                        Name = "OnApproverCanceled",
+                        Summary = "Custom action based on the removal of the ticket approver. In the implemented method, define both the conditions for executing the operations and the operations themselves.",
+                        Definition = "void OnApproverCanceled(SqlConnection con, SqlTransaction trans, int ticketId, IEnumerable<int> approvalItemIds);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/ticket-approval-custom-actions#onapprovercanceled",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("ticketId", "Ticket ID (tHdTicket.iHdTicketId)."),
+                            ("approvalItemId", "List of approval step IDs (tHdTicketApprovalItem.iHdTicketApprovalItemId)."),
+                        ],
+                    }
+                },
+            },
+            new {
+                N = "IMailMessageAutoAction",
+                S = "By implementing the IMailMessageAutoAction interface in the application script you can define custom actions when loading a message from the service mailbox before saving the message to the log of an existing ticket or before creating a new ticket. In the newly created script, set the value of the Name property (the name of the automatic action) in the action class constructor.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/mail-message-custom-actions",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnMessageReceived",
+                        Summary = "The actual action can be performed when loading a message from the service mailbox before saving the message to the log of an existing ticket or before creating a new ticket. In the implemented method, define both the conditions for executing the operations and the operations themselves.",
+                        Definition = "bool OnMessageReceived(SqlConnection con, SqlTransaction trans, MailMessage message, int sectionId, int ticketId, int fromPersonId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-sd-custom-apps/applications/ticket-custom-actions-by-events/mail-message-custom-actions#onmessagereceived",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("trans", "SqlTransaction of the ongoing database transaction."),
+                            ("message", "message object."),
+                            ("sectionId", "the service ID (tHdSection.iSectionId) which the message was loaded to."),
+                            ("ticketId", "ID of the ticket (tHdTicket.iHdTicketId) to which the message belongs according to the subject, or zero if it is a new ticket creation."),
+                            ("fromPersonId", "message sender ID(tPerson.iPersonId), or Host account, if the message sender is not found among the users."),
+                        ],
+                        Returns = "Return true or false indicating whether or not the message should continue to be processed by default. For an example use case, see the AssignToSolverByEmail application template.",
+                    },
+                },
+            },
+            new {
+                N = "IObjectPropertyAutoAction",
+                S = "By implementing the IObjectPropertyAutoAction interface in a application script, you can define custom actions that are automatically performed when the user manually modifies the value of an object property.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-property-change",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnObjectPropertyModifying",
+                        Summary = "This method is called before saving the modified property value to the database, e.g. within the Modify (property) statement.",
+                        Definition = "ObjectPropertyModifyResult OnObjectPropertyModifying(ObjectPropertyEventArgs e);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-property-change#onobjectpropertymodifying",
+                        Parameters = [
+                            ("e", "Property event method parameters:<br/> - ObjectId - ID of the object (tblNode.intNodeId) that is being modified.<br/> - PropertyKindId - ID of the property kind (tblKind.intKindId) of the object that is being modified.<br/> - PersonId - the ID of the user (tPerson.iPersonId) who invoked the action.<br/> - NewValue - new value of the property."),
+                        ],
+                    },
+                    new() {
+                        Name = "OnObjectPropertyModified",
+                        Summary = "This method is called after writing a new property value to the database, e.g. by the *Modify (property)*statement.",
+                        Definition = "void OnPropertyModified(ObjectPropertyEventArgs e);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-property-change#onobjectpropertymodified",
+                        Parameters = [
+                            ("e", "Property event method parameters:<br/> - ObjectId - ID of the object (tblNode.intNodeId) that is being modified.<br/> - PropertyKindId - ID of the property kind (tblKind.intKindId) of the object that is being modified.<br/> - PersonId - the ID of the user (tPerson.iPersonId) who invoked the action.<br/> - NewValue - new value of the property."),
+                        ],
+                    },
+                },
+            },
+            new {
+                N = "IObjectMoveAutoAction",
+                S = "By implementing the IObjectMoveAutoAction interface in an application script, you can define custom actions that are automatically performed when an object is moved to another location in the object tree, including removing the object to the Trash.",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-object-move",
+                M = new List<DotnetMethod>() {
+                    new() {
+                        Name = "OnObjectMoving",
+                        Summary = "This method is called before moving an object in the tree to another location, e.g. within the Move statement.",
+                        Definition = "Tuple<bool, string> OnObjectMoving(SqlConnection con, int objectId, int newParentObjectId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-object-move#onobjectmoving",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("objectId", "ID of the object (tblNode.intNodeId) to be moved."),
+                            ("newParentObjectId", "ID of the object (tblNode.intNodeId) to which the object is to be moved. A value of 0 means that the object will be moved to the root of the tree."),
+                            ("personId", "the ID of the user (tPerson.iPersonId) who invoked the action."),
+                        ],
+                        Returns = "bool - if the method returns true, the object is moved to a new position in the database. If the method returns false, the operation will not be performed and the upcoming object move will be canceled.<br/>string - the message that will be displayed to the user if the return value is false.",
+                    },
+                    new() {
+                        Name = "OnObjectMoved",
+                        Summary = "This method is called after moving an object in the tree.",
+                        Definition = "void OnObjectMoved(SqlConnection con, int objectId, int oldParentObjectId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/object-custom-actions-by-object-move#onobjectmoved",
+                        Parameters = [
+                            ("con", "SqlConnection to the database."),
+                            ("objectId", "ID of the object (tblNode.intNodeId) to be moved."),
+                            ("oldParentObjectId", "the ID of the object (tblNode.intNodeId) that was the father (parent object) of the object with objectId before it was moved. A value of 0 means that the object was moved from the root of the tree."),
+                            ("personId", "the user ID (tPerson.iPersonId) that triggered the action."),
+                        ],
+                    },
+                },
+            },
+            new {
+                N = "IEntityTab",
+                S = "By implementing this interface, you can define custom tabs on the object or ticket page. A custom tab can view any web content displayable in an iframe tag. For an example, see the ShowRequesterAddress application template.<br/><br/>In the application create a new script using the IElementTab template and name it appropriately according to the content of the tab. In the newly created script, set the following properties in the constructor of the class:<br/> - Id - a unique tab identifier (string)<br/> - Entity - the type of entity for which the tab will be displayed(Entity.Ticket or Entity.Object).",
+                FU = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/i-entity-tab",
+                M = new List<DotnetMethod> {
+                    new() {
+                        Name = "Show",
+                        Summary = "This method handles the display of the entity custom tab.",
+                        Definition = "EntityTabShowResult Show (int entityId, int personId);",
+                        FullUrl = "https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/i-entity-tab#show",
+                        Parameters = [
+                            ("entityId", "the entity ID (tblNode.intNodeId or tHdTicket.iHdTicketId) for which the custom tab should be displayed."),
+                            ("personId", "the ID of the user(tPerson.iPersonId) to whom the custom tab should be displayed."),
+                        ],
+                        Returns = "An instance of the class EntityTabShowResult with properties:<br/>- Show (bool) - true = the tab will be displayed; false = the tab will not be displayed.<br/>- Name ( string) - a display name of the tab<br/>- Url ( string) - an URL of a content of the tab.",
+                    },
+                },
+            },
+        };
+
+        foreach (var item in ar) {
+            List<string> usings = ["Alvao.API.Common.Model.CustomApps", "Microsoft.Data.SqlClient"];
+            if (item.N == "IMailMessageAutoAction") usings.Add("Rebex.Mail");
+
+            var clazz = new AlvaoClass(item.N, "Interface", appsApi, item.S, $"public interface {item.N}", usings, [], item.M, [], []) {
+                FullUrl = item.FU
+            };
             clazz.ProduceFinalCsFile();
         }
     }

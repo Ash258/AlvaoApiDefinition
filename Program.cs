@@ -26,6 +26,7 @@ string[] alvaoNamespace = {
     "Alvao.API.SD",
     "Alvao.API.SD.Exceptions",
     "Alvao.API.SD.Model",
+    "Alvao.Apps.API",
     "Alvao.Context",
     "Alvao.Context.DB",
 };
