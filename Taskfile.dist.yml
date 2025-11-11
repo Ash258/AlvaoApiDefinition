@@ -44,6 +44,7 @@ tasks:
     - dotnet pack --configuration Release
   examples:build:
     cmds:
+    - rm -rf Examples/bin Examples/obj
     - for:
         var: EXAMPLES
       cmd: dotnet build {{ .ITEM }}
