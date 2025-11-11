@@ -1,341 +1,422 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class ObjectCreationModel | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class ObjectCreationModel | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class ObjectCreationModel | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ObjectCreationModel | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.ObjectCreationModel">
-          <h1 id="Alvao_API_AM_Model_ObjectCreationModel" data-uid="Alvao.API.AM.Model.ObjectCreationModel" class=
-          "text-break">
-            Class ObjectCreationModel <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=42">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class ObjectCreationModel</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">ObjectCreationModel</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AM_Model_ObjectCreationModel_Count_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.Count*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_Count" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.Count">
-            Count <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=48">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int Count { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_ExcludeGeneratingPropertyKindIds_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ExcludeGeneratingPropertyKindIds*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ExcludeGeneratingPropertyKindIds" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ExcludeGeneratingPropertyKindIds">
-            ExcludeGeneratingPropertyKindIds <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=47">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public List&lt;int&gt; ExcludeGeneratingPropertyKindIds { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref"
-              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_InvoiceCreationModel_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.InvoiceCreationModel*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_InvoiceCreationModel" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.InvoiceCreationModel">
-            InvoiceCreationModel <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=50">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public ObjectsToCreateFromInvoice InvoiceCreationModel { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.ObjectsToCreateFromInvoice.html">ObjectsToCreateFromInvoice</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_NewObjectType_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.NewObjectType*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_NewObjectType" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.NewObjectType">
-            NewObjectType <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=49">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public NewObjectType NewObjectType { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.NewObjectType.html">NewObjectType</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_ObjectId_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ObjectId*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ObjectId" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ObjectId">
-            ObjectId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=44">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int ObjectId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_ParentObjectId_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ParentObjectId*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ParentObjectId" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ParentObjectId">
-            ParentObjectId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=45">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? ParentObjectId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_ObjectCreationModel_TicketId_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.TicketId*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_TicketId" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.TicketId">
-            TicketId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=46">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? TicketId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AM_Model_ObjectCreationModel_ToString_" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ToString*"></a>
-          <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ToString" data-uid=
-          "Alvao.API.AM.Model.ObjectCreationModel.ToString">
-            ToString() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=51">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Returns a string that represents the current object.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
-          </div>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd>
-              <p>
-                A string that represents the current object.
-              </p>
-            </dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_ObjectCreationModel" data-uid="Alvao.API.AM.Model.ObjectCreationModel" class="text-break">
+Class ObjectCreationModel  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=42"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ObjectCreationModel</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ObjectCreationModel</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_Count_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.Count*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_Count" data-uid="Alvao.API.AM.Model.ObjectCreationModel.Count">
+  Count
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_ExcludeGeneratingPropertyKindIds_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ExcludeGeneratingPropertyKindIds*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ExcludeGeneratingPropertyKindIds" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ExcludeGeneratingPropertyKindIds">
+  ExcludeGeneratingPropertyKindIds
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;int&gt; ExcludeGeneratingPropertyKindIds { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_InvoiceCreationModel_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.InvoiceCreationModel*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_InvoiceCreationModel" data-uid="Alvao.API.AM.Model.ObjectCreationModel.InvoiceCreationModel">
+  InvoiceCreationModel
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObjectsToCreateFromInvoice InvoiceCreationModel { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.ObjectsToCreateFromInvoice.html">ObjectsToCreateFromInvoice</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_NewObjectType_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.NewObjectType*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_NewObjectType" data-uid="Alvao.API.AM.Model.ObjectCreationModel.NewObjectType">
+  NewObjectType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NewObjectType NewObjectType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.NewObjectType.html">NewObjectType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_ObjectId_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ObjectId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ObjectId" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ObjectId">
+  ObjectId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ObjectId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_ParentObjectId_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ParentObjectId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ParentObjectId" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ParentObjectId">
+  ParentObjectId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ParentObjectId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_TicketId_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.TicketId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_TicketId" data-uid="Alvao.API.AM.Model.ObjectCreationModel.TicketId">
+  TicketId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? TicketId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_ObjectCreationModel_ToString_" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ToString*"></a>
+
+  <h3 id="Alvao_API_AM_Model_ObjectCreationModel_ToString" data-uid="Alvao.API.AM.Model.ObjectCreationModel.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/ObjectModel.cs&amp;version=GBPATCH&amp;line=51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string that represents the current object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

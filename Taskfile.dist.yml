@@ -1,7 +1,7 @@
 version: '3.0'
 
 vars:
-  ALVAO_VERSION: '25.3.2'
+  ALVAO_VERSION: '25.3.4'
   OWNER: Ash258
   NUGET_NAME: "{{.OWNER}}.Alvao.Mock.API"
   NUGET_API_KEY_GH: "{{.NUGET_API_KEY_GH}}"

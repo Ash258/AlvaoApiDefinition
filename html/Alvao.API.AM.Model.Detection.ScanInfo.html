@@ -1,503 +1,667 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class ScanInfo | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class ScanInfo | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class ScanInfo | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ScanInfo | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.Detection.ScanInfo">
-          <h1 id="Alvao_API_AM_Model_Detection_ScanInfo" data-uid="Alvao.API.AM.Model.Detection.ScanInfo" class=
-          "text-break">
-            Class ScanInfo <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=9">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.html">Model</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.Detection.html">Detection</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class ScanInfo</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">ScanInfo</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AM_Model_Detection_ScanInfo_AgentData_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.AgentData*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_AgentData" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.AgentData">
-            AgentData <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=29">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public AgentData AgentData { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.Detection.AgentData.html">AgentData</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerName_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ComputerName*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerName" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ComputerName">
-            ComputerName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=23">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string ComputerName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerNodeId_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ComputerNodeId*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerNodeId" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ComputerNodeId">
-            ComputerNodeId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=24">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? ComputerNodeId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_CreatedDate_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.CreatedDate*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_CreatedDate" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.CreatedDate">
-            CreatedDate <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=26">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public DateTime CreatedDate { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_Domain_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Domain*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Domain" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Domain">
-            Domain <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=31">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string Domain { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_FileName_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.FileName*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_FileName" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.FileName">
-            FileName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=22">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string FileName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_FqdnHostname_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.FqdnHostname*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_FqdnHostname" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.FqdnHostname">
-            FqdnHostname <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=32">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string FqdnHostname { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_IsFullSwDetection_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.IsFullSwDetection*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_IsFullSwDetection" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.IsFullSwDetection">
-            IsFullSwDetection <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=33">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool IsFullSwDetection { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_Load_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Load*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Load" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Load">
-            Load <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=28">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool Load { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_Messages_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Messages*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Messages" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Messages">
-            Messages <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=37">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public List&lt;DetectionMessage&gt; Messages { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref"
-              href="Alvao.API.AM.Model.Detection.DetectionMessage.html">DetectionMessage</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_ScanId_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ScanId*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ScanId" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ScanId">
-            ScanId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=30">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int ScanId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_ScanType_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ScanType*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ScanType" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.ScanType">
-            ScanType <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=25">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public Detection.Kind ScanType { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.Detection.Detection.html">Detection</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.Detection.Detection.Kind.html">Kind</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_Status_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Status*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Status" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Status">
-            Status <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=27">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public ScanInfo.LoadStatus Status { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.Detection.ScanInfo.html">ScanInfo</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.Detection.ScanInfo.LoadStatus.html">LoadStatus</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_SwExcludeMask_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.SwExcludeMask*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_SwExcludeMask" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.SwExcludeMask">
-            SwExcludeMask <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=35">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string SwExcludeMask { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_SwIncludeMask_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.SwIncludeMask*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_SwIncludeMask" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.SwIncludeMask">
-            SwIncludeMask <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=34">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string SwIncludeMask { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_ScanInfo_Win32ComputerSystemExists_" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Win32ComputerSystemExists*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Win32ComputerSystemExists" data-uid=
-          "Alvao.API.AM.Model.Detection.ScanInfo.Win32ComputerSystemExists">
-            Win32ComputerSystemExists <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=36">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool Win32ComputerSystemExists { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_Detection_ScanInfo" data-uid="Alvao.API.AM.Model.Detection.ScanInfo" class="text-break">
+Class ScanInfo  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>.<a class="xref" href="Alvao.API.AM.Model.Detection.html">Detection</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ScanInfo</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ScanInfo</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_AgentData_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.AgentData*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_AgentData" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.AgentData">
+  AgentData
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AgentData AgentData { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.Detection.AgentData.html">AgentData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerName_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ComputerName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerName" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ComputerName">
+  ComputerName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ComputerName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerNodeId_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ComputerNodeId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ComputerNodeId" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ComputerNodeId">
+  ComputerNodeId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ComputerNodeId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_CreatedDate_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.CreatedDate*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_CreatedDate" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.CreatedDate">
+  CreatedDate
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime CreatedDate { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_Domain_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Domain*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Domain" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Domain">
+  Domain
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Domain { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_FileName_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.FileName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_FileName" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.FileName">
+  FileName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FileName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_FqdnHostname_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.FqdnHostname*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_FqdnHostname" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.FqdnHostname">
+  FqdnHostname
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string FqdnHostname { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_IsFullSwDetection_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.IsFullSwDetection*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_IsFullSwDetection" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.IsFullSwDetection">
+  IsFullSwDetection
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFullSwDetection { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_Load_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Load*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Load" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Load">
+  Load
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Load { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_Messages_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Messages*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Messages" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Messages">
+  Messages
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;DetectionMessage&gt; Messages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.AM.Model.Detection.DetectionMessage.html">DetectionMessage</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_ScanId_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ScanId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ScanId" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ScanId">
+  ScanId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ScanId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_ScanType_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ScanType*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_ScanType" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.ScanType">
+  ScanType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Detection.Kind ScanType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.Detection.Detection.html">Detection</a>.<a class="xref" href="Alvao.API.AM.Model.Detection.Detection.Kind.html">Kind</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_Status_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Status*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Status" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Status">
+  Status
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScanInfo.LoadStatus Status { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.Detection.ScanInfo.html">ScanInfo</a>.<a class="xref" href="Alvao.API.AM.Model.Detection.ScanInfo.LoadStatus.html">LoadStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_SwExcludeMask_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.SwExcludeMask*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_SwExcludeMask" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.SwExcludeMask">
+  SwExcludeMask
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SwExcludeMask { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_SwIncludeMask_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.SwIncludeMask*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_SwIncludeMask" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.SwIncludeMask">
+  SwIncludeMask
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SwIncludeMask { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_ScanInfo_Win32ComputerSystemExists_" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Win32ComputerSystemExists*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_ScanInfo_Win32ComputerSystemExists" data-uid="Alvao.API.AM.Model.Detection.ScanInfo.Win32ComputerSystemExists">
+  Win32ComputerSystemExists
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/ScanInfo.cs&amp;version=GBPATCH&amp;line=36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Win32ComputerSystemExists { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

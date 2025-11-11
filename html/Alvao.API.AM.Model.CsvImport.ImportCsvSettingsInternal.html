@@ -1,584 +1,791 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class ImportCsvSettingsInternal | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class ImportCsvSettingsInternal | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class ImportCsvSettingsInternal | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ImportCsvSettingsInternal | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal">
-          <h1 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal" class="text-break">
-            Class ImportCsvSettingsInternal <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=3">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.html">Model</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.CsvImport.html">CsvImport</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class ImportCsvSettingsInternal</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">ImportCsvSettingsInternal</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Action_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Action*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Action" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Action">
-            Action <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=24">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public ImportAction Action { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportAction.html">ImportAction</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ConnectionString_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ConnectionString*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ConnectionString" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ConnectionString">
-            ConnectionString <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=6">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string ConnectionString { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DateTimeFormat_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DateTimeFormat*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DateTimeFormat" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DateTimeFormat">
-            DateTimeFormat <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=15">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string DateTimeFormat { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DbName_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DbName*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DbName" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DbName">
-            DbName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=9">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string DbName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_HangfireJobIdentifier_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.HangfireJobIdentifier*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_HangfireJobIdentifier" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.HangfireJobIdentifier">
-            HangfireJobIdentifier <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=23">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string HangfireJobIdentifier { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportObjectKind_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportObjectKind*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportObjectKind" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportObjectKind">
-            ImportObjectKind <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=11">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string ImportObjectKind { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportToDb_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportToDb*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportToDb" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportToDb">
-            ImportToDb <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=10">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool ImportToDb { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedByPersonId_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedByPersonId*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedByPersonId" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedByPersonId">
-            ImportedByPersonId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=18">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? ImportedByPersonId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedObjectsParentId_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedObjectsParentId*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedObjectsParentId" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedObjectsParentId">
-            ImportedObjectsParentId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=17">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? ImportedObjectsParentId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_IncludeScrapped_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.IncludeScrapped*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_IncludeScrapped" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.IncludeScrapped">
-            IncludeScrapped <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=14">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool IncludeScrapped { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Origin_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Origin*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Origin" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Origin">
-            Origin <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=27">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public ImportOrigin Origin { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportOrigin.html">ImportOrigin</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ProgressReporter_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ProgressReporter*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ProgressReporter" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ProgressReporter">
-            ProgressReporter <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=26">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public ImportCsvProgress ProgressReporter { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportCsvProgress.html">ImportCsvProgress</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RecordId_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RecordId*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RecordId" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RecordId">
-            RecordId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=22">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int RecordId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RunInBackground_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RunInBackground*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RunInBackground" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RunInBackground">
-            RunInBackground <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=25">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool RunInBackground { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Separator_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Separator*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Separator" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Separator">
-            Separator <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=7">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string Separator { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ServerName_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ServerName*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ServerName" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ServerName">
-            ServerName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=8">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string ServerName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipCheck_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipCheck*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipCheck" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipCheck">
-            SkipCheck <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=16">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool SkipCheck { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipErrors_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipErrors*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipErrors" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipErrors">
-            SkipErrors <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=13">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool SkipErrors { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_TicketId_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.TicketId*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_TicketId" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.TicketId">
-            TicketId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=20">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int? TicketId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_keyFields_" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.keyFields*"></a>
-          <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_keyFields" data-uid=
-          "Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.keyFields">
-            keyFields <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=5">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string[] keyFields { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal" class="text-break">
+Class ImportCsvSettingsInternal  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=3"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>.<a class="xref" href="Alvao.API.AM.Model.CsvImport.html">CsvImport</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ImportCsvSettingsInternal</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ImportCsvSettingsInternal</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Action_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Action*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Action" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Action">
+  Action
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImportAction Action { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportAction.html">ImportAction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ConnectionString_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ConnectionString*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ConnectionString" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ConnectionString">
+  ConnectionString
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=6"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConnectionString { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DateTimeFormat_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DateTimeFormat*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DateTimeFormat" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DateTimeFormat">
+  DateTimeFormat
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DateTimeFormat { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DbName_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DbName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_DbName" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.DbName">
+  DbName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DbName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_HangfireJobIdentifier_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.HangfireJobIdentifier*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_HangfireJobIdentifier" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.HangfireJobIdentifier">
+  HangfireJobIdentifier
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HangfireJobIdentifier { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportObjectKind_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportObjectKind*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportObjectKind" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportObjectKind">
+  ImportObjectKind
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ImportObjectKind { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportToDb_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportToDb*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportToDb" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportToDb">
+  ImportToDb
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ImportToDb { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedByPersonId_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedByPersonId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedByPersonId" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedByPersonId">
+  ImportedByPersonId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ImportedByPersonId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedObjectsParentId_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedObjectsParentId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ImportedObjectsParentId" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ImportedObjectsParentId">
+  ImportedObjectsParentId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ImportedObjectsParentId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_IncludeScrapped_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.IncludeScrapped*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_IncludeScrapped" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.IncludeScrapped">
+  IncludeScrapped
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeScrapped { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Origin_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Origin*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Origin" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Origin">
+  Origin
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImportOrigin Origin { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportOrigin.html">ImportOrigin</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ProgressReporter_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ProgressReporter*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ProgressReporter" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ProgressReporter">
+  ProgressReporter
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImportCsvProgress ProgressReporter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.CsvImport.ImportCsvProgress.html">ImportCsvProgress</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RecordId_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RecordId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RecordId" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RecordId">
+  RecordId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RecordId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RunInBackground_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RunInBackground*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_RunInBackground" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.RunInBackground">
+  RunInBackground
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RunInBackground { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Separator_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Separator*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_Separator" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.Separator">
+  Separator
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=7"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Separator { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ServerName_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ServerName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_ServerName" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.ServerName">
+  ServerName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=8"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServerName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipCheck_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipCheck*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipCheck" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipCheck">
+  SkipCheck
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SkipCheck { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipErrors_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipErrors*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_SkipErrors" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.SkipErrors">
+  SkipErrors
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SkipErrors { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_TicketId_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.TicketId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_TicketId" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.TicketId">
+  TicketId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? TicketId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_keyFields_" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.keyFields*"></a>
+
+  <h3 id="Alvao_API_AM_Model_CsvImport_ImportCsvSettingsInternal_keyFields" data-uid="Alvao.API.AM.Model.CsvImport.ImportCsvSettingsInternal.keyFields">
+  keyFields
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/CsvImport/ImportCsvSettingsInternal.cs&amp;version=GBPATCH&amp;line=5"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] keyFields { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

@@ -1,372 +1,489 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class InvoiceProperty | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class InvoiceProperty | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class InvoiceProperty | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class InvoiceProperty | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.InvoiceProperty">
-          <h1 id="Alvao_API_AM_Model_InvoiceProperty" data-uid="Alvao.API.AM.Model.InvoiceProperty" class="text-break">
-            Class InvoiceProperty <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=7">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class InvoiceProperty</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">InvoiceProperty</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AM_Model_InvoiceProperty_ColumnName_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.ColumnName*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_ColumnName" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.ColumnName">
-            ColumnName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=17">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string ColumnName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_DataType_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.DataType*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_DataType" data-uid="Alvao.API.AM.Model.InvoiceProperty.DataType">
-            DataType <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=19">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">[JsonProperty("dataType")] public KindDataType.KindDataTypeIdEnum DataType { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref"
-              href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_DateValue_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.DateValue*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_DateValue" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.DateValue">
-            DateValue <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=15">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public DateTime? DateValue { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_Id_" data-uid="Alvao.API.AM.Model.InvoiceProperty.Id*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_Id" data-uid="Alvao.API.AM.Model.InvoiceProperty.Id">
-            Id <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=10">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">[JsonProperty("id")] public int Id { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_IsSequence_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.IsSequence*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_IsSequence" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.IsSequence">
-            IsSequence <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=18">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool IsSequence { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_NumberValue_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.NumberValue*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_NumberValue" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.NumberValue">
-            NumberValue <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=16">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public double? NumberValue { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_PropertyName_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.PropertyName*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_PropertyName" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.PropertyName">
-            PropertyName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=12">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">[JsonProperty("propertyName")] public string PropertyName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_TextValue_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.TextValue*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_TextValue" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.TextValue">
-            TextValue <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=14">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string TextValue { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_InvoiceProperty_Value_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.Value*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_Value" data-uid="Alvao.API.AM.Model.InvoiceProperty.Value">
-            Value <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=21">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">[JsonProperty("value")] public string Value { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AM_Model_InvoiceProperty_GetValue_" data-uid=
-          "Alvao.API.AM.Model.InvoiceProperty.GetValue*"></a>
-          <h3 id="Alvao_API_AM_Model_InvoiceProperty_GetValue" data-uid="Alvao.API.AM.Model.InvoiceProperty.GetValue">
-            GetValue() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=27">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string GetValue()</code></pre>
-          </div>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_InvoiceProperty" data-uid="Alvao.API.AM.Model.InvoiceProperty" class="text-break">
+Class InvoiceProperty  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=7"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class InvoiceProperty</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">InvoiceProperty</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_ColumnName_" data-uid="Alvao.API.AM.Model.InvoiceProperty.ColumnName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_ColumnName" data-uid="Alvao.API.AM.Model.InvoiceProperty.ColumnName">
+  ColumnName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ColumnName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_DataType_" data-uid="Alvao.API.AM.Model.InvoiceProperty.DataType*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_DataType" data-uid="Alvao.API.AM.Model.InvoiceProperty.DataType">
+  DataType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;dataType&quot;)]
+public KindDataType.KindDataTypeIdEnum DataType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_DateValue_" data-uid="Alvao.API.AM.Model.InvoiceProperty.DateValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_DateValue" data-uid="Alvao.API.AM.Model.InvoiceProperty.DateValue">
+  DateValue
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime? DateValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_Id_" data-uid="Alvao.API.AM.Model.InvoiceProperty.Id*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_Id" data-uid="Alvao.API.AM.Model.InvoiceProperty.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;id&quot;)]
+public int Id { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_IsSequence_" data-uid="Alvao.API.AM.Model.InvoiceProperty.IsSequence*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_IsSequence" data-uid="Alvao.API.AM.Model.InvoiceProperty.IsSequence">
+  IsSequence
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSequence { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_NumberValue_" data-uid="Alvao.API.AM.Model.InvoiceProperty.NumberValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_NumberValue" data-uid="Alvao.API.AM.Model.InvoiceProperty.NumberValue">
+  NumberValue
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? NumberValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_PropertyName_" data-uid="Alvao.API.AM.Model.InvoiceProperty.PropertyName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_PropertyName" data-uid="Alvao.API.AM.Model.InvoiceProperty.PropertyName">
+  PropertyName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;propertyName&quot;)]
+public string PropertyName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_TextValue_" data-uid="Alvao.API.AM.Model.InvoiceProperty.TextValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_TextValue" data-uid="Alvao.API.AM.Model.InvoiceProperty.TextValue">
+  TextValue
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TextValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_Value_" data-uid="Alvao.API.AM.Model.InvoiceProperty.Value*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_Value" data-uid="Alvao.API.AM.Model.InvoiceProperty.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;value&quot;)]
+public string Value { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_InvoiceProperty_GetValue_" data-uid="Alvao.API.AM.Model.InvoiceProperty.GetValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_InvoiceProperty_GetValue" data-uid="Alvao.API.AM.Model.InvoiceProperty.GetValue">
+  GetValue()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/InvoiceProcessorModel.cs&amp;version=GBPATCH&amp;line=27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetValue()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

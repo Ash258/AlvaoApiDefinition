@@ -1,1152 +1,848 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class ObjectProperty | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class ObjectProperty | Alvao.API Documentation">
-    <meta name="description" content="Facade class grouping object property methods.">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class ObjectProperty | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ObjectProperty | Alvao.API Documentation ">
+      
+      <meta name="description" content="Facade class grouping object property methods.">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.ObjectProperty">
-          <h1 id="Alvao_API_AM_ObjectProperty" data-uid="Alvao.API.AM.ObjectProperty" class="text-break">
-            Class ObjectProperty <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=13">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary">
-            <p>
-              Facade class grouping object property methods.
-            </p>
-          </div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public static class ObjectProperty</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">ObjectProperty</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AM_ObjectProperty_Add_" data-uid="Alvao.API.AM.ObjectProperty.Add*"></a>
-          <h3 id="Alvao_API_AM_ObjectProperty_Add_System_Int32_System_Int32_System_Object_System_Boolean_" data-uid=
-          "Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Boolean)">
-            Add(int, int, object, bool) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=65">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Adds property to object template.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static void Add(int objectId, int kindId, object value, bool inheritable)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind id <i>(tblKind.intKindId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd>
-              <p>
-                New property value
-              </p>
-            </dd>
-            <dt>
-              <code>inheritable</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                Inherit property into child objects
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_Add_" data-uid="Alvao.API.AM.ObjectProperty.Add*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_Add_System_Int32_System_Int32_System_Object_System_Nullable_System_Int32__System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Nullable{System.Int32},System.Boolean)">
-            Add(int, int, object, int?, bool) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=226">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Adds property to object template.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">[Obsolete("This version of Add is deprecated, please use Add without order parameter instead.")] public static void Add(int objectId, int kindId, object value, int? order, bool inheritable)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind id <i>(tblKind.intKindId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd>
-              <p>
-                New property value
-              </p>
-            </dd>
-            <dt>
-              <code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd>
-              <p>
-                Order in object name
-              </p>
-            </dd>
-            <dt>
-              <code>inheritable</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                Inherit property into child objects
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetDefinition_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetDefinition*"></a>
-          <h3 id="Alvao_API_AM_ObjectProperty_GetDefinition_System_Int32_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetDefinition(System.Int32)">
-            GetDefinition(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=130">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Returns property kind database model.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public static tblKind GetDefinition(int propertyKindId)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>propertyKindId</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind ID
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind model <i>(tblKind)</i>
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetPosibleValues_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetPosibleValues*"></a>
-          <h3 id="Alvao_API_AM_ObjectProperty_GetPosibleValues_Alvao_API_AM_Model_Property_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetPosibleValues(Alvao.API.AM.Model.Property)">
-            GetPosibleValues(Property) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=86">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Return possible values for property
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static IEnumerable&lt;tblKindValue&gt; GetPosibleValues(Property property)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>property</code> <a class="xref" href="Alvao.API.AM.Model.Property.html">Property</a>
-            </dt>
-            <dd>
-              <p>
-                Groups properties connected to property.
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKindValue.html">tblKindValue</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Collection of possible values.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetTemplateProperties*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_GetTemplateProperties_Alvao_API_Common_Model_Database_tblClass_ClassCode_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.GetTemplateProperties(Alvao.API.Common.Model.Database.tblClass.ClassCode)">
-            GetTemplateProperties(ClassCode) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=107">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Return template properties for specific object kind.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static IEnumerable&lt;tblKind&gt; GetTemplateProperties(tblClass.ClassCode classCode)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>classCode</code> <a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblClass.html">tblClass</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblClass.ClassCode.html">ClassCode</a>
-            </dt>
-            <dd>
-              <p>
-                Object (template) class <i>(tblClass.intClassId)</i>
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetTemplateProperties*"></a>
-          <h3 id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_System_Int32_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetTemplateProperties(System.Int32)">
-            GetTemplateProperties(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=140">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Return template properties for specific object kind.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static IEnumerable&lt;tblKind&gt; GetTemplateProperties(int typeId)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>typeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object (template) type <i>(tblClass.intClassId)</i>
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetValueList_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetValueList*"></a>
-          <h3 id="Alvao_API_AM_ObjectProperty_GetValueList_System_Int32_System_Int32_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetValueList(System.Int32,System.Int32)">
-            GetValueList(int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=97">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Return value list of property based on kind ID or kind code.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static IEnumerable&lt;tblKindValue&gt; GetValueList(int kindId = 0, int kindCode = 0)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind ID <i>(tblKind.intKindId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>kindCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind code <i>(tblKind.intKindCode)</i>
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKindValue.html">tblKindValue</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Collection of values.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_GetValuesByKindCodes_" data-uid=
-          "Alvao.API.AM.ObjectProperty.GetValuesByKindCodes*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_GetValuesByKindCodes_System_Int32_System_Collections_Generic_IEnumerable_Alvao_API_Common_Model_Database_tblKind_KindCode__"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.GetValuesByKindCodes(System.Int32,System.Collections.Generic.IEnumerable{Alvao.API.Common.Model.Database.tblKind.KindCode})">
-            GetValuesByKindCodes(int, IEnumerable&lt;KindCode&gt;) <a class="header-action link-secondary" title=
-            "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=151">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Returns property values of specific object.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static IDictionary&lt;tblKind.KindCode, string&gt; GetValuesByKindCodes(int nodeId, IEnumerable&lt;tblKind.KindCode&gt; codes)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>codes</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Object property kind codes to return
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref"
-              href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>, <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_HasObjectPropertyRight_" data-uid=
-          "Alvao.API.AM.ObjectProperty.HasObjectPropertyRight*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_HasObjectPropertyRight_System_Int32_System_Int32_System_Int32_Alvao_API_AM_Model_PropertyRight_Right_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.HasObjectPropertyRight(System.Int32,System.Int32,System.Int32,Alvao.API.AM.Model.PropertyRight.Right)">
-            HasObjectPropertyRight(int, int, int, Right) <a class="header-action link-secondary" title="View source"
-            href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=120">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Returns if the user has rights for object property.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static bool HasObjectPropertyRight(int objectId, int propertyKindId, int personId, PropertyRight.Right right)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object Id
-              </p>
-            </dd>
-            <dt>
-              <code>propertyKindId</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind ID
-              </p>
-            </dd>
-            <dt>
-              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Person Id
-              </p>
-            </dd>
-            <dt>
-              <code>right</code> <a class="xref" href=
-              "Alvao.API.AM.Model.PropertyRight.html">PropertyRight</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.PropertyRight.Right.html">Right</a>
-            </dt>
-            <dd>
-              <p>
-                Type of right
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                Bool value if the user has rights for object property
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_TemplateContains_" data-uid=
-          "Alvao.API.AM.ObjectProperty.TemplateContains*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_TemplateContains_System_Int32_Alvao_API_Common_Model_Database_tblKind_KindCode_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.TemplateContains(System.Int32,Alvao.API.Common.Model.Database.tblKind.KindCode)">
-            TemplateContains(int, KindCode) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=76">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Checks whether object template contains specific property
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static bool TemplateContains(int classId, tblKind.KindCode kindCode)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>classId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object (template) class <i>(tblClass.intClassId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>kindCode</code> <a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind code <i>(tblKind.intKindCode)</i>
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                True, when template contains the property, false otherwise.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_Update_System_Int32_Alvao_API_Common_Model_Database_tblKind_KindCode_System_Object_System_Boolean_System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.Update(System.Int32,Alvao.API.Common.Model.Database.tblKind.KindCode,System.Object,System.Boolean,System.Boolean)">
-            Update(int, KindCode, object, bool, bool) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=53">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Updates value of one property on specific object
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static void Update(int objectId, tblKind.KindCode kindCode, object value, bool callCustomAction = true, bool shouldLog = true)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>kindCode</code> <a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>
-            </dt>
-            <dd>
-              <p>
-                Property kind code <i>(tblKind.intKindCode)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd>
-              <p>
-                New property value
-              </p>
-            </dd>
-            <dt>
-              <code>callCustomAction</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot
-                be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter
-                to <i>false</i>).
-              </p>
-            </dd>
-            <dt>
-              <code>shouldLog</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, the property value change is logged into tblLog. Default value is <i>true</i>.
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section">
-            Exceptions
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when object with <code class="paramref">objectId</code> doesn't have property with <code class=
-                "paramref">kindCode</code>.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value type was not recognized or is not supported.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.Update(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,System.Boolean)">
-            Update(int, int, IDictionary&lt;string, object&gt;, bool, bool) <a class="header-action link-secondary"
-            title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=37">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Updates object properties.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static void Update(int personId, int objectId, IDictionary&lt;string, object&gt; properties, bool callCustomAction = true, bool shouldLog = true)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Person ID (who updates properties) <i>(tPerson.iPersonId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>properties</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref"
-              href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Object properties to update
-              </p>
-            </dd>
-            <dt>
-              <code>callCustomAction</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot
-                be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter
-                to <i>false</i>).
-              </p>
-            </dd>
-            <dt>
-              <code>shouldLog</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, the property value change is logged into tblLog. Default value is <i>true</i>.
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section" id=
-          "Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_System_Boolean__examples">
-            Examples
-          </h4>
-          <pre><code class=
-          "lang-csharp">int objectId = 50; //Object which will be updated int personId = 25; //Author of update var properties = new Dictionary&lt;string, object&gt;(); //Create dictionary of properties properties.Add("property name", value); //Add property name and new typed value of property Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
-          <h4 class="section">
-            Exceptions
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when object with <code class="paramref">objectId</code> or <code class=
-                "paramref">objectId</code> does not exist.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with
-                <code class="paramref">objectId</code>.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property was not found on object.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value was not validated, because it has wrong type.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value violates uniqueness.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.Update(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
-            Update(int, int, IDictionary&lt;string, string&gt;, bool) <a class="header-action link-secondary" title=
-            "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=207">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Updates object properties.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">[Obsolete("Update with IDictionary&lt;string, string&gt; is deprecated, please use Update with IDictionary&lt;string, object&gt; instead.")] public static void Update(int personId, int objectId, IDictionary&lt;string, string&gt; properties, bool callCustomAction = true)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Person ID (who updates properties) <i>(tPerson.iPersonId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>properties</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref"
-              href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Object properties to update
-              </p>
-            </dd>
-            <dt>
-              <code>callCustomAction</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot
-                be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter
-                to <i>false</i>).
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section" id=
-          "Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean__examples">
-            Examples
-          </h4>
-          <pre><code class=
-          "lang-csharp">int objectId = 50; //Object which will be updated int personId = 25; //Author of update var properties = new Dictionary&lt;string, string&gt;(); //Create dictionary of properties properties.Add("property name", "property new value"); //Add property name and new value of property Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
-          <h4 class="section">
-            Exceptions
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when object with <code class="paramref">objectId</code> or <code class=
-                "paramref">objectId</code> does not exist.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with
-                <code class="paramref">objectId</code>.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property was not found on object.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value was not validated, because it has wrong type.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value violates uniqueness.
-              </p>
-            </dd>
-          </dl><a id="Alvao_API_AM_ObjectProperty_UpdateProperties_" data-uid=
-          "Alvao.API.AM.ObjectProperty.UpdateProperties*"></a>
-          <h3 id=
-          "Alvao_API_AM_ObjectProperty_UpdateProperties_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.ObjectProperty.UpdateProperties(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
-            UpdateProperties(int, int, IDictionary&lt;string, string&gt;, bool) <a class="header-action link-secondary"
-            title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=180">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Updates object properties. UpdateProperties is deprecated, please use Update instead.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">[Obsolete("UpdateProperties is deprecated, please use Update instead.")] public static void UpdateProperties(int personId, int objectId, IDictionary&lt;string, string&gt; properties, bool callCustomAction = true)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Person ID (who updates properties) <i>(tPerson.iPersonId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd>
-              <p>
-                Object ID <i>(tblNode.intNodeId)</i>
-              </p>
-            </dd>
-            <dt>
-              <code>properties</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref"
-              href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
-            </dt>
-            <dd>
-              <p>
-                Object properties to update
-              </p>
-            </dd>
-            <dt>
-              <code>callCustomAction</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd>
-              <p>
-                If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot
-                be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter
-                to <i>false</i>).
-              </p>
-            </dd>
-          </dl>
-          <h4 class="section" id=
-          "Alvao_API_AM_ObjectProperty_UpdateProperties_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean__examples">
-            Examples
-          </h4>
-          <pre><code class=
-          "lang-csharp">int objectId = 50; //Object which will be updated int personId = 25; //Author of update var properties = new Dictionary&lt;string, string&gt;(); //Create dictionary of properties properties.Add("property name", "property new value"); //Add property name and new value of property Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
-          <h4 class="section">
-            Exceptions
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when object with <code class="paramref">objectId</code> or <code class=
-                "paramref">objectId</code> does not exist.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with
-                <code class="paramref">objectId</code>.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property was not found on object.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value was not validated, because it has wrong type.
-              </p>
-            </dd>
-            <dt>
-              <a class="xref" href=
-              "Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a>
-            </dt>
-            <dd>
-              <p>
-                Throws when property value violates uniqueness.
-              </p>
-            </dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_ObjectProperty" data-uid="Alvao.API.AM.ObjectProperty" class="text-break">
+Class ObjectProperty  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Facade class grouping object property methods.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ObjectProperty</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ObjectProperty</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AM_ObjectProperty_Add_" data-uid="Alvao.API.AM.ObjectProperty.Add*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_Add_System_Int32_System_Int32_System_Object_System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Boolean)">
+  Add(int, int, object, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds property to object template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Add(int objectId, int kindId, object value, bool inheritable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind id <i>(tblKind.intKindId)</i></p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>New property value</p>
+</dd>
+    <dt><code>inheritable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Inherit property into child objects</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_Add_" data-uid="Alvao.API.AM.ObjectProperty.Add*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_Add_System_Int32_System_Int32_System_Object_System_Nullable_System_Int32__System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Nullable{System.Int32},System.Boolean)">
+  Add(int, int, object, int?, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds property to object template.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This version of Add is deprecated, please use Add without order parameter instead.&quot;)]
+public static void Add(int objectId, int kindId, object value, int? order, bool inheritable)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind id <i>(tblKind.intKindId)</i></p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>New property value</p>
+</dd>
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd><p>Order in object name</p>
+</dd>
+    <dt><code>inheritable</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Inherit property into child objects</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetDefinition_" data-uid="Alvao.API.AM.ObjectProperty.GetDefinition*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetDefinition_System_Int32_" data-uid="Alvao.API.AM.ObjectProperty.GetDefinition(System.Int32)">
+  GetDefinition(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns property kind database model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static tblKind GetDefinition(int propertyKindId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>propertyKindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind ID</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a></dt>
+    <dd><p>Property kind model <i>(tblKind)</i></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetPosibleValues_" data-uid="Alvao.API.AM.ObjectProperty.GetPosibleValues*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetPosibleValues_Alvao_API_AM_Model_Property_" data-uid="Alvao.API.AM.ObjectProperty.GetPosibleValues(Alvao.API.AM.Model.Property)">
+  GetPosibleValues(Property)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return possible values for property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tblKindValue&gt; GetPosibleValues(Property property)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>property</code> <a class="xref" href="Alvao.API.AM.Model.Property.html">Property</a></dt>
+    <dd><p>Groups properties connected to property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKindValue.html">tblKindValue</a>&gt;</dt>
+    <dd><p>Collection of possible values.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_" data-uid="Alvao.API.AM.ObjectProperty.GetTemplateProperties*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_Alvao_API_Common_Model_Database_tblClass_ClassCode_" data-uid="Alvao.API.AM.ObjectProperty.GetTemplateProperties(Alvao.API.Common.Model.Database.tblClass.ClassCode)">
+  GetTemplateProperties(ClassCode)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return template properties for specific object kind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tblKind&gt; GetTemplateProperties(tblClass.ClassCode classCode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>classCode</code> <a class="xref" href="Alvao.API.Common.Model.Database.tblClass.html">tblClass</a>.<a class="xref" href="Alvao.API.Common.Model.Database.tblClass.ClassCode.html">ClassCode</a></dt>
+    <dd><p>Object (template) class <i>(tblClass.intClassId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_" data-uid="Alvao.API.AM.ObjectProperty.GetTemplateProperties*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_System_Int32_" data-uid="Alvao.API.AM.ObjectProperty.GetTemplateProperties(System.Int32)">
+  GetTemplateProperties(int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return template properties for specific object kind.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tblKind&gt; GetTemplateProperties(int typeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>typeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object (template) type <i>(tblClass.intClassId)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetValueList_" data-uid="Alvao.API.AM.ObjectProperty.GetValueList*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetValueList_System_Int32_System_Int32_" data-uid="Alvao.API.AM.ObjectProperty.GetValueList(System.Int32,System.Int32)">
+  GetValueList(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return value list of property based on kind ID or kind code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;tblKindValue&gt; GetValueList(int kindId = 0, int kindCode = 0)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind ID <i>(tblKind.intKindId)</i></p>
+</dd>
+    <dt><code>kindCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind code <i>(tblKind.intKindCode)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKindValue.html">tblKindValue</a>&gt;</dt>
+    <dd><p>Collection of values.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_GetValuesByKindCodes_" data-uid="Alvao.API.AM.ObjectProperty.GetValuesByKindCodes*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_GetValuesByKindCodes_System_Int32_System_Collections_Generic_IEnumerable_Alvao_API_Common_Model_Database_tblKind_KindCode__" data-uid="Alvao.API.AM.ObjectProperty.GetValuesByKindCodes(System.Int32,System.Collections.Generic.IEnumerable{Alvao.API.Common.Model.Database.tblKind.KindCode})">
+  GetValuesByKindCodes(int, IEnumerable&lt;KindCode&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns property values of specific object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IDictionary&lt;tblKind.KindCode, string&gt; GetValuesByKindCodes(int nodeId, IEnumerable&lt;tblKind.KindCode&gt; codes)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>codes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>&gt;</dt>
+    <dd><p>Object property kind codes to return</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_HasObjectPropertyRight_" data-uid="Alvao.API.AM.ObjectProperty.HasObjectPropertyRight*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_HasObjectPropertyRight_System_Int32_System_Int32_System_Int32_Alvao_API_AM_Model_PropertyRight_Right_" data-uid="Alvao.API.AM.ObjectProperty.HasObjectPropertyRight(System.Int32,System.Int32,System.Int32,Alvao.API.AM.Model.PropertyRight.Right)">
+  HasObjectPropertyRight(int, int, int, Right)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns if the user has rights for object property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasObjectPropertyRight(int objectId, int propertyKindId, int personId, PropertyRight.Right right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object Id</p>
+</dd>
+    <dt><code>propertyKindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Property kind ID</p>
+</dd>
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person Id</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="Alvao.API.AM.Model.PropertyRight.html">PropertyRight</a>.<a class="xref" href="Alvao.API.AM.Model.PropertyRight.Right.html">Right</a></dt>
+    <dd><p>Type of right</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Bool value if the user has rights for object property</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_TemplateContains_" data-uid="Alvao.API.AM.ObjectProperty.TemplateContains*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_TemplateContains_System_Int32_Alvao_API_Common_Model_Database_tblKind_KindCode_" data-uid="Alvao.API.AM.ObjectProperty.TemplateContains(System.Int32,Alvao.API.Common.Model.Database.tblKind.KindCode)">
+  TemplateContains(int, KindCode)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether object template contains specific property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TemplateContains(int classId, tblKind.KindCode kindCode)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>classId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object (template) class <i>(tblClass.intClassId)</i></p>
+</dd>
+    <dt><code>kindCode</code> <a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a></dt>
+    <dd><p>Property kind code <i>(tblKind.intKindCode)</i></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True, when template contains the property, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_Update_System_Int32_Alvao_API_Common_Model_Database_tblKind_KindCode_System_Object_System_Boolean_System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.Update(System.Int32,Alvao.API.Common.Model.Database.tblKind.KindCode,System.Object,System.Boolean,System.Boolean)">
+  Update(int, KindCode, object, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates value of one property on specific object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Update(int objectId, tblKind.KindCode kindCode, object value, bool callCustomAction = true, bool shouldLog = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>kindCode</code> <a class="xref" href="Alvao.API.Common.Model.Database.tblKind.html">tblKind</a>.<a class="xref" href="Alvao.API.Common.Model.Database.tblKind.KindCode.html">KindCode</a></dt>
+    <dd><p>Property kind code <i>(tblKind.intKindCode)</i></p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>New property value</p>
+</dd>
+    <dt><code>callCustomAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter to <i>false</i>).</p>
+</dd>
+    <dt><code>shouldLog</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, the property value change is logged into tblLog. Default value is <i>true</i>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a></dt>
+    <dd><p>Throws when object with <code class="paramref">objectId</code> doesn't have property with <code class="paramref">kindCode</code>.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a></dt>
+    <dd><p>Throws when property value type was not recognized or is not supported.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.Update(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.Object},System.Boolean,System.Boolean)">
+  Update(int, int, IDictionary&lt;string, object&gt;, bool, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates object properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Update(int personId, int objectId, IDictionary&lt;string, object&gt; properties, bool callCustomAction = true, bool shouldLog = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID (who updates properties) <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>properties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd><p>Object properties to update</p>
+</dd>
+    <dt><code>callCustomAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter to <i>false</i>).</p>
+</dd>
+    <dt><code>shouldLog</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, the property value change is logged into tblLog. Default value is <i>true</i>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_Object__System_Boolean_System_Boolean__examples">Examples</h4>
+  <pre><code class="lang-csharp">int objectId = 50; //Object which will be updated
+int personId = 25; //Author of update
+var properties = new Dictionary&lt;string, object&gt;(); //Create dictionary of properties
+properties.Add("property name", value); //Add property name and new typed value of property
+Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a></dt>
+    <dd><p>Throws when object with <code class="paramref">objectId</code> or <code class="paramref">objectId</code> does not exist.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a></dt>
+    <dd><p>Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with <code class="paramref">objectId</code>.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a></dt>
+    <dd><p>Throws when property was not found on object.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a></dt>
+    <dd><p>Throws when property value was not validated, because it has wrong type.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a></dt>
+    <dd><p>Throws when property value violates uniqueness.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_Update_" data-uid="Alvao.API.AM.ObjectProperty.Update*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.Update(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+  Update(int, int, IDictionary&lt;string, string&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates object properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Update with IDictionary&lt;string, string&gt; is deprecated, please use Update with IDictionary&lt;string, object&gt; instead.&quot;)]
+public static void Update(int personId, int objectId, IDictionary&lt;string, string&gt; properties, bool callCustomAction = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID (who updates properties) <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>properties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Object properties to update</p>
+</dd>
+    <dt><code>callCustomAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter to <i>false</i>).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Alvao_API_AM_ObjectProperty_Update_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean__examples">Examples</h4>
+  <pre><code class="lang-csharp">int objectId = 50; //Object which will be updated
+int personId = 25; //Author of update
+var properties = new Dictionary&lt;string, string&gt;(); //Create dictionary of properties
+properties.Add("property name", "property new value"); //Add property name and new value of property
+Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a></dt>
+    <dd><p>Throws when object with <code class="paramref">objectId</code> or <code class="paramref">objectId</code> does not exist.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a></dt>
+    <dd><p>Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with <code class="paramref">objectId</code>.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a></dt>
+    <dd><p>Throws when property was not found on object.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a></dt>
+    <dd><p>Throws when property value was not validated, because it has wrong type.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a></dt>
+    <dd><p>Throws when property value violates uniqueness.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Alvao_API_AM_ObjectProperty_UpdateProperties_" data-uid="Alvao.API.AM.ObjectProperty.UpdateProperties*"></a>
+
+  <h3 id="Alvao_API_AM_ObjectProperty_UpdateProperties_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean_" data-uid="Alvao.API.AM.ObjectProperty.UpdateProperties(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
+  UpdateProperties(int, int, IDictionary&lt;string, string&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBPATCH&amp;line=180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates object properties.
+UpdateProperties is deprecated, please use Update instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;UpdateProperties is deprecated, please use Update instead.&quot;)]
+public static void UpdateProperties(int personId, int objectId, IDictionary&lt;string, string&gt; properties, bool callCustomAction = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Person ID (who updates properties) <i>(tPerson.iPersonId)</i></p>
+</dd>
+    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Object ID <i>(tblNode.intNodeId)</i></p>
+</dd>
+    <dt><code>properties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Object properties to update</p>
+</dd>
+    <dt><code>callCustomAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter to <i>false</i>).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Alvao_API_AM_ObjectProperty_UpdateProperties_System_Int32_System_Int32_System_Collections_Generic_IDictionary_System_String_System_String__System_Boolean__examples">Examples</h4>
+  <pre><code class="lang-csharp">int objectId = 50; //Object which will be updated
+int personId = 25; //Author of update
+var properties = new Dictionary&lt;string, string&gt;(); //Create dictionary of properties
+properties.Add("property name", "property new value"); //Add property name and new value of property
+Alvao.API.AM.ObjectProperty.UpdateProperties(personId, objectId, properties); //Update properties</code></pre>
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.ObjectNotFoundException.html">ObjectNotFoundException</a></dt>
+    <dd><p>Throws when object with <code class="paramref">objectId</code> or <code class="paramref">objectId</code> does not exist.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.UnauthorizedObjectOperationException.html">UnauthorizedObjectOperationException</a></dt>
+    <dd><p>Throws when person with <code class="paramref">personId</code> doesn't have rights to move object with <code class="paramref">objectId</code>.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a></dt>
+    <dd><p>Throws when property was not found on object.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.InvalidPropertyValueTypeException.html">InvalidPropertyValueTypeException</a></dt>
+    <dd><p>Throws when property value was not validated, because it has wrong type.</p>
+</dd>
+    <dt><a class="xref" href="Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a></dt>
+    <dd><p>Throws when property value violates uniqueness.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

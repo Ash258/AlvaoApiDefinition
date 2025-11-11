@@ -1,328 +1,373 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class SwLibrary | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class SwLibrary | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class SwLibrary | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SwLibrary | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary">
-          <h1 id="Alvao_API_AM_Model_SwLibrary_SwLibrary" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary" class=
-          "text-break">
-            Class SwLibrary <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=7">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.html">Model</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.SwLibrary.html">SwLibrary</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class SwLibrary</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">SwLibrary</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="constructors">
-            Constructors
-          </h2><a id="Alvao_API_AM_Model_SwLibrary_SwLibrary__ctor_" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.#ctor*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_SwLibrary_SwLibrary__ctor_Alvao_API_Utils_ArchiveStream_Alvao_API_AM_Repository_ISwLibRepository_"
-          data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.#ctor(Alvao.API.Utils.ArchiveStream,Alvao.API.AM.Repository.ISwLibRepository)">
-            SwLibrary(ArchiveStream, ISwLibRepository) <a class="header-action link-secondary" title="View source"
-            href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=42">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public SwLibrary(ArchiveStream archiveStream, ISwLibRepository swLibRepository)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>archiveStream</code> <span class="xref">ArchiveStream</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>swLibRepository</code> <span class="xref">ISwLibRepository</span>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="fields">
-            Fields
-          </h2>
-          <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_CA" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.CA">
-            CA <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=35">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Certification autority
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public const string CA = "__ALC__"</code></pre>
-          </div>
-          <h4 class="section">
-            Field Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_LibraryHeader" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.LibraryHeader">
-            LibraryHeader <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=30">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              "EPSWLIB002" je unicode verze knihovny, starsi nebudeme podporovat
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public const string LibraryHeader = "EPSWLIB002"</code></pre>
-          </div>
-          <h4 class="section">
-            Field Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_SubstituteMark" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.SubstituteMark">
-            SubstituteMark <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=37">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public const string SubstituteMark = "-SUBSTITUTE-"</code></pre>
-          </div>
-          <h4 class="section">
-            Field Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AM_Model_SwLibrary_SwLibrary_Load_" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.Load*"></a>
-          <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_Load_System_Threading_CancellationToken_" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.Load(System.Threading.CancellationToken)">
-            Load(CancellationToken) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=79">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public void Load(CancellationToken token)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>token</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_SwLibrary_SwLibrary_UpgradeAsync_" data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.UpgradeAsync*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_SwLibrary_SwLibrary_UpgradeAsync_System_DateTime_System_Threading_CancellationToken_"
-          data-uid=
-          "Alvao.API.AM.Model.SwLibrary.SwLibrary.UpgradeAsync(System.DateTime,System.Threading.CancellationToken)">
-            UpgradeAsync(DateTime, CancellationToken) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=48">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public Task&lt;bool&gt; UpgradeAsync(DateTime newSwLibDate, CancellationToken token)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>newSwLibDate</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>token</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_SwLibrary_SwLibrary" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary" class="text-break">
+Class SwLibrary  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=7"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>.<a class="xref" href="Alvao.API.AM.Model.SwLibrary.html">SwLibrary</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SwLibrary</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SwLibrary</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_SwLibrary_SwLibrary__ctor_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.#ctor*"></a>
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary__ctor_Alvao_API_Utils_ArchiveStream_Alvao_API_AM_Repository_ISwLibRepository_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.#ctor(Alvao.API.Utils.ArchiveStream,Alvao.API.AM.Repository.ISwLibRepository)">
+  SwLibrary(ArchiveStream, ISwLibRepository)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SwLibrary(ArchiveStream archiveStream, ISwLibRepository swLibRepository)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>archiveStream</code> <span class="xref">ArchiveStream</span></dt>
+    <dd></dd>
+    <dt><code>swLibRepository</code> <span class="xref">ISwLibRepository</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_CA" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.CA">
+  CA
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Certification autority</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string CA = &quot;__ALC__&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_LibraryHeader" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.LibraryHeader">
+  LibraryHeader
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>&quot;EPSWLIB002&quot; je unicode verze knihovny, starsi nebudeme podporovat</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string LibraryHeader = &quot;EPSWLIB002&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_SubstituteMark" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.SubstituteMark">
+  SubstituteMark
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string SubstituteMark = &quot;-SUBSTITUTE-&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_SwLibrary_SwLibrary_Load_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.Load*"></a>
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_Load_System_Threading_CancellationToken_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.Load(System.Threading.CancellationToken)">
+  Load(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Load(CancellationToken token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_SwLibrary_SwLibrary_UpgradeAsync_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.UpgradeAsync*"></a>
+
+  <h3 id="Alvao_API_AM_Model_SwLibrary_SwLibrary_UpgradeAsync_System_DateTime_System_Threading_CancellationToken_" data-uid="Alvao.API.AM.Model.SwLibrary.SwLibrary.UpgradeAsync(System.DateTime,System.Threading.CancellationToken)">
+  UpgradeAsync(DateTime, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/SwLibrary/SwLibrary.cs&amp;version=GBPATCH&amp;line=48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; UpgradeAsync(DateTime newSwLibDate, CancellationToken token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>newSwLibDate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

@@ -1,646 +1,718 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class AIClient | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class AIClient | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class AIClient | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AIClient | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AI.AIClient">
-          <h1 id="Alvao_API_AI_AIClient" data-uid="Alvao.API.AI.AIClient" class="text-break">
-            Class AIClient <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=13">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AI.html">AI</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class AIClient</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">AIClient</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AI_AIClient_Culture_" data-uid="Alvao.API.AI.AIClient.Culture*"></a>
-          <h3 id="Alvao_API_AI_AIClient_Culture" data-uid="Alvao.API.AI.AIClient.Culture">
-            Culture <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=48">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Get or set the culture used for the AI responses.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public CultureInfo Culture { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_LastErrorResponse_" data-uid=
-          "Alvao.API.AI.AIClient.LastErrorResponse*"></a>
-          <h3 id="Alvao_API_AI_AIClient_LastErrorResponse" data-uid="Alvao.API.AI.AIClient.LastErrorResponse">
-            LastErrorResponse <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=43">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Get the last error response from the Azure API.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string LastErrorResponse { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_LastStatusCode_" data-uid="Alvao.API.AI.AIClient.LastStatusCode*"></a>
-          <h3 id="Alvao_API_AI_AIClient_LastStatusCode" data-uid="Alvao.API.AI.AIClient.LastStatusCode">
-            LastStatusCode <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=38">
-            </a>
-          </h3>
-          <div class="markdown level1 summary">
-            <p>
-              Get the last status code from the Azure API.
-            </p>
-          </div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public HttpStatusCode LastStatusCode { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode">HttpStatusCode</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AI_AIClient_GetAzureResponse_" data-uid="Alvao.API.AI.AIClient.GetAzureResponse*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetAzureResponse_System_String_System_Object_" data-uid=
-          "Alvao.API.AI.AIClient.GetAzureResponse(System.String,System.Object)">
-            GetAzureResponse(string, object) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=52">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public HttpResponseMessage GetAzureResponse(string uri, object data)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetAzureResponseAsync_" data-uid=
-          "Alvao.API.AI.AIClient.GetAzureResponseAsync*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetAzureResponseAsync_System_String_System_Object_" data-uid=
-          "Alvao.API.AI.AIClient.GetAzureResponseAsync(System.String,System.Object)">
-            GetAzureResponseAsync(string, object) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=102">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public Task&lt;HttpResponseMessage&gt; GetAzureResponseAsync(string uri, object data)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetChoicesText_" data-uid="Alvao.API.AI.AIClient.GetChoicesText*"></a>
-          <h3 id=
-          "Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChatChoiceResponse__"
-          data-uid=
-          "Alvao.API.AI.AIClient.GetChoicesText(System.Collections.Generic.IEnumerable{Alvao.API.AI.Model.ChatChoiceResponse})">
-            GetChoicesText(IEnumerable&lt;ChatChoiceResponse&gt;) <a class="header-action link-secondary" title=
-            "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=360">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static string GetChoicesText(IEnumerable&lt;ChatChoiceResponse&gt; choices)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>choices</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.AI.Model.ChatChoiceResponse.html">ChatChoiceResponse</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetChoicesText_" data-uid="Alvao.API.AI.AIClient.GetChoicesText*"></a>
-          <h3 id=
-          "Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChoiceResponse__"
-          data-uid=
-          "Alvao.API.AI.AIClient.GetChoicesText(System.Collections.Generic.IEnumerable{Alvao.API.AI.Model.ChoiceResponse})">
-            GetChoicesText(IEnumerable&lt;ChoiceResponse&gt;) <a class="header-action link-secondary" title=
-            "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=348">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static string GetChoicesText(IEnumerable&lt;ChoiceResponse&gt; choices)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>choices</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
-              href="Alvao.API.AI.Model.ChoiceResponse.html">ChoiceResponse</a>&gt;
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetEmbeddingResponse_" data-uid=
-          "Alvao.API.AI.AIClient.GetEmbeddingResponse*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetEmbeddingResponse_System_String_" data-uid=
-          "Alvao.API.AI.AIClient.GetEmbeddingResponse(System.String)">
-            GetEmbeddingResponse(string) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=141">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public EmbeddingCreateResponse GetEmbeddingResponse(string text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AI.Model.EmbeddingCreateResponse.html">EmbeddingCreateResponse</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetKeywords_" data-uid="Alvao.API.AI.AIClient.GetKeywords*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetKeywords_System_String_System_String_" data-uid=
-          "Alvao.API.AI.AIClient.GetKeywords(System.String,System.String)">
-            GetKeywords(string, string) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=223">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string GetKeywords(string model, string text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetResponseText_" data-uid="Alvao.API.AI.AIClient.GetResponseText*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_ChatCompletionCreateResponse_" data-uid=
-          "Alvao.API.AI.AIClient.GetResponseText(Alvao.API.AI.Model.ChatCompletionCreateResponse)">
-            GetResponseText(ChatCompletionCreateResponse) <a class="header-action link-secondary" title="View source"
-            href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=336">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public static string GetResponseText(ChatCompletionCreateResponse response)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>response</code> <a class="xref" href=
-              "Alvao.API.AI.Model.ChatCompletionCreateResponse.html">ChatCompletionCreateResponse</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetResponseText_" data-uid="Alvao.API.AI.AIClient.GetResponseText*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_CompletionCreateResponse_" data-uid=
-          "Alvao.API.AI.AIClient.GetResponseText(Alvao.API.AI.Model.CompletionCreateResponse)">
-            GetResponseText(CompletionCreateResponse) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=324">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public string GetResponseText(CompletionCreateResponse response)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>response</code> <a class="xref" href=
-              "Alvao.API.AI.Model.CompletionCreateResponse.html">CompletionCreateResponse</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetResult_" data-uid="Alvao.API.AI.AIClient.GetResult*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetResult__1_System_Net_Http_HttpResponseMessage_" data-uid=
-          "Alvao.API.AI.AIClient.GetResult``1(System.Net.Http.HttpResponseMessage)">
-            GetResult&lt;T&gt;(HttpResponseMessage) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=310">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public T GetResult&lt;T&gt;(HttpResponseMessage response)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>response</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <span class="xref">T</span>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Type Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>T</code>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetSolutionProposal_" data-uid=
-          "Alvao.API.AI.AIClient.GetSolutionProposal*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetSolutionProposal_System_String_System_String_" data-uid=
-          "Alvao.API.AI.AIClient.GetSolutionProposal(System.String,System.String)">
-            GetSolutionProposal(string, string) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=256">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public string GetSolutionProposal(string subject, string body)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>subject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetSummaryForShortText_" data-uid=
-          "Alvao.API.AI.AIClient.GetSummaryForShortText*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetSummaryForShortText_System_String_" data-uid=
-          "Alvao.API.AI.AIClient.GetSummaryForShortText(System.String)">
-            GetSummaryForShortText(string) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=160">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string GetSummaryForShortText(string text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_" data-uid=
-          "Alvao.API.AI.AIClient.GetSummaryFromChatCompletions*"></a>
-          <h3 id="Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_System_String_System_String_" data-uid=
-          "Alvao.API.AI.AIClient.GetSummaryFromChatCompletions(System.String,System.String)">
-            GetSummaryFromChatCompletions(string, string) <a class="header-action link-secondary" title="View source"
-            href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=189">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public string GetSummaryFromChatCompletions(string model, string text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AI_AIClient" data-uid="Alvao.API.AI.AIClient" class="text-break">
+Class AIClient  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AI.html">AI</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AIClient</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AIClient</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AI_AIClient_Culture_" data-uid="Alvao.API.AI.AIClient.Culture*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_Culture" data-uid="Alvao.API.AI.AIClient.Culture">
+  Culture
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get or set the culture used for the AI responses.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CultureInfo Culture { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_LastErrorResponse_" data-uid="Alvao.API.AI.AIClient.LastErrorResponse*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_LastErrorResponse" data-uid="Alvao.API.AI.AIClient.LastErrorResponse">
+  LastErrorResponse
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the last error response from the Azure API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LastErrorResponse { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_LastStatusCode_" data-uid="Alvao.API.AI.AIClient.LastStatusCode*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_LastStatusCode" data-uid="Alvao.API.AI.AIClient.LastStatusCode">
+  LastStatusCode
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get the last status code from the Azure API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpStatusCode LastStatusCode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode">HttpStatusCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AI_AIClient_GetAzureResponse_" data-uid="Alvao.API.AI.AIClient.GetAzureResponse*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetAzureResponse_System_String_System_Object_" data-uid="Alvao.API.AI.AIClient.GetAzureResponse(System.String,System.Object)">
+  GetAzureResponse(string, object)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpResponseMessage GetAzureResponse(string uri, object data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetAzureResponseAsync_" data-uid="Alvao.API.AI.AIClient.GetAzureResponseAsync*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetAzureResponseAsync_System_String_System_Object_" data-uid="Alvao.API.AI.AIClient.GetAzureResponseAsync(System.String,System.Object)">
+  GetAzureResponseAsync(string, object)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;HttpResponseMessage&gt; GetAzureResponseAsync(string uri, object data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>uri</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetChoicesText_" data-uid="Alvao.API.AI.AIClient.GetChoicesText*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChatChoiceResponse__" data-uid="Alvao.API.AI.AIClient.GetChoicesText(System.Collections.Generic.IEnumerable{Alvao.API.AI.Model.ChatChoiceResponse})">
+  GetChoicesText(IEnumerable&lt;ChatChoiceResponse&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=360"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetChoicesText(IEnumerable&lt;ChatChoiceResponse&gt; choices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>choices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.AI.Model.ChatChoiceResponse.html">ChatChoiceResponse</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetChoicesText_" data-uid="Alvao.API.AI.AIClient.GetChoicesText*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetChoicesText_System_Collections_Generic_IEnumerable_Alvao_API_AI_Model_ChoiceResponse__" data-uid="Alvao.API.AI.AIClient.GetChoicesText(System.Collections.Generic.IEnumerable{Alvao.API.AI.Model.ChoiceResponse})">
+  GetChoicesText(IEnumerable&lt;ChoiceResponse&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=348"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetChoicesText(IEnumerable&lt;ChoiceResponse&gt; choices)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>choices</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Alvao.API.AI.Model.ChoiceResponse.html">ChoiceResponse</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetEmbeddingResponse_" data-uid="Alvao.API.AI.AIClient.GetEmbeddingResponse*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetEmbeddingResponse_System_String_" data-uid="Alvao.API.AI.AIClient.GetEmbeddingResponse(System.String)">
+  GetEmbeddingResponse(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EmbeddingCreateResponse GetEmbeddingResponse(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AI.Model.EmbeddingCreateResponse.html">EmbeddingCreateResponse</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetKeywords_" data-uid="Alvao.API.AI.AIClient.GetKeywords*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetKeywords_System_String_System_String_" data-uid="Alvao.API.AI.AIClient.GetKeywords(System.String,System.String)">
+  GetKeywords(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetKeywords(string model, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetResponseText_" data-uid="Alvao.API.AI.AIClient.GetResponseText*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_ChatCompletionCreateResponse_" data-uid="Alvao.API.AI.AIClient.GetResponseText(Alvao.API.AI.Model.ChatCompletionCreateResponse)">
+  GetResponseText(ChatCompletionCreateResponse)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetResponseText(ChatCompletionCreateResponse response)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>response</code> <a class="xref" href="Alvao.API.AI.Model.ChatCompletionCreateResponse.html">ChatCompletionCreateResponse</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetResponseText_" data-uid="Alvao.API.AI.AIClient.GetResponseText*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetResponseText_Alvao_API_AI_Model_CompletionCreateResponse_" data-uid="Alvao.API.AI.AIClient.GetResponseText(Alvao.API.AI.Model.CompletionCreateResponse)">
+  GetResponseText(CompletionCreateResponse)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetResponseText(CompletionCreateResponse response)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>response</code> <a class="xref" href="Alvao.API.AI.Model.CompletionCreateResponse.html">CompletionCreateResponse</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetResult_" data-uid="Alvao.API.AI.AIClient.GetResult*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetResult__1_System_Net_Http_HttpResponseMessage_" data-uid="Alvao.API.AI.AIClient.GetResult``1(System.Net.Http.HttpResponseMessage)">
+  GetResult&lt;T&gt;(HttpResponseMessage)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetResult&lt;T&gt;(HttpResponseMessage response)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>response</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage">HttpResponseMessage</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetSolutionProposal_" data-uid="Alvao.API.AI.AIClient.GetSolutionProposal*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetSolutionProposal_System_String_System_String_" data-uid="Alvao.API.AI.AIClient.GetSolutionProposal(System.String,System.String)">
+  GetSolutionProposal(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=256"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSolutionProposal(string subject, string body)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>body</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetSummaryForShortText_" data-uid="Alvao.API.AI.AIClient.GetSummaryForShortText*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetSummaryForShortText_System_String_" data-uid="Alvao.API.AI.AIClient.GetSummaryForShortText(System.String)">
+  GetSummaryForShortText(string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSummaryForShortText(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_" data-uid="Alvao.API.AI.AIClient.GetSummaryFromChatCompletions*"></a>
+
+  <h3 id="Alvao_API_AI_AIClient_GetSummaryFromChatCompletions_System_String_System_String_" data-uid="Alvao.API.AI.AIClient.GetSummaryFromChatCompletions(System.String,System.String)">
+  GetSummaryFromChatCompletions(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/AIClient.cs&amp;version=GBPATCH&amp;line=189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetSummaryFromChatCompletions(string model, string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">

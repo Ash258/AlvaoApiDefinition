@@ -1,675 +1,762 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-    <title>
-      Class CompareProperty | Alvao.API Documentation
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Class CompareProperty | Alvao.API Documentation">
-    <link rel="icon" href="../images/favicon.png">
-    <link rel="stylesheet" href="../public/docfx.min.css">
-    <link rel="stylesheet" href="../public/main.css">
-    <meta name="docfx:navrel" content="../toc.html">
-    <meta name="docfx:tocrel" content="toc.html">
-    <meta name="docfx:rel" content="../">
-    <meta name="loc:inThisArticle" content="In this article">
-    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-    <meta name="loc:tocFilter" content="Filter by title">
-    <meta name="loc:nextArticle" content="Next">
-    <meta name="loc:prevArticle" content="Previous">
-    <meta name="loc:themeLight" content="Light">
-    <meta name="loc:themeDark" content="Dark">
-    <meta name="loc:themeAuto" content="Auto">
-    <meta name="loc:changeTheme" content="Change theme">
-    <meta name="loc:copy" content="Copy">
-    <meta name="loc:downloadPdf" content="Download PDF">
-    <script type="module" src="./../public/docfx.min.js"></script>
-    <script>
+      <title>Class CompareProperty | Alvao.API Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CompareProperty | Alvao.API Documentation ">
+      
+      
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-    </script>
+      </script>
+
   </head>
+
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
-          ""></a>
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search" name="search">
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
-                "off" aria-label="Search">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
-              Table of Contents
-            </h5>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
+
       <div class="content">
         <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
           <nav id="breadcrumb"></nav>
         </div>
+
         <article data-uid="Alvao.API.AM.Model.Detection.CompareProperty">
-          <h1 id="Alvao_API_AM_Model_Detection_CompareProperty" data-uid="Alvao.API.AM.Model.Detection.CompareProperty"
-          class="text-break">
-            Class CompareProperty <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=8">
-            </a>
-          </h1>
-          <div class="facts text-secondary">
-            <dl>
-              <dt>
-                Namespace
-              </dt>
-              <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.html">Model</a>.<a class="xref" href=
-                "Alvao.API.AM.Model.Detection.html">Detection</a>
-              </dd>
-            </dl>
-            <dl>
-              <dt>
-                Assembly
-              </dt>
-              <dd>
-                Alvao.API.dll
-              </dd>
-            </dl>
-          </div>
-          <div class="markdown summary"></div>
-          <div class="markdown conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class CompareProperty</code></pre>
-          </div>
-          <dl class="typelist inheritance">
-            <dt>
-              Inheritance
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-              </div>
-              <div>
-                <span class="xref">CompareProperty</span>
-              </div>
-            </dd>
-          </dl>
-          <dl class="typelist inheritedMembers">
-            <dt>
-              Inherited Members
-            </dt>
-            <dd>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
-                object.Equals(object, object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
-                object)</a>
-              </div>
-              <div>
-                <a class="xref" href=
-                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-              </div>
-            </dd>
-          </dl>
-          <h2 class="section" id="constructors">
-            Constructors
-          </h2><a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty__ctor" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor">
-            CompareProperty() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=20">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public CompareProperty()</code></pre>
-          </div><a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_Detection_CompareProperty__ctor_Alvao_API_AM_Model_Kind_KindCode_System_Boolean_System_String_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum_"
-          data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor(Alvao.API.AM.Model.Kind.KindCode,System.Boolean,System.String,Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum)">
-            CompareProperty(KindCode, bool, string, KindDataTypeIdEnum) <a class="header-action link-secondary" title=
-            "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=28">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public CompareProperty(Kind.KindCode kindCode, bool isKey, string dbColumnName, KindDataType.KindDataTypeIdEnum dbColumnType = KindDataTypeIdEnum.Text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>kindCode</code> <a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>isKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>dbColumnName</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>dbColumnType</code> <a class="xref" href=
-              "Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_Detection_CompareProperty__ctor_Alvao_API_AM_Model_Kind_KindCode_System_String_System_Boolean_System_String_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum_"
-          data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.#ctor(Alvao.API.AM.Model.Kind.KindCode,System.String,System.Boolean,System.String,Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum)">
-            CompareProperty(KindCode, string, bool, string, KindDataTypeIdEnum) <a class="header-action link-secondary"
-            title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=38">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public CompareProperty(Kind.KindCode kindCode, string wmiAttribute, bool isKey, string dbColumnName, KindDataType.KindDataTypeIdEnum dbColumnType = KindDataTypeIdEnum.Text)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>kindCode</code> <a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiAttribute</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>isKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>dbColumnName</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>dbColumnType</code> <a class="xref" href=
-              "Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href=
-              "Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="properties">
-            Properties
-          </h2><a id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnName_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.DbColumnName*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnName" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.DbColumnName">
-            DbColumnName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=17">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string DbColumnName { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnType_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.DbColumnType*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnType" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.DbColumnType">
-            DbColumnType <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=18">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public KindDataType.KindDataTypeIdEnum DbColumnType { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref"
-              href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_IsKey_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.IsKey*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsKey" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.IsKey">
-            IsKey <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=13">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool IsKey { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_KindCode_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.KindCode*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_KindCode" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.KindCode">
-            KindCode <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=10">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public Kind.KindCode KindCode { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href=
-              "Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_KindId_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.KindId*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_KindId" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.KindId">
-            KindId <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=14">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public int KindId { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_PropertyName_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.PropertyName*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_PropertyName" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.PropertyName">
-            PropertyName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=15">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string PropertyName { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_TreeColumnName_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.TreeColumnName*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_TreeColumnName" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.TreeColumnName">
-            TreeColumnName <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=12">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string TreeColumnName { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_TreeValue_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.TreeValue*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_TreeValue" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.TreeValue">
-            TreeValue <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=16">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public object TreeValue { get; set; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_WmiAttribute_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.WmiAttribute*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_WmiAttribute" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.WmiAttribute">
-            WmiAttribute <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=11">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string WmiAttribute { get; }</code></pre>
-          </div>
-          <h4 class="section">
-            Property Value
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h2 class="section" id="methods">
-            Methods
-          </h2><a id="Alvao_API_AM_Model_Detection_CompareProperty_IsKeySameValue_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.IsKeySameValue*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsKeySameValue_System_Data_DataRow_System_Data_DataRow_"
-          data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.IsKeySameValue(System.Data.DataRow,System.Data.DataRow)">
-            IsKeySameValue(DataRow, DataRow) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=59">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public bool IsKeySameValue(DataRow treeObject, DataRow wmiObject)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>treeObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_IsSameValue_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.IsSameValue*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsSameValue_System_Data_DataRow_System_Data_DataRow_"
-          data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsSameValue(System.Data.DataRow,System.Data.DataRow)">
-            IsSameValue(DataRow, DataRow) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=73">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public bool IsSameValue(DataRow treeObject, DataRow wmiObject)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>treeObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_Load_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.Load*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_Detection_CompareProperty_Load_Alvao_API_AM_Repository_IDetectionRepository_System_Int32_"
-          data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.Load(Alvao.API.AM.Repository.IDetectionRepository,System.Int32)">
-            Load(IDetectionRepository, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=48">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public bool Load(IDetectionRepository repo, int nodeId)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>repo</code> <span class="xref">IDetectionRepository</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_NormalizedWmiValue_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.NormalizedWmiValue*"></a>
-          <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_NormalizedWmiValue_System_Data_DataRow_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.NormalizedWmiValue(System.Data.DataRow)">
-            NormalizedWmiValue(DataRow) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=87">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public string NormalizedWmiValue(DataRow wmiObject)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>wmiObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-          </dl><a id="Alvao_API_AM_Model_Detection_CompareProperty_UpdateValue_" data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.UpdateValue*"></a>
-          <h3 id=
-          "Alvao_API_AM_Model_Detection_CompareProperty_UpdateValue_Alvao_API_AM_Repository_IObjectPropertyRepository_System_Int32_System_Object_System_String_System_Nullable_System_DateTime__System_Nullable_System_Double__System_Nullable_System_Int32__System_Int32_System_Boolean_"
-          data-uid=
-          "Alvao.API.AM.Model.Detection.CompareProperty.UpdateValue(Alvao.API.AM.Repository.IObjectPropertyRepository,System.Int32,System.Object,System.String,System.Nullable{System.DateTime},System.Nullable{System.Double},System.Nullable{System.Int32},System.Int32,System.Boolean)">
-            UpdateValue(IObjectPropertyRepository, int, object, string, DateTime?, double?, int?, int, bool) <a class=
-            "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=95">
-            </a>
-          </h3>
-          <div class="markdown level1 summary"></div>
-          <div class="markdown level1 conceptual"></div>
-          <div class="codewrapper">
-            <pre><code class=
-            "lang-csharp hljs">public bool UpdateValue(IObjectPropertyRepository repo, int nodeId, object treeValue, string wmiValueString, DateTime? wmiValueDate, double? wmiValueDouble, int? wmiValueInt, int personId, bool isNewObject)</code></pre>
-          </div>
-          <h4 class="section">
-            Parameters
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <code>repo</code> <span class="xref">IObjectPropertyRepository</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>treeValue</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.object">object</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiValueString</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiValueDate</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiValueDouble</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>wmiValueInt</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>?
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <code>isNewObject</code> <a class="xref" href=
-              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl>
-          <h4 class="section">
-            Returns
-          </h4>
-          <dl class="parameters">
-            <dt>
-              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
-            </dt>
-            <dd></dd>
-          </dl>
-        </article>
+
+
+
+  <h1 id="Alvao_API_AM_Model_Detection_CompareProperty" data-uid="Alvao.API.AM.Model.Detection.CompareProperty" class="text-break">
+Class CompareProperty  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AM.html">AM</a>.<a class="xref" href="Alvao.API.AM.Model.html">Model</a>.<a class="xref" href="Alvao.API.AM.Model.Detection.html">Detection</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CompareProperty</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CompareProperty</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty__ctor" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor">
+  CompareProperty()
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompareProperty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_Alvao_API_AM_Model_Kind_KindCode_System_Boolean_System_String_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor(Alvao.API.AM.Model.Kind.KindCode,System.Boolean,System.String,Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum)">
+  CompareProperty(KindCode, bool, string, KindDataTypeIdEnum)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompareProperty(Kind.KindCode kindCode, bool isKey, string dbColumnName, KindDataType.KindDataTypeIdEnum dbColumnType = KindDataTypeIdEnum.Text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>kindCode</code> <a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href="Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a></dt>
+    <dd></dd>
+    <dt><code>isKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>dbColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>dbColumnType</code> <a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty__ctor_Alvao_API_AM_Model_Kind_KindCode_System_String_System_Boolean_System_String_Alvao_API_Common_Model_Database_KindDataType_KindDataTypeIdEnum_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.#ctor(Alvao.API.AM.Model.Kind.KindCode,System.String,System.Boolean,System.String,Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum)">
+  CompareProperty(KindCode, string, bool, string, KindDataTypeIdEnum)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompareProperty(Kind.KindCode kindCode, string wmiAttribute, bool isKey, string dbColumnName, KindDataType.KindDataTypeIdEnum dbColumnType = KindDataTypeIdEnum.Text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>kindCode</code> <a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href="Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a></dt>
+    <dd></dd>
+    <dt><code>wmiAttribute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>isKey</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>dbColumnName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>dbColumnType</code> <a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnName_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.DbColumnName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnName" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.DbColumnName">
+  DbColumnName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DbColumnName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnType_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.DbColumnType*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_DbColumnType" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.DbColumnType">
+  DbColumnType
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KindDataType.KindDataTypeIdEnum DbColumnType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.html">KindDataType</a>.<a class="xref" href="Alvao.API.Common.Model.Database.KindDataType.KindDataTypeIdEnum.html">KindDataTypeIdEnum</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_IsKey_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsKey*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsKey" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsKey">
+  IsKey
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsKey { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_KindCode_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.KindCode*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_KindCode" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.KindCode">
+  KindCode
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Kind.KindCode KindCode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Alvao.API.AM.Model.Kind.html">Kind</a>.<a class="xref" href="Alvao.API.AM.Model.Kind.KindCode.html">KindCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_KindId_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.KindId*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_KindId" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.KindId">
+  KindId
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int KindId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_PropertyName_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.PropertyName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_PropertyName" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.PropertyName">
+  PropertyName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PropertyName { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_TreeColumnName_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.TreeColumnName*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_TreeColumnName" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.TreeColumnName">
+  TreeColumnName
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TreeColumnName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_TreeValue_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.TreeValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_TreeValue" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.TreeValue">
+  TreeValue
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object TreeValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_WmiAttribute_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.WmiAttribute*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_WmiAttribute" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.WmiAttribute">
+  WmiAttribute
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string WmiAttribute { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_IsKeySameValue_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsKeySameValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsKeySameValue_System_Data_DataRow_System_Data_DataRow_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsKeySameValue(System.Data.DataRow,System.Data.DataRow)">
+  IsKeySameValue(DataRow, DataRow)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsKeySameValue(DataRow treeObject, DataRow wmiObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>treeObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a></dt>
+    <dd></dd>
+    <dt><code>wmiObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_IsSameValue_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsSameValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_IsSameValue_System_Data_DataRow_System_Data_DataRow_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.IsSameValue(System.Data.DataRow,System.Data.DataRow)">
+  IsSameValue(DataRow, DataRow)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSameValue(DataRow treeObject, DataRow wmiObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>treeObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a></dt>
+    <dd></dd>
+    <dt><code>wmiObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_Load_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.Load*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_Load_Alvao_API_AM_Repository_IDetectionRepository_System_Int32_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.Load(Alvao.API.AM.Repository.IDetectionRepository,System.Int32)">
+  Load(IDetectionRepository, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Load(IDetectionRepository repo, int nodeId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>repo</code> <span class="xref">IDetectionRepository</span></dt>
+    <dd></dd>
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_NormalizedWmiValue_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.NormalizedWmiValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_NormalizedWmiValue_System_Data_DataRow_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.NormalizedWmiValue(System.Data.DataRow)">
+  NormalizedWmiValue(DataRow)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NormalizedWmiValue(DataRow wmiObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>wmiObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.data.datarow">DataRow</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_AM_Model_Detection_CompareProperty_UpdateValue_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.UpdateValue*"></a>
+
+  <h3 id="Alvao_API_AM_Model_Detection_CompareProperty_UpdateValue_Alvao_API_AM_Repository_IObjectPropertyRepository_System_Int32_System_Object_System_String_System_Nullable_System_DateTime__System_Nullable_System_Double__System_Nullable_System_Int32__System_Int32_System_Boolean_" data-uid="Alvao.API.AM.Model.Detection.CompareProperty.UpdateValue(Alvao.API.AM.Repository.IObjectPropertyRepository,System.Int32,System.Object,System.String,System.Nullable{System.DateTime},System.Nullable{System.Double},System.Nullable{System.Int32},System.Int32,System.Boolean)">
+  UpdateValue(IObjectPropertyRepository, int, object, string, DateTime?, double?, int?, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/Model/Detection/CompareProperty.cs&amp;version=GBPATCH&amp;line=95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UpdateValue(IObjectPropertyRepository repo, int nodeId, object treeValue, string wmiValueString, DateTime? wmiValueDate, double? wmiValueDouble, int? wmiValueInt, int personId, bool isNewObject)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>repo</code> <span class="xref">IObjectPropertyRepository</span></dt>
+    <dd></dd>
+    <dt><code>nodeId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>treeValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+    <dt><code>wmiValueString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>wmiValueDate</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</dt>
+    <dd></dd>
+    <dt><code>wmiValueDouble</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a>?</dt>
+    <dd></dd>
+    <dt><code>wmiValueInt</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>isNewObject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
       </div>
+
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
+
     <div class="container-xxl search-results" id="search-results"></div>
+
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
