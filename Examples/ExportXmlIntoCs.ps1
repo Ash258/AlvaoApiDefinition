@@ -11,11 +11,11 @@ Write-Host "Downloading $($mm.Matches.Count) XML files"
 foreach ($m in $mm.Matches) {
     $link = $baseUrl + $m.Groups["link"].Value
     $f = [System.IO.Path]::GetFileName($link)
-    # Invoke-WebRequest -Uri $link -OutFile ([System.IO.Path]::Combine($PSScriptRoot, $f))
+    Invoke-WebRequest -Uri $link -OutFile ([System.IO.Path]::Combine($PSScriptRoot, $f))
 }
 
 $files = Get-ChildItem -Path . -Filter *.xml
-$sharedCsproj = Join-Path $PSScriptRoot 'shared.csproj'
+$sharedCsproj = "../shared.csproj"
 
 foreach ($f in $files) {
     $examplePath = Join-Path -Path $PSScriptRoot -ChildPath $f.BaseName
@@ -25,7 +25,7 @@ foreach ($f in $files) {
         New-Item -Path $examplePath -ItemType Directory | Out-Null
     }
     if (!(Test-Path -Path $csproj)) {
-        New-Item -ItemType SymbolicLink -Value $sharedCsproj -Path $csproj | Out-Null
+        New-Item -ItemType SymbolicLink -Value $sharedCsproj -Path $csproj -Force | Out-Null
     }
 
     [xml] $x = Get-Content -Path $f.FullName -Raw
