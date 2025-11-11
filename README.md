@@ -6,10 +6,12 @@ Purpose of this repository is to scrape **publicly available** documentation of 
 
 This package is not meant to provide the implementation of the Alvoo module, but rather provide IDE intellisense to make the development experience better.
 
+[Alvao Application templates](https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/templates) (example custom applications) could be found in [Examples folder](./Examples/).
+
 ## How to use
 
 1. Create new dotnet project
-    1. `dotnet new console --name custom.app.development`
+    1. `dotnet new classlib --name custom.app.development`
     1. `cd custom.app.development`
 1. Add packages, that are part of Alvao application
 
@@ -27,6 +29,8 @@ This package is not meant to provide the implementation of the Alvoo module, but
 
 1. Add this package:
    1. `dotnet add package Ash258.Alvao.Mock.API`
+1. Implement the required custom application
+1. Upload the finalized scripts into Alvao settings
 
 ## Development
 
