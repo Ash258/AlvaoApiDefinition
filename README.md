@@ -4,7 +4,7 @@ _This project is not anyhow affiliated or maintened by Alvao corporation._
 
 Purpose of this repository is to scrape **publicly available** documentation of Alvao Custom Apps to make local development of Custom Apps easier with help of IDE suggestions of all possible methods/properties/...
 
-This package is not meant to provide the implementation of the Alvoo module, but rather provide IDE intellisense to make the development experience better.
+This package is not meant to provide the implementation of the Alvao module, but rather provide IDE intellisense to make the development experience better.
 
 [Alvao Application templates](https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/templates) (example custom applications) could be found in [Examples folder](./Examples/).
 
