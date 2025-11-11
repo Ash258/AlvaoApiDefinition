@@ -65,5 +65,9 @@ class ObjectPropertyAutoAction : IObjectPropertyAutoAction
       }
     }
   }
+
+    public void OnPropertyModified(ObjectPropertyEventArgs e) {
+        throw new NotImplementedException();
+    }
 }
           

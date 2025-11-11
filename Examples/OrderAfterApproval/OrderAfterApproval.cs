@@ -1,7 +1,6 @@
 using System;
 using System.Data;
 using Microsoft.Data.SqlClient;
-using Alvao.Global;
 using Alvao.API.Common;
 using Alvao.Apps.API;
 using System.Collections.Generic; 

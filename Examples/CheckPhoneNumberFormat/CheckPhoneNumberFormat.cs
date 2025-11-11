@@ -32,5 +32,9 @@ class ObjectPropertyAutoAction : IObjectPropertyAutoAction
   {
     throw new NotImplementedException();
   }
+
+    public void OnPropertyModified(ObjectPropertyEventArgs e) {
+        throw new NotImplementedException();
+    }
 }
           

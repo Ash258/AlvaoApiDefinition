@@ -1,11 +1,13 @@
 version: '3.0'
 
 vars:
-  ALVAO_VERSION: '25.3.5'
+  ALVAO_VERSION: '25.3.6'
   OWNER: Ash258
   NUGET_NAME: "{{.OWNER}}.Alvao.Mock.API"
   NUGET_API_KEY_GH: "{{.NUGET_API_KEY_GH}}"
   NUGET_API_KEY: "{{.NUGET_API_KEY}}"
+  EXAMPLES:
+    sh: ls -1 -d Examples/*/
 
 tasks:
   build:
@@ -40,6 +42,12 @@ tasks:
     cmds:
     - sed -i.backup -E 's/Version>[0-9.\-]+</Version>{{.ALVAO_VERSION}}</' Alvao.csproj
     - dotnet pack --configuration Release
+  examples:build:
+    cmds:
+    - for:
+        var: EXAMPLES
+      cmd: dotnet build {{ .ITEM }}
+
   test:
     cmd: dotnet run -- test
   tidy:
