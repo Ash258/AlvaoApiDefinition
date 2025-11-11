@@ -51,11 +51,10 @@ public class ApproveByGroupMember : ITicketAutoAction
                     }
                 }
 
-            }
-            catch (Exception ex)
+            } catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
+            }              
         }
     }
 
@@ -64,3 +63,4 @@ public class ApproveByGroupMember : ITicketAutoAction
         throw new System.NotImplementedException();
     }
 }
+
