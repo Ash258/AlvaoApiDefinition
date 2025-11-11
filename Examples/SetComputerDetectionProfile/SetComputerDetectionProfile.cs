@@ -4,23 +4,24 @@ using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
 using Dapper;
 
-class SetComputerDetectionProfile : IObjectMoveAutoAction
+class ObjectMoveAutoAction : IObjectMoveAutoAction
 {
     public Tuple<bool, string> OnObjectMoving(SqlConnection con, int objectId, int newParentObjectId, int personId)
     {
         throw new NotImplementedException();
     }
 
-    public void OnObjectMoved(SqlConnection con, int objectId, int oldParentObjectId, int personId)
+    public void OnObjectMoved(SqlConnection con, int objectId, int  oldParentObjectId, int personId)
     {
         var movedObject = Alvao.API.AM.Object.GetById(personId, objectId);
         int detectProfileId;
 
         // Is the moved object computer?
-        if (movedObject.lintClassId.HasValue && movedObject.lintClassId.Value == Settings.movedObjectClassIdToCheck)
+        if (movedObject.lintClassId.HasValue && 
+            movedObject.lintClassId.Value == Settings.movedObjectClassIdToCheck)
         {
             // Extracting the detection profile by its name.
-            detectProfileId = con.QueryFirstOrDefault<int>(@"SELECT id from DetectProfile WHERE ProfileName = @detectProfileName",
+            detectProfileId = con.QueryFirstOrDefault<int>(@"SELECT id from DetectProfile WHERE ProfileName = @detectProfileName", 
                 new { detectProfileName = Settings.detectionProfileName });
             if (detectProfileId < 1)
                 return;
@@ -31,12 +32,12 @@ class SetComputerDetectionProfile : IObjectMoveAutoAction
 
             // Was the object in the warehouse? If so and it did not have a detection profile named Standard, assign it to him.
             if (Alvao.API.AM.Object.IsDescendantOf(oldParentObjectId, Settings.oldParentobjectClassId))
-            {
+            { 
                 con.Execute(@"UPDATE tblNode
                     SET DetectProfileId = @profileId
                     WHERE intNodeId = @nodeId",
                     new { profileId = detectProfileId, nodeId = movedObject.intNodeId });
             }
-        }
+        } 
     }
 }
