@@ -21,7 +21,7 @@ namespace Alvao.Helpdesk
             int id = Settings.CommandId;
             string name = Settings.CommandName;
             int position = Settings.CommandPosition;
-            string icon = Settings.CommandIcon;
+	        string icon = Settings.CommandIcon;
 
             commandDesc = new CommandDesc(id, name, position, icon);
         }
