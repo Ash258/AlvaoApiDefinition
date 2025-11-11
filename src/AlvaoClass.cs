@@ -651,13 +651,18 @@ public class AlvaoClass {
         }
     }
 
-    public void ProduceFinalCsFile(bool standaloneEnum = false) {
+    public void ProduceFinalCsFile(bool standaloneEnum = false, bool rebuidlNamespaceInfo = false) {
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
 
         MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
         var sb = new StringBuilder();
         var nestedClass = false;
         AlvaoClass? parentClass = null;
+
+        if (rebuidlNamespaceInfo) {
+            NamespaceName = Namespace.Name;
+            FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+        }
 
         // It is nested class. It need to find the parent class and update it
         if (Name.Contains('.')) {

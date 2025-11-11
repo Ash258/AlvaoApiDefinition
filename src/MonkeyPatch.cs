@@ -173,6 +173,17 @@ public static class MonkeyPatch {
         }
 
         PatchManuallyDocumentedActions(appsApi);
+
+        // Manual class copying as CopyNewPropertyValueToAnotherProperty is using ObjectPropertyEventArgs from Alvao.Apps.API namespace, which is not documented
+        foreach (var name in new string[] { "ObjectPropertyEventArgs", "ObjectPropertyModifyResult" }) {
+            var toCopy = State.Classes.GetValueOrDefault($"Alvao.API.Common.Model.CustomApps.{name}");
+            if (toCopy == null) continue;
+
+            Logger.LogInformation("Copying {} to {} namespace", name, appsApi.Name);
+            toCopy.Namespace = appsApi;
+            toCopy.Summary = $"{caution}<br/><br/>{toCopy.Summary}";
+            toCopy.ProduceFinalCsFile(rebuidlNamespaceInfo: true);
+        }
     }
 
     public static void PatchManuallyDocumentedActions(AlvaoNamespace appsApi) {
