@@ -6,27 +6,27 @@ using Alvao.Apps.API;
 using Alvao.Context;
 using Dapper;
 
-public class CostsCalculation : IEntityCommand
+public class CostsCalculation : IEntityCommand 
 {
-    public string Id { get; set; }
-    public Entity Entity { get; set; }
+    public string Id {get; set;}
+    public Entity Entity {get; set;}
 
     public CostsCalculation()
     {
-        Id = Settings.CommandName.GetHashCode().ToString();
+        Id = "TicketCostsCalculation";
         Entity = Entity.Request;
     }
 
     public EntityCommandShowResult Show(int entityId, int personId)
-    {
-        int position = Settings.CommandPosition;
-        string icon = Settings.CommandIcon;
-        string name = Settings.CommandName;
+    {   
+        int position = Settings.CommandPosition; 
+        string icon =  Settings.CommandIcon; 
+        string name =  Settings.CommandName; 
 
         // Retrieve the required requirements data from the database.
         tHdTicket ticket = Ticket.GetById(entityId);
-        if (ticket == null)
-            return new EntityCommandShowResult(false, name, icon, position);
+        if(ticket == null)
+            return new EntityCommandShowResult (false, name, icon, position);
 
         // In the Show method, for performance reasons, it is more convenient to work with service ID, reseller, and status.
         int sectionId = ticket.liHdTicketHdSectionId; // Id of the service in which the request is made.
@@ -36,7 +36,7 @@ public class CostsCalculation : IEntityCommand
         // Check whether the request is in the required service and status and the solver is the user to whom the request should be displayed.
         bool show = sectionId == Settings.ServiceId && stateId == Settings.StateId && solverId == personId;
 
-        return new EntityCommandShowResult(show, name, icon, position);
+        return new EntityCommandShowResult (show, name, icon, position);
     }
 
     public CommandResult Run(int entityId, int personId)
