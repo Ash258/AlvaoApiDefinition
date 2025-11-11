@@ -7,7 +7,7 @@
     <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,CS8765,CS8767</NoWarn>
 
     <PackageId>Ash258.Alvao.Mock.API</PackageId>
-    <Version>25.3.4</Version>
+    <Version>25.3.5</Version>
     <Authors>Jakub Čábera</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

@@ -1,5 +1,3 @@
-using Alvao.API.Common.Model.CustomApps;
-
 namespace Alvao.Apps.API;
 
 /// <summary>By implementing the IObjectPropertyAutoAction interface in a application script, you can define custom actions that are automatically performed when the user manually modifies the value of an object property.</summary>
