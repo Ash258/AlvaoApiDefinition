@@ -537,6 +537,7 @@ public static class MonkeyPatch {
                 AddUsingByClassName("AMDocument", "Alvao.API.Common.Model", clazz.Name, toAdd);
                 AddUsingByClassName("AMDocument", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 AddUsingByClassName("InvoiceProcessor", "Alvao.API.AM.Model", clazz.Name, toAdd);
+                AddUsingByClassName("ObjectRiskManagement", "Alvao.API.AM.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AM.Model":
                 AddUsingByClassName("ObjectClass", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
@@ -555,6 +556,7 @@ public static class MonkeyPatch {
 
                 AddUsingByClassName("DetectionMessage", "System.Xml", clazz.Name, toAdd);
                 AddUsingByClassName("DetectionArchive", "System.Xml", clazz.Name, toAdd);
+                AddUsingByClassName("ScanProcessor", "System.Xml.XPath", clazz.Name, toAdd);
                 break;
 
             case "Alvao.API.Common":
@@ -621,9 +623,13 @@ public static class MonkeyPatch {
             case "Alvao.API.AI.Service":
                 AddUsingByClassName("IDocumentIntelligenceClientService", "Alvao.API.Common", clazz.Name, toAdd);
                 AddUsingByClassName("IDocumentIntelligenceClientService", "Azure", clazz.Name, toAdd);
+                AddUsingByClassName("ITicketAIService", "Alvao.API.AI.Model", clazz.Name, toAdd);
                 break;
             case "Alvao.API.AI.Service.Implementation":
                 AddUsingByClassName("DocumentIntelligenceClientService", "Azure", clazz.Name, toAdd);
+                break;
+            case "Alvao.API.Common.Model.CustomApps":
+                AddUsingByClassName("DownloadedApplication", "Alvao.API.Common.Model.Database", clazz.Name, toAdd);
                 break;
         }
 
@@ -640,6 +646,7 @@ public static class MonkeyPatch {
         List<(string, string)> map =
         [
             (" StringBuilder ", "System.Text"),
+            (" JsonSerializerOptions ", "System.Text.Json"),
 
             // Exceptions
             ("ValidationInExecuteException", "System.Runtime.Serialization"),
@@ -685,7 +692,9 @@ public static class MonkeyPatch {
             ("AnalyzedDocument", "Alvao.API.Common"),
             ("AttachmentModel", "Alvao.API.Common.Model"),
 
-            ("[SuppressMessage", "System.Diagnostics.CodeAnalysis")
+            ("[SuppressMessage", "System.Diagnostics.CodeAnalysis"),
+            ("PrintPageSettings ", "Alvao.API.AM.Model.Print"),
+            ("[DataMember(", "System.Runtime.Serialization"),
         ];
 
         foreach (var d in definitions) {
@@ -705,6 +714,8 @@ public static class MonkeyPatch {
         List<(string, string)> map =
         [
             ("XmlDetection", "public object Clone()"),
+            ("ScanProcessor", "public object Clone()"),
+            ("ScanProcessor", "public System.Xml.XPath.XPathNavigator? CreateNavigator()"),
             ("DetectionArchive", "public void Dispose()"),
             ("DetectionArchive", "public System.Threading.Tasks.ValueTask DisposeAsync()"),
         ];
@@ -786,6 +797,23 @@ public static class MonkeyPatch {
                     break;
             }
         }
+
+        if (IsClass(clazz, "Alvao.API.SD", "TicketTask")) {
+            switch (method.Name) {
+                case "GetByIdAsync":
+                    _def = method.Definition.Replace(" Task<TicketTask> ", " Task<Alvao.API.Common.Model.Database.TicketTask> ");
+                    break;
+                case "GetAllForTicketAsync":
+                    _def = method.Definition.Replace(" Task<IEnumerable<TicketTask>> ", " Task<IEnumerable<Alvao.API.Common.Model.Database.TicketTask>> ");
+                    break;
+                case "GetAllForTicket":
+                    _def = method.Definition.Replace(" IEnumerable<TicketTask> ", " IEnumerable<Alvao.API.Common.Model.Database.TicketTask> ");
+                    break;
+                case "CreateAsync":
+                case "UpdateAsync":
+                    _def = method.Definition.Replace("TicketTask ticketTask", "Alvao.API.Common.Model.Database.TicketTask ticketTask");
+                    break;
+            }}
 
         if (IsClass(clazz, "Alvao.API.SD", "News")) {
             switch (method.Name) {
