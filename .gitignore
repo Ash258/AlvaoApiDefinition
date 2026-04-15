@@ -3,3 +3,5 @@ obj/
 errors.txt
 .task/
 *.backup
+
+mise.local.toml

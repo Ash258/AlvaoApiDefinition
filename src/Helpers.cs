@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 namespace AlvaoScrapper;
 
 public static class Helpers {
-    public static string ALVAO_VERSION = "25";
+    public static string ALVAO_VERSION = Environment.GetEnvironmentVariable("ALVAO_VERSION")?.Split(".")[0] ?? "26";
     public static string ALVAO_VERSION_DOT = ALVAO_VERSION.Replace("_", ".");
     public static string BASE_URL = $"https://doc.alvao.com/en/{ALVAO_VERSION}/alvao-api";
     public static string BASE_HTML_URL = $"{BASE_URL}/api";

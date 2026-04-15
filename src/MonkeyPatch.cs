@@ -684,6 +684,8 @@ public static class MonkeyPatch {
             (" DocumentIntelligenceClientService ", "Alvao.API.Common"),
             ("AnalyzedDocument", "Alvao.API.Common"),
             ("AttachmentModel", "Alvao.API.Common.Model"),
+
+            ("[SuppressMessage", "System.Diagnostics.CodeAnalysis")
         ];
 
         foreach (var d in definitions) {

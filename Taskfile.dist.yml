@@ -1,11 +1,13 @@
-version: '3.0'
+version: "3.0"
 
 vars:
-  ALVAO_VERSION: '25.3.7'
+  ALVAO_VERSION:
+    sh: cat .alvaorc
   OWNER: Ash258
   NUGET_NAME: "{{.OWNER}}.Alvao.Mock.API"
   NUGET_API_KEY_GH: "{{.NUGET_API_KEY_GH}}"
   NUGET_API_KEY: "{{.NUGET_API_KEY}}"
+  TIDY_IMAGE: "tidy:local-build"
   EXAMPLES:
     sh: ls -1 -d Examples/*/
 
@@ -60,6 +62,18 @@ tasks:
     sources:
     - html/*.html
     cmd: tidy -config .tidyrc -f errors.txt -m html/*.htm*
+  tidy:
+    platform: [darwin]
+    ignore_error: true
+    aliases:
+    - format
+    generates:
+    - html/*.html
+    sources:
+    - html/*.html
+    cmds:
+      - docker build -t {{.TIDY_IMAGE}} -f tidy.Dockerfile .
+      - docker run -v "$PWD:/data" -w /data {{.TIDY_IMAGE}} -config .tidyrc -f errors.txt -m html/*.htm*
   dotnet:run:
     cmd: dotnet run {{ .CLI_ARGS }}
   format:
