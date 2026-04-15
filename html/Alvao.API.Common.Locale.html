@@ -89,7 +89,7 @@
 
 
   <h1 id="Alvao_API_Common_Locale" data-uid="Alvao.API.Common.Locale" class="text-break">
-Class Locale  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBPATCH&amp;line=11"><i class="bi bi-code-slash"></i></a>
+Class Locale  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=11"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class Locale  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="Alvao_API_Common_Locale_GetDatabaseLocaleId" data-uid="Alvao.API.Common.Locale.GetDatabaseLocaleId">
   GetDatabaseLocaleId()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBPATCH&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns LCID number for default database language.</p>
@@ -190,7 +190,7 @@ Class Locale  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="Alvao_API_Common_Locale_GetEnabledLanguageNames" data-uid="Alvao.API.Common.Locale.GetEnabledLanguageNames">
   GetEnabledLanguageNames()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBPATCH&amp;line=35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns all enabled languages with their names.</p>
@@ -223,7 +223,7 @@ Class Locale  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="Alvao_API_Common_Locale_GetEnabledLanguages" data-uid="Alvao.API.Common.Locale.GetEnabledLanguages">
   GetEnabledLanguages()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBPATCH&amp;line=26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=26"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns all enabled languages.</p>
@@ -256,7 +256,7 @@ Class Locale  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="Alvao_API_Common_Locale_GetSupportedLanguages_System_Boolean_" data-uid="Alvao.API.Common.Locale.GetSupportedLanguages(System.Boolean)">
   GetSupportedLanguages(bool)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBPATCH&amp;line=45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns supported DB languages.</p>
@@ -280,6 +280,45 @@ Class Locale  <a class="header-action link-secondary" title="View source" href="
     <dd><p>List of supported DB languages.</p>
 </dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Alvao_API_Common_Locale_MarkNeedUpdate_" data-uid="Alvao.API.Common.Locale.MarkNeedUpdate*"></a>
+
+  <h3 id="Alvao_API_Common_Locale_MarkNeedUpdate_System_String_System_String_System_Int32_" data-uid="Alvao.API.Common.Locale.MarkNeedUpdate(System.String,System.String,System.Int32)">
+  MarkNeedUpdate(string, string, int)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Locale.cs&amp;version=GBdev&amp;line=56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Marks record as needing update in localization table.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void MarkNeedUpdate(string table, string attribute, int recordId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>table</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of table <i>(tLocalization.sTable)</i></p>
+</dd>
+    <dt><code>attribute</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Column name <i>(tLocalization.sAttribute)</i></p>
+</dd>
+    <dt><code>recordId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>ID of record in target table <i>(tLocalization.iRecordId)</i></p>
+</dd>
+  </dl>
+
 
 
 

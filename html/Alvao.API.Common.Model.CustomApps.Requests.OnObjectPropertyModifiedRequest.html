@@ -89,7 +89,7 @@
 
 
   <h1 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest" class="text-break">
-Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=3"><i class="bi bi-code-slash"></i></a>
+Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=3"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
 
   <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest__ctor" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.#ctor">
   OnObjectPropertyModifiedRequest()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=5"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=5"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -181,16 +181,16 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
 
   <a id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest__ctor_" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.#ctor*"></a>
 
-  <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest__ctor_System_Int32_System_Int32_System_Int32_" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.#ctor(System.Int32,System.Int32,System.Int32)">
-  OnObjectPropertyModifiedRequest(int, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=9"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest__ctor_System_Int32_System_Int32_System_Int32_System_Object_" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.#ctor(System.Int32,System.Int32,System.Int32,System.Object)">
+  OnObjectPropertyModifiedRequest(int, int, int, object)
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=9"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public OnObjectPropertyModifiedRequest(int objectId, int propertyKindId, int personId)</code></pre>
+    <pre><code class="lang-csharp hljs">public OnObjectPropertyModifiedRequest(int objectId, int propertyKindId, int personId, object newValue = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -200,6 +200,8 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
     <dt><code>propertyKindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd></dd>
     <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>newValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
     <dd></dd>
   </dl>
 
@@ -218,11 +220,42 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
 </h2>
 
 
+  <a id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_NewValue_" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.NewValue*"></a>
+
+  <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_NewValue" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.NewValue">
+  NewValue
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object NewValue { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_ObjectId_" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.ObjectId*"></a>
 
   <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_ObjectId" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.ObjectId">
   ObjectId
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=15"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=16"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -253,7 +286,7 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
 
   <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_PersonId" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.PersonId">
   PersonId
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=17"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=18"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -284,7 +317,7 @@ Class OnObjectPropertyModifiedRequest  <a class="header-action link-secondary" t
 
   <h3 id="Alvao_API_Common_Model_CustomApps_Requests_OnObjectPropertyModifiedRequest_PropertyKindId" data-uid="Alvao.API.Common.Model.CustomApps.Requests.OnObjectPropertyModifiedRequest.PropertyKindId">
   PropertyKindId
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBPATCH&amp;line=16"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/Common/Model/CustomApps/Requests/OnObjectPropertyModifiedRequest.cs&amp;version=GBdev&amp;line=17"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>

@@ -1,575 +1,1662 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
     <meta charset="utf-8">
-      <title>Class Assistant | Alvao.API Documentation </title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Assistant | Alvao.API Documentation ">
-      
-      <meta name="description" content="Facade for Service Desk AI Assistant methods.">
-      <link rel="icon" href="../images/favicon.png">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
-      
-      <meta name="docfx:rel" content="../">
-      
-      
-      
-      <meta name="loc:inThisArticle" content="In this article">
-      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
-      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
-      <meta name="loc:tocFilter" content="Filter by title">
-      <meta name="loc:nextArticle" content="Next">
-      <meta name="loc:prevArticle" content="Previous">
-      <meta name="loc:themeLight" content="Light">
-      <meta name="loc:themeDark" content="Dark">
-      <meta name="loc:themeAuto" content="Auto">
-      <meta name="loc:changeTheme" content="Change theme">
-      <meta name="loc:copy" content="Copy">
-      <meta name="loc:downloadPdf" content="Download PDF">
-
-      <script type="module" src="./../public/docfx.min.js"></script>
-
-      <script>
+    <title>
+      Class Assistant | Alvao.API Documentation
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Class Assistant | Alvao.API Documentation">
+    <meta name="description" content="Facade for Service Desk AI Assistant methods.">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../public/docfx.min.css">
+    <link rel="stylesheet" href="../public/main.css">
+    <meta name="docfx:navrel" content="../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+    <meta name="docfx:rel" content="../">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">
+    <meta name="loc:downloadPdf" content="Download PDF">
+    <script type="module" src="./../public/docfx.min.js"></script>
+    <script>
         const theme = localStorage.getItem('theme') || 'auto'
         document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-      </script>
-
+    </script>
   </head>
-
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../images/alvao-logo.svg" alt="">
-            
-          </a>
-          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-three-dots"></i>
-          </button>
+          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
+          ""></a>
           <div class="collapse navbar-collapse" id="navpanel">
             <div id="navbar">
-              <form class="search" role="search" id="search">
-                <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              <form class="search" role="search" id="search" name="search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
+                "off" aria-label="Search">
               </form>
             </div>
           </div>
         </div>
       </nav>
     </header>
-
     <main class="container-xxl">
       <div class="toc-offcanvas">
         <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
+              Table of Contents
+            </h5>
           </div>
           <div class="offcanvas-body">
             <nav class="toc" id="toc"></nav>
           </div>
         </div>
       </div>
-
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
-
           <nav id="breadcrumb"></nav>
         </div>
-
         <article data-uid="Alvao.API.AI.Assistant">
-
-
-
-  <h1 id="Alvao_API_AI_Assistant" data-uid="Alvao.API.AI.Assistant" class="text-break">
-Class Assistant  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=11"><i class="bi bi-code-slash"></i></a>
-  </h1>
-
-  <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class="xref" href="Alvao.API.AI.html">AI</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>Alvao.API.dll</dd></dl>
-  </div>
-
-  <div class="markdown summary"><p>Facade for Service Desk AI Assistant methods.</p>
-</div>
-  <div class="markdown conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class Assistant</code></pre>
-  </div>
-
-
-
-
-  <dl class="typelist inheritance">
-    <dt>Inheritance</dt>
-    <dd>
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">Assistant</span></div>
-    </dd>
-  </dl>
-
-
-
-  <dl class="typelist inheritedMembers">
-    <dt>Inherited Members</dt>
-    <dd>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
-    </div>
-    <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
-    </div>
-  </dd></dl>
-
-
-
-
-
-
-  <h2 class="section" id="methods">Methods
-</h2>
-
-
-  <a id="Alvao_API_AI_Assistant_GetAIClient_" data-uid="Alvao.API.AI.Assistant.GetAIClient*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_GetAIClient" data-uid="Alvao.API.AI.Assistant.GetAIClient">
-  GetAIClient()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=27"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get instance of client for sending requests to Azure OpenAI.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static AIClient GetAIClient()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Alvao.API.AI.AIClient.html">AIClient</a></dt>
-    <dd><p>Instance of a client for sending requests to Azure OpenAI.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_GetModel_" data-uid="Alvao.API.AI.Assistant.GetModel*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_GetModel_System_Int32_" data-uid="Alvao.API.AI.Assistant.GetModel(System.Int32)">
-  GetModel(int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=18"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get model with AI Assistant data of the ticket.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static AssistantTicketTabModel GetModel(int ticketId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Id of the ticket.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Alvao.API.AI.Model.AssistantTicketTabModel.html">AssistantTicketTabModel</a></dt>
-    <dd><p>Object containing AI Assistant data of the ticket.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_GetSettings_" data-uid="Alvao.API.AI.Assistant.GetSettings*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_GetSettings" data-uid="Alvao.API.AI.Assistant.GetSettings">
-  GetSettings()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=104"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static AssistantSettings GetSettings()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="Alvao.API.AI.Model.AssistantSettings.html">AssistantSettings</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_" data-uid="Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_System_String_System_Int32_System_Int32_" data-uid="Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles(System.String,System.Int32,System.Int32)">
-  GetSimilarKnowledgeArticles(string, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=99"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Get similar knowledge articles for the given text.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static List&lt;KnowledgeTile&gt; GetSimilarKnowledgeArticles(string text, int personId = 0, int count = 5)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Input text for semantich search in articles</p>
-</dd>
-    <dt><code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Person ID used for access to articles. (0 - search in all articles)</p>
-</dd>
-    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Maximum count of similar articles to return</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Alvao.API.AI.Model.KnowledgeTile.html">KnowledgeTile</a>&gt;</dt>
-    <dd><p>Collection of found articles that are similar to input text.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_IsDailyLimitExceeded_" data-uid="Alvao.API.AI.Assistant.IsDailyLimitExceeded*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_IsDailyLimitExceeded" data-uid="Alvao.API.AI.Assistant.IsDailyLimitExceeded">
-  IsDailyLimitExceeded()
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=112"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Tests if daily usage quota has not been exceeded.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsDailyLimitExceeded()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>True if enabled and within daily quota; otherwise false.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateArticles_" data-uid="Alvao.API.AI.Assistant.UpdateArticles*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateArticles_System_Collections_Generic_IEnumerable_System_Int32__System_DateTime_" data-uid="Alvao.API.AI.Assistant.UpdateArticles(System.Collections.Generic.IEnumerable{System.Int32},System.DateTime)">
-  UpdateArticles(IEnumerable&lt;int&gt;, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=38"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update vector data of articles.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int UpdateArticles(IEnumerable&lt;int&gt; articleIds, DateTime endTime)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>articleIds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
-    <dd><p>List of article identificators.</p>
-</dd>
-    <dt><code>endTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd><p>End time to finish processing of articles.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Identificator of the last processed article.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateServiceVectors_" data-uid="Alvao.API.AI.Assistant.UpdateServiceVectors*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateServiceVectors_System_Int32_" data-uid="Alvao.API.AI.Assistant.UpdateServiceVectors(System.Int32)">
-  UpdateServiceVectors(int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=47"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update centroid vectors for service from the vectors of tickets  in the service.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UpdateServiceVectors(int serviceId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>serviceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Id of the service with tickets.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_" data-uid="Alvao.API.AI.Assistant.UpdateTicketOnActChange*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_System_Int32_" data-uid="Alvao.API.AI.Assistant.UpdateTicketOnActChange(System.Int32)">
-  UpdateTicketOnActChange(int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=56"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update AI Assistant data of the ticket on the change of act.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UpdateTicketOnActChange(int actId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>actId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Act identificator.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateTicketOnChange_" data-uid="Alvao.API.AI.Assistant.UpdateTicketOnChange*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateTicketOnChange_System_Int32_System_Collections_Generic_IEnumerable_System_String__" data-uid="Alvao.API.AI.Assistant.UpdateTicketOnChange(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
-  UpdateTicketOnChange(int, IEnumerable&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=66"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update AI Assistant data of the ticket on the change of ticket properties.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UpdateTicketOnChange(int ticketId, IEnumerable&lt;string&gt; properties)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Id of the ticket.</p>
-</dd>
-    <dt><code>properties</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd><p>Names of changed properties.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateTickets_" data-uid="Alvao.API.AI.Assistant.UpdateTickets*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateTickets_System_Collections_Generic_IEnumerable_System_Int32__System_DateTime_" data-uid="Alvao.API.AI.Assistant.UpdateTickets(System.Collections.Generic.IEnumerable{System.Int32},System.DateTime)">
-  UpdateTickets(IEnumerable&lt;int&gt;, DateTime)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=77"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update AI Assistant data of the tickets.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int UpdateTickets(IEnumerable&lt;int&gt; ticketIds, DateTime endTime)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>ticketIds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
-    <dd><p>List of ticket identificators.</p>
-</dd>
-    <dt><code>endTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
-    <dd><p>End time to finish processing of tickets.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>Identificator of the last processed ticket.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_" data-uid="Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange*"></a>
-
-  <h3 id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_System_Int32_System_Int32_" data-uid="Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange(System.Int32,System.Int32)">
-  UpdateTicketsOnObjectChange(int, int)
-  <a class="header-action link-secondary" title="View source" href="https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBPATCH&amp;line=87"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Update part of AI Assistant data of the tickets that are influenced by change in object.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void UpdateTicketsOnObjectChange(int objectId, int propertKindId)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>ID of changed object.</p>
-</dd>
-    <dt><code>propertKindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>ID of changed property kind.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</article>
-
-
-
+          <h1 id="Alvao_API_AI_Assistant" data-uid="Alvao.API.AI.Assistant" class="text-break">
+            Class Assistant <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=14">
+            </a>
+          </h1>
+          <div class="facts text-secondary">
+            <dl>
+              <dt>
+                Namespace
+              </dt>
+              <dd>
+                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
+                "xref" href="Alvao.API.AI.html">AI</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Assembly
+              </dt>
+              <dd>
+                Alvao.API.dll
+              </dd>
+            </dl>
+          </div>
+          <div class="markdown summary">
+            <p>
+              Facade for Service Desk AI Assistant methods.
+            </p>
+          </div>
+          <div class="markdown conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static class Assistant</code></pre>
+          </div>
+          <dl class="typelist inheritance">
+            <dt>
+              Inheritance
+            </dt>
+            <dd>
+              <div>
+                <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
+              </div>
+              <div>
+                <span class="xref">Assistant</span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="typelist inheritedMembers">
+            <dt>
+              Inherited Members
+            </dt>
+            <dd>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">
+                object.Equals(object, object)</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object,
+                object)</a>
+              </div>
+              <div>
+                <a class="xref" href=
+                "https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+              </div>
+            </dd>
+          </dl>
+          <h2 class="section" id="methods">
+            Methods
+          </h2><a id="Alvao_API_AI_Assistant_GetAIClient_" data-uid="Alvao.API.AI.Assistant.GetAIClient*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetAIClient" data-uid="Alvao.API.AI.Assistant.GetAIClient">
+            GetAIClient() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=30">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get instance of client for sending requests to Azure OpenAI.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static AIClient GetAIClient()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AI.Infrastructure.AIClient.html">AIClient</a>
+            </dt>
+            <dd>
+              <p>
+                Instance of a client for sending requests to Azure OpenAI.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetEmbedding_" data-uid="Alvao.API.AI.Assistant.GetEmbedding*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetEmbedding_System_String_System_String_System_String_System_Int32_"
+          data-uid="Alvao.API.AI.Assistant.GetEmbedding(System.String,System.String,System.String,System.Int32)">
+            GetEmbedding(string, string, string, int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=355">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get embedding for the given text. Token usage for the statistics will be saved with provided groupName.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static (float[] vector, bool success) GetEmbedding(string text, string vectorName = null, string entityName = null, int entityId = 0)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text to create the embedding.
+              </p>
+            </dd>
+            <dt>
+              <code>vectorName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Vector name used for usage statistics.
+              </p>
+            </dd>
+            <dt>
+              <code>entityName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Entity name used for usage statistics.
+              </p>
+            </dd>
+            <dt>
+              <code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Entity ID used for logging.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              (<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[] <a class="xref"
+              href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.vector">vector</a>,
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref"
+              href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.success">success</a>)
+            </dt>
+            <dd>
+              <p>
+                Calculated vector and success result of the operation.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetEntityVectors_" data-uid=
+          "Alvao.API.AI.Assistant.GetEntityVectors*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetEntityVectors_Alvao_API_Common_Model_AzureAISearchEntityType_System_Collections_Generic_IEnumerable_System_Int32__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetEntityVectors(Alvao.API.Common.Model.AzureAISearchEntityType,System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)">
+            GetEntityVectors(AzureAISearchEntityType, IEnumerable&lt;int&gt;, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=324">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Retrieves vector representations for the specified entities of a given type from database or Azure AI
+              Search.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;EntityVector&gt;&gt; GetEntityVectors(AzureAISearchEntityType entityType, IEnumerable&lt;int&gt; entityIds, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "Alvao.API.Common.Model.AzureAISearchEntityType.html">AzureAISearchEntityType</a>
+            </dt>
+            <dd>
+              <p>
+                The type of entity for which to retrieve vectors. Determines the category of entities to be processed.
+              </p>
+            </dd>
+            <dt>
+              <code>entityIds</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                A collection of entity identifiers for which vectors will be retrieved. Each identifier must correspond
+                to a valid entity of the specified type.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd>
+              <p>
+                A cancellation token that can be used to cancel the asynchronous operation.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.EntityVector.html">EntityVector</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                A task that represents the asynchronous operation. The task result contains a collection of entity
+                vectors corresponding to the specified entity identifiers.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetModelAsync_" data-uid="Alvao.API.AI.Assistant.GetModelAsync*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetModelAsync_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.GetModelAsync(System.Int32)">
+            GetModelAsync(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=21">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get model with AI Assistant data of the ticket.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;AssistantTicketTabModel&gt; GetModelAsync(int ticketId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of the ticket.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "Alvao.API.AI.Model.AssistantTicketTabModel.html">AssistantTicketTabModel</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                Object containing AI Assistant data of the ticket.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSettings_" data-uid="Alvao.API.AI.Assistant.GetSettings*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetSettings" data-uid="Alvao.API.AI.Assistant.GetSettings">
+            GetSettings() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=278">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Retrieves the current configuration settings for the assistant.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static AssistantSettings GetSettings()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AI.Model.AssistantSettings.html">AssistantSettings</a>
+            </dt>
+            <dd>
+              <p>
+                An instance of <a class="xref" href="Alvao.API.AI.Model.AssistantSettings.html">AssistantSettings</a>
+                containing the latest assistant configuration values.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarArticleChunksAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarArticleChunksAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarArticleChunksAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarArticleChunksAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarArticleChunksAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=134">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar chunks of articles for the given text. Search is performed among all article chunks if
+              personId is 0, otherwise only among chunks of articles available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarChunkResult&gt;&gt; GetSimilarArticleChunksAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in article chunks
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to article chunks. (0 - search in all article chunks)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar article chunks to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarChunkResult.html">SimilarChunkResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found article chunks with similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarArticlesAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarArticlesAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarArticlesAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarArticlesAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarArticlesAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=119">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar articles for the given text. Search is performed among all articles if personId is 0,
+              otherwise only among articles available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarArticlesAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in articles
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to articles. (0 - search in all articles)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar articles to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found article records with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetSimilarKnowledgeArticles_System_String_System_Int32_System_Int32_"
+          data-uid="Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles(System.String,System.Int32,System.Int32)">
+            GetSimilarKnowledgeArticles(string, int, int) <a class="header-action link-secondary" title="View source"
+            href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=268">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar knowledge articles for the given text.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">[Obsolete("This method is deprecated. Please use GetSimilarArticlesAsync or GetSimilarArticleChunksAsync instead.")] public static List&lt;KnowledgeTile&gt; GetSimilarKnowledgeArticles(string text, int personId = 0, int count = 5)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantich search in articles
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to articles. (0 - search in all articles)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar articles to return
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.KnowledgeTile.html">KnowledgeTile</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found articles that are similar to input text.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarNewsAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarNewsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarNewsAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarNewsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarNewsAsync(string, int, int, double?, CancellationToken) <a class="header-action link-secondary"
+            title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=148">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar news for the given text. Search is performed among all news if personId is 0, otherwise only
+              among news available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarNewsAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in news
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to news. (0 - search in all news)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar news to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found news with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarObjectsAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarObjectsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarObjectsAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarObjectsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarObjectsAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=167">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar objects for the given text. Search is performed among all objects if personId is 0, otherwise
+              only among objects available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarObjectsAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in objects
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to objects. (0 - search in all objects)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar objects to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found objects with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarPersonAssetsAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarPersonAssetsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarPersonAssetsAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarPersonAssetsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarPersonAssetsAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=199">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Retrieves a collection of assets that are similar to those associated with the specified person, based on
+              the provided text input.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarPersonAssetsAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                The text input used to determine asset similarity. This value should describe the context or criteria
+                for finding similar assets.
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                The unique identifier of the person whose assets are used as the basis for comparison. If set to 0, no
+                specific person is targeted.
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                The maximum number of similar assets to return. Must be greater than zero; otherwise, an empty
+                collection is returned.
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                An enumerable collection of SimilarEntityResult objects representing assets similar to those of the
+                specified person. The collection is empty if no similar assets are found.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarRequestersTicketsAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarRequestersTicketsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarRequestersTicketsAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarRequestersTicketsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarRequestersTicketsAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=251">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar requester's tickets for the given text.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarRequestersTicketsAsync(string text, int personId, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in tickets
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Requester ID used for access to tickets.
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar tickets to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found tickets with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarServicesAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarServicesAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarServicesAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarServicesAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarServicesAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=213">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar services for the given text. Search is performed among all services if personId is 0,
+              otherwise only among services available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarServicesAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in services
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to services. (0 - search in all services)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar services to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found services with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetSimilarTicketsAsync_" data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarTicketsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_GetSimilarTicketsAsync_System_String_System_Int32_System_Int32_System_Nullable_System_Double__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Assistant.GetSimilarTicketsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
+            GetSimilarTicketsAsync(string, int, int, double?, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=232">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get similar tickets for the given text. Search is performed among all tickets if personId is 0, otherwise
+              only among tickets available for the person.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static Task&lt;IEnumerable&lt;SimilarEntityResult&gt;&gt; GetSimilarTicketsAsync(string text, int personId = 0, int count = 5, double? similarityPercent = null, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                Input text for semantic search in tickets
+              </p>
+            </dd>
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID used for access to tickets. (0 - search in all tickets)
+              </p>
+            </dd>
+            <dt>
+              <code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Maximum count of similar tickets to return
+              </p>
+            </dd>
+            <dt>
+              <code>similarityPercent</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.double">double</a>?
+            </dt>
+            <dd>
+              <p>
+                Similarity limit in percent.
+              </p>
+            </dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.SimilarEntityResult.html">SimilarEntityResult</a>&gt;&gt;
+            </dt>
+            <dd>
+              <p>
+                Collection of found tickets with ID and similarity.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetVector_" data-uid="Alvao.API.AI.Assistant.GetVector*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetVector_System_String_Alvao_API_AI_Model_EntityInfo_System_String_"
+          data-uid="Alvao.API.AI.Assistant.GetVector(System.String,Alvao.API.AI.Model.EntityInfo,System.String)">
+            GetVector(string, EntityInfo, string) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=310">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Retrieves a vector representation of the specified text based on the provided entity information and
+              property name.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static string GetVector(string text, EntityInfo entityInfo, string propertyName)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                The input text to generate the vector for.
+              </p>
+            </dd>
+            <dt>
+              <code>entityInfo</code> <a class="xref" href="Alvao.API.AI.Model.EntityInfo.html">EntityInfo</a>
+            </dt>
+            <dd>
+              <p>
+                The entity information used to contextualize the vector generation.
+              </p>
+            </dd>
+            <dt>
+              <code>propertyName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                The name of the property influencing the vector generation.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd>
+              <p>
+                A string representing the generated vector.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsArticleVectorEnabled_" data-uid=
+          "Alvao.API.AI.Assistant.IsArticleVectorEnabled*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsArticleVectorEnabled" data-uid=
+          "Alvao.API.AI.Assistant.IsArticleVectorEnabled">
+            IsArticleVectorEnabled() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=400">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Check whether the computation of article vector is enabled.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsArticleVectorEnabled()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsAzureSemanticSearchAvailable_" data-uid=
+          "Alvao.API.AI.Assistant.IsAzureSemanticSearchAvailable*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsAzureSemanticSearchAvailable" data-uid=
+          "Alvao.API.AI.Assistant.IsAzureSemanticSearchAvailable">
+            IsAzureSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=373">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Check whether Azure AI search is available.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsAzureSemanticSearchAvailable()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsComputionOfSearchingVectorEnabled_" data-uid=
+          "Alvao.API.AI.Assistant.IsComputionOfSearchingVectorEnabled*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsComputionOfSearchingVectorEnabled" data-uid=
+          "Alvao.API.AI.Assistant.IsComputionOfSearchingVectorEnabled">
+            IsComputionOfSearchingVectorEnabled() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=391">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Check whether the computation of searching vector is enabled.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsComputionOfSearchingVectorEnabled()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsDailyEmbeddingLimitExceeded_" data-uid=
+          "Alvao.API.AI.Assistant.IsDailyEmbeddingLimitExceeded*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsDailyEmbeddingLimitExceeded" data-uid=
+          "Alvao.API.AI.Assistant.IsDailyEmbeddingLimitExceeded">
+            IsDailyEmbeddingLimitExceeded() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=297">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Tests if daily embedding tokens usage quota has not been exceeded.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsDailyEmbeddingLimitExceeded()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsDailyLimitExceeded_" data-uid=
+          "Alvao.API.AI.Assistant.IsDailyLimitExceeded*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsDailyLimitExceeded" data-uid="Alvao.API.AI.Assistant.IsDailyLimitExceeded">
+            IsDailyLimitExceeded() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=287">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Tests if daily usage quota has not been exceeded.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsDailyLimitExceeded()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd>
+              <p>
+                True if enabled and within daily quota; otherwise false.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsDbSemanticSearchAvailable_" data-uid=
+          "Alvao.API.AI.Assistant.IsDbSemanticSearchAvailable*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsDbSemanticSearchAvailable" data-uid=
+          "Alvao.API.AI.Assistant.IsDbSemanticSearchAvailable">
+            IsDbSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=364">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Check whether the database supports vectors.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsDbSemanticSearchAvailable()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_IsSemanticSearchAvailable_" data-uid=
+          "Alvao.API.AI.Assistant.IsSemanticSearchAvailable*"></a>
+          <h3 id="Alvao_API_AI_Assistant_IsSemanticSearchAvailable" data-uid=
+          "Alvao.API.AI.Assistant.IsSemanticSearchAvailable">
+            IsSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=382">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Check whether semantic search is available (either Azure AI Search or database vector semantic search).
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static bool IsSemanticSearchAvailable()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnActChanged_" data-uid="Alvao.API.AI.Assistant.OnActChanged*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnActChanged_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnActChanged(System.Int32)">
+            OnActChanged(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=76">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the ticket on the change of act.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnActChanged(int actId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>actId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Act identificator.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnActCreated_" data-uid="Alvao.API.AI.Assistant.OnActCreated*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnActCreated_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnActCreated(System.Int32)">
+            OnActCreated(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=67">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the ticket on the creating of act.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnActCreated(int actId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>actId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Act identificator.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnActRemoved_" data-uid="Alvao.API.AI.Assistant.OnActRemoved*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnActRemoved_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnActRemoved(System.Int32)">
+            OnActRemoved(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=85">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the ticket on the removing of act.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnActRemoved(int actId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>actId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Act identificator.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnArticleChange_" data-uid="Alvao.API.AI.Assistant.OnArticleChange*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnArticleChange_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnArticleChange(System.Int32)">
+            OnArticleChange(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=40">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the article.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnArticleChange(int articleId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>articleId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of changed article.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnNewsChanged_" data-uid="Alvao.API.AI.Assistant.OnNewsChanged*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnNewsChanged_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnNewsChanged(System.Int32)">
+            OnNewsChanged(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=342">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the news.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnNewsChanged(int newsId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>newsId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of news.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnObjectPropertyModified_" data-uid=
+          "Alvao.API.AI.Assistant.OnObjectPropertyModified*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnObjectPropertyModified_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnObjectPropertyModified(System.Int32)">
+            OnObjectPropertyModified(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=333">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the object.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnObjectPropertyModified(int objectId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of changed object.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_OnServiceChange_" data-uid="Alvao.API.AI.Assistant.OnServiceChange*"></a>
+          <h3 id="Alvao_API_AI_Assistant_OnServiceChange_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.OnServiceChange(System.Int32)">
+            OnServiceChange(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=49">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update Description vector of the service on the change of service properties. Don't update mean vectors
+              of the service.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void OnServiceChange(int serviceId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>serviceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of the service.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_" data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketOnActChange*"></a>
+          <h3 id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketOnActChange(System.Int32)">
+            UpdateTicketOnActChange(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=58">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the ticket on the change of act.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static void UpdateTicketOnActChange(int actId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>actId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Act identificator.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_UpdateTicketOnChange_" data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketOnChange*"></a>
+          <h3 id=
+          "Alvao_API_AI_Assistant_UpdateTicketOnChange_System_Int32_System_Collections_Generic_IEnumerable_System_String__"
+          data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketOnChange(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
+            UpdateTicketOnChange(int, IEnumerable&lt;string&gt;) <a class="header-action link-secondary" title=
+            "View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=95">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update AI Assistant data of the ticket on the change of ticket properties.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static void UpdateTicketOnChange(int ticketId, IEnumerable&lt;string&gt; properties)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>ticketId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Id of the ticket.
+              </p>
+            </dd>
+            <dt>
+              <code>properties</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                Names of changed properties.
+              </p>
+            </dd>
+          </dl><a id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_" data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange*"></a>
+          <h3 id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_System_Int32_System_Int32_" data-uid=
+          "Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange(System.Int32,System.Int32)">
+            UpdateTicketsOnObjectChange(int, int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=105">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Update part of AI Assistant data of the tickets that are influenced by change in object.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static void UpdateTicketsOnObjectChange(int objectId, int propertKindId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>objectId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                ID of changed object.
+              </p>
+            </dd>
+            <dt>
+              <code>propertKindId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                ID of changed property kind.
+              </p>
+            </dd>
+          </dl>
+        </article>
       </div>
-
       <div class="affix">
         <nav id="affix"></nav>
       </div>
     </main>
-
     <div class="container-xxl search-results" id="search-results"></div>
-
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
