@@ -2,10 +2,12 @@
 param()
 
 $baseUrl = "https://doc.alvao.com"
+# Major version of documentation (26.1.1 => 26)
+$version = (Get-Content -Path (Join-Path $PSScriptRoot '../.alvaorc') -Raw).Trim().Split('.')[0]
 
-Write-Host 'Extract XMLs from website'
-$content = Invoke-WebRequest -Uri "${baseUrl}/en/25/modules/alvao-am-custom-apps/applications/templates"
-$mm = Select-String -InputObject $content.RawContent -Pattern '<a href="(?<link>[^"]+\.xml)"' -AllMatches
+Write-Host "Extract XMLs from website (version $version)"
+$content = Invoke-WebRequest -Uri "${baseUrl}/en/${version}/modules/alvao-am-custom-apps/applications/templates"
+$mm = Select-String -InputObject $content.RawContent -Pattern '<a href="?(?<link>[^"\s>]+/templates/[^"\s>]+\.xml)"?' -AllMatches
 
 Write-Host "Downloading $($mm.Matches.Count) XML files"
 foreach ($m in $mm.Matches) {
@@ -40,4 +42,4 @@ foreach ($f in $files) {
     }
 }
 
-Remove-Item $files
+if ($files) { Remove-Item $files }

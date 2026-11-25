@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
 using Alvao.API.AM;
@@ -11,12 +13,12 @@ using Alvao.Context;
 
 class ObjectPropertyAutoAction : IObjectPropertyAutoAction
 {
-  public ObjectPropertyModifyResult OnObjectPropertyModifying(ObjectPropertyEventArgs e)
+  public async Task<ObjectPropertyModifyResult> OnObjectPropertyModifyingAsync(ObjectPropertyEventArgs e, CancellationToken cancellationToken)
   {
     throw new NotImplementedException();
   }
 
-  public void OnObjectPropertyModified(ObjectPropertyEventArgs e)
+  public async Task OnObjectPropertyModifiedAsync(ObjectPropertyEventArgs e, CancellationToken cancellationToken)
   {
     string currentPhoneValue = "";
     int phoneKindId = 0;
@@ -65,9 +67,5 @@ class ObjectPropertyAutoAction : IObjectPropertyAutoAction
       }
     }
   }
-
-    public void OnPropertyModified(ObjectPropertyEventArgs e) {
-        throw new NotImplementedException();
-    }
 }
           

@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Net.Mail;
 using System.Web;
-using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
 using Alvao.API.Common;
 using Alvao.API.SD;
+using Alvao.Context;
+using Alvao.Context.DB;
 using Dapper;
 
 public static class Helpers
@@ -16,10 +16,11 @@ public static class Helpers
 	public static string MailMessageEnglish;
 
 	// Chekcs if the user has SLA in the service.
-	public static bool UserHasSla(int requesterId, int sectionId, SqlConnection con, SqlTransaction trans)
+	public static bool UserHasSla(int requesterId, int sectionId)
 	{          
-		var slaCount = con.QueryFirstOrDefault<int?>(@"SELECT COUNT(*) FROM vSlaAccess WHERE liSlaAccessPersonId = @requesterId AND liSlaAccessHdSectionId = @sectionId", 
-		new { requesterId, sectionId }, trans);
+		using var scope = AlvaoContext.GetConnectionScope();
+		var slaCount = scope.Connection.QueryFirstOrDefault<int?>(@"SELECT COUNT(*) FROM vSlaAccess WHERE liSlaAccessPersonId = @requesterId AND liSlaAccessHdSectionId = @sectionId", 
+		new { requesterId, sectionId }, scope.LegacyTransaction);
 
 		return slaCount.GetValueOrDefault(0) > 0;
 	}
@@ -32,42 +33,42 @@ public static class Helpers
 	}
 
 		// Creation of message body.
-	public static MailMessage GetMailBody(int sectionId, Rebex.Mail.MailMessage message, int fromPersonId, string mailMessageCzech, string mailMessageEnglish)
-	{  	
-		MailMessageCzech = mailMessageCzech; // Defined at the beginning of Helpers class. Used in Localization class.
-		MailMessageEnglish = mailMessageEnglish; // Defined at the beginning of Helpers class. Used in Localization class.
+		public static Rebex.Mail.MailMessage GetMailBody(int sectionId, Rebex.Mail.MailMessage message, int fromPersonId, string mailMessageCzech, string mailMessageEnglish)
+		{  	
+			MailMessageCzech = mailMessageCzech; // Defined at the beginning of Helpers class. Used in Localization class.
+			MailMessageEnglish = mailMessageEnglish; // Defined at the beginning of Helpers class. Used in Localization class.
 
-		var replyMessage = new MailMessage();
-	
-		replyMessage.From = new System.Net.Mail.MailAddress(Helpers.GetSectionEmail(sectionId));                  
-		replyMessage.To.Add(message.From.ToString());
+			var replyMessage = new Rebex.Mail.MailMessage();
 
-		if (!message.Subject.StartsWith("Re:", StringComparison.OrdinalIgnoreCase))
-			replyMessage.Subject = "Re: ";
+			replyMessage.From.Add(new Rebex.Mime.Headers.MailAddress(Helpers.GetSectionEmail(sectionId)));                  
+			replyMessage.To.Add(new Rebex.Mime.Headers.MailAddress(message.From.ToString()));
 
-		replyMessage.Subject += message.Subject;		
+			if (!message.Subject.StartsWith("Re:", StringComparison.OrdinalIgnoreCase))
+				replyMessage.Subject = "Re: ";
 
-		string htmlBody = GetClearHtmlHead();
-		htmlBody += Localization.GetLocalization(fromPersonId, "MailMessage");
+			replyMessage.Subject += message.Subject;		
 
-		string newMessage = "<hr noshade style=\"border: 0;color: #B5C4DF;background-color: #B5C4DF;height:1px;\">";
-		newMessage += "<span class=\"quoted_header_font\">";
-		newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "From")) + ": </b>" + HttpUtility.HtmlEncode(message.From) + "<br />";
-		newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "DateSent")) + ": </b>" + HttpUtility.HtmlEncode(message.Date) + "<br />";
-		newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "To")) + ": </b>" + HttpUtility.HtmlEncode(message.To) + "<br />";
-		newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "SubjectMail")) + ": </b>" + HttpUtility.HtmlEncode(message.Subject) + "<br />";
+			string htmlBody = GetClearHtmlHead();
+			htmlBody += Localization.GetLocalization(fromPersonId, "MailMessage");
 
-		newMessage += "</span><br /><span class=\"quoted_text_font\">";
-		newMessage += HttpUtility.HtmlEncode(message.BodyText).Replace("\n", "<br />");
-		newMessage += "</span>";
-		htmlBody += newMessage;
+			string newMessage = "<hr noshade style=\"border: 0;color: #B5C4DF;background-color: #B5C4DF;height:1px;\">";
+			newMessage += "<span class=\"quoted_header_font\">";
+			newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "From")) + ": </b>" + HttpUtility.HtmlEncode(message.From) + "<br />";
+			newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "DateSent")) + ": </b>" + HttpUtility.HtmlEncode(message.Date) + "<br />";
+			newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "To")) + ": </b>" + HttpUtility.HtmlEncode(message.To) + "<br />";
+			newMessage += "<b>" + HttpUtility.HtmlEncode(Localization.GetLocalization(fromPersonId, "SubjectMail")) + ": </b>" + HttpUtility.HtmlEncode(message.Subject) + "<br />";
 
-		htmlBody += "<br /><br /></td></tr></table></body></html>";
-		htmlBody = htmlBody.Replace("\r\n", "<br />");
-		replyMessage.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(htmlBody, System.Text.Encoding.UTF8, "text/html"));
+			newMessage += "</span><br /><span class=\"quoted_text_font\">";
+			newMessage += HttpUtility.HtmlEncode(message.BodyText).Replace("\n", "<br />");
+			newMessage += "</span>";
+			htmlBody += newMessage;
 
-		return replyMessage;
-	}
+			htmlBody += "<br /><br /></td></tr></table></body></html>";
+			htmlBody = htmlBody.Replace("\r\n", "<br />");
+			replyMessage.BodyHtml = htmlBody;
+
+			return replyMessage;
+		}
 
 	public static string GetClearHtmlHead()
 	{

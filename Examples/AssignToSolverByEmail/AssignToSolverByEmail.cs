@@ -1,8 +1,9 @@
-using System.Data;
 using System.Linq;
-using Microsoft.Data.SqlClient;
+using System.Threading;
+using System.Threading.Tasks;
 using Alvao.Apps.API;
 using Alvao.API;
+using Alvao.Context;
 using Dapper;
 
 namespace Alvao.Helpdesk
@@ -22,20 +23,22 @@ namespace Alvao.Helpdesk
             name = Settings.ActionName;
         }
 
-        public bool OnMessageReceived(SqlConnection con, SqlTransaction trans, Rebex.Mail.MailMessage message, int sectionId, int ticketId, int fromPersonId)
+        public async Task<bool> OnMessageReceivedAsync(MailMessageEventArgs e, CancellationToken cancellationToken)
         {
-            if (ticketId == 0)
+            if (e.TicketId == 0)
                 return true;
 
-            if (message.BodyText != null)
+            if (e.Message?.BodyText != null)
             {
-                int startIndex = message.BodyText.IndexOf("ASSIGNTO:");
+                int startIndex = e.Message.BodyText.IndexOf("ASSIGNTO:");
                 if (startIndex >= 0)
                 {
-                    int length = message.BodyText.IndexOf("\n", startIndex) - (startIndex + 9);
-                    string user = message.BodyText.Substring(startIndex + 9, length).Trim();
+                    int length = e.Message.BodyText.IndexOf("\n", startIndex) - (startIndex + 9);
+                    string user = e.Message.BodyText.Substring(startIndex + 9, length).Trim();
                     int? solverId = null;
-                    var users = con.Query<FoundPerson>(@"exec spPersonSearch @sample, NULL, 0, NULL, '', 1", new { sample = user }, trans);
+
+                    using var scope = AlvaoContext.GetConnectionScope();
+                    var users = scope.Connection.Query<FoundPerson>(@"exec spPersonSearch @sample, NULL, 0, NULL, '', 1", new { sample = user }, scope.LegacyTransaction);
                     if (users.Any())
                     {
                         solverId = users.First().PersonId;
@@ -43,7 +46,7 @@ namespace Alvao.Helpdesk
 
                     if (solverId.HasValue)
                     {
-                        Alvao.API.SD.Ticket.ChangeSolverOrGroup(ticketId, solverId, null, new API.Common.Model.HtmlTextModel(string.Empty), null, fromPersonId);
+                        Alvao.API.SD.Ticket.ChangeSolverOrGroup(e.TicketId, solverId, null, new API.Common.Model.HtmlTextModel(string.Empty), null, e.FromPersonId);
                         return false;
                     }
                 }

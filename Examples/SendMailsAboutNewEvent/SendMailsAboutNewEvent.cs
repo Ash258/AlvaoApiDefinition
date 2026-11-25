@@ -43,7 +43,7 @@ namespace Alvao.Helpdesk
             if (dataModel == null)
                 return;
 
-            dataModel.ActPlainText = "Hello,\n\n a new note was created on the request number " + dataModel.TicketId.ToString() + ":\n\n" + dataModel.ActPlainText;
+            dataModel.ActPlainText = "Hello,\n\n a new note was created on the ticket number " + dataModel.TicketId.ToString() + ":\n\n" + dataModel.ActPlainText;
 
             // Check values.
             if (dataModel.SectionName == Settings.ServiceName)

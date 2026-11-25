@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Alvao.API.Common.Model.CustomApps;
 using Alvao.Apps.API;
 
@@ -13,13 +15,13 @@ public class MultilingualCommand : IEntityCommand
         Entity = Entity.Request;
     }
 
-    public EntityCommandShowResult Show(int entityId, int personId)
+    public async Task<EntityCommandShowResult> ShowAsync(EntityArgs e, CancellationToken cancellationToken)
     {   
         int position = 1; 
         string icon = "local_language_20_regular"; 
 
         // Call the localization class and get the localized string for the user's preferred language.
-        string name = Localization.GetLocalization(personId, "CommandName"); 
+        string name = Localization.GetLocalization(e.PersonId, "CommandName"); 
 
         // Command show all users.
         bool show = true; 
@@ -27,7 +29,7 @@ public class MultilingualCommand : IEntityCommand
         return new EntityCommandShowResult (show, name, icon, position);
     }
 
-    public CommandResult Run(int entityId, int personId)
+    public async Task<CommandResult> RunAsync(EntityArgs e, CancellationToken cancellationToken)
     {
         // Command does nothing.
         throw new NotImplementedException();

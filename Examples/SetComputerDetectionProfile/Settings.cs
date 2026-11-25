@@ -1,7 +1,7 @@
 public class Settings 
 {
     /*
-     * When you move a computer from the Warehouse, a detection profile named "Standard" is automatically set for the computer.
+     * When you move a computer from the Storage room, a detection profile named "Standard" is automatically set for the computer.
      */
 
     public static readonly int movedObjectClassIdToCheck = (int)Alvao.API.AM.Model.ObjectClass.Code.Computer; // Object class ID of the moved object.

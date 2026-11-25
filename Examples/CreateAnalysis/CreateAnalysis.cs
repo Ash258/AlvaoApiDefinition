@@ -52,7 +52,7 @@ namespace Alvao.Helpdesk
             // Check values.
             if (section == Settings.ServiceName && createAnalysis)
             {
-                // Create a new request for analysis.
+                // Create a new ticket for analysis.
 
                 var newTicketModel = new NewTicketModel();
                 newTicketModel.Ticket.sHdTicket = name + " - analysis";

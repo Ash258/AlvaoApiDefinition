@@ -5,6 +5,8 @@ using Alvao.API.SD;
 using Alvao.Apps.API;
 using Alvao.Context;
 using Dapper;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class CostsCalculation : IEntityCommand 
 {
@@ -17,36 +19,36 @@ public class CostsCalculation : IEntityCommand
         Entity = Entity.Request;
     }
 
-    public EntityCommandShowResult Show(int entityId, int personId)
+    public async Task<EntityCommandShowResult> ShowAsync(EntityArgs e, CancellationToken cancellationToken)
     {   
         int position = Settings.CommandPosition; 
         string icon =  Settings.CommandIcon; 
         string name =  Settings.CommandName; 
 
         // Retrieve the required requirements data from the database.
-        tHdTicket ticket = Ticket.GetById(entityId);
+        tHdTicket ticket = Ticket.GetById(e.EntityId);
         if(ticket == null)
             return new EntityCommandShowResult (false, name, icon, position);
 
         // In the Show method, for performance reasons, it is more convenient to work with service ID, reseller, and status.
-        int sectionId = ticket.liHdTicketHdSectionId; // Id of the service in which the request is made.
-        int solverId = ticket.liHdTicketSolverPersonId ?? 0; // Request solver id.
-        int stateId = ticket.TicketStateId; // Request status id.
+        int sectionId = ticket.liHdTicketHdSectionId; // Id of the service in which the ticket is made.
+        int solverId = ticket.liHdTicketSolverPersonId ?? 0; // Ticket solver id.
+        int stateId = ticket.TicketStateId; // Ticket status id.
 
-        // Check whether the request is in the required service and status and the solver is the user to whom the request should be displayed.
-        bool show = sectionId == Settings.ServiceId && stateId == Settings.StateId && solverId == personId;
+        // Check whether the ticket is in the required service and status and the solver is the user to whom the ticket should be displayed.
+        bool show = sectionId == Settings.ServiceId && stateId == Settings.StateId && solverId == e.PersonId;
 
         return new EntityCommandShowResult (show, name, icon, position);
     }
 
-    public CommandResult Run(int entityId, int personId)
+    public async Task<CommandResult> RunAsync(EntityArgs e, CancellationToken cancellationToken)
     {
         MessageType messageType = MessageType.None; // MessageType.None, MessageType.Info, MessageType.Warning, MessageType.Error
         string messageText = string.Empty; //message that is displayed to the user after the command is executed
         string navigateToUrl = string.Empty; //url that opens after executing the command
 
         // Check whether the conditions for its execution / display have not changed between display and execution of the command (can be done anywhere in this Run method).
-        var verifyRights = Show(entityId, personId);
+        var verifyRights = await ShowAsync(e, cancellationToken);
         if (!verifyRights.Show)
         {
             messageType = MessageType.Error;
@@ -60,14 +62,14 @@ public class CostsCalculation : IEntityCommand
             try
             {
                 // Read values from custom fields "SW Costs" and "HW Costs".
-                string strCostSW = Alvao.API.Common.Database.ReadColumn(entityId, "tHdTicketCust", "costSW");
+                string strCostSW = Alvao.API.Common.Database.ReadColumn(e.EntityId, "tHdTicketCust", "costSW");
                 int costSW = string.IsNullOrEmpty(strCostSW) ? 0 : int.Parse(strCostSW);
-                string strCostHW = Alvao.API.Common.Database.ReadColumn(entityId, "tHdTicketCust", "costHW");
+                string strCostHW = Alvao.API.Common.Database.ReadColumn(e.EntityId, "tHdTicketCust", "costHW");
                 int costHW = string.IsNullOrEmpty(strCostHW) ? 0 : int.Parse(strCostHW);
                 int costTotal = costSW + costHW;
 
                 // Write the sum of costSW and costHW in your custom field Total costs.
-                Alvao.API.Common.Database.WriteColumn(entityId, "tHdTicketCust", "costTotal", costTotal.ToString());
+                Alvao.API.Common.Database.WriteColumn(e.EntityId, "tHdTicketCust", "costTotal", costTotal.ToString());
 
                 //example of using custom SQL query within running transaction
                 //scope.Connection.ExecuteAsync(@"UPDATE table SET column = @value WHERE id = @id", new { id = id, value = value }, scope.LegacyTransaction);

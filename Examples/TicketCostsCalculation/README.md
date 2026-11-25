@@ -1,6 +1,6 @@
 # Ticket Costs Calculation
 
-Source: <https://doc.alvao.com/en/25/modules/alvao-am-custom-apps/applications/templates/#ticket-costs-calculation>
+Source: <https://doc.alvao.com/en/26/modules/alvao-am-custom-apps/applications/templates/#ticket-costs-calculation>
 
 The command will sum the values of the SW Costs and HW Costs ticket custom fields.
 

@@ -1,4 +1,6 @@
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Alvao.API.Common.Model.CustomApps;
 using Alvao.Apps.API;
 
@@ -13,13 +15,13 @@ public class OpenAttachments : IEntityCommand
         Entity = Entity.Request;
     }
 
-    public EntityCommandShowResult Show(int entityId, int personId)
+    public async Task<EntityCommandShowResult> ShowAsync(EntityArgs e, CancellationToken cancellationToken)
     {   
         int position = Settings.CommandPosition; 
         string icon =  Settings.CommandIcon; 
         string name =  Settings.CommandName; 
 
-        string link = GetTicketAttachments(entityId);
+        string link = GetTicketAttachments(e.EntityId);
 
         if (string.IsNullOrWhiteSpace(link))
             return new EntityCommandShowResult (false, name, icon, position);
@@ -31,11 +33,11 @@ public class OpenAttachments : IEntityCommand
         return new EntityCommandShowResult (true, name, icon, position);
     }
 
-    public CommandResult Run(int entityId, int personId)
+    public async Task<CommandResult> RunAsync(EntityArgs e, CancellationToken cancellationToken)
     {
         MessageType messageType = MessageType.None; 
         string messageText = string.Empty;
-        string navigateToUrl = GetTicketAttachments(entityId);
+        string navigateToUrl = GetTicketAttachments(e.EntityId);
         return new CommandResult(messageType, messageText, navigateToUrl);
     }
 

@@ -1,7 +1,9 @@
 using System;
-using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
+using Alvao.Context;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Dapper;
 
 namespace Alvao.Helpdesk
@@ -12,10 +14,10 @@ namespace Alvao.Helpdesk
 
         public AutoCloseInactiveTickets()
         {
-            Name = "Automatic closure of resolved requests after the set deadline for reopening by the applicant";
+            Name = "Automatic closure of resolved tickets after the set deadline for reopening by the applicant";
         }
 
-        public void OnPeriod(SqlConnection con)
+        public async Task OnPeriodAsync(CancellationToken cancellationToken)
         {
             string sql = @"
             select
@@ -28,7 +30,8 @@ namespace Alvao.Helpdesk
                 and ClosedDate is null
                 and dateadd(day, isnull(s.nHdSectionUserReopenDays, 0), t.dHdTicketResolved)<getutcdate()";
 
-            var ids = con.Query<int>(sql);
+            using var scope = AlvaoContext.GetConnectionScope();
+            var ids = scope.Connection.Query<int>(sql);
 
             var systemPerson = API.Common.Person.GetSystem();
 

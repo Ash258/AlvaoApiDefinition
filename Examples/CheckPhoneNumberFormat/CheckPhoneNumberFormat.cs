@@ -1,6 +1,8 @@
 
 using System;
 using System.Data;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
 using Alvao.API.AM;
@@ -9,7 +11,7 @@ using Dapper;
 
 class ObjectPropertyAutoAction : IObjectPropertyAutoAction
 {
-  public ObjectPropertyModifyResult OnObjectPropertyModifying(ObjectPropertyEventArgs e)
+  public async Task<ObjectPropertyModifyResult> OnObjectPropertyModifyingAsync(ObjectPropertyEventArgs e, CancellationToken cancellationToken)
   {
     if (Settings.propName != ObjectProperty.GetDefinition(e.PropertyKindId)?.txtName)
       return new ObjectPropertyModifyResult(true, (string)null);
@@ -22,19 +24,15 @@ class ObjectPropertyAutoAction : IObjectPropertyAutoAction
     var matches = Settings.rx.Matches(e.NewValue.ToString());
 
     if (matches.Count == 0)
-      return new ObjectPropertyModifyResult(true, Settings.errorMessage);
+      return new ObjectPropertyModifyResult(false, Settings.errorMessage);
 
     // The number was entered in a valid format.
       return new ObjectPropertyModifyResult(true, (string)null);
   }
 
-  public void OnObjectPropertyModified(ObjectPropertyEventArgs e)
+  public async Task OnObjectPropertyModifiedAsync(ObjectPropertyEventArgs e, CancellationToken cancellationToken)
   {
     throw new NotImplementedException();
   }
-
-    public void OnPropertyModified(ObjectPropertyEventArgs e) {
-        throw new NotImplementedException();
-    }
 }
           

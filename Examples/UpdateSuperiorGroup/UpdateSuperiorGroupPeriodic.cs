@@ -1,11 +1,11 @@
 using System;
-using System.Data;
-using Microsoft.Data.SqlClient;
 using Alvao.Apps.API;
 using Dapper;
 using System.Collections.Generic;
 using Alvao.Context;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 public class UpdateSuperiorGroupPeriodic : IPeriodicAction
 {
@@ -15,7 +15,7 @@ public class UpdateSuperiorGroupPeriodic : IPeriodicAction
         set { }
     }
 
-    public void OnPeriod(SqlConnection con)
+    public async Task OnPeriodAsync(CancellationToken cancellationToken)
     {
         if (Settings.UPDATE_HOUR != DateTime.Now.Hour) return;
 
