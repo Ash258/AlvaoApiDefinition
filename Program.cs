@@ -50,6 +50,10 @@ foreach (var ns in alvaoNamespace) {
     }
 }
 
+// Database models of tables, which are documented only in the database documentation, and schema reference
+if (alvaoNamespace.Contains(DatabaseSchema.MODELS_NAMESPACE)) DatabaseSchema.GenerateMissingModels(logger);
+DatabaseSchema.WriteMarkdown("Alvao/DATABASE.md", version);
+
 Overrides.GenerateStubs(logger);
 Overrides.CopyHandWritten(logger);
 

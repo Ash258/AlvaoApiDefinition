@@ -600,6 +600,9 @@ public partial class AlvaoClass {
         var topName = TypeRefs.TopLevelName(Name);
         var patches = Patches.Instance;
 
+        // Column types, references and descriptions of database models
+        DatabaseSchema.Enrich(this);
+
         // Plain text fixups of docfx quirks
         foreach (var f in patches.Fixups.Where(f => f.Class.Equals(fullName))) {
             Logger.LogInformation("Applying fixup '{}' [{}] {{{}}}", f.Find, Name, NamespaceName);
