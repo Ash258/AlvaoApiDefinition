@@ -1,6 +1,7 @@
 # Alvao Custom Apps API Definition
 
 [![NuGet](https://img.shields.io/nuget/v/Ash258.Alvao.Mock.API?label=Ash258.Alvao.Mock.API)](https://www.nuget.org/packages/Ash258.Alvao.Mock.API)
+[![CI](https://github.com/Ash258/AlvaoApiDefinition/actions/workflows/ci.yml/badge.svg)](https://github.com/Ash258/AlvaoApiDefinition/actions/workflows/ci.yml)
 
 Unofficial C# API definitions for developing [ALVAO](https://www.alvao.com) custom applications with full IDE support: IntelliSense, signature help, inline documentation and compile-time checks.
 
@@ -172,6 +173,22 @@ Anything the documentation cannot provide is kept in [`overrides/`](./overrides/
 
 - **`overrides/Alvao/**/*.cs`**: hand-written C# files that mirror the output tree, for example the `Alvao.Apps.API` interfaces (documented outside the API reference) and stubs that need members.
 - **[`overrides/patches.json`](./overrides/patches.json)**: small data patches, namely usings needed by attributes, namespaces of unlinked types, members of implemented .NET interfaces, and text fixes for documentation quirks.
+
+### Releasing
+
+The [CI workflow](./.github/workflows/ci.yml) builds the generator, the library and all examples on every push and pull request. It publishes the package:
+
+- on a `v*` tag; the tag must match `.alvaorc`, and it also creates a GitHub Release with the `.nupkg`
+- on a push to `main`, when `.alvaorc` contains a version that is not published yet
+
+Packages go to nuget.org through [Trusted Publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing), so no API key is stored, and to GitHub Packages. To release a new ALVAO version:
+
+```bash
+task r:c:h                       # regenerate from fresh docs, updates .alvaorc
+git commit -am "chore(release): $(cat .alvaorc)"
+git tag "v$(cat .alvaorc)"
+git push origin main --tags
+```
 
 ### Logging
 
