@@ -78,6 +78,30 @@
           </h3>
           <dl class="jumplist">
             <dt>
+              <a class="xref" href="Alvao.API.AI.Exceptions.AIRequestException.html">AIRequestException</a>
+            </dt>
+            <dd>
+              <p>
+                Thrown when Azure OpenAI returns an error that does not match a more specific known condition (e.g.
+                token rate limiting or maximum context length exceeded). Carries the HTTP status code so callers can
+                inspect the failure without relying on mutable state on the client instance.
+              </p>
+            </dd>
+          </dl>
+          <dl class="jumplist">
+            <dt>
+              <a class="xref" href=
+              "Alvao.API.AI.Exceptions.MaxContextLengthExceededException.html">MaxContextLengthExceededException</a>
+            </dt>
+            <dd>
+              <p>
+                Thrown when Azure OpenAI rejects a request because the input exceeds the model's maximum context
+                length, so callers can truncate the input and retry.
+              </p>
+            </dd>
+          </dl>
+          <dl class="jumplist">
+            <dt>
               <a class="xref" href="Alvao.API.AI.Exceptions.TokenRateException.html">TokenRateException</a>
             </dt>
             <dd></dd>

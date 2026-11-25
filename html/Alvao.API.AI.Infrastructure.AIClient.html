@@ -70,7 +70,7 @@
           <h1 id="Alvao_API_AI_Infrastructure_AIClient" data-uid="Alvao.API.AI.Infrastructure.AIClient" class=
           "text-break">
             Class AIClient <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Infrastructure/AIClient.cs&amp;version=GBdev&amp;line=12">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Infrastructure/AIClient.cs&amp;version=GBdev&amp;line=11">
             </a>
           </h1>
           <div class="facts text-secondary">
@@ -79,9 +79,8 @@
                 Namespace
               </dt>
               <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AI.html">AI</a>.<a class="xref" href=
-                "Alvao.API.AI.Infrastructure.html">Infrastructure</a>
+                <span class="xref">Alvao</span>.<span class="xref">API</span>.<a class="xref" href=
+                "Alvao.API.AI.html">AI</a>.<a class="xref" href="Alvao.API.AI.Infrastructure.html">Infrastructure</a>
               </dd>
             </dl>
             <dl>
@@ -96,7 +95,8 @@
           <div class="markdown summary"></div>
           <div class="markdown conceptual"></div>
           <div class="codewrapper">
-            <pre><code class="lang-csharp hljs">public class AIClient</code></pre>
+            <pre><code class=
+            "lang-csharp hljs">[Obsolete("Use FoundryAIClient instead. This class is retained for backward compatibility with custom applications.")] public class AIClient</code></pre>
           </div>
           <dl class="typelist inheritance">
             <dt>
@@ -242,9 +242,12 @@
             <dd></dd>
           </dl><a id="Alvao_API_AI_Infrastructure_AIClient_GetAzureResponseAsync_" data-uid=
           "Alvao.API.AI.Infrastructure.AIClient.GetAzureResponseAsync*"></a>
-          <h3 id="Alvao_API_AI_Infrastructure_AIClient_GetAzureResponseAsync_System_String_System_Object_" data-uid=
-          "Alvao.API.AI.Infrastructure.AIClient.GetAzureResponseAsync(System.String,System.Object)">
-            GetAzureResponseAsync(string, object) <a class="header-action link-secondary" title="View source" href=
+          <h3 id=
+          "Alvao_API_AI_Infrastructure_AIClient_GetAzureResponseAsync_System_String_System_Object_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Infrastructure.AIClient.GetAzureResponseAsync(System.String,System.Object,System.Threading.CancellationToken)">
+            GetAzureResponseAsync(string, object, CancellationToken) <a class="header-action link-secondary" title=
+            "View source" href=
             "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Infrastructure/AIClient.cs&amp;version=GBdev&amp;line=88">
             </a>
           </h3>
@@ -252,7 +255,7 @@
           <div class="markdown level1 conceptual"></div>
           <div class="codewrapper">
             <pre><code class=
-            "lang-csharp hljs">public Task&lt;HttpResponseMessage&gt; GetAzureResponseAsync(string uri, object data)</code></pre>
+            "lang-csharp hljs">public Task&lt;HttpResponseMessage&gt; GetAzureResponseAsync(string uri, object data, CancellationToken cancellationToken = default)</code></pre>
           </div>
           <h4 class="section">
             Parameters
@@ -264,6 +267,11 @@
             <dd></dd>
             <dt>
               <code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
             </dt>
             <dd></dd>
           </dl>
@@ -534,9 +542,9 @@
             <dd></dd>
           </dl><a id="Alvao_API_AI_Infrastructure_AIClient_GetSolutionProposal_" data-uid=
           "Alvao.API.AI.Infrastructure.AIClient.GetSolutionProposal*"></a>
-          <h3 id="Alvao_API_AI_Infrastructure_AIClient_GetSolutionProposal_System_Object_" data-uid=
-          "Alvao.API.AI.Infrastructure.AIClient.GetSolutionProposal(System.Object)">
-            GetSolutionProposal(object) <a class="header-action link-secondary" title="View source" href=
+          <h3 id="Alvao_API_AI_Infrastructure_AIClient_GetSolutionProposal_System_String_System_Object_" data-uid=
+          "Alvao.API.AI.Infrastructure.AIClient.GetSolutionProposal(System.String,System.Object)">
+            GetSolutionProposal(string, object) <a class="header-action link-secondary" title="View source" href=
             "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Infrastructure/AIClient.cs&amp;version=GBdev&amp;line=147">
             </a>
           </h3>
@@ -544,12 +552,16 @@
           <div class="markdown level1 conceptual"></div>
           <div class="codewrapper">
             <pre><code class=
-            "lang-csharp hljs">public (string textResponse, UsageResponse usageResponse) GetSolutionProposal(object data)</code></pre>
+            "lang-csharp hljs">public (string textResponse, UsageResponse usageResponse) GetSolutionProposal(string model, object data)</code></pre>
           </div>
           <h4 class="section">
             Parameters
           </h4>
           <dl class="parameters">
+            <dt>
+              <code>model</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
             <dt>
               <code>data</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
             </dt>

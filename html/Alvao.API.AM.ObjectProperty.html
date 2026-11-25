@@ -79,8 +79,8 @@
                 Namespace
               </dt>
               <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AM.html">AM</a>
+                <span class="xref">Alvao</span>.<span class="xref">API</span>.<a class="xref" href=
+                "Alvao.API.AM.html">AM</a>
               </dd>
             </dl>
             <dl>
@@ -157,7 +157,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_Add_System_Int32_System_Int32_System_Object_System_Boolean_" data-uid=
           "Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Boolean)">
             Add(int, int, object, bool) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=63">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=90">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -213,7 +213,7 @@
           data-uid=
           "Alvao.API.AM.ObjectProperty.Add(System.Int32,System.Int32,System.Object,System.Nullable{System.Int32},System.Boolean)">
             Add(int, int, object, int?, bool) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=255">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=282">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -271,6 +271,134 @@
                 Inherit property into child objects
               </p>
             </dd>
+          </dl><a id="Alvao_API_AM_ObjectProperty_BulkUpdate_" data-uid="Alvao.API.AM.ObjectProperty.BulkUpdate*"></a>
+          <h3 id=
+          "Alvao_API_AM_ObjectProperty_BulkUpdate_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_Object_System_Boolean_System_Boolean_"
+          data-uid=
+          "Alvao.API.AM.ObjectProperty.BulkUpdate(System.Int32,System.Collections.Generic.IEnumerable{System.Int32},System.Int32,System.Object,System.Boolean,System.Boolean)">
+            BulkUpdate(int, IEnumerable&lt;int&gt;, int, object, bool, bool) <a class="header-action link-secondary"
+            title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=78">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Updates a single property on multiple objects in bulk.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">public static BulkUpdateResult BulkUpdate(int personId, IEnumerable&lt;int&gt; objectIds, int kindId, object value, bool callCustomAction = true, bool shouldLog = true)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>personId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Person ID (who updates properties) <i>(tPerson.iPersonId)</i>
+              </p>
+            </dd>
+            <dt>
+              <code>objectIds</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;
+            </dt>
+            <dd>
+              <p>
+                Object IDs to update <i>(tblNode.intNodeId)</i>
+              </p>
+            </dd>
+            <dt>
+              <code>kindId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd>
+              <p>
+                Property kind ID <i>(tblKind.intKindId)</i>
+              </p>
+            </dd>
+            <dt>
+              <code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>
+            </dt>
+            <dd>
+              <p>
+                New typed property value
+              </p>
+            </dd>
+            <dt>
+              <code>callCustomAction</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd>
+              <p>
+                If true, object property auto actions are triggered. Default value is <i>true</i>. This method cannot
+                be called in running transaction (if calling it is necessary, set the <i>callCustomAction</i> parameter
+                to <i>false</i>).
+              </p>
+            </dd>
+            <dt>
+              <code>shouldLog</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd>
+              <p>
+                If true, the property value change is logged into tblLog. Default value is <i>true</i>.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AM.Model.BulkUpdateResult.html">BulkUpdateResult</a>
+            </dt>
+            <dd>
+              <p>
+                Result containing lists of updated, rejected, unauthorized and missing-property object IDs.
+              </p>
+            </dd>
+          </dl>
+          <h4 class="section" id=
+          "Alvao_API_AM_ObjectProperty_BulkUpdate_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_Object_System_Boolean_System_Boolean__examples">
+            Examples
+          </h4>
+          <pre><code class=
+          "lang-csharp">int personId = 25; var objectIds = new[] { 50, 51, 52 }; int kindId = 100; // property kind ID var result = Alvao.API.AM.ObjectProperty.BulkUpdate(personId, objectIds, kindId, "Active"); // result.UpdatedObjectIds contains IDs of successfully updated objects</code></pre>
+          <h4 class="section" id=
+          "Alvao_API_AM_ObjectProperty_BulkUpdate_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_System_Object_System_Boolean_System_Boolean__remarks">
+            Remarks
+          </h4>
+          <div class="markdown level1 remarks">
+            <p>
+              Do not use this method for updating templates properties.
+            </p>
+          </div>
+          <h4 class="section">
+            Exceptions
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AM.Exceptions.MissingPropertyException.html">MissingPropertyException</a>
+            </dt>
+            <dd>
+              <p>
+                Throws when property with <code class="paramref">kindId</code> does not exist.
+              </p>
+            </dd>
+            <dt>
+              <a class="xref" href=
+              "Alvao.API.AM.Exceptions.PropertyValueViolatesUniquenessException.html">PropertyValueViolatesUniquenessException</a>
+            </dt>
+            <dd>
+              <p>
+                Throws when the property is unique and multiple objects are being updated to the same value.
+              </p>
+            </dd>
           </dl><a id="Alvao_API_AM_ObjectProperty_CheckForAssignedAndReturnedAsset_" data-uid=
           "Alvao.API.AM.ObjectProperty.CheckForAssignedAndReturnedAsset*"></a>
           <h3 id=
@@ -279,7 +407,7 @@
           "Alvao.API.AM.ObjectProperty.CheckForAssignedAndReturnedAsset(System.Collections.Generic.List{Alvao.API.AM.Model.ResponsibleUserModel},System.Int32)">
             CheckForAssignedAndReturnedAsset(List&lt;ResponsibleUserModel&gt;, int) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=180">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=207">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -319,7 +447,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_GetDefinition_Alvao_API_Common_Model_Database_tblKind_KindCode_"
           data-uid="Alvao.API.AM.ObjectProperty.GetDefinition(Alvao.API.Common.Model.Database.tblKind.KindCode)">
             GetDefinition(KindCode) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=138">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=165">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -364,7 +492,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_GetDefinition_System_Int32_" data-uid=
           "Alvao.API.AM.ObjectProperty.GetDefinition(System.Int32)">
             GetDefinition(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=128">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=155">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -410,7 +538,7 @@
           "Alvao.API.AM.ObjectProperty.GetOldResponsibleUsers(System.Collections.Generic.IEnumerable{System.Int32})">
             GetOldResponsibleUsers(IEnumerable&lt;int&gt;) <a class="header-action link-secondary" title="View source"
             href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=169">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=196">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -457,7 +585,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_GetPosibleValues_Alvao_API_AM_Model_Property_" data-uid=
           "Alvao.API.AM.ObjectProperty.GetPosibleValues(Alvao.API.AM.Model.Property)">
             GetPosibleValues(Property) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=84">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=111">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -504,7 +632,7 @@
           data-uid=
           "Alvao.API.AM.ObjectProperty.GetTemplateProperties(Alvao.API.Common.Model.Database.tblClass.ClassCode)">
             GetTemplateProperties(ClassCode) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=105">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=132">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -547,7 +675,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_GetTemplateProperties_System_Int32_" data-uid=
           "Alvao.API.AM.ObjectProperty.GetTemplateProperties(System.Int32)">
             GetTemplateProperties(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=148">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=175">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -588,7 +716,7 @@
           <h3 id="Alvao_API_AM_ObjectProperty_GetValueList_System_Int32_System_Int32_" data-uid=
           "Alvao.API.AM.ObjectProperty.GetValueList(System.Int32,System.Int32)">
             GetValueList(int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=95">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=122">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -644,7 +772,7 @@
           "Alvao.API.AM.ObjectProperty.GetValuesByKindCodes(System.Int32,System.Collections.Generic.IEnumerable{Alvao.API.Common.Model.Database.tblKind.KindCode})">
             GetValuesByKindCodes(int, IEnumerable&lt;KindCode&gt;) <a class="header-action link-secondary" title=
             "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=159">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=186">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -701,7 +829,7 @@
           "Alvao.API.AM.ObjectProperty.HasObjectPropertyRight(System.Int32,System.Int32,System.Int32,Alvao.API.AM.Model.PropertyRight.Right)">
             HasObjectPropertyRight(int, int, int, Right) <a class="header-action link-secondary" title="View source"
             href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=118">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=145">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -773,7 +901,7 @@
           data-uid=
           "Alvao.API.AM.ObjectProperty.TemplateContains(System.Int32,Alvao.API.Common.Model.Database.tblKind.KindCode)">
             TemplateContains(int, KindCode) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=74">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=101">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1047,7 +1175,7 @@
           "Alvao.API.AM.ObjectProperty.Update(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
             Update(int, int, IDictionary&lt;string, string&gt;, bool) <a class="header-action link-secondary" title=
             "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=236">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=263">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1166,7 +1294,7 @@
           "Alvao.API.AM.ObjectProperty.UpdateProperties(System.Int32,System.Int32,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)">
             UpdateProperties(int, int, IDictionary&lt;string, string&gt;, bool) <a class="header-action link-secondary"
             title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=209">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AM/ObjectProperty.cs&amp;version=GBdev&amp;line=236">
             </a>
           </h3>
           <div class="markdown level1 summary">

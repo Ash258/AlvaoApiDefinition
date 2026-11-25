@@ -70,7 +70,7 @@
         <article data-uid="Alvao.API.AI.Assistant">
           <h1 id="Alvao_API_AI_Assistant" data-uid="Alvao.API.AI.Assistant" class="text-break">
             Class Assistant <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=14">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=15">
             </a>
           </h1>
           <div class="facts text-secondary">
@@ -79,8 +79,8 @@
                 Namespace
               </dt>
               <dd>
-                <a class="xref" href="Alvao.html">Alvao</a>.<a class="xref" href="Alvao.API.html">API</a>.<a class=
-                "xref" href="Alvao.API.AI.html">AI</a>
+                <span class="xref">Alvao</span>.<span class="xref">API</span>.<a class="xref" href=
+                "Alvao.API.AI.html">AI</a>
               </dd>
             </dl>
             <dl>
@@ -156,7 +156,7 @@
           </h2><a id="Alvao_API_AI_Assistant_GetAIClient_" data-uid="Alvao.API.AI.Assistant.GetAIClient*"></a>
           <h3 id="Alvao_API_AI_Assistant_GetAIClient" data-uid="Alvao.API.AI.Assistant.GetAIClient">
             GetAIClient() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=30">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=32">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -184,7 +184,7 @@
           <h3 id="Alvao_API_AI_Assistant_GetEmbedding_System_String_System_String_System_String_System_Int32_"
           data-uid="Alvao.API.AI.Assistant.GetEmbedding(System.String,System.String,System.String,System.Int32)">
             GetEmbedding(string, string, string, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=355">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=367">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -261,7 +261,7 @@
           "Alvao.API.AI.Assistant.GetEntityVectors(Alvao.API.Common.Model.AzureAISearchEntityType,System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)">
             GetEntityVectors(AzureAISearchEntityType, IEnumerable&lt;int&gt;, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=324">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=336">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -325,11 +325,40 @@
                 vectors corresponding to the specified entity identifiers.
               </p>
             </dd>
+          </dl><a id="Alvao_API_AI_Assistant_GetFoundryAIClient_" data-uid=
+          "Alvao.API.AI.Assistant.GetFoundryAIClient*"></a>
+          <h3 id="Alvao_API_AI_Assistant_GetFoundryAIClient" data-uid="Alvao.API.AI.Assistant.GetFoundryAIClient">
+            GetFoundryAIClient() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=42">
+            </a>
+          </h3>
+          <div class="markdown level1 summary">
+            <p>
+              Get instance of the async Foundry (Azure.AI.OpenAI SDK based) client for sending requests to Azure
+              OpenAI.
+            </p>
+          </div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public static IAIClient GetFoundryAIClient()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="Alvao.API.AI.Infrastructure.Interfaces.IAIClient.html">IAIClient</a>
+            </dt>
+            <dd>
+              <p>
+                Instance of a client for sending requests to Azure OpenAI.
+              </p>
+            </dd>
           </dl><a id="Alvao_API_AI_Assistant_GetModelAsync_" data-uid="Alvao.API.AI.Assistant.GetModelAsync*"></a>
           <h3 id="Alvao_API_AI_Assistant_GetModelAsync_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.GetModelAsync(System.Int32)">
             GetModelAsync(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=21">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=22">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -372,7 +401,7 @@
           </dl><a id="Alvao_API_AI_Assistant_GetSettings_" data-uid="Alvao.API.AI.Assistant.GetSettings*"></a>
           <h3 id="Alvao_API_AI_Assistant_GetSettings" data-uid="Alvao.API.AI.Assistant.GetSettings">
             GetSettings() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=278">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=290">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -405,7 +434,7 @@
           "Alvao.API.AI.Assistant.GetSimilarArticleChunksAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarArticleChunksAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=134">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=146">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -485,7 +514,7 @@
           "Alvao.API.AI.Assistant.GetSimilarArticlesAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarArticlesAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=119">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=131">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -563,7 +592,7 @@
           data-uid="Alvao.API.AI.Assistant.GetSimilarKnowledgeArticles(System.String,System.Int32,System.Int32)">
             GetSimilarKnowledgeArticles(string, int, int) <a class="header-action link-secondary" title="View source"
             href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=268">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=280">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -627,7 +656,7 @@
           "Alvao.API.AI.Assistant.GetSimilarNewsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarNewsAsync(string, int, int, double?, CancellationToken) <a class="header-action link-secondary"
             title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=148">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=160">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -707,7 +736,7 @@
           "Alvao.API.AI.Assistant.GetSimilarObjectsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarObjectsAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=167">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=179">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -787,7 +816,7 @@
           "Alvao.API.AI.Assistant.GetSimilarPersonAssetsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarPersonAssetsAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=199">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=211">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -871,7 +900,7 @@
           "Alvao.API.AI.Assistant.GetSimilarRequestersTicketsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarRequestersTicketsAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=251">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=263">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -950,7 +979,7 @@
           "Alvao.API.AI.Assistant.GetSimilarServicesAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarServicesAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=213">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=225">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1030,7 +1059,7 @@
           "Alvao.API.AI.Assistant.GetSimilarTicketsAsync(System.String,System.Int32,System.Int32,System.Nullable{System.Double},System.Threading.CancellationToken)">
             GetSimilarTicketsAsync(string, int, int, double?, CancellationToken) <a class=
             "header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=232">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=244">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1106,7 +1135,7 @@
           <h3 id="Alvao_API_AI_Assistant_GetVector_System_String_Alvao_API_AI_Model_EntityInfo_System_String_"
           data-uid="Alvao.API.AI.Assistant.GetVector(System.String,Alvao.API.AI.Model.EntityInfo,System.String)">
             GetVector(string, EntityInfo, string) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=310">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=322">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1167,7 +1196,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsArticleVectorEnabled" data-uid=
           "Alvao.API.AI.Assistant.IsArticleVectorEnabled">
             IsArticleVectorEnabled() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=400">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=412">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1192,7 +1221,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsAzureSemanticSearchAvailable" data-uid=
           "Alvao.API.AI.Assistant.IsAzureSemanticSearchAvailable">
             IsAzureSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=373">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=385">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1217,7 +1246,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsComputionOfSearchingVectorEnabled" data-uid=
           "Alvao.API.AI.Assistant.IsComputionOfSearchingVectorEnabled">
             IsComputionOfSearchingVectorEnabled() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=391">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=403">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1242,7 +1271,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsDailyEmbeddingLimitExceeded" data-uid=
           "Alvao.API.AI.Assistant.IsDailyEmbeddingLimitExceeded">
             IsDailyEmbeddingLimitExceeded() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=297">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=309">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1266,7 +1295,7 @@
           "Alvao.API.AI.Assistant.IsDailyLimitExceeded*"></a>
           <h3 id="Alvao_API_AI_Assistant_IsDailyLimitExceeded" data-uid="Alvao.API.AI.Assistant.IsDailyLimitExceeded">
             IsDailyLimitExceeded() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=287">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=299">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1295,7 +1324,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsDbSemanticSearchAvailable" data-uid=
           "Alvao.API.AI.Assistant.IsDbSemanticSearchAvailable">
             IsDbSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=364">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=376">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1320,7 +1349,7 @@
           <h3 id="Alvao_API_AI_Assistant_IsSemanticSearchAvailable" data-uid=
           "Alvao.API.AI.Assistant.IsSemanticSearchAvailable">
             IsSemanticSearchAvailable() <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=382">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=394">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1344,7 +1373,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnActChanged_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnActChanged(System.Int32)">
             OnActChanged(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=76">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=88">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1372,7 +1401,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnActCreated_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnActCreated(System.Int32)">
             OnActCreated(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=67">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=79">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1400,7 +1429,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnActRemoved_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnActRemoved(System.Int32)">
             OnActRemoved(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=85">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=97">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1428,7 +1457,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnArticleChange_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnArticleChange(System.Int32)">
             OnArticleChange(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=40">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=52">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1456,7 +1485,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnNewsChanged_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnNewsChanged(System.Int32)">
             OnNewsChanged(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=342">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=354">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1485,7 +1514,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnObjectPropertyModified_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnObjectPropertyModified(System.Int32)">
             OnObjectPropertyModified(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=333">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=345">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1513,7 +1542,7 @@
           <h3 id="Alvao_API_AI_Assistant_OnServiceChange_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.OnServiceChange(System.Int32)">
             OnServiceChange(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=49">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=61">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1543,7 +1572,7 @@
           <h3 id="Alvao_API_AI_Assistant_UpdateTicketOnActChange_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.UpdateTicketOnActChange(System.Int32)">
             UpdateTicketOnActChange(int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=58">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=70">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1575,7 +1604,7 @@
           "Alvao.API.AI.Assistant.UpdateTicketOnChange(System.Int32,System.Collections.Generic.IEnumerable{System.String})">
             UpdateTicketOnChange(int, IEnumerable&lt;string&gt;) <a class="header-action link-secondary" title=
             "View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=95">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=107">
             </a>
           </h3>
           <div class="markdown level1 summary">
@@ -1615,7 +1644,7 @@
           <h3 id="Alvao_API_AI_Assistant_UpdateTicketsOnObjectChange_System_Int32_System_Int32_" data-uid=
           "Alvao.API.AI.Assistant.UpdateTicketsOnObjectChange(System.Int32,System.Int32)">
             UpdateTicketsOnObjectChange(int, int) <a class="header-action link-secondary" title="View source" href=
-            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=105">
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Assistant.cs&amp;version=GBdev&amp;line=117">
             </a>
           </h3>
           <div class="markdown level1 summary">

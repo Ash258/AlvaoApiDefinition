@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
+    <meta charset="utf-8">
+    <title>
+      Interface IEmbeddingModelService | Alvao.API Documentation
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Interface IEmbeddingModelService | Alvao.API Documentation">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../public/docfx.min.css">
+    <link rel="stylesheet" href="../public/main.css">
+    <meta name="docfx:navrel" content="../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+    <meta name="docfx:rel" content="../">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">
+    <meta name="loc:downloadPdf" content="Download PDF">
+    <script type="module" src="./../public/docfx.min.js"></script>
+    <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+    </script>
+  </head>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
+          ""></a>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search" name="search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
+                "off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
+              Table of Contents
+            </h5>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="actionbar">
+          <nav id="breadcrumb"></nav>
+        </div>
+        <article data-uid="Alvao.API.AI.Service.Interfaces.IEmbeddingModelService">
+          <h1 id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService" class="text-break">
+            Interface IEmbeddingModelService <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=6">
+            </a>
+          </h1>
+          <div class="facts text-secondary">
+            <dl>
+              <dt>
+                Namespace
+              </dt>
+              <dd>
+                <span class="xref">Alvao</span>.<span class="xref">API</span>.<a class="xref" href=
+                "Alvao.API.AI.html">AI</a>.<a class="xref" href="Alvao.API.AI.Service.html">Service</a>.<a class="xref"
+                href="Alvao.API.AI.Service.Interfaces.html">Interfaces</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Assembly
+              </dt>
+              <dd>
+                Alvao.API.dll
+              </dd>
+            </dl>
+          </div>
+          <div class="markdown summary"></div>
+          <div class="markdown conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public interface IEmbeddingModelService</code></pre>
+          </div>
+          <h2 class="section" id="methods">
+            Methods
+          </h2><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_AbortReindexingAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.AbortReindexingAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_AbortReindexingAsync_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.AbortReindexingAsync(System.Threading.CancellationToken)">
+            AbortReindexingAsync(CancellationToken) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=13">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task AbortReindexingAsync(CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_FinishReindexingAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.FinishReindexingAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_FinishReindexingAsync_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.FinishReindexingAsync(System.Threading.CancellationToken)">
+            FinishReindexingAsync(CancellationToken) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=16">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task FinishReindexingAsync(CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetAbortedModelId_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetAbortedModelId*"></a>
+          <h3 id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetAbortedModelId" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetAbortedModelId">
+            GetAbortedModelId() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=19">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">int GetAbortedModelId()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetActiveModelAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetActiveModelAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetActiveModelAsync_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetActiveModelAsync(System.Threading.CancellationToken)">
+            GetActiveModelAsync(CancellationToken) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=10">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;EmbeddingModel&gt; GetActiveModelAsync(CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "Alvao.API.Common.Model.Database.EmbeddingModel.html">EmbeddingModel</a>&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetAllModelsAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetAllModelsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetAllModelsAsync_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetAllModelsAsync(System.Threading.CancellationToken)">
+            GetAllModelsAsync(CancellationToken) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=12">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;IEnumerable&lt;EmbeddingModel&gt;&gt; GetAllModelsAsync(CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.Common.Model.Database.EmbeddingModel.html">EmbeddingModel</a>&gt;&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetDeploymentName_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetDeploymentName*"></a>
+          <h3 id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetDeploymentName" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetDeploymentName">
+            GetDeploymentName() <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=9">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">string GetDeploymentName()</code></pre>
+          </div>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetEmbeddingCountsAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetEmbeddingCountsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetEmbeddingCountsAsync_System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetEmbeddingCountsAsync(System.Int32,System.Threading.CancellationToken)">
+            GetEmbeddingCountsAsync(int, CancellationToken) <a class="header-action link-secondary" title="View source"
+            href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=15">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;EmbeddingCounts&gt; GetEmbeddingCountsAsync(int modelId, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>modelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "Alvao.API.AI.Model.EmbeddingCounts.html">EmbeddingCounts</a>&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetEnabledModels_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetEnabledModels*"></a>
+          <h3 id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_GetEnabledModels_System_Boolean_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.GetEnabledModels(System.Boolean)">
+            GetEnabledModels(bool) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=14">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">IList&lt;EmbeddingModel&gt; GetEnabledModels(bool useCache = false)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>useCache</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref"
+              href="Alvao.API.Common.Model.Database.EmbeddingModel.html">EmbeddingModel</a>&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_OnReindexingAbortedJob_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.OnReindexingAbortedJob*"></a>
+          <h3 id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_OnReindexingAbortedJob_System_Int32_"
+          data-uid="Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.OnReindexingAbortedJob(System.Int32)">
+            OnReindexingAbortedJob(int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=18">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">void OnReindexingAbortedJob(int modelId)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>modelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_RemoveStoppedReindexingAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.RemoveStoppedReindexingAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_RemoveStoppedReindexingAsync_System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.RemoveStoppedReindexingAsync(System.Int32,System.Threading.CancellationToken)">
+            RemoveStoppedReindexingAsync(int, CancellationToken) <a class="header-action link-secondary" title=
+            "View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=17">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;bool&gt; RemoveStoppedReindexingAsync(int modelId, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>modelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_SaveModelAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.SaveModelAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_SaveModelAsync_System_String_System_String_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.SaveModelAsync(System.String,System.String,System.Threading.CancellationToken)">
+            SaveModelAsync(string, string, CancellationToken) <a class="header-action link-secondary" title=
+            "View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=8">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task SaveModelAsync(string modelName, string deploymentName, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>modelName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>deploymentName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_SetStatusAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.SetStatusAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IEmbeddingModelService_SetStatusAsync_System_Int32_Alvao_API_AI_Model_EmbeddingModelStatus_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IEmbeddingModelService.SetStatusAsync(System.Int32,Alvao.API.AI.Model.EmbeddingModelStatus,System.Threading.CancellationToken)">
+            SetStatusAsync(int, EmbeddingModelStatus, CancellationToken) <a class="header-action link-secondary" title=
+            "View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IEmbeddingModelService.cs&amp;version=GBdev&amp;line=11">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task SetStatusAsync(int id, EmbeddingModelStatus status, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>status</code> <a class="xref" href=
+              "Alvao.API.AI.Model.EmbeddingModelStatus.html">EmbeddingModelStatus</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>
+            </dt>
+            <dd></dd>
+          </dl>
+        </article>
+      </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+    <div class="container-xxl search-results" id="search-results"></div>
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

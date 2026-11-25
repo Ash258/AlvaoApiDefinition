@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.9.20">
+    <meta charset="utf-8">
+    <title>
+      Interface IVectorService | Alvao.API Documentation
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Interface IVectorService | Alvao.API Documentation">
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="stylesheet" href="../public/docfx.min.css">
+    <link rel="stylesheet" href="../public/main.css">
+    <meta name="docfx:navrel" content="../toc.html">
+    <meta name="docfx:tocrel" content="toc.html">
+    <meta name="docfx:rel" content="../">
+    <meta name="loc:inThisArticle" content="In this article">
+    <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+    <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+    <meta name="loc:tocFilter" content="Filter by title">
+    <meta name="loc:nextArticle" content="Next">
+    <meta name="loc:prevArticle" content="Previous">
+    <meta name="loc:themeLight" content="Light">
+    <meta name="loc:themeDark" content="Dark">
+    <meta name="loc:themeAuto" content="Auto">
+    <meta name="loc:changeTheme" content="Change theme">
+    <meta name="loc:copy" content="Copy">
+    <meta name="loc:downloadPdf" content="Download PDF">
+    <script type="module" src="./../public/docfx.min.js"></script>
+    <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+    </script>
+  </head>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html"><img id="logo" class="svg" src="../images/alvao-logo.svg" alt=
+          ""></a>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search" name="search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete=
+                "off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">
+              Table of Contents
+            </h5>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="actionbar">
+          <nav id="breadcrumb"></nav>
+        </div>
+        <article data-uid="Alvao.API.AI.Service.Interfaces.IVectorService">
+          <h1 id="Alvao_API_AI_Service_Interfaces_IVectorService" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService" class="text-break">
+            Interface IVectorService <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=7">
+            </a>
+          </h1>
+          <div class="facts text-secondary">
+            <dl>
+              <dt>
+                Namespace
+              </dt>
+              <dd>
+                <span class="xref">Alvao</span>.<span class="xref">API</span>.<a class="xref" href=
+                "Alvao.API.AI.html">AI</a>.<a class="xref" href="Alvao.API.AI.Service.html">Service</a>.<a class="xref"
+                href="Alvao.API.AI.Service.Interfaces.html">Interfaces</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>
+                Assembly
+              </dt>
+              <dd>
+                Alvao.API.dll
+              </dd>
+            </dl>
+          </div>
+          <div class="markdown summary"></div>
+          <div class="markdown conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class="lang-csharp hljs">public interface IVectorService</code></pre>
+          </div>
+          <h2 class="section" id="methods">
+            Methods
+          </h2><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbedding_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbedding*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbedding_System_String_System_String_System_String_System_Int32_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbedding(System.String,System.String,System.String,System.Int32)">
+            GetEmbedding(string, string, string, int) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=9">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">(float[] vector, bool success) GetEmbedding(string text, string vectorName = null, string entityName = null, int entityId = 0)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>vectorName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              (<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>[] <a class="xref"
+              href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.vector">vector</a>,
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref"
+              href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.success">success</a>)
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddingAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddingAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddingAsync_System_String_System_String_System_String_System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddingAsync(System.String,System.String,System.String,System.Int32,System.Threading.CancellationToken)">
+            GetEmbeddingAsync(string, string, string, int, CancellationToken) <a class="header-action link-secondary"
+            title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=10">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;(float[] vector, bool success)&gt; GetEmbeddingAsync(string text, string vectorName, string entityName, int entityId, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>vectorName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;(<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.single">float</a>[] <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.vector">vector</a>,
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a> <a class="xref"
+              href=
+              "https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single[],system.boolean-.success">success</a>)&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddings_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddings*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddings_System_String_System_String_System_String_System_Int32_System_Int32_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddings(System.String,System.String,System.String,System.Int32,System.Int32)">
+            GetEmbeddings(string, string, string, int, int) <a class="header-action link-secondary" title="View source"
+            href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=11">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Dictionary&lt;int, float[]&gt; GetEmbeddings(string text, string vectorName = null, string entityType = null, int entityId = 0, int modelId = 0)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>vectorName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>modelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.single">float</a>[]&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddingsAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddingsAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetEmbeddingsAsync_System_String_System_String_System_String_System_Int32_System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEmbeddingsAsync(System.String,System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            GetEmbeddingsAsync(string, string, string, int, int, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=12">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;Dictionary&lt;int, float[]&gt;&gt; GetEmbeddingsAsync(string text, string vectorName, string entityType, int entityId, int modelId, CancellationToken cancellationToken)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>vectorName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>modelId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.single">float</a>[]&gt;&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetEntityVectors_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEntityVectors*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetEntityVectors_Alvao_API_Common_Model_AzureAISearchEntityType_System_Collections_Generic_IEnumerable_System_Int32__System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetEntityVectors(Alvao.API.Common.Model.AzureAISearchEntityType,System.Collections.Generic.IEnumerable{System.Int32},System.Threading.CancellationToken)">
+            GetEntityVectors(AzureAISearchEntityType, IEnumerable&lt;int&gt;, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=13">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;IEnumerable&lt;EntityVector&gt;&gt; GetEntityVectors(AzureAISearchEntityType entityType, IEnumerable&lt;int&gt; entityIds, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "Alvao.API.Common.Model.AzureAISearchEntityType.html">AzureAISearchEntityType</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityIds</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="Alvao.API.AI.Model.EntityVector.html">EntityVector</a>&gt;&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_GetVector_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetVector*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_GetVector_System_String_Alvao_API_AI_Model_EntityInfo_System_String_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.GetVector(System.String,Alvao.API.AI.Model.EntityInfo,System.String)">
+            GetVector(string, EntityInfo, string) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=14">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">string GetVector(string text, EntityInfo entityInfo, string propertyName)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>entityInfo</code> <a class="xref" href="Alvao.API.AI.Model.EntityInfo.html">EntityInfo</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>propertyName</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_InsertChunksAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.InsertChunksAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_InsertChunksAsync_Alvao_API_Common_Model_AzureAISearchEntityType_System_Int32_System_Collections_Generic_IEnumerable_System_String__System_Func_System_String_System_String__System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.InsertChunksAsync(Alvao.API.Common.Model.AzureAISearchEntityType,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.Func{System.String,System.String},System.Int32,System.Threading.CancellationToken)">
+            InsertChunksAsync(AzureAISearchEntityType, int, IEnumerable&lt;string&gt;, Func&lt;string, string&gt;, int,
+            CancellationToken) <a class="header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=15">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;bool&gt; InsertChunksAsync(AzureAISearchEntityType entityType, int id, IEnumerable&lt;string&gt; texts, Func&lt;string, string&gt; formatText = null, int embeddingModelId = 0, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "Alvao.API.Common.Model.AzureAISearchEntityType.html">AzureAISearchEntityType</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>texts</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>formatText</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>embeddingModelId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;
+            </dt>
+            <dd></dd>
+          </dl><a id="Alvao_API_AI_Service_Interfaces_IVectorService_UpdateVectorAsync_" data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.UpdateVectorAsync*"></a>
+          <h3 id=
+          "Alvao_API_AI_Service_Interfaces_IVectorService_UpdateVectorAsync_Alvao_API_Common_Model_AzureAISearchEntityType_System_Int32_System_Int32_System_String_System_Int32_System_Threading_CancellationToken_"
+          data-uid=
+          "Alvao.API.AI.Service.Interfaces.IVectorService.UpdateVectorAsync(Alvao.API.Common.Model.AzureAISearchEntityType,System.Int32,System.Int32,System.String,System.Int32,System.Threading.CancellationToken)">
+            UpdateVectorAsync(AzureAISearchEntityType, int, int, string, int, CancellationToken) <a class=
+            "header-action link-secondary" title="View source" href=
+            "https://alvao.visualstudio.com/ALVAO/_git/ALVAO?path=Common/ALVAO.API/AI/Service/Interfaces/IVectorService.cs&amp;version=GBdev&amp;line=16">
+            </a>
+          </h3>
+          <div class="markdown level1 summary"></div>
+          <div class="markdown level1 conceptual"></div>
+          <div class="codewrapper">
+            <pre><code class=
+            "lang-csharp hljs">Task&lt;Dictionary&lt;int, float[]&gt;&gt; UpdateVectorAsync(AzureAISearchEntityType entityType, int id, int serviceId, string text, int embeddingModelId = 0, CancellationToken cancellationToken = default)</code></pre>
+          </div>
+          <h4 class="section">
+            Parameters
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <code>entityType</code> <a class="xref" href=
+              "Alvao.API.Common.Model.AzureAISearchEntityType.html">AzureAISearchEntityType</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>serviceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>embeddingModelId</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.int32">int</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <code>cancellationToken</code> <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>
+            </dt>
+            <dd></dd>
+          </dl>
+          <h4 class="section">
+            Returns
+          </h4>
+          <dl class="parameters">
+            <dt>
+              <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref"
+              href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href=
+              "https://learn.microsoft.com/dotnet/api/system.single">float</a>[]&gt;&gt;
+            </dt>
+            <dd></dd>
+          </dl>
+        </article>
+      </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+    <div class="container-xxl search-results" id="search-results"></div>
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
