@@ -2,21 +2,21 @@ using Newtonsoft.Json;
 
 namespace Alvao.API.AI.Model;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html"/>
 public class ChatCompletionCreateResponse : BaseResponse {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Choices"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Choices"/>
     [JsonProperty("choices")]
     public List<ChatChoiceResponse> Choices { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_CreatedAt"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_CreatedAt"/>
     [JsonProperty("created")]
     public int CreatedAt { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Id"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Id"/>
     [JsonProperty("id")]
     public string Id { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Model"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Model"/>
     [JsonProperty("model")]
     public string Model { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Usage"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AI.Model.ChatCompletionCreateResponse.html#Alvao_API_AI_Model_ChatCompletionCreateResponse_Usage"/>
     [JsonProperty("usage")]
     public UsageResponse Usage { get; set; }
 }

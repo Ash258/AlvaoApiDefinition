@@ -1,8 +1,8 @@
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectRight.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectRight.html"/>
 public static class ObjectRight {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectRight.Right.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectRight.Right.html#fields"/>
     public enum Right {
         IsSystemAdmin = 0,
         CanObjectRead = 1,

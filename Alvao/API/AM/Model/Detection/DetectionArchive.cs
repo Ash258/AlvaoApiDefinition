@@ -1,10 +1,11 @@
 using System.Xml;
+using Alvao.API.Utils;
 
 namespace Alvao.API.AM.Model.Detection;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html"/>
 public class DetectionArchive : ArchiveStream, IAsyncDisposable, IDisposable {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.ObjectType.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.ObjectType.html#fields"/>
     public enum ObjectType {
         None = 0,
         OsVersionInfo = 1,
@@ -15,7 +16,7 @@ public class DetectionArchive : ArchiveStream, IAsyncDisposable, IDisposable {
         FileStringInfo = 6,
         OsVersionInfoEx = 7,
     }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.Version.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.Version.html#fields"/>
     public enum Version {
         OldAnsi = 0,
         Unicode = 1,
@@ -23,23 +24,29 @@ public class DetectionArchive : ArchiveStream, IAsyncDisposable, IDisposable {
         UnicodeWithSwUsage = 3,
     }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ArchiveVersions"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ArchiveVersions"/>
     public static Dictionary<string, DetectionArchive.Version> ArchiveVersions;
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ArchiveVersion"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ArchiveVersion"/>
     public DetectionArchive.Version ArchiveVersion { get; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_IsUnicode"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_IsUnicode"/>
     public override bool IsUnicode { get; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_UnicodeArchiveHeader"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_UnicodeArchiveHeader"/>
     public static string UnicodeArchiveHeader { get; }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive__ctor_System_Xml_XmlNode_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive__ctor_System_Xml_XmlNode_"/>
     public DetectionArchive(XmlNode xmlDataNode) { }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ReadObjectType"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Detection.DetectionArchive.html#Alvao_API_AM_Model_Detection_DetectionArchive_ReadObjectType"/>
     public DetectionArchive.ObjectType ReadObjectType() { throw new NotImplementedException(); }
-    /// <summary>!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable</summary>
+    /// <summary>
+    /// !!!CAUTION: This member of IAsyncDisposable is not documented. It was generated as empty, to make the project
+    /// compilable
+    /// </summary>
+    public ValueTask DisposeAsync() { throw new NotImplementedException(); }
+    /// <summary>
+    /// !!!CAUTION: This member of IDisposable is not documented. It was generated as empty, to make the project
+    /// compilable
+    /// </summary>
     public void Dispose() { throw new NotImplementedException(); }
-    /// <summary>!!!CAUTION: This method is not document. It was generated as empty, to make the project compilable</summary>
-    public System.Threading.Tasks.ValueTask DisposeAsync() { throw new NotImplementedException(); }
 }

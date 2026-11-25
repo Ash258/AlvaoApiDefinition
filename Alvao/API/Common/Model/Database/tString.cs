@@ -3,10 +3,10 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>System code list for texts.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tString.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.html"/>
 [Table("dbo.tString")]
 public class tString {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tString.Id.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.Id.html#fields"/>
     public enum Id {
         DetectWaitingForEval = 106,
         DetectCoreHwComponentsChanged = 107,
@@ -16,9 +16,7 @@ public class tString {
         DetectNotLoadedComputerExceededLicence = 119,
         DetectNotEvaluatedComputerExceededLicence = 120,
         DetectComputerSystemNotFound = 121,
-        DetectComputerHostnameChanged = 122,
         DetectBiosSnIsInAnotherComputer = 123,
-        DetectComputerDomainChanged = 124,
         DetectLoadError = 125,
         DetectSwNothingChange = 126,
         DetectSwUpdatedByDetect = 127,
@@ -26,11 +24,17 @@ public class tString {
         ScanScheduledToComputer = 131,
         DataFromAgentReceived = 132,
         DetectNotLoadedComputerDiscardedOrRemoved = 136,
+        LogWaitForAgent = 139,
+        MSSccmNoHWScan = 140,
+        MSSccmNoSWScan = 141,
+        MSSccmComputerNotFound = 142,
+        MyAsset = 150,
+        NonProvisionedUser = 167,
     }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_iStringId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_iStringId"/>
     [ExplicitKey]
     public virtual int iStringId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_mString"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_mString"/>
     public virtual string mString { get; set; }
 }

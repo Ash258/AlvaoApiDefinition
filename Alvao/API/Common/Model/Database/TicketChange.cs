@@ -3,59 +3,59 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Ticket log record for changes to the ticket field value.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html"/>
 [Table("dbo.TicketChange")]
 public class TicketChange {
     /// <summary>Change date and time (UTC)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ChangeDate"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ChangeDate"/>
     public virtual DateTime ChangeDate { get; set; }
     /// <summary>Changed field (tColumn.iColumnId)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ColumnId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ColumnId"/>
     public virtual int ColumnId { get; set; }
     /// <summary>Author of the change (tPerson.iPersonId)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_PersonId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_PersonId"/>
     public virtual int PersonId { get; set; }
     /// <summary>Ticket ID (tHdTicket.iHdTicketId)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_TicketId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_TicketId"/>
     public virtual int TicketId { get; set; }
     /// <summary>New bit value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewBit"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewBit"/>
     public virtual bool? ValueNewBit { get; set; }
     /// <summary>New date value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewDate"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewDate"/>
     public virtual DateTime? ValueNewDate { get; set; }
     /// <summary>New datetime value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewDatetime"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewDatetime"/>
     public virtual DateTime? ValueNewDatetime { get; set; }
     /// <summary>New float value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewFloat"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewFloat"/>
     public virtual double? ValueNewFloat { get; set; }
     /// <summary>New int value (could be foreign key to various tables)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewInt"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewInt"/>
     public virtual int? ValueNewInt { get; set; }
     /// <summary>New string value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewNvarchar"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueNewNvarchar"/>
     public virtual string ValueNewNvarchar { get; set; }
     /// <summary>Old bit value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldBit"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldBit"/>
     public virtual bool? ValueOldBit { get; set; }
     /// <summary>Old date value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldDate"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldDate"/>
     public virtual DateTime? ValueOldDate { get; set; }
     /// <summary>Old datetime value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldDatetime"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldDatetime"/>
     public virtual DateTime? ValueOldDatetime { get; set; }
     /// <summary>Old float value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldFloat"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldFloat"/>
     public virtual double? ValueOldFloat { get; set; }
     /// <summary>Old int value (could be foreign key to various tables)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldInt"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldInt"/>
     public virtual int? ValueOldInt { get; set; }
     /// <summary>Old string value</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldNvarchar"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_ValueOldNvarchar"/>
     public virtual string ValueOldNvarchar { get; set; }
     /// <summary>Record ID</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_id"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketChange.html#Alvao_API_Common_Model_Database_TicketChange_id"/>
     [Key]
     public virtual int id { get; set; }
 }

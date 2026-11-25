@@ -2,9 +2,9 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html"/>
 public class ObjectClass {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.Code.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.Code.html#fields"/>
     public enum Code {
         GeneralObject = 1,
         SpecObjTrash = 2,
@@ -79,15 +79,17 @@ public class ObjectClass {
         Cabinet = 71,
         Chair = 72,
         Desk = 73,
+        Threat = 77,
+        Vulnerability = 78,
         FirstUserClass = 5000,
     }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.ImportedObjectsFolderType.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.ImportedObjectsFolderType.html#fields"/>
     public enum ImportedObjectsFolderType {
         ImportedObjects = 33,
         ImportedAdObjects = 34,
         ImportedEntraIdObjects = 61,
     }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.ObjectsWithoutTemplate.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.ObjectsWithoutTemplate.html#fields"/>
     public enum ObjectsWithoutTemplate {
         RecycleBin = 2,
         Templates = 3,
@@ -98,11 +100,11 @@ public class ObjectClass {
         ImportedFromEntraId = 61,
     }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_ClassCode"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_ClassCode"/>
     public tblClass.ClassCode ClassCode { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_Name"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_Name"/>
     public string Name { get; set; }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_IsSpecial_System_Nullable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.ObjectClass.html#Alvao_API_AM_Model_ObjectClass_IsSpecial_System_Nullable_System_Int32__"/>
     public static bool IsSpecial(int? classCode) { throw new NotImplementedException(); }
 }

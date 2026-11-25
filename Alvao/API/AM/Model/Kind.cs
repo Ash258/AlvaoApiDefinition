@@ -1,8 +1,8 @@
 namespace Alvao.API.AM.Model;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Kind.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Kind.html"/>
 public static class Kind {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Kind.DataType.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Kind.DataType.html#fields"/>
     public enum DataType {
         KindNone = 0,
         KindText = 1,
@@ -10,7 +10,7 @@ public static class Kind {
         KindFloat = 3,
         KindUser = 4,
     }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Model.Kind.KindCode.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Model.Kind.KindCode.html#fields"/>
     public enum KindCode {
         Null = -1,
         Name = 0,
@@ -18,7 +18,7 @@ public static class Kind {
         Note = 6,
         Place = 7,
         TypeDesignation = 10,
-        InventaryNo = 11,
+        InventoryNo = 11,
         SerialNo = 12,
         PackingSlipNo = 13,
         Port = 14,
@@ -31,6 +31,7 @@ public static class Kind {
         PurchaseDate = 40,
         Warranty = 41,
         PcDescription = 42,
+        Email = 46,
         OrganizationName = 48,
         Size = 50,
         LoginName = 54,
@@ -38,24 +39,19 @@ public static class Kind {
         Centre = 57,
         MACAddress = 61,
         IPAddress = 62,
-        Domain = 63,
+        DnsDomain = 63,
         Interface = 68,
         UserPersonalId = 74,
         ComputerKind = 78,
         BIOS_SN = 87,
         RAMSlots = 93,
-        RAMUsedSlots = 94,
-        MaxSize = 95,
         Model = 96,
-        WakeUpType = 97,
         ChassisType = 98,
         PartOfDomain = 99,
         Quantity = 100,
         Category = 101,
-        EvidentaryNo = 102,
+        AssetNo = 102,
         LastFoundAssetCheck = 103,
-        ProcessorId = 104,
-        LandeskId = 105,
         WarrantyUntil = 106,
         IMEI = 122,
         VmHostName = 137,
@@ -86,5 +82,28 @@ public static class Kind {
         LansweeperSiteId = 186,
         ZabbixDeviceId = 187,
         ZabbixLastCheckIn = 188,
+        MsSccmDeviceId = 189,
+        AlvaoAgentLastCheckIn = 190,
+        StatusAssetAssignment = 191,
+        CommentForRecipientAssetAssignment = 192,
+        SupportServices = 193,
+        Availability = 194,
+        Confidentiality = 195,
+        Integrity = 196,
+        TotalAssetValue = 197,
+        RiskLevel = 198,
+        AssetCyberSecurityCategory = 199,
+        Ownership = 200,
+        MonitorComputerLastScan = 201,
+        LastScanDate = 202,
+        CiscoMerakiDeviceId = 203,
+        CiscoMerakiLastCheckIn = 204,
+        SplashtopDeviceId = 205,
+        TeamViewerGuid = 206,
+        TeamViewerDeviceId = 207,
+        TeamViewerLastCheckIn = 208,
+        AdDomain = 209,
+        PRTGDeviceId = 210,
+        PRTGLastCheckIn = 211,
     }
 }

@@ -3,10 +3,10 @@ using Alvao.API.Common.Model;
 namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping logging methods.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.AuditLog.html"/>
 public static class AuditLog {
     /// <summary>Message type. Values description can be found in the documentation.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.MessageType.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.AuditLog.MessageType.html#fields"/>
     public enum MessageType {
         PersonCreate = 1,
         PersonDelete = 2,
@@ -54,20 +54,26 @@ public static class AuditLog {
         OrganizationEdited = 44,
         OrganizationRecovered = 45,
         PersonRecovered = 46,
+        ObjectRuleCreated = 47,
+        ObjectRuleDeleted = 48,
+        ObjectRuleEdited = 49,
+        ObjectRuleEnabled = 50,
+        ObjectRuleDisabled = 51,
+        NewsPostEdited = 52,
     }
 
     /// <summary>Creates system block.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_CreateSystemBlockModel"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_CreateSystemBlockModel"/>
     /// <returns>System block model.</returns>
     public static AuditSystemBlockModel CreateSystemBlockModel() { throw new NotImplementedException(); }
     /// <summary>Creates audit record.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_LogAuditRecord_Alvao_API_Common_AuditLog_MessageType_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_String___Alvao_API_Common_Model_AuditSystemBlockModel_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_LogAuditRecord_Alvao_API_Common_AuditLog_MessageType_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_String___Alvao_API_Common_Model_AuditSystemBlockModel_"/>
     /// <param name="messageType">Message type.</param>
     /// <param name="properties">List of properties to append to log message.</param>
     /// <param name="systemBlock">Properties to append after delimiter and properties (system block)</param>
     public static void LogAuditRecord(AuditLog.MessageType messageType, IEnumerable<KeyValuePair<string, string>> properties, AuditSystemBlockModel systemBlock) { throw new NotImplementedException(); }
     /// <summary>Creates audit record.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_LogAuditRecord_Alvao_API_Common_AuditLog_MessageType_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_String___System_Boolean_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.AuditLog.html#Alvao_API_Common_AuditLog_LogAuditRecord_Alvao_API_Common_AuditLog_MessageType_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_String_System_String___System_Boolean_"/>
     /// <param name="messageType">Message type.</param>
     /// <param name="properties">List of properties to append to log message.</param>
     /// <param name="appendSystemBlock">Automatically create and append system block.</param>

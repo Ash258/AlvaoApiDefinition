@@ -3,14 +3,14 @@ using Alvao.API.Common.Model.Database;
 namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping AM Products methods.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html"/>
 public static class Product {
     /// <summary>Add custom product to queue that will be sent to validation.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_AddCustomProductToValidationQueueTable_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_AddCustomProductToValidationQueueTable_System_Int32_"/>
     /// <param name="productId">Product object (tblProduct.intProductId)</param>
     public static void AddCustomProductToValidationQueueTable(int productId) { throw new NotImplementedException(); }
     /// <summary>Adds component to product package if the package is not certified by ALVAO.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_AddPackageComponent_System_Int32_System_Int32_System_Nullable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_AddPackageComponent_System_Int32_System_Int32_System_Nullable_System_Int32__"/>
     /// <param name="productId">Product package ID (tblProduct.intProductId)</param>
     /// <param name="componentId">Product component ID(tblProduct.intProductId) which needs to be added from the package.</param>
     /// <param name="personId">User ID (tPerson.iPersonId) if not specified its current user id.</param>
@@ -18,7 +18,7 @@ public static class Product {
     /// <exception cref="UnauthorizedAccessException">Throws when user does not have permission to manage the product or the product is certified by ALVAO.</exception>
     public static void AddPackageComponent(int productId, int componentId, int? personId = null) { throw new NotImplementedException(); }
     /// <summary>Changes status of product.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_ChangeStatus_System_Int32_System_Int32_System_String_System_Nullable_System_DateTime__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_ChangeStatus_System_Int32_System_Int32_System_String_System_Nullable_System_DateTime__"/>
     /// <param name="productId">Product package ID (tblProduct.intProductId)</param>
     /// <param name="status">Product status ID(ProductState.id).</param>
     /// <param name="approvedVersion">Version of product which is approved.</param>
@@ -27,28 +27,28 @@ public static class Product {
     /// <exception cref="UnauthorizedAccessException">Throws when user does not have permission to manage the product.</exception>
     public static void ChangeStatus(int productId, int status, string approvedVersion = null, DateTime? willBeRetired = null) { throw new NotImplementedException(); }
     /// <summary>Creates or updates new Product.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_CreateOrUpdate_Alvao_API_Common_Model_Database_tblProduct_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_CreateOrUpdate_Alvao_API_Common_Model_Database_tblProduct_"/>
     /// <param name="product">Product object (tblProduct)</param>
     /// <returns>Product ID (tblProduct.intProductId) of product (new or already existing)</returns>
     public static int CreateOrUpdate(tblProduct product) { throw new NotImplementedException(); }
     /// <summary>Permanently deletes custom product from database.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_Delete_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_Delete_System_Int32_"/>
     /// <param name="productId">Product Id (tblProduct.intProductId)</param>
     /// <exception cref="InvalidOperationException">Throws when product cannot be deleted because its liked to another entity (license, installation).</exception>
     /// <exception cref="UnauthorizedAccessException">Throws when user does not have permission to manage the product or the product is certified by ALVAO.</exception>
     public static void Delete(int productId) { throw new NotImplementedException(); }
     /// <summary>Returns existing Product from Db.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_GetById_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_GetById_System_Int32_"/>
     /// <param name="id">Product object (tblProduct.intProductId)</param>
     /// <returns>Product</returns>
     public static tblProduct GetById(int id) { throw new NotImplementedException(); }
     /// <summary>Returns true if product is certified by ALVAO.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_IsCertifiedByALVAO_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_IsCertifiedByALVAO_System_Int32_"/>
     /// <param name="id">Product object (tblProduct.intProductId)</param>
     /// <returns>True, if product is certified by ALVAO</returns>
     public static bool IsCertifiedByALVAO(int id) { throw new NotImplementedException(); }
     /// <summary>Removes component from product package if the package is not certified by ALVAO.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_RemovePackageComponent_System_Int32_System_Int32_System_Nullable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_RemovePackageComponent_System_Int32_System_Int32_System_Nullable_System_Int32__"/>
     /// <param name="productId">Product package ID (tblProduct.intProductId)</param>
     /// <param name="componentId">Product component ID(tblProduct.intProductId) which needs to be removed from the package.</param>
     /// <param name="personId">User ID (tPerson.iPersonId) if not specified its current user id.</param>
@@ -56,7 +56,7 @@ public static class Product {
     /// <exception cref="UnauthorizedAccessException">Throws when user does not have permission to manage the product or the product is certified by ALVAO.</exception>
     public static void RemovePackageComponent(int productId, int componentId, int? personId = null) { throw new NotImplementedException(); }
     /// <summary>Replaces custom product with certified product.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_ReplaceWithCertified_System_Int32_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.Product.html#Alvao_API_AM_Product_ReplaceWithCertified_System_Int32_System_Int32_"/>
     /// <param name="productId">Product to be replaced ID (tblProduct.intProductId)</param>
     /// <param name="newProductId">Product status ID(ProductState.id).</param>
     /// <exception cref="ArgumentException">Throws when product with productId does not exist.</exception>

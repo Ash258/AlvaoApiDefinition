@@ -3,17 +3,17 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Properties of objects - Frequency.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html"/>
 [Table("dbo.vPropertyKind_Frequency")]
 public class vPropertyKind_Frequency {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_bolInheritable"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_bolInheritable"/>
     public virtual int bolInheritable { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_lintKindId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_lintKindId"/>
     public virtual int lintKindId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_lintNodeId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_lintNodeId"/>
     public virtual int lintNodeId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_txtKind"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_txtKind"/>
     public virtual string txtKind { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_txtValue"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.vPropertyKind_Frequency.html#Alvao_API_Common_Model_Database_vPropertyKind_Frequency_txtValue"/>
     public virtual string txtValue { get; set; }
 }

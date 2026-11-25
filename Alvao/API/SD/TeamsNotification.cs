@@ -2,19 +2,19 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TeamsNotification.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.TeamsNotification.html"/>
 public static class TeamsNotification {
     /// <summary>Returns a list of users with correct settings for receiving MS Teams notification</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_GetRecipientList_System_Collections_Generic_IEnumerable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_GetRecipientList_System_Collections_Generic_IEnumerable_System_Int32__"/>
     /// <param name="recipients">List of all users</param>
     public static IEnumerable<tPerson> GetRecipientList(IEnumerable<int> recipients) { throw new NotImplementedException(); }
     /// <summary>Sends a custom notification to Alvao Teams Bot</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_Send_System_Int32_System_String_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_Send_System_Int32_System_String_"/>
     /// <param name="toPersonId">ID of a person who should get the notification</param>
     /// <param name="cardJson">JSON object containing notification card data</param>
     public static void Send(int toPersonId, string cardJson) { throw new NotImplementedException(); }
     /// <summary>Sends a custom notification to Alvao Teams Bot</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_Send_System_Int32_System_String_System_String_System_String_System_String_System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.TeamsNotification.html#Alvao_API_SD_TeamsNotification_Send_System_Int32_System_String_System_String_System_String_System_String_System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
     /// <param name="toPersonId">ID of a person who should get the notification</param>
     /// <param name="subject">Subject of a notification (and a card title)</param>
     /// <param name="notificationText">Notification body text</param>

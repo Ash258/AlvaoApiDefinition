@@ -3,49 +3,53 @@ using Alvao.API.Common.Model.Database;
 
 namespace Alvao.API.SD.Model;
 
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html"/>
 public class ChangeTicketStateSettingsModel {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ActAuthor"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ActAuthor"/>
     public tPerson ActAuthor { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ApprovalNoticeModel"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_ApprovalNoticeModel"/>
     public HtmlTextModel ApprovalNoticeModel { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_Cost"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_Cost"/>
     public CostModel Cost { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_CreatedByMachine"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_CreatedActId"/>
+    public int CreatedActId { get; set; }
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_CreatedByMachine"/>
     public string CreatedByMachine { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_CreatedByProcessPid"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_CreatedByProcessPid"/>
     public int? CreatedByProcessPid { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreApprovalCheck"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreApprovalCheck"/>
     public bool IgnoreApprovalCheck { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreRequiredColumns"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreRequiredColumns"/>
     public bool IgnoreRequiredColumns { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreRights"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IgnoreRights"/>
     public bool IgnoreRights { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterApproval"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterApproval"/>
     public bool IsAfterApproval { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterClose"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterClose"/>
     public bool IsAfterClose { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterRemove"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterRemove"/>
     public bool IsAfterRemove { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterResolve"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterResolve"/>
     public bool IsAfterResolve { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterRestoreRemoved"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_IsAfterRestoreRemoved"/>
     public bool IsAfterRestoreRemoved { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_LogChange"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_LogChange"/>
     public bool LogChange { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_Message"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_Message"/>
     public HtmlTextModel Message { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_NotifyUserOnReopen"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_NotifyUserOnReopen"/>
     public bool NotifyUserOnReopen { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_RequesterId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_RequesterId"/>
     public int? RequesterId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_RequesterNotice"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_RequesterNotice"/>
     public HtmlTextModel RequesterNotice { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_SolverGroupChangeEnabled"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_SolverGroupChangeEnabled"/>
     public bool SolverGroupChangeEnabled { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_SolverReopen"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_SolverReopen"/>
     public bool SolverReopen { get; set; }
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel_StatusChangeFormTable"/>
+    public HtmlTextModel StatusChangeFormTable { get; set; }
 
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel__ctor"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Model.ChangeTicketStateSettingsModel.html#Alvao_API_SD_Model_ChangeTicketStateSettingsModel__ctor"/>
     public ChangeTicketStateSettingsModel() { }
 }

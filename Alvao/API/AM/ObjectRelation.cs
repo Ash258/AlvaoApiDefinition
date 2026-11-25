@@ -1,22 +1,32 @@
+using Alvao.API.AM.Exceptions;
+
 namespace Alvao.API.AM;
 
 /// <summary>Facade class grouping object relation methods</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html"/>
 public static class ObjectRelation {
+    /// <summary>Copies relations from an object to other objects.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Copy_System_Int32_System_Collections_Generic_IEnumerable_System_Int32__System_Nullable_System_Int32__System_Boolean_"/>
+    /// <param name="fromId">Id of an object to copy relations from (tblNode.intNodeId)</param>
+    /// <param name="toIds">Ids of object to copy relations to (tblNode.intNodeId)</param>
+    /// <param name="personId">Person ID (who copied relations) (tPerson.iPersonId)</param>
+    /// <param name="moveFromOrigin">If true, remove copied relations from the original object</param>
+    /// <returns>True if all relationÅ could be copied, false otherwise</returns>
+    public static bool Copy(int fromId, IEnumerable<int> toIds, int? personId, bool moveFromOrigin = false) { throw new NotImplementedException(); }
     /// <summary>Create object relation.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Create_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Create_System_Int32_System_Int32_System_Int32_System_Nullable_System_Int32__System_Int32_"/>
     /// <param name="beginObjectId">Begin relation object ID (NodeRelation.BeginNodeId)</param>
     /// <param name="endObjectId">End relation object ID (NodeRelation.EndNodeId)</param>
     /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
-    /// <param name="personId">Person ID (who created relation) (tPerson.iPersonId)</param>
+    /// <param name="personId">Person ID (who created relation) (tPerson.iPersonId). When null, _system person will be used.</param>
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to manage object relation.</exception>
     /// <exception cref="ArgumentException">Throws when object with beginObjectId is same as object with endObjectId</exception>
     /// <exception cref="ObjectRelationConditionViolatedException">Throws when object relation cannot be created due to a condition violation (eg. cyclicity, one to many or duplicate).</exception>
     /// <returns>Created object relation ID (NodeRelation.id)</returns>
-    public static int Create(int beginObjectId, int endObjectId, int relationTypeId, int personId, int relationId = 0) { throw new NotImplementedException(); }
+    public static int Create(int beginObjectId, int endObjectId, int relationTypeId, int? personId, int relationId = 0) { throw new NotImplementedException(); }
     /// <summary>Edit object relation.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Edit_System_Int32_System_Int32_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Edit_System_Int32_System_Int32_System_Int32_"/>
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
     /// <param name="personId">Person ID (who removed relation) (tPerson.iPersonId)</param>
@@ -26,12 +36,12 @@ public static class ObjectRelation {
     /// <returns>Edited object new relation ID (NodeRelation.id)</returns>
     public static int Edit(int relationId, int relationTypeId, int personId) { throw new NotImplementedException(); }
     /// <summary>Recalculate required relation fields for a given relation type or ID.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_RecalcRequiredRelationFields_System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_RecalcRequiredRelationFields_System_Nullable_System_Int32__System_Nullable_System_Int32__"/>
     /// <param name="relationTypeId">Object relation type ID (NodeRelationType.id)</param>
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     public static void RecalcRequiredRelationFields(int? relationTypeId, int? relationId) { throw new NotImplementedException(); }
     /// <summary>Remove object relation.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Remove_System_Int32_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.AM.ObjectRelation.html#Alvao_API_AM_ObjectRelation_Remove_System_Int32_System_Int32_"/>
     /// <param name="relationId">Object relation ID (NodeRelation.id)</param>
     /// <param name="personId">Person ID (who removed relation) (tPerson.iPersonId)</param>
     /// <exception cref="UnauthorizedAccessException">Throws when person with personId doesn't have rights to manage object relation.</exception>

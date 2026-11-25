@@ -3,11 +3,11 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>ID of the objects types. Texts in tblDict.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html"/>
 [Table("dbo.tblClass")]
 public class tblClass {
     /// <summary>Enumeration representing node class codes.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.ClassCode.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.ClassCode.html#fields"/>
     public enum ClassCode {
         GeneralObject = 1,
         SpecObjTrash = 2,
@@ -68,6 +68,7 @@ public class tblClass {
         MobilePhone = 58,
         NetworkDevice = 59,
         UnknownDevice = 60,
+        ImportedEntraIdObjects = 61,
         AzureSubscription = 62,
         ResourceGroup = 63,
         AzureSqlServer = 64,
@@ -80,20 +81,29 @@ public class tblClass {
         Cabinet = 71,
         Chair = 72,
         Desk = 73,
+        Country = 74,
+        City = 75,
+        Street = 76,
+        Threat = 77,
+        Vulnerability = 78,
+        Service = 79,
+        SupportingService = 80,
+        OrganizationalStructure = 81,
+        FormerEmployees = 82,
         FirstUserClass = 5000,
     }
 
     /// <summary>Default object template (tblNode.intNodeId)</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId"/>
     public virtual int? DefaultObjectTemplateNodeId { get; set; }
     /// <summary>Object name template</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_ObjectNameTemplate"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_ObjectNameTemplate"/>
     public virtual string ObjectNameTemplate { get; set; }
     /// <summary>If the type is a computer</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_bComputer"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_bComputer"/>
     public virtual bool bComputer { get; set; }
     /// <summary>Class Id</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_intClassId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_intClassId"/>
     [ExplicitKey]
     public virtual int intClassId { get; set; }
 }

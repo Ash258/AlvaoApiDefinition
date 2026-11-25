@@ -1,16 +1,17 @@
 using Alvao.API.Common.Model;
 using Alvao.API.Common.Model.Database;
+using Alvao.API.SD.Exceptions;
 using Alvao.API.SD.Model;
 
 namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping request diary act methods.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Act.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Act.html"/>
 public static class Act {
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_CanRead_System_Int32_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_CanRead_System_Int32_System_Int32_"/>
     public static bool CanRead(int actId, int personId) { throw new NotImplementedException(); }
     /// <summary>Creates new act in request diary.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_Create_System_Int32_System_String_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_Common_Model_Database_tPerson_Alvao_API_Common_Model_Database_tPerson_Alvao_API_Common_Model_Database_tActKind_ActKind_Alvao_API_SD_Model_ActCreateSettings_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_Create_System_Int32_System_String_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_Common_Model_Database_tPerson_Alvao_API_Common_Model_Database_tPerson_Alvao_API_Common_Model_Database_tActKind_ActKind_Alvao_API_SD_Model_ActCreateSettings_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Subject</param>
     /// <param name="message">Text</param>
@@ -38,7 +39,7 @@ public static class Act {
     /// </code>
     /// </example>
     /// </summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_Create_System_Int32_System_String_Alvao_API_Common_Model_HtmlTextModel_System_Int32_System_Nullable_System_Int32__Alvao_API_Common_Model_Database_tActKind_ActKind_Alvao_API_SD_Model_ActCreateSettings_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_Create_System_Int32_System_String_Alvao_API_Common_Model_HtmlTextModel_System_Int32_System_Nullable_System_Int32__Alvao_API_Common_Model_Database_tActKind_ActKind_Alvao_API_SD_Model_ActCreateSettings_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Subject</param>
     /// <param name="message">Text</param>
@@ -51,7 +52,7 @@ public static class Act {
     /// <returns>Created act(tAct)</returns>
     public static tAct Create(int ticketId, string subject, HtmlTextModel message, int fromPersonId, int? toPersonId, tActKind.ActKind actKind, ActCreateSettings settings) { throw new NotImplementedException(); }
     /// <summary>Creates new act, which informs users that a bound request was created</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_CreateAboutNewBoundTicket_System_Int32_System_String_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Act.html#Alvao_API_SD_Act_CreateAboutNewBoundTicket_System_Int32_System_String_"/>
     /// <param name="ticketId">Request ID, where this act is created (tHdTicket.iHdTicketId)</param>
     /// <param name="ticketMark">New bound request mark (tHdTicket.sHdTicketMessageTag)</param>
     public static void CreateAboutNewBoundTicket(int ticketId, string ticketMark) { throw new NotImplementedException(); }

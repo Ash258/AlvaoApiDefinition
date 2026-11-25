@@ -1,33 +1,47 @@
+using Alvao.API.Common.Model.Database;
+
 namespace Alvao.API.Common;
 
 /// <summary>Facade class grouping database column methods.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html"/>
 public static class Database {
     /// <summary>Data type of the value provided as string</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.ValueDataType.html#fields"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.ValueDataType.html#fields"/>
     public enum ValueDataType {
         Default = 0,
         Text = 1,
     }
 
+    /// <summary>Returns database information</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_GetDbInfo"/>
+    /// <returns>Database information</returns>
+    public static tDb GetDbInfo() { throw new NotImplementedException(); }
     /// <summary>Returns database hash string</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_GetHash"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_GetHash"/>
     /// <returns>Database hash</returns>
     public static string GetHash() { throw new NotImplementedException(); }
     /// <summary>Checks if Fulltext Search is enabled on the database</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_IsFulltextSearchEnabled"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_IsFulltextSearchEnabled"/>
     /// <returns>True, if FTS is enabled, false otherwise.</returns>
     public static bool IsFulltextSearchEnabled() { throw new NotImplementedException(); }
-    /// <summary>Read a value from the column in the dabatase.  Allowed tables: tHdTicket, tHdTicketCust, TicketForeignKeyInfo, tHdSection, tPerson, tPersonCust, PersonForeignKeyInfo, tRole, TicketStateCust.  For ForeignKeyInfo table info, see: Ticket.ForeignKeyInfo.  Allowed columns for PersonForeignKeyInfo table: AccountName, ManagerName, DelegateName.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_ReadColumn_System_Int32_System_String_System_String_"/>
+    /// <summary>
+    /// Read a value from the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, TicketForeignKeyInfo,
+    /// tHdSection, tPerson, tPersonCust, PersonForeignKeyInfo, tRole, TicketStateCust. For ForeignKeyInfo table info,
+    /// see: Ticket.ForeignKeyInfo. Allowed columns for PersonForeignKeyInfo table: AccountName, ManagerName,
+    /// DelegateName.
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_ReadColumn_System_Int32_System_String_System_String_"/>
     /// <param name="recordId">Record ID.</param>
     /// <param name="tableName">Table name, case sensitive.</param>
     /// <param name="columnName">Column name, case sensitive.</param>
     /// <exception cref="ArgumentException">Throws when specified recordId or tableName or columnName does not exist in the database.</exception>
     /// <returns>Textual value of the selected column in the database.</returns>
     public static string ReadColumn(int recordId, string tableName, string columnName) { throw new NotImplementedException(); }
-    /// <summary>Write a new value to the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, tPerson, tPersonCust, tRole, TicketStateCust.  For tHdTicket table info, see: Ticket.UpdateColumnValue.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_WriteColumn_System_Int32_System_String_System_String_System_String_Alvao_API_Common_Database_ValueDataType_"/>
+    /// <summary>
+    /// Write a new value to the column in the dabatase. Allowed tables: tHdTicket, tHdTicketCust, tPerson, tPersonCust,
+    /// tRole, TicketStateCust. For tHdTicket table info, see: Ticket.UpdateColumnValue.
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Database.html#Alvao_API_Common_Database_WriteColumn_System_Int32_System_String_System_String_System_String_Alvao_API_Common_Database_ValueDataType_"/>
     /// <param name="recordId">Record ID.</param>
     /// <param name="tableName">Table name, case sensitive.</param>
     /// <param name="columnName">Column name, case sensitive.</param>

@@ -5,48 +5,50 @@ using Alvao.API.SD.Model;
 namespace Alvao.API.SD;
 
 /// <summary>Facade class grouping email methods.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html"/>
 public static class Message {
     /// <summary>Get recipients list with correct settings for receiving email notification</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_GetMailNotificationRecipientList_System_Collections_Generic_IEnumerable_System_Int32__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_GetMailNotificationRecipientList_System_Collections_Generic_IEnumerable_System_Int32__"/>
     /// <param name="recipientIds">List of ids of all users</param>
     public static IEnumerable<tPerson> GetMailNotificationRecipientList(IEnumerable<int> recipientIds) { throw new NotImplementedException(); }
     /// <summary>Crops message subject to correct length and add ticket tag.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_GetSubject_System_String_System_String_System_String_System_Int32_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_GetSubject_System_String_System_String_System_String_System_Int32_"/>
     /// <param name="subject">Original subject</param>
     /// <param name="ticketTag">Ticket tag</param>
     /// <param name="prefix">FW:/RE:</param>
     /// <param name="maxSubjectLength">0 â keep default</param>
     /// <returns>Returns correct subject format.</returns>
     public static string GetSubject(string subject, string ticketTag, string prefix = "", int maxSubjectLength = 0) { throw new NotImplementedException(); }
-    /// <summary>Checks if the text value contains any strings used for automatic replies in the Auto-Submitted header of email.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_IsAutoReplyHeader_System_String_"/>
+    /// <summary>
+    /// Checks if the text value contains any strings used for automatic replies in the Auto-Submitted header of email.
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_IsAutoReplyHeader_System_String_"/>
     /// <param name="value">Text of Auto-Submitted header</param>
     /// <returns>Returns true if the email is an automatic reply, otherwise false.</returns>
     public static bool IsAutoReplyHeader(string value) { throw new NotImplementedException(); }
     /// <summary>Checks if the message subject contains any pattern used for automatic reply.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_IsAutoReplySubject_System_String_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_IsAutoReplySubject_System_String_"/>
     /// <param name="subject">Message subject</param>
     /// <returns>Returns true if the subject text contains any pattern, otherwise false.</returns>
     public static bool IsAutoReplySubject(string subject) { throw new NotImplementedException(); }
     /// <summary>Parses multiple mail adresses.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_ParseMulti_System_String_System_Boolean_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_ParseMulti_System_String_System_Boolean_"/>
     /// <param name="addresses">Mail adresses</param>
     /// <param name="removeServiceMail">Remove service mail address</param>
     /// <returns>List of mail models, number of valid mails and number of removed service mails</returns>
     public static (List<EmailModel>, int, int) ParseMulti(string addresses, bool removeServiceMail = true) { throw new NotImplementedException(); }
     /// <summary>Parses multiple mail adresses and validate them.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_ParseMultiAndValidate_System_String_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_ParseMultiAndValidate_System_String_"/>
     /// <param name="addresses">Mail adresses</param>
     /// <returns>List of mail models, true if adresses are valid and number of removed service mails</returns>
     public static (List<EmailModel>, bool, int) ParseMultiAndValidate(string addresses) { throw new NotImplementedException(); }
     /// <summary>Removes RE: and FW: tag from subject.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_RemoveLeadingRefw_System_String_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_RemoveLeadingRefw_System_String_"/>
     /// <param name="subject">Subject</param>
     /// <returns>Subject without RE or FW tag</returns>
     public static string RemoveLeadingRefw(string subject) { throw new NotImplementedException(); }
     /// <summary>Removes section mails from recipients.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_RemoveSectionEmails_System_Collections_Generic_List_Alvao_API_SD_Model_EmailModel__"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_RemoveSectionEmails_System_Collections_Generic_List_Alvao_API_SD_Model_EmailModel__"/>
     /// <param name="mailRecipients">Mail recipients</param>
     /// <exception cref="ArgumentNullException">Throws when mailRecipients is null.</exception>
     /// <returns>Recipients without section mails</returns>
@@ -99,7 +101,7 @@ public static class Message {
     /// </code>
     /// </example>
     /// </summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_Send_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_Send_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Message subject</param>
     /// <param name="fromPersonId">Person ID of message author (tPerson.iPersonId)</param>
@@ -109,7 +111,8 @@ public static class Message {
     /// <returns>Created act (tAct)</returns>
     public static tAct Send(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings) { throw new NotImplementedException(); }
     /// <summary>
-    /// Sends message within the request and creates new record in request diary. SendMessage is deprecated, please use Send instead.
+    /// Sends message within the request and creates new record in request diary. SendMessage is deprecated, please use
+    /// Send instead.
     /// <example>
     /// <code>
     /// //Send message with attachment from request and save to diary of request
@@ -156,7 +159,7 @@ public static class Message {
     /// </code>
     /// </example>
     /// </summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_SendMessage_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_SendMessage_System_Int32_System_String_System_Int32_Alvao_API_Common_Model_HtmlTextModel_Alvao_API_SD_Model_SendMessageSettingsModel_"/>
     /// <param name="ticketId">Request ID (tHdTicket.iHdTicketId)</param>
     /// <param name="subject">Message subject</param>
     /// <param name="fromPersonId">Person ID of message author (tPerson.iPersonId)</param>
@@ -167,7 +170,7 @@ public static class Message {
     [Obsolete("SendMessage is deprecated, please use Send instead.")]
     public static tAct SendMessage(int ticketId, string subject, int fromPersonId, HtmlTextModel message, SendMessageSettingsModel settings) { throw new NotImplementedException(); }
     /// <summary>Valides mail adresses in string.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_Validate_System_String_System_Boolean_"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.SD.Message.html#Alvao_API_SD_Message_Validate_System_String_System_Boolean_"/>
     /// <param name="addresses">Mail adresses</param>
     /// <param name="multi">There are multiple adresses in adresses</param>
     /// <returns>Returns true if all adresses are valid, otherwise false</returns>

@@ -3,76 +3,105 @@ using Dapper.Contrib.Extensions;
 namespace Alvao.API.Common.Model.Database;
 
 /// <summary>Objects in the tree.</summary>
-/// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html"/>
+/// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html"/>
 [Table("dbo.tblNode")]
 public class tblNode {
+    /// <summary>Date and time when the asset label was generated.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_AssetLabelCreatedDate"/>
+    public virtual DateTime? AssetLabelCreatedDate { get; set; }
+    /// <summary>Asset label HTML</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_AssetLabelHtml"/>
+    public virtual string AssetLabelHtml { get; set; }
     /// <summary>Object creation date.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_Created"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_Created"/>
     public virtual DateTime? Created { get; set; }
     /// <summary>Computer detection profile</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_DetectProfileId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_DetectProfileId"/>
     public virtual int? DetectProfileId { get; set; }
-    /// <summary>1 = the object is not the Discarded assets, or the Recycle bin, or Object templates, or Property categories, neither their child object.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsActive"/>
+    /// <summary>Two or more devices matched onto this object during import.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_ImportDuplicateAlert"/>
+    public virtual bool ImportDuplicateAlert { get; set; }
+    /// <summary>
+    /// 1 = the object is not the Discarded assets, or the Recycle bin, or Object templates, or Property categories,
+    /// neither their child object.
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsActive"/>
     [Computed]
     public virtual bool? IsActive { get; set; }
     /// <summary>1 = the object is discarded.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsDiscarded"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsDiscarded"/>
     public virtual bool IsDiscarded { get; set; }
-    /// <summary>1 = the object is the Recycle bin, or Object templates, or Property categories, or their child object.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsHidden"/>
+    /// <summary>
+    /// 1 = the object is the Recycle bin, or Object templates, or Property categories, or their child object.
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsHidden"/>
     [Computed]
     public virtual bool? IsHidden { get; set; }
     /// <summary>1 = Whether the object is in the Recycle bin.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsRemoved"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsRemoved"/>
     public virtual bool IsRemoved { get; set; }
+    /// <summary>Is data sample.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsSample"/>
+    public virtual bool IsSample { get; set; }
     /// <summary>1 = the object is object template.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsTemplate"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_IsTemplate"/>
     public virtual bool IsTemplate { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_LastAgentWSContact"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_LastAgentWSContact"/>
     public virtual DateTime? LastAgentWSContact { get; set; }
     /// <summary>The ID of the parent object; in the case of no parent object, 0 is here.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_NotNullParentId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_NotNullParentId"/>
     [Computed]
     public virtual int NotNullParentId { get; set; }
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_PathLen"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_PathLen"/>
     [Computed]
     public virtual int? PathLen { get; set; }
     /// <summary>The object does not have any of the required properties filled in.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_RequiredPropertyAlert"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_RequiredPropertyAlert"/>
     public virtual bool RequiredPropertyAlert { get; set; }
-    /// <summary>Column for full text search.</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_Search"/>
+    /// <summary>Column for regular search.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_Search"/>
     public virtual string Search { get; set; }
+    /// <summary>Column for full text search.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_SearchNormalized"/>
+    public virtual string SearchNormalized { get; set; }
+    /// <summary>Unique identifier for the object.</summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_UniqueId"/>
+    public virtual string UniqueId { get; set; }
     /// <summary>1=all software is allowed on PC for profiles</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bSwAllAllowed"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bSwAllAllowed"/>
     public virtual bool bSwAllAllowed { get; set; }
-    /// <summary>1=object represents the last computer to respond to ping, 0=computer did not respond, NULL=ping not applied</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bolComputerStateOn"/>
+    /// <summary>
+    /// 1=object represents the last computer to respond to ping, 0=computer did not respond, NULL=ping not applied
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_bolComputerStateOn"/>
     public virtual bool? bolComputerStateOn { get; set; }
     /// <summary>Object id</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_intNodeId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_intNodeId"/>
     [Key]
     public virtual int intNodeId { get; set; }
-    /// <summary>bit field: 1 = Recycle Bin object 2 = the object is protected against deletion 4 = Object Template object 8 = object cannot obe moved 0x10 = hidden object 0x20 = object template 0x40 = property list tabs 0x80 = history is not kept for the object 0x100 = folder &quot;Computer found in network&quot;</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_intState"/>
+    /// <summary>
+    /// bit field: 1 = Recycle Bin object 2 = the object is protected against deletion 4 = Object Template object 8 =
+    /// object cannot obe moved 0x10 = hidden object 0x20 = object template 0x40 = property list tabs 0x80 = history is
+    /// not kept for the object 0x100 = folder &quot;Computer found in network&quot;
+    /// </summary>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_intState"/>
     public virtual int? intState { get; set; }
     /// <summary>which SW profile does the computer use</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_liSwProfileId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_liSwProfileId"/>
     public virtual int? liSwProfileId { get; set; }
     /// <summary>object type - tblClass</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintClassId"/>
-    public virtual int? lintClassId { get; set; }
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintClassId"/>
+    public virtual int lintClassId { get; set; }
     /// <summary>icon - tblIcon</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintIconId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintIconId"/>
     public virtual int? lintIconId { get; set; }
     /// <summary>Id of parent object, foreign key to tblNode</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintParentId"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_lintParentId"/>
     public virtual int? lintParentId { get; set; }
     /// <summary>object name</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtName"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtName"/>
     public virtual string txtName { get; set; }
     /// <summary>path to object in tree, e.g., &quot;Contoso/Prague/Sales Department&quot;</summary>
-    /// <see href="https://doc.alvao.com/en/25/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtPath"/>
+    /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNode.html#Alvao_API_Common_Model_Database_tblNode_txtPath"/>
     public virtual string txtPath { get; set; }
 }
