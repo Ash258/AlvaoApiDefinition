@@ -8,6 +8,7 @@ namespace Alvao.API.Common.Model.Database;
 public class ChatModelPrompt {
     /// <summary>Chat model ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.ChatModelPrompt.html#Alvao_API_Common_Model_Database_ChatModelPrompt_ChatModelId"/>
+    /// <remarks>Column <c>ChatModelId</c>: int, not null. References <see cref="ChatModel"/>.</remarks>
     [ExplicitKey]
     public virtual int ChatModelId { get; set; }
     /// <summary>
@@ -15,9 +16,11 @@ public class ChatModelPrompt {
     /// Chatbot
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.ChatModelPrompt.html#Alvao_API_Common_Model_Database_ChatModelPrompt_PromptId"/>
+    /// <remarks>Column <c>PromptId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int PromptId { get; set; }
     /// <summary>Prompt text</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.ChatModelPrompt.html#Alvao_API_Common_Model_Database_ChatModelPrompt_Text"/>
+    /// <remarks>Column <c>Text</c>: nvarchar(max), not null.</remarks>
     public virtual string Text { get; set; }
 }

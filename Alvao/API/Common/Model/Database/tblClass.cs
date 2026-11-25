@@ -95,15 +95,19 @@ public class tblClass {
 
     /// <summary>Default object template (tblNode.intNodeId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_DefaultObjectTemplateNodeId"/>
+    /// <remarks>Column <c>DefaultObjectTemplateNodeId</c>: int, null. References <see cref="tblNode"/>.</remarks>
     public virtual int? DefaultObjectTemplateNodeId { get; set; }
     /// <summary>Object name template</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_ObjectNameTemplate"/>
+    /// <remarks>Column <c>ObjectNameTemplate</c>: nvarchar(max), null.</remarks>
     public virtual string ObjectNameTemplate { get; set; }
     /// <summary>If the type is a computer</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_bComputer"/>
+    /// <remarks>Column <c>bComputer</c>: bit, not null.</remarks>
     public virtual bool bComputer { get; set; }
     /// <summary>Class Id</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblClass.html#Alvao_API_Common_Model_Database_tblClass_intClassId"/>
+    /// <remarks>Column <c>intClassId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int intClassId { get; set; }
 }

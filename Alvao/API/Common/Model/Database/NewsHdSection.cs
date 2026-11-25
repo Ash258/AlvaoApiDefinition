@@ -11,12 +11,15 @@ public class NewsHdSection {
     /// services.
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.NewsHdSection.html#Alvao_API_Common_Model_Database_NewsHdSection_HdSectionId"/>
+    /// <remarks>Column <c>HdSectionId</c>: int, null. References <see cref="tHdSection"/>.</remarks>
     public virtual int? HdSectionId { get; set; }
     /// <summary>id of the news post (News.id).</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.NewsHdSection.html#Alvao_API_Common_Model_Database_NewsHdSection_NewsId"/>
+    /// <remarks>Column <c>NewsId</c>: int, not null. References <see cref="News"/>.</remarks>
     public virtual int NewsId { get; set; }
     /// <summary>Primary table key.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.NewsHdSection.html#Alvao_API_Common_Model_Database_NewsHdSection_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [Key]
     public virtual int id { get; set; }
 }

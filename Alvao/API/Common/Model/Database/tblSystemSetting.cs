@@ -7,8 +7,10 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tblSystemSetting")]
 public class tblSystemSetting {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblSystemSetting.html#Alvao_API_Common_Model_Database_tblSystemSetting_bolDetect_RestrictDetectionCnt"/>
+    /// <remarks>Column <c>bolDetect_RestrictDetectionCnt</c>: bit, not null.</remarks>
     public virtual bool bolDetect_RestrictDetectionCnt { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblSystemSetting.html#Alvao_API_Common_Model_Database_tblSystemSetting_bolNode_Rights"/>
+    /// <remarks>Column <c>bolNode_Rights</c>: bit, not null.</remarks>
     [ExplicitKey]
     public virtual bool bolNode_Rights { get; set; }
 }

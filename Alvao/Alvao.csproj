@@ -26,6 +26,7 @@
     <PackageReference Include="Rebex.Mail" Version="7.0.9209" />
 
     <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="DATABASE.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

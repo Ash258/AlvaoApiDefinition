@@ -9,6 +9,7 @@ public class TicketTypeBehavior {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTypeBehavior.html#Alvao_API_Common_Model_Database_TicketTypeBehavior__TicketTypeBehavior"/>
     public virtual string _TicketTypeBehavior { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTypeBehavior.html#Alvao_API_Common_Model_Database_TicketTypeBehavior_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

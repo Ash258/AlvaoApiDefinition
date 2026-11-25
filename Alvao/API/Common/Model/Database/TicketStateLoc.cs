@@ -11,28 +11,35 @@ public class TicketStateLoc {
     /// is used (available in tString).
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_CustomMessageForApproverTemplate"/>
+    /// <remarks>Column <c>CustomMessageForApproverTemplate</c>: nvarchar(max), null.</remarks>
     public virtual string CustomMessageForApproverTemplate { get; set; }
     /// <summary>
     /// Localized custom template of notifications to requester about the change of ticket status. If the record has a
     /// value of NULL, then the default template is used (saved in tString).
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_CustomNotificationForRequesterTemplate"/>
+    /// <remarks>Column <c>CustomNotificationForRequesterTemplate</c>: nvarchar(max), null.</remarks>
     public virtual string CustomNotificationForRequesterTemplate { get; set; }
     /// <summary>Localized ticket status description.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_Description"/>
+    /// <remarks>Column <c>Description</c>: nvarchar(max), null.</remarks>
     public virtual string Description { get; set; }
     /// <summary>Language ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_LocaleId"/>
+    /// <remarks>Column <c>LocaleId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int LocaleId { get; set; }
     /// <summary>Localized instructions for solver.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_SolverInstructions"/>
+    /// <remarks>Column <c>SolverInstructions</c>: nvarchar(max), null.</remarks>
     public virtual string SolverInstructions { get; set; }
     /// <summary>Localized ticket status name.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_TicketState"/>
+    /// <remarks>Column <c>TicketState</c>: nvarchar(64), null.</remarks>
     public virtual string TicketState { get; set; }
     /// <summary>Ticket status ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketStateLoc.html#Alvao_API_Common_Model_Database_TicketStateLoc_TicketStateId"/>
+    /// <remarks>Column <c>TicketStateId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int TicketStateId { get; set; }
 }

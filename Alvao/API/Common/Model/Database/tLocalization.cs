@@ -53,25 +53,32 @@ public class tLocalization {
     /// translation.
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_NeedsUpdate"/>
+    /// <remarks>Column <c>NeedsUpdate</c>: bit, not null.</remarks>
     public virtual bool NeedsUpdate { get; set; }
     /// <summary>LCID of the language for which the localization is being executed.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_iLocaleId"/>
+    /// <remarks>Column <c>iLocaleId</c>: int, not null.</remarks>
     public virtual int iLocaleId { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_iLocalizationId"/>
+    /// <remarks>Column <c>iLocalizationId</c>: int, not null.</remarks>
     [Key]
     public virtual int iLocalizationId { get; set; }
     /// <summary>ID of record in target table designated for localization.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_iRecordId"/>
+    /// <remarks>Column <c>iRecordId</c>: int, not null.</remarks>
     public virtual int iRecordId { get; set; }
     /// <summary>Localized text.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_mLocalization"/>
+    /// <remarks>Column <c>mLocalization</c>: nvarchar(max), null.</remarks>
     public virtual string mLocalization { get; set; }
     /// <summary>Column name.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_sAttribute"/>
+    /// <remarks>Column <c>sAttribute</c>: nvarchar(128), null.</remarks>
     public virtual string sAttribute { get; set; }
     /// <summary>Name of table.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization_sTable"/>
+    /// <remarks>Column <c>sTable</c>: nvarchar(128), null.</remarks>
     public virtual string sTable { get; set; }
 
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tLocalization.html#Alvao_API_Common_Model_Database_tLocalization__ctor"/>

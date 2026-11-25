@@ -7,6 +7,7 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tblProductCategory")]
 public class tblProductCategory {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblProductCategory.html#Alvao_API_Common_Model_Database_tblProductCategory_intProductCategoryId"/>
+    /// <remarks>Column <c>intProductCategoryId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int intProductCategoryId { get; set; }
 }

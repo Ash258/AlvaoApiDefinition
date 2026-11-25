@@ -18,15 +18,19 @@ public class TransferConfirmAlertRule {
 
     /// <summary>A flag indicating whether or not the alert is active.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.html#Alvao_API_Common_Model_Database_TransferConfirmAlertRule_Active"/>
+    /// <remarks>Column <c>Active</c>: bit, not null.</remarks>
     public virtual bool Active { get; set; }
     /// <summary>Send an alert after a specified number of days.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.html#Alvao_API_Common_Model_Database_TransferConfirmAlertRule_AlertAfterDays"/>
+    /// <remarks>Column <c>AlertAfterDays</c>: int, null.</remarks>
     public virtual int? AlertAfterDays { get; set; }
     /// <summary>The group to which the last alert is sent.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.html#Alvao_API_Common_Model_Database_TransferConfirmAlertRule_AlertRoleId"/>
+    /// <remarks>Column <c>AlertRoleId</c>: int, null. References <see cref="tRole"/>.</remarks>
     public virtual int? AlertRoleId { get; set; }
     /// <summary>Rule ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertRule.html#Alvao_API_Common_Model_Database_TransferConfirmAlertRule_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

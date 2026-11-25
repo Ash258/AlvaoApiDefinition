@@ -7,8 +7,10 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tTimeOffKind")]
 public class tTimeOffKind {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tTimeOffKind.html#Alvao_API_Common_Model_Database_tTimeOffKind_iTimeOffKindId"/>
+    /// <remarks>Column <c>iTimeOffKindId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int iTimeOffKindId { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tTimeOffKind.html#Alvao_API_Common_Model_Database_tTimeOffKind_sTimeOffKind"/>
+    /// <remarks>Column <c>sTimeOffKind</c>: nvarchar(255), not null.</remarks>
     public virtual string sTimeOffKind { get; set; }
 }

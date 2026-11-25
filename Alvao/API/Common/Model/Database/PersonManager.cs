@@ -11,13 +11,16 @@ public class PersonManager {
     /// manager of a direct manager = 2 etc.
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonManager.html#Alvao_API_Common_Model_Database_PersonManager_Distance"/>
+    /// <remarks>Column <c>Distance</c>: int, not null.</remarks>
     public virtual int Distance { get; set; }
     /// <summary>Employee's ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonManager.html#Alvao_API_Common_Model_Database_PersonManager_EmployeePersonId"/>
+    /// <remarks>Column <c>EmployeePersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     [ExplicitKey]
     public virtual int EmployeePersonId { get; set; }
     /// <summary>Manager's ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonManager.html#Alvao_API_Common_Model_Database_PersonManager_ManagerPersonId"/>
+    /// <remarks>Column <c>ManagerPersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     [ExplicitKey]
     public virtual int ManagerPersonId { get; set; }
 }

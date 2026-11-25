@@ -6,5 +6,6 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.SectionSequence")]
 public class SectionSequence {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.SectionSequence.html#Alvao_API_Common_Model_Database_SectionSequence_NextSectionId"/>
+    /// <remarks>Column <c>NextSectionId</c>: int, not null.</remarks>
     public virtual int NextSectionId { get; set; }
 }

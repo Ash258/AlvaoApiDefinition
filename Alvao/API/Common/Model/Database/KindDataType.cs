@@ -16,9 +16,11 @@ public class KindDataType {
 
     /// <summary>Property data type name.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.KindDataType.html#Alvao_API_Common_Model_Database_KindDataType_DataTypeName"/>
+    /// <remarks>Column <c>DataTypeName</c>: nvarchar(20), null.</remarks>
     public virtual string DataTypeName { get; set; }
     /// <summary>Property data type ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.KindDataType.html#Alvao_API_Common_Model_Database_KindDataType_KindDataTypeId"/>
+    /// <remarks>Column <c>KindDataTypeId</c>: int, not null.</remarks>
     [Key]
     public virtual int KindDataTypeId { get; set; }
 }

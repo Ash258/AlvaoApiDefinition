@@ -8,10 +8,12 @@ namespace Alvao.API.Common.Model.Database;
 public class RequiredClassKind {
     /// <summary>Object type ID (tblClass.intClassId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.RequiredClassKind.html#Alvao_API_Common_Model_Database_RequiredClassKind_ClassId"/>
+    /// <remarks>Column <c>ClassId</c>: int, not null. References <see cref="tblClass"/>.</remarks>
     [ExplicitKey]
     public virtual int ClassId { get; set; }
     /// <summary>Property definition ID (tblKind.intKindId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.RequiredClassKind.html#Alvao_API_Common_Model_Database_RequiredClassKind_KindId"/>
+    /// <remarks>Column <c>KindId</c>: int, not null. References <see cref="tblKind"/>.</remarks>
     [ExplicitKey]
     public virtual int KindId { get; set; }
 }

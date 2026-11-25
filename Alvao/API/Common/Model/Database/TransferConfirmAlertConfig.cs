@@ -8,12 +8,15 @@ namespace Alvao.API.Common.Model.Database;
 public class TransferConfirmAlertConfig {
     /// <summary>Repetition period of the last alert.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertConfig.html#Alvao_API_Common_Model_Database_TransferConfirmAlertConfig_RepeatTeamAlertAfterDays"/>
+    /// <remarks>Column <c>RepeatTeamAlertAfterDays</c>: int, null.</remarks>
     public virtual int? RepeatTeamAlertAfterDays { get; set; }
     /// <summary>Require user verification during signature.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertConfig.html#Alvao_API_Common_Model_Database_TransferConfirmAlertConfig_RequireUserAuthentication"/>
+    /// <remarks>Column <c>RequireUserAuthentication</c>: bit, not null.</remarks>
     public virtual bool RequireUserAuthentication { get; set; }
     /// <summary>Alert send time.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TransferConfirmAlertConfig.html#Alvao_API_Common_Model_Database_TransferConfirmAlertConfig_SendTimeHour"/>
+    /// <remarks>Column <c>SendTimeHour</c>: float, not null.</remarks>
     [ExplicitKey]
     public virtual double SendTimeHour { get; set; }
 }

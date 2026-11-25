@@ -14,9 +14,11 @@ public class ActMark {
 
     /// <summary>Record marking name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.ActMark.html#Alvao_API_Common_Model_Database_ActMark_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(255), not null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.ActMark.html#Alvao_API_Common_Model_Database_ActMark_id"/>
+    /// <remarks>Column <c>id</c>: tinyint, not null.</remarks>
     [Key]
     public virtual byte id { get; set; }
 }

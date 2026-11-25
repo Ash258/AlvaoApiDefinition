@@ -58,8 +58,10 @@ public class AlvaoModule {
     }
 
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AlvaoModule.html#Alvao_API_Common_Model_Database_AlvaoModule_Id"/>
+    /// <remarks>Column <c>Id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int Id { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AlvaoModule.html#Alvao_API_Common_Model_Database_AlvaoModule_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(255), not null.</remarks>
     public virtual string Name { get; set; }
 }

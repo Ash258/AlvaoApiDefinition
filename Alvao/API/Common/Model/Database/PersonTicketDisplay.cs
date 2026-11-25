@@ -7,17 +7,22 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.PersonTicketDisplay")]
 public class PersonTicketDisplay {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonTicketDisplay.html#Alvao_API_Common_Model_Database_PersonTicketDisplay_EventsNotDisplayed"/>
+    /// <remarks>Column <c>EventsNotDisplayed</c>: bit, not null.</remarks>
     public virtual bool EventsNotDisplayed { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonTicketDisplay.html#Alvao_API_Common_Model_Database_PersonTicketDisplay_Id"/>
+    /// <remarks>Column <c>Id</c>: int, not null.</remarks>
     [Key]
     public virtual int Id { get; set; }
     /// <summary>Date and time of the last view of the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonTicketDisplay.html#Alvao_API_Common_Model_Database_PersonTicketDisplay_LastDisplayed"/>
+    /// <remarks>Column <c>LastDisplayed</c>: datetime, null.</remarks>
     public virtual DateTime? LastDisplayed { get; set; }
     /// <summary>ID of the person who viewed the ticket.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonTicketDisplay.html#Alvao_API_Common_Model_Database_PersonTicketDisplay_PersonId"/>
+    /// <remarks>Column <c>PersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     public virtual int PersonId { get; set; }
     /// <summary>Viewed ticket number.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.PersonTicketDisplay.html#Alvao_API_Common_Model_Database_PersonTicketDisplay_TicketId"/>
+    /// <remarks>Column <c>TicketId</c>: int, not null. References <see cref="tHdTicket"/>.</remarks>
     public virtual int TicketId { get; set; }
 }

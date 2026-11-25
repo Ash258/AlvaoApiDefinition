@@ -7,6 +7,7 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tblDocumentKind")]
 public class tblDocumentKind {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblDocumentKind.html#Alvao_API_Common_Model_Database_tblDocumentKind_intDocumentKindId"/>
+    /// <remarks>Column <c>intDocumentKindId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int intDocumentKindId { get; set; }
 }

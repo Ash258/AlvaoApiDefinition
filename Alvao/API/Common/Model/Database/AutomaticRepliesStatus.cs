@@ -15,10 +15,12 @@ public class AutomaticRepliesStatus {
 
     /// <summary>Record ID: 1 - Disabled 2 - Always enabled 3 - Scheduled</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AutomaticRepliesStatus.html#Alvao_API_Common_Model_Database_AutomaticRepliesStatus_Id"/>
+    /// <remarks>Column <c>Id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int Id { get; set; }
     /// <summary>Status name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AutomaticRepliesStatus.html#Alvao_API_Common_Model_Database_AutomaticRepliesStatus_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(255), not null.</remarks>
     public virtual string Name { get; set; }
 
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AutomaticRepliesStatus.html#Alvao_API_Common_Model_Database_AutomaticRepliesStatus_GetDbStatus_System_Nullable_Microsoft_Graph_Models_AutomaticRepliesStatus__"/>

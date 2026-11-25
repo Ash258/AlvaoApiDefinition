@@ -11,6 +11,7 @@ public class TicketRelationTypeBehavior {
     public virtual string _TicketRelationTypeBehavior { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketRelationTypeBehavior.html#Alvao_API_Common_Model_Database_TicketRelationTypeBehavior_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

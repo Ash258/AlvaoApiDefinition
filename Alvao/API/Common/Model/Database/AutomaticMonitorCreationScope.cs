@@ -8,9 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class AutomaticMonitorCreationScope {
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AutomaticMonitorCreationScope.html#Alvao_API_Common_Model_Database_AutomaticMonitorCreationScope_Id"/>
+    /// <remarks>Column <c>Id</c>: int, not null.</remarks>
     [Key]
     public virtual int Id { get; set; }
     /// <summary>Parent object ID (tblNode.intNodeId).</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.AutomaticMonitorCreationScope.html#Alvao_API_Common_Model_Database_AutomaticMonitorCreationScope_ParentNodeId"/>
+    /// <remarks>Column <c>ParentNodeId</c>: int, not null. References <see cref="tblNode"/>.</remarks>
     public virtual int ParentNodeId { get; set; }
 }

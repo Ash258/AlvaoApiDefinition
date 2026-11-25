@@ -11,6 +11,7 @@ public class TicketAlertSeverity {
     public virtual string _TicketAlertSeverity { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketAlertSeverity.html#Alvao_API_Common_Model_Database_TicketAlertSeverity_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [Key]
     public virtual int id { get; set; }
 }

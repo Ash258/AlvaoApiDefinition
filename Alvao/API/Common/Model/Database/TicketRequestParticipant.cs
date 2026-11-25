@@ -8,10 +8,12 @@ namespace Alvao.API.Common.Model.Database;
 public class TicketRequestParticipant {
     /// <summary>User ID of the ticket participant (tPerson.iPersonId).</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketRequestParticipant.html#Alvao_API_Common_Model_Database_TicketRequestParticipant_PersonId"/>
+    /// <remarks>Column <c>PersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     [ExplicitKey]
     public virtual int PersonId { get; set; }
     /// <summary>Ticket ID (tHdTicket.iHdTicketId).</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketRequestParticipant.html#Alvao_API_Common_Model_Database_TicketRequestParticipant_TicketId"/>
+    /// <remarks>Column <c>TicketId</c>: int, not null. References <see cref="tHdTicket"/>.</remarks>
     [ExplicitKey]
     public virtual int TicketId { get; set; }
 }

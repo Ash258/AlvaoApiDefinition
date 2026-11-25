@@ -224,15 +224,18 @@ public class tblKind {
 
     /// <summary>Property categories</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_Category"/>
+    /// <remarks>Column <c>Category</c>: nvarchar(max), null.</remarks>
     public virtual string Category { get; set; }
     /// <summary>1 = Delete value when copying properties</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_CleanValueByCopying"/>
+    /// <remarks>Column <c>CleanValueByCopying</c>: bit, not null.</remarks>
     public virtual bool CleanValueByCopying { get; set; }
     /// <summary>
     /// NodeCust table column name that stores the property value. NULL = the object property is not used in any object
     /// class and has no representation in the NodeCust table.
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_ColumnName"/>
+    /// <remarks>Column <c>ColumnName</c>: nvarchar(255), null.</remarks>
     public virtual string ColumnName { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_DataType"/>
     [Ignore]
@@ -242,18 +245,22 @@ public class tblKind {
     public bool IsSystem { get; set; }
     /// <summary>Property data type ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_KindDataTypeId"/>
+    /// <remarks>Column <c>KindDataTypeId</c>: int, not null. References <see cref="KindDataType"/>.</remarks>
     public virtual int KindDataTypeId { get; set; }
     /// <summary>Precision of the decimal part of the number.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_Precision"/>
+    /// <remarks>Column <c>Precision</c>: int, null.</remarks>
     public virtual int? Precision { get; set; }
     /// <summary>
     /// 1 = the property is mandatory in objects of all kinds that use it. In this case, there is no record for it in
     /// the RequiredClassKind table.
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_RequiredForAllClasses"/>
+    /// <remarks>Column <c>RequiredForAllClasses</c>: bit, not null.</remarks>
     public virtual bool RequiredForAllClasses { get; set; }
     /// <summary>1 = property value can only be selected from the list of values</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_bSelectOnly"/>
+    /// <remarks>Column <c>bSelectOnly</c>: bit, not null.</remarks>
     public virtual bool bSelectOnly { get; set; }
     /// <summary>
     /// 1 = global property for a class of objects. &quot;0&quot; indicates the property is considered local for each
@@ -261,33 +268,41 @@ public class tblKind {
     /// this property for the given object class,
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_bolGlobalScope"/>
+    /// <remarks>Column <c>bolGlobalScope</c>: bit, not null.</remarks>
     public virtual bool bolGlobalScope { get; set; }
     /// <summary>1 = property value must be unique</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_bolUnique"/>
+    /// <remarks>Column <c>bolUnique</c>: bit, not null.</remarks>
     public virtual bool bolUnique { get; set; }
     /// <summary>bit field: 0x20 = property not inheritable</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_intFlags"/>
+    /// <remarks>Column <c>intFlags</c>: int, null.</remarks>
     public virtual int? intFlags { get; set; }
     /// <summary>
     /// The unique number determines the property (integrated ones are numbered), user properties do not have this
     /// number
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_intKindCode"/>
+    /// <remarks>Column <c>intKindCode</c>: int, null.</remarks>
     public virtual int? intKindCode { get; set; }
     /// <summary>primary key</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_intKindId"/>
+    /// <remarks>Column <c>intKindId</c>: int, not null.</remarks>
     [Key]
     public virtual int intKindId { get; set; }
     /// <summary>The sequence for table filtering can be set</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_intOrder"/>
+    /// <remarks>Column <c>intOrder</c>: int, null.</remarks>
     public virtual int? intOrder { get; set; }
     /// <summary>
     /// This attribute contains the tblKind.intKindId definition of the property, from which the list of values shall be
     /// used (tblKindValue)
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_lintValueKindId"/>
+    /// <remarks>Column <c>lintValueKindId</c>: int, null. References <see cref="tblKind"/>.</remarks>
     public virtual int? lintValueKindId { get; set; }
     /// <summary>property name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblKind.html#Alvao_API_Common_Model_Database_tblKind_txtName"/>
+    /// <remarks>Column <c>txtName</c>: nvarchar(255), not null.</remarks>
     public virtual string txtName { get; set; }
 }

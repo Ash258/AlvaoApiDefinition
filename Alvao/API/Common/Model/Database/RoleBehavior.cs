@@ -41,6 +41,7 @@ public class RoleBehavior {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.RoleBehavior.html#Alvao_API_Common_Model_Database_RoleBehavior__RoleBehavior"/>
     public virtual string _RoleBehavior { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.RoleBehavior.html#Alvao_API_Common_Model_Database_RoleBehavior_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

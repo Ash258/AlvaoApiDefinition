@@ -8,15 +8,19 @@ namespace Alvao.API.Common.Model.Database;
 public class LibraryIcon {
     /// <summary>Binary content of file in PNG format</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.LibraryIcon.html#Alvao_API_Common_Model_Database_LibraryIcon_Content"/>
+    /// <remarks>Column <c>Content</c>: varbinary, not null.</remarks>
     public virtual byte[] Content { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.LibraryIcon.html#Alvao_API_Common_Model_Database_LibraryIcon_Id"/>
+    /// <remarks>Column <c>Id</c>: int, not null.</remarks>
     [Key]
     public virtual int Id { get; set; }
     /// <summary>Icon name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.LibraryIcon.html#Alvao_API_Common_Model_Database_LibraryIcon_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(100), null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>1 = system icon</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.LibraryIcon.html#Alvao_API_Common_Model_Database_LibraryIcon_SystemIcon"/>
+    /// <remarks>Column <c>SystemIcon</c>: bit, not null.</remarks>
     public virtual bool SystemIcon { get; set; }
 }

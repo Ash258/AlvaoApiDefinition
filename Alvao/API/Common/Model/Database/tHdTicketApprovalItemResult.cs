@@ -7,8 +7,10 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tHdTicketApprovalItemResult")]
 public class tHdTicketApprovalItemResult {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicketApprovalItemResult.html#Alvao_API_Common_Model_Database_tHdTicketApprovalItemResult_iHdTicketApprovalItemResultId"/>
+    /// <remarks>Column <c>iHdTicketApprovalItemResultId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int iHdTicketApprovalItemResultId { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tHdTicketApprovalItemResult.html#Alvao_API_Common_Model_Database_tHdTicketApprovalItemResult_sHdTicketApprovalItemResult"/>
+    /// <remarks>Column <c>sHdTicketApprovalItemResult</c>: nvarchar(255), null.</remarks>
     public virtual string sHdTicketApprovalItemResult { get; set; }
 }

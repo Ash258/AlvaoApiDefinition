@@ -8,25 +8,33 @@ namespace Alvao.API.Common.Model.Database;
 public class DataQuery {
     /// <summary>Description</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_Description"/>
+    /// <remarks>Column <c>Description</c>: nvarchar(max), null.</remarks>
     public virtual string Description { get; set; }
     /// <summary>Error message at the last SQL script run.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_ErrorMessage"/>
+    /// <remarks>Column <c>ErrorMessage</c>: nvarchar(max), null.</remarks>
     public virtual string ErrorMessage { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_Hidden"/>
+    /// <remarks>Column <c>Hidden</c>: bit, not null.</remarks>
     public virtual bool Hidden { get; set; }
     /// <summary>1 = the query is enabled, 0 = disabled.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_IsEnabled"/>
+    /// <remarks>Column <c>IsEnabled</c>: bit, not null.</remarks>
     public virtual bool IsEnabled { get; set; }
     /// <summary>Query name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(255), not null.</remarks>
     public virtual string Name { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_ShowItemsInTotal"/>
+    /// <remarks>Column <c>ShowItemsInTotal</c>: bit, not null.</remarks>
     public virtual bool ShowItemsInTotal { get; set; }
     /// <summary>SQL query</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_SqlQuery"/>
+    /// <remarks>Column <c>SqlQuery</c>: nvarchar(max), null.</remarks>
     public virtual string SqlQuery { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DataQuery.html#Alvao_API_Common_Model_Database_DataQuery_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [Key]
     public virtual int id { get; set; }
 }

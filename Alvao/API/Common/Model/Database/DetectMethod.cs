@@ -11,15 +11,19 @@ public class DetectMethod {
     /// 7=Manually
     /// </summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DetectMethod.html#Alvao_API_Common_Model_Database_DetectMethod_BehaviorId"/>
+    /// <remarks>Column <c>BehaviorId</c>: int, not null.</remarks>
     public virtual int BehaviorId { get; set; }
     /// <summary>Field for user data, usually identifier of the custom detection method.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DetectMethod.html#Alvao_API_Common_Model_Database_DetectMethod_Custom1"/>
+    /// <remarks>Column <c>Custom1</c>: nvarchar(1024), null.</remarks>
     public virtual string Custom1 { get; set; }
     /// <summary>Name of the detection method.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DetectMethod.html#Alvao_API_Common_Model_Database_DetectMethod_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(64), null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.DetectMethod.html#Alvao_API_Common_Model_Database_DetectMethod_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

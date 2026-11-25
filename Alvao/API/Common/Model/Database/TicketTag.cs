@@ -8,15 +8,19 @@ namespace Alvao.API.Common.Model.Database;
 public class TicketTag {
     /// <summary>Person (tPerson.iPersonId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTag.html#Alvao_API_Common_Model_Database_TicketTag_PersonId"/>
+    /// <remarks>Column <c>PersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     public virtual int PersonId { get; set; }
     /// <summary>Ticket (tHdTicket.iHdTicketId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTag.html#Alvao_API_Common_Model_Database_TicketTag_TicketId"/>
+    /// <remarks>Column <c>TicketId</c>: int, not null. References <see cref="tHdTicket"/>.</remarks>
     public virtual int TicketId { get; set; }
     /// <summary>Tag type (TicketTagType.id)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTag.html#Alvao_API_Common_Model_Database_TicketTag_TicketTagTypeId"/>
+    /// <remarks>Column <c>TicketTagTypeId</c>: int, not null. References <see cref="TicketTagType"/>.</remarks>
     public virtual int TicketTagTypeId { get; set; }
     /// <summary>Record ID</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.TicketTag.html#Alvao_API_Common_Model_Database_TicketTag_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [Key]
     public virtual int id { get; set; }
 }

@@ -11,6 +11,7 @@ public class LicType {
     public virtual string _LicType { get; set; }
     /// <summary>Item ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.LicType.html#Alvao_API_Common_Model_Database_LicType_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

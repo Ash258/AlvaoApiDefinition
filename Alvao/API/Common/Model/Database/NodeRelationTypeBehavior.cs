@@ -20,9 +20,11 @@ public class NodeRelationTypeBehavior {
 
     /// <summary>Name.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelationTypeBehavior.html#Alvao_API_Common_Model_Database_NodeRelationTypeBehavior_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(70), null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.NodeRelationTypeBehavior.html#Alvao_API_Common_Model_Database_NodeRelationTypeBehavior_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [Key]
     public virtual int id { get; set; }
 }

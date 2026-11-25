@@ -8,10 +8,12 @@ namespace Alvao.API.Common.Model.Database;
 public class tblNodeParent {
     /// <summary>object - tblNode</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNodeParent.html#Alvao_API_Common_Model_Database_tblNodeParent_lintNodeId"/>
+    /// <remarks>Column <c>lintNodeId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int lintNodeId { get; set; }
     /// <summary>object on path to tree root - tblNode</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblNodeParent.html#Alvao_API_Common_Model_Database_tblNodeParent_lintParentNodeId"/>
+    /// <remarks>Column <c>lintParentNodeId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int lintParentNodeId { get; set; }
 }

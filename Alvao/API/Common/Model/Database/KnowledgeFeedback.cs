@@ -8,13 +8,16 @@ namespace Alvao.API.Common.Model.Database;
 public class KnowledgeFeedback {
     /// <summary>Knowledge (tArticle.iArticleId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.KnowledgeFeedback.html#Alvao_API_Common_Model_Database_KnowledgeFeedback_KnowledgeId"/>
+    /// <remarks>Column <c>KnowledgeId</c>: int, not null. References <see cref="tArticle"/>.</remarks>
     [ExplicitKey]
     public virtual int KnowledgeId { get; set; }
     /// <summary>Person (tPerson.iPersonId)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.KnowledgeFeedback.html#Alvao_API_Common_Model_Database_KnowledgeFeedback_PersonId"/>
+    /// <remarks>Column <c>PersonId</c>: int, not null. References <see cref="tPerson"/>.</remarks>
     [ExplicitKey]
     public virtual int PersonId { get; set; }
     /// <summary>Rating of knowledge.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.KnowledgeFeedback.html#Alvao_API_Common_Model_Database_KnowledgeFeedback_Rating"/>
+    /// <remarks>Column <c>Rating</c>: bit, null.</remarks>
     public virtual bool? Rating { get; set; }
 }

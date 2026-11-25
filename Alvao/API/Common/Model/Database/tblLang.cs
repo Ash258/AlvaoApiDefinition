@@ -8,6 +8,7 @@ namespace Alvao.API.Common.Model.Database;
 public class tblLang {
     /// <summary>language Id, e.g. 1029=Czech, 1051=Slovak, 1033=English</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblLang.html#Alvao_API_Common_Model_Database_tblLang_intLangId"/>
+    /// <remarks>Column <c>intLangId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int intLangId { get; set; }
 }

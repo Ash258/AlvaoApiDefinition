@@ -8,9 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class SccmConnectionKind {
     /// <summary>Type name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.SccmConnectionKind.html#Alvao_API_Common_Model_Database_SccmConnectionKind_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(32), not null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>Record ID: 1=Administration Service 2=Database</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.SccmConnectionKind.html#Alvao_API_Common_Model_Database_SccmConnectionKind_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

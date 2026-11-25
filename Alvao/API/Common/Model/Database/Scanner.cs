@@ -8,9 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class Scanner {
     /// <summary>Scanner name</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.Scanner.html#Alvao_API_Common_Model_Database_Scanner_Name"/>
+    /// <remarks>Column <c>Name</c>: nvarchar(32), not null.</remarks>
     public virtual string Name { get; set; }
     /// <summary>Scanner id (system-defined values)</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.Scanner.html#Alvao_API_Common_Model_Database_Scanner_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

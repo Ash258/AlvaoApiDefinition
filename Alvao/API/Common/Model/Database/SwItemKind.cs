@@ -8,9 +8,11 @@ namespace Alvao.API.Common.Model.Database;
 public class SwItemKind {
     /// <summary>Kind of record.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.SwItemKind.html#Alvao_API_Common_Model_Database_SwItemKind_Kind"/>
+    /// <remarks>Column <c>Kind</c>: nvarchar(64), not null.</remarks>
     public virtual string Kind { get; set; }
     /// <summary>Record ID.</summary>
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.SwItemKind.html#Alvao_API_Common_Model_Database_SwItemKind_id"/>
+    /// <remarks>Column <c>id</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int id { get; set; }
 }

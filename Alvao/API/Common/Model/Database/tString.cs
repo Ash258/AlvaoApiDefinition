@@ -33,8 +33,10 @@ public class tString {
     }
 
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_iStringId"/>
+    /// <remarks>Column <c>iStringId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int iStringId { get; set; }
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tString.html#Alvao_API_Common_Model_Database_tString_mString"/>
+    /// <remarks>Column <c>mString</c>: nvarchar(max), null.</remarks>
     public virtual string mString { get; set; }
 }

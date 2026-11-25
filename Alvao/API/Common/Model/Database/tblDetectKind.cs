@@ -7,6 +7,7 @@ namespace Alvao.API.Common.Model.Database;
 [Table("dbo.tblDetectKind")]
 public class tblDetectKind {
     /// <see href="https://doc.alvao.com/en/26/alvao-api/api/Alvao.API.Common.Model.Database.tblDetectKind.html#Alvao_API_Common_Model_Database_tblDetectKind_intDetectKindId"/>
+    /// <remarks>Column <c>intDetectKindId</c>: int, not null.</remarks>
     [ExplicitKey]
     public virtual int intDetectKindId { get; set; }
 }
