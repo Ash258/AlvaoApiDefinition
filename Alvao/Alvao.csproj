@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,CS8765,CS8767</NoWarn>
+    <NoWarn>$(NoWarn),CS0114,CS0108,CS8618,CS8625,CS8765,CS8767,CS0618</NoWarn>
 
     <PackageId>Ash258.Alvao.Mock.API</PackageId>
     <Version>26.4.1</Version>
