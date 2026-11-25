@@ -1,0 +1,56 @@
+{
+  // Usings, which cannot be resolved from documentation links (attributes are rendered as plain text)
+  "definitionUsings": [
+    { "contains": "[Ignore]", "using": "AutoMapper.Configuration.Annotations" },
+    { "contains": "[ExplicitKey]", "using": "Dapper.Contrib.Extensions" },
+    { "contains": "[Key]", "using": "Dapper.Contrib.Extensions" },
+    { "contains": "[Table(", "using": "Dapper.Contrib.Extensions" },
+    { "contains": "[JsonIgnore]", "using": "Newtonsoft.Json" },
+    { "contains": "[JsonProperty(", "using": "Newtonsoft.Json" },
+    { "contains": "[JsonPropertyName(", "using": "System.Text.Json.Serialization" },
+    { "contains": "[SuppressMessage(", "using": "System.Diagnostics.CodeAnalysis" },
+    { "contains": "[DataMember(", "using": "System.Runtime.Serialization" },
+    { "contains": "[JsonConverter(", "using": "Newtonsoft.Json" },
+    // Default parameter values use enum members without the enclosing class
+    { "contains": "= KindDataTypeIdEnum.", "using": "static Alvao.API.Common.Model.Database.KindDataType" }
+  ],
+
+  // Namespaces of types, which are not linked in documentation and are not part of method parameters (data-uid)
+  "typeNamespaces": {
+    "ILogger": "Microsoft.Extensions.Logging",
+    "IAuthenticationProvider": "Microsoft.Kiota.Abstractions.Authentication",
+    "Profile": "AutoMapper",
+    "IProfileConfiguration": "AutoMapper",
+    "IProfileExpression": "AutoMapper",
+    "SqlMapper": "Dapper",
+    "JsonConverter": "Newtonsoft.Json",
+    // Markdig types, stubbed until the package is referenced
+    "IMarkdownExtension": "Alvao.API.AI.Infrastructure",
+    "IMarkdownRenderer": "Alvao.API.AI.Infrastructure",
+    "MarkdownPipeline": "Alvao.API.AI.Infrastructure",
+    "MarkdownPipelineBuilder": "Alvao.API.AI.Infrastructure",
+    // Shared base of SwLibrary (resolved from data-uid) and Detection archives
+    "ArchiveStream": "Alvao.API.Utils",
+    // Azure.AI.DocumentIntelligence types, which are not linked in documentation
+    "AnalyzeResult": "Azure.AI.DocumentIntelligence",
+    "DocumentFieldDictionary": "Azure.AI.DocumentIntelligence",
+    "ServiceBase": "Alvao.API.Common"
+  },
+
+  // Members of implemented interfaces, which are not listed in documentation
+  "interfaceMembers": {
+    "ICloneable": ["public object Clone()"],
+    "IXPathNavigable": ["public System.Xml.XPath.XPathNavigator? CreateNavigator()"],
+    "IDisposable": ["public void Dispose()"],
+    "IAsyncDisposable": ["public ValueTask DisposeAsync()"]
+  },
+
+  // docfx quirks in definitions
+  "fixups": [
+    {
+      "class": "Alvao.API.AM.Model.Property",
+      "find": "Kind.DataType kind = DataType.KindNone",
+      "replace": "Kind.DataType kind = Kind.DataType.KindNone"
+    }
+  ]
+}

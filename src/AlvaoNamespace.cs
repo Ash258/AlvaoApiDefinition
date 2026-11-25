@@ -15,6 +15,9 @@ public class AlvaoNamespace {
 
     public Dictionary<string, DotnetEnum[]> Enums { get; set; }
 
+    internal List<MemberProperties> Members { get; } = [];
+    public HashSet<string> MemberNames { get; } = [];
+
     public AlvaoNamespace(string namespaceName) {
         Logger = CreateLogger<AlvaoNamespace>();
 
@@ -27,9 +30,9 @@ public class AlvaoNamespace {
         AssertDirectory(Name.Replace(".", "/"));
     }
 
-    internal void Process() {
-        Logger.LogInformation("Processing {} namespace", Name);
-
+    // List all members of the namespace and register them as known types.
+    // Must run for all namespaces before any class is processed, so type references can be resolved.
+    internal void CollectMembers() {
         if (Name.Equals("Alvao.Apps.API")) return;
 
         AssertDocumentIsNamespace();
@@ -47,16 +50,11 @@ public class AlvaoNamespace {
         // Take first group from the h3 elements, as we take only following siblings of first h3
         var currentMemberType = SanitizeMemberType(TrimInnerText(h3Headers[0]));
         var relevantElements = HtmlDocument.DocumentNode.SelectNodes("//h3/following-sibling::*");
-        List<MemberProperties> membersToProcess = [];
-
-        Logger.LogInformation("Processing namespace group [{}] {{{}}}", currentMemberType, Name);
 
         foreach (var el in relevantElements) {
             // Other group occoured
             if (el.Name.Equals("h3")) {
-                var n = SanitizeMemberType(TrimInnerText(el));
-                Logger.LogInformation("Namespace group changed from {} to [{}] {{{}}}", currentMemberType, n, Name);
-                currentMemberType = n;
+                currentMemberType = SanitizeMemberType(TrimInnerText(el));
                 continue;
             }
 
@@ -68,8 +66,20 @@ public class AlvaoNamespace {
             };
 
             Logger.LogInformation("Found {} '{}' {{{}}}", currentMemberType, member.Name, Name);
-            membersToProcess.Add(member);
+            Members.Add(member);
+            // Only top-level name matters for type resolution. Generic types are listed as Name<T> (possibly html encoded)
+            var topLevel = member.Name.Split('.')[0].Split('<')[0].Split('&')[0];
+            MemberNames.Add(topLevel);
+            State.RegisterType(Name, topLevel);
         }
+    }
+
+    internal void Process() {
+        Logger.LogInformation("Processing {} namespace", Name);
+
+        if (Name.Equals("Alvao.Apps.API")) return;
+
+        var membersToProcess = Members;
 
         // Enums needs to be preprocessed
         Logger.LogDebug("Going to process enums {{{}}}", Name);

@@ -2,78 +2,56 @@ using AlvaoScrapper;
 using Microsoft.Extensions.Logging;
 using static AlvaoScrapper.Helpers;
 
-string[] alvaoNamespace = {
-    "Alvao.API.AI",
-    "Alvao.API.AI.Exceptions",
-    "Alvao.API.AI.Exceptions.ExternalServices",
-    "Alvao.API.AI.Infrastructure",
-    "Alvao.API.AI.Model",
-    "Alvao.API.AI.Repository",
-    "Alvao.API.AI.Service",
-    "Alvao.API.AI.Service.Implementation",
-    "Alvao.API.AI.Utils",
-    "Alvao.API.AM",
-    "Alvao.API.AM.Exceptions",
-    "Alvao.API.AM.Model",
-    "Alvao.API.AM.Model.CsvImport",
-    "Alvao.API.AM.Model.Detection",
-    "Alvao.API.AM.Model.Detection.Sccm",
-    "Alvao.API.AM.Model.Detection.Software",
-    "Alvao.API.AM.Model.ObjectSorting",
-    "Alvao.API.AM.Model.Print",
-    "Alvao.API.AM.Model.SwLibrary",
-    "Alvao.API.AM.Model.SwLibrary.Mapping",
-    "Alvao.API.AM.Model.XmlExport",
-    "Alvao.API.Common",
-    "Alvao.API.Common.Exceptions",
-    "Alvao.API.Common.Model",
-    "Alvao.API.Common.Model.Article",
-    "Alvao.API.Common.Model.CustomApps",
-    "Alvao.API.Common.Model.CustomApps.Requests",
-    "Alvao.API.Common.Model.CustomApps.XmlModels",
-    "Alvao.API.Common.Model.Database",
-    "Alvao.API.Common.Model.Translations",
-    "Alvao.API.SD",
-    "Alvao.API.SD.Exceptions",
-    "Alvao.API.SD.Model",
-    "Alvao.Apps.API",
-    "Alvao.Context",
-    "Alvao.Context.DB",
-};
-
 var logger = CreateLogger<Program>();
 
-string[] filter = [];
-int toTake = alvaoNamespace.Length;
-if (args.Length > 0) {
-    if (args.Contains("test")) {
-        Console.WriteLine("All files are generated OK");
-        Environment.Exit(0);
+// Arguments: [test] [ignore] [namespace...]
+if (args.Contains("test")) {
+    Console.WriteLine("All files are generated OK");
+    Environment.Exit(0);
+}
+if (args.Contains("ignore")) IGNORE_CACHE = true;
+string[] filter = [.. args.Where(a => a != "ignore")];
+
+AssertDirectory(LOCAL_HTML_FOLDER);
+
+// Version of the latest ALVAO release, the package is versioned by it
+var version = DocsInfo.DetectReleaseVersion();
+var previousVersion = File.Exists(".alvaorc") ? File.ReadAllText(".alvaorc").Trim() : string.Empty;
+if (!version.Equals(previousVersion)) {
+    logger.LogWarning("ALVAO version changed from {} to {}", previousVersion, version);
+    File.WriteAllText(".alvaorc", $"{version}\n");
+}
+
+// All documented namespaces, from the API table of contents
+State.AllNamespaces = DocsInfo.LoadNamespaces();
+string[] alvaoNamespace = filter.Length > 0
+    ? [.. State.AllNamespaces.Where(filter.Contains)]
+    : [.. State.AllNamespaces];
+
+// Members of all namespaces have to be known before processing any class, to resolve type references
+foreach (var ns in State.AllNamespaces) {
+    var alvaoNs = new AlvaoNamespace(ns);
+    try {
+        alvaoNs.CollectMembers();
+    } catch (Exception e) {
+        logger.LogError("Cannot list members of namespace {}: {}", ns, e.Message);
     }
-
-    if (args.Contains("ignore")) IGNORE_CACHE = true;
-
-    var _l = IGNORE_CACHE ? args.Length - 1 : args.Length;
-
-    filter = [.. args.TakeLast(_l)];
-    if (filter.Length > 0) alvaoNamespace = [.. alvaoNamespace.Where(ns => filter.Contains(ns))];
+    State.Namespaces.Add(ns, alvaoNs);
 }
 
 foreach (var ns in alvaoNamespace) {
     logger.LogInformation("Processing {ns} Namespace", ns);
-    logger.LogDebug("Processing {ns} Namespace", ns);
 
-    var alvaoNs = new AlvaoNamespace(ns);
-    State.Namespaces.Add(ns, alvaoNs);
     try {
-        alvaoNs.Process();
+        State.Namespaces[ns].Process();
     } catch (Exception e) {
-        logger.LogError("Cannot process namespace {}: {}", e.Message, ns);
+        logger.LogError("Cannot process namespace {}: {}", ns, e.Message);
         continue;
     }
 }
 
-MonkeyPatch.PatchUnDocumentedClasses(CreateLogger<MonkeyPatchLogger>());
+Overrides.GenerateStubs(logger);
+Overrides.CopyHandWritten(logger);
 
 Console.WriteLine("");
-Console.WriteLine($"Processed {State.Namespaces.Count} namespaces and {State.Classes.Count} classes");
+Console.WriteLine($"ALVAO {version}: processed {alvaoNamespace.Length} namespaces, {State.Classes.Count} classes and {State.Stubs.Count} undocumented types");

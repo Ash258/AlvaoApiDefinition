@@ -5,4 +5,6 @@ public abstract record DotnetBase {
     public string Summary { get; set; } = string.Empty;
     public string Definition { get; set; } = string.Empty;
     public string FullUrl { get; set; } = string.Empty;
+    // Types referenced from the member (resolved from xref links of the documentation)
+    public List<TypeRef> Refs { get; set; } = [];
 }

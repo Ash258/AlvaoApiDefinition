@@ -19,5 +19,6 @@
   <ItemGroup>
     <Compile Remove="Examples/**" />
     <Compile Remove="Alvao/**" />
+    <Compile Remove="overrides/**" />
   </ItemGroup>
 </Project>

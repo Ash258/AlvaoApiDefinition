@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -6,9 +7,8 @@ using static AlvaoScrapper.Helpers;
 
 namespace AlvaoScrapper;
 
-public class AlvaoClass {
+public partial class AlvaoClass {
     public ILogger Logger;
-    public ILogger MpLogger;
 
     public string Type { get; set; }
     public string? FullUrl { get; set; }
@@ -30,17 +30,22 @@ public class AlvaoClass {
     public List<DotnetPropertyOrFieldOrEvent> Fields { get; set; }
     public List<DotnetPropertyOrFieldOrEvent> Events { get; set; }
     public List<DotnetMethod> Methods { get; set; }
+    // Types referenced from class definition (inheritance, implemented interfaces)
+    public List<TypeRef> ClassRefs { get; set; } = [];
 
     // sb.ToString() of other classes
     public List<string> InnerClasses { get; set; }
 
     public bool IsEnum { get; set; }
 
+    // Name without generic parameters (CollectionResponse<T> => CollectionResponse)
+    public string FileName => Regex.Replace(Name, "<.*>", "");
+
     public AlvaoClass(string name, string href, string memberType, AlvaoNamespace ns, DotnetEnum[]? enums) {
         Logger = CreateLogger<AlvaoClass>();
-        MpLogger = CreateLogger<MonkeyPatchLogger>();
 
-        Name = name;
+        // Generic classes are listed as Name&lt;T&gt;
+        Name = SanitizeXmlToString(name);
         Type = memberType;
         IsEnum = String.Equals(Type, "Enum");
         FullUrl = $"{BASE_HTML_URL}/{href.Split("/").Last()}";
@@ -48,7 +53,7 @@ public class AlvaoClass {
         NamespaceName = ns.Name;
         LocalHtmlFile = $"{LOCAL_HTML_FOLDER}/{FullUrl.Split("/").Last()}";
         HtmlDocument = LoadDocument(FullUrl, LocalHtmlFile);
-        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{FileName}.cs";
 
         Summary = GetSummary(HtmlDocument);
         SpecialEnumClass = null;
@@ -65,45 +70,6 @@ public class AlvaoClass {
         if (enums != null && enums.Length > 0) {
             Enums.AddRange(enums);
         }
-    }
-
-    public AlvaoClass(
-        string name,
-        string memberType,
-        AlvaoNamespace ns,
-        string summary,
-        string definition,
-        List<string> usings,
-        List<DotnetConstructor> constructors,
-        List<DotnetMethod> methods,
-        List<DotnetPropertyOrFieldOrEvent> properties,
-        List<DotnetPropertyOrFieldOrEvent> fields
-    ) {
-        Logger = CreateLogger<AlvaoClass>();
-        MpLogger = CreateLogger<MonkeyPatchLogger>();
-
-        Namespace = ns;
-        Name = name;
-        Type = memberType;
-        IsEnum = String.Equals(Type, "Enum");
-        Summary = summary;
-        Definition = definition;
-        FullUrl = string.Empty;
-        NamespaceName = ns.Name;
-        FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
-
-        Enums = [];
-        Events = [];
-        InnerClasses = [];
-
-        Usings = usings;
-        Constructors = constructors;
-        Fields = fields;
-        Properties = properties;
-        Methods = methods;
-        SpecialEnumClass = null;
-
-        Boundaries = [];
     }
 
     #region Helper functions
@@ -135,7 +101,7 @@ public class AlvaoClass {
     }
 
     private static string SanitizeClassName(HtmlNode element) {
-        return TrimInnerText(element)
+        return SanitizeXmlToString(TrimInnerText(element))
             .Replace("Class ", "")
             .Replace("Interface ", "")
             .Replace("Enum ", "")
@@ -248,6 +214,8 @@ public class AlvaoClass {
                 Logger.LogWarning("{} member {} does not have valid definition element [{}] {{{}}}", memberType, _name, Name, NamespaceName);
             }
             _def = SanitizeXmlToString(TrimInnerText(elements[3].SelectSingleNode(".//pre/code")));
+            // Leading attributes on own lines ([Obsolete("...")] public void X()), html formatting may join them
+            _def = LeadingAttributeRegex().Replace(_def, "$1\n");
         } catch {
             Logger.LogWarning("{} member {} definition extraction failed [{}] {{{}}}", memberType, _name, Name, NamespaceName);
         }
@@ -306,8 +274,9 @@ public class AlvaoClass {
                     break;
                 case "Class":
                     // ? TODO: Do not rely on hardcoded indexes
-                    Summary = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]);
-                    Definition = TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]);
+                    Summary = ReplaceEndLinesWithSpace(TrimInnerText(classGroups.GetValueOrDefault("Class", [])[2]));
+                    Definition = SanitizeXmlToString(TrimInnerText(classGroups.GetValueOrDefault("Class", [])[4]));
+                    ClassRefs = CollectRefs(gr.Value, "");
                     break;
                 default:
                     Logger.LogWarning("!!!!!!!!!!!!!!!!!!!Skipping class group {} with {} elements [{}] {{{}}}", gr.Key, gr.Value.Count, Name, NamespaceName);
@@ -371,6 +340,7 @@ public class AlvaoClass {
                 Summary = _sum,
                 Definition = _def,
                 FullUrl = _url,
+                Refs = CollectRefs(propertyElements),
             };
 
             switch (type) {
@@ -378,7 +348,6 @@ public class AlvaoClass {
                     Fields.Add(item);
                     break;
                 case "Property":
-                    MonkeyPatch.SpecificProperty(this, item, MpLogger);
                     Properties.Add(item);
                     break;
                 case "Event":
@@ -466,8 +435,8 @@ public class AlvaoClass {
                 Parameters = parameters,
                 Examples = examples,
                 FullUrl = _url,
+                Refs = CollectRefs(currentElements),
             };
-            MonkeyPatch.SpecificConstructor(this, construct, MpLogger);
             Constructors.Add(construct);
         }
     }
@@ -554,7 +523,7 @@ public class AlvaoClass {
                     case "Remarks":
                         Logger.LogDebug("Processing {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         try {
-                            remarks = h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First();
+                            remarks = ReplaceEndLinesWithSpace(h4CurrentElements[1].SelectNodes(".//p").Select(x => x.InnerText).ToList().First().Trim());
                         } catch {
                             Logger.LogDebug("Cannot process {} remarks [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         }
@@ -565,7 +534,7 @@ public class AlvaoClass {
                         try {
                             var returnType = h4CurrentElements[1].SelectNodes(".//dt").Select(x => x.InnerText).ToList();
                             var sum = h4CurrentElements[1].SelectNodes(".//dd/p").Select(x => x.InnerText).ToList();
-                            ret = sum[0].Trim();
+                            ret = ReplaceEndLinesWithSpace(sum[0].Trim());
                         } catch {
                             Logger.LogDebug("Cannot process {} returns [{}] {{{}}}", type.ToLower(), Name, NamespaceName);
                         }
@@ -612,10 +581,79 @@ public class AlvaoClass {
                     Remarks = remarks,
                     Examples = examples,
                     FullUrl = _url,
+                    Refs = CollectRefs(methodElements),
                 };
-            MonkeyPatch.SpecificMethod(this, method, MpLogger);
             Methods.Add(method);
         }
+    }
+
+    // Member elements start with h3 heading, which contains data-uid with fully qualified parameter types
+    private List<TypeRef> CollectRefs(List<HtmlNode> elements, string? uid = null) {
+        uid ??= elements.Count > 0 ? elements[0].GetAttributeValue("data-uid", "") : "";
+
+        return TypeRefs.Collect(elements, uid, Name, NamespaceName);
+    }
+
+    // Generate usings and fully qualify ambiguous types based on references collected from documentation
+    internal void ResolveTypes() {
+        var fullName = $"{NamespaceName}.{Name}";
+        var topName = TypeRefs.TopLevelName(Name);
+        var patches = Patches.Instance;
+
+        // Plain text fixups of docfx quirks
+        foreach (var f in patches.Fixups.Where(f => f.Class.Equals(fullName))) {
+            Logger.LogInformation("Applying fixup '{}' [{}] {{{}}}", f.Find, Name, NamespaceName);
+            Definition = Definition.Replace(f.Find, f.Replace);
+            AllMembers().ForEach(m => m.Definition = m.Definition.Replace(f.Find, f.Replace));
+        }
+
+        // Members of implemented interfaces, which are not documented (interfaces only inherit them)
+        foreach (var iface in Type.Equals("Interface") ? [] : ImplementedTypeNames()) {
+            foreach (var def in patches.InterfaceMembers.GetValueOrDefault(iface, [])) {
+                var memberName = Regex.Match(def, @"(\w+)\s*\(").Groups[1].Value;
+                if (Methods.Any(m => m.Name.Equals(memberName))) continue;
+
+                Logger.LogInformation("Adding {} member {} [{}] {{{}}}", iface, memberName, Name, NamespaceName);
+                Methods.Add(new DotnetMethod() {
+                    Name = memberName,
+                    Definition = def,
+                    Summary = $"!!!CAUTION: This member of {iface} is not documented. It was generated as empty, to make the project compilable",
+                });
+            }
+        }
+
+        var allRefs = ClassRefs.Concat(AllMembers().SelectMany(m => m.Refs)).ToList();
+        Usings.AddRange(TypeRefs.UsingsFor(allRefs, NamespaceName));
+
+        var definitions = GetAllDefinitionsAsList();
+        foreach (var du in patches.DefinitionUsings) {
+            if (definitions.Any(d => d.Contains(du.Contains))) Usings.Add(du.Using);
+        }
+
+        // Own name and nested types shadow everything else
+        HashSet<string> selfNames = [topName, .. Enums.Select(e => e.Name.Split('.')[^1])];
+        selfNames.UnionWith(Namespace.Members
+            .Where(m => m.Name.StartsWith($"{topName}."))
+            .Select(m => m.Name.Split('.')[1]));
+        var usings = Usings.ToHashSet();
+
+        // Qualify only base types in class definition, not the class name itself
+        var colon = Definition.IndexOf(" : ");
+        if (colon > 0) {
+            Definition = Definition[..colon] + TypeRefs.Qualify(Definition[colon..], ClassRefs, NamespaceName, topName, selfNames, usings);
+        }
+        AllMembers().ForEach(m => m.Definition = TypeRefs.Qualify(m.Definition, m.Refs, NamespaceName, topName, selfNames, usings));
+    }
+
+    private List<DotnetBase> AllMembers() => [.. Properties, .. Fields, .. Events, .. Constructors, .. Methods];
+
+    // Names of base types/interfaces from class definition (public class X : Base, IFoo<T>, IBar)
+    private IEnumerable<string> ImplementedTypeNames() {
+        var colon = Definition.IndexOf(" : ");
+        if (colon < 0) return [];
+
+        var bases = Regex.Replace(Definition[(colon + 3)..], @"<[^<>]*>", "");
+        return bases.Split(" where ")[0].Split(',').Select(b => b.Trim().Split('.')[^1]);
     }
 
     internal void Process() {
@@ -626,8 +664,7 @@ public class AlvaoClass {
             return;
         }
 
-        MonkeyPatch.PatchUsings(this, MpLogger);
-        MonkeyPatch.CreateMethods(this, MpLogger);
+        ResolveTypes();
 
         ProduceFinalCsFile();
     }
@@ -640,10 +677,12 @@ public class AlvaoClass {
             throw new Exception($"Page does not have h1: {Name} {NamespaceName}");
         }
 
-        var actual = TrimInnerText(h1);
+        var actual = SanitizeXmlToString(TrimInnerText(h1));
         var expected = $"{Type} {Name}";
         var fqdnId = NamespaceName.Replace(".", "_");
-        fqdnId = $"{fqdnId}_{Name.Replace(".", "_")}";
+        // Generic parameters are represented by arity in id: CollectionResponse<T> => CollectionResponse_1
+        var idName = Regex.Replace(Name, "<(.*)>", m => $"_{m.Groups[1].Value.Split(',').Length}");
+        fqdnId = $"{fqdnId}_{idName.Replace(".", "_")}";
 
         if (!h1.GetAttributeValue("id", "none").Equals(fqdnId) || !actual.Equals(expected)) {
             Logger.LogError("Page contains different class: Expected {}, Actual: {} [{}] {{{}}}", expected, actual, Name, NamespaceName);
@@ -654,14 +693,13 @@ public class AlvaoClass {
     public void ProduceFinalCsFile(bool standaloneEnum = false, bool rebuidlNamespaceInfo = false) {
         Logger.LogInformation("Constructing final dotnet cs file for class [{}] {{{}}}", Name, NamespaceName);
 
-        MonkeyPatch.UsingsBasedOnDefinitions(this, MpLogger);
         var sb = new StringBuilder();
         var nestedClass = false;
         AlvaoClass? parentClass = null;
 
         if (rebuidlNamespaceInfo) {
             NamespaceName = Namespace.Name;
-            FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{Name}.cs";
+            FinalCsFile = $"{NamespaceName.Replace(".", "/")}/{FileName}.cs";
         }
 
         // It is nested class. It need to find the parent class and update it
@@ -765,6 +803,8 @@ public class AlvaoClass {
 
         if (nestedClass) {
             parentClass.InnerClasses.Add(sb.ToString());
+            // Nested class cannot have own usings
+            parentClass.Usings.AddRange(Usings);
             Logger.LogInformation("Forcing regeneration of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
             parentClass.ProduceFinalCsFile();
             Logger.LogInformation("Class was written as part of parent class {} [{}] {{{}}}", parentClass.Name, Name, NamespaceName);
@@ -774,6 +814,7 @@ public class AlvaoClass {
 
         Logger.LogDebug("Writing cs file [{}] {{{}}}", Name, NamespaceName);
         File.WriteAllText(FinalCsFile, sb.ToString());
+        // File.WriteAllText(FinalCsFile, FixMojibake(sb.ToString()));
         Logger.LogInformation("Final cs file written {} [{}] {{{}}}", FinalCsFile, Name, NamespaceName);
         State.Classes.AddOrReplace($"{NamespaceName}.{Name}", this);
     }
@@ -823,4 +864,7 @@ public class AlvaoClass {
         }
     }
     #endregion DTOs
+
+    [GeneratedRegex(@"^((?:\[[^\[\]]*\]\s*)*?\[[^\[\]]*\])[ \t]+(?=[A-Za-z])", RegexOptions.Multiline)]
+    private static partial Regex LeadingAttributeRegex();
 }
