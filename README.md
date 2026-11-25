@@ -15,10 +15,22 @@ ALVAO custom applications are C# scripts that run inside ALVAO and use its API (
 This repository closes that gap:
 
 - **`Ash258.Alvao.Mock.API`**: a NuGet package with every documented class, interface, enum, method and property. Doc comments link back to the official documentation.
+- **Database schema**: the database models in `Alvao.API.Common.Model.Database` carry column types, nullability and foreign keys from the [database documentation](https://doc.alvao.com/en/26/admin-guide/customization/alvao-database/tables/). The full schema is also in [`DATABASE.md`](./Alvao/DATABASE.md), which ships in the package.
 - **Examples**: the official [ALVAO application templates](https://doc.alvao.com/en/26/modules/alvao-am-custom-apps/applications/templates/) as compilable projects.
 - **Generator**: the tool that scrapes the documentation and produces the package.
 
 The package contains **definitions only**. Every method body throws `NotImplementedException`. It lets you write and compile scripts locally; the scripts still run inside ALVAO.
+
+### Working with AI coding assistants
+
+The package also makes ALVAO custom apps practical to write with AI coding assistants such as Claude Code, GitHub Copilot or Cursor. Without it, an assistant has to guess ALVAO's API from memory. With it, the assistant can:
+
+- look up the real classes, signatures and doc comments of the ALVAO version you target
+- write SQL against the real database schema (tables, column types, foreign keys) using [`DATABASE.md`](./Alvao/DATABASE.md) and the model doc comments
+- compile its code and fix errors with `dotnet build` before you ever upload a script
+- use the [examples](#examples) as working reference implementations
+
+To get the best results, point the assistant at this package and the examples in your project instructions (e.g. `CLAUDE.md` or `.github/copilot-instructions.md`), and ask it to build after every change.
 
 ## Getting started
 
@@ -151,7 +163,8 @@ dotnet run -- ignore Alvao.API.SD
    - Usings and fully qualified names come from the `xref` links in parameter, return, inheritance and implements blocks. A link target contains the full type name. A type is written with its full name only when its short name would bind to a different type.
    - Types without a link are resolved from the member's `data-uid`, which contains fully qualified parameter types.
    - Undocumented ALVAO types referenced from documented pages are generated as empty stubs, so the library compiles.
-4. **Overrides.** Hand-written files from `overrides/` are copied over the generated output.
+4. **Database schema.** The database documentation adds column types, nullability, foreign keys and missing descriptions to the database models. It also generates models for tables without one and writes `Alvao/DATABASE.md`.
+5. **Overrides.** Hand-written files from `overrides/` are copied over the generated output.
 
 ### Overrides
 
